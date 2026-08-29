@@ -121,3 +121,7 @@ VNM FY2007 is now statement-verified from the audited VAS consolidated FY2008 fi
 ### VNM FY2006 promotion (2026-08-30)
 
 VNM FY2006 is now statement-verified from the audited VAS consolidated FY2007 filing's restated comparative column (pages 5–11). All eight required metrics are archived in [GitHub](../data/vnm_statement_metrics_2006.csv) and [Drive](https://drive.google.com/file/d/1hwWLegn75wdISM2y3FvpLJfz2drloKNe/view). Queue status is now 25 verified rows; the approved benchmark remains FY2016–FY2025.
+
+### Full VNM historical closure and Power BI build guide (2026-08-30)
+
+The VNM statement layer is now complete for FY2006–FY2020: 15 rows, eight metrics per year, official source URLs, page anchors and basis caveats. FY2006 is explicitly a restated comparative because FY2007 was the first VAS 25 consolidated-reporting year. The detailed Power BI reproducibility guide is available at [GitHub](../powerbi/POWER_BI_BUILD_GUIDE_V2.md) and [Drive](https://drive.google.com/file/d/13BM9_oOwLxyMnO9IPGkaPWcyVB991q_Y/view). Native `.pbix` creation remains Desktop-dependent; all inputs, DAX, page specs and QA gates are remote and ready.
