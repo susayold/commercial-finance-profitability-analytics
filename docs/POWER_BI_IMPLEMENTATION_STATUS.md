@@ -85,3 +85,7 @@ The audited VAS consolidated FY2011 filing has promoted FY2010 (comparative colu
 ## VNM FY2009 statement layer update (2026-08-30)
 
 FY2009 is now statement-verified from the audited VAS consolidated FY2010 filing's comparative column (pages 6–11) and archived in `data/vnm_statement_metrics_2009.csv`. Queue status is now 22 `reported_statement_verified`, 2 `summary_candidate_review_required` (FY2007–FY2008) and 1 `statement_review_required` (FY2006). The approved benchmark export remains FY2016–FY2025.
+
+## VNM FY2008 statement layer update (2026-08-30)
+
+FY2008 is now statement-verified from the audited VAS consolidated FY2009 filing's comparative column (pages 5–11) and archived in `data/vnm_statement_metrics_2008.csv`. Queue status is 23 `reported_statement_verified`, 1 `summary_candidate_review_required` (FY2007) and 1 `statement_review_required` (FY2006). The approved benchmark export remains FY2016–FY2025.
