@@ -37,6 +37,16 @@ jobs:
             "$RUNNER_TEMP/vnm_longrun_panel_QA.md"
           grep -F "**Overall status: PASS** (17/17 checks passed)" "$RUNNER_TEMP/vnm_longrun_panel_QA.md"
 
+      - name: Peer evidence QA
+        shell: bash
+        run: |
+          node scripts/validate_peer_evidence.mjs \
+            data/peer_benchmark_approved_2016_2025.csv \
+            data/peer_extraction_queue.csv \
+            data/vnm_statement_metrics_2006_2020.csv \
+            "$RUNNER_TEMP/peer_evidence_QA.md"
+          grep -F "**Overall status: PASS** (21/21 checks passed)" "$RUNNER_TEMP/peer_evidence_QA.md"
+
       - name: Validate Power BI model contract JSON
         shell: bash
         run: |
