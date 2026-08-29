@@ -63,3 +63,32 @@ The v1 build completed with:
 - The next version should replace proxy lines with a chart-of-accounts mapping, add month-end close status, add version/date stamps and add a formal forecast-vs-latest-estimate scenario.
 - A production implementation would add user access controls, source-file checksums, period-lock rules and an automated refresh log.
 
+
+
+## v2 expansion
+
+Version 2 expands the v1 management model to 28 tabs. New modules include:
+
+- Invoice-line Sales_Fact with 2,160 rows across 36 months, 12 SKUs, 5 channels and 10 customers.
+- Product, channel and customer profitability.
+- Price-volume-mix bridge with a monthly reconciliation check.
+- Promotion and pricing simulator with incremental revenue, variable cost, contribution and approval hurdle.
+- Budget, forecast versions, base/upside/downside scenarios and a seeded 100-iteration Monte Carlo overlay.
+- Working-capital schedule with AR, inventory, AP, DSO, DIO, DPO, CCC, cash-release estimate and escalation flags.
+- Debt/liquidity schedule with minimum cash, revolver draw and interest proxy.
+- Marginal-ROI budget allocation and public peer benchmark with comparability notes.
+- CFO Executive Output with readable text month labels and a control-gated PASS status.
+
+### v2 QA evidence
+
+- P&L revenue populated: PASS (36/36).
+- Sales revenue tie: PASS.
+- Channel revenue tie: PASS within an explicitly disclosed VND 100m tolerance for deterministic unit rounding.
+- Working-capital rows: PASS (36/36); FY2025 average CCC = 54.8 days.
+- PVM bridge rows: PASS (36/36).
+- No negative sales: PASS (0 rows).
+- Scenario rows: PASS (4/4).
+- Budget allocation rows: PASS (5/5).
+- Formula-error scan: PASS (zero matches).
+- Model status: PASS.
+
