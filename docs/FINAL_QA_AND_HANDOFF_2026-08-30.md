@@ -96,3 +96,12 @@ VNM FY2012–FY2013 are now statement-verified from the audited VAS consolidated
 - Drive CSV: https://drive.google.com/file/d/18dc8GKyLAyMwvQWdIb_vmT-et-mb-H7G/view
 - Source report: https://drive.google.com/file/d/1Mnh5QV6ZRPSCQoBDCClR4Pd3CjIZDt1D/view
 
+### VNM FY2010–FY2011 promotion (2026-08-30)
+
+VNM FY2010–FY2011 are now statement-verified from the audited VAS consolidated FY2011 filing. FY2010 is the comparative column and FY2011 the current-year column; pages 72–76 cover the statement set and all eight required metrics. Queue status is now 21 verified, 3 summary candidates (VNM FY2007–FY2009) and 1 statement-review row (VNM FY2006).
+
+- [VNM FY2010–FY2011 statement CSV](../data/vnm_statement_metrics_2010_2011.csv)
+- Drive CSV: https://drive.google.com/file/d/1RuwQRtuuN31rEl2UXhWMKf4FY_Yai5w4/view
+- Source report: https://drive.google.com/file/d/11ZPUwIM_Sl_i8FUWUATCPoetHoVlnvDs/view
+
+The approved benchmark export remains FY2016–FY2025; FY2010–FY2015 rows are retained in the evidence-gated statement layer for future scope extension.
