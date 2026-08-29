@@ -146,7 +146,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - [Methodology](docs/D2C_UNIT_ECONOMICS.md) · [Drive copy](https://drive.google.com/file/d/1r1KAjXCLb133ODeTBH6QSq9Cs-n6ckBd/view)
 - [Synthetic data extract](data/d2c_unit_economics_synthetic.csv) · [Drive CSV](https://drive.google.com/file/d/1xrGQE3YeNJA4dqVD7Fa2Nct6x4TJUjo_/view)
-- [Automated validator](scripts/validate_d2c_unit_economics.mjs) · [Drive validator](https://drive.google.com/file/d/1neCA_5JjXwKSicpr8E2mGshFJa4x0x8P/view)
+- [Automated validator](scripts/validate_d2c_unit_economics.mjs) · [Drive validator](https://drive.google.com/file/d/1neCA_5JjXwKSicpr8E2mGshFJa4x0x8P/view) · [QA report](reports/D2C_UNIT_ECONOMICS_QA.md) · [Drive QA](https://drive.google.com/file/d/1uZjki-UQvXn3IFOhkSnx1V3HWyWVZgl2/view)
 - [Native D2C Unit Economics Sheet](https://docs.google.com/spreadsheets/d/1nTEJJ9iBvxne0hCjGSDoHKaWgR_pqiMqgXYaTqGgbik/edit?usp=drivesdk)
 - Base illustration: CAC VND130k, LTV contribution VND93.6k, LTV/CAC 0.72x and payback 3.33 orders; all six native controls PASS. Inputs remain synthetic and the hurdle is illustrative.
 
