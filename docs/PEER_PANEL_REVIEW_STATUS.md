@@ -117,3 +117,13 @@ QNS FY2016–FY2019 are now promoted to the approved consolidated statement laye
 
 The QNS operating-candidate file remains as a historical audit trail; the approved benchmark now uses the statement layer for FY2016–FY2020. Queue status is now 15 `reported_statement_verified`, 9 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006).
 
+## VNM FY2014–FY2015 audited statement promotion (2026-08-30)
+
+VNM FY2014–FY2015 are now promoted to `reported_statement_verified` using the audited VAS consolidated FY2015 filing. The filing provides the FY2015 statement pages and FY2014 comparative column for all eight required metrics, with anchors 116–123.
+
+- [VNM FY2014–FY2015 statement metrics](../data/vnm_statement_metrics_2014_2015.csv)
+- Drive CSV: https://drive.google.com/file/d/1oz7ENrbZD1yf_kkts1TsKFqKTOkprm6Z/view
+- Source report: https://drive.google.com/file/d/1F2fn3TYgQMkl_C7xoasOAGPOzbCXY8R8/view
+
+Queue status is now 17 `reported_statement_verified`, 7 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006). VNM FY2007–FY2013 remain candidates pending the same field-level gate.
+
