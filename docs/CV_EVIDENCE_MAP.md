@@ -90,6 +90,7 @@ Drive mirror for M&A extension:
 
 - [Vietnam role-alignment matrix](ROLE_ALIGNMENT_MATRIX.md) · [CSV](../data/role_alignment_matrix.csv) · [Drive copy](https://drive.google.com/file/d/1ngIE4Nw4-P-F6xtmxXvhUfVJPsOPVV6D/view)
 - Use the matrix to choose bullets by role; do not add an unverified keyword such as SAP production experience or internal forecast accuracy.
+- [Role-targeted CV variants](CV_ROLE_VARIANTS.md) · [Drive copy](https://drive.google.com/file/d/1nfaqwK6J8_1A0O5wpLZhmakhXLrWgObh/view)
 
 
 ## Master-plan evidence matrix

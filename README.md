@@ -247,3 +247,4 @@ Drive mirror for M&A extension:
 - [Role-alignment matrix](docs/ROLE_ALIGNMENT_MATRIX.md) · [machine-readable CSV](data/role_alignment_matrix.csv) · [validator](scripts/validate_role_alignment_matrix.mjs)
 - [Drive matrix](https://drive.google.com/file/d/1ngIE4Nw4-P-F6xtmxXvhUfVJPsOPVV6D/view) · [Drive CSV](https://drive.google.com/file/d/1kTabGOJ66UbXbWxv1bsbJwHqJmbKcoot/view) · [Drive validator](https://drive.google.com/file/d/1jsNPUb-F8mvESYmyUnT6Q3xlt5aFg9cu/view)
 - Research maps recurring Vietnam hiring signals—planning/forecasting, variance/PVM, profitability, working capital, business partnering, commercial ROI, modelling, controls, Power BI and communication—to concrete artifacts and CV phrases. Gate A and Gate B remain explicitly caveated.
+- [Role-targeted CV variants](docs/CV_ROLE_VARIANTS.md) · [Drive copy](https://drive.google.com/file/d/1nfaqwK6J8_1A0O5wpLZhmakhXLrWgObh/view)
