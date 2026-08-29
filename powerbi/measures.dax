@@ -64,3 +64,25 @@ DIVIDE (
     [Peer Net Revenue],
     CALCULATE ( SUM ( Peer_Benchmark[Total_Assets_VND_bn] ), Peer_Benchmark[Source_Status] IN { "reported_summary_verified", "reported_statement_verified" } )
 )
+
+// Additional peer profitability / cash-quality measures
+Peer Gross Margin :=
+DIVIDE(
+    CALCULATE(SUM(Peer_Benchmark[Gross_Profit_VND_bn]), Peer_Benchmark[Source_Status] IN {"reported_summary_verified", "reported_statement_verified"}),
+    [Peer Net Revenue]
+)
+Peer Operating Margin :=
+DIVIDE(
+    CALCULATE(SUM(Peer_Benchmark[Operating_Profit_VND_bn]), Peer_Benchmark[Source_Status] IN {"reported_summary_verified", "reported_statement_verified"}),
+    [Peer Net Revenue]
+)
+Peer OCF Conversion :=
+DIVIDE(
+    CALCULATE(SUM(Peer_Benchmark[Operating_Cash_Flow_VND_bn]), Peer_Benchmark[Source_Status] = "reported_statement_verified"),
+    CALCULATE(SUM(Peer_Benchmark[Profit_After_Tax_VND_bn]), Peer_Benchmark[Source_Status] = "reported_statement_verified")
+)
+Peer Evidence Coverage :=
+DIVIDE(
+    [Approved Peer Rows],
+    COUNTROWS(Peer_Benchmark)
+)
