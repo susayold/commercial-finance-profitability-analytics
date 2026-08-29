@@ -1139,3 +1139,23 @@ The project is outstanding only when a reviewer can verify:
 - every CV claim links to an artifact.
 
 Breadth is therefore retained. The control system is what converts breadth into credibility.
+
+
+## Current execution status — 2026-08-29
+
+Completed and remotely verified:
+
+- Source registry and official-report archive are in place; missing/duplicate documents are explicitly flagged.
+- VietNova synthetic v1.0.0 is generated and validated: 36 months, 6,480 sales lines, 13 tables and 10,152 QA checks with zero errors.
+- MCH image-only audited statements have an OCR candidate layer: 125 machine candidates, 59 canonical review candidates and 120 review checks; no OCR value is auto-approved.
+- Excel FP&A model v1 is built and rendered. Checks sheet status is PASS, including revenue tie-out, channel tie-out, working-capital population, negative-revenue sanity and formula-error scan.
+- Power BI build specification and CFO memo v1 are documented for the next implementation sprint.
+- Workbook, Dashboard render, source code and model documentation are stored in the project Drive hierarchy; scripts and documentation are committed to GitHub. Local staging files were removed after remote verification.
+
+Immediate next sprint:
+
+1. Human-review the MCH OCR queue and capture page-level approvals.
+2. Extend extraction review to VNM, QNS and KDC.
+3. Expand the workbook from v1 management proxy lines to the full 28-sheet model specification.
+4. Implement the Power BI semantic model and six report pages.
+5. Produce the 10-12 slide management deck, battle cards, recruiter website and final one-page CV evidence map.
