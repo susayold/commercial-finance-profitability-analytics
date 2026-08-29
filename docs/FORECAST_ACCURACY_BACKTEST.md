@@ -54,7 +54,7 @@ The script was run against a four-row synthetic fixture as of 2025-03-31. It cor
 
 ## Native capture workbook
 
-A native Google Sheet template is available at [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit). It contains Instructions, Forecast_Snapshot_Input, Backtest_Output and Close_Calendar tabs, eligibility formulas, a 250-row input capacity, sample synthetic rows and the WD-5-to-month+1 close cadence. The raw Excel backup is archived on Drive at https://docs.google.com/spreadsheets/d/1rT1lgzs9p6fuBd3dcmvKNrfiiAwkXib8/edit.
+A native Google Sheet template is available at [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit). It contains Instructions, Forecast_Snapshot_Input, Backtest_Output and Close_Calendar tabs, eligibility formulas, a 250-row input capacity and the WD-5-to-month+1 close cadence. The controlled 29-row demo fixture is now loaded into the capture tab with 27 FROZEN eligible rows, one FUTURE_LEAKAGE exception and one NOT_ELIGIBLE draft row. The raw Excel backup is archived on Drive at https://docs.google.com/spreadsheets/d/1rT1lgzs9p6fuBd3dcmvKNrfiiAwkXib8/edit.
 
 
 ## Reproducible multi-version demo
@@ -67,9 +67,9 @@ The pipeline was run on a 29-row synthetic fixture as of 2025-12-31: 27 eligible
 
 ## Capture-sheet control fields
 
-The native capture tab now extends the analytical columns with `Snapshot_Status`, `Source_Model_Version`, `Approver`, `Actual_Period_Close_Date` and `Exception_Note`. `Snapshot_Status` has strict validation (`DRAFT`, `FROZEN`, `EXCEPTION`), the header row is frozen, and leakage statuses are conditionally highlighted. The sample fixture remains `DRAFT`/`EXCEPTION`; it must be replaced with approved frozen snapshots before publishing observed accuracy.
+The native capture tab now extends the analytical columns with `Snapshot_Status`, `Source_Model_Version`, `Approver`, `Actual_Period_Close_Date` and `Exception_Note`. `Snapshot_Status` has strict validation (`DRAFT`, `FROZEN`, `EXCEPTION`), the header row is frozen, and leakage statuses are conditionally highlighted. The demo fixture is explicitly labelled `DEMO_FIXTURE_v1`: 27 rows are frozen to prove the mechanics, while production/live accuracy still requires approved real snapshots before publishing company performance.
 
 
 ## Freeze-gate verification
 
-The native Sheet was tested end-to-end: with the sample version marked `DRAFT`, Backtest_Output returns zero eligible rows, blank Bias/WAPE and `WAITING_FOR_FROZEN_SNAPSHOT`; when one row was temporarily changed to `FROZEN`, it returned one eligible row, Bias `+10%`, WAPE `10%` and `READY`; the row was then reverted to `DRAFT`. This proves the release gate is active without publishing synthetic results.
+The native Sheet was tested end-to-end with the complete 29-row demo fixture. Backtest_Output returns 12 eligible rows and Bias/WAPE `+5%/+5%` for FE-2025-01, 9 rows and `−2%/2%` for FE-2025-04, and 6 rows and `+10%/10%` for FE-2025-07. The FE-2025-07 release status is `REVIEW` because its version also contains a FUTURE_LEAKAGE row; FE-2025-12 remains `WAITING_FOR_FROZEN_SNAPSHOT` because actual availability is after the as-of date. This proves the release gate is active while keeping synthetic fixture results separate from live company accuracy.
