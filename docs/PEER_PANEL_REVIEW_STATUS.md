@@ -127,3 +127,13 @@ VNM FY2014–FY2015 are now promoted to `reported_statement_verified` using the 
 
 Queue status is now 17 `reported_statement_verified`, 7 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006). VNM FY2007–FY2013 remain candidates pending the same field-level gate.
 
+## VNM FY2012–FY2013 audited statement promotion (2026-08-30)
+
+VNM FY2012–FY2013 are now promoted to `reported_statement_verified` using the audited VAS consolidated FY2013 filing. FY2012 is taken from the filing's comparative column; FY2013 is the current-year statement. All eight required metrics are captured with anchors 145–149.
+
+- [VNM FY2012–FY2013 statement metrics](../data/vnm_statement_metrics_2012_2013.csv)
+- Drive CSV: https://drive.google.com/file/d/18dc8GKyLAyMwvQWdIb_vmT-et-mb-H7G/view
+- Source report: https://drive.google.com/file/d/1Mnh5QV6ZRPSCQoBDCClR4Pd3CjIZDt1D/view
+
+Queue status is now 19 `reported_statement_verified`, 5 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006). VNM FY2007–FY2011 remain candidates pending the same gate.
+
