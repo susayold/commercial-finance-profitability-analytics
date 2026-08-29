@@ -55,3 +55,11 @@ The script was run against a four-row synthetic fixture as of 2025-03-31. It cor
 ## Native capture workbook
 
 A native Google Sheet template is available at [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit). It contains Instructions, Forecast_Snapshot_Input, Backtest_Output and Close_Calendar tabs, eligibility formulas, a 250-row input capacity, sample synthetic rows and the WD-5-to-month+1 close cadence. The raw Excel backup is archived on Drive at https://docs.google.com/spreadsheets/d/1rT1lgzs9p6fuBd3dcmvKNrfiiAwkXib8/edit.
+
+
+## Reproducible multi-version demo
+
+The pipeline was run on a 29-row synthetic fixture as of 2025-12-31: 27 eligible rows, one `FUTURE_LEAKAGE` row and one `NOT_ELIGIBLE` row. Results are FE-2025-01 Bias/WAPE +5%/+5% (12 rows), FE-2025-04 −2%/2% (9 rows) and FE-2025-07 +10%/10% (6 rows). These are controlled test values, not observed company performance.
+
+- Demo input: [GitHub](../data/forecast_accuracy_demo_input.csv) · [Drive](https://drive.google.com/file/d/1LBORkBVD02V_2HS-a70vK6SKDgGxcp7i/view)
+- Demo output: [GitHub](../data/forecast_accuracy_demo_output.csv) · [Drive](https://drive.google.com/file/d/1NxiZJ-1hlS0L8pPmj-QfUi5mjPH8LPi3/view)
