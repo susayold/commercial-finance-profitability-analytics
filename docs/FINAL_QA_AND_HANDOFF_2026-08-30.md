@@ -140,3 +140,8 @@ The remaining Desktop-dependent step is documented end-to-end in [powerbi/POWER_
 ## Forecast snapshot template (2026-08-30)
 
 The forecast accuracy gate now has a native [Google Sheet capture template](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit) with Instructions, input eligibility checks and Backtest_Output formulas. It was converted and read back successfully; synthetic unit-test rows are clearly labelled and must be replaced before publishing live Bias/WAPE.
+
+
+## Forecast governance close control (2026-08-30)
+
+A detailed [forecast snapshot close calendar](FORECAST_SNAPSHOT_CLOSE_CALENDAR.md) is now archived. It specifies the monthly WD-5 to month+1 operating cadence, immutable snapshot fields, freeze protocol, RACI, leakage-safe eligibility rule, exception treatment and recruiter evidence pack. The native [capture Sheet](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit) remains the operational input surface; synthetic rows are unit-test fixtures only.
