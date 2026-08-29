@@ -100,3 +100,13 @@ The native forecast Sheet now includes governance columns (`Snapshot_Status`, `S
 - Native capture Sheet QA: [report](../reports/FORECAST_CAPTURE_SHEET_QA.md) · [Drive copy](https://drive.google.com/file/d/16oxmO8IdsfXhZxngLmnGYu2CtCUJW3UO/view).
 
 - Freeze-gate behavior has been tested in the native Sheet: DRAFT rows return `WAITING_FOR_FROZEN_SNAPSHOT`; only FROZEN rows can produce Bias/WAPE and `READY`.
+
+
+## 9. D2C unit-economics extension
+
+The D2C branch is now implemented as a reviewable native Sheet with editable Base/Downside/Upside assumptions, formula-driven CAC, contribution, LTV/CAC and payback, and six visible control checks. The synthetic extract is committed to GitHub and mirrored to Drive; all inputs are explicitly labelled synthetic or illustrative.
+
+- [Methodology](D2C_UNIT_ECONOMICS.md) · [Synthetic dataset](../data/d2c_unit_economics_synthetic.csv) · [Validator](../scripts/validate_d2c_unit_economics.mjs)
+- [Native D2C Unit Economics Sheet](https://docs.google.com/spreadsheets/d/1nTEJJ9iBvxne0hCjGSDoHKaWgR_pqiMqgXYaTqGgbik/edit?usp=drivesdk)
+- Base illustration: CAC VND130k, LTV contribution VND93.6k, LTV/CAC 0.72x and payback 3.33 orders; native Checks tab = PASS.
+- Production conversion remains explicit: replace synthetic acquisition, order, refund and cost inputs with approved company sources and cohort retention evidence before presenting as observed performance.
