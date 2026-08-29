@@ -41,6 +41,24 @@ def grouped_lines(page, engine, scale=1.35, y_tolerance=18):
         lines.append((" ".join(item[1] for item in parts), min(item[2] for item in parts)))
     return lines
 
+
+def accept_candidate(metric, label):
+    lowered = label.lower()
+    if metric == "inventory" and "change in inventory" in lowered:
+        return False
+    if metric == "cash" and ("effect of exchange" in lowered or "change in cash" in lowered):
+        return False
+    if metric == "total_debt":
+        if "receivable" in lowered:
+            return False
+        if not any(token in lowered for token in ("borrowings", "short-term loan", "long-term loan")):
+            return False
+        if any(token in lowered for token in ("proceeds", "payments", "receipts", "settle", "cash flow")):
+            return False
+    if metric == "revenue" and "revenue deductions" in lowered:
+        return False
+    return True
+
 def ocr_extract_pdf(pdf_path, registry, parser, engine, page_start, page_end, scale):
     metadata = parser.report_metadata(pdf_path, registry)
     document = fitz.open(pdf_path)
@@ -51,13 +69,19 @@ def ocr_extract_pdf(pdf_path, registry, parser, engine, page_start, page_end, sc
         if not page_text.strip():
             continue
         scope = parser.infer_scope(page_text)
+        if scope == "unknown" and "Audited Consolidated" in metadata.get("document_type", ""):
+            scope = "consolidated"
         period_type = parser.infer_period_type(page_text, int(metadata["report_year"]))
         unit = parser.unit_for(page_text, metadata)
+        if unit == "reported_scale_unknown" and "VND" in page_text:
+            unit = "VND"
         for raw_line, score in lines:
             match = parser.line_metric(raw_line)
             if not match:
                 continue
             metric, label = match
+            if not accept_candidate(metric, label):
+                continue
             # OCR statement rows often include code/note/year before the values.
             candidates = [parser.parse_number(x.group(0)) for x in parser.NUMBER_RE.finditer(raw_line)]
             candidates = [x for x in candidates if x is not None and abs(x) >= 1000]
