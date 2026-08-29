@@ -1,0 +1,47 @@
+# CV Evidence Map — Finance Analyst / FP&A
+
+Use these bullets only with the evidence label shown. Synthetic metrics must remain explicitly described as simulated or illustrative.
+
+## Target positioning
+
+Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finance lens across P&L, forecast, profitability, working capital and management communication.
+
+## One-page CV bullets
+
+- Built a formula-driven 28-tab FP&A model for a fictional FMCG company, linking 2,160 invoice-line records across 36 months to management P&L, budget, forecast versions, PVM, product/channel/customer profitability, working capital, liquidity and scenario analysis.
+- Designed a visible finance control gate with nine checks; reconciled sales detail to P&L, channel detail to company revenue and 36 monthly working-capital rows, with zero formula-error matches in the final scan.
+- Created a commercial-finance decision layer that evaluates promotion/pricing events through incremental revenue, variable cost, contribution margin, hurdle rates and explicit approval/stop-loss actions.
+- Built a working-capital cockpit that surfaces DSO, DIO, DPO, CCC and cash-release opportunities; the illustrative FY2025 case shows 54.8 days average CCC and a June escalation flag.
+- Calibrated a synthetic operating ledger against public FMCG peer context while maintaining an evidence taxonomy that separates reported facts, calculated facts, synthetic facts, assumptions, inferences and recommendations.
+- Built a peer-source QA workflow for official annual reports and image-only audited statements, producing an OCR candidate layer plus an explicit human-review queue instead of silently accepting low-confidence extraction.
+
+## Skills mapped to artifacts
+
+| CV claim | Artifact | Verification |
+|---|---|---|
+| FP&A model building | VietNova_FPA_Model_v2.xlsx | Checks tab = PASS |
+| Budget / forecast | Budget, Forecast_Versions, Scenario_MonteCarlo | Scenario rows 4/4 |
+| Variance analysis | Variance_Bridge, PVM | PVM rows 36/36 |
+| Profitability | Product_Profitability, Channel_Customer | Channel/customer formulas |
+| Working capital | Working_Capital, AR, Inventory, AP | FY2025 CCC output |
+| Liquidity | Debt_Liquidity | Minimum cash / revolver formulas |
+| Commercial finance | Promotion_Pricing, Budget_Allocation | Hurdle and marginal ROI |
+| Data governance | Source_Register, peer review queue | OCR not auto-approved |
+| Communication | CFO memo, battle cards, website spec | Decision/action structure |
+
+## Interview proof points
+
+1. Start with the business question, not the chart.
+2. Trace one KPI from Executive Output back to source facts and assumptions.
+3. Demonstrate a scenario change and explain the downstream impact.
+4. Show the disclosed VND 100m channel tie-out tolerance rather than hiding it.
+5. Explain why synthetic operating data is necessary and how public filings are bounded.
+6. State the next production control: chart-of-accounts mapping, period locks, refresh log and reviewer sign-off.
+
+## Claims to avoid
+
+- Do not call proxy EBITDA or OCF audited or statutory.
+- Do not present VietNova customer, SKU or promotion values as a real company fact.
+- Do not claim causal promotion lift without a control design.
+- Do not claim OCR figures are approved until a human reviewer signs off.
+
