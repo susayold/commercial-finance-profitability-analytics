@@ -81,3 +81,7 @@ VNM FY2012–FY2015 is now available in `data/vnm_statement_metrics_2012_2013.cs
 ## VNM FY2010–FY2011 statement layer update (2026-08-30)
 
 The audited VAS consolidated FY2011 filing has promoted FY2010 (comparative column) and FY2011 (current column) into `data/vnm_statement_metrics_2010_2011.csv`. Page anchors 72–76 cover balance sheet, income statement and cash flow; all eight required metrics are captured. The evidence-gated queue is now 21 `reported_statement_verified`, 3 `summary_candidate_review_required` (FY2007–FY2009) and 1 `statement_review_required` (FY2006). The approved benchmark export remains FY2016–FY2025.
+
+## VNM FY2009 statement layer update (2026-08-30)
+
+FY2009 is now statement-verified from the audited VAS consolidated FY2010 filing's comparative column (pages 6–11) and archived in `data/vnm_statement_metrics_2009.csv`. Queue status is now 22 `reported_statement_verified`, 2 `summary_candidate_review_required` (FY2007–FY2008) and 1 `statement_review_required` (FY2006). The approved benchmark export remains FY2016–FY2025.
