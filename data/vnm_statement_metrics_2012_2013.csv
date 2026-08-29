@@ -1,0 +1,4 @@
+company,ticker,fiscal_year,net_revenue_vnd_bn,gross_profit_vnd_bn,operating_profit_vnd_bn,profit_before_tax_vnd_bn,profit_after_tax_vnd_bn,total_assets_vnd_bn,owners_equity_vnd_bn,operating_cash_flow_vnd_bn,source_document,source_url,page_anchor,source_status,comparability_note
+Vinamilk,VNM,2012,26561.574179964,9076.743932776,6629.824778189,6929.668017079,5819.454717083,19697.868420379,15493.096595858,5294.567838319,VNM_Annual_Report_2013.pdf,https://drive.google.com/file/d/1Mnh5QV6ZRPSCQoBDCClR4Pd3CjIZDt1D/view,145-149 comparative_2012,reported_statement_verified,Audited VAS consolidated FY2013 filing comparative column for FY2012
+Vinamilk,VNM,2013,30948.602127306,11182.808446832,7711.678203942,8010.256856719,6534.107315627,22875.414056636,17545.489315423,6251.743363451,VNM_Annual_Report_2013.pdf,https://drive.google.com/file/d/1Mnh5QV6ZRPSCQoBDCClR4Pd3CjIZDt1D/view,145-149,reported_statement_verified,Exact audited VAS consolidated statements
+
