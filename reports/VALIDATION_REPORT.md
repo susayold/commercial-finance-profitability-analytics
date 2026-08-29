@@ -40,3 +40,6 @@ Run QA-01 through QA-18 in [powerbi/QA_TEST_MATRIX.md](../powerbi/QA_TEST_MATRIX
 ## Forecast accuracy status
 
 Bias and WAPE are specification-ready but not claimed as observed results because the current v2 workbook does not contain pre-close frozen forecast snapshots. The leakage-safe script and input schema are available in [docs/FORECAST_ACCURACY_BACKTEST.md](../docs/FORECAST_ACCURACY_BACKTEST.md). This is an explicit control, not a missing-data workaround.
+
+
+The backtest implementation has also passed its deterministic unit fixture: 3 eligible rows, 1 FUTURE_LEAKAGE exclusion, Bias/WAPE outputs matching the expected CSV. This validates the control logic, not live forecast accuracy for VietNova.
