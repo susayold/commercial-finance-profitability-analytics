@@ -113,6 +113,11 @@ jobs:
         run: |
           node scripts/validate_budget_reallocation.mjs data/budget_reallocation_synthetic.csv
 
+      - name: Pricing simulator QA
+        shell: bash
+        run: |
+          node scripts/validate_pricing_simulator.mjs data/pricing_simulator_synthetic.csv
+
       - name: Validate Power BI model contract JSON
         shell: bash
         run: |

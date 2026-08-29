@@ -31,10 +31,23 @@ Aggregate incremental CM after spend is VND 347.75m. This is a simulated decisio
 
 The allocation is a reallocation, not a request for new budget. Target shares, caps and marginal ROI are explicit inputs; every row is labelled `SIMULATED_DERIVED`.
 
+## Pricing simulator
+
+| Check | Result |
+|---|---|
+| Scenarios | 6 price/elasticity cases across five channels |
+| Formula chain | New price → volume response → new units → scenario contribution → CM delta |
+| Break-even | Non-zero break-even price change shown for every case |
+| Negative CM delta cases | 2 |
+| Validator | PASS (7 checks) |
+
+The elasticity response is an assumption. The simulator is a decision-support sensitivity, not a causal demand estimate.
+
 ## Workbook spot-check
 
 - `Promotion_Pricing` now exposes columns A:N, including promotion spend, CM-after-spend, ROI, hurdle, decision and evidence class.
 - `Budget_Allocation` now exposes target share, recommended budget, budget delta, incremental contribution and evidence class.
+- `Pricing_Simulator` now exposes elasticity, new price, volume response, contribution delta and break-even price change.
 - `Checks` adds a fixed-budget conservation row; `MODEL STATUS` remains PASS.
 - `Executive_Output` reports promotion CM **after spend**, not pre-spend incremental CM.
 - Formula/error scan remains zero-match in the base builder output; enhanced ranges were inspected after patching.

@@ -20,6 +20,7 @@ const tasks = [
   ['role_alignment', ['scripts/validate_role_alignment_matrix.mjs']],
   ['promotion_roi', ['scripts/validate_promotion_roi.mjs', 'data/promotion_roi_synthetic.csv']],
   ['budget_reallocation', ['scripts/validate_budget_reallocation.mjs', 'data/budget_reallocation_synthetic.csv']],
+  ['pricing_simulator', ['scripts/validate_pricing_simulator.mjs', 'data/pricing_simulator_synthetic.csv']],
   ['pbip_manifest', ['scripts/validate_pbip_source_manifest.mjs']],
   ['mna', ['scripts/validate_mna_accretion_dilution.mjs']],
   ['d2c', ['scripts/validate_d2c_unit_economics.mjs', 'data/d2c_unit_economics_synthetic.csv']],

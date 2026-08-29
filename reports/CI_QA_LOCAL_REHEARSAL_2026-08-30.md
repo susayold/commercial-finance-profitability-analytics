@@ -15,7 +15,8 @@ The commands in `.github/workflows/finance-qa.yml` were rehearsed against the cu
 | Role-alignment matrix validator | PASS — 12 hiring-signal rows across three target role families |
 | Promotion ROI validator | PASS — 8 events; four negative-CM stop-loss events; hurdle decisions recalculate |
 | Fixed-budget reallocation validator | PASS — old/new total both VND 4.35bn; capacity and max-increase caps pass |
-| Cross-platform finance QA runner | PASS — 12 repository-local checks; transient reports removed from OS temp directory |
+| Pricing simulator validator | PASS — 6 scenarios; CM delta and break-even formula recalculate |
+| Cross-platform finance QA runner | PASS — 13 repository-local checks; transient reports removed from OS temp directory |
 | Local staging cleanup | PASS — `work/` empty after rehearsal |
 
 This is a reproducibility rehearsal, not evidence of observed forecast performance. The forecast fixture remains synthetic until genuine frozen snapshots are supplied.

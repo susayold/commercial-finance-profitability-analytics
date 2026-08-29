@@ -17,6 +17,27 @@ const money = (ws, range) => ws.getRange(range).setNumberFormat('#,##0;[Red](#,#
 const num = (ws, range) => ws.getRange(range).setNumberFormat('#,##0.0;[Red](#,##0.0);-');
 const hdr = (ws, range) => { ws.getRange(range).format = { fill: navy, font: { bold: true, color: '#FFFFFF' }, horizontalAlignment: 'center', wrapText: true }; };
 
+const pricing = wb.worksheets.add('Pricing_Simulator');
+pricing.showGridLines = false;
+pricing.getRange('A1:O1').values = [['Pricing Simulator — elasticity, contribution and break-even price','','','','','','','','','','','','','','']];
+pricing.getRange('A3:O9').values = [
+  ['Scenario','Channel','Baseline units','Baseline price','Unit cost','Price change %','Elasticity','New price','Volume change %','New units','Baseline CM','Scenario CM','CM delta','Break-even price change %','Evidence class'],
+  ['P01 Core GT price test','CH01',100000,85000,51000,0.05,-1.0,'=D4*(1+F4)','=G4*F4','=C4*(1+I4)','=C4*(D4-E4)','=J4*(H4-E4)','=L4-K4','=-(((D4-E4)*G4)+D4)/(D4*G4)','SIMULATED_DERIVED'],
+  ['P02 Premium D2C price test','CH04',60000,125000,70000,0.08,-1.4,'=D5*(1+F5)','=G5*F5','=C5*(1+I5)','=C5*(D5-E5)','=J5*(H5-E5)','=L5-K5','=-(((D5-E5)*G5)+D5)/(D5*G5)','SIMULATED_DERIVED'],
+  ['P03 Marketplace price test','CH03',120000,72000,63000,0.06,-1.8,'=D6*(1+F6)','=G6*F6','=C6*(1+I6)','=C6*(D6-E6)','=J6*(H6-E6)','=L6-K6','=-(((D6-E6)*G6)+D6)/(D6*G6)','SIMULATED_DERIVED'],
+  ['P04 Wholesale price test','CH05',180000,58000,52000,0.04,-0.7,'=D7*(1+F7)','=G7*F7','=C7*(1+I7)','=C7*(D7-E7)','=J7*(H7-E7)','=L7-K7','=-(((D7-E7)*G7)+D7)/(D7*G7)','SIMULATED_DERIVED'],
+  ['P05 Discount protection test','CH03',90000,76000,58000,-0.05,-1.2,'=D8*(1+F8)','=G8*F8','=C8*(1+I8)','=C8*(D8-E8)','=J8*(H8-E8)','=L8-K8','=-(((D8-E8)*G8)+D8)/(D8*G8)','SIMULATED_DERIVED'],
+  ['P06 Premium launch stress','CH02',60000,125000,80000,0.10,-2.2,'=D9*(1+F9)','=G9*F9','=C9*(1+I9)','=C9*(D9-E9)','=J9*(H9-E9)','=L9-K9','=-(((D9-E9)*G9)+D9)/(D9*G9)','SIMULATED_DERIVED'],
+];
+pricing.mergeCells('A1:O1'); pricing.getRange('A1:O1').format = { fill: navy, font: { bold: true, color: '#FFFFFF', size: 15 }, verticalAlignment: 'center' };
+hdr(pricing, 'A3:O3'); pricing.getRange('A3:O9').format.wrapText = true;
+num(pricing, 'C4:C9'); money(pricing, 'D4:E9'); pct(pricing, 'F4:F9'); num(pricing, 'G4:G9'); money(pricing, 'H4:H9'); pct(pricing, 'I4:I9'); num(pricing, 'J4:J9'); money(pricing, 'K4:M9'); pct(pricing, 'N4:N9'); pricing.getRange('O4:O9').format = { fill: gray };
+for (const [c, w] of [['A',26],['B',12],['C',15],['D',17],['E',15],['F',15],['G',12],['H',17],['I',15],['J',15],['K',18],['L',18],['M',16],['N',22],['O',18]]) pricing.getRange(`${c}:${c}`).format.columnWidth = w;
+
+const readme = wb.worksheets.getItem('ReadMe');
+readme.getRange('A17:F17').values = [['Decision', 'Promotion_Pricing, Pricing_Simulator, Budget_Allocation', 'Commercial decisions and price response', 'Commercial Finance', 'Weekly/monthly', 'Hurdle, break-even and conservation']];
+readme.getRange('A17:F17').format = { fill: '#FFF2CC', wrapText: true };
+
 const promo = wb.worksheets.getItem('Promotion_Pricing');
 promo.getRange('A3:N11').values = [
   ['Event','Channel','Baseline units','Uplift %','Incremental units','Net price','Incremental revenue','Incremental variable cost','Promotion spend','Incremental CM after spend','ROI on spend','Hurdle','Decision','Evidence class'],
@@ -58,6 +79,9 @@ executive.getRange('A9').values = [['Promotion CM after spend']];
 executive.getRange('B9').formulas = [["=SUM('Promotion_Pricing'!J4:J11)"]];
 executive.getRange('B11').formulas = [["='Checks'!F13"]];
 money(executive, 'B9:B10');
+
+const enhancedErrors = await wb.inspect({kind: 'match', searchTerm: '#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A', options: { useRegex: true, maxResults: 100 }, summary: 'enhanced model formula error scan'});
+if (enhancedErrors.ndjson && !enhancedErrors.ndjson.includes('matched 0')) throw new Error(`Enhanced model formula errors: ${enhancedErrors.ndjson}`);
 
 const final = await SpreadsheetFile.exportXlsx(wb);
 await final.save(workbookPath);

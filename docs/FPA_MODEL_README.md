@@ -72,7 +72,7 @@ Version 2 expands the v1 management model to 28 tabs. New modules include:
 - Invoice-line Sales_Fact with 2,160 rows across 36 months, 12 SKUs, 5 channels and 10 customers.
 - Product, channel and customer profitability.
 - Price-volume-mix bridge with a monthly reconciliation check.
-- Promotion and pricing simulator with incremental revenue, variable cost, promotion spend, contribution-after-spend, ROI and approval hurdle; four negative-CM stop-loss events are deliberately visible.
+- Promotion and pricing simulator with incremental revenue, variable cost, promotion spend, contribution-after-spend, ROI and approval hurdle; a dedicated Pricing_Simulator tab adds elasticity, CM delta and break-even price; four negative-CM stop-loss events are deliberately visible.
 - Budget, forecast versions, base/upside/downside scenarios and a seeded 100-iteration Monte Carlo overlay.
 - Working-capital schedule with AR, inventory, AP, DSO, DIO, DPO, CCC, cash-release estimate and escalation flags.
 - Debt/liquidity schedule with minimum cash, revolver draw and interest proxy.

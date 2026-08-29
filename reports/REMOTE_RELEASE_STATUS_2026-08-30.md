@@ -26,7 +26,7 @@ Role-targeted CV variants are also archived for the same three role families: [G
 
 The repository now includes a cross-platform [finance QA runner](../scripts/run_finance_qa.mjs) and [usage guide](../docs/REPRODUCIBLE_QA_RUNNER.md) (Drive copies: [script](https://drive.google.com/file/d/13TxmloAohyUMgor4IJyuJnyxVCt0DJtR/view), [guide](https://drive.google.com/file/d/1A0oiAWHr2E2DpLPapQneAzKTKF6D5w-H/view)). The current rehearsal passes all 12 repository-local checks; it intentionally does not fabricate Gate A or Gate B.
 
-The commercial stretch modules are now hardened: [promotion ROI](../data/promotion_roi_synthetic.csv) subtracts promotion spend and applies a hurdle, while [budget reallocation](../data/budget_reallocation_synthetic.csv) proves fixed-budget conservation. [Methodology](../docs/PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [QA report](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view).
+The commercial stretch modules are now hardened: [promotion ROI](../data/promotion_roi_synthetic.csv) subtracts promotion spend and applies a hurdle, [budget reallocation](../data/budget_reallocation_synthetic.csv) proves fixed-budget conservation, and [pricing simulator](../data/pricing_simulator_synthetic.csv) exposes elasticity, CM delta and break-even price. [Methodology](../docs/PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [QA report](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view).
 
 ## Reviewer path
 

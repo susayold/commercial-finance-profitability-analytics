@@ -19,7 +19,24 @@ The hurdle is 25% in the synthetic case. Events at or above the hurdle are `APPR
 
 ## Pricing simulator
 
-The workbook's pricing rows use net price and modeled uplift as editable decision inputs. A real implementation should add elasticity estimated from a valid experiment or historical counterfactual. Until then, label the volume response as an assumption and show the break-even price/volume combination before recommending a price change.
+The dedicated `Pricing_Simulator` tab and `data/pricing_simulator_synthetic.csv` show the full price-response chain:
+
+```text
+New price = baseline price × (1 + price change)
+Volume response = elasticity × price change
+New units = baseline units × (1 + volume response)
+Scenario CM = new units × (new price − unit cost)
+CM delta = scenario CM − baseline CM
+```
+
+For a constant unit-cost case, the non-zero break-even price change is calculated as:
+
+```text
+break-even ΔP = −(((baseline margin × elasticity) + baseline price)
+                  ÷ (baseline price × elasticity))
+```
+
+The elasticity and unit-cost response are assumptions, not causal estimates. A real implementation should estimate elasticity from a valid experiment or historical counterfactual and add competitor-price, discount and capacity constraints before approval.
 
 ## Fixed-budget reallocation
 
