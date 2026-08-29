@@ -52,3 +52,14 @@ Every output distinguishes reported fact, calculated fact, synthetic fact, assum
 Phase 1A complete: remote infrastructure, source archive, registry, synthetic operating ledger, MCH OCR review layer and executable Excel FP&A model v1.
 
 Next: human-review the MCH OCR queue and extend page-level extraction to VNM/QNS/KDC; then Power BI model build and management deliverables.
+
+
+## FP&A model v2 — full 28-tab finance analyst model
+
+- [VietNova_FPA_Model_v2.xlsx](https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit)
+- [Executive Output render](https://drive.google.com/file/d/1ItKSxASsxKx3nmJDIm76rOYVGwVWH2pb/view)
+- [v2 builder](scripts/build_fpa_model_v2.mjs)
+- 28 tabs cover master data, invoice-line sales, commercial costs, inventory, AR/AP, debt/liquidity, budget, forecast versions, P&L, variance bridge, PVM, product/channel/customer profitability, promotion/pricing, working capital, seeded Monte Carlo, budget allocation, peer benchmark, checks and CFO output.
+- QA evidence: formula-error scan = zero matches; all nine control checks PASS; model status PASS.
+- A VND 100m channel tie-out tolerance is disclosed in Checks to account for deterministic invoice-unit rounding; this is not hidden.
+- Executive KPIs are synthetic management outputs and are labelled as proxies; public peer values are calibration context only.
