@@ -87,3 +87,5 @@ The VNM FY2006–FY2025 panel has an executable [validator](../scripts/validate_
 The repository includes [GitHub Actions finance QA](../.github/workflows/finance-qa.yml) that re-runs the forecast leakage fixture, the VNM long-run panel validator and the Power BI contract JSON checks on every push and pull request. This protects the evidence layer from silent regressions.
 
 - CI rehearsal evidence: [GitHub report](../reports/CI_QA_LOCAL_REHEARSAL_2026-08-30.md) · [Drive report](https://drive.google.com/file/d/1CUWzZ4PClwQPEMXgNvn679uufSnTntmQ/view).
+
+- Peer evidence QA: [validator](../scripts/validate_peer_evidence.mjs) and [21/21 PASS report](../reports/PEER_EVIDENCE_QA.md).
