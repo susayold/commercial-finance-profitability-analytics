@@ -1,0 +1,4 @@
+ticker,company,period_start,period_end,revenue_start_vnd_bn,revenue_end_vnd_bn,revenue_cagr_pct,pbt_2025_vnd_bn,pat_2025_vnd_bn,assets_2025_vnd_bn,pbt_margin_2025_pct,pat_margin_2025_pct,revenue_to_assets_2025,coverage_note,confidence
+VNM,Vinamilk,2021,2025,60919,63646,1.10,11650,9414,53312,18.30,14.79,1.19,"2021-2025 verified summary",high
+QNS,Quang Ngai Sugar,2021,2025,7335,10575,9.58,2212,1916,14350,20.92,18.12,0.74,"2021-2025 verified summary",high
+KDC,KIDO Group,2021,2025,10497,9055,-3.63,727,587,13907,8.03,6.48,0.65,"2021-2025 verified summary; PAT historical review open",medium
