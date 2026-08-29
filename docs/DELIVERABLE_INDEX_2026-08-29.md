@@ -40,3 +40,9 @@
 - [Peer review status](docs/PEER_PANEL_REVIEW_STATUS.md)
 - [Power BI model contract](powerbi/model_contract.json)
 - [Power BI measures](powerbi/measures.dax)
+
+
+## Final QA and handoff
+
+- Final QA and remote handoff record: docs/FINAL_QA_AND_HANDOFF_2026-08-30.md
+- Drive copy: https://drive.google.com/file/d/1xQIm44FZnwH_Xdhv4vp8sAD9OHENY2Zh/view?usp=drivesdk
