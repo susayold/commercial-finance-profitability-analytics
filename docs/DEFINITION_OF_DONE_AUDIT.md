@@ -15,7 +15,7 @@ This audit maps the user-provided master plan to evidence that a recruiter or fi
 | Product, customer, channel and region views reconcile | v2 profitability tabs + QA matrix QA-03 to QA-06 | Complete | Allocation and unattributed-balance treatment documented |
 | PVM and margin bridges reconcile | `PVM_Bridge`, [PVM methodology](PVM_METHODOLOGY.md) | Complete | Residual is controlled and disclosed |
 | Forecast is driver-based and version-controlled | `Forecast_Versions`, [forecast methodology](FORECAST_METHODOLOGY.md) | Complete | Freeze protocol is now documented in the close calendar |
-| Forecast accuracy avoids future leakage | [Bias/WAPE script](../scripts/compute_forecast_accuracy.mjs), unit test, demo fixture | Complete for methodology; observed data pending | Unit test excludes leakage correctly; live snapshots must replace fixtures |
+| Forecast accuracy avoids future leakage | [Bias/WAPE script](../scripts/compute_forecast_accuracy.mjs), unit test, frozen demo fixture | Complete for synthetic fixture; live data pending | Native Sheet now has 27 FROZEN demo rows plus explicit leakage/not-eligible rows; live company snapshots must replace fixtures |
 | Scenarios have explicit assumptions and sensitivities | `Scenario_Analysis`, [assumptions and limitations](ASSUMPTIONS_AND_LIMITATIONS.md) | Complete | Base, growth, margin-pressure and downside cases are labelled |
 | Recommendations have quantified simulated impact | `Recommendations`, CFO memo, management deck | Complete | Impact is labelled simulated and tied to assumptions |
 | Excel contains visible QA controls | v2 `Checks`, [QA matrix](../powerbi/QA_TEST_MATRIX.md) | Complete | Controls cover tie-outs, mappings, inventory and signs |
@@ -51,7 +51,7 @@ This audit maps the user-provided master plan to evidence that a recruiter or fi
 
 ### Gate A — genuine frozen forecast snapshots
 
-Replace the synthetic sample rows in `Forecast_Snapshot_Input` with at least one approved forecast version created before actual close. Each row needs a cutoff timestamp, source-model version, approver and actual-availability date. Run the script, review exclusion counts and archive the resulting observed output. Until then, do not publish Bias/WAPE as company performance.
+The native Sheet now demonstrates the mechanics with 27 FROZEN `DEMO_FIXTURE_v1` rows, one FUTURE_LEAKAGE exception and one NOT_ELIGIBLE draft row. The remaining external step is to add at least one approved real forecast version created before actual close, with cutoff timestamp, source-model version, approver and actual-availability date. Run the script, review exclusion counts and archive the resulting observed output. Until then, do not publish Bias/WAPE as company performance.
 
 ### Gate B — native Power BI Desktop release
 
@@ -63,13 +63,13 @@ Open the v2 workbook in Power BI Desktop, follow `powerbi/POWER_BI_DESKTOP_RUNBO
 - [ ] Inspect the Excel `Checks` and `CFO_Output` tabs.
 - [ ] Trace one recommendation to its assumption, formula and KPI.
 - [ ] Confirm synthetic labels and public-source citations.
-- [ ] Inspect one frozen forecast snapshot and its cutoff evidence.
+- [ ] Inspect one frozen forecast snapshot and its cutoff evidence (demo fixture now available; replace with real snapshot for production claim).
 - [ ] Re-run the Bias/WAPE script and inspect exclusion reasons.
 - [ ] Open Power BI and confirm totals tie to Excel after the native PBIX gate is completed.
 
 ## 5. Audit conclusion
 
-The finance model, evidence governance, public peer layer, forecast-control template and recruiter packaging are complete and remotely archived. The project is **release-ready for review**, but not yet a fully closed production-style case until Gate A and Gate B are evidenced with real snapshot records and a native PBIX file.
+The finance model, evidence governance, public peer layer, forecast-control template, frozen synthetic backtest demonstration and recruiter packaging are complete and remotely archived. The project is **release-ready for review**, but not yet a fully closed production-style case until Gate A is evidenced with a real snapshot record and Gate B with a native PBIX file.
 
 
 ## 6. Historical peer-depth extension
