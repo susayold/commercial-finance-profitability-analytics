@@ -1,0 +1,4 @@
+forecast_version,company,brand,channel,eligible_rows,forecast_vnd,actual_vnd,bias,wape,as_of_date,excluded_rows
+FE-2025-01,VietNova Consumer JSC,NovaDaily,Modern Trade,12,16065,15300,0.05,0.05,2025-12-31,2
+FE-2025-04,VietNova Consumer JSC,NovaDaily,Modern Trade,9,11907,12150,-0.02,0.02,2025-12-31,2
+FE-2025-07,VietNova Consumer JSC,NovaDaily,Modern Trade,6,9405,8550,0.1,0.1,2025-12-31,2
