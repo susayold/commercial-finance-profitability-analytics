@@ -116,5 +116,5 @@ The D2C branch is now implemented as a reviewable native Sheet with editable Bas
 
 A separate VNM FY2018–FY2025 public-guidance proxy is now archived. It contains 16 AGM/IR guidance-versus-actual observations, an explicit total-consolidated-revenue basis, row-level source URLs/pages and an executable validator. Aggregate proxy Bias is -2.63% and WAPE is 3.14%. This evidence improves forecast-versus-actual communication but does not close Gate A: every row is marked PUBLIC_GUIDANCE_PROXY and gate_a_eligible=NO because public AGM guidance has no internal model version, immutable cutoff timestamp or internal approver.
 
-- [Methodology](VNM_PUBLIC_GUIDANCE_PROXY.md) · [Dataset](../data/vnm_public_guidance_proxy_2018_2025.csv) · [Validator](../scripts/validate_public_guidance_proxy.mjs)
+- [Methodology](VNM_PUBLIC_GUIDANCE_PROXY.md) · [Dataset](../data/vnm_public_guidance_proxy_2018_2025.csv) · [Validator](../scripts/validate_public_guidance_proxy.mjs) · [QA](../reports/VNM_PUBLIC_GUIDANCE_PROXY_QA.md) · [Drive QA](https://drive.google.com/file/d/17QXfKkUS127vGkdfn1Jx0zpIrPrmld7I/view)
 - Drive archive: [CSV](https://drive.google.com/file/d/1BW6zGnxS-m67lLPLKfZuJn-5M-d4elw-/view) · [Methodology](https://drive.google.com/file/d/1LOmPrCcFGBFUXsdw3hi7WXziebKxHRJL/view) · [Validator](https://drive.google.com/file/d/1Y1nBInfRASnSankqfgmvjzcx7KP7EFq_/view)
