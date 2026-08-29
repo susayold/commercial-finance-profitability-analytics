@@ -1,0 +1,52 @@
+{
+  "artifact_type": "PBIP_SOURCE_SCAFFOLD_NOT_NATIVE_PBIX",
+  "project_name": "VNFinance_Commercial_Finance_v2",
+  "version": "1.0.0",
+  "evidence_policy": {
+    "synthetic_operating_data": true,
+    "reported_peer_data": true,
+    "review_required_peer_rows_excluded": true,
+    "native_pbix_claimed": false
+  },
+  "authoritative_sources": [
+    {"name":"VietNova_FPA_Model_v2","type":"google_sheet","url":"https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit"},
+    {"name":"peer_benchmark_approved_2016_2025","type":"github_csv","path":"data/peer_benchmark_approved_2016_2025.csv"},
+    {"name":"vnm_public_guidance_proxy_2018_2025","type":"github_csv","path":"data/vnm_public_guidance_proxy_2018_2025.csv","role":"separate_public_guidance_demo_not_gate_a_snapshot"}
+  ],
+  "dimensions": [
+    {"name":"Calendar","key":"DateKey","columns":["DateKey","Month","FiscalYear","FiscalQuarter","MonthNumber","YearMonth"]},
+    {"name":"Product_Master","key":"ProductID","columns":["ProductID","Category","Brand","PackSize","StandardCost"]},
+    {"name":"Customer_Master","key":"CustomerID","columns":["CustomerID","CustomerName","ChannelID","Region","PaymentTermsDays"]},
+    {"name":"Channel_Master","key":"ChannelID","columns":["ChannelID","ChannelName","FeeRate","CMHurdle"]},
+    {"name":"Scenario Selector","key":"Scenario","columns":["Scenario"],"disconnected":true}
+  ],
+  "facts": [
+    {"name":"Sales_Fact","grain":"invoice line","keys":["DateKey","ProductID","CustomerID","ChannelID"]},
+    {"name":"Commercial_Costs","grain":"cost event x month x channel","keys":["DateKey","ChannelID"]},
+    {"name":"Inventory","grain":"SKU x month","keys":["DateKey","ProductID"]},
+    {"name":"AR","grain":"customer x month","keys":["DateKey","CustomerID"]},
+    {"name":"AP","grain":"supplier x month","keys":["DateKey"]},
+    {"name":"Budget","grain":"month x channel x scenario","keys":["DateKey","ChannelID","Scenario"]},
+    {"name":"Forecast_Versions","grain":"month x channel x scenario","keys":["DateKey","ChannelID","Scenario"]},
+    {"name":"Peer_Benchmark","grain":"company x fiscal_year","keys":["Ticker","FiscalYear"],"approved_filter":"Source_Status IN {reported_summary_verified, reported_statement_verified}"},
+    {"name":"Peer_Review_Queue","grain":"candidate row x fiscal_year","keys":["Ticker","FiscalYear"],"role":"controls_only"}
+  ],
+  "relationships": [
+    ["Calendar[DateKey]","Sales_Fact[DateKey]"],["Calendar[DateKey]","Commercial_Costs[DateKey]"],["Calendar[DateKey]","Inventory[DateKey]"],["Calendar[DateKey]","AR[DateKey]"],["Calendar[DateKey]","AP[DateKey]"],["Calendar[DateKey]","Budget[DateKey]"],["Calendar[DateKey]","Forecast_Versions[DateKey]"],["Product_Master[ProductID]","Sales_Fact[ProductID]"],["Product_Master[ProductID]","Inventory[ProductID]"],["Customer_Master[CustomerID]","Sales_Fact[CustomerID]"],["Customer_Master[CustomerID]","AR[CustomerID]"],["Channel_Master[ChannelID]","Sales_Fact[ChannelID]"],["Channel_Master[ChannelID]","Commercial_Costs[ChannelID]"],["Channel_Master[ChannelID]","Budget[ChannelID]"],["Channel_Master[ChannelID]","Forecast_Versions[ChannelID]"]
+  ],
+  "pages": [
+    {"name":"Executive Output","question":"What decision should the CFO make this month?"},
+    {"name":"P&L and Variance","question":"Why did actuals miss or beat plan?"},
+    {"name":"PVM Bridge","question":"Was growth price, volume, mix or spend?"},
+    {"name":"Channel and Customer Profitability","question":"Which growth pays back after cost-to-serve?"},
+    {"name":"Working Capital and Liquidity","question":"Where is cash trapped and what releases it?"},
+    {"name":"Controls and Evidence","question":"Can a reviewer trust the number?"}
+  ],
+  "qa_contract": {
+    "required_tests":["QA-01","QA-02","QA-03","QA-04","QA-05","QA-06","QA-07","QA-08","QA-09","QA-10","QA-11","QA-12","QA-13","QA-14","QA-15","QA-16","QA-17","QA-18"],
+    "tolerance_vnd":100000000,
+    "peer_approved_statuses":["reported_summary_verified","reported_statement_verified"],
+    "native_desktop_required":true
+  },
+  "external_steps_remaining":["Open Power BI Desktop and create a PBIP/PBIR project from this manifest.","Load remote workbook and approved peer CSV; paste measures.dax.","Execute QA-01 through QA-18 and record results in PBIX_RELEASE_EVIDENCE_TEMPLATE.md.","Upload native PBIX and optional PBIP folder to Drive; do not claim this manifest is a PBIX."]
+}
