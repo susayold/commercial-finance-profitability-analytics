@@ -45,3 +45,8 @@ The production recruiter site now has a Forecast Performance section with the pu
 - VNM public-guidance analysis report, deterministic JSON output, generator, validator and QA report are now committed and mirrored to Drive: [report](https://drive.google.com/file/d/1G7XgCuQ3MLza4NjetaCwRajPKdLsZQWN/view), [JSON](https://drive.google.com/file/d/1xF72I7FYa7T68e-NfC1aIeAnEXXRByht/view), [generator](https://drive.google.com/file/d/1bvA-P3ihQbf10BZxc1C_IBOwZYgZyjng/view), [validator](https://drive.google.com/file/d/1UU6Ln2p2lnOb_oZ-pre5v_u5TMuv4O-5/view), [QA](https://drive.google.com/file/d/1aFj7k9rL8ERfcNzEbOq5D_9g5y5P0Kck/view).
 - The extension reports metric/regime splits, Bias, WAPE, MAPE, within-2% rate, descriptive error bands and ranked misses; it remains public-guidance evidence and does not close Gate A.
 - CI now regenerates and validates the analysis output from the source CSV on every push and pull request.
+
+
+## M&A / strategic-stretch extension
+
+The repository now includes a fully documented synthetic acquisition screen: [methodology memo](../docs/MNA_ACCRETION_DILUTION.md), [forecast data](../data/mna_accretion_dilution_synthetic.csv), [sensitivity grid](../data/mna_accretion_dilution_sensitivity.csv), [validator](../scripts/validate_mna_accretion_dilution.mjs) and [QA report](MNA_ACCRETION_DILUTION_QA.md). The base case is Year-2 EPS accretive by 17.16% and produces deal NPV of VND 28.39bn, while Year 1 is dilutive by -0.46% after integration costs. This is SYNTHETIC / REHEARSAL evidence and is not a substitute for live internal snapshots or a native PBIX.
