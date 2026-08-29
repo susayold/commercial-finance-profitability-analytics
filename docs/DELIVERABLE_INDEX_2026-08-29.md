@@ -132,3 +132,9 @@
 - FY2006 promotion addendum: [Drive](https://drive.google.com/file/d/1sLpSxaDU-m_ZRyYWU9kktuU8eEZ7eUme/view)
 
 - [Merged VNM FY2006–FY2020 statement layer](../data/vnm_statement_metrics_2006_2020.csv) · Native Sheet tab: `VNM_Statement_Metrics_2006_2020` · [FY2006 Drive CSV](https://drive.google.com/file/d/1hwWLegn75wdISM2y3FvpLJfz2drloKNe/view)
+
+## Power BI build guide
+
+- [Detailed reproducible build guide](../powerbi/POWER_BI_BUILD_GUIDE_V2.md)
+- Drive copy: https://drive.google.com/file/d/13BM9_oOwLxyMnO9IPGkaPWcyVB991q_Y/view
+- Native PBIX remains the final Desktop-only handoff artifact; the guide specifies import, relationships, DAX, six pages, QA and recruiter walkthrough.
