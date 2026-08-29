@@ -9,10 +9,14 @@
     "start": "wrangler dev --config dist/server/wrangler.json"
   },
   "dependencies": {
+    "lucide-react": "1.31.0",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "react-server-dom-webpack": "19.2.6",
-    "vinext": "1.0.0-beta.5",
-    "lucide-react": "1.31.0"
+    "vinext": "1.0.0-beta.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-rsc": "^0.5.34",
+    "tailwindcss": "^4.3.3"
   }
 }
