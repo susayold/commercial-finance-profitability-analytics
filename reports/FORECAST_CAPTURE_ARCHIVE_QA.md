@@ -26,3 +26,7 @@ Evidence class: DEMO_FIXTURE_v1 (synthetic control evidence; not live company pe
 
 Only rows with snapshot_status=FROZEN and eligibility_status=ELIGIBLE feed the grouped Bias/WAPE metrics. The archive intentionally retains one future-leakage exception and one late-actual draft so exclusion behavior is visible and testable.
 
+
+## Reproduction check
+
+The committed `build_forecast_capture_demo_archive.mjs` regenerated the archive from `data/forecast_accuracy_demo_input.csv` with the same 2025-12-31 as-of date. Normalized content comparison against the archived CSV passed; the only raw difference in local rehearsal was an extra trailing newline introduced by staging.
