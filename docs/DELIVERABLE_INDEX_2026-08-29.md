@@ -153,3 +153,10 @@
 - [Fixed-budget allocation synthetic data](../data/budget_reallocation_synthetic.csv) · [validator](../scripts/validate_budget_reallocation.mjs)
 - [Methodology](PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [QA report](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view)
 - The v2 workbook now subtracts promotion spend before ROI, exposes a 25% hurdle and stop-loss decisions, and enforces fixed-budget conservation across channels. Both validators PASS.
+
+### Pricing simulator closure — 2026-08-30
+
+- [Pricing simulator data](../data/pricing_simulator_synthetic.csv) · [validator](../scripts/validate_pricing_simulator.mjs) · workbook tab `Pricing_Simulator`
+- Formula chain: price change → elasticity volume response → new units → scenario contribution → contribution delta → break-even price change.
+- Six synthetic scenarios and seven validator checks PASS; two scenarios have negative CM delta and remain visible as decision warnings.
+- [Drive CSV](https://drive.google.com/file/d/1ztUZZTUNMoKIDiPsHheeVtPj0t7GPn5T/view) · [Drive validator](https://drive.google.com/file/d/1_WJXVSBdPOM4QCavzqFq5y9TF-3xuNWy/view) · [Drive workbook](https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit?usp=drivesdk)
