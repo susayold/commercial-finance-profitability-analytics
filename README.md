@@ -71,3 +71,10 @@ Next: human-review the MCH OCR queue and extend page-level extraction to VNM/QNS
 - [Site source snapshot on Drive](https://drive.google.com/file/d/1PGOVMQ-POmEey9qUQDsw1B5F9F5oKl0j/view?usp=drivesdk)
 - [Site source folder](site/)
 - Sites project: `appgprj_6a930a2f81f48191b1e015f1fa938c69`; production deployment is version 1.
+
+
+## Peer panel review layer
+
+- [Peer panel review status](docs/PEER_PANEL_REVIEW_STATUS.md)
+- [Remote peer panel sheet](https://docs.google.com/spreadsheets/d/1HNViR2NV1KPu1H-ZYRADv8amwP1-kzY8QzvmcwT3csE/edit)
+- FY2021-FY2025 summary values are source-linked; blank cells remain review flags where statement-level validation is not complete.
