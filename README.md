@@ -216,6 +216,8 @@ Drive mirror for M&A extension:
 - Drive mirrors: [latest source ZIP (site-gate release)](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view), [prior source ZIP at commit 0fce808](https://drive.google.com/file/d/1K_6ARYeSIIgzU1oiCJo3eJj_AM_iaI2S/view), [forecast fixture](https://drive.google.com/file/d/1GoatFUjdypKBn_579sttiBRFEv2ps22i/view), [forecast schema](https://drive.google.com/file/d/12Z7gGOiGTlfEDiv_0dpHCq9Ktf2xIWhw/view), [forecast validator](https://drive.google.com/file/d/1z26_vOP_wKsPpEpFhy4XYIoUIQolePuw/view), [Power BI QA log](https://drive.google.com/file/d/1bUIDkqafEQEMfiPhFfd1eg6lrTrKxAa6/view), [Power BI QA validator](https://drive.google.com/file/d/1kL0ulqiiFsf_ogrRPqz10WQ7B8y4CxSs/view).
 
 
+- [Candidate application + CV build pack](docs/CANDIDATE_APPLICATION_INTAKE_AND_CV_BUILD_PACK.md) · [Drive copy](https://drive.google.com/file/d/1vZmLitH1CI-uVAoJmLil1P_tVHZ0MvwT/view) — candidate intake, role variants, ATS matrix and interview conversion.
+
 ## One-page CV draft
 
 - [Finance Analyst / Junior FP&A CV draft](docs/FINANCE_ANALYST_CV_ONE_PAGE.md) · [Drive copy](https://drive.google.com/file/d/1rRpc9qNKcia0MeckGhqzrVnJ_iyed7RB/view)
