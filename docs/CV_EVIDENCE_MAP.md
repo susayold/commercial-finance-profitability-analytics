@@ -35,7 +35,7 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 | Commercial finance | Promotion_Pricing, Budget_Allocation | Hurdle and marginal ROI |
 | D2C unit economics | D2C Unit Economics Sheet, d2c_unit_economics_synthetic.csv | CAC/LTV/payback; six native checks PASS; CI validator |
 | Public guidance / forecast-vs-actual | VNM public guidance proxy FY2018–FY2025 | 16 rows; Bias -2.63%; WAPE 3.14%; Gate A excluded |
-| Power BI source handoff | powerbi/PBIP_SOURCE_MANIFEST.json, PBIP_SOURCE_HANDOFF.md | 5 dimensions; 9 facts; 15 relationships; 18 QA definitions; CI validator PASS |
+| Power BI source handoff | powerbi/PBIP_SOURCE_MANIFEST.json, PBIP_SOURCE_HANDOFF.md, PBIP_DESKTOP_EXECUTION_CHECKLIST.md | 5 dimensions; 9 facts; 15 relationships; 18 QA definitions; Desktop runbook and CI validator PASS |
 | Public guidance performance analysis | data/vnm_public_guidance_proxy_analysis.json, VNM_PUBLIC_GUIDANCE_ANALYSIS.md | Metric/regime Bias-WAPE-MAPE splits, descriptive bands, ranked misses; CI validator |
 | Data governance | Source_Register, peer review queue | OCR not auto-approved |
 | Communication | CFO memo, battle cards, website spec | Decision/action structure |
