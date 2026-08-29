@@ -103,3 +103,17 @@ QNS FY2020 has now been promoted from a summary candidate to a statement-verifie
 - Native Sheet tab: `QNS_Statement_Metrics_2020`
 
 Queue status is now 11 `reported_statement_verified`, 13 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006).
+
+## QNS FY2016–FY2019 audited statement promotion (2026-08-30)
+
+QNS FY2016–FY2019 are now promoted to the approved consolidated statement layer. FY2016–FY2017 use the audited FY2017 filing (FY2016 comparative column); FY2018 uses the archived audited consolidated FY2018 PDF; FY2019 uses the audited FY2020 consolidated filing's FY2019 comparative column. This prevents the FY2019 standalone filing from being mixed into the consolidated peer panel.
+
+- [QNS FY2016–FY2019 statement metrics](../data/qns_statement_metrics_2016_2019.csv)
+- Drive CSV: https://drive.google.com/file/d/1WrGQZgBPy-B77_Fahfbcoukraknu7lFN/view
+- QNS FY2018 audited PDF: https://drive.google.com/file/d/1AohYk_IrJGml5C95EC4g2xDxWTAVnp3E/view
+- QNS FY2017 source (FY2016 comparative): https://drive.google.com/file/d/1hK0YwMWkyofUJpzcXteht_gzXC2n-IWh/view
+- QNS FY2019 comparative source (audited FY2020 consolidated): https://drive.google.com/file/d/1KqGqXOUl67oLp4MHnpwL-VCpHX0narW0/view
+- Native Sheet tab: `QNS_Statement_Metrics_2016_2019`
+
+The QNS operating-candidate file remains as a historical audit trail; the approved benchmark now uses the statement layer for FY2016–FY2020. Queue status is now 15 `reported_statement_verified`, 9 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006).
+
