@@ -29,6 +29,18 @@ jobs:
             2025-03-31
           diff -u data/forecast_accuracy_unit_test_expected.csv "$RUNNER_TEMP/forecast_accuracy_unit_test_output.csv"
 
+      - name: Frozen forecast capture archive QA
+        shell: bash
+        run: |
+          node scripts/build_forecast_capture_demo_archive.mjs \
+            data/forecast_accuracy_demo_input.csv \
+            "$RUNNER_TEMP/forecast_snapshot_capture_demo_frozen.csv" \
+            2025-12-31
+          node scripts/validate_forecast_capture_archive.mjs \
+            "$RUNNER_TEMP/forecast_snapshot_capture_demo_frozen.csv" \
+            "$RUNNER_TEMP/forecast_capture_archive_QA.md"
+          grep -F "**Overall status: PASS** (14/14 checks passed)" "$RUNNER_TEMP/forecast_capture_archive_QA.md"
+
       - name: VNM long-run panel QA
         shell: bash
         run: |
