@@ -98,6 +98,11 @@ jobs:
         run: |
           node scripts/validate_role_alignment_matrix.mjs
 
+      - name: Run cross-platform finance QA runner
+        shell: bash
+        run: |
+          node scripts/run_finance_qa.mjs
+
       - name: Validate Power BI model contract JSON
         shell: bash
         run: |

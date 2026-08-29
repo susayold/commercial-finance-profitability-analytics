@@ -1,0 +1,36 @@
+# Reproducible finance QA runner
+
+## Purpose
+
+`node scripts/run_finance_qa.mjs` is a cross-platform smoke/regression runner for the repository's deterministic finance validators. It is designed for a reviewer to run after cloning the GitHub repository, without Excel, Google Drive or Power BI Desktop.
+
+The runner executes the evidence matrix, role-alignment matrix, PBIP manifest, M&A, D2C, public-guidance, VNM long-run and peer-evidence validators, then checks the Power BI contract shape. It prints one JSON summary and exits non-zero on any failure.
+
+## Usage
+
+```bash
+git clone https://github.com/susayold/commercial-finance-profitability-analytics.git
+cd commercial-finance-profitability-analytics
+node scripts/run_finance_qa.mjs
+```
+
+PowerShell:
+
+```powershell
+node scripts/run_finance_qa.mjs | Tee-Object qa-run.json
+```
+
+The runner writes VNM and peer markdown reports to an operating-system temp directory and removes that directory in a `finally` block. Generated reports are not left in the repository.
+
+## Interpretation
+
+- `PASS` means repository-local deterministic controls passed.
+- It does not mean the project contains genuine internal company data.
+- It does not close Gate A (real pre-close forecast snapshots and observed Bias/WAPE).
+- It does not close Gate B (native `.pbix` and Power BI Desktop QA-01–QA-18).
+- Synthetic, public-guidance and statement-verified public-peer evidence retain their labels and comparability caveats.
+
+## Expected current result
+
+The current remote main branch should report PASS for all runner checks. If the result changes, inspect the named validator directly; do not suppress the failure or replace missing values with zeros.
+

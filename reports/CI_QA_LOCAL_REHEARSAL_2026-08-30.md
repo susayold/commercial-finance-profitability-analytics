@@ -13,6 +13,7 @@ The commands in `.github/workflows/finance-qa.yml` were rehearsed against the cu
 | D2C unit economics validator | PASS — 35 rows, 3 scenarios, 10 checks |
 | VNM public-guidance proxy + analysis | PASS — 16 observations; Bias -2.63%, WAPE 3.14%; not Gate-A eligible |
 | Role-alignment matrix validator | PASS — 12 hiring-signal rows across three target role families |
+| Cross-platform finance QA runner | PASS — 10 repository-local checks; transient reports removed from OS temp directory |
 | Local staging cleanup | PASS — `work/` empty after rehearsal |
 
 This is a reproducibility rehearsal, not evidence of observed forecast performance. The forecast fixture remains synthetic until genuine frozen snapshots are supplied.

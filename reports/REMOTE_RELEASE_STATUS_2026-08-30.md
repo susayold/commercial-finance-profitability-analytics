@@ -24,6 +24,8 @@ The 30 Aug release adds a source-backed Vietnam hiring matrix for Junior FP&A/Fi
 
 Role-targeted CV variants are also archived for the same three role families: [GitHub](../docs/CV_ROLE_VARIANTS.md) · [Drive](https://drive.google.com/file/d/1nfaqwK6J8_1A0O5wpLZhmakhXLrWgObh/view).
 
+The repository now includes a cross-platform [finance QA runner](../scripts/run_finance_qa.mjs) and [usage guide](../docs/REPRODUCIBLE_QA_RUNNER.md) (Drive copies: [script](https://drive.google.com/file/d/13TxmloAohyUMgor4IJyuJnyxVCt0DJtR/view), [guide](https://drive.google.com/file/d/1A0oiAWHr2E2DpLPapQneAzKTKF6D5w-H/view)). The current rehearsal passes all 10 repository-local checks; it intentionally does not fabricate Gate A or Gate B.
+
 ## Reviewer path
 
 1. Start with README.md and the production website.
