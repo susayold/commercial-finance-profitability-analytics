@@ -89,3 +89,8 @@ The repository includes [GitHub Actions finance QA](../.github/workflows/finance
 - CI rehearsal evidence: [GitHub report](../reports/CI_QA_LOCAL_REHEARSAL_2026-08-30.md) · [Drive report](https://drive.google.com/file/d/1CUWzZ4PClwQPEMXgNvn679uufSnTntmQ/view).
 
 - Peer evidence QA: [validator](../scripts/validate_peer_evidence.mjs) and [21/21 PASS report](../reports/PEER_EVIDENCE_QA.md).
+
+
+## 8. Forecast capture control extension
+
+The native forecast Sheet now includes governance columns (`Snapshot_Status`, `Source_Model_Version`, `Approver`, `Actual_Period_Close_Date`, `Exception_Note`), strict status validation, frozen headers and conditional leakage highlights. This closes the operational-design portion of Gate A; only genuine approved snapshots remain outstanding.
