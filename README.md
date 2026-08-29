@@ -51,7 +51,7 @@ Every output distinguishes reported fact, calculated fact, synthetic fact, assum
 
 Phase 1A complete: remote infrastructure, source archive, registry, synthetic operating ledger, MCH OCR review layer and executable Excel FP&A model v1.
 
-Next: human-review the MCH OCR queue and extend page-level extraction to VNM/QNS/KDC; then Power BI model build and management deliverables.
+Current state: Excel v2, management memo/deck, recruiter site, peer-panel review layer and Power BI semantic contract are delivered; native PBIX creation and older-year page-level peer review remain explicit next actions.
 
 
 ## FP&A model v2 — full 28-tab finance analyst model
