@@ -110,3 +110,11 @@
 - Source report: https://drive.google.com/file/d/1F2fn3TYgQMkl_C7xoasOAGPOzbCXY8R8/view
 - Native Sheet queue rows: `Peer_Extraction_Queue` FY2014–FY2015
 
+## VNM FY2009–FY2013 audited statement layers
+
+- [VNM FY2009 statement metrics](../data/vnm_statement_metrics_2009.csv) · [Drive](https://drive.google.com/file/d/1MOw5Sd553SYcOtR0k6zEpC4ZjGs4znLi/view)
+- [VNM FY2010–FY2011 statement metrics](../data/vnm_statement_metrics_2010_2011.csv) · [Drive](https://drive.google.com/file/d/1RuwQRtuuN31rEl2UXhWMKf4FY_Yai5w4/view)
+- [VNM FY2012–FY2013 statement metrics](../data/vnm_statement_metrics_2012_2013.csv) · [Drive](https://drive.google.com/file/d/18dc8GKyLAyMwvQWdIb_vmT-et-mb-H7G/view)
+- Source reports: [FY2010](https://drive.google.com/file/d/1odK3EfOC89Zj0DagGdhuTaO_JtGWLMZD/view) · [FY2011](https://drive.google.com/file/d/11ZPUwIM_Sl_i8FUWUATCPoetHoVlnvDs/view) · [FY2013](https://drive.google.com/file/d/1Mnh5QV6ZRPSCQoBDCClR4Pd3CjIZDt1D/view)
+- Queue status: 22 statement-verified, 2 summary candidates (FY2007–FY2008), 1 statement-review-required (FY2006).
+- Promotion addenda: [FY2009 Drive](https://drive.google.com/file/d/1pItO1frxjOPhou-UEuzesp2SatmT2gb-/view) · [FY2010–FY2011 Drive](https://drive.google.com/file/d/1-lo4f8g2R5NXgGOX4JS8BbuEjdEJyV62/view)
