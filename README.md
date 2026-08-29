@@ -137,3 +137,5 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Automated regression checks: [`.github/workflows/finance-qa.yml`](.github/workflows/finance-qa.yml) runs forecast leakage unit test, VNM panel 17-check validator and Power BI contract JSON validation on push/PR.
 
 - [CI QA rehearsal report](reports/CI_QA_LOCAL_REHEARSAL_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1CUWzZ4PClwQPEMXgNvn679uufSnTntmQ/view)
+
+- Peer evidence gate: [validator](scripts/validate_peer_evidence.mjs) · [21/21 QA report](reports/PEER_EVIDENCE_QA.md) · [Drive validator](https://drive.google.com/file/d/1DyD5uJc1q-tgjh4S-1QSeKynYbizukAH/view) · [Drive report](https://drive.google.com/file/d/1P8V6vm77MoKrSxfinijZKJMp4LZ5cc6y/view)
