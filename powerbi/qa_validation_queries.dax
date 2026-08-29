@@ -1,0 +1,75 @@
+// QA validation queries for VNFinance_Commercial_Finance_v2
+// Run as DAX queries in Power BI Desktop or translate into calculated tables.
+// These are release controls, not presentation measures.
+
+DEFINE
+    MEASURE Sales_Fact[QA Negative Sales Rows] =
+        COUNTROWS (
+            FILTER (
+                Sales_Fact,
+                Sales_Fact[Net_Revenue_VND] < 0
+                    || Sales_Fact[Units] < 0
+                    || Sales_Fact[COGS_VND] < 0
+            )
+        )
+
+    MEASURE Sales_Fact[QA Discount Return Violations] =
+        COUNTROWS (
+            FILTER (
+                Sales_Fact,
+                Sales_Fact[Discount_VND] + Sales_Fact[Returns_VND]
+                    > Sales_Fact[Gross_Sales_VND] + 0.01
+            )
+        )
+
+    MEASURE Sales_Fact[QA Channel CM Residual VND] =
+        [Contribution Margin]
+            - SUMX ( VALUES ( Channel_Master[ChannelID] ), [Contribution Margin] )
+
+    MEASURE Peer_Benchmark[QA Approved Rows] =
+        CALCULATE (
+            COUNTROWS ( Peer_Benchmark ),
+            Peer_Benchmark[Source_Status]
+                IN { "reported_summary_verified", "reported_statement_verified" }
+        )
+
+    MEASURE Peer_Benchmark[QA Unapproved Rows] =
+        CALCULATE (
+            COUNTROWS ( Peer_Benchmark ),
+            NOT (
+                Peer_Benchmark[Source_Status]
+                    IN { "reported_summary_verified", "reported_statement_verified" }
+            )
+        )
+
+    MEASURE Peer_Benchmark[QA Margin Residual] =
+        SUMX (
+            FILTER (
+                Peer_Benchmark,
+                Peer_Benchmark[Source_Status]
+                    IN { "reported_summary_verified", "reported_statement_verified" }
+            ),
+            Peer_Benchmark[PAT_Margin]
+                - DIVIDE (
+                    Peer_Benchmark[Profit_After_Tax_VND_bn],
+                    Peer_Benchmark[Net_Revenue_VND_bn]
+                )
+        )
+
+EVALUATE
+ROW (
+    "model_status", IF (
+        [QA Negative Sales Rows] = 0
+            && [QA Discount Return Violations] = 0
+            && ABS ( [QA Channel CM Residual VND] ) <= 100000000
+            && ABS ( [QA Margin Residual] ) < 0.000001,
+        "PASS",
+        "FAIL"
+    ),
+    "negative_sales_rows", [QA Negative Sales Rows],
+    "discount_return_violations", [QA Discount Return Violations],
+    "channel_cm_residual_vnd", [QA Channel CM Residual VND],
+    "approved_peer_rows", [QA Approved Rows],
+    "unapproved_peer_rows", [QA Unapproved Rows],
+    "peer_pat_margin_residual", [QA Margin Residual]
+)
