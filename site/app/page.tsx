@@ -1,0 +1,77 @@
+'use client';
+
+import { useState } from 'react';
+import { ArrowUpRight, BarChart3, BookOpen, CheckCircle2, ChevronDown, CircleDollarSign, Database, Download, ExternalLink, Gauge, GitBranch, Layers3, ShieldCheck, Sparkles, WalletCards } from 'lucide-react';
+
+const driveModel = 'https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit';
+const driveDashboard = 'https://drive.google.com/file/d/1ItKSxASsxKx3nmJDIm76rOYVGwVWH2pb/view';
+const githubRepo = 'https://github.com/susayold/commercial-finance-profitability-analytics';
+const cfoMemo = 'https://drive.google.com/file/d/1_n7SF2fNpWlAi2EZJLJ_pwdoc-mqsXzI/view';
+
+const scenarios = {
+  Base: { revenue: '80.1', ebitda: '58.5', ccc: '54.8', margin: '29.7', note: 'Planning case: balanced growth and cash discipline.' },
+  Upside: { revenue: '83.3', ebitda: '63.0', ccc: '48.8', margin: '31.2', note: 'Stretch case: stronger growth, lower COGS and faster cash conversion.' },
+  Downside: { revenue: '76.9', ebitda: '53.1', ccc: '68.8', margin: '27.9', note: 'Risk case: demand pressure, cost inflation and slower collections.' },
+} as const;
+
+const bars = [
+  { label: 'General Trade', value: 82, color: 'bg-[#2dd4bf]' },
+  { label: 'Modern Trade', value: 68, color: 'bg-[#60a5fa]' },
+  { label: 'Marketplace', value: 48, color: 'bg-[#fbbf24]' },
+  { label: 'D2C', value: 37, color: 'bg-[#fb7185]' },
+  { label: 'Wholesale', value: 29, color: 'bg-[#a78bfa]' },
+];
+
+function Metric({ label, value, suffix, detail }: { label: string; value: string; suffix?: string; detail: string }) {
+  return <div className="metric-card"><div className="metric-label">{label}</div><div className="metric-value">{value}<span>{suffix}</span></div><div className="metric-detail">{detail}</div></div>;
+}
+
+export default function Home() {
+  const [scenario, setScenario] = useState<keyof typeof scenarios>('Base');
+  const current = scenarios[scenario];
+  return (
+    <main className="site-shell">
+      <nav className="topbar">
+        <a className="brand" href="#top" aria-label="VietNova Finance home"><span className="brand-mark"><BarChart3 size={18} strokeWidth={2.6} /></span><span>VN<span className="brand-muted">/</span>FINANCE</span></a>
+        <div className="nav-links"><a href="#decisions">Decisions</a><a href="#model">Model</a><a href="#evidence">Evidence</a><a href="#contact">Contact</a></div>
+        <a className="nav-cta" href={driveModel} target="_blank" rel="noreferrer">Open model <ArrowUpRight size={14} /></a>
+      </nav>
+
+      <section id="top" className="hero page-width">
+        <div className="hero-copy">
+          <div className="eyebrow"><span className="eyebrow-dot" /> COMMERCIAL FINANCE / FP&A CASE</div>
+          <h1>From transaction detail<br /><em>to CFO decision.</em></h1>
+          <p className="hero-lede">A reproducible Vietnam FMCG finance case connecting budget, forecast, profitability, working capital and risk — built to be reviewed like a real monthly business-finance pack.</p>
+          <div className="hero-actions"><a className="button button-primary" href="#decisions">See the decisions <ArrowUpRight size={16} /></a><a className="button button-ghost" href={cfoMemo} target="_blank" rel="noreferrer"><BookOpen size={16} /> Read CFO memo</a></div>
+          <div className="hero-proof"><span><CheckCircle2 size={15} /> 28-tab model</span><span><CheckCircle2 size={15} /> 2,160 invoice lines</span><span><CheckCircle2 size={15} /> Control gate PASS</span></div>
+        </div>
+        <div className="hero-panel">
+          <div className="panel-topline"><span>EXECUTIVE OUTPUT</span><span className="live-pill"><i /> v2.0 / 2026-08-29</span></div>
+          <div className="panel-heading">FY2025 operating view</div>
+          <div className="kpi-grid"><Metric label="Revenue" value={current.revenue} suffix="bn" detail={scenario + ' plan · VND'} /><Metric label="EBITDA proxy" value={current.ebitda} suffix="bn" detail="Management proxy · VND" /><Metric label="CCC" value={current.ccc} suffix="d" detail="Cash conversion cycle" /><Metric label="Best CM" value={current.margin} suffix="%" detail="Channel contribution margin" /></div>
+          <div className="panel-note"><Sparkles size={15} /> {current.note}</div>
+          <div className="scenario-row"><span>Scenario lens</span><div className="scenario-tabs" role="group" aria-label="Select scenario">{(Object.keys(scenarios) as Array<keyof typeof scenarios>).map((item) => <button key={item} className={item === scenario ? 'scenario-active' : ''} onClick={() => setScenario(item)}>{item}</button>)}</div></div>
+        </div>
+      </section>
+
+      <section className="signal-strip"><div className="page-width signal-inner"><span className="signal-label">THE FINANCE QUESTION</span><p>Not “did revenue grow?” — <strong>which driver, channel and cash constraint explain the result?</strong></p><span className="signal-arrow"><ChevronDown size={18} /></span></div></section>
+
+      <section id="decisions" className="page-width section">
+        <div className="section-heading"><div><div className="eyebrow">01 / DECISION LAYER</div><h2>Three decisions a finance<br /><em>business partner</em> can defend.</h2></div><p className="section-intro">The model is deliberately built around action. Each output has an owner, a guardrail and a next review date — not just a chart.</p></div>
+        <div className="decision-grid">
+          <article className="decision-card decision-teal"><div className="card-number">01</div><div className="card-icon"><CircleDollarSign size={20} /></div><h3>Fund growth<br />that pays back.</h3><p>Promotion and pricing simulator separates incremental revenue from variable cost, platform fee and trade spend.</p><div className="card-footer"><span className="tag">PROMOTION ROI</span><a href={driveModel} target="_blank" rel="noreferrer">Inspect simulator <ArrowUpRight size={14} /></a></div></article>
+          <article className="decision-card decision-blue"><div className="card-number">02</div><div className="card-icon"><Gauge size={20} /></div><h3>Protect margin<br />by channel.</h3><p>Channel and customer contribution exposes where discount, fee and cost-to-serve dilute a revenue win.</p><div className="card-footer"><span className="tag">CM HURDLE 25%</span><a href={driveDashboard} target="_blank" rel="noreferrer">View output <ArrowUpRight size={14} /></a></div></article>
+          <article className="decision-card decision-amber"><div className="card-number">03</div><div className="card-icon"><WalletCards size={20} /></div><h3>Release cash<br />before it hurts.</h3><p>DSO, DIO, DPO and liquidity stress turn working capital into a weekly operating agenda.</p><div className="card-footer"><span className="tag">CCC 54.8 DAYS</span><a href={cfoMemo} target="_blank" rel="noreferrer">Read action <ArrowUpRight size={14} /></a></div></article>
+        </div>
+      </section>
+
+      <section id="model" className="dark-section"><div className="page-width section"><div className="section-heading dark-heading"><div><div className="eyebrow eyebrow-light">02 / MODEL SURFACE</div><h2>A finance model with<br /><em>an audit trail.</em></h2></div><p className="section-intro">Every layer is traceable: assumptions to facts, facts to P&L, P&L to bridge, bridge to decision. The reviewer path starts at Executive Output and ends at Checks.</p></div><div className="model-grid"><div className="chart-card"><div className="chart-header"><span>CONTRIBUTION MARGIN BY CHANNEL</span><span className="chart-caption">Illustrative / synthetic</span></div><div className="bar-chart">{bars.map((bar) => <div className="bar-row" key={bar.label}><span>{bar.label}</span><div className="bar-track"><div className={'bar-fill ' + bar.color} style={{ width: bar.value + '%' }} /></div><strong>{(bar.value / 2.75).toFixed(1)}%</strong></div>)}</div><div className="chart-foot"><span>Source: Channel_Customer</span><span>Hurdle: 25.0%</span></div></div><div className="architecture-card"><div className="architecture-top"><Layers3 size={20} /><span>MODEL ARCHITECTURE</span></div><div className="flow"><div className="flow-step"><span className="flow-index">01</span><div><strong>Inputs</strong><small>Assumptions · source register</small></div></div><div className="flow-line" /><div className="flow-step"><span className="flow-index">02</span><div><strong>Facts</strong><small>Sales · costs · AR / AP · inventory</small></div></div><div className="flow-line" /><div className="flow-step"><span className="flow-index">03</span><div><strong>Analysis</strong><small>P&L · PVM · profitability · risk</small></div></div><div className="flow-line" /><div className="flow-step flow-final"><span className="flow-index">04</span><div><strong>Decisions</strong><small>Budget · cash · CFO output</small></div><CheckCircle2 size={17} /></div></div></div></div><div className="module-row"><span className="module-label">28 TABS / 7 LAYERS</span><span>Calendar</span><span>Master data</span><span>Invoice facts</span><span>P&L & bridges</span><span>Commercial decisions</span><span>Risk & liquidity</span><span>Audit checks</span></div></div></section>
+
+      <section className="page-width section"><div className="section-heading"><div><div className="eyebrow">03 / EVIDENCE</div><h2>Depth without<br /><em>overclaiming.</em></h2></div><p className="section-intro">Public filings calibrate the business context. The granular operating ledger is synthetic by design. The distinction is visible at every layer.</p></div><div id="evidence" className="evidence-grid"><div className="evidence-card"><div className="evidence-icon reported"><Database size={19} /></div><h3>Reported context</h3><p>57 official PDFs across MCH, VNM, QNS and KDC. Source registry retains URL, period, document type and extraction status.</p><span>PUBLIC / VERIFIED WHERE STATED</span></div><div className="evidence-card"><div className="evidence-icon calculated"><GitBranch size={19} /></div><h3>Calculated insight</h3><p>Margins, CAGR, CCC, bridges and scenario outcomes are formulas with bounded ranges and visible controls.</p><span>TRACEABLE / RECONCILED</span></div><div className="evidence-card"><div className="evidence-icon synthetic"><ShieldCheck size={19} /></div><h3>Synthetic operations</h3><p>VietNova’s SKU, customer, promotion and forecast detail is deterministic, reproducible and never presented as a company fact.</p><span>LABELLED / QA CONTROLLED</span></div></div><div className="integrity-note"><ShieldCheck size={18} /><p><strong>Integrity rule:</strong> OCR candidates remain in a human-review queue. Proxy EBITDA/OCF are labelled as proxies. The v2 channel tie-out tolerance is disclosed, not hidden.</p></div></section>
+
+      <section className="proof-section"><div className="page-width proof-inner"><div><div className="eyebrow eyebrow-light">REVIEWER QUICK TOUR</div><h2>Open it like<br /><em>a hiring manager.</em></h2></div><div className="tour-list"><a href={driveDashboard} target="_blank" rel="noreferrer"><span>01</span><div><strong>Executive Output</strong><small>See the decision view and scenario lens</small></div><ExternalLink size={16} /></a><a href={driveModel} target="_blank" rel="noreferrer"><span>02</span><div><strong>Checks + PVM</strong><small>Trace the controls and bridge logic</small></div><ExternalLink size={16} /></a><a href={githubRepo} target="_blank" rel="noreferrer"><span>03</span><div><strong>Repository</strong><small>Inspect schemas, scripts and evidence policy</small></div><ExternalLink size={16} /></a></div></div></section>
+
+      <footer id="contact" className="footer page-width"><div className="footer-main"><div className="brand"><span className="brand-mark"><BarChart3 size={18} /></span><span>VN<span className="brand-muted">/</span>FINANCE</span></div><p>Commercial Finance & FP&A case study<br />built for the next monthly business review.</p></div><div className="footer-links"><a href={githubRepo} target="_blank" rel="noreferrer">GitHub <ExternalLink size={13} /></a><a href={driveModel} target="_blank" rel="noreferrer">Drive model <Download size={13} /></a><a href={cfoMemo} target="_blank" rel="noreferrer">CFO memo <ExternalLink size={13} /></a></div><div className="footer-bottom"><span>VietNova Consumer JSC · fictional operating case</span><span>All financial figures labelled synthetic where applicable · 2026</span></div></footer>
+    </main>
+  );
+}
