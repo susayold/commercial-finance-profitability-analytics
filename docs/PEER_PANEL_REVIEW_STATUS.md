@@ -187,3 +187,7 @@ VNM FY2006 is now promoted to `reported_statement_verified` from the audited VAS
 - Source report: https://drive.google.com/file/d/18bDh7lOfg3xUyJsdT-duGE7laymBYX3O/view
 
 Queue status is now 25 `reported_statement_verified`; no peer-extraction rows remain unverified. The approved benchmark remains FY2016–FY2025, while FY2006–FY2015 are available in the evidence-gated historical layer.
+
+## FY2007 PBT/PAT reconciliation note (2026-08-30)
+
+FY2007 shows PAT of VND 963.448 bn versus PBT of VND 955.381 bn in the audited comparative column. This is not a data-entry error: the filing includes a deferred-tax benefit and a minority-interest benefit. The reviewer note and native Sheet row preserve this presentation; reconciliation should use PBT minus current tax plus deferred-tax benefit plus/minus minority allocation, not a naive `PBT >= PAT` rule.
