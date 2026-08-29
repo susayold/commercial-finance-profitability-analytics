@@ -15,8 +15,8 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Implemented leakage-safe forecast governance: archived 29 controlled snapshots with 27 FROZEN eligible rows, one FUTURE_LEAKAGE exception and one NOT_ELIGIBLE draft; reproduced versioned Bias/WAPE of +5%/+5%, −2%/2% and +10%/10% (synthetic fixture, not live company accuracy).
 - Calibrated a synthetic operating ledger against public FMCG peer context while maintaining an evidence taxonomy that separates reported facts, calculated facts, synthetic facts, assumptions, inferences and recommendations.
 - Built a source-linked peer QA workflow for official annual reports and audited statements, promoting 25/25 queue rows to reported_statement_verified only after page-level checks and retaining an explicit human-review protocol.
-
 - Built a source-linked VNM long-run panel spanning FY2006–FY2025, deriving revenue growth, margins, cash conversion and asset efficiency while flagging the FY2021 statement-to-summary basis break.
+- Built a formula-driven D2C unit-economics module linking acquisition spend, repeat orders, gross margin and variable service costs to CAC, LTV/CAC, payback and scale/hold decisions; included Base/Downside/Upside sensitivities and six automated control checks (synthetic case).
 
 ## Skills mapped to artifacts
 
@@ -30,6 +30,7 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 | Working capital | Working_Capital, AR, Inventory, AP | FY2025 CCC output |
 | Liquidity | Debt_Liquidity | Minimum cash / revolver formulas |
 | Commercial finance | Promotion_Pricing, Budget_Allocation | Hurdle and marginal ROI |
+| D2C unit economics | D2C Unit Economics Sheet, d2c_unit_economics_synthetic.csv | CAC/LTV/payback; six native checks PASS; CI validator |
 | Data governance | Source_Register, peer review queue | OCR not auto-approved |
 | Communication | CFO memo, battle cards, website spec | Decision/action structure |
 
@@ -48,4 +49,3 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Do not present VietNova customer, SKU or promotion values as a real company fact.
 - Do not claim causal promotion lift without a control design.
 - Do not claim OCR figures are approved until a human reviewer signs off.
-
