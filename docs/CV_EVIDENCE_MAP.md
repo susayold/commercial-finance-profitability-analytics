@@ -62,3 +62,10 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Built a transparent synthetic M&A accretion/dilution screen linking target standalone forecasts, revenue/cost synergies, integration costs and financing interest to Year-1 dilution, Year-2 EPS accretion of 17.16%, incremental FCFF and deal NPV of VND 28.39bn; included a 12-cell entry-multiple / synergy-realization sensitivity grid and explicit diligence caveats.
 
 | M&A / strategic finance | docs/MNA_ACCRETION_DILUTION.md, mna_accretion_dilution_synthetic.csv, mna_accretion_dilution_sensitivity.csv | Validator PASS; synthetic case, not a live recommendation |
+
+
+Drive mirror for M&A extension:
+- Data: https://drive.google.com/file/d/1LK-YloDyk2iXqoW_XsFflkYrb4h6a224/view and https://drive.google.com/file/d/1kv60z5MXY4wghumtHvg3MqroCy-vJCyT/view
+- Methodology: https://drive.google.com/file/d/1gwEWr1hIQ0XhNWP23GkrAzLBRqd6DcOe/view
+- QA: https://drive.google.com/file/d/1cyt24IdL7Y8SlP97s8Qk_tt1FZsFEaOg/view
+- Validator: https://drive.google.com/file/d/1kGdGkWhgMpSEvpmEsGAhflB4qC92hNmy/view
