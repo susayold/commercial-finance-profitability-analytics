@@ -103,6 +103,12 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Current evidence baseline: peer extraction queue 25/25 rows reported_statement_verified; VNM statement layer complete FY2006–FY2020 (15 rows, eight metrics per year).
 - Native .pbix remains Desktop-dependent and is intentionally not represented by a placeholder file.
 
+## Public-guidance forecast performance analysis
+
+- [Analyst report](reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md) · [Analysis JSON](data/vnm_public_guidance_proxy_analysis.json) · [Generator](scripts/analyze_public_guidance_proxy.mjs) · [QA](reports/VNM_PUBLIC_GUIDANCE_ANALYSIS_QA.md)
+- The report decomposes the 16-row VNM public-guidance proxy by metric and period, with Bias, WAPE, MAPE, within-2% rate, descriptive error bands and worst misses.
+- Key readout: PBT WAPE 4.89% versus revenue WAPE 2.79%; FY2022 PBT is the largest miss at -12.533% of guidance. These are public-guidance observations, not internal forecast accuracy.
+
 ## PBIP source handoff (portable Power BI build contract)
 
 - [PBIP source manifest](powerbi/PBIP_SOURCE_MANIFEST.json) · [Drive copy](https://drive.google.com/file/d/1ZusZswCyESNKSFp-B1A_IOHZ3KtNiFnz/view)
