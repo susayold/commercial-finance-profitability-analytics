@@ -11,7 +11,7 @@ import fitz
 import numpy as np
 from rapidocr_onnxruntime import RapidOCR
 
-def grouped_lines(page, engine, scale=1.35, y_tolerance=18):
+def grouped_lines(page, engine, scale=1.35, y_tolerance=8):
     pix = page.get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=False)
     image = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
     detected, _ = engine(image)
