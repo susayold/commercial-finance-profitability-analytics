@@ -133,3 +133,10 @@ The repository now includes a machine-readable [PBIP source manifest](../powerbi
 The VNM public-guidance proxy now has a deterministic analysis output with metric and regime splits, Bias/WAPE/MAPE, within-2% rates, descriptive error bands and ranked misses. The analysis is covered by a dedicated validator and CI step. It improves the finance-analyst narrative but remains explicitly excluded from Gate A because the evidence is public AGM/IR guidance rather than an internal pre-close snapshot.
 
 - [Analyst report](../reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md) · [Analysis JSON](../data/vnm_public_guidance_proxy_analysis.json) · [QA](../reports/VNM_PUBLIC_GUIDANCE_ANALYSIS_QA.md)
+
+
+## 13. Interview conversion evidence
+
+The project now includes a recruiter/interviewer-facing talk track covering the 90-second positioning, a 15-minute evidence walkthrough, three STAR stories, common pushback and the production handoff. This converts the model depth into a repeatable finance-analyst communication artifact without changing the evidence labels.
+
+- [Finance Analyst / FP&A talk track](FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md) · [Drive copy](https://drive.google.com/file/d/1qyKG5FJW5_EdKyu10l-xWUyOU9i5tLRy/view).
