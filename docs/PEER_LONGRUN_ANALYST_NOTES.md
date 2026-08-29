@@ -31,3 +31,15 @@ This note uses the evidence-gated export `data/peer_benchmark_approved_2016_2025
 ## Latest QNS evidence update (2026-08-30)
 
 QNS FY2020 is promoted to statement-verified in the queue and approved benchmark. The row uses net revenue 6,489.764 bn, operating profit 1,233.248 bn and CFO 76.962 bn from the audited consolidated statements, while retaining the 6,702 bn annual-summary total-revenue figure as a basis-difference caveat. QNS FY2016–FY2019 remain summary candidates for long-run comparability until their statement pages are extracted.
+
+## QNS statement-layer refresh (2026-08-30)
+
+QNS FY2016–FY2020 is now statement-verified on a consistent VAS consolidated net-revenue basis. Using the approved rows, QNS net revenue moves from VND 6,972.104 bn in FY2016 to VND 6,489.764 bn in FY2020, a -1.78% CAGR. PBT margin declines from 22.1% to 19.5%, PAT margin from 20.2% to 16.2%, and asset turnover from 1.14x to 0.71x. Gross margin is comparatively resilient at 32.6% in FY2016 versus 31.6% in FY2020, so the more actionable questions are operating leverage, mix and capital absorption rather than gross-margin collapse.
+
+- FY2016–FY2017 source: audited FY2017 filing, statement pages 6–9 (FY2016 comparative column).
+- FY2018 source: audited consolidated FY2018 filing, statement pages 6–9.
+- FY2019 source: audited FY2020 consolidated filing, statement pages 6–9 comparative column.
+- [QNS statement layer](../data/qns_statement_metrics_2016_2019.csv)
+
+The earlier summary-based QNS CAGR table is retained as historical context only; any dashboard or interview narrative should use the statement layer and explicitly label the revenue basis.
+
