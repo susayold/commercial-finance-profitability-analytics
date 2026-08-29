@@ -5,7 +5,8 @@
   "evidence_policy": {
     "synthetic_operating_data": true,
     "reported_peer_data": true,
-    "blank_unverified_values_allowed": true
+    "blank_unverified_values_allowed": true,
+    "approved_peer_dataset": "data/peer_benchmark_approved_2016_2025.csv"
   },
   "dimensions": [
     {
@@ -164,19 +165,27 @@
       ],
       "measures": [
         "Net_Revenue_VND_bn",
+        "Gross_Profit_VND_bn",
+        "Operating_Profit_VND_bn",
         "Profit_Before_Tax_VND_bn",
         "Profit_After_Tax_VND_bn",
         "Total_Assets_VND_bn",
+        "Owners_Equity_VND_bn",
+        "Operating_Cash_Flow_VND_bn",
         "PBT_Margin",
         "PAT_Margin",
         "Revenue_to_Assets"
       ],
       "filters": [
-        "Source_Status = reported_summary_verified or reported_statement_verified"
+        "Source_Status = reported_summary_verified or reported_statement_verified",
+        "Use Peer_Benchmark_Approved_2016_2025.csv; never include review-required rows"
       ],
       "attributes": [
         "Company",
         "Source_Status",
+        "Source_Layer",
+        "Revenue_Basis",
+        "Page_Anchor",
         "Comparability_Note",
         "Source_URL"
       ]
