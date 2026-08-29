@@ -207,6 +207,8 @@ Drive mirror for M&A extension:
 - [Live snapshot submission template](data/forecast_snapshot_live_submission_template.csv) · [Drive template](https://drive.google.com/file/d/1WQ_9L7JrbogUjhytealtfeJnXekRJqqu/view)
 - The handoff specifies the exact evidence bundle, acceptance sequence, hard stops and release naming for Gate A (live pre-close forecast accuracy) and Gate B (native Power BI Desktop).
 
+- [External-gates execution pack](docs/EXTERNAL_GATES_EXECUTION_PACK.md) · [Drive copy](https://drive.google.com/file/d/1KK6Cn394saDSmYUU8gyk1PltTOD04YHE/view) — field-level intake, eligibility, QA, RACI and release checklist.
+
 ### Gate-ready intake and evidence contracts
 
 - Gate A now has a machine-readable [governance schema](schemas/forecast_snapshot_live.schema.json), [structural unit fixture](data/forecast_snapshot_live_unit_test.csv) and [live-submission validator](scripts/validate_live_forecast_submission.mjs). Fixture mode returns `FIXTURE_PASS_NOT_LIVE`; `--mode=live` requires `LIVE_INTERNAL` evidence, non-synthetic source URLs, approval fields and at least one eligible frozen row before releasing observed Bias/WAPE.
