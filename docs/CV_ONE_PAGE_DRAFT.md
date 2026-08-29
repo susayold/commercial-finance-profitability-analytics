@@ -13,6 +13,7 @@ Finance analyst who turns transaction-level detail into management decisions. Bu
 - Designed a management decision layer that links **revenue growth → contribution margin → cash conversion**; the illustrative FY2025 base case shows VND 80.1bn revenue, VND 58.5bn EBITDA proxy and 54.8-day CCC (synthetic, clearly labelled).
 - Created channel and customer profitability logic with a **25% contribution hurdle**, isolating where discounts, rebates, platform fees and cost-to-serve dilute a revenue win.
 - Built seeded upside/downside stress tests and a CFO memo with owners, guardrails and review dates; the illustrative downside case stretches CCC to 68.8 days, triggering a collections/inventory war-room.
+- Implemented leakage-safe forecast governance: froze 27 synthetic pre-close observations across three versions, excluded one future-leakage and one late-actual row, and reproduced Bias/WAPE of +5%/+5%, −2%/2% and +10%/10% in a controlled backtest (not live company accuracy).
 - Added auditability: source register, evidence taxonomy, nine finance controls, revenue/channel tie-outs, row-count checks, formula-error scan and explicit VND 100m rounding tolerance.
 - Built a source-linked peer evidence layer covering **25/25 statement-verified queue rows** and VNM FY2006–FY2020, with page anchors, basis caveats and a human-review protocol.
 - Delivered recruiter-facing website, executive management deck, Power BI semantic-model contract/QA pack and remote-only GitHub/Google Drive archive.
