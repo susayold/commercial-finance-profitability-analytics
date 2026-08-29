@@ -18,6 +18,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - QNS: 2016-2025
 - KDC: 2016-2025
 - MCH: 2018, 2019 and 2021-2025
+- MCH audited consolidated financial statements: 2016-2025
 - Missing and rejected documents are recorded explicitly; gaps are never filled with unverified copies
 
 Raw reports are stored in the private [Google Drive project folder](https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR). They are intentionally excluded from Git history.
