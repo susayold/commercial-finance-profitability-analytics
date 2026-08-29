@@ -90,3 +90,13 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 ## Final QA
 
 - Final QA and remote handoff: docs/FINAL_QA_AND_HANDOFF_2026-08-30.md
+
+
+## Power BI QA handoff
+
+- [Detailed build guide](powerbi/POWER_BI_BUILD_GUIDE_V2.md)
+- [18-test QA matrix](powerbi/QA_TEST_MATRIX.md)
+- [Executable DAX validation queries](powerbi/qa_validation_queries.dax)
+- [Final QA and remote handoff](docs/FINAL_QA_AND_HANDOFF_2026-08-30.md)
+- Current evidence baseline: peer extraction queue 25/25 rows reported_statement_verified; VNM statement layer complete FY2006–FY2020 (15 rows, eight metrics per year).
+- Native .pbix remains Desktop-dependent and is intentionally not represented by a placeholder file.
