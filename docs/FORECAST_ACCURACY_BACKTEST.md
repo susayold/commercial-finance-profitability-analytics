@@ -68,3 +68,8 @@ The pipeline was run on a 29-row synthetic fixture as of 2025-12-31: 27 eligible
 ## Capture-sheet control fields
 
 The native capture tab now extends the analytical columns with `Snapshot_Status`, `Source_Model_Version`, `Approver`, `Actual_Period_Close_Date` and `Exception_Note`. `Snapshot_Status` has strict validation (`DRAFT`, `FROZEN`, `EXCEPTION`), the header row is frozen, and leakage statuses are conditionally highlighted. The sample fixture remains `DRAFT`/`EXCEPTION`; it must be replaced with approved frozen snapshots before publishing observed accuracy.
+
+
+## Freeze-gate verification
+
+The native Sheet was tested end-to-end: with the sample version marked `DRAFT`, Backtest_Output returns zero eligible rows, blank Bias/WAPE and `WAITING_FOR_FROZEN_SNAPSHOT`; when one row was temporarily changed to `FROZEN`, it returned one eligible row, Bias `+10%`, WAPE `10%` and `READY`; the row was then reverted to `DRAFT`. This proves the release gate is active without publishing synthetic results.
