@@ -90,3 +90,14 @@
 - Queue status after promotion: 11 statement-verified, 13 summary candidates, 1 statement-review-required.
 
 - QNS FY2020 promotion addendum: [GitHub](QNS_FY2020_AUDITED_STATEMENT_PROMOTION_ADDENDUM_2026-08-30.md) · [Drive](https://drive.google.com/file/d/1wU7VD8yYUP06GZn-eQz5g7xxoA6A44rg/view)
+
+## QNS FY2016–FY2019 audited statement layer
+
+- [QNS FY2016–FY2019 statement metrics](../data/qns_statement_metrics_2016_2019.csv)
+- Drive CSV: https://drive.google.com/file/d/1WrGQZgBPy-B77_Fahfbcoukraknu7lFN/view
+- QNS FY2018 audited PDF: https://drive.google.com/file/d/1AohYk_IrJGml5C95EC4g2xDxWTAVnp3E/view
+- QNS FY2019 comparative source: https://drive.google.com/file/d/1KqGqXOUl67oLp4MHnpwL-VCpHX0narW0/view
+- Native Sheet tab: `QNS_Statement_Metrics_2016_2019`
+- [QNS long-run analyst update](https://drive.google.com/file/d/1jshqNfL7r0bXLlxs4cMOchzLmgmg0kYw/view)
+- Queue status after promotion: 15 statement-verified, 9 summary candidates, 1 statement-review-required.
+
