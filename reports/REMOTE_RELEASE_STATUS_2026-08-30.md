@@ -6,7 +6,7 @@ All project data, source code, QA scripts and reviewer-facing artifacts are comm
 
 ## Latest remote sync
 
-The latest GitHub `main` content is synchronized through commit `aa9ef3b78e9b7b49c251cc132df117fb605a49cf`. The recruiter site gate-contract release is Sites version 4. The latest complete source archive is [commercial-finance-profitability-analytics-source-2026-08-30-site-gate.zip](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view), and the release evidence is [SITE_GATE_CONTRACT_RELEASE_2026-08-30.md](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+The latest GitHub `main` content includes the site gate-contract release and the refreshed release index (see the repository commit history for the current SHA). The recruiter site gate-contract release is Sites version 4. The latest complete source archive is [commercial-finance-profitability-analytics-source-2026-08-30-site-gate.zip](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view), and the release evidence is [SITE_GATE_CONTRACT_RELEASE_2026-08-30.md](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 ## Newly closed evidence in this release
 
