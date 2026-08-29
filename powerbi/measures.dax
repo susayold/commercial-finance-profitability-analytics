@@ -1,0 +1,38 @@
+// VN/FINANCE Power BI measure contract
+// All amounts are VND unless the display format states VND bn.
+
+Net Revenue := SUM ( Sales_Fact[Net_Revenue_VND] )
+Gross Sales := SUM ( Sales_Fact[Gross_Sales_VND] )
+Discounts := SUM ( Sales_Fact[Discount_VND] )
+Returns := SUM ( Sales_Fact[Returns_VND] )
+COGS := SUM ( Sales_Fact[COGS_VND] )
+Gross Profit := [Net Revenue] - [COGS]
+Variable Commercial Cost := SUM ( Commercial_Costs[Variable_Cost_VND] )
+Contribution Margin := [Gross Profit] - [Variable Commercial Cost]
+Contribution Margin % := DIVIDE ( [Contribution Margin], [Net Revenue] )
+
+Budget Revenue := SUM ( Budget[Budget_Revenue_VND] )
+Revenue Variance := [Net Revenue] - [Budget Revenue]
+Revenue Variance % := DIVIDE ( [Revenue Variance], [Budget Revenue] )
+
+Forecast Revenue := SUM ( Forecast_Versions[Forecast_Revenue_VND] )
+Forecast Variance := [Net Revenue] - [Forecast Revenue]
+Forecast Variance % := DIVIDE ( [Forecast Variance], [Forecast Revenue] )
+
+Average AR := AVERAGE ( AR[Ending_AR_VND] )
+Average Inventory := AVERAGE ( Inventory[Inventory_Value_VND] )
+Average AP := AVERAGE ( AP[Ending_AP_VND] )
+COGS Monthly := [COGS]
+DSO := DIVIDE ( [Average AR], [Net Revenue] ) * 365 / 12
+DIO := DIVIDE ( [Average Inventory], [COGS Monthly] ) * 365 / 12
+DPO := DIVIDE ( [Average AP], [COGS Monthly] ) * 365 / 12
+CCC := [DSO] + [DIO] - [DPO]
+
+Trade Spend := SUM ( Commercial_Costs[Trade_Spend_VND] )
+Incremental Contribution := [Contribution Margin] - CALCULATE ( [Contribution Margin], ALL ( 'Scenario Selector' ) )
+Promotion ROI := DIVIDE ( [Incremental Contribution], [Trade Spend] )
+
+CM Hurdle := MAX ( Channel_Master[CMHurdle] )
+Below Hurdle Flag := IF ( [Contribution Margin %] < [CM Hurdle], 1, 0 )
+
+Selected Scenario := SELECTEDVALUE ( 'Scenario Selector'[Scenario], "Base" )
