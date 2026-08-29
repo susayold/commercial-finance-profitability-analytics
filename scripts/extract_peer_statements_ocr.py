@@ -47,8 +47,7 @@ def ocr_extract_pdf(pdf_path, registry, parser, engine, page_start, page_end, sc
     rows = []
     for page_number in range(page_start, min(page_end, len(document)) + 1):
         lines = grouped_lines(document[page_number - 1], engine, scale=scale)
-        page_text = "
-".join(text for text, _ in lines)
+        page_text = "\\n".join(text for text, _ in lines)
         if not page_text.strip():
             continue
         scope = parser.infer_scope(page_text)
