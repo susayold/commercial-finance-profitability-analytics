@@ -53,7 +53,6 @@ Phase 1A complete: remote infrastructure, source archive, registry, synthetic op
 
 Current state: Excel v2, management memo/deck, recruiter site, peer-panel review layer and Power BI semantic contract are delivered; native PBIX creation and older-year page-level peer review remain explicit next actions.
 
-
 ## FP&A model v2 — full 28-tab finance analyst model
 
 - [VietNova_FPA_Model_v2.xlsx](https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit)
@@ -64,7 +63,6 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - A VND 100m channel tie-out tolerance is disclosed in Checks to account for deterministic invoice-unit rounding; this is not hidden.
 - Executive KPIs are synthetic management outputs and are labelled as proxies; public peer values are calibration context only.
 
-
 ## Recruiter website
 
 - [Live site](https://vn-finance-fpa-case.sangkenny200.chatgpt.site)
@@ -72,14 +70,12 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Site source folder](site/)
 - Sites project: `appgprj_6a930a2f81f48191b1e015f1fa938c69`; production deployment is version 1.
 
-
 ## Peer panel review layer
 
 - [Peer panel review status](docs/PEER_PANEL_REVIEW_STATUS.md)
 - [Remote peer panel sheet](https://docs.google.com/spreadsheets/d/1HNViR2NV1KPu1H-ZYRADv8amwP1-kzY8QzvmcwT3csE/edit)
 - Native tab `VNM_Longrun_Panel_2006_2025` exposes the full FY2006–FY2025 historical panel with derived ratios and basis-break flags.
 - FY2021-FY2025 summary values are source-linked; blank cells remain review flags where statement-level validation is not complete.
-
 
 ## Peer and Power BI follow-through
 
@@ -92,7 +88,6 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - Final QA and remote handoff: docs/FINAL_QA_AND_HANDOFF_2026-08-30.md
 
-
 ## Power BI QA handoff
 
 - [Detailed build guide](powerbi/POWER_BI_BUILD_GUIDE_V2.md)
@@ -102,7 +97,6 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Final QA and remote handoff](docs/FINAL_QA_AND_HANDOFF_2026-08-30.md)
 - Current evidence baseline: peer extraction queue 25/25 rows reported_statement_verified; VNM statement layer complete FY2006–FY2020 (15 rows, eight metrics per year).
 - Native .pbix remains Desktop-dependent and is intentionally not represented by a placeholder file.
-
 
 ## Financial analyst methodology pack
 
@@ -122,7 +116,6 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - [Native forecast snapshot capture Sheet](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit) · [Builder script](scripts/build_forecast_capture.mjs)
 
-
 ## Forecast governance close control
 
 - [Forecast snapshot close calendar](docs/FORECAST_SNAPSHOT_CLOSE_CALENDAR.md) · [Drive copy](https://drive.google.com/file/d/12jAEwrXTeUmz5lzu9aUh1Ay6MUvsMu88/view)
@@ -137,7 +130,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - [VNM long-run panel QA validator](scripts/validate_vnm_longrun_panel.mjs) · [QA report](reports/VNM_LONGRUN_PANEL_QA.md) (17/17 checks PASS).
 
-- Automated regression checks: [`.github/workflows/finance-qa.yml`](.github/workflows/finance-qa.yml) runs forecast leakage unit test, VNM panel 17-check validator and Power BI contract JSON validation on push/PR.
+- Automated regression checks: [`.github/workflows/finance-qa.yml`](.github/workflows/finance-qa.yml) runs forecast leakage unit test, VNM panel 17-check validator, D2C unit economics validator and Power BI contract JSON validation on push/PR.
 
 - [CI QA rehearsal report](reports/CI_QA_LOCAL_REHEARSAL_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1CUWzZ4PClwQPEMXgNvn679uufSnTntmQ/view)
 
@@ -148,3 +141,12 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Native freeze-gate test: DRAFT rows are blocked; temporary FROZEN test produced metrics/READY and was reverted. See [capture QA](reports/FORECAST_CAPTURE_SHEET_QA.md).
 
 - [Frozen forecast capture archive](data/forecast_snapshot_capture_demo_frozen.csv) · [Archive validator](scripts/validate_forecast_capture_archive.mjs) · [Archive builder](scripts/build_forecast_capture_demo_archive.mjs) · [14/14 QA report](reports/FORECAST_CAPTURE_ARCHIVE_QA.md) · [Drive CSV](https://drive.google.com/file/d/1EBX9s3C16ZRkbLDpwfYVmgV_7Tw3LRCn/view?usp=drivesdk) · [Drive builder](https://drive.google.com/file/d/1Wkg5-FB2pDwe4h7uqbhGn2a4VTaW-Hbg/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1y2R3ISujxkNOGIZysclawoYB4wUvaMWR/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1EODWWBJxWVPxhCGjjQ6qYXfMlUawKE94/view?usp=drivesdk)
+
+## D2C unit economics
+
+- [Methodology](docs/D2C_UNIT_ECONOMICS.md) · [Drive copy](https://drive.google.com/file/d/1r1KAjXCLb133ODeTBH6QSq9Cs-n6ckBd/view)
+- [Synthetic data extract](data/d2c_unit_economics_synthetic.csv) · [Drive CSV](https://drive.google.com/file/d/1xrGQE3YeNJA4dqVD7Fa2Nct6x4TJUjo_/view)
+- [Automated validator](scripts/validate_d2c_unit_economics.mjs) · [Drive validator](https://drive.google.com/file/d/1neCA_5JjXwKSicpr8E2mGshFJa4x0x8P/view)
+- [Native D2C Unit Economics Sheet](https://docs.google.com/spreadsheets/d/1nTEJJ9iBvxne0hCjGSDoHKaWgR_pqiMqgXYaTqGgbik/edit?usp=drivesdk)
+- Base illustration: CAC VND130k, LTV contribution VND93.6k, LTV/CAC 0.72x and payback 3.33 orders; all six native controls PASS. Inputs remain synthetic and the hurdle is illustrative.
+
