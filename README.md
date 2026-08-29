@@ -180,3 +180,12 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Drive CSV](https://drive.google.com/file/d/1BW6zGnxS-m67lLPLKfZuJn-5M-d4elw-/view) · [Drive methodology](https://drive.google.com/file/d/1LOmPrCcFGBFUXsdw3hi7WXziebKxHRJL/view) · [Drive validator](https://drive.google.com/file/d/1Y1nBInfRASnSankqfgmvjzcx7KP7EFq_/view)
 - 16 observations (revenue and PBT, FY2018–FY2025) produce aggregate Bias -2.63% and WAPE 3.14%.
 - This is AGM/public guidance, not an internal forecast snapshot; every row is explicitly `PUBLIC_GUIDANCE_PROXY` and `gate_a_eligible=NO`.
+
+
+## M&A / strategic stretch
+
+- [Synthetic M&A accretion/dilution case](docs/MNA_ACCRETION_DILUTION.md)
+- [Forecast data](data/mna_accretion_dilution_synthetic.csv) · [Sensitivity grid](data/mna_accretion_dilution_sensitivity.csv)
+- [Automated validator](scripts/validate_mna_accretion_dilution.mjs) · [QA report](reports/MNA_ACCRETION_DILUTION_QA.md)
+- Base screen: 8.5x entry EBITDA, Year-2 EPS accretion 17.16%, deal NPV VND 28.39bn; Year-1 dilution is -0.46% after integration costs.
+- Evidence class is SYNTHETIC / REHEARSAL; confirmatory diligence, purchase accounting and leverage modelling remain required before any real-world recommendation.
