@@ -118,3 +118,9 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Forecast accuracy backtest specification](docs/FORECAST_ACCURACY_BACKTEST.md) · [Bias/WAPE script](scripts/compute_forecast_accuracy.mjs) · [Input template](data/forecast_accuracy_input_template.csv)
 
 - [Native forecast snapshot capture Sheet](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit) · [Builder script](scripts/build_forecast_capture.mjs)
+
+
+## Forecast governance close control
+
+- [Forecast snapshot close calendar](docs/FORECAST_SNAPSHOT_CLOSE_CALENDAR.md) · [Drive copy](https://drive.google.com/file/d/12jAEwrXTeUmz5lzu9aUh1Ay6MUvsMu88/view)
+- The calendar defines WD-5 through month+1 accuracy steps, immutable snapshot fields, RACI, freeze protocol, leakage-safe eligibility and exception handling.
