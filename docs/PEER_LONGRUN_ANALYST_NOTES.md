@@ -52,3 +52,10 @@ Interpretation controls: FY2009–FY2015 are retained in an evidence-gated legac
 - [Merged VNM statement layer](../data/vnm_statement_metrics_2009_2020.csv)
 - Drive copy: https://drive.google.com/file/d/1qjYylxjoNIOQ_RHb1glC69CZY-Fmqfj0/view
 - Native Sheet tab: `VNM_Statement_Metrics_2009_2020`
+
+## VNM historical layer closure (2026-08-30)
+
+The full VNM statement layer now covers FY2006–FY2020 (`data/vnm_statement_metrics_2006_2020.csv`). FY2006 is the restated comparative in the FY2007 audited VAS 25 consolidated filing—the first year VNM prepared consolidated statements—so it must carry a first-consolidation caveat in any chart. FY2007–FY2015 are also evidence-gated historical rows; FY2016–FY2020 remain the approved benchmark statement layer.
+
+- [Full VNM FY2006–FY2020 layer](../data/vnm_statement_metrics_2006_2020.csv)
+- Native Sheet tab: `VNM_Statement_Metrics_2006_2020`
