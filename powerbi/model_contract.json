@@ -173,6 +173,12 @@
       ],
       "filters": [
         "Source_Status = reported_summary_verified or reported_statement_verified"
+      ],
+      "attributes": [
+        "Company",
+        "Source_Status",
+        "Comparability_Note",
+        "Source_URL"
       ]
     },
     {
@@ -186,6 +192,11 @@
         "Review_Status",
         "Required_Metrics",
         "Source_Document"
+      ],
+      "attributes": [
+        "Company",
+        "Source_Layer",
+        "Required_Metrics"
       ]
     }
   ],
