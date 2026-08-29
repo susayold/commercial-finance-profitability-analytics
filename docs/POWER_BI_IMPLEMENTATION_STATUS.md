@@ -106,3 +106,8 @@ The step-by-step implementation guide is available at `powerbi/POWER_BI_BUILD_GU
 ## QA automation pack (2026-08-30)
 
 The release gate now has a reviewer-facing matrix in [powerbi/QA_TEST_MATRIX.md](../powerbi/QA_TEST_MATRIX.md) and executable DAX controls in [powerbi/qa_validation_queries.dax](../powerbi/qa_validation_queries.dax). The matrix covers model grain, revenue/CM tie-outs, PVM, scenario determinism, working-capital conventions, peer evidence gating, unit/basis labelling, historical VNM caveats and a five-minute recruiter walkthrough. The DAX query returns a single PASS/FAIL status plus row-level diagnostics for negative sales, discount/return bounds, channel CM residual and peer PAT-margin residual. Drive copies: [QA matrix](https://drive.google.com/file/d/1goi-4XMbHbUAeqE9dIHkISHhdZf5MGtb/view) and [DAX controls](https://drive.google.com/file/d/1l2_xVOfEdXzozbON4-7BN6hTt6zlSAog/view).
+
+
+## Desktop execution runbook (2026-08-30)
+
+The native PBIX handoff is operationalized in [powerbi/POWER_BI_DESKTOP_RUNBOOK.md](../powerbi/POWER_BI_DESKTOP_RUNBOOK.md) and [Drive](https://drive.google.com/file/d/1GdN43ajowcg9qjIf5fmwnX9Qarfd64Us/view). It specifies remote inputs, Power BI data types, relationships, six-page build order, QA execution, PBIP/PBIR save options and the remote archive procedure.
