@@ -74,3 +74,8 @@
 - [VNM FY2016–FY2020 statement metrics](../data/vnm_statement_metrics_2016_2020.csv)
 - Drive CSV: https://drive.google.com/file/d/18IrPvgbW2GHJItmKxZPdQIJXylcYJgZg/view
 - Native Sheet tab: `VNM_Statement_Metrics_2016_2020`
+
+
+- [Approved peer benchmark FY2016–FY2025](../data/peer_benchmark_approved_2016_2025.csv)
+- Drive CSV: https://drive.google.com/file/d/1vXw9EaZaJ0HUCKn5MzHgK2dG1fgGUT6r/view
+- Native Sheet tab: `Peer_Benchmark_Approved_2016_2025`
