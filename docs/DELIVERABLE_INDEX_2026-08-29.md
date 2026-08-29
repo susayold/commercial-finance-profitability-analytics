@@ -79,3 +79,12 @@
 - [Approved peer benchmark FY2016–FY2025](../data/peer_benchmark_approved_2016_2025.csv)
 - Drive CSV: https://drive.google.com/file/d/1vXw9EaZaJ0HUCKn5MzHgK2dG1fgGUT6r/view
 - Native Sheet tab: `Peer_Benchmark_Approved_2016_2025`
+
+
+## QNS FY2020 audited statement layer
+
+- [QNS FY2020 statement metrics](../data/qns_statement_metrics_2020.csv)
+- Drive CSV: https://drive.google.com/file/d/1tfACwjS4LDGb6SRzY2ubJvngK-H8elMa/view
+- Official audited PDF: https://drive.google.com/file/d/1KqGqXOUl67oLp4MHnpwL-VCpHX0narW0/view
+- Native Sheet tab: `QNS_Statement_Metrics_2020`
+- Queue status after promotion: 11 statement-verified, 13 summary candidates, 1 statement-review-required.
