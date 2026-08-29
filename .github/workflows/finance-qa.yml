@@ -46,6 +46,11 @@ jobs:
         run: |
           node scripts/validate_d2c_unit_economics.mjs data/d2c_unit_economics_synthetic.csv
 
+      - name: VNM public guidance proxy QA
+        shell: bash
+        run: |
+          node scripts/validate_public_guidance_proxy.mjs data/vnm_public_guidance_proxy_2018_2025.csv
+
       - name: VNM long-run panel QA
         shell: bash
         run: |
