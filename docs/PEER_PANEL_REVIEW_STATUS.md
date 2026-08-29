@@ -177,3 +177,13 @@ VNM FY2007 is now promoted to `reported_statement_verified` from the audited VAS
 - Source report: https://drive.google.com/file/d/1u8m2YW31sizcckCXF2OJZAHE7JpDNHrb/view
 
 Queue status is now 24 `reported_statement_verified` and 1 `statement_review_required` (VNM FY2006). The approved benchmark remains FY2016–FY2025; FY2007–FY2015 are retained in the evidence-gated statement layer.
+
+## VNM FY2006 audited statement promotion (2026-08-30)
+
+VNM FY2006 is now promoted to `reported_statement_verified` from the audited VAS consolidated FY2007 filing's comparative column. Pages 5–11 cover the statement set. The filing explicitly identifies FY2007 as the first year of VAS 25 consolidated reporting, so FY2006 is retained as a restated comparative with that caveat. All eight required metrics are captured in `data/vnm_statement_metrics_2006.csv`.
+
+- [VNM FY2006 statement metrics](../data/vnm_statement_metrics_2006.csv)
+- Drive CSV: https://drive.google.com/file/d/1hwWLegn75wdISM2y3FvpLJfz2drloKNe/view
+- Source report: https://drive.google.com/file/d/18bDh7lOfg3xUyJsdT-duGE7laymBYX3O/view
+
+Queue status is now 25 `reported_statement_verified`; no peer-extraction rows remain unverified. The approved benchmark remains FY2016–FY2025, while FY2006–FY2015 are available in the evidence-gated historical layer.
