@@ -46,3 +46,10 @@
 
 - Final QA and remote handoff record: docs/FINAL_QA_AND_HANDOFF_2026-08-30.md
 - Drive copy: https://drive.google.com/file/d/1xQIm44FZnwH_Xdhv4vp8sAD9OHENY2Zh/view?usp=drivesdk
+
+
+## Legacy peer candidates
+
+- [VNM FY2006–FY2015 legacy summary candidates](../data/vnm_legacy_summary_candidates_2007_2015.csv)
+- Drive candidate CSV: https://drive.google.com/file/d/15Yh9HnxGN_1bE6Zc084UqWAqDUcDB9Ub/view
+- Native Sheet tab: `VNM_Legacy_Candidates` (review-required until full statement metrics are anchored)
