@@ -1,0 +1,20 @@
+import fs from "node:fs";
+
+const [inputPath = "powerbi/PBIP_SOURCE_MANIFEST.json"] = process.argv.slice(2);
+const manifest = JSON.parse(fs.readFileSync(inputPath, "utf8"));
+const failures = [];
+if (manifest.artifact_type !== "PBIP_SOURCE_SCAFFOLD_NOT_NATIVE_PBIX") failures.push("artifact type must remain non-native scaffold");
+if (manifest.evidence_policy?.native_pbix_claimed !== false) failures.push("native PBIX claim must be false");
+if (!Array.isArray(manifest.dimensions) || manifest.dimensions.length < 5) failures.push("dimension coverage");
+if (!Array.isArray(manifest.facts) || manifest.facts.length < 9) failures.push("fact coverage");
+if (!Array.isArray(manifest.relationships) || manifest.relationships.length < 15) failures.push("relationship coverage");
+if (!Array.isArray(manifest.pages) || manifest.pages.length !== 6) failures.push("page coverage");
+const qa = manifest.qa_contract?.required_tests || [];
+if (qa.length !== 18 || qa[0] !== "QA-01" || qa[17] !== "QA-18") failures.push("QA-01..QA-18 contract");
+if (manifest.qa_contract?.tolerance_vnd !== 100000000) failures.push("VND 100m tolerance");
+const statuses = manifest.qa_contract?.peer_approved_statuses || [];
+if (!statuses.includes("reported_summary_verified") || !statuses.includes("reported_statement_verified")) failures.push("peer approval statuses");
+if (manifest.qa_contract?.native_desktop_required !== true) failures.push("native desktop requirement");
+const status = failures.length ? "FAIL" : "PASS";
+console.log(JSON.stringify({status, dimensions: manifest.dimensions.length, facts: manifest.facts.length, relationships: manifest.relationships.length, pages: manifest.pages.length, qa_tests: qa.length, failures}, null, 2));
+if (failures.length) process.exit(1);
