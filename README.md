@@ -126,3 +126,5 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - The calendar defines WD-5 through month+1 accuracy steps, immutable snapshot fields, RACI, freeze protocol, leakage-safe eligibility and exception handling.
 
 - [Multi-version forecast accuracy demo](docs/FORECAST_ACCURACY_BACKTEST.md): 29-row controlled fixture, 27 eligible observations and explicit leakage exclusions.
+
+- [Definition-of-done evidence audit](docs/DEFINITION_OF_DONE_AUDIT.md) · [Drive copy](https://drive.google.com/file/d/1moblqlk6_MApvkIBSdluDBnxhqhwTqxI/view)
