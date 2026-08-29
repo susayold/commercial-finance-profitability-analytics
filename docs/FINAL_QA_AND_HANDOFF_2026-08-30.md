@@ -54,3 +54,5 @@ Authoritative archives: [GitHub repository](https://github.com/susayold/commerci
 ## Latest extraction update (2026-08-30)
 
 VNM FY2016–FY2020 is now statement-verified and archived in [GitHub](../data/vnm_statement_metrics_2016_2020.csv), [Drive](https://drive.google.com/file/d/18IrPvgbW2GHJItmKxZPdQIJXylcYJgZg/view) and the peer Sheet tab `VNM_Statement_Metrics_2016_2020`. The review queue now contains 10 verified statement rows, 14 summary candidates and 1 remaining statement-review row (VNM FY2006).
+
+The approved benchmark export `data/peer_benchmark_approved_2016_2025.csv` now provides the Power BI-ready 30-row peer table with evidence and revenue-basis controls.
