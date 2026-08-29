@@ -211,6 +211,7 @@ Drive mirror for M&A extension:
 
 - Gate A now has a machine-readable [governance schema](schemas/forecast_snapshot_live.schema.json), [structural unit fixture](data/forecast_snapshot_live_unit_test.csv) and [live-submission validator](scripts/validate_live_forecast_submission.mjs). Fixture mode returns `FIXTURE_PASS_NOT_LIVE`; `--mode=live` requires `LIVE_INTERNAL` evidence, non-synthetic source URLs, approval fields and at least one eligible frozen row before releasing observed Bias/WAPE.
 - Gate B now has a machine-readable [QA-01–QA-18 evidence log](powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv) and [evidence validator](scripts/validate_powerbi_qa_evidence.mjs). A PASS row is rejected unless observed value, evidence reference, reviewer and execution timestamp are recorded; a FAIL row must carry an owner, remediation and retest date.
+- Drive mirrors: [source ZIP at commit 72f1281](https://drive.google.com/file/d/1A9-FRUbd9G6E4qT5FUilcQl7JfFyJT-d/view), [forecast fixture](https://drive.google.com/file/d/1GoatFUjdypKBn_579sttiBRFEv2ps22i/view), [forecast schema](https://drive.google.com/file/d/12Z7gGOiGTlfEDiv_0dpHCq9Ktf2xIWhw/view), [forecast validator](https://drive.google.com/file/d/1z26_vOP_wKsPpEpFhy4XYIoUIQolePuw/view), [Power BI QA log](https://drive.google.com/file/d/1bUIDkqafEQEMfiPhFfd1eg6lrTrKxAa6/view), [Power BI QA validator](https://drive.google.com/file/d/1kL0ulqiiFsf_ogrRPqz10WQ7B8y4CxSs/view).
 
 
 ## One-page CV draft

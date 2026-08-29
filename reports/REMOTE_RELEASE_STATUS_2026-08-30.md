@@ -78,6 +78,7 @@ Drive mirror for M&A extension:
 - [Live snapshot submission template](data/forecast_snapshot_live_submission_template.csv) · [Drive template](https://drive.google.com/file/d/1WQ_9L7JrbogUjhytealtfeJnXekRJqqu/view)
 - The handoff specifies the exact evidence bundle, acceptance sequence, hard stops and release naming for Gate A (live pre-close forecast accuracy) and Gate B (native Power BI Desktop).
 - Gate A is now executable through the [governance schema](../schemas/forecast_snapshot_live.schema.json), [unit fixture](../data/forecast_snapshot_live_unit_test.csv) and [live validator](../scripts/validate_live_forecast_submission.mjs). Gate B is now executable through the [machine-readable QA evidence log](../powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv) and [evidence validator](../scripts/validate_powerbi_qa_evidence.mjs).
+- The full repository source at commit `72f1281` is also archived as a [Drive ZIP snapshot](https://drive.google.com/file/d/1A9-FRUbd9G6E4qT5FUilcQl7JfFyJT-d/view); the individual Gate A/B intake files are mirrored in the project root for quick review.
 
 
 ## One-page CV draft
