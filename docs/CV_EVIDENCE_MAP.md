@@ -24,6 +24,7 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 |---|---|---|
 | FP&A model building | VietNova_FPA_Model_v2.xlsx | Checks tab = PASS |
 | Budget / forecast | Budget, Forecast_Versions, Scenario_MonteCarlo | Scenario rows 4/4 |
+| Forecast governance / accuracy | Forecast_Snapshot_Input, Backtest_Output, frozen archive | 29 rows; 14/14 archive QA; leakage gate |
 | Variance analysis | Variance_Bridge, PVM | PVM rows 36/36 |
 | Profitability | Product_Profitability, Channel_Customer | Channel/customer formulas |
 | Working capital | Working_Capital, AR, Inventory, AP | FY2025 CCC output |
