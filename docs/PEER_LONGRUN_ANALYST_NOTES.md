@@ -2,7 +2,7 @@
 
 ## Scope and evidence
 
-This note uses the evidence-gated export `data/peer_benchmark_approved_2016_2025.csv`. FY2016–FY2020 VNM and KDC rows are VAS consolidated statements with page anchors; QNS FY2016–FY2020 are official summary-table rows; FY2021–FY2025 are latest annual-report summary series. Missing operating profit, gross profit, equity or CFO values are intentionally blank and must not be imputed.
+This note uses the evidence-gated export `data/peer_benchmark_approved_2016_2025.csv`. FY2016–FY2020 VNM and KDC rows are VAS consolidated statements with page anchors; QNS FY2016–FY2019 remain official summary-table rows while FY2020 is now an audited VAS consolidated statement with pages 6–9; FY2021–FY2025 are latest annual-report summary series. Missing operating profit, gross profit, equity or CFO values are intentionally blank and must not be imputed.
 
 ## FY2016–FY2020 read-through
 
@@ -26,3 +26,8 @@ This note uses the evidence-gated export `data/peer_benchmark_approved_2016_2025
 - Drive export: https://drive.google.com/file/d/1vXw9EaZaJ0HUCKn5MzHgK2dG1fgGUT6r/view
 - Review queue: [GitHub CSV](../data/peer_extraction_queue.csv)
 - Native Sheet: [Peer_Financial_Panel_Review_v1](https://docs.google.com/spreadsheets/d/1HNViR2NV1KPu1H-ZYRADv8amwP1-kzY8QzvmcwT3csE/edit)
+
+
+## Latest QNS evidence update (2026-08-30)
+
+QNS FY2020 is promoted to statement-verified in the queue and approved benchmark. The row uses net revenue 6,489.764 bn, operating profit 1,233.248 bn and CFO 76.962 bn from the audited consolidated statements, while retaining the 6,702 bn annual-summary total-revenue figure as a basis-difference caveat. QNS FY2016–FY2019 remain summary candidates for long-run comparability until their statement pages are extracted.
