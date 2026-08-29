@@ -120,3 +120,5 @@
 - Promotion addenda: [FY2009 Drive](https://drive.google.com/file/d/1pItO1frxjOPhou-UEuzesp2SatmT2gb-/view) · [FY2010–FY2011 Drive](https://drive.google.com/file/d/1-lo4f8g2R5NXgGOX4JS8BbuEjdEJyV62/view)
 
 - [Merged VNM FY2009–FY2020 statement layer](../data/vnm_statement_metrics_2009_2020.csv) · [Drive](https://drive.google.com/file/d/1qjYylxjoNIOQ_RHb1glC69CZY-Fmqfj0/view) · Native Sheet tab: `VNM_Statement_Metrics_2009_2020`
+
+- [Merged VNM FY2008–FY2020 statement layer](../data/vnm_statement_metrics_2008_2020.csv) · [Drive full layer FY2009–FY2020](https://drive.google.com/file/d/1qjYylxjoNIOQ_RHb1glC69CZY-Fmqfj0/view) · Native Sheet tab: `VNM_Statement_Metrics_2009_2020` plus FY2008 standalone CSV
