@@ -101,4 +101,5 @@
 - [QNS long-run analyst update](https://drive.google.com/file/d/1jshqNfL7r0bXLlxs4cMOchzLmgmg0kYw/view)
 - Queue status after promotion: 15 statement-verified, 9 summary candidates, 1 statement-review-required.
 - QNS FY2016–FY2019 promotion addendum: [GitHub](QNS_FY2016_2019_AUDITED_STATEMENT_PROMOTION_ADDENDUM_2026-08-30.md) · [Drive](https://drive.google.com/file/d/1JNVBMzXu7Wq4SSqymeZsuotPNVdyHxej/view)
+- [VNM legacy statement review protocol](VNM_LEGACY_REVIEW_PROTOCOL.md) · [Drive](https://drive.google.com/file/d/1jlDU8a-hci7WuRDTi1Vy3Bjc1lEWA0GP/view)
 
