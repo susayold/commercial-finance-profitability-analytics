@@ -98,6 +98,14 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Current evidence baseline: peer extraction queue 25/25 rows reported_statement_verified; VNM statement layer complete FY2006–FY2020 (15 rows, eight metrics per year).
 - Native .pbix remains Desktop-dependent and is intentionally not represented by a placeholder file.
 
+## PBIP source handoff (portable Power BI build contract)
+
+- [PBIP source manifest](powerbi/PBIP_SOURCE_MANIFEST.json) · [Drive copy](https://drive.google.com/file/d/1ZusZswCyESNKSFp-B1A_IOHZ3KtNiFnz/view)
+- [PBIP handoff instructions](docs/PBIP_SOURCE_HANDOFF.md) · [Drive copy](https://drive.google.com/file/d/1MFMxCBM3HRG4Ffge5OwlV9ENkEOPn806/view)
+- [Manifest validator](scripts/validate_pbip_source_manifest.mjs) · [Drive copy](https://drive.google.com/file/d/1fHLaWb1W1MwnVECFgabThpghA971u8XL/view)
+- Remote validation: 5 dimensions, 9 facts, 15 relationships, 6 report pages and 18 QA tests — PASS.
+- This is a portable source scaffold, not a native .pbix; the binary remains a Power BI Desktop-dependent release gate.
+
 ## Financial analyst methodology pack
 
 - [Business case](docs/BUSINESS_CASE.md)
