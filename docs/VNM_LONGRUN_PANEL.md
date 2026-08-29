@@ -37,3 +37,8 @@ Use this panel to demonstrate that the analyst can:
 - separate statement-level evidence from summary evidence;
 - calculate margins, cash conversion and asset efficiency;
 - identify basis breaks before ranking a long-run trend.
+
+
+## Native reviewer view
+
+The same 20-row panel is available in the native [Peer Financial Panel Review Sheet](https://docs.google.com/spreadsheets/d/1HNViR2NV1KPu1H-ZYRADv8amwP1-kzY8QzvmcwT3csE/edit), tab `VNM_Longrun_Panel_2006_2025`. The tab was read back after update: header present, FY2006–FY2025 exactly once, and missing FY2021–FY2025 gross-profit/CFO-derived ratios remain blank rather than zero.
