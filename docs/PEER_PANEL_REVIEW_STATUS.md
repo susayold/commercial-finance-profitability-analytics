@@ -39,3 +39,6 @@ The project must not manufacture a long-run series by copying a current-year num
 - [Calculated peer summary CSV](../data/peer_analyst_summary.csv)
 - [Remote Google Sheet with formulas and review queue](https://docs.google.com/spreadsheets/d/1HNViR2NV1KPu1H-ZYRADv8amwP1-kzY8QzvmcwT3csE/edit)
 - [Narrative summary in Drive](https://docs.google.com/document/d/1RYxXxNddNYHca0IkglXmx_O--guf0IST2V8v-nCGuyw/edit)
+- [Long-run comparability CSV](../data/peer_analyst_summary_longrun.csv)
+- Drive CSV copies: [peer summary](https://drive.google.com/file/d/1qmLnJI3tZqzMkPoc6TAJT1YWQqPuMMWi/view) and [long-run summary](https://drive.google.com/file/d/1a3M6pXLbiMigi1I8teV7n-mZjCT4zOMu/view)
+- Control note: unverified KDC PAT values remain blank in the panel and formulas return blank, never 0%.
