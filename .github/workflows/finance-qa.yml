@@ -93,6 +93,11 @@ jobs:
         run: |
           node scripts/validate_master_plan_evidence_matrix.mjs
 
+      - name: Validate role alignment matrix
+        shell: bash
+        run: |
+          node scripts/validate_role_alignment_matrix.mjs
+
       - name: Validate Power BI model contract JSON
         shell: bash
         run: |
