@@ -80,3 +80,11 @@ This closes the QNS FY2016–FY2020 statement layer. Historical VNM FY2006–FY2
 
 The remaining VNM FY2006–FY2015 backlog now has a field-level promotion protocol with statement identity, page-anchor, unit normalization, arithmetic tie-out and restatement gates. See [GitHub protocol](VNM_LEGACY_REVIEW_PROTOCOL.md) and [Drive copy](https://drive.google.com/file/d/1jlDU8a-hci7WuRDTi1Vy3Bjc1lEWA0GP/view). This keeps legacy candidates visible and useful without presenting them as audited verified rows.
 
+### VNM FY2014–FY2015 promotion (2026-08-30)
+
+VNM FY2014–FY2015 are now statement-verified from the audited VAS consolidated FY2015 filing. The FY2014 comparative column and FY2015 current column provide all eight required metrics on statement pages 116–123. Queue status is now 17 verified, 7 summary candidates and 1 statement-review row (VNM FY2006).
+
+- [VNM FY2014–FY2015 statement CSV](../data/vnm_statement_metrics_2014_2015.csv)
+- Drive CSV: https://drive.google.com/file/d/1oz7ENrbZD1yf_kkts1TsKFqKTOkprm6Z/view
+- Source report: https://drive.google.com/file/d/1F2fn3TYgQMkl_C7xoasOAGPOzbCXY8R8/view
+
