@@ -22,7 +22,7 @@ The project must not manufacture a long-run series by copying a current-year num
 ## Next extraction pass
 
 1. Parse the statement pages of each FY2016-FY2020 report for revenue, gross profit, operating profit, PBT, PAT, assets, equity and CFO.
-2. VNM FY2007-FY2015 summary candidates are now archived in `data/vnm_legacy_summary_candidates_2007_2015.csv`; they remain review-required until the full metric set is page-anchored.
+2. VNM FY2006-FY2015 summary candidates are now archived in `data/vnm_legacy_summary_candidates_2007_2015.csv`; they remain review-required until the full metric set is page-anchored.
 3. Capture page-level source anchors and original labels.
 4. Reconcile the extracted values to the latest restated comparative columns.
 5. Flag perimeter changes (KDC restructuring, QNS sugar/soy mix, VNM IFRS/VAS basis) before trend calculations.
