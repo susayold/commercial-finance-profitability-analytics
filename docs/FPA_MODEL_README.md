@@ -72,11 +72,11 @@ Version 2 expands the v1 management model to 28 tabs. New modules include:
 - Invoice-line Sales_Fact with 2,160 rows across 36 months, 12 SKUs, 5 channels and 10 customers.
 - Product, channel and customer profitability.
 - Price-volume-mix bridge with a monthly reconciliation check.
-- Promotion and pricing simulator with incremental revenue, variable cost, contribution and approval hurdle.
+- Promotion and pricing simulator with incremental revenue, variable cost, promotion spend, contribution-after-spend, ROI and approval hurdle; four negative-CM stop-loss events are deliberately visible.
 - Budget, forecast versions, base/upside/downside scenarios and a seeded 100-iteration Monte Carlo overlay.
 - Working-capital schedule with AR, inventory, AP, DSO, DIO, DPO, CCC, cash-release estimate and escalation flags.
 - Debt/liquidity schedule with minimum cash, revolver draw and interest proxy.
-- Marginal-ROI budget allocation and public peer benchmark with comparability notes.
+- Marginal-ROI budget allocation with target shares, fixed-budget conservation, capacity/max-increase caps and public peer benchmark with comparability notes.
 - CFO Executive Output with readable text month labels and a control-gated PASS status.
 
 ### v2 QA evidence
@@ -89,6 +89,7 @@ Version 2 expands the v1 management model to 28 tabs. New modules include:
 - No negative sales: PASS (0 rows).
 - Scenario rows: PASS (4/4).
 - Budget allocation rows: PASS (5/5).
+- Promotion ROI validator: PASS (8 events; 4 negative-CM events; hurdle decisions recalculate).
+- Fixed-budget allocation validator: PASS (old and new budget both VND 4.35bn; caps and deltas recalculate).
 - Formula-error scan: PASS (zero matches).
 - Model status: PASS.
-

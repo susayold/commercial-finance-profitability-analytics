@@ -253,3 +253,5 @@ Drive mirror for M&A extension:
 - [Latest data-acquisition status](docs/DATA_ACQUISITION_STATUS.md) · [Drive copy](https://drive.google.com/file/d/1kiG1GIw7OP1RFNwyMniADYY0_UM3rBn-/view)
 - [Final QA and handoff](docs/FINAL_QA_AND_HANDOFF_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1xQIm44FZnwH_Xdhv4vp8sAD9OHENY2Zh/view)
 - [Reproducible QA runner](docs/REPRODUCIBLE_QA_RUNNER.md) · [Runner script](scripts/run_finance_qa.mjs) · [Drive guide](https://drive.google.com/file/d/1A0oiAWHr2E2DpLPapQneAzKTKF6D5w-H/view) · [Drive script](https://drive.google.com/file/d/13TxmloAohyUMgor4IJyuJnyxVCt0DJtR/view)
+- [Promotion/pricing/allocation methodology](docs/PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [Stretch-module QA report](reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view)
+- Promotion ROI now subtracts spend and applies a 25% hurdle; fixed-budget allocation now conserves the VND 4.35bn approved budget and checks capacity/max-increase constraints.

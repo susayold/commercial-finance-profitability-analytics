@@ -4,7 +4,7 @@
 
 `node scripts/run_finance_qa.mjs` is a cross-platform smoke/regression runner for the repository's deterministic finance validators. It is designed for a reviewer to run after cloning the GitHub repository, without Excel, Google Drive or Power BI Desktop.
 
-The runner executes the evidence matrix, role-alignment matrix, PBIP manifest, M&A, D2C, public-guidance, VNM long-run and peer-evidence validators, then checks the Power BI contract shape. It prints one JSON summary and exits non-zero on any failure.
+The runner executes the evidence matrix, role-alignment matrix, promotion ROI, fixed-budget reallocation, PBIP manifest, M&A, D2C, public-guidance, VNM long-run and peer-evidence validators, then checks the Power BI contract shape. It prints one JSON summary and exits non-zero on any failure.
 
 ## Usage
 

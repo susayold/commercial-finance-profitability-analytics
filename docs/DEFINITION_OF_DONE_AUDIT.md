@@ -11,6 +11,7 @@ This audit maps the user-provided master plan to evidence that a recruiter or fi
 - Historical peer extraction is closed for VNM FY2006–FY2020, QNS FY2016–FY2020 and KDC FY2016–FY2020; all 25 queue rows have statement metrics, page anchors and basis notes. Long-run ranking still requires the documented QNS revenue-basis and KDC perimeter caveats.
 - The market-fit layer is complete: [role-alignment matrix](ROLE_ALIGNMENT_MATRIX.md), [machine-readable CSV](../data/role_alignment_matrix.csv) and [role-targeted CV variants](CV_ROLE_VARIANTS.md) are committed and mirrored to Drive.
 - The current remote QA run passes the evidence matrix, role matrix, PBIP manifest, M&A, D2C, public-guidance, VNM long-run and peer validators. Gate A (genuine internal snapshot) and Gate B (native PBIX/Desktop QA) remain the only external release gates.
+- Promotion ROI and fixed-budget allocation are now independently inspectable: spend is included in ROI, negative-CM stop-loss events are visible, and recommended channel budgets conserve the approved total. See [stretch-module QA](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md).
 
 ## 1. Definition-of-done matrix
 
