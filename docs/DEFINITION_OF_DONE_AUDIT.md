@@ -140,3 +140,13 @@ The VNM public-guidance proxy now has a deterministic analysis output with metri
 The project now includes a recruiter/interviewer-facing talk track covering the 90-second positioning, a 15-minute evidence walkthrough, three STAR stories, common pushback and the production handoff. This converts the model depth into a repeatable finance-analyst communication artifact without changing the evidence labels.
 
 - [Finance Analyst / FP&A talk track](FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md) · [Drive copy](https://drive.google.com/file/d/1qyKG5FJW5_EdKyu10l-xWUyOU9i5tLRy/view).
+
+
+## 14. M&A / strategic-stretch extension
+
+A synthetic Buy-vs-Build acquisition screen is now implemented with standalone target economics, revenue and cost synergies, integration costs, financing interest, EPS accretion/dilution, incremental FCFF, NPV and a 12-cell entry-multiple / synergy-realization sensitivity grid. The case is explicitly synthetic and does not close the internal forecast Gate A or Power BI Gate B.
+
+- [Methodology and decision memo](MNA_ACCRETION_DILUTION.md)
+- [Forecast CSV](../data/mna_accretion_dilution_synthetic.csv) · [Sensitivity CSV](../data/mna_accretion_dilution_sensitivity.csv)
+- [Validator](../scripts/validate_mna_accretion_dilution.mjs) · [QA report](../reports/MNA_ACCRETION_DILUTION_QA.md)
+- Base output: Year-2 EPS accretion 17.16%; deal NPV VND 28.39bn; Year-1 EPS dilution -0.46%.
