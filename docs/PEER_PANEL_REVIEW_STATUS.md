@@ -167,3 +167,13 @@ VNM FY2008 is now promoted to `reported_statement_verified` from the audited VAS
 - Source report: https://drive.google.com/file/d/1Gf0kIBZUy6f4wQ1I5A9KXFOwN_A82rEa/view
 
 Queue status is now 23 `reported_statement_verified`, 1 `summary_candidate_review_required` (VNM FY2007) and 1 `statement_review_required` (VNM FY2006). The approved benchmark remains FY2016–FY2025; FY2008–FY2015 are retained in the evidence-gated statement layer.
+
+## VNM FY2007 audited statement promotion (2026-08-30)
+
+VNM FY2007 is now promoted to `reported_statement_verified` from the audited VAS consolidated FY2008 filing's comparative column. Pages 4–10 cover the statement set; VND-million amounts are normalized to VND bn and all eight required metrics are captured.
+
+- [VNM FY2007 statement metrics](../data/vnm_statement_metrics_2007.csv)
+- Drive CSV: https://drive.google.com/file/d/1R-gRhH3CB6_Ampk-FKmkJLSC2q3OrpMY/view
+- Source report: https://drive.google.com/file/d/1u8m2YW31sizcckCXF2OJZAHE7JpDNHrb/view
+
+Queue status is now 24 `reported_statement_verified` and 1 `statement_review_required` (VNM FY2006). The approved benchmark remains FY2016–FY2025; FY2007–FY2015 are retained in the evidence-gated statement layer.
