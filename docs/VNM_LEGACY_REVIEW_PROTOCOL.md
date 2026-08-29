@@ -44,3 +44,7 @@ VNM FY2006 remains statement-review-required. VNM FY2007 has summary and/or oper
 ## VNM legacy backlog update (2026-08-30)
 
 VNM FY2007 is now statement-verified in `data/vnm_statement_metrics_2007.csv`. Only FY2006 remains `statement_review_required`; all other FY2007–FY2015 legacy years have full eight-metric statement layers.
+
+## VNM legacy review closure (2026-08-30)
+
+FY2006 is now statement-verified as a restated VAS consolidated comparative from the FY2007 audited filing. The FY2006–FY2015 legacy review queue is closed: all 10 years have the full eight-metric statement layer, source URL, page anchor and basis caveat. The approved benchmark export remains FY2016–FY2025 by design; extending it to earlier years is a separate comparability decision.
