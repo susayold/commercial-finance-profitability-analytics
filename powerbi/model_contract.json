@@ -154,6 +154,39 @@
         "Confidence_Low",
         "Confidence_High"
       ]
+    },
+    {
+      "name": "Peer_Benchmark",
+      "grain": "company x fiscal_year",
+      "keys": [
+        "Ticker",
+        "FiscalYear"
+      ],
+      "measures": [
+        "Net_Revenue_VND_bn",
+        "Profit_Before_Tax_VND_bn",
+        "Profit_After_Tax_VND_bn",
+        "Total_Assets_VND_bn",
+        "PBT_Margin",
+        "PAT_Margin",
+        "Revenue_to_Assets"
+      ],
+      "filters": [
+        "Source_Status = reported_summary_verified or reported_statement_verified"
+      ]
+    },
+    {
+      "name": "Peer_Review_Queue",
+      "grain": "candidate row x fiscal_year",
+      "keys": [
+        "Ticker",
+        "FiscalYear"
+      ],
+      "measures": [
+        "Review_Status",
+        "Required_Metrics",
+        "Source_Document"
+      ]
     }
   ],
   "relationships": [
@@ -283,6 +316,7 @@
     "Channel contribution sums to total contribution",
     "Checks[MODEL STATUS] equals PASS",
     "No negative sales facts",
-    "Every visual shows evidence classification and refresh timestamp"
+    "Every visual shows evidence classification and refresh timestamp",
+    "Unapproved peer candidates are excluded from benchmark trend visuals and clearly flagged in Controls & Evidence"
   ]
 }
