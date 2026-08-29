@@ -147,3 +147,13 @@ VNM FY2009 is now promoted to `reported_statement_verified` from the audited VAS
 - Native Sheet queue row: `Peer_Extraction_Queue` FY2009
 
 Queue status is now 22 `reported_statement_verified`, 2 `summary_candidate_review_required` (VNM FY2007–FY2008) and 1 `statement_review_required` (VNM FY2006). The FY2016–FY2025 approved benchmark is unchanged; FY2009–FY2015 remain in the evidence-gated statement layer.
+
+## VNM FY2010–FY2011 audited statement promotion (2026-08-30)
+
+VNM FY2010–FY2011 are now promoted to `reported_statement_verified` from the audited VAS consolidated FY2011 filing. FY2010 is the comparative column and FY2011 the current-year column; pages 72–76 cover all eight required metrics.
+
+- [VNM FY2010–FY2011 statement metrics](../data/vnm_statement_metrics_2010_2011.csv)
+- Drive CSV: https://drive.google.com/file/d/1RuwQRtuuN31rEl2UXhWMKf4FY_Yai5w4/view
+- Source report: https://drive.google.com/file/d/11ZPUwIM_Sl_i8FUWUATCPoetHoVlnvDs/view
+
+Queue status is now 21 `reported_statement_verified`, 3 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006). The merged VNM FY2009–FY2020 layer is available for long-run read-through, while the approved benchmark scope remains FY2016–FY2025.
