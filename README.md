@@ -135,3 +135,5 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [VNM long-run panel QA validator](scripts/validate_vnm_longrun_panel.mjs) · [QA report](reports/VNM_LONGRUN_PANEL_QA.md) (17/17 checks PASS).
 
 - Automated regression checks: [`.github/workflows/finance-qa.yml`](.github/workflows/finance-qa.yml) runs forecast leakage unit test, VNM panel 17-check validator and Power BI contract JSON validation on push/PR.
+
+- [CI QA rehearsal report](reports/CI_QA_LOCAL_REHEARSAL_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1CUWzZ4PClwQPEMXgNvn679uufSnTntmQ/view)
