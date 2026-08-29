@@ -42,3 +42,8 @@ Use this panel to demonstrate that the analyst can:
 ## Native reviewer view
 
 The same 20-row panel is available in the native [Peer Financial Panel Review Sheet](https://docs.google.com/spreadsheets/d/1HNViR2NV1KPu1H-ZYRADv8amwP1-kzY8QzvmcwT3csE/edit), tab `VNM_Longrun_Panel_2006_2025`. The tab was read back after update: header present, FY2006–FY2025 exactly once, and missing FY2021–FY2025 gross-profit/CFO-derived ratios remain blank rather than zero.
+
+
+## QA automation
+
+The executable [validator](../scripts/validate_vnm_longrun_panel.mjs) returns **17/17 PASS** against the current panel. The [report](../reports/VNM_LONGRUN_PANEL_QA.md) is archived in GitHub and Drive (validator: https://drive.google.com/file/d/1UgrPiR_HimuKQyXZV0nuVCLve_4qu3Js/view; report: https://drive.google.com/file/d/1zxejQ4mhnUyyMGbBbwlX1kVY2Ea2Xhd0/view).
