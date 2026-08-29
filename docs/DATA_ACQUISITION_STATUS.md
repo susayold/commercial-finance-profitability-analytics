@@ -2,6 +2,10 @@
 
 Updated: 2026-08-29
 
+## Superseding status update — 2026-08-30
+
+The peer extraction extension described below has been completed: VNM FY2006–FY2020, QNS FY2016–FY2020 and KDC FY2016–FY2020 now have statement-level metrics, page anchors and basis notes in the remote evidence layer. The MCH OCR queue remains a separate needs-human-review extraction stream and is not treated as approved peer evidence. Gate A and Gate B remain the only external portfolio gates.
+
 ## Remote archive
 
 Google Drive project folder: https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR

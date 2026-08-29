@@ -1163,6 +1163,17 @@ Immediate next sprint:
 
 ## Current execution status — 2026-08-29 (superseding update)
 
+## Current execution status — 2026-08-30 (latest)
+
+The historical peer extraction work is now closed for VNM FY2006–FY2020, QNS FY2016–FY2020 and KDC FY2016–FY2020. The approved benchmark remains FY2016–FY2025 because extending the benchmark window requires a separate comparability decision. The recruiter website, strategic-finance/M&A extension, public-guidance analysis, PBIP handoff, role-alignment matrix and role-targeted CV variants are also remotely archived and linked from the README.
+
+Only two plan items remain external rather than unbuilt:
+
+1. Gate A — add an approved real internal pre-close forecast snapshot and calculate observed Bias/WAPE.
+2. Gate B — open Power BI Desktop, create the native `.pbix`, execute QA-01–QA-18 and archive the binary/visual evidence.
+
+The local staging directory is not an authoritative source and is deleted after each remote upload.
+
 Completed and remotely verified:
 
 - Full Excel v2 model is built with 28 tabs, 36 monthly periods, 2,160 invoice lines, seeded scenarios, PVM, profitability, working capital, budget allocation, peer benchmark and controls. Formula scan is zero-match; nine control checks are PASS.

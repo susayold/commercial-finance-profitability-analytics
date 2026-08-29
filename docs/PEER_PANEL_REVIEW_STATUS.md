@@ -1,5 +1,9 @@
 # Peer Panel Review Status — 2026-08-29
 
+## Superseding status update — 2026-08-30
+
+The historical statement layer is now closed for VNM FY2006–FY2020, QNS FY2016–FY2020 and KDC FY2016–FY2020. All 25 queue rows carry eight statement metrics, source URLs, page anchors and basis notes. The approved benchmark remains FY2016–FY2025 by design; extending benchmark trend views earlier is a separate comparability decision. The sections below preserve the chronological build log.
+
 ## Current verified layer
 
 A remote Google Sheet, **Peer_Financial_Panel_Review_v1**, contains 15 rows for VNM, QNS and KDC covering FY2021-FY2025, plus source-linked legacy tabs. Values are taken from the latest official annual-report summary tables and retain the source document, URL, basis and comparability note.
@@ -19,14 +23,12 @@ The project must not manufacture a long-run series by copying a current-year num
 - KDC annual reports: FY2016-FY2025.
 - MCH annual reports and audited statements: source registry and OCR review layer.
 
-## Next extraction pass
+## Historical build log (superseded next-extraction checklist)
 
-1. Parse the statement pages of each FY2016-FY2020 report for revenue, gross profit, operating profit, PBT, PAT, assets, equity and CFO.
-2. VNM FY2006-FY2015 summary candidates are now archived in `data/vnm_legacy_summary_candidates_2007_2015.csv`; they remain review-required until the full metric set is page-anchored.
-3. Capture page-level source anchors and original labels.
-4. Reconcile the extracted values to the latest restated comparative columns.
-5. Flag perimeter changes (KDC restructuring, QNS sugar/soy mix, VNM IFRS/VAS basis) before trend calculations.
-6. Load only approved rows into the Power BI peer benchmark table.
+1. The original extraction checklist was completed and retained for audit history.
+2. Legacy candidate files remain as provenance, but the promoted statement CSVs are the authoritative metric layer.
+3. Perimeter and basis flags remain mandatory before trend calculations.
+4. Load only approved rows into the Power BI peer benchmark table.
 
 ## Evidence labels
 

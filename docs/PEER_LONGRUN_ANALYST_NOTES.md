@@ -2,7 +2,7 @@
 
 ## Scope and evidence
 
-This note uses the evidence-gated export `data/peer_benchmark_approved_2016_2025.csv`. FY2016–FY2020 VNM and KDC rows are VAS consolidated statements with page anchors; QNS FY2016–FY2019 remain official summary-table rows while FY2020 is now an audited VAS consolidated statement with pages 6–9; FY2021–FY2025 are latest annual-report summary series. Missing operating profit, gross profit, equity or CFO values are intentionally blank and must not be imputed.
+This note uses the evidence-gated export `data/peer_benchmark_approved_2016_2025.csv`. FY2016–FY2020 VNM, QNS and KDC rows are now statement-verified with page anchors; FY2021–FY2025 remain latest annual-report summary series. Missing values in the summary layer are intentionally blank and must not be imputed.
 
 ## FY2016–FY2020 read-through
 

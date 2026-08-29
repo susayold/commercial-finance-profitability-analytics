@@ -51,7 +51,7 @@ Every output distinguishes reported fact, calculated fact, synthetic fact, assum
 
 Phase 1A complete: remote infrastructure, source archive, registry, synthetic operating ledger, MCH OCR review layer and executable Excel FP&A model v1.
 
-Current state: Excel v2, management memo/deck, recruiter site, peer-panel review layer and Power BI semantic contract are delivered; native PBIX creation and older-year page-level peer review remain explicit next actions.
+Current state: Excel v2, management memo/deck, recruiter site, peer-panel review layer, full VNM FY2006–FY2025 panel and Power BI semantic contract are delivered; only the genuine internal forecast snapshot (Gate A) and native PBIX/Desktop QA (Gate B) remain external next actions.
 
 ## FP&A model v2 — full 28-tab finance analyst model
 
@@ -248,3 +248,7 @@ Drive mirror for M&A extension:
 - [Drive matrix](https://drive.google.com/file/d/1ngIE4Nw4-P-F6xtmxXvhUfVJPsOPVV6D/view) · [Drive CSV](https://drive.google.com/file/d/1kTabGOJ66UbXbWxv1bsbJwHqJmbKcoot/view) · [Drive validator](https://drive.google.com/file/d/1jsNPUb-F8mvESYmyUnT6Q3xlt5aFg9cu/view)
 - Research maps recurring Vietnam hiring signals—planning/forecasting, variance/PVM, profitability, working capital, business partnering, commercial ROI, modelling, controls, Power BI and communication—to concrete artifacts and CV phrases. Gate A and Gate B remain explicitly caveated.
 - [Role-targeted CV variants](docs/CV_ROLE_VARIANTS.md) · [Drive copy](https://drive.google.com/file/d/1nfaqwK6J8_1A0O5wpLZhmakhXLrWgObh/view)
+
+- [Latest full-depth execution status](docs/FULL_DEPTH_EXECUTION_BLUEPRINT.md) · [Drive copy](https://drive.google.com/file/d/1g3wdwx1baGRGW4kjbLJSTd8Aoy1ZgsW0/view)
+- [Latest data-acquisition status](docs/DATA_ACQUISITION_STATUS.md) · [Drive copy](https://drive.google.com/file/d/1kiG1GIw7OP1RFNwyMniADYY0_UM3rBn-/view)
+- [Final QA and handoff](docs/FINAL_QA_AND_HANDOFF_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1xQIm44FZnwH_Xdhv4vp8sAD9OHENY2Zh/view)
