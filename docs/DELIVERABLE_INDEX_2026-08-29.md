@@ -130,3 +130,5 @@
 - [VNM FY2006 statement metrics](../data/vnm_statement_metrics_2006.csv) · [Drive](https://drive.google.com/file/d/1hwWLegn75wdISM2y3FvpLJfz2drloKNe/view) · Source report: https://drive.google.com/file/d/18bDh7lOfg3xUyJsdT-duGE7laymBYX3O/view
 - Queue status after FY2006 promotion: 25 statement-verified rows.
 - FY2006 promotion addendum: [Drive](https://drive.google.com/file/d/1sLpSxaDU-m_ZRyYWU9kktuU8eEZ7eUme/view)
+
+- [Merged VNM FY2006–FY2020 statement layer](../data/vnm_statement_metrics_2006_2020.csv) · Native Sheet tab: `VNM_Statement_Metrics_2006_2020` · [FY2006 Drive CSV](https://drive.google.com/file/d/1hwWLegn75wdISM2y3FvpLJfz2drloKNe/view)
