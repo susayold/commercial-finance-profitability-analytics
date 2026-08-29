@@ -131,3 +131,5 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Definition-of-done evidence audit](docs/DEFINITION_OF_DONE_AUDIT.md) · [Drive copy](https://drive.google.com/file/d/1moblqlk6_MApvkIBSdluDBnxhqhwTqxI/view)
 
 - [VNM long-run analyst panel FY2006–FY2025](data/vnm_longrun_panel_2006_2025.csv) · [Methodology](docs/VNM_LONGRUN_PANEL.md) · [Drive CSV](https://drive.google.com/file/d/1R0ruyyRRLl7bFWuzKlhpihor2_4Qu4Hv/view)
+
+- [VNM long-run panel QA validator](scripts/validate_vnm_longrun_panel.mjs) · [QA report](reports/VNM_LONGRUN_PANEL_QA.md) (17/17 checks PASS).
