@@ -72,6 +72,8 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Website release update: [Forecast section release](reports/SITE_FORECAST_SECTION_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1Cz5Hl0HH9YLLklKBHJ2FBlTdEyQWz6u9/view). Production site now exposes a recruiter-facing forecast-performance section with explicit Gate A exclusion.
 - Interview preparation: [Finance Analyst / FP&A talk track](docs/FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md) · [Drive copy](https://drive.google.com/file/d/1qyKG5FJW5_EdKyu10l-xWUyOU9i5tLRy/view). Includes a 90-second pitch, 15-minute walkthrough, STAR stories and pushback answers.
 
+- [MCH OCR review triage](reports/MCH_OCR_REVIEW_TRIAGE_2026-08-30.md) · [Drive review document](https://docs.google.com/document/d/1MRy5T3IC19X77agxXheJ74mZQjAz__IeMbavaJkYQ8I/edit?usp=drivesdk) — 120-row queue, 61 missing candidates, 2 numeric outliers and 7 adjacent-year duplicate signals prioritized for page-level review.
+
 ## Peer panel review layer
 
 - [Peer panel review status](docs/PEER_PANEL_REVIEW_STATUS.md)
