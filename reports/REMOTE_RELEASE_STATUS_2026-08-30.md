@@ -24,7 +24,7 @@ The 30 Aug release adds a source-backed Vietnam hiring matrix for Junior FP&A/Fi
 
 Role-targeted CV variants are also archived for the same three role families: [GitHub](../docs/CV_ROLE_VARIANTS.md) · [Drive](https://drive.google.com/file/d/1nfaqwK6J8_1A0O5wpLZhmakhXLrWgObh/view).
 
-The repository now includes a cross-platform [finance QA runner](../scripts/run_finance_qa.mjs) and [usage guide](../docs/REPRODUCIBLE_QA_RUNNER.md) (Drive copies: [script](https://drive.google.com/file/d/13TxmloAohyUMgor4IJyuJnyxVCt0DJtR/view), [guide](https://drive.google.com/file/d/1A0oiAWHr2E2DpLPapQneAzKTKF6D5w-H/view)). The current rehearsal passes all 10 repository-local checks; it intentionally does not fabricate Gate A or Gate B.
+The repository now includes a cross-platform [finance QA runner](../scripts/run_finance_qa.mjs) and [usage guide](../docs/REPRODUCIBLE_QA_RUNNER.md) (Drive copies: [script](https://drive.google.com/file/d/13TxmloAohyUMgor4IJyuJnyxVCt0DJtR/view), [guide](https://drive.google.com/file/d/1A0oiAWHr2E2DpLPapQneAzKTKF6D5w-H/view)). The current rehearsal passes all 12 repository-local checks; it intentionally does not fabricate Gate A or Gate B.
 
 The commercial stretch modules are now hardened: [promotion ROI](../data/promotion_roi_synthetic.csv) subtracts promotion spend and applies a hurdle, while [budget reallocation](../data/budget_reallocation_synthetic.csv) proves fixed-budget conservation. [Methodology](../docs/PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [QA report](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view).
 
