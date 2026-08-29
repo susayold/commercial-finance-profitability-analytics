@@ -116,3 +116,5 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Native PBIX execution runbook](powerbi/POWER_BI_DESKTOP_RUNBOOK.md) · [Drive copy](https://drive.google.com/file/d/1GdN43ajowcg9qjIf5fmwnX9Qarfd64Us/view)
 
 - [Forecast accuracy backtest specification](docs/FORECAST_ACCURACY_BACKTEST.md) · [Bias/WAPE script](scripts/compute_forecast_accuracy.mjs) · [Input template](data/forecast_accuracy_input_template.csv)
+
+- [Native forecast snapshot capture Sheet](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit) · [Builder script](scripts/build_forecast_capture.mjs)
