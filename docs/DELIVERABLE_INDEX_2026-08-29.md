@@ -118,3 +118,5 @@
 - Source reports: [FY2010](https://drive.google.com/file/d/1odK3EfOC89Zj0DagGdhuTaO_JtGWLMZD/view) · [FY2011](https://drive.google.com/file/d/11ZPUwIM_Sl_i8FUWUATCPoetHoVlnvDs/view) · [FY2013](https://drive.google.com/file/d/1Mnh5QV6ZRPSCQoBDCClR4Pd3CjIZDt1D/view)
 - Queue status: 22 statement-verified, 2 summary candidates (FY2007–FY2008), 1 statement-review-required (FY2006).
 - Promotion addenda: [FY2009 Drive](https://drive.google.com/file/d/1pItO1frxjOPhou-UEuzesp2SatmT2gb-/view) · [FY2010–FY2011 Drive](https://drive.google.com/file/d/1-lo4f8g2R5NXgGOX4JS8BbuEjdEJyV62/view)
+
+- [Merged VNM FY2009–FY2020 statement layer](../data/vnm_statement_metrics_2009_2020.csv) · [Drive](https://drive.google.com/file/d/1qjYylxjoNIOQ_RHb1glC69CZY-Fmqfj0/view) · Native Sheet tab: `VNM_Statement_Metrics_2009_2020`
