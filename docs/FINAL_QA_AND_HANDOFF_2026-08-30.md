@@ -105,3 +105,7 @@ VNM FY2010–FY2011 are now statement-verified from the audited VAS consolidated
 - Source report: https://drive.google.com/file/d/11ZPUwIM_Sl_i8FUWUATCPoetHoVlnvDs/view
 
 The approved benchmark export remains FY2016–FY2025; FY2010–FY2015 rows are retained in the evidence-gated statement layer for future scope extension.
+
+### VNM FY2009 promotion (2026-08-30)
+
+VNM FY2009 is now statement-verified from the audited VAS consolidated FY2010 filing's comparative column (pages 6–11). All eight required metrics are archived in [GitHub](../data/vnm_statement_metrics_2009.csv) and [Drive](https://drive.google.com/file/d/1MOw5Sd553SYcOtR0k6zEpC4ZjGs4znLi/view). Queue status is now 22 verified, 2 summary candidates (VNM FY2007–FY2008) and 1 statement-review row (VNM FY2006). The approved benchmark remains FY2016–FY2025.
