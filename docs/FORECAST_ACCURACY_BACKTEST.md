@@ -63,3 +63,8 @@ The pipeline was run on a 29-row synthetic fixture as of 2025-12-31: 27 eligible
 
 - Demo input: [GitHub](../data/forecast_accuracy_demo_input.csv) · [Drive](https://drive.google.com/file/d/1LBORkBVD02V_2HS-a70vK6SKDgGxcp7i/view)
 - Demo output: [GitHub](../data/forecast_accuracy_demo_output.csv) · [Drive](https://drive.google.com/file/d/1NxiZJ-1hlS0L8pPmj-QfUi5mjPH8LPi3/view)
+
+
+## Capture-sheet control fields
+
+The native capture tab now extends the analytical columns with `Snapshot_Status`, `Source_Model_Version`, `Approver`, `Actual_Period_Close_Date` and `Exception_Note`. `Snapshot_Status` has strict validation (`DRAFT`, `FROZEN`, `EXCEPTION`), the header row is frozen, and leakage statuses are conditionally highlighted. The sample fixture remains `DRAFT`/`EXCEPTION`; it must be replaced with approved frozen snapshots before publishing observed accuracy.
