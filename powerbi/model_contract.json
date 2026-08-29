@@ -1,0 +1,288 @@
+{
+  "model_name": "VNFinance_Commercial_Finance_v2",
+  "grain": "monthly operating and transaction facts",
+  "source_workbook": "VietNova_FPA_Model_v2.xlsx",
+  "evidence_policy": {
+    "synthetic_operating_data": true,
+    "reported_peer_data": true,
+    "blank_unverified_values_allowed": true
+  },
+  "dimensions": [
+    {
+      "name": "Calendar",
+      "key": "DateKey",
+      "columns": [
+        "DateKey",
+        "Month",
+        "FiscalYear",
+        "FiscalQuarter"
+      ]
+    },
+    {
+      "name": "Product_Master",
+      "key": "ProductID",
+      "columns": [
+        "ProductID",
+        "Category",
+        "Brand",
+        "PackSize",
+        "StandardCost"
+      ]
+    },
+    {
+      "name": "Customer_Master",
+      "key": "CustomerID",
+      "columns": [
+        "CustomerID",
+        "CustomerName",
+        "ChannelID",
+        "Region",
+        "PaymentTermsDays"
+      ]
+    },
+    {
+      "name": "Channel_Master",
+      "key": "ChannelID",
+      "columns": [
+        "ChannelID",
+        "ChannelName",
+        "FeeRate",
+        "CMHurdle"
+      ]
+    },
+    {
+      "name": "Scenario Selector",
+      "key": "Scenario",
+      "columns": [
+        "Scenario"
+      ],
+      "disconnected": true
+    }
+  ],
+  "facts": [
+    {
+      "name": "Sales_Fact",
+      "grain": "invoice line",
+      "keys": [
+        "DateKey",
+        "ProductID",
+        "CustomerID",
+        "ChannelID"
+      ],
+      "measures": [
+        "Gross_Sales_VND",
+        "Discount_VND",
+        "Returns_VND",
+        "Net_Revenue_VND",
+        "COGS_VND",
+        "Units"
+      ]
+    },
+    {
+      "name": "Commercial_Costs",
+      "grain": "cost event x month x channel",
+      "keys": [
+        "DateKey",
+        "ChannelID"
+      ],
+      "measures": [
+        "Trade_Spend_VND",
+        "Platform_Fee_VND",
+        "Freight_VND",
+        "Variable_Cost_VND"
+      ]
+    },
+    {
+      "name": "Inventory",
+      "grain": "SKU x month",
+      "keys": [
+        "DateKey",
+        "ProductID"
+      ],
+      "measures": [
+        "Inventory_Value_VND",
+        "Units_On_Hand"
+      ]
+    },
+    {
+      "name": "AR",
+      "grain": "customer x month",
+      "keys": [
+        "DateKey",
+        "CustomerID"
+      ],
+      "measures": [
+        "Ending_AR_VND",
+        "Overdue_AR_VND"
+      ]
+    },
+    {
+      "name": "AP",
+      "grain": "supplier x month",
+      "keys": [
+        "DateKey"
+      ],
+      "measures": [
+        "Ending_AP_VND"
+      ]
+    },
+    {
+      "name": "Budget",
+      "grain": "month x channel x scenario",
+      "keys": [
+        "DateKey",
+        "ChannelID",
+        "Scenario"
+      ],
+      "measures": [
+        "Budget_Revenue_VND",
+        "Budget_Gross_Profit_VND",
+        "Budget_Opex_VND"
+      ]
+    },
+    {
+      "name": "Forecast_Versions",
+      "grain": "month x channel x scenario",
+      "keys": [
+        "DateKey",
+        "ChannelID",
+        "Scenario"
+      ],
+      "measures": [
+        "Forecast_Revenue_VND",
+        "Forecast_CM_VND",
+        "Confidence_Low",
+        "Confidence_High"
+      ]
+    }
+  ],
+  "relationships": [
+    [
+      "Calendar[DateKey]",
+      "Sales_Fact[DateKey]"
+    ],
+    [
+      "Calendar[DateKey]",
+      "Commercial_Costs[DateKey]"
+    ],
+    [
+      "Calendar[DateKey]",
+      "Inventory[DateKey]"
+    ],
+    [
+      "Calendar[DateKey]",
+      "AR[DateKey]"
+    ],
+    [
+      "Calendar[DateKey]",
+      "AP[DateKey]"
+    ],
+    [
+      "Calendar[DateKey]",
+      "Budget[DateKey]"
+    ],
+    [
+      "Calendar[DateKey]",
+      "Forecast_Versions[DateKey]"
+    ],
+    [
+      "Product_Master[ProductID]",
+      "Sales_Fact[ProductID]"
+    ],
+    [
+      "Product_Master[ProductID]",
+      "Inventory[ProductID]"
+    ],
+    [
+      "Customer_Master[CustomerID]",
+      "Sales_Fact[CustomerID]"
+    ],
+    [
+      "Channel_Master[ChannelID]",
+      "Sales_Fact[ChannelID]"
+    ],
+    [
+      "Channel_Master[ChannelID]",
+      "Commercial_Costs[ChannelID]"
+    ],
+    [
+      "Channel_Master[ChannelID]",
+      "Budget[ChannelID]"
+    ],
+    [
+      "Channel_Master[ChannelID]",
+      "Forecast_Versions[ChannelID]"
+    ]
+  ],
+  "pages": [
+    {
+      "name": "Executive Output",
+      "question": "What decision should the CFO make this month?",
+      "visuals": [
+        "scenario selector",
+        "revenue",
+        "EBITDA proxy",
+        "contribution margin",
+        "CCC",
+        "risk flag",
+        "action table"
+      ]
+    },
+    {
+      "name": "P&L and Variance",
+      "question": "Why did actuals miss or beat plan?",
+      "visuals": [
+        "actual vs budget vs forecast",
+        "variance waterfall",
+        "top drivers"
+      ]
+    },
+    {
+      "name": "PVM Bridge",
+      "question": "Was growth price, volume, mix or spend?",
+      "visuals": [
+        "price-volume-mix bridge",
+        "monthly bridge",
+        "driver table"
+      ]
+    },
+    {
+      "name": "Channel and Customer Profitability",
+      "question": "Which growth pays back after cost-to-serve?",
+      "visuals": [
+        "channel CM",
+        "customer drillthrough",
+        "SKU matrix",
+        "25% hurdle"
+      ]
+    },
+    {
+      "name": "Working Capital and Liquidity",
+      "question": "Where is cash trapped and what releases it?",
+      "visuals": [
+        "DSO/DIO/DPO/CCC",
+        "AR ageing",
+        "inventory cover",
+        "liquidity stress"
+      ]
+    },
+    {
+      "name": "Controls and Evidence",
+      "question": "Can a reviewer trust the number?",
+      "visuals": [
+        "tie-outs",
+        "row counts",
+        "formula status",
+        "source/evidence legend",
+        "review queue"
+      ]
+    }
+  ],
+  "acceptance_tests": [
+    "Net Revenue ties to Sales_Fact and Excel PnL within VND 100m deterministic rounding tolerance",
+    "Channel contribution sums to total contribution",
+    "Checks[MODEL STATUS] equals PASS",
+    "No negative sales facts",
+    "Every visual shows evidence classification and refresh timestamp"
+  ]
+}
