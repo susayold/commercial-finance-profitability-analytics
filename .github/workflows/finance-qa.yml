@@ -78,6 +78,11 @@ jobs:
             "$RUNNER_TEMP/peer_evidence_QA.md"
           grep -F "**Overall status: PASS** (21/21 checks passed)" "$RUNNER_TEMP/peer_evidence_QA.md"
 
+      - name: Validate MCH OCR review workbench
+        shell: bash
+        run: |
+          node scripts/validate_mch_ocr_workbench.mjs data/mch_ocr_review_workbench_template.csv
+
       - name: Validate PBIP source manifest
         shell: bash
         run: |
