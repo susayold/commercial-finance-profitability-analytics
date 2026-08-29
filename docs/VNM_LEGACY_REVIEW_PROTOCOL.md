@@ -33,7 +33,7 @@ For each year, record the original label, original amount, normalized amount, pa
 
 ## Current backlog
 
-VNM FY2006 remains statement-review-required. FY2007–FY2015 have summary and/or operating candidates archived, but remain unapproved until the full metric set and page-level tie-outs are complete. The approved peer benchmark therefore uses VNM statement rows from FY2016 onward and does not overstate legacy precision.
+VNM FY2006 remains statement-review-required. VNM FY2007–FY2013 have summary and/or operating candidates archived and remain unapproved until the full metric set and page-level tie-outs are complete. VNM FY2014–FY2015 are now statement-verified in `data/vnm_statement_metrics_2014_2015.csv`. The approved peer benchmark therefore uses statement rows from FY2016 onward; the legacy layer remains evidence-gated until each year is promoted.
 
 ## Remote artifacts
 
