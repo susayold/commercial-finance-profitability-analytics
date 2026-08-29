@@ -150,3 +150,10 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Native D2C Unit Economics Sheet](https://docs.google.com/spreadsheets/d/1nTEJJ9iBvxne0hCjGSDoHKaWgR_pqiMqgXYaTqGgbik/edit?usp=drivesdk)
 - Base illustration: CAC VND130k, LTV contribution VND93.6k, LTV/CAC 0.72x and payback 3.33 orders; all six native controls PASS. Inputs remain synthetic and the hurdle is illustrative.
 
+
+## Public guidance proxy (VNM FY2018–FY2025)
+
+- [Methodology](docs/VNM_PUBLIC_GUIDANCE_PROXY.md) · [Synthetic/proxy dataset](data/vnm_public_guidance_proxy_2018_2025.csv) · [Validator](scripts/validate_public_guidance_proxy.mjs)
+- [Drive CSV](https://drive.google.com/file/d/1BW6zGnxS-m67lLPLKfZuJn-5M-d4elw-/view) · [Drive methodology](https://drive.google.com/file/d/1LOmPrCcFGBFUXsdw3hi7WXziebKxHRJL/view) · [Drive validator](https://drive.google.com/file/d/1Y1nBInfRASnSankqfgmvjzcx7KP7EFq_/view)
+- 16 observations (revenue and PBT, FY2018–FY2025) produce aggregate Bias -2.63% and WAPE 3.14%.
+- This is AGM/public guidance, not an internal forecast snapshot; every row is explicitly `PUBLIC_GUIDANCE_PROXY` and `gate_a_eligible=NO`.
