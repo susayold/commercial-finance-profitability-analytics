@@ -106,6 +106,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 ## Public-guidance forecast performance analysis
 
 - [Analyst report](reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md) · [Analysis JSON](data/vnm_public_guidance_proxy_analysis.json) · [Generator](scripts/analyze_public_guidance_proxy.mjs) · [QA](reports/VNM_PUBLIC_GUIDANCE_ANALYSIS_QA.md)
+- [Drive report](https://drive.google.com/file/d/1G7XgCuQ3MLza4NjetaCwRajPKdLsZQWN/view) · [Drive analysis JSON](https://drive.google.com/file/d/1xF72I7FYa7T68e-NfC1aIeAnEXXRByht/view) · [Drive generator](https://drive.google.com/file/d/1bvA-P3ihQbf10BZxc1C_IBOwZYgZyjng/view) · [Drive validator](https://drive.google.com/file/d/1UU6Ln2p2lnOb_oZ-pre5v_u5TMuv4O-5/view) · [Drive QA](https://drive.google.com/file/d/1aFj7k9rL8ERfcNzEbOq5D_9g5y5P0Kck/view)
 - The report decomposes the 16-row VNM public-guidance proxy by metric and period, with Bias, WAPE, MAPE, within-2% rate, descriptive error bands and worst misses.
 - Key readout: PBT WAPE 4.89% versus revenue WAPE 2.79%; FY2022 PBT is the largest miss at -12.533% of guidance. These are public-guidance observations, not internal forecast accuracy.
 
