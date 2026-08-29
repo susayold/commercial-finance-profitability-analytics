@@ -84,3 +84,11 @@ A supplemental candidate file now captures readable gross profit, operating prof
 - [VNM legacy operating candidates](../data/vnm_legacy_operating_candidates_2007_2015.csv)
 - Drive CSV: https://drive.google.com/file/d/1UQjJe7Bwe05TGdpHcPM36Z084HsCQL44/view
 - Native Sheet tab: `VNM_Legacy_Operating_Candidates`
+
+## QNS operating-profit candidate layer
+
+QNS FY2016–FY2019 operating-profit figures are now captured from annual-report summary/operating tables; FY2020 remains blank because the readable summary exposes PBT/PAT but not operating profit. CFO and statement page anchors remain open, so every row stays `summary_candidate_review_required`.
+
+- [QNS operating candidates](../data/qns_operating_candidates_2016_2020.csv)
+- Drive CSV: https://drive.google.com/file/d/1LCkUDTcjRw7RvYazM05cNA5ipi3fdqhc/view
+- Native Sheet tab: `QNS_Operating_Candidates_2016_2020`
