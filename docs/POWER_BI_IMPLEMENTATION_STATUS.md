@@ -64,3 +64,8 @@ Promo ROI := DIVIDE ( [Incremental Contribution], SUM ( Commercial_Costs[Trade_S
 
 Open `Executive_Output` first, click the scenario selector, then use the page navigation to trace the decision back through PVM, channel economics and controls. The recommended interview walk-through is under five minutes.
 
+
+
+## Peer statement layer update (2026-08-30)
+
+VNM FY2016–FY2020 is now available as `data/vnm_statement_metrics_2016_2020.csv` and the native Sheet tab `VNM_Statement_Metrics_2016_2020`. These rows are eligible for peer benchmark visuals because they carry VAS consolidated statement metrics and page anchors. VNM FY2006–FY2015 candidates and QNS FY2016–FY2020 summary rows remain evidence-gated until statement-level review is complete.
