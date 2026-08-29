@@ -15,6 +15,8 @@ Native spreadsheet: [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](ht
 | Conditional alerts | PASS — `FUTURE_LEAKAGE` and `NOT_ELIGIBLE` ranges are highlighted |
 | Blank-row hygiene | PASS — template rows remain blank rather than producing 1900 dates or zero metrics |
 | Timezone | PASS — `Asia/Bangkok` |
+| Freeze gate behavior | PASS — DRAFT rows produce `WAITING_FOR_FROZEN_SNAPSHOT`; temporary FROZEN test produced metrics and `READY`, then was reverted |
+
 
 ## Release interpretation
 
