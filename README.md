@@ -22,6 +22,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - Missing and rejected documents are recorded explicitly; gaps are never filled with unverified copies
 - VietNova synthetic v1.0.0: 36 months, 6,480 sales lines, 36 SKUs, 5 channels, 24 customers, 13 CSV tables + manifest; QA controls PASS (10,152 checks, 0 errors)
 - Synthetic generator, ledger schema, hidden-truth event specification and QA validator are versioned in `scripts/` and `schemas/`
+- MCH OCR extraction pipeline: 125 machine candidates across FY2016-FY2025, 59 canonical review candidates and an explicit 120-row review queue; no OCR row is approved automatically
 
 Raw reports are stored in the private [Google Drive project folder](https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR). They are intentionally excluded from Git history.
 
@@ -39,4 +40,4 @@ Every output distinguishes reported fact, calculated fact, synthetic fact, assum
 
 Phase 0 complete: remote infrastructure, initial source archive, registry and full-depth blueprint.
 
-Next: page-level extraction lineage and human-reviewed normalized peer dataset; then Excel/Power BI model build and management deliverables.
+Next: human-review the MCH OCR queue and extend page-level extraction to VNM/QNS/KDC; then Excel/Power BI model build and management deliverables.
