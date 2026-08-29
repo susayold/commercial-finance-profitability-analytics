@@ -1,0 +1,19 @@
+{
+  "run_id": "mch_audited_fy2016_fy2025_pilot_2026-08-29",
+  "source_scope": "MCH audited consolidated financial statements FY2016-FY2025",
+  "input_pdf_count": 10,
+  "successful_download_count": 10,
+  "machine_extracted_row_count": 0,
+  "status": "OCR_REQUIRED",
+  "reason": "All ten official PDFs are image-only; pypdf/fitz returned zero text characters. Zero rows must not be interpreted as zero financial values.",
+  "duplicate_content_flags": [
+    {
+      "reported_year": 2017,
+      "reference_year": 2016,
+      "sha256_prefix": "6f6c6394",
+      "action": "hold_until_independent_official_copy"
+    }
+  ],
+  "next_action": "Render statement pages and transcribe with OCR/manual review, then independently recalculate statement totals before approval.",
+  "generated_at_utc": "2026-08-29T15:30:00Z"
+}
