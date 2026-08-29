@@ -1,0 +1,4 @@
+ticker,company,period_start,period_end,revenue_start_vnd_bn,revenue_end_vnd_bn,revenue_cagr_pct,cagr_status,pbt_margin_2025_pct,pat_margin_2025_pct,revenue_to_assets_2025,interpretation
+VNM,Vinamilk,2016,2025,46965,63646,3.43,calculated_comparable_vas_summary,18.30,14.79,1.19,"Stable long-run growth and strongest asset-turnover benchmark"
+QNS,Quang Ngai Sugar,2016,2025,7114,10575,,not_calculated_basis_break,20.92,18.12,0.74,"2016-2019 source uses total revenue while 2021-2025 source uses net revenue; do not calculate CAGR without re-normalization"
+KDC,KIDO Group,2016,2025,2239,9055,,not_calculated_perimeter_break,8.03,6.48,0.65,"2017 consolidation of Vocarimex/TAC and later portfolio changes make reported CAGR non-comparable"
