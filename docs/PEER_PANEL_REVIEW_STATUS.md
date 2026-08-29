@@ -68,3 +68,11 @@ VNM FY2016–FY2020 is now approved at statement level using VAS consolidated st
 - Page anchors: FY2016 134–137; FY2017 132–137; FY2018 144–149; FY2019 142–147; FY2020 140–145.
 
 Queue status is now 10 `reported_statement_verified`, 14 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006).
+
+## Approved benchmark export
+
+`data/peer_benchmark_approved_2016_2025.csv` is the evidence-gated export for Power BI: 30 company-year rows from VNM, QNS and KDC. Statement rows retain gross profit, operating profit, equity and CFO; summary rows intentionally leave unavailable metrics blank. Use `Source_Status`, `Source_Layer`, `Revenue_Basis` and `Comparability_Note` as required slicers/tooltip fields.
+
+- [Approved 2016–2025 benchmark CSV](../data/peer_benchmark_approved_2016_2025.csv)
+- Drive CSV: https://drive.google.com/file/d/1vXw9EaZaJ0HUCKn5MzHgK2dG1fgGUT6r/view
+- Native Sheet tab: `Peer_Benchmark_Approved_2016_2025`
