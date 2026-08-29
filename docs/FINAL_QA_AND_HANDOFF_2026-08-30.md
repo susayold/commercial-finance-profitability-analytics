@@ -5,7 +5,7 @@ Authoritative archives: [GitHub repository](https://github.com/susayold/commerci
 
 ## Overall assessment
 
-**Share with caveats.** The finance case is coherent, source-linked and recruiter-ready for a Junior FP&A / Finance Analyst portfolio. The Excel v2 model, synthetic ledger, management narrative, deck, website and peer-panel layer are complete enough to demonstrate operating-finance judgment. Two items remain intentionally open: (1) a native Power BI `.pbix` file is not available in this environment, so the semantic model and DAX are delivered as an implementation contract; and (2) older-year peer rows remain in a statement-level review queue rather than being marked approved without page anchors.
+**Share with caveats.** The finance case is coherent, source-linked and recruiter-ready for a Junior FP&A / Finance Analyst portfolio. The Excel v2 model, synthetic ledger, management narrative, deck, website and peer-panel layer are complete enough to demonstrate operating-finance judgment. Two items remain intentionally open: (1) a native Power BI `.pbix` file is not available in this environment, so the semantic model and DAX are delivered as an implementation contract; and (2) VNM/QNS legacy rows remain in a statement-level review queue rather than being marked approved without full metric coverage and page anchors.
 
 ## Methodology review
 
@@ -31,9 +31,9 @@ Authoritative archives: [GitHub repository](https://github.com/susayold/commerci
 ## Issues and caveats
 
 1. **Medium — Power BI handoff is specification-level.** The repository contains `powerbi/model_contract.json`, `powerbi/measures.dax` and `docs/POWER_BI_IMPLEMENTATION_STATUS.md`; the native `.pbix` must be created in Power BI Desktop using the remote v2 workbook as source.
-2. **Medium — historical peer extraction is not fully approved.** The 25-row queue in `Peer_Extraction_Queue` covers VNM FY2006–2020, QNS FY2016–2020 and KDC FY2016–2020. VNM FY2006–FY2015 now has source-linked summary candidates; all candidates remain review-required until page-level anchors and the full metric set are captured. The queue is traceable through source URL, page-anchor placeholder, reported basis and reviewer note fields.
+2. **Medium — historical peer extraction is not fully approved.** The 25-row queue in `Peer_Extraction_Queue` covers VNM FY2006–2020, QNS FY2016–2020 and KDC FY2016–2020. KDC FY2016–FY2020 now has source-linked statement metrics and page anchors; VNM/QNS legacy rows remain review-required until full metric coverage is captured. The queue is traceable through source URL, page-anchor placeholder, reported basis and reviewer note fields.
 3. **Medium — cross-company revenue bases differ.** QNS FY2016–2019 uses total revenue in the source summary, while FY2021–2025 uses net revenue. KDC has a 2017 Vocarimex/TAC consolidation-perimeter change and later portfolio changes. Do not rank long-run CAGR across these breaks without re-normalisation.
-4. **Low — synthetic operating economics are illustrative.** VietNova SKU, customer, trade-spend, forecast and cash-cycle values are deterministic scenario data, not reported company data.
+5. **Low — synthetic operating economics are illustrative.** VietNova SKU, customer, trade-spend, forecast and cash-cycle values are deterministic scenario data, not reported company data.
 
 ## Reviewer hand-off
 
