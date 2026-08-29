@@ -24,6 +24,14 @@ Current verified raw PDF count: 57.
 - Original labels, official URLs, language, scope and acquisition status are retained in data/source_registry.csv.
 - No raw PDFs are stored in Git history.
 
+## MCH OCR batch result (2026-08-29)
+
+- 10 official audited consolidated PDFs were downloaded and rendered.
+- RapidOCR produced 125 machine candidate rows across statement pages 6–13.
+- Canonical selection produced 59 review candidates and a 120-line review queue covering 12 core metrics × 10 years.
+- The candidate panel is intentionally marked needs_human_review; 31 duplicate warnings remain in the raw OCR QA summary.
+- FY2017 remains held because its official endpoint returned a byte-identical file to FY2016.
+
 ## Source gaps kept explicit
 
 ### QNS 2015
