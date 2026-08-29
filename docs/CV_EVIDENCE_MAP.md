@@ -12,6 +12,7 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Designed a visible finance control gate with nine checks; reconciled sales detail to P&L, channel detail to company revenue and 36 monthly working-capital rows, with zero formula-error matches in the final scan.
 - Created a commercial-finance decision layer that evaluates promotion/pricing events through incremental revenue, variable cost, contribution margin, hurdle rates and explicit approval/stop-loss actions.
 - Built a working-capital cockpit that surfaces DSO, DIO, DPO, CCC and cash-release opportunities; the illustrative FY2025 case shows 54.8 days average CCC and a June escalation flag.
+- Implemented leakage-safe forecast governance: archived 29 controlled snapshots with 27 FROZEN eligible rows, one FUTURE_LEAKAGE exception and one NOT_ELIGIBLE draft; reproduced versioned Bias/WAPE of +5%/+5%, −2%/2% and +10%/10% (synthetic fixture, not live company accuracy).
 - Calibrated a synthetic operating ledger against public FMCG peer context while maintaining an evidence taxonomy that separates reported facts, calculated facts, synthetic facts, assumptions, inferences and recommendations.
 - Built a source-linked peer QA workflow for official annual reports and audited statements, promoting 25/25 queue rows to reported_statement_verified only after page-level checks and retaining an explicit human-review protocol.
 
