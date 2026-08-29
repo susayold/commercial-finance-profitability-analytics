@@ -26,3 +26,10 @@ All project data, source code, QA scripts and reviewer-facing artifacts are comm
 4. Inspect the frozen forecast archive and exclusion controls.
 5. Open the PBIP handoff and run the validator.
 6. Treat the two gates above as intentionally open external controls.
+
+
+## Added in the forecast-performance extension
+
+- VNM public-guidance analysis report, deterministic JSON output, generator, validator and QA report are now committed and mirrored to Drive.
+- The extension reports metric/regime splits, Bias, WAPE, MAPE, within-2% rate, descriptive error bands and ranked misses; it remains public-guidance evidence and does not close Gate A.
+- CI now regenerates and validates the analysis output from the source CSV on every push and pull request.
