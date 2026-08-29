@@ -89,7 +89,7 @@ The VNM FY2006–FY2025 panel has an executable [validator](../scripts/validate_
 The repository includes [GitHub Actions finance QA](../.github/workflows/finance-qa.yml) that re-runs the forecast leakage fixture, the VNM long-run panel validator and the Power BI contract JSON checks on every push and pull request. This protects the evidence layer from silent regressions.
 
 - CI rehearsal evidence: [GitHub report](../reports/CI_QA_LOCAL_REHEARSAL_2026-08-30.md) · [Drive report](https://drive.google.com/file/d/1CUWzZ4PClwQPEMXgNvn679uufSnTntmQ/view).
-- CI now also runs the [PBIP source-manifest validator](../scripts/validate_pbip_source_manifest.mjs) on push and pull request.
+- CI now also runs the [PBIP source-manifest validator](../scripts/validate_pbip_source_manifest.mjs) and the public-guidance analysis validator on push and pull request.
 
 - Peer evidence QA: [validator](../scripts/validate_peer_evidence.mjs) and [21/21 PASS report](../reports/PEER_EVIDENCE_QA.md).
 
@@ -124,3 +124,10 @@ A separate VNM FY2018–FY2025 public-guidance proxy is now archived. It contain
 ## 11. Portable Power BI source handoff
 
 The repository now includes a machine-readable [PBIP source manifest](../powerbi/PBIP_SOURCE_MANIFEST.json), a [handoff guide](../powerbi/PBIP_SOURCE_HANDOFF.md) and an executable [manifest validator](../scripts/validate_pbip_source_manifest.mjs). Remote validation passes for 5 dimensions, 9 facts, 15 relationships, 6 report pages and 18 QA test definitions. This artifact is intentionally a portable source scaffold; it is not a native .pbix and does not close Gate B.
+
+
+## 12. Public-guidance performance research extension
+
+The VNM public-guidance proxy now has a deterministic analysis output with metric and regime splits, Bias/WAPE/MAPE, within-2% rates, descriptive error bands and ranked misses. The analysis is covered by a dedicated validator and CI step. It improves the finance-analyst narrative but remains explicitly excluded from Gate A because the evidence is public AGM/IR guidance rather than an internal pre-close snapshot.
+
+- [Analyst report](../reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md) · [Analysis JSON](../data/vnm_public_guidance_proxy_analysis.json) · [QA](../reports/VNM_PUBLIC_GUIDANCE_ANALYSIS_QA.md)
