@@ -39,7 +39,7 @@ Run QA-01 through QA-18 in [powerbi/QA_TEST_MATRIX.md](../powerbi/QA_TEST_MATRIX
 
 ## Forecast accuracy status
 
-Bias and WAPE are specification-ready but not claimed as observed results because the current v2 workbook does not contain pre-close frozen forecast snapshots. The leakage-safe script and input schema are available in [docs/FORECAST_ACCURACY_BACKTEST.md](../docs/FORECAST_ACCURACY_BACKTEST.md). This is an explicit control, not a missing-data workaround.
+Bias and WAPE are now reproducible on the controlled synthetic frozen-snapshot fixture; they are still not claimed as live VietNova performance. The leakage-safe script and input schema are available in [docs/FORECAST_ACCURACY_BACKTEST.md](../docs/FORECAST_ACCURACY_BACKTEST.md). This is an explicit control, not a missing-data workaround.
 
 
 The backtest implementation has also passed its deterministic unit fixture: 3 eligible rows, 1 FUTURE_LEAKAGE exclusion, Bias/WAPE outputs matching the expected CSV. This validates the control logic, not live forecast accuracy for VietNova.
@@ -47,4 +47,4 @@ The backtest implementation has also passed its deterministic unit fixture: 3 el
 
 ## Forecast snapshot capture sheet
 
-A native Google Sheet template is now available at https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit. Its formula checks were verified after conversion: the FUTURE_LEAKAGE example is excluded, Bias/WAPE outputs match the expected unit fixture, and blank rows remain blank. Live Bias/WAPE remains gated until frozen pre-close snapshots are supplied.
+A native Google Sheet template is now available at https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit. Its formula checks were verified after conversion: the 29-row demo contains 27 FROZEN eligible rows, one FUTURE_LEAKAGE exception and one NOT_ELIGIBLE draft; Backtest_Output returns +5%/+5%, −2%/2% and +10%/10% for the three eligible versions. These are controlled synthetic results; live VietNova Bias/WAPE remains gated until real approved pre-close snapshots are supplied.
