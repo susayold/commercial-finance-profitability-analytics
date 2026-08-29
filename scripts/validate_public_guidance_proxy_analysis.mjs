@@ -1,0 +1,22 @@
+import fs from "node:fs";
+
+const [inputPath = "data/vnm_public_guidance_proxy_analysis.json"] = process.argv.slice(2);
+const data = JSON.parse(fs.readFileSync(inputPath, "utf8"));
+const failures = [];
+const overall = data.groups?.overall;
+const revenue = data.groups?.revenue;
+const pbt = data.groups?.pbt;
+if (data.evidence_class !== "OBSERVED_PUBLIC_GUIDANCE_PROXY") failures.push("evidence class must remain public-guidance proxy");
+if (data.gate_a_eligible !== false) failures.push("Gate A must remain false");
+if (!overall || overall.n !== 16) failures.push("overall group must contain 16 observations");
+if (!revenue || revenue.n !== 8) failures.push("revenue group must contain 8 observations");
+if (!pbt || pbt.n !== 8) failures.push("pbt group must contain 8 observations");
+if (Math.abs(overall.bias_pct_of_actual - (-2.6339948484705413)) > 0.0001) failures.push("overall bias mismatch");
+if (Math.abs(overall.wape_pct_of_actual - 3.1390056114249942) > 0.0001) failures.push("overall WAPE mismatch");
+if (Math.abs(revenue.wape_pct_of_actual - 2.7860784338448217) > 0.0001) failures.push("revenue WAPE mismatch");
+if (Math.abs(pbt.wape_pct_of_actual - 4.888388904513401) > 0.0001) failures.push("PBT WAPE mismatch");
+if (!Array.isArray(data.by_year) || data.by_year.length !== 8) failures.push("by-year table must contain 8 years");
+if (!Array.isArray(data.worst_misses) || data.worst_misses[0]?.fiscal_year !== 2022 || data.worst_misses[0]?.metric !== "pbt") failures.push("worst miss ranking mismatch");
+const status = failures.length ? "FAIL" : "PASS";
+console.log(JSON.stringify({status, failures, checks: 10}, null, 2));
+if (failures.length) process.exit(1);
