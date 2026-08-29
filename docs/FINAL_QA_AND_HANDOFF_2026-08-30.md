@@ -76,3 +76,7 @@ QNS FY2016–FY2019 are now statement-verified in the consolidated peer layer. F
 
 This closes the QNS FY2016–FY2020 statement layer. Historical VNM FY2006–FY2015 candidates remain intentionally unapproved pending human page-level review.
 
+### Legacy review control added (2026-08-30)
+
+The remaining VNM FY2006–FY2015 backlog now has a field-level promotion protocol with statement identity, page-anchor, unit normalization, arithmetic tie-out and restatement gates. See [GitHub protocol](VNM_LEGACY_REVIEW_PROTOCOL.md) and [Drive copy](https://drive.google.com/file/d/1jlDU8a-hci7WuRDTi1Vy3Bjc1lEWA0GP/view). This keeps legacy candidates visible and useful without presenting them as audited verified rows.
+
