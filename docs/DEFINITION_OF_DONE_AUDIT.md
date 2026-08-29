@@ -46,6 +46,7 @@ This audit maps the user-provided master plan to evidence that a recruiter or fi
 - Close-calendar control: [FORECAST_SNAPSHOT_CLOSE_CALENDAR.md](https://drive.google.com/file/d/12jAEwrXTeUmz5lzu9aUh1Ay6MUvsMu88/view).
 - Demo backtest input: [Drive CSV](https://drive.google.com/file/d/1LBORkBVD02V_2HS-a70vK6SKDgGxcp7i/view).
 - Demo backtest output: [Drive CSV](https://drive.google.com/file/d/1NxiZJ-1hlS0L8pPmj-QfUi5mjPH8LPi3/view).
+- Frozen capture archive: [GitHub CSV](../data/forecast_snapshot_capture_demo_frozen.csv) · [Drive CSV](https://drive.google.com/file/d/1EBX9s3C16ZRkbLDpwfYVmgV_7Tw3LRCn/view) · [14/14 QA report](../reports/FORECAST_CAPTURE_ARCHIVE_QA.md) · [Drive QA](https://drive.google.com/file/d/1EODWWBJxWVPxhCGjjQ6qYXfMlUawKE94/view).
 
 ## 3. Remaining release gates
 
