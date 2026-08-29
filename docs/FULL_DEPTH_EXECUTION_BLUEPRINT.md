@@ -1191,3 +1191,5 @@ Remaining work after the 2026-08-30 hardening pass:
 4. **Optional evidence expansion:** human-review the separate MCH OCR queue or extend the approved peer benchmark window only when a comparability decision and page-level source evidence are available; these are not required to claim the current VNM/QNS/KDC scope.
 
 The Gate A intake contract (`schemas/forecast_snapshot_live.schema.json`, `scripts/validate_live_forecast_submission.mjs`) and Gate B evidence contract (`powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv`, `scripts/validate_powerbi_qa_evidence.mjs`) are now complete, so no analytical redesign is required when those external inputs arrive.
+
+The field-level follow-through is captured in [`docs/EXTERNAL_GATES_EXECUTION_PACK.md`](EXTERNAL_GATES_EXECUTION_PACK.md) and its Drive mirror; it defines the intake grain, eligibility rules, six-page PBIX contract, QA evidence requirements, RACI and CV conversion rules.
