@@ -50,3 +50,10 @@ The production recruiter site now has a Forecast Performance section with the pu
 ## M&A / strategic-stretch extension
 
 The repository now includes a fully documented synthetic acquisition screen: [methodology memo](../docs/MNA_ACCRETION_DILUTION.md), [forecast data](../data/mna_accretion_dilution_synthetic.csv), [sensitivity grid](../data/mna_accretion_dilution_sensitivity.csv), [validator](../scripts/validate_mna_accretion_dilution.mjs) and [QA report](MNA_ACCRETION_DILUTION_QA.md). The base case is Year-2 EPS accretive by 17.16% and produces deal NPV of VND 28.39bn, while Year 1 is dilutive by -0.46% after integration costs. This is SYNTHETIC / REHEARSAL evidence and is not a substitute for live internal snapshots or a native PBIX.
+
+
+Drive mirror for M&A extension:
+- Data: https://drive.google.com/file/d/1LK-YloDyk2iXqoW_XsFflkYrb4h6a224/view and https://drive.google.com/file/d/1kv60z5MXY4wghumtHvg3MqroCy-vJCyT/view
+- Methodology: https://drive.google.com/file/d/1gwEWr1hIQ0XhNWP23GkrAzLBRqd6DcOe/view
+- QA: https://drive.google.com/file/d/1cyt24IdL7Y8SlP97s8Qk_tt1FZsFEaOg/view
+- Validator: https://drive.google.com/file/d/1kGdGkWhgMpSEvpmEsGAhflB4qC92hNmy/view
