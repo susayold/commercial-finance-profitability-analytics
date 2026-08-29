@@ -130,3 +130,8 @@ The VNM statement layer is now complete for FY2006–FY2020: 15 rows, eight metr
 ## Power BI QA automation pack (2026-08-30)
 
 The remote handoff now includes an 18-test [QA matrix](../powerbi/QA_TEST_MATRIX.md) and executable [DAX validation query](../powerbi/qa_validation_queries.dax). These convert the remaining native-PBIX work into a deterministic release gate: tie out the model, prove no impossible sales rows, validate scenario isolation, confirm peer evidence filters, preserve VNM historical caveats and document the five-minute reviewer path. Drive copies: [QA matrix](https://drive.google.com/file/d/1goi-4XMbHbUAeqE9dIHkISHhdZf5MGtb/view) · [DAX controls](https://drive.google.com/file/d/1l2_xVOfEdXzozbON4-7BN6hTt6zlSAog/view).
+
+
+## Native PBIX execution runbook (2026-08-30)
+
+The remaining Desktop-dependent step is documented end-to-end in [powerbi/POWER_BI_DESKTOP_RUNBOOK.md](../powerbi/POWER_BI_DESKTOP_RUNBOOK.md) with a [Drive copy](https://drive.google.com/file/d/1GdN43ajowcg9qjIf5fmwnX9Qarfd64Us/view). It covers import, data typing, relationships, measures, page construction, QA-01–QA-18 and upload/delete steps so the local copy never becomes the authoritative archive.
