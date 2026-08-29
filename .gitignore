@@ -1,0 +1,19 @@
+# Raw source documents are stored in Google Drive, not Git history
+raw-reports/
+*.pdf
+*.pbix
+*.xlsx
+*.xlsb
+
+# Local/transient extraction
+work/
+tmp/
+.cache/
+__pycache__/
+*.pyc
+.env
+.env.*
+
+# Generated data may be committed only after licensing and disclosure review
+data/private/
+data/restricted/
