@@ -88,3 +88,11 @@ VNM FY2014–FY2015 are now statement-verified from the audited VAS consolidated
 - Drive CSV: https://drive.google.com/file/d/1oz7ENrbZD1yf_kkts1TsKFqKTOkprm6Z/view
 - Source report: https://drive.google.com/file/d/1F2fn3TYgQMkl_C7xoasOAGPOzbCXY8R8/view
 
+### VNM FY2012–FY2013 promotion (2026-08-30)
+
+VNM FY2012–FY2013 are now statement-verified from the audited VAS consolidated FY2013 filing. FY2012 is the comparative column and FY2013 is the current-year statement; all eight metrics are captured on pages 145–149. Queue status is now 19 verified, 5 summary candidates and 1 statement-review row (VNM FY2006).
+
+- [VNM FY2012–FY2013 statement CSV](../data/vnm_statement_metrics_2012_2013.csv)
+- Drive CSV: https://drive.google.com/file/d/18dc8GKyLAyMwvQWdIb_vmT-et-mb-H7G/view
+- Source report: https://drive.google.com/file/d/1Mnh5QV6ZRPSCQoBDCClR4Pd3CjIZDt1D/view
+
