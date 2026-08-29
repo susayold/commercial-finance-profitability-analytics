@@ -22,6 +22,8 @@ The page continues to label the VNM public-guidance analysis as `Gate A excluded
 
 The site package declares `@vitejs/plugin-rsc` and `tailwindcss` as development dependencies so a fresh clone can reproduce the build. Generated `node_modules`, `dist`, `.vinext`, `.next` and `next-env.d.ts` files are not committed.
 
+`npm ci` also surfaced three high-severity dependency advisories in the generated audit summary. They did not block the deterministic production build or Sites deployment, but remain a dependency-hygiene follow-up before any public release.
+
 ## Evidence boundary
 
 - Site content is a recruiter-facing presentation layer; the GitHub repository and Drive archive remain the source of truth for calculations and QA.
