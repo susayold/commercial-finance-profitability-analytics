@@ -83,6 +83,11 @@ jobs:
         run: |
           node scripts/validate_pbip_source_manifest.mjs
 
+      - name: Validate M&A accretion dilution case
+        shell: bash
+        run: |
+          node scripts/validate_mna_accretion_dilution.mjs
+
       - name: Validate Power BI model contract JSON
         shell: bash
         run: |
