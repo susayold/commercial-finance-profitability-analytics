@@ -41,6 +41,11 @@ jobs:
             "$RUNNER_TEMP/forecast_capture_archive_QA.md"
           grep -F "**Overall status: PASS** (14/14 checks passed)" "$RUNNER_TEMP/forecast_capture_archive_QA.md"
 
+      - name: D2C unit economics QA
+        shell: bash
+        run: |
+          node scripts/validate_d2c_unit_economics.mjs data/d2c_unit_economics_synthetic.csv
+
       - name: VNM long-run panel QA
         shell: bash
         run: |
