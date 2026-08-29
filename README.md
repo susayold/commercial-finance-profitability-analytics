@@ -69,6 +69,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Site source snapshot on Drive](https://drive.google.com/file/d/1PGOVMQ-POmEey9qUQDsw1B5F9F5oKl0j/view?usp=drivesdk)
 - [Site source folder](site/)
 - Sites project: `appgprj_6a930a2f81f48191b1e015f1fa938c69`; production deployment is version 1.
+- Website release update: [Forecast section release](reports/SITE_FORECAST_SECTION_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1Cz5Hl0HH9YLLklKBHJ2FBlTdEyQWz6u9/view). Production site now exposes a recruiter-facing forecast-performance section with explicit Gate A exclusion.
 
 ## Peer panel review layer
 
