@@ -63,3 +63,11 @@ Next: human-review the MCH OCR queue and extend page-level extraction to VNM/QNS
 - QA evidence: formula-error scan = zero matches; all nine control checks PASS; model status PASS.
 - A VND 100m channel tie-out tolerance is disclosed in Checks to account for deterministic invoice-unit rounding; this is not hidden.
 - Executive KPIs are synthetic management outputs and are labelled as proxies; public peer values are calibration context only.
+
+
+## Recruiter website
+
+- [Live site](https://vn-finance-fpa-case.sangkenny200.chatgpt.site)
+- [Site source snapshot on Drive](https://drive.google.com/file/d/1PGOVMQ-POmEey9qUQDsw1B5F9F5oKl0j/view?usp=drivesdk)
+- [Site source folder](site/)
+- Sites project: `appgprj_6a930a2f81f48191b1e015f1fa938c69`; production deployment is version 1.
