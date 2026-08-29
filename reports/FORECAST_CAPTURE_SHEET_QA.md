@@ -1,6 +1,7 @@
 # Forecast Capture Sheet QA — 2026-08-30
 
-Native spreadsheet: [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit)
+Native spreadsheet: [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit)  
+Onboarding pack: [REAL_SNAPSHOT_ONBOARDING_PACK.md](../docs/REAL_SNAPSHOT_ONBOARDING_PACK.md) · native tab `Real_Snapshot_Onboarding`
 
 ## Read-back checks
 
@@ -16,6 +17,7 @@ Native spreadsheet: [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](ht
 | Blank-row hygiene | PASS — template rows remain blank rather than producing 1900 dates or zero metrics |
 | Timezone | PASS — `Asia/Bangkok` |
 | Date number formats | PASS — B/I/J/Q display `yyyy-mm-dd`; no serial dates in the reviewer view |
+| Real-snapshot onboarding tab | PASS — field dictionary, close-calendar protocol, RACI and LIVE_OBSERVED acceptance tests are present |
 | Freeze gate behavior | PASS — 27 synthetic eligible rows produce metrics; late-actual DRAFT remains excluded; future-leakage EXCEPTION remains flagged |
 
 
