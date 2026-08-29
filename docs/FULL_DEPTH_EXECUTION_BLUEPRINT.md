@@ -1159,3 +1159,22 @@ Immediate next sprint:
 3. Expand the workbook from v1 management proxy lines to the full 28-sheet model specification.
 4. Implement the Power BI semantic model and six report pages.
 5. Produce the 10-12 slide management deck, battle cards, recruiter website and final one-page CV evidence map.
+
+
+## Current execution status — 2026-08-29 (superseding update)
+
+Completed and remotely verified:
+
+- Full Excel v2 model is built with 28 tabs, 36 monthly periods, 2,160 invoice lines, seeded scenarios, PVM, profitability, working capital, budget allocation, peer benchmark and controls. Formula scan is zero-match; nine control checks are PASS.
+- Power BI implementation status is documented with table grain, relationships, DAX measure contract, six-page flow and QA acceptance criteria.
+- CFO memo, battle cards, CV evidence map and one-page English CV draft are stored in GitHub and Drive.
+- Management review deck is rendered, overflow-tested and uploaded to Drive as a recruiter/interview-ready PowerPoint.
+- Recruiter website is deployed privately at https://vn-finance-fpa-case.sangkenny200.chatgpt.site; source is versioned in the Sites repository, mirrored under `site/` in GitHub and archived as a Drive ZIP.
+- Deliverable index consolidates the live site, model, deck, memo, source archive and evidence documentation.
+
+Remaining analytical work:
+
+1. Human-review OCR candidates and extend page-level extraction to VNM, QNS and KDC.
+2. Load the normalized peer panel into the Power BI model and complete visual reconciliation against Excel v2.
+3. Replace placeholders in `CV_ONE_PAGE_DRAFT.md` with the candidate's real contact, education and experience facts.
+4. Run a final remote metadata audit and preserve version/checksum evidence.
