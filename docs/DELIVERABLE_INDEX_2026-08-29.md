@@ -53,3 +53,10 @@
 - [VNM FY2006–FY2015 legacy summary candidates](../data/vnm_legacy_summary_candidates_2007_2015.csv)
 - Drive candidate CSV: https://drive.google.com/file/d/15Yh9HnxGN_1bE6Zc084UqWAqDUcDB9Ub/view
 - Native Sheet tab: `VNM_Legacy_Candidates` (review-required until full statement metrics are anchored)
+
+
+## Verified KDC statement layer
+
+- [KDC FY2016–FY2020 statement metrics](../data/kdc_statement_metrics_2016_2020.csv)
+- Drive CSV: https://drive.google.com/file/d/1dOJLLzxpQa9ujX_yijkPkuwSjAhaKFMd/view
+- Native Sheet tab: `KDC_Statement_Metrics_2016_2020`
