@@ -35,3 +35,8 @@ Run QA-01 through QA-18 in [powerbi/QA_TEST_MATRIX.md](../powerbi/QA_TEST_MATRIX
 ## Release interpretation
 
 “PASS” here means the documented controls and evidence policy pass. It does not mean the synthetic case represents actual company performance or that a native PBIX exists.
+
+
+## Forecast accuracy status
+
+Bias and WAPE are specification-ready but not claimed as observed results because the current v2 workbook does not contain pre-close frozen forecast snapshots. The leakage-safe script and input schema are available in [docs/FORECAST_ACCURACY_BACKTEST.md](../docs/FORECAST_ACCURACY_BACKTEST.md). This is an explicit control, not a missing-data workaround.
