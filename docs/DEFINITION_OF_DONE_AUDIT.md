@@ -75,3 +75,8 @@ The finance model, evidence governance, public peer layer, forecast-control temp
 ## 6. Historical peer-depth extension
 
 The VNM panel now spans FY2006–FY2025 in `data/vnm_longrun_panel_2006_2025.csv`, with derived revenue growth, profitability margins, cash conversion and asset efficiency. FY2006 is flagged as a restated comparative and FY2021 as a statement-to-summary basis break; this extension is evidence of depth, not permission to ignore comparability controls. See [methodology](VNM_LONGRUN_PANEL.md) and [Drive CSV](https://drive.google.com/file/d/1R0ruyyRRLl7bFWuzKlhpihor2_4Qu4Hv/view).
+
+
+## 7. Long-run panel QA evidence
+
+The VNM FY2006–FY2025 panel has an executable [validator](../scripts/validate_vnm_longrun_panel.mjs) and [17/17 PASS report](../reports/VNM_LONGRUN_PANEL_QA.md). The validator checks headers, row count, contiguous years, duplicate keys, source URLs, layer/status separation, restatement/basis-break flags, ratio recomputation and blank preservation.
