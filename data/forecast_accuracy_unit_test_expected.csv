@@ -1,0 +1,3 @@
+forecast_version,company,brand,channel,eligible_rows,forecast_vnd,actual_vnd,bias,wape,as_of_date,excluded_rows
+FE-2025-01,VietNova,NovaDaily,Marketplace,2,200,200,0,0.1,2025-03-31,1
+FE-2025-02,VietNova,NovaDaily,Marketplace,1,120,100,0.2,0.2,2025-03-31,1
