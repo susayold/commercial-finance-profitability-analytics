@@ -94,3 +94,5 @@ The repository includes [GitHub Actions finance QA](../.github/workflows/finance
 ## 8. Forecast capture control extension
 
 The native forecast Sheet now includes governance columns (`Snapshot_Status`, `Source_Model_Version`, `Approver`, `Actual_Period_Close_Date`, `Exception_Note`), strict status validation, frozen headers and conditional leakage highlights. This closes the operational-design portion of Gate A; only genuine approved snapshots remain outstanding.
+
+- Native capture Sheet QA: [report](../reports/FORECAST_CAPTURE_SHEET_QA.md) · [Drive copy](https://drive.google.com/file/d/16oxmO8IdsfXhZxngLmnGYu2CtCUJW3UO/view).
