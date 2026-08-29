@@ -1,0 +1,22 @@
+metric,definition,preferred_source_line_items,formula,unit,scope,comparability_rule,primary_use
+revenue,Net revenue after discounts returns and rebates,"Revenue; Net sales; Net revenue",reported value,VND_bn,consolidated,"Use original company definition; no gross sales substitution",growth and margin
+gross_profit,Gross profit,"Gross profit; Gross profit/(loss)",reported value,VND_bn,consolidated,"Comparable only if revenue basis aligns",gross_margin and PVM
+gross_margin,Gross profit divided by net revenue,"Gross profit; Net revenue",gross_profit/revenue,percent,consolidated,"Calculated; flag if revenue definition changes",profitability
+operating_profit,Operating profit before finance and tax,"Operating profit; Profit from operating activities",reported value,VND_bn,consolidated,"Do not substitute EBITDA",operating_margin
+ebitda_proxy,Operating profit plus D&A,"Operating profit; Depreciation; Amortisation",operating_profit+depreciation+amortisation,VND_bn,consolidated,"Proxy where EBITDA is not disclosed",cash earnings
+ebit,Operating profit,"Operating profit; Profit from operating activities",reported value,VND_bn,consolidated,"Maintain reported label",operating_margin
+npat,Profit after tax,"Profit after tax; Net profit",reported value,VND_bn,consolidated,"Exclude discontinued operations only when separately reported",net_margin
+total_assets,Closing total assets,"Total assets",reported value,VND_bn,consolidated,"Use closing balance date",ROIC and leverage
+cash,Closing cash and cash equivalents,"Cash and cash equivalents; Cash",reported value,VND_bn,consolidated,"Do not include term deposits unless explicitly classified as cash",liquidity
+inventory,Closing inventory,"Inventories; Inventory",reported value,VND_bn,consolidated,"Use current balance sheet date",working_capital
+trade_receivables,Closing trade receivables,"Trade receivables; Trade and other receivables",reported value,VND_bn,consolidated,"Flag if other receivables cannot be separated",DSO
+trade_payables,Closing trade payables,"Trade payables; Trade and other payables",reported value,VND_bn,consolidated,"Flag if other payables cannot be separated",DPO
+capex,Capital expenditure,"Purchases of PPE; Additions to fixed assets",reported or derived,VND_bn,consolidated,"Keep capex definition in note",investment
+operating_cash_flow,Net cash from operating activities,"Net cash from operating activities",reported value,VND_bn,consolidated,"Reported cash-flow statement only",cash conversion
+free_cash_flow,Operating cash flow less capex,"Net cash from operating activities; Purchases of PPE",operating_cash_flow-capex,VND_bn,consolidated,"Derived; capex sign normalized",cash conversion
+total_debt,Interest-bearing debt,"Borrowings; Loans; Bonds; Lease liabilities",reported or derived,VND_bn,consolidated,"Lease inclusion shown separately",leverage
+net_debt,Interest-bearing debt less cash,"Borrowings; Lease liabilities; Cash",total_debt-cash,VND_bn,consolidated,"Use same closing date",leverage
+dso,Average receivables divided by revenue times 365,"Trade receivables; Revenue",average_trade_receivables/revenue*365,days,consolidated,"Requires average balance and aligned period",working_capital
+dio,Average inventory divided by COGS times 365,"Inventories; Cost of sales",average_inventory/cogs*365,days,consolidated,"Requires COGS definition",working_capital
+dpo,Average payables divided by COGS times 365,"Trade payables; Cost of sales",average_trade_payables/cogs*365,days,consolidated,"Requires payable definition",working_capital
+ccc,Cash conversion cycle,"DSO; DIO; DPO",dso+dio-dpo,days,consolidated,"Calculated only where three drivers are valid",working_capital
