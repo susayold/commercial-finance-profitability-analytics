@@ -45,5 +45,5 @@ Release is **PASS** only when every row is PASS, the Controls & Evidence page co
 
 ## Forecast accuracy dependency
 
-PBIX release does not create historical forecast accuracy. Bias and WAPE can be labelled **observed** only after a pre-close snapshot is frozen in the native forecast capture Sheet, actual close is recorded and the leakage-safe backtest returns `READY`. Until then, display `NOT_AVAILABLE — NO_FROZEN_SNAPSHOT`.
+PBIX release does not create historical forecast accuracy. The native Sheet already contains controlled synthetic frozen snapshots for mechanics testing. Bias and WAPE can be labelled **observed company performance** only after a real pre-close snapshot is frozen, actual close is recorded and the leakage-safe backtest returns `READY`; until then label the PBIX metric `DEMO_FIXTURE_ONLY — REAL_SNAPSHOT_REQUIRED`.
 
