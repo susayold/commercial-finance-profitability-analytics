@@ -13,7 +13,7 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Created a commercial-finance decision layer that evaluates promotion/pricing events through incremental revenue, variable cost, contribution margin, hurdle rates and explicit approval/stop-loss actions.
 - Built a working-capital cockpit that surfaces DSO, DIO, DPO, CCC and cash-release opportunities; the illustrative FY2025 case shows 54.8 days average CCC and a June escalation flag.
 - Calibrated a synthetic operating ledger against public FMCG peer context while maintaining an evidence taxonomy that separates reported facts, calculated facts, synthetic facts, assumptions, inferences and recommendations.
-- Built a peer-source QA workflow for official annual reports and image-only audited statements, producing an OCR candidate layer plus an explicit human-review queue instead of silently accepting low-confidence extraction.
+- Built a source-linked peer QA workflow for official annual reports and audited statements, promoting 25/25 queue rows to reported_statement_verified only after page-level checks and retaining an explicit human-review protocol.
 
 ## Skills mapped to artifacts
 
