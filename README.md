@@ -124,3 +124,5 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - [Forecast snapshot close calendar](docs/FORECAST_SNAPSHOT_CLOSE_CALENDAR.md) · [Drive copy](https://drive.google.com/file/d/12jAEwrXTeUmz5lzu9aUh1Ay6MUvsMu88/view)
 - The calendar defines WD-5 through month+1 accuracy steps, immutable snapshot fields, RACI, freeze protocol, leakage-safe eligibility and exception handling.
+
+- [Multi-version forecast accuracy demo](docs/FORECAST_ACCURACY_BACKTEST.md): 29-row controlled fixture, 27 eligible observations and explicit leakage exclusions.
