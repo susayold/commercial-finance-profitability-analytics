@@ -141,3 +141,5 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Peer evidence gate: [validator](scripts/validate_peer_evidence.mjs) · [21/21 QA report](reports/PEER_EVIDENCE_QA.md) · [Drive validator](https://drive.google.com/file/d/1DyD5uJc1q-tgjh4S-1QSeKynYbizukAH/view) · [Drive report](https://drive.google.com/file/d/1P8V6vm77MoKrSxfinijZKJMp4LZ5cc6y/view)
 
 - [Forecast capture Sheet QA report](reports/FORECAST_CAPTURE_SHEET_QA.md) · [Drive copy](https://drive.google.com/file/d/16oxmO8IdsfXhZxngLmnGYu2CtCUJW3UO/view)
+
+- Native freeze-gate test: DRAFT rows are blocked; temporary FROZEN test produced metrics/READY and was reverted. See [capture QA](reports/FORECAST_CAPTURE_SHEET_QA.md).
