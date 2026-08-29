@@ -43,7 +43,9 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from "node:fs";
           const contract = JSON.parse(fs.readFileSync("powerbi/model_contract.json", "utf8"));
-          if (!Array.isArray(contract.tables) || contract.tables.length === 0) throw new Error("model contract has no tables");
-          if (!Array.isArray(contract.measures) || contract.measures.length === 0) throw new Error("model contract has no measures");
-          console.log(JSON.stringify({tables: contract.tables.length, measures: contract.measures.length, status: "PASS"}));
+          if (!Array.isArray(contract.dimensions) || contract.dimensions.length === 0) throw new Error("model contract has no dimensions");
+          if (!Array.isArray(contract.facts) || contract.facts.length === 0) throw new Error("model contract has no facts");
+          if (!Array.isArray(contract.pages) || contract.pages.length === 0) throw new Error("model contract has no report pages");
+          if (!Array.isArray(contract.relationships) || contract.relationships.length === 0) throw new Error("model contract has no relationships");
+          console.log(JSON.stringify({dimensions: contract.dimensions.length, facts: contract.facts.length, pages: contract.pages.length, relationships: contract.relationships.length, status: "PASS"}));
           NODE
