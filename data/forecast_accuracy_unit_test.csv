@@ -1,0 +1,5 @@
+forecast_version,forecast_created_date,target_month,company,brand,channel,forecast_revenue_vnd,actual_revenue_vnd,actual_available_date
+FE-2025-01,2024-12-15,2025-01,VietNova,NovaDaily,Marketplace,110,100,2025-02-10
+FE-2025-01,2024-12-15,2025-01,VietNova,NovaDaily,Marketplace,90,100,2025-02-10
+FE-2025-02,2025-01-20,2025-02,VietNova,NovaDaily,Marketplace,120,100,2025-03-10
+FE-2025-03,2025-04-01,2025-03,VietNova,NovaDaily,Marketplace,130,100,2025-03-10
