@@ -91,7 +91,7 @@ def main():
                 promo = ""
                 if month >= date(2023, 4, 1) and channel["channel_id"] == "MT" and product["sku_id"] in ("SKU001", "SKU002"):
                     units = int(units * 1.10)
-                if month == date(2024, 1, 1) and channel["channel_id"] == "EC":
+                if month >= date(2024, 1, 1) and channel["channel_id"] == "EC":
                     channel = dict(channel, platform_fee_pct=channel["platform_fee_pct"] + 0.025)
                 if month == date(2024, 9, 1) and channel["channel_id"] == "EC" and product["category"] == "Dairy":
                     units, discount_pct, promo = int(units * 1.30), discount_pct + 0.22, "PROMO_2024_09"
