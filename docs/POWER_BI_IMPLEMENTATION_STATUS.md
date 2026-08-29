@@ -24,7 +24,7 @@ Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an ex
 
 ### Peer benchmark and evidence tables
 
-`Peer_Benchmark` is loaded at company × fiscal year with source status, original basis and calculated margins. `Peer_Review_Queue` is loaded separately and is never joined into benchmark trends as approved data. Only `reported_summary_verified` and `reported_statement_verified` rows are eligible for benchmark visuals; `summary_candidate_review_required` and `statement_review_required` rows remain visible only on Controls & Evidence.
+`Peer_Benchmark` is loaded at company × fiscal year with source status, original basis and calculated margins. The KDC FY2016–FY2020 statement layer is approved for metric-level use with page anchors, while VNM/QNS legacy candidates remain review-required. `Peer_Review_Queue` is loaded separately and is never joined into benchmark trends as approved data. Only `reported_summary_verified` and `reported_statement_verified` rows are eligible for benchmark visuals; `summary_candidate_review_required` and `statement_review_required` rows remain visible only on Controls & Evidence.
 
 ## Core DAX measure set
 
