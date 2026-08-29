@@ -77,6 +77,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - [Peer panel review status](docs/PEER_PANEL_REVIEW_STATUS.md)
 - [Remote peer panel sheet](https://docs.google.com/spreadsheets/d/1HNViR2NV1KPu1H-ZYRADv8amwP1-kzY8QzvmcwT3csE/edit)
+- Native tab `VNM_Longrun_Panel_2006_2025` exposes the full FY2006–FY2025 historical panel with derived ratios and basis-break flags.
 - FY2021-FY2025 summary values are source-linked; blank cells remain review flags where statement-level validation is not complete.
 
 
