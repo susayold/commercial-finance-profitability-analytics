@@ -145,3 +145,11 @@
 - [QA test matrix](../powerbi/QA_TEST_MATRIX.md) · [Drive copy](https://drive.google.com/file/d/1goi-4XMbHbUAeqE9dIHkISHhdZf5MGtb/view)
 - [Executable DAX validation queries](../powerbi/qa_validation_queries.dax) · [Drive copy](https://drive.google.com/file/d/1l2_xVOfEdXzozbON4-7BN6hTt6zlSAog/view)
 - Native PBIX remains Desktop-dependent; the matrix is the release gate before upload.
+
+
+## Commercial stretch-module hardening — 2026-08-30
+
+- [Promotion ROI synthetic data](../data/promotion_roi_synthetic.csv) · [validator](../scripts/validate_promotion_roi.mjs)
+- [Fixed-budget allocation synthetic data](../data/budget_reallocation_synthetic.csv) · [validator](../scripts/validate_budget_reallocation.mjs)
+- [Methodology](PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [QA report](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view)
+- The v2 workbook now subtracts promotion spend before ROI, exposes a 25% hurdle and stop-loss decisions, and enforces fixed-budget conservation across channels. Both validators PASS.
