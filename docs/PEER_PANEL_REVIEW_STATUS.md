@@ -52,4 +52,7 @@ The queue now includes `source_url`, `page_anchor`, `reported_basis` and `review
 - [Traceable queue CSV](../data/peer_extraction_queue.csv)
 - Drive mirror: https://drive.google.com/file/d/14WLSAnEnpzkI2s3M23oAwcvkvG9vIeV3/view
 - KDC statement metrics CSV: ../data/kdc_statement_metrics_2016_2020.csv
+- QNS summary metrics CSV: ../data/qns_summary_metrics_2016_2020.csv
+- Drive QNS summary metrics: https://drive.google.com/file/d/11ZXiCUnUw_tuZdkO52cqhPUDaICsbbuk/view
+- Native Sheet tab: `QNS_Summary_Metrics_2016_2020`
 - Drive KDC statement metrics: https://drive.google.com/file/d/1dOJLLzxpQa9ujX_yijkPkuwSjAhaKFMd/view
