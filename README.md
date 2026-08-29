@@ -78,3 +78,15 @@ Next: human-review the MCH OCR queue and extend page-level extraction to VNM/QNS
 - [Peer panel review status](docs/PEER_PANEL_REVIEW_STATUS.md)
 - [Remote peer panel sheet](https://docs.google.com/spreadsheets/d/1HNViR2NV1KPu1H-ZYRADv8amwP1-kzY8QzvmcwT3csE/edit)
 - FY2021-FY2025 summary values are source-linked; blank cells remain review flags where statement-level validation is not complete.
+
+
+## Peer and Power BI follow-through
+
+- Calculated peer summary: data/peer_analyst_summary.csv
+- Long-run comparability summary: data/peer_analyst_summary_longrun.csv
+- Power BI implementation status: docs/POWER_BI_IMPLEMENTATION_STATUS.md
+- Native PBIX creation is an explicit next action; no placeholder PBIX is claimed.
+
+## Final QA
+
+- Final QA and remote handoff: docs/FINAL_QA_AND_HANDOFF_2026-08-30.md
