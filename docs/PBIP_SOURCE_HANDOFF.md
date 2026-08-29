@@ -11,6 +11,7 @@ This pack is the source-controlled handoff for the Power BI Desktop gate. It is 
 - Desktop runbook: ../powerbi/POWER_BI_DESKTOP_RUNBOOK.md
 - QA matrix: ../powerbi/QA_TEST_MATRIX.md
 - PBIX release evidence template: ../powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md
+- Detailed Desktop execution checklist: ../powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md
 
 ## Source order
 
