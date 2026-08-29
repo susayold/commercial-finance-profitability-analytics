@@ -56,3 +56,15 @@ The queue now includes `source_url`, `page_anchor`, `reported_basis` and `review
 - Drive QNS summary metrics: https://drive.google.com/file/d/11ZXiCUnUw_tuZdkO52cqhPUDaICsbbuk/view
 - Native Sheet tab: `QNS_Summary_Metrics_2016_2020`
 - Drive KDC statement metrics: https://drive.google.com/file/d/1dOJLLzxpQa9ujX_yijkPkuwSjAhaKFMd/view
+
+
+## Verified VNM statement layer (2026-08-30)
+
+VNM FY2016–FY2020 is now approved at statement level using VAS consolidated statements. The new table includes revenue, gross profit, operating profit, PBT, PAT, total assets, owners’ equity, operating cash flow, source URL and page anchors.
+
+- [VNM FY2016–FY2020 statement metrics](../data/vnm_statement_metrics_2016_2020.csv)
+- Drive CSV: https://drive.google.com/file/d/18IrPvgbW2GHJItmKxZPdQIJXylcYJgZg/view
+- Native Sheet tab: `VNM_Statement_Metrics_2016_2020`
+- Page anchors: FY2016 134–137; FY2017 132–137; FY2018 144–149; FY2019 142–147; FY2020 140–145.
+
+Queue status is now 10 `reported_statement_verified`, 14 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006).
