@@ -84,6 +84,11 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Power BI implementation status: docs/POWER_BI_IMPLEMENTATION_STATUS.md
 - Native PBIX creation is an explicit next action; no placeholder PBIX is claimed.
 
+## Remote release status
+
+- [Release-status record](reports/REMOTE_RELEASE_STATUS_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1xb_SyGeE5_vWnKEmRNtwd6u4ZZExc5RR/view?usp=drivesdk)
+- This record is the reviewer-first index for remote storage, QA evidence and the two intentionally open external gates.
+
 ## Final QA
 
 - Final QA and remote handoff: docs/FINAL_QA_AND_HANDOFF_2026-08-30.md
