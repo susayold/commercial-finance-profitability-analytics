@@ -1,0 +1,21 @@
+flag_type,priority,report_year,metric,value,source_page,reason,status
+LOW_VALUE_OUTLIER,P1,2018,cash,119982.0,6,"Possible OCR note code, clipped digit or wrong column; confirm PDF page",OPEN
+LOW_VALUE_OUTLIER,P1,2022,cash,13013.0,6,"Possible OCR note code, clipped digit or wrong column; confirm PDF page",OPEN
+ADJACENT_YEAR_DUPLICATE,P1,2016/2017,revenue,13789759442477.0,9,Possible comparative-column reuse; confirm both PDF years,OPEN
+ADJACENT_YEAR_DUPLICATE,P1,2016/2017,gross_profit,6249818487562.0,9,Possible comparative-column reuse; confirm both PDF years,OPEN
+ADJACENT_YEAR_DUPLICATE,P1,2016/2017,cash,6914244921330.0,6,Possible comparative-column reuse; confirm both PDF years,OPEN
+ADJACENT_YEAR_DUPLICATE,P1,2019/2020,cash,2191361038968.0,6,Possible comparative-column reuse; confirm both PDF years,OPEN
+ADJACENT_YEAR_DUPLICATE,P1,2016/2017,inventory,715921028319.0,6,Possible comparative-column reuse; confirm both PDF years,OPEN
+ADJACENT_YEAR_DUPLICATE,P1,2019/2020,inventory,1168106286708.0,6,Possible comparative-column reuse; confirm both PDF years,OPEN
+ADJACENT_YEAR_DUPLICATE,P1,2016/2017,total_debt,3097814964783.0,8,Possible comparative-column reuse; confirm both PDF years,OPEN
+MISSING_CANDIDATE,P2,2016-2025,trade_receivables,10,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,trade_payables,10,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,capex,10,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,total_assets,9,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,operating_cash_flow,6,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,npat,5,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,operating_profit,4,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,gross_profit,4,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,cash,1,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,inventory,1,,No OCR candidate; do not backfill or treat as zero,OPEN
+MISSING_CANDIDATE,P2,2016-2025,total_debt,1,,No OCR candidate; do not backfill or treat as zero,OPEN
