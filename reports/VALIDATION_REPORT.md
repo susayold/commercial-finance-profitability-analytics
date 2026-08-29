@@ -43,3 +43,8 @@ Bias and WAPE are specification-ready but not claimed as observed results becaus
 
 
 The backtest implementation has also passed its deterministic unit fixture: 3 eligible rows, 1 FUTURE_LEAKAGE exclusion, Bias/WAPE outputs matching the expected CSV. This validates the control logic, not live forecast accuracy for VietNova.
+
+
+## Forecast snapshot capture sheet
+
+A native Google Sheet template is now available at https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit. Its formula checks were verified after conversion: the FUTURE_LEAKAGE example is excluded, Bias/WAPE outputs match the expected unit fixture, and blank rows remain blank. Live Bias/WAPE remains gated until frozen pre-close snapshots are supplied.
