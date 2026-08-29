@@ -76,3 +76,11 @@ Queue status is now 10 `reported_statement_verified`, 14 `summary_candidate_revi
 - [Approved 2016–2025 benchmark CSV](../data/peer_benchmark_approved_2016_2025.csv)
 - Drive CSV: https://drive.google.com/file/d/1vXw9EaZaJ0HUCKn5MzHgK2dG1fgGUT6r/view
 - Native Sheet tab: `Peer_Benchmark_Approved_2016_2025`
+
+## VNM legacy operating candidate layer
+
+A supplemental candidate file now captures readable gross profit, operating profit and operating cash flow for selected VNM legacy years (2007, 2010–2015), while 2008–2009 remain blank where OCR does not expose the full statement. These rows remain `summary_candidate_review_required` until balance-sheet fields and page-level tie-outs are complete.
+
+- [VNM legacy operating candidates](../data/vnm_legacy_operating_candidates_2007_2015.csv)
+- Drive CSV: https://drive.google.com/file/d/1UQjJe7Bwe05TGdpHcPM36Z084HsCQL44/view
+- Native Sheet tab: `VNM_Legacy_Operating_Candidates`
