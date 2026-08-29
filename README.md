@@ -112,3 +112,5 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Claim governance](docs/CLAIM_GOVERNANCE.md)
 - [Validation report](reports/VALIDATION_REPORT.md)
 - [Drive mirror pack](https://drive.google.com/file/d/1NdetbRKfVEe9dQc-5n5XqBTDEnehWW4x/view)
+
+- [Native PBIX execution runbook](powerbi/POWER_BI_DESKTOP_RUNBOOK.md) · [Drive copy](https://drive.google.com/file/d/1GdN43ajowcg9qjIf5fmwnX9Qarfd64Us/view)
