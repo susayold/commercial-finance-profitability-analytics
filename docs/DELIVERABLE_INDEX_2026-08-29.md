@@ -126,3 +126,7 @@
 - [VNM FY2007 statement metrics](../data/vnm_statement_metrics_2007.csv) · [Drive](https://drive.google.com/file/d/1R-gRhH3CB6_Ampk-FKmkJLSC2q3OrpMY/view) · Source report: https://drive.google.com/file/d/1u8m2YW31sizcckCXF2OJZAHE7JpDNHrb/view
 - Queue status after FY2007 promotion: 24 statement-verified, 1 statement-review-required (FY2006).
 - FY2007 promotion addendum: [Drive](https://drive.google.com/file/d/1hH086xyakazivo8DDFcsR_ofir_95bIe/view)
+
+- [VNM FY2006 statement metrics](../data/vnm_statement_metrics_2006.csv) · [Drive](https://drive.google.com/file/d/1hwWLegn75wdISM2y3FvpLJfz2drloKNe/view) · Source report: https://drive.google.com/file/d/18bDh7lOfg3xUyJsdT-duGE7laymBYX3O/view
+- Queue status after FY2006 promotion: 25 statement-verified rows.
+- FY2006 promotion addendum: [Drive](https://drive.google.com/file/d/1sLpSxaDU-m_ZRyYWU9kktuU8eEZ7eUme/view)
