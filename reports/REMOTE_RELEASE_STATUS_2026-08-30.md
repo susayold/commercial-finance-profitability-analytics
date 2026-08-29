@@ -22,6 +22,8 @@ All project data, source code, QA scripts and reviewer-facing artifacts are comm
 
 The 30 Aug release adds a source-backed Vietnam hiring matrix for Junior FP&A/Finance Analyst, Business Finance/Commercial Finance Analyst and Finance Data Analyst signals. [GitHub matrix](../docs/ROLE_ALIGNMENT_MATRIX.md) · [CSV](../data/role_alignment_matrix.csv) · [Drive copy](https://drive.google.com/file/d/1ngIE4Nw4-P-F6xtmxXvhUfVJPsOPVV6D/view). The matrix preserves the same evidence boundary as the model: synthetic and public-guidance work are labelled, while Gate A and Gate B remain open.
 
+Role-targeted CV variants are also archived for the same three role families: [GitHub](../docs/CV_ROLE_VARIANTS.md) · [Drive](https://drive.google.com/file/d/1nfaqwK6J8_1A0O5wpLZhmakhXLrWgObh/view).
+
 ## Reviewer path
 
 1. Start with README.md and the production website.
