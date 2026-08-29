@@ -51,6 +51,15 @@ jobs:
         run: |
           node scripts/validate_public_guidance_proxy.mjs data/vnm_public_guidance_proxy_2018_2025.csv
 
+      - name: VNM public guidance analysis QA
+        shell: bash
+        run: |
+          node scripts/analyze_public_guidance_proxy.mjs \
+            data/vnm_public_guidance_proxy_2018_2025.csv \
+            "$RUNNER_TEMP/vnm_public_guidance_proxy_analysis.json"
+          node scripts/validate_public_guidance_proxy_analysis.mjs \
+            "$RUNNER_TEMP/vnm_public_guidance_proxy_analysis.json"
+
       - name: VNM long-run panel QA
         shell: bash
         run: |
