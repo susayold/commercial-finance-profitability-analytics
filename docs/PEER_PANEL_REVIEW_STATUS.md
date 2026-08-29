@@ -156,4 +156,4 @@ VNM FY2010–FY2011 are now promoted to `reported_statement_verified` from the a
 - Drive CSV: https://drive.google.com/file/d/1RuwQRtuuN31rEl2UXhWMKf4FY_Yai5w4/view
 - Source report: https://drive.google.com/file/d/11ZPUwIM_Sl_i8FUWUATCPoetHoVlnvDs/view
 
-Queue status is now 21 `reported_statement_verified`, 3 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006). The merged VNM FY2009–FY2020 layer is available for long-run read-through, while the approved benchmark scope remains FY2016–FY2025.
+Queue status is now 22 `reported_statement_verified`, 2 `summary_candidate_review_required` (VNM FY2007–FY2008) and 1 `statement_review_required` (VNM FY2006). The merged VNM FY2009–FY2020 layer is available for long-run read-through, while the approved benchmark scope remains FY2016–FY2025.
