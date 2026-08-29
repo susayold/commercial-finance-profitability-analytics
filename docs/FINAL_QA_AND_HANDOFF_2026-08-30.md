@@ -64,3 +64,15 @@ QNS FY2020 is now statement-verified from the official audited consolidated fina
 - QNS statement CSV: [GitHub](../data/qns_statement_metrics_2020.csv) · [Drive](https://drive.google.com/file/d/1tfACwjS4LDGb6SRzY2ubJvngK-H8elMa/view)
 - Official audited source PDF: https://drive.google.com/file/d/1KqGqXOUl67oLp4MHnpwL-VCpHX0narW0/view
 - Native Sheet tab: `QNS_Statement_Metrics_2020`
+
+### QNS FY2016–FY2019 promotion (2026-08-30)
+
+QNS FY2016–FY2019 are now statement-verified in the consolidated peer layer. FY2016–FY2017 use the audited FY2017 filing (FY2016 comparative column), FY2018 uses the archived audited consolidated FY2018 PDF, and FY2019 uses the audited FY2020 consolidated filing's FY2019 comparative column. The FY2019 standalone filing is intentionally excluded. The approved benchmark now contains 15 statement-verified rows, 9 summary candidates and 1 statement-review row.
+
+- QNS statement CSV: [GitHub](../data/qns_statement_metrics_2016_2019.csv) · [Drive](https://drive.google.com/file/d/1WrGQZgBPy-B77_Fahfbcoukraknu7lFN/view)
+- Native Sheet tab: `QNS_Statement_Metrics_2016_2019`
+- QNS FY2018 audited source: [Drive](https://drive.google.com/file/d/1AohYk_IrJGml5C95EC4g2xDxWTAVnp3E/view)
+- QNS FY2019 comparative source: [audited FY2020 consolidated PDF in Drive](https://drive.google.com/file/d/1KqGqXOUl67oLp4MHnpwL-VCpHX0narW0/view)
+
+This closes the QNS FY2016–FY2020 statement layer. Historical VNM FY2006–FY2015 candidates remain intentionally unapproved pending human page-level review.
+
