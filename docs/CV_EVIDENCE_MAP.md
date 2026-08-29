@@ -57,3 +57,8 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Do not present VietNova customer, SKU or promotion values as a real company fact.
 - Do not claim causal promotion lift without a control design.
 - Do not claim OCR figures are approved until a human reviewer signs off.
+
+
+- Built a transparent synthetic M&A accretion/dilution screen linking target standalone forecasts, revenue/cost synergies, integration costs and financing interest to Year-1 dilution, Year-2 EPS accretion of 17.16%, incremental FCFF and deal NPV of VND 28.39bn; included a 12-cell entry-multiple / synergy-realization sensitivity grid and explicit diligence caveats.
+
+| M&A / strategic finance | docs/MNA_ACCRETION_DILUTION.md, mna_accretion_dilution_synthetic.csv, mna_accretion_dilution_sensitivity.csv | Validator PASS; synthetic case, not a live recommendation |
