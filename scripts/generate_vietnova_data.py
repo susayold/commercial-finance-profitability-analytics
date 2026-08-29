@@ -150,7 +150,9 @@ def main():
                 receipts = 0 if stockout else int(opening * (0.15 + rng.random() * 0.15))
                 sold = int(total_units * (0.70 if stockout else 0.50))
                 expiry = int(opening * 0.01) if month.month in (3, 9) else 0
-                closing = max(0, opening + receipts - sold - expiry)
+                available = max(0, opening + receipts - expiry)
+                sold = min(sold, available)
+                closing = available - sold
                 inv[key] = closing
                 inventory.append({"month": month.isoformat(), "warehouse_id": warehouse, "sku_id": product["sku_id"],
                     "opening_units": opening, "receipts_units": receipts, "sales_units": sold,
