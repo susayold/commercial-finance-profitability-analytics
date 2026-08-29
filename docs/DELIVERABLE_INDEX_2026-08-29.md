@@ -60,3 +60,10 @@
 - [KDC FY2016–FY2020 statement metrics](../data/kdc_statement_metrics_2016_2020.csv)
 - Drive CSV: https://drive.google.com/file/d/1dOJLLzxpQa9ujX_yijkPkuwSjAhaKFMd/view
 - Native Sheet tab: `KDC_Statement_Metrics_2016_2020`
+
+
+## QNS legacy summary layer
+
+- [QNS FY2016–FY2020 summary metrics](../data/qns_summary_metrics_2016_2020.csv)
+- Drive CSV: https://drive.google.com/file/d/11ZXiCUnUw_tuZdkO52cqhPUDaICsbbuk/view
+- Native Sheet tab: `QNS_Summary_Metrics_2016_2020`
