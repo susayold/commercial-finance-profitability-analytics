@@ -138,3 +138,10 @@
 - [Detailed reproducible build guide](../powerbi/POWER_BI_BUILD_GUIDE_V2.md)
 - Drive copy: https://drive.google.com/file/d/13BM9_oOwLxyMnO9IPGkaPWcyVB991q_Y/view
 - Native PBIX remains the final Desktop-only handoff artifact; the guide specifies import, relationships, DAX, six pages, QA and recruiter walkthrough.
+
+
+## Power BI QA automation pack
+
+- [QA test matrix](../powerbi/QA_TEST_MATRIX.md) · [Drive copy](https://drive.google.com/file/d/1goi-4XMbHbUAeqE9dIHkISHhdZf5MGtb/view)
+- [Executable DAX validation queries](../powerbi/qa_validation_queries.dax) · [Drive copy](https://drive.google.com/file/d/1l2_xVOfEdXzozbON4-7BN6hTt6zlSAog/view)
+- Native PBIX remains Desktop-dependent; the matrix is the release gate before upload.
