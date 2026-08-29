@@ -88,3 +88,5 @@
 - Official audited PDF: https://drive.google.com/file/d/1KqGqXOUl67oLp4MHnpwL-VCpHX0narW0/view
 - Native Sheet tab: `QNS_Statement_Metrics_2020`
 - Queue status after promotion: 11 statement-verified, 13 summary candidates, 1 statement-review-required.
+
+- QNS FY2020 promotion addendum: [GitHub](QNS_FY2020_AUDITED_STATEMENT_PROMOTION_ADDENDUM_2026-08-30.md) · [Drive](https://drive.google.com/file/d/1wU7VD8yYUP06GZn-eQz5g7xxoA6A44rg/view)
