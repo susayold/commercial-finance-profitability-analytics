@@ -2,7 +2,7 @@
 
 ## Current verified layer
 
-A remote Google Sheet, **Peer_Financial_Panel_Review_v1**, contains 15 rows for VNM, QNS and KDC covering FY2021-FY2025. Values are taken from the latest official annual-report summary tables and retain the source document, URL, basis and comparability note.
+A remote Google Sheet, **Peer_Financial_Panel_Review_v1**, contains 15 rows for VNM, QNS and KDC covering FY2021-FY2025, plus source-linked legacy tabs. Values are taken from the latest official annual-report summary tables and retain the source document, URL, basis and comparability note.
 
 - VNM: net revenue, operating profit, profit before tax, profit after tax and total assets.
 - QNS: net revenue, profit before tax, profit after tax and total assets.
@@ -47,7 +47,9 @@ The project must not manufacture a long-run series by copying a current-year num
 
 ## Queue traceability fields
 
-The queue now includes `source_url`, `page_anchor`, `reported_basis` and `reviewer_note`. `page_anchor` is intentionally blank until a human reviewer confirms the statement page; this prevents an OCR or summary candidate from being mistaken for approved evidence.
+The queue now includes `source_url`, `page_anchor`, `reported_basis` and `reviewer_note`. KDC FY2016–FY2020 now has a verified statement-metrics table with page anchors; VNM/QNS legacy rows remain explicitly review-required. `page_anchor` is intentionally blank until a human reviewer confirms the statement page; this prevents an OCR or summary candidate from being mistaken for approved evidence.
 
 - [Traceable queue CSV](../data/peer_extraction_queue.csv)
 - Drive mirror: https://drive.google.com/file/d/14WLSAnEnpzkI2s3M23oAwcvkvG9vIeV3/view
+- KDC statement metrics CSV: ../data/kdc_statement_metrics_2016_2020.csv
+- Drive KDC statement metrics: https://drive.google.com/file/d/1dOJLLzxpQa9ujX_yijkPkuwSjAhaKFMd/view
