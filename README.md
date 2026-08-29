@@ -70,6 +70,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Site source folder](site/)
 - Sites project: `appgprj_6a930a2f81f48191b1e015f1fa938c69`; production deployment is version 1.
 - Website release update: [Forecast section release](reports/SITE_FORECAST_SECTION_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1Cz5Hl0HH9YLLklKBHJ2FBlTdEyQWz6u9/view). Production site now exposes a recruiter-facing forecast-performance section with explicit Gate A exclusion.
+- Interview preparation: [Finance Analyst / FP&A talk track](docs/FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md) · [Drive copy](https://drive.google.com/file/d/1qyKG5FJW5_EdKyu10l-xWUyOU9i5tLRy/view). Includes a 90-second pitch, 15-minute walkthrough, STAR stories and pushback answers.
 
 ## Peer panel review layer
 
