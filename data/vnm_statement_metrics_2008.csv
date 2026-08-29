@@ -1,0 +1,3 @@
+company,ticker,fiscal_year,net_revenue_vnd_bn,gross_profit_vnd_bn,operating_profit_vnd_bn,profit_before_tax_vnd_bn,profit_after_tax_vnd_bn,total_assets_vnd_bn,owners_equity_vnd_bn,operating_cash_flow_vnd_bn,source_document,source_url,page_anchor,reported_basis,source_status,reviewer_note
+Vinamilk,VNM,2008,8208.982,2598.013,1315.090,1371.313,1248.698,5966.959,4761.913,1269.759,VNM_Annual_Report_2009.pdf,https://drive.google.com/file/d/1Gf0kIBZUy6f4wQ1I5A9KXFOwN_A82rEa/view,5-11 comparative_2008,vas_consolidated_statement,reported_statement_verified,Audited VAS consolidated FY2009 filing comparative column for FY2008; statement amounts reported in VND million and normalized to VND bn
+
