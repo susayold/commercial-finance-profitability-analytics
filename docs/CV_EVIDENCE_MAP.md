@@ -20,6 +20,7 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Built a source-linked public-guidance proxy for Vinamilk FY2018–FY2025 with 16 AGM/IR guidance-versus-actual observations, explicit revenue-basis controls and aggregate Bias/WAPE (public guidance, not internal forecast).
 - Authored a portable Power BI source handoff with a machine-readable semantic manifest covering 5 dimensions, 9 facts, 15 relationships, 6 report pages and 18 QA tests; wired manifest validation into GitHub Actions (native PBIX remains Desktop-dependent).
 - Extended the public-guidance proxy into a reproducible forecast-performance analysis with metric/regime splits, Bias/WAPE/MAPE, within-2% accuracy bands and ranked misses; kept the evidence explicitly outside the internal forecast gate.
+- Prepared a finance-analyst interview talk track that traces one KPI from source to P&L to decision, including a 90-second pitch, 15-minute reviewer tour, STAR stories and honest responses to data/PBIX limitations.
 
 ## Skills mapped to artifacts
 
@@ -39,6 +40,7 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 | Public guidance performance analysis | data/vnm_public_guidance_proxy_analysis.json, VNM_PUBLIC_GUIDANCE_ANALYSIS.md | Metric/regime Bias-WAPE-MAPE splits, descriptive bands, ranked misses; CI validator |
 | Data governance | Source_Register, peer review queue | OCR not auto-approved |
 | Communication | CFO memo, battle cards, website spec | Decision/action structure |
+| Interview communication | docs/FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md | 90-second pitch, 15-minute walkthrough, STAR stories, pushback answers |
 
 ## Interview proof points
 
