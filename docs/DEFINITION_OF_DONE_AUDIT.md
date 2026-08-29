@@ -70,3 +70,8 @@ Open the v2 workbook in Power BI Desktop, follow `powerbi/POWER_BI_DESKTOP_RUNBO
 ## 5. Audit conclusion
 
 The finance model, evidence governance, public peer layer, forecast-control template and recruiter packaging are complete and remotely archived. The project is **release-ready for review**, but not yet a fully closed production-style case until Gate A and Gate B are evidenced with real snapshot records and a native PBIX file.
+
+
+## 6. Historical peer-depth extension
+
+The VNM panel now spans FY2006–FY2025 in `data/vnm_longrun_panel_2006_2025.csv`, with derived revenue growth, profitability margins, cash conversion and asset efficiency. FY2006 is flagged as a restated comparative and FY2021 as a statement-to-summary basis break; this extension is evidence of depth, not permission to ignore comparability controls. See [methodology](VNM_LONGRUN_PANEL.md) and [Drive CSV](https://drive.google.com/file/d/1R0ruyyRRLl7bFWuzKlhpihor2_4Qu4Hv/view).
