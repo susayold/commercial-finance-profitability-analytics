@@ -100,6 +100,8 @@ The native forecast Sheet now includes governance columns (`Snapshot_Status`, `S
 
 - Native capture Sheet QA: [report](../reports/FORECAST_CAPTURE_SHEET_QA.md) · [Drive copy](https://drive.google.com/file/d/16oxmO8IdsfXhZxngLmnGYu2CtCUJW3UO/view).
 
+- PBIP external gate preparation: [Desktop execution checklist](../powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md) covers the exact topology, data mapping, QA-01–QA-18 sequence and archive naming; it does not claim a native PBIX.
+
 - Freeze-gate behavior has been tested in the native Sheet: DRAFT rows return `WAITING_FOR_FROZEN_SNAPSHOT`; only FROZEN rows can produce Bias/WAPE and `READY`.
 
 
