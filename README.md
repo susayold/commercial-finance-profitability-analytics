@@ -13,13 +13,15 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 
 ## Current data foundation
 
-- 47 official annual-report PDFs archived in Google Drive
+- 57 official PDFs archived in Google Drive (47 annual reports + 10 MCH audited consolidated statements)
 - VNM: 2006-2025
 - QNS: 2016-2025
 - KDC: 2016-2025
 - MCH: 2018, 2019 and 2021-2025
 - MCH audited consolidated financial statements: 2016-2025
 - Missing and rejected documents are recorded explicitly; gaps are never filled with unverified copies
+- VietNova synthetic v1.0.0: 36 months, 6,480 sales lines, 36 SKUs, 5 channels, 24 customers, 13 CSV tables + manifest; QA controls PASS (10,152 checks, 0 errors)
+- Synthetic generator, ledger schema, hidden-truth event specification and QA validator are versioned in `scripts/` and `schemas/`
 
 Raw reports are stored in the private [Google Drive project folder](https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR). They are intentionally excluded from Git history.
 
@@ -37,4 +39,4 @@ Every output distinguishes reported fact, calculated fact, synthetic fact, assum
 
 Phase 0 complete: remote infrastructure, initial source archive, registry and full-depth blueprint.
 
-Next: audited financial statements, quarterlies, page-level extraction lineage, normalized peer dataset and VietNova hidden-truth generator.
+Next: page-level extraction lineage and human-reviewed normalized peer dataset; then Excel/Power BI model build and management deliverables.
