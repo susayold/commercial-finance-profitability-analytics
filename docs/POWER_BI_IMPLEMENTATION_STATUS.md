@@ -101,3 +101,8 @@ FY2006 is now statement-verified from the audited VAS consolidated FY2007 filing
 ## Reproducible build guide (2026-08-30)
 
 The step-by-step implementation guide is available at `powerbi/POWER_BI_BUILD_GUIDE_V2.md` and [Drive](https://drive.google.com/file/d/13BM9_oOwLxyMnO9IPGkaPWcyVB991q_Y/view). It specifies source mapping, import rules, one-to-many relationships, hardened scenario/evidence measures, six-page visual acceptance criteria, QA tolerances and the recruiter walkthrough. The only remaining environment-dependent artifact is the native `.pbix` created in Power BI Desktop.
+
+
+## QA automation pack (2026-08-30)
+
+The release gate now has a reviewer-facing matrix in [powerbi/QA_TEST_MATRIX.md](../powerbi/QA_TEST_MATRIX.md) and executable DAX controls in [powerbi/qa_validation_queries.dax](../powerbi/qa_validation_queries.dax). The matrix covers model grain, revenue/CM tie-outs, PVM, scenario determinism, working-capital conventions, peer evidence gating, unit/basis labelling, historical VNM caveats and a five-minute recruiter walkthrough. The DAX query returns a single PASS/FAIL status plus row-level diagnostics for negative sales, discount/return bounds, channel CM residual and peer PAT-margin residual. Drive copies: [QA matrix](https://drive.google.com/file/d/1goi-4XMbHbUAeqE9dIHkISHhdZf5MGtb/view) and [DAX controls](https://drive.google.com/file/d/1l2_xVOfEdXzozbON4-7BN6hTt6zlSAog/view).
