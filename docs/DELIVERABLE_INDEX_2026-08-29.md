@@ -103,3 +103,10 @@
 - QNS FY2016–FY2019 promotion addendum: [GitHub](QNS_FY2016_2019_AUDITED_STATEMENT_PROMOTION_ADDENDUM_2026-08-30.md) · [Drive](https://drive.google.com/file/d/1JNVBMzXu7Wq4SSqymeZsuotPNVdyHxej/view)
 - [VNM legacy statement review protocol](VNM_LEGACY_REVIEW_PROTOCOL.md) · [Drive](https://drive.google.com/file/d/1jlDU8a-hci7WuRDTi1Vy3Bjc1lEWA0GP/view)
 
+## VNM FY2014–FY2015 audited statement layer
+
+- [VNM FY2014–FY2015 statement metrics](../data/vnm_statement_metrics_2014_2015.csv)
+- Drive CSV: https://drive.google.com/file/d/1oz7ENrbZD1yf_kkts1TsKFqKTOkprm6Z/view
+- Source report: https://drive.google.com/file/d/1F2fn3TYgQMkl_C7xoasOAGPOzbCXY8R8/view
+- Native Sheet queue rows: `Peer_Extraction_Queue` FY2014–FY2015
+
