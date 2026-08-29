@@ -49,3 +49,8 @@ Authoritative archives: [GitHub repository](https://github.com/susayold/commerci
 - Google Drive contains raw official reports, extracted/synthetic CSVs, model workbooks, code snapshots, peer Sheet, memo, deck, website archive and this QA record.
 - Local `work/` is staging-only and must be empty after upload; no local file is an authoritative source.
 
+
+
+## Latest extraction update (2026-08-30)
+
+VNM FY2016–FY2020 is now statement-verified and archived in [GitHub](../data/vnm_statement_metrics_2016_2020.csv), [Drive](https://drive.google.com/file/d/18IrPvgbW2GHJItmKxZPdQIJXylcYJgZg/view) and the peer Sheet tab `VNM_Statement_Metrics_2016_2020`. The review queue now contains 10 verified statement rows, 14 summary candidates and 1 remaining statement-review row (VNM FY2006).
