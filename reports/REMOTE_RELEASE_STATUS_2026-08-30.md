@@ -18,6 +18,10 @@ All project data, source code, QA scripts and reviewer-facing artifacts are comm
 1. Gate A: add at least one approved real-company forecast snapshot created before actual close, with model version, cutoff timestamp, approver and actual-availability date. Until then, the public-guidance proxy and synthetic fixture must not be described as internal forecast accuracy.
 2. Gate B: open the model in Power BI Desktop, execute QA-01 through QA-18, save the native .pbix and upload the binary plus visual evidence to Drive. The PBIP manifest is a portable source scaffold, not a native PBIX.
 
+## Market-fit role alignment
+
+The 30 Aug release adds a source-backed Vietnam hiring matrix for Junior FP&A/Finance Analyst, Business Finance/Commercial Finance Analyst and Finance Data Analyst signals. [GitHub matrix](../docs/ROLE_ALIGNMENT_MATRIX.md) · [CSV](../data/role_alignment_matrix.csv) · [Drive copy](https://drive.google.com/file/d/1ngIE4Nw4-P-F6xtmxXvhUfVJPsOPVV6D/view). The matrix preserves the same evidence boundary as the model: synthetic and public-guidance work are labelled, while Gate A and Gate B remain open.
+
 ## Reviewer path
 
 1. Start with README.md and the production website.

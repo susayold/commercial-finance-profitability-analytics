@@ -86,6 +86,11 @@ Drive mirror for M&A extension:
 - [Finance Analyst / Junior FP&A CV draft](docs/FINANCE_ANALYST_CV_ONE_PAGE.md) · [Drive copy](https://drive.google.com/file/d/1rRpc9qNKcia0MeckGhqzrVnJ_iyed7RB/view)
 - Bullets are restricted to validated evidence and explicitly label synthetic/public-guidance outputs; replace bracketed personal fields before use.
 
+## Market-fit overlay
+
+- [Vietnam role-alignment matrix](ROLE_ALIGNMENT_MATRIX.md) · [CSV](../data/role_alignment_matrix.csv) · [Drive copy](https://drive.google.com/file/d/1ngIE4Nw4-P-F6xtmxXvhUfVJPsOPVV6D/view)
+- Use the matrix to choose bullets by role; do not add an unverified keyword such as SAP production experience or internal forecast accuracy.
+
 
 ## Master-plan evidence matrix
 
