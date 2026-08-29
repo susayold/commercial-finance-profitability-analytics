@@ -15,6 +15,8 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Calibrated a synthetic operating ledger against public FMCG peer context while maintaining an evidence taxonomy that separates reported facts, calculated facts, synthetic facts, assumptions, inferences and recommendations.
 - Built a source-linked peer QA workflow for official annual reports and audited statements, promoting 25/25 queue rows to reported_statement_verified only after page-level checks and retaining an explicit human-review protocol.
 
+- Built a source-linked VNM long-run panel spanning FY2006–FY2025, deriving revenue growth, margins, cash conversion and asset efficiency while flagging the FY2021 statement-to-summary basis break.
+
 ## Skills mapped to artifacts
 
 | CV claim | Artifact | Verification |
