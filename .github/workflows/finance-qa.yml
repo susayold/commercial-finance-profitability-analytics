@@ -69,6 +69,11 @@ jobs:
             "$RUNNER_TEMP/peer_evidence_QA.md"
           grep -F "**Overall status: PASS** (21/21 checks passed)" "$RUNNER_TEMP/peer_evidence_QA.md"
 
+      - name: Validate PBIP source manifest
+        shell: bash
+        run: |
+          node scripts/validate_pbip_source_manifest.mjs
+
       - name: Validate Power BI model contract JSON
         shell: bash
         run: |
