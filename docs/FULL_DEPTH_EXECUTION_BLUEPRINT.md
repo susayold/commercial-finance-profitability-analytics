@@ -1183,9 +1183,11 @@ Completed and remotely verified:
 - Recruiter website is deployed privately at https://vn-finance-fpa-case.sangkenny200.chatgpt.site; source is versioned in the Sites repository, mirrored under `site/` in GitHub and archived as a Drive ZIP.
 - Deliverable index consolidates the live site, model, deck, memo, source archive and evidence documentation.
 
-Remaining analytical work:
+Remaining work after the 2026-08-30 hardening pass:
 
-1. Human-review OCR candidates and extend page-level extraction to VNM, QNS and KDC.
-2. Load the normalized peer panel into the Power BI model and complete visual reconciliation against Excel v2.
-3. Replace placeholders in `CV_ONE_PAGE_DRAFT.md` with the candidate's real contact, education and experience facts.
-4. Run a final remote metadata audit and preserve version/checksum evidence.
+1. **Gate A — external source:** supply an approved real internal pre-close forecast snapshot, then run the governance schema/validator in `--mode=live` and publish observed Bias/WAPE only after the close and availability evidence is archived.
+2. **Gate B — external desktop:** load the remote workbook and approved peer panel in Power BI Desktop, execute QA-01–QA-18, reconcile visuals to Excel and archive the native PBIX plus evidence.
+3. **Candidate-specific CV fields:** replace placeholders in `CV_ONE_PAGE_DRAFT.md` with the candidate's real contact, education and experience facts before sending applications.
+4. **Optional evidence expansion:** human-review the separate MCH OCR queue or extend the approved peer benchmark window only when a comparability decision and page-level source evidence are available; these are not required to claim the current VNM/QNS/KDC scope.
+
+The Gate A intake contract (`schemas/forecast_snapshot_live.schema.json`, `scripts/validate_live_forecast_submission.mjs`) and Gate B evidence contract (`powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv`, `scripts/validate_powerbi_qa_evidence.mjs`) are now complete, so no analytical redesign is required when those external inputs arrive.
