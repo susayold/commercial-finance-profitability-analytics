@@ -135,3 +135,8 @@ The remote handoff now includes an 18-test [QA matrix](../powerbi/QA_TEST_MATRIX
 ## Native PBIX execution runbook (2026-08-30)
 
 The remaining Desktop-dependent step is documented end-to-end in [powerbi/POWER_BI_DESKTOP_RUNBOOK.md](../powerbi/POWER_BI_DESKTOP_RUNBOOK.md) with a [Drive copy](https://drive.google.com/file/d/1GdN43ajowcg9qjIf5fmwnX9Qarfd64Us/view). It covers import, data typing, relationships, measures, page construction, QA-01–QA-18 and upload/delete steps so the local copy never becomes the authoritative archive.
+
+
+## Forecast snapshot template (2026-08-30)
+
+The forecast accuracy gate now has a native [Google Sheet capture template](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit) with Instructions, input eligibility checks and Backtest_Output formulas. It was converted and read back successfully; synthetic unit-test rows are clearly labelled and must be replaced before publishing live Bias/WAPE.
