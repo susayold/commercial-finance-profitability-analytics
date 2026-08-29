@@ -44,6 +44,7 @@ This audit maps the user-provided master plan to evidence that a recruiter or fi
 - Native forecast capture Sheet: [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit).
 - Native Sheet tabs: `Instructions`, `Forecast_Snapshot_Input`, `Backtest_Output`, `Close_Calendar`.
 - Close-calendar control: [FORECAST_SNAPSHOT_CLOSE_CALENDAR.md](https://drive.google.com/file/d/12jAEwrXTeUmz5lzu9aUh1Ay6MUvsMu88/view).
+- Real snapshot onboarding: [GitHub pack](REAL_SNAPSHOT_ONBOARDING_PACK.md) · [Drive pack](https://drive.google.com/file/d/1gjdrHk6T4xnsv9SFaGoCIsd9CLRLl5oc/view) · native Sheet tab `Real_Snapshot_Onboarding`.
 - Demo backtest input: [Drive CSV](https://drive.google.com/file/d/1LBORkBVD02V_2HS-a70vK6SKDgGxcp7i/view).
 - Demo backtest output: [Drive CSV](https://drive.google.com/file/d/1NxiZJ-1hlS0L8pPmj-QfUi5mjPH8LPi3/view).
 - Frozen capture archive: [GitHub CSV](../data/forecast_snapshot_capture_demo_frozen.csv) · [Drive CSV](https://drive.google.com/file/d/1EBX9s3C16ZRkbLDpwfYVmgV_7Tw3LRCn/view) · [14/14 QA report](../reports/FORECAST_CAPTURE_ARCHIVE_QA.md) · [Drive QA](https://drive.google.com/file/d/1EODWWBJxWVPxhCGjjQ6qYXfMlUawKE94/view).
