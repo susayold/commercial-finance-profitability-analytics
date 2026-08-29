@@ -56,3 +56,11 @@ Authoritative archives: [GitHub repository](https://github.com/susayold/commerci
 VNM FY2016–FY2020 is now statement-verified and archived in [GitHub](../data/vnm_statement_metrics_2016_2020.csv), [Drive](https://drive.google.com/file/d/18IrPvgbW2GHJItmKxZPdQIJXylcYJgZg/view) and the peer Sheet tab `VNM_Statement_Metrics_2016_2020`. The review queue now contains 10 verified statement rows, 14 summary candidates and 1 remaining statement-review row (VNM FY2006).
 
 The approved benchmark export `data/peer_benchmark_approved_2016_2025.csv` now provides the Power BI-ready 30-row peer table with evidence and revenue-basis controls.
+
+### QNS FY2020 promotion (2026-08-30)
+
+QNS FY2020 is now statement-verified from the official audited consolidated financial statements (report pages 6–9), including VAS net revenue, gross profit, operating profit, PBT, PAT, assets, equity and CFO. The queue is now 11 verified statement rows, 13 summary candidates and 1 remaining statement-review row. The approved benchmark row uses VAS net revenue 6,489.764 bn and preserves the 6,702 bn summary KPI difference as a comparability note.
+
+- QNS statement CSV: [GitHub](../data/qns_statement_metrics_2020.csv) · [Drive](https://drive.google.com/file/d/1tfACwjS4LDGb6SRzY2ubJvngK-H8elMa/view)
+- Official audited source PDF: https://drive.google.com/file/d/1KqGqXOUl67oLp4MHnpwL-VCpHX0narW0/view
+- Native Sheet tab: `QNS_Statement_Metrics_2020`
