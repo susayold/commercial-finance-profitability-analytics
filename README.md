@@ -96,6 +96,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 ## Power BI QA handoff
 
 - [Detailed build guide](powerbi/POWER_BI_BUILD_GUIDE_V2.md)
+- [PBIX release evidence template](powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md) · [Drive copy](https://drive.google.com/file/d/1zeOflHSaBjlna_Nl0vQ2pS2m42XApWi3/view?usp=drivesdk)
 - [18-test QA matrix](powerbi/QA_TEST_MATRIX.md)
 - [Executable DAX validation queries](powerbi/qa_validation_queries.dax)
 - [Final QA and remote handoff](docs/FINAL_QA_AND_HANDOFF_2026-08-30.md)
