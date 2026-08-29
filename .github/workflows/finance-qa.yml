@@ -1,0 +1,49 @@
+name: Finance model QA
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  finance-qa:
+    name: Leakage, panel and contract checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Forecast accuracy unit test
+        shell: bash
+        run: |
+          node scripts/compute_forecast_accuracy.mjs \
+            data/forecast_accuracy_unit_test.csv \
+            "$RUNNER_TEMP/forecast_accuracy_unit_test_output.csv" \
+            2025-03-31
+          diff -u data/forecast_accuracy_unit_test_expected.csv "$RUNNER_TEMP/forecast_accuracy_unit_test_output.csv"
+
+      - name: VNM long-run panel QA
+        shell: bash
+        run: |
+          node scripts/validate_vnm_longrun_panel.mjs \
+            data/vnm_longrun_panel_2006_2025.csv \
+            "$RUNNER_TEMP/vnm_longrun_panel_QA.md"
+          grep -F "**Overall status: PASS** (17/17 checks passed)" "$RUNNER_TEMP/vnm_longrun_panel_QA.md"
+
+      - name: Validate Power BI model contract JSON
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+          const contract = JSON.parse(fs.readFileSync("powerbi/model_contract.json", "utf8"));
+          if (!Array.isArray(contract.tables) || contract.tables.length === 0) throw new Error("model contract has no tables");
+          if (!Array.isArray(contract.measures) || contract.measures.length === 0) throw new Error("model contract has no measures");
+          console.log(JSON.stringify({tables: contract.tables.length, measures: contract.measures.length, status: "PASS"}));
+          NODE
