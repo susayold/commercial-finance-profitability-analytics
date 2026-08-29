@@ -1,0 +1,462 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VietNova synthetic operating ledger",
+  "type": "object",
+  "required": [
+    "dataset_version",
+    "as_of_date",
+    "tables",
+    "lineage"
+  ],
+  "properties": {
+    "dataset_version": {
+      "type": "string"
+    },
+    "as_of_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "tables": {
+      "type": "object",
+      "required": [
+        "sales_fact",
+        "product_master",
+        "customer_master",
+        "channel_master",
+        "commercial_costs",
+        "inventory",
+        "receivables",
+        "payables",
+        "debt",
+        "budget",
+        "forecast",
+        "promotions",
+        "marketing_spend"
+      ],
+      "properties": {
+        "sales_fact": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "order_line_day_sku_channel_customer_region"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "date",
+            "month",
+            "order_id",
+            "line_id",
+            "sku_id",
+            "customer_id",
+            "channel_id",
+            "region",
+            "units",
+            "gross_sales",
+            "discount",
+            "returns",
+            "net_sales",
+            "cogs",
+            "freight",
+            "payment_fee",
+            "commission",
+            "trade_spend",
+            "contribution_margin",
+            "promo_id",
+            "is_stockout",
+            "is_intercompany"
+          ]
+        },
+        "product_master": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "sku"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "sku_id",
+            "category",
+            "brand",
+            "pack_size",
+            "list_price",
+            "standard_cogs",
+            "supplier_id",
+            "launch_month",
+            "status"
+          ]
+        },
+        "customer_master": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "customer"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "customer_id",
+            "customer_type",
+            "segment",
+            "region",
+            "payment_terms_days",
+            "credit_limit",
+            "acquisition_month"
+          ]
+        },
+        "channel_master": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "channel"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "channel_id",
+            "channel_type",
+            "platform_fee_pct",
+            "commission_pct",
+            "settlement_days",
+            "default_discount_pct"
+          ]
+        },
+        "commercial_costs": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "month_sku_channel"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "month",
+            "sku_id",
+            "channel_id",
+            "trade_spend",
+            "listing_fee",
+            "rebate",
+            "freight",
+            "payment_fee",
+            "commission",
+            "writeoff",
+            "cost_version"
+          ]
+        },
+        "inventory": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "month_sku_warehouse"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "month",
+            "warehouse_id",
+            "sku_id",
+            "opening_units",
+            "receipts_units",
+            "sales_units",
+            "closing_units",
+            "unit_cost",
+            "inventory_value",
+            "days_on_hand",
+            "stockout_flag",
+            "expiry_writeoff"
+          ]
+        },
+        "receivables": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "month_customer"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "month",
+            "customer_id",
+            "opening_ar",
+            "invoiced",
+            "cash_collected",
+            "credit_note",
+            "closing_ar",
+            "overdue_0_30",
+            "overdue_31_60",
+            "overdue_61_plus",
+            "dso"
+          ]
+        },
+        "payables": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "month_supplier"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "month",
+            "supplier_id",
+            "opening_ap",
+            "purchases",
+            "cash_paid",
+            "closing_ap",
+            "overdue_ap",
+            "dpo"
+          ]
+        },
+        "debt": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "month_facility"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "month",
+            "facility_id",
+            "opening_balance",
+            "drawdown",
+            "repayment",
+            "closing_balance",
+            "interest_rate",
+            "interest_expense",
+            "covenant_headroom"
+          ]
+        },
+        "budget": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "month_sku_channel"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "version",
+            "month",
+            "sku_id",
+            "channel_id",
+            "budget_units",
+            "budget_net_sales",
+            "budget_cogs",
+            "budget_trade_spend",
+            "budget_opex"
+          ]
+        },
+        "forecast": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "snapshot_month_target_month_sku_channel"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "snapshot_month",
+            "target_month",
+            "sku_id",
+            "channel_id",
+            "forecast_units",
+            "forecast_net_sales",
+            "forecast_cogs",
+            "forecast_trade_spend",
+            "forecast_opex",
+            "forecast_version"
+          ]
+        },
+        "promotions": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "promotion"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "promo_id",
+            "start_date",
+            "end_date",
+            "channel_id",
+            "sku_id",
+            "mechanic",
+            "planned_discount_pct",
+            "planned_units_lift_pct",
+            "actual_discount_pct",
+            "incremental_units",
+            "baseline_units",
+            "promo_spend",
+            "roi",
+            "status"
+          ]
+        },
+        "marketing_spend": {
+          "type": "object",
+          "required": [
+            "grain",
+            "columns"
+          ],
+          "properties": {
+            "grain": {
+              "const": "month_channel_campaign"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "x_expected_columns": [
+            "month",
+            "channel_id",
+            "campaign_id",
+            "spend",
+            "impressions",
+            "clicks",
+            "orders",
+            "attributed_net_sales",
+            "cac",
+            "roas"
+          ]
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "required": [
+        "synthetic_notice",
+        "source_policy",
+        "reproducibility"
+      ],
+      "properties": {
+        "synthetic_notice": {
+          "const": "No row is sourced from a real customer, supplier, employee, or transaction."
+        },
+        "source_policy": {
+          "type": "string",
+          "const": "Synthetic operating data is generated from explicit assumptions; public-company reports remain in the peer panel and are never mixed into the synthetic ledger."
+        },
+        "reproducibility": {
+          "type": "string",
+          "const": "Fixed seed, explicit event calendar, versioned parameter dictionary, and deterministic QA manifest."
+        }
+      }
+    }
+  }
+}
