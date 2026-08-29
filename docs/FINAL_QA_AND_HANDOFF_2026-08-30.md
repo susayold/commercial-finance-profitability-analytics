@@ -125,3 +125,8 @@ VNM FY2006 is now statement-verified from the audited VAS consolidated FY2007 fi
 ### Full VNM historical closure and Power BI build guide (2026-08-30)
 
 The VNM statement layer is now complete for FY2006–FY2020: 15 rows, eight metrics per year, official source URLs, page anchors and basis caveats. FY2006 is explicitly a restated comparative because FY2007 was the first VAS 25 consolidated-reporting year. The detailed Power BI reproducibility guide is available at [GitHub](../powerbi/POWER_BI_BUILD_GUIDE_V2.md) and [Drive](https://drive.google.com/file/d/13BM9_oOwLxyMnO9IPGkaPWcyVB991q_Y/view). Native `.pbix` creation remains Desktop-dependent; all inputs, DAX, page specs and QA gates are remote and ready.
+
+
+## Power BI QA automation pack (2026-08-30)
+
+The remote handoff now includes an 18-test [QA matrix](../powerbi/QA_TEST_MATRIX.md) and executable [DAX validation query](../powerbi/qa_validation_queries.dax). These convert the remaining native-PBIX work into a deterministic release gate: tie out the model, prove no impossible sales rows, validate scenario isolation, confirm peer evidence filters, preserve VNM historical caveats and document the five-minute reviewer path. Drive copies: [QA matrix](https://drive.google.com/file/d/1goi-4XMbHbUAeqE9dIHkISHhdZf5MGtb/view) · [DAX controls](https://drive.google.com/file/d/1l2_xVOfEdXzozbON4-7BN6hTt6zlSAog/view).
