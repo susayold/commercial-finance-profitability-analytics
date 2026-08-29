@@ -100,3 +100,15 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Final QA and remote handoff](docs/FINAL_QA_AND_HANDOFF_2026-08-30.md)
 - Current evidence baseline: peer extraction queue 25/25 rows reported_statement_verified; VNM statement layer complete FY2006–FY2020 (15 rows, eight metrics per year).
 - Native .pbix remains Desktop-dependent and is intentionally not represented by a placeholder file.
+
+
+## Financial analyst methodology pack
+
+- [Business case](docs/BUSINESS_CASE.md)
+- [KPI dictionary](docs/KPI_DICTIONARY.md)
+- [PVM methodology](docs/PVM_METHODOLOGY.md)
+- [Rolling forecast methodology](docs/FORECAST_METHODOLOGY.md)
+- [Assumptions and limitations](docs/ASSUMPTIONS_AND_LIMITATIONS.md)
+- [Claim governance](docs/CLAIM_GOVERNANCE.md)
+- [Validation report](reports/VALIDATION_REPORT.md)
+- [Drive mirror pack](https://drive.google.com/file/d/1NdetbRKfVEe9dQc-5n5XqBTDEnehWW4x/view)
