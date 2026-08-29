@@ -43,3 +43,12 @@ QNS FY2016–FY2020 is now statement-verified on a consistent VAS consolidated n
 
 The earlier summary-based QNS CAGR table is retained as historical context only; any dashboard or interview narrative should use the statement layer and explicitly label the revenue basis.
 
+## VNM FY2009–FY2020 evidence-gated long-run read-through (2026-08-30)
+
+The merged statement layer `data/vnm_statement_metrics_2009_2020.csv` now gives a twelve-year VAS consolidated series with page anchors. On the reported statement basis, net revenue grows from VND 10,613.8 bn (FY2009) to VND 59,636.3 bn (FY2020), approximately 16.9% CAGR. Gross margin expands from 36.5% to 46.4%, while PBT margin moderates from 25.7% to 22.7% and PAT margin from 22.4% to 18.8%. Asset turnover is broadly stable/slightly lower (1.25x to 1.23x), but CFO/PAT conversion falls from 1.30x to 0.91x, which is a useful FP&A prompt to investigate working-capital and investment intensity rather than treating growth as automatically cash-accretive.
+
+Interpretation controls: FY2009–FY2015 are retained in an evidence-gated legacy layer, FY2016–FY2020 are in the approved benchmark, and FY2017 includes an explicitly documented consolidation-perimeter expansion. Do not combine this historical read-through with QNS/KDC CAGR rankings without reconciling revenue definitions and perimeter changes.
+
+- [Merged VNM statement layer](../data/vnm_statement_metrics_2009_2020.csv)
+- Drive copy: https://drive.google.com/file/d/1qjYylxjoNIOQ_RHb1glC69CZY-Fmqfj0/view
+- Native Sheet tab: `VNM_Statement_Metrics_2009_2020`
