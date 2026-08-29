@@ -54,4 +54,4 @@ The script was run against a four-row synthetic fixture as of 2025-03-31. It cor
 
 ## Native capture workbook
 
-A native Google Sheet template is available at [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit). It contains Instructions, Forecast_Snapshot_Input and Backtest_Output tabs, eligibility formulas, a 250-row input capacity and sample synthetic rows. The raw Excel backup is archived on Drive at https://docs.google.com/spreadsheets/d/1rT1lgzs9p6fuBd3dcmvKNrfiiAwkXib8/edit.
+A native Google Sheet template is available at [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit). It contains Instructions, Forecast_Snapshot_Input, Backtest_Output and Close_Calendar tabs, eligibility formulas, a 250-row input capacity, sample synthetic rows and the WD-5-to-month+1 close cadence. The raw Excel backup is archived on Drive at https://docs.google.com/spreadsheets/d/1rT1lgzs9p6fuBd3dcmvKNrfiiAwkXib8/edit.
