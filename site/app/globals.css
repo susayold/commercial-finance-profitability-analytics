@@ -122,6 +122,14 @@ h2 { margin-top: 17px; color: var(--navy); font-size: clamp(33px, 4vw, 52px); li
 .forecast-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 23px; padding-top: 16px; border-top: 1px solid rgba(177,214,220,.18); }
 .forecast-links a { display: inline-flex; align-items: center; gap: 5px; color: #7fd7cb; font-size: 10px; font-weight: 800; }
 .forecast-links a:hover { color: #fff; }
+.strategic-grid { margin-top: 47px; }
+.strategic-card { display: flex; flex-direction: column; min-height: 315px; }
+.strategic-card p { min-height: 98px; }
+.strategic-metrics { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 4px 12px; margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--line); }
+.strategic-metrics strong { color: var(--navy); font-size: 19px; letter-spacing: -.04em; }
+.strategic-metrics span { color: #7b8b95; font-size: 10px; }
+.strategic-footer { margin-top: auto; }
+.strategic-tag { color: #617783; background: #edf2f2; }
 .proof-section { color: #dbeef0; background: #153e59; }
 .proof-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: 100px; align-items: center; padding-top: 80px; padding-bottom: 80px; }
 .proof-inner h2 { color: #fff; }
