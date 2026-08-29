@@ -50,3 +50,8 @@ Base forecast assumptions are separate from scenario assumptions. Base, Growth/P
 ## Management use
 
 The forecast is a decision instrument. A weak forecast is not hidden: its bias, WAPE and largest error drivers appear on the forecast page and in the CFO memo.
+
+
+## Backtest implementation
+
+Historical Bias/WAPE is intentionally gated until frozen forecast snapshots exist. The leakage-safe implementation is documented in [docs/FORECAST_ACCURACY_BACKTEST.md](FORECAST_ACCURACY_BACKTEST.md), with [scripts/compute_forecast_accuracy.mjs](../scripts/compute_forecast_accuracy.mjs) and a remote input template. It excludes unavailable actual periods and future-leakage rows instead of manufacturing an accuracy result.
