@@ -189,3 +189,10 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Automated validator](scripts/validate_mna_accretion_dilution.mjs) · [QA report](reports/MNA_ACCRETION_DILUTION_QA.md)
 - Base screen: 8.5x entry EBITDA, Year-2 EPS accretion 17.16%, deal NPV VND 28.39bn; Year-1 dilution is -0.46% after integration costs.
 - Evidence class is SYNTHETIC / REHEARSAL; confirmatory diligence, purchase accounting and leverage modelling remain required before any real-world recommendation.
+
+
+Drive mirror for M&A extension:
+- Data: https://drive.google.com/file/d/1LK-YloDyk2iXqoW_XsFflkYrb4h6a224/view and https://drive.google.com/file/d/1kv60z5MXY4wghumtHvg3MqroCy-vJCyT/view
+- Methodology: https://drive.google.com/file/d/1gwEWr1hIQ0XhNWP23GkrAzLBRqd6DcOe/view
+- QA: https://drive.google.com/file/d/1cyt24IdL7Y8SlP97s8Qk_tt1FZsFEaOg/view
+- Validator: https://drive.google.com/file/d/1kGdGkWhgMpSEvpmEsGAhflB4qC92hNmy/view
