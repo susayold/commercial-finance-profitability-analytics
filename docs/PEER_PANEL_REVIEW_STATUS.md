@@ -92,3 +92,14 @@ QNS FY2016–FY2019 operating-profit figures are now captured from annual-report
 - [QNS operating candidates](../data/qns_operating_candidates_2016_2020.csv)
 - Drive CSV: https://drive.google.com/file/d/1LCkUDTcjRw7RvYazM05cNA5ipi3fdqhc/view
 - Native Sheet tab: `QNS_Operating_Candidates_2016_2020`
+
+## QNS FY2020 audited statement promotion (2026-08-30)
+
+QNS FY2020 has now been promoted from a summary candidate to a statement-verified row using the official audited consolidated financial statements. Report pages 6–9 provide the balance sheet, income statement and cash flow statement. The approved row uses VAS net revenue of 6,489.764 bn (not the 6,702 bn total-revenue summary KPI), gross profit 2,051.480 bn, operating profit 1,233.248 bn, PBT 1,266.434 bn, PAT 1,052.978 bn, assets 9,150.331 bn, equity 6,605.367 bn and CFO 76.962 bn.
+
+- [QNS FY2020 statement metrics](../data/qns_statement_metrics_2020.csv)
+- Drive CSV: https://drive.google.com/file/d/1tfACwjS4LDGb6SRzY2ubJvngK-H8elMa/view
+- Official audited PDF: https://drive.google.com/file/d/1KqGqXOUl67oLp4MHnpwL-VCpHX0narW0/view
+- Native Sheet tab: `QNS_Statement_Metrics_2020`
+
+Queue status is now 11 `reported_statement_verified`, 13 `summary_candidate_review_required` and 1 `statement_review_required` (VNM FY2006).
