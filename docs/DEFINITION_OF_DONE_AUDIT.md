@@ -10,7 +10,7 @@ This audit maps the user-provided master plan to evidence that a recruiter or fi
 
 - Historical peer extraction is closed for VNM FY2006–FY2020, QNS FY2016–FY2020 and KDC FY2016–FY2020; all 25 queue rows have statement metrics, page anchors and basis notes. Long-run ranking still requires the documented QNS revenue-basis and KDC perimeter caveats.
 - The market-fit layer is complete: [role-alignment matrix](ROLE_ALIGNMENT_MATRIX.md), [machine-readable CSV](../data/role_alignment_matrix.csv) and [role-targeted CV variants](CV_ROLE_VARIANTS.md) are committed and mirrored to Drive.
-- The current remote QA run passes the evidence matrix, role matrix, PBIP manifest, M&A, D2C, public-guidance, VNM long-run and peer validators. Gate A (genuine internal snapshot) and Gate B (native PBIX/Desktop QA) remain the only external release gates.
+- The current remote QA run passes the evidence matrix, role matrix, PBIP manifest, M&A, D2C, public-guidance, VNM long-run and peer validators. The recruiter site is deployed as Sites version 4 and the candidate application/CV and external-gates execution packs are now linked from the README. Gate A (genuine internal snapshot) and Gate B (native PBIX/Desktop QA) remain the only external release gates.
 - Promotion ROI and fixed-budget allocation are now independently inspectable: spend is included in ROI, negative-CM stop-loss events are visible, and recommended channel budgets conserve the approved total. See [stretch-module QA](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md).
 
 ## 1. Definition-of-done matrix
@@ -26,7 +26,7 @@ This audit maps the user-provided master plan to evidence that a recruiter or fi
 | Scenarios have explicit assumptions and sensitivities | `Scenario_Analysis`, [assumptions and limitations](ASSUMPTIONS_AND_LIMITATIONS.md) | Complete | Base, growth, margin-pressure and downside cases are labelled |
 | Recommendations have quantified simulated impact | `Recommendations`, CFO memo, management deck | Complete | Impact is labelled simulated and tied to assumptions |
 | Excel contains visible QA controls | v2 `Checks`, [QA matrix](../powerbi/QA_TEST_MATRIX.md) | Complete | Controls cover tie-outs, mappings, inventory and signs |
-| Power BI model matches Excel | [semantic contract](../powerbi/model_contract.json), [DAX](../powerbi/measures.dax), QA queries | Pending external | Native PBIX still requires Power BI Desktop and final visual tie-out |
+| External-gates execution is field-level and reproducible | [external-gates execution pack](EXTERNAL_GATES_EXECUTION_PACK.md), schemas, validators and QA log | Complete for design; external inputs pending | Intake grain, eligibility, RACI, six-page PBIX contract and release bundle are explicit |\n| Power BI model matches Excel | [semantic contract](../powerbi/model_contract.json), [DAX](../powerbi/measures.dax), QA queries | Pending external | Native PBIX still requires Power BI Desktop and final visual tie-out |
 | Management deck and CFO memo match the model | Remote deck/memo and validation report | Complete | Cross-output spot checks documented |
 | Synthetic and external data are distinguished | [claim governance](CLAIM_GOVERNANCE.md) | Complete | OBSERVED / SIMULATED / DERIVED / ASSUMPTION labels are required |
 | External sources are traceable | Source registry, Drive raw-report archive, peer queue | Complete | Official report URLs, pages and basis notes retained |
@@ -64,7 +64,7 @@ The native Sheet now demonstrates the mechanics with 27 FROZEN `DEMO_FIXTURE_v1`
 
 ### Gate B — native Power BI Desktop release
 
-Open the v2 workbook in Power BI Desktop, follow `powerbi/POWER_BI_DESKTOP_RUNBOOK.md`, execute QA-01 through QA-18, save the native `.pbix`, export a PDF or screenshots for visual QA and upload the binary to Drive. The repository intentionally keeps the portable semantic contract and DAX rather than claiming a placeholder PBIX.
+Open the v2 workbook in Power BI Desktop, follow `powerbi/POWER_BI_DESKTOP_RUNBOOK.md` and the [external-gates execution pack](EXTERNAL_GATES_EXECUTION_PACK.md), execute QA-01 through QA-18, save the native `.pbix`, export a PDF or screenshots for visual QA and upload the binary to Drive. The repository intentionally keeps the portable semantic contract and DAX rather than claiming a placeholder PBIX.
 
 ## 4. Reviewer acceptance checklist
 
@@ -192,7 +192,7 @@ Drive mirror for M&A extension:
 ## Website strategic-finance release
 
 - [Release note](reports/SITE_STRATEGIC_FINANCE_RELEASE_2026-08-30.md) · [Drive release note](https://drive.google.com/file/d/19mW_MT81z1CMeU9v39fBHBdiIcoLkEiQ/view)
-- Production site version 3 now includes Strategic Finance / M&A and CV quick-tour cards: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
+- Production site version 4 now includes Strategic Finance / M&A, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 - Local build PASS; deployment succeeded. Shared UI-library lint warnings remain pre-existing and do not include new page-level errors.
 - [Drive build archive](https://drive.google.com/file/d/1mfx-4W0cfZvGlcZv6TONO36H3rKXgqib/view) · [v3 page source](https://drive.google.com/file/d/1gJZOyXQKPoOuEHDmRLQezSn3GgULp0f-/view) · [v3 CSS source](https://drive.google.com/file/d/136FgoZ8gzarzNZAtXWmsHpMi6PYj53fb/view)
 
@@ -200,7 +200,7 @@ Drive mirror for M&A extension:
 ## Website runtime QA
 
 - [Runtime/access-boundary QA](reports/SITE_RUNTIME_QA_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1z1LGW43fG94bEkFgbPZP3QVYQvYwxZt-/view)
-- Source/build/deployment checks PASS for Sites version 3. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session.
+- Source/build/deployment checks PASS for Sites version 4. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session.
 
 
 ## Archived master plan
@@ -208,3 +208,8 @@ Drive mirror for M&A extension:
 - [Corporate Financial Analyst / FP&A master plan](docs/CORPORATE_FINANCIAL_ANALYST_FPA_MASTER_PLAN.md)
 - [Drive archive](https://drive.google.com/file/d/1blpG-4CKWkjPpuwXwOFRkwI038XXMOnK/view)
 - The detailed plan is now stored remotely; no local output copy is retained.
+
+
+## 15. Application conversion pack
+
+The candidate application and CV build pack is now linked from the repository README and mirrored to Drive. It contains the candidate-fact intake, validated evidence inventory, three role variants, ATS matrix, interview conversion matrix and Gate-dependent wording rules: [GitHub pack](CANDIDATE_APPLICATION_INTAKE_AND_CV_BUILD_PACK.md) · [Drive copy](https://drive.google.com/file/d/1vZmLitH1CI-uVAoJmLil1P_tVHZ0MvwT/view).
