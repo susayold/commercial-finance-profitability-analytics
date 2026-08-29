@@ -68,7 +68,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Live site](https://vn-finance-fpa-case.sangkenny200.chatgpt.site)
 - [Site source snapshot on Drive](https://drive.google.com/file/d/1PGOVMQ-POmEey9qUQDsw1B5F9F5oKl0j/view?usp=drivesdk)
 - [Site source folder](site/)
-- Sites project: `appgprj_6a930a2f81f48191b1e015f1fa938c69`; production deployment is version 1.
+- Sites project: `appgprj_6a930a2f81f48191b1e015f1fa938c69`; production deployment is version 4.
 - Website release update: [Forecast section release](reports/SITE_FORECAST_SECTION_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1Cz5Hl0HH9YLLklKBHJ2FBlTdEyQWz6u9/view). Production site now exposes a recruiter-facing forecast-performance section with explicit Gate A exclusion.
 - Interview preparation: [Finance Analyst / FP&A talk track](docs/FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md) · [Drive copy](https://drive.google.com/file/d/1qyKG5FJW5_EdKyu10l-xWUyOU9i5tLRy/view). Includes a 90-second pitch, 15-minute walkthrough, STAR stories and pushback answers.
 
@@ -230,7 +230,7 @@ Drive mirror for M&A extension:
 ## Website strategic-finance release
 
 - [Release note](reports/SITE_STRATEGIC_FINANCE_RELEASE_2026-08-30.md) · [Drive release note](https://drive.google.com/file/d/19mW_MT81z1CMeU9v39fBHBdiIcoLkEiQ/view)
-- Production site version 3 now includes Strategic Finance / M&A and CV quick-tour cards: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
+- Production site version 4 now includes Strategic Finance / M&A, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 - Local build PASS; deployment succeeded. Shared UI-library lint warnings remain pre-existing and do not include new page-level errors.
 - [Drive build archive](https://drive.google.com/file/d/1mfx-4W0cfZvGlcZv6TONO36H3rKXgqib/view) · [v3 page source](https://drive.google.com/file/d/1gJZOyXQKPoOuEHDmRLQezSn3GgULp0f-/view) · [v3 CSS source](https://drive.google.com/file/d/136FgoZ8gzarzNZAtXWmsHpMi6PYj53fb/view)
 
@@ -238,7 +238,7 @@ Drive mirror for M&A extension:
 ## Website runtime QA
 
 - [Runtime/access-boundary QA](reports/SITE_RUNTIME_QA_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1z1LGW43fG94bEkFgbPZP3QVYQvYwxZt-/view)
-- Source/build/deployment checks PASS for Sites version 3. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session.
+- Source/build/deployment checks PASS for Sites version 4. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](reports/SITE_GATE_CONTRACT_RELEASE_2026-08-30.md).
 
 
 ## Archived master plan
@@ -262,3 +262,4 @@ Drive mirror for M&A extension:
 - [Promotion/pricing/allocation methodology](docs/PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [Stretch-module QA report](reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view)
 - Promotion ROI now subtracts spend and applies a 25% hurdle; fixed-budget allocation now conserves the VND 4.35bn approved budget and checks capacity/max-increase constraints.
 - [Pricing simulator synthetic data](data/pricing_simulator_synthetic.csv) · [validator](scripts/validate_pricing_simulator.mjs) · integrated workbook tab `Pricing_Simulator` · [Drive CSV](https://drive.google.com/file/d/1ztUZZTUNMoKIDiPsHheeVtPj0t7GPn5T/view) · [Drive validator](https://drive.google.com/file/d/1_WJXVSBdPOM4QCavzqFq5y9TF-3xuNWy/view)
+
