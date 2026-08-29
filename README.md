@@ -115,6 +115,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - [PBIP source manifest](powerbi/PBIP_SOURCE_MANIFEST.json) · [Drive copy](https://drive.google.com/file/d/1ZusZswCyESNKSFp-B1A_IOHZ3KtNiFnz/view)
 - [PBIP handoff instructions](docs/PBIP_SOURCE_HANDOFF.md) · [Drive copy](https://drive.google.com/file/d/1MFMxCBM3HRG4Ffge5OwlV9ENkEOPn806/view)
+- [Desktop execution checklist](powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md) · covers prerequisites, topology, six-page build, QA-01–QA-18 and release evidence naming.
 - [Manifest validator](scripts/validate_pbip_source_manifest.mjs) · [Drive copy](https://drive.google.com/file/d/1fHLaWb1W1MwnVECFgabThpghA971u8XL/view)
 - Remote validation: 5 dimensions, 9 facts, 15 relationships, 6 report pages and 18 QA tests — PASS.
 - This is a portable source scaffold, not a native .pbix; the binary remains a Power BI Desktop-dependent release gate.
