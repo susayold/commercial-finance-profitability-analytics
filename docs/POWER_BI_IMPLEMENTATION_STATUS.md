@@ -22,6 +22,10 @@ Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an ex
 
 `Calendar`, `Product_Master`, `Customer_Master`, `Channel_Master`, plus a disconnected `Scenario Selector` table. Single-direction relationships flow from dimensions into facts; no fact-to-fact relationships are permitted.
 
+### Peer benchmark and evidence tables
+
+`Peer_Benchmark` is loaded at company × fiscal year with source status, original basis and calculated margins. `Peer_Review_Queue` is loaded separately and is never joined into benchmark trends as approved data. Only `reported_summary_verified` and `reported_statement_verified` rows are eligible for benchmark visuals; `summary_candidate_review_required` and `statement_review_required` rows remain visible only on Controls & Evidence.
+
 ## Core DAX measure set
 
 ```DAX
@@ -54,6 +58,7 @@ Promo ROI := DIVIDE ( [Incremental Contribution], SUM ( Commercial_Costs[Trade_S
 - `Checks[MODEL STATUS] = PASS`; no negative sales; row counts equal the v2 model contract.
 - Every visual has a metric definition tooltip and source/evidence classification.
 - Synthetic operating facts are labelled in the page subtitle and report metadata.
+- Peer benchmark trends exclude unapproved candidates; the review queue remains auditable on Controls & Evidence.
 
 ## Reviewer hand-off
 
