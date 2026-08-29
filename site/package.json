@@ -1,0 +1,18 @@
+{
+  "name": "vn-finance-fpa-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Recruiter-facing Commercial Finance & FP&A case site",
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "start": "wrangler dev --config dist/server/wrangler.json"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-server-dom-webpack": "19.2.6",
+    "vinext": "1.0.0-beta.5",
+    "lucide-react": "1.31.0"
+  }
+}
