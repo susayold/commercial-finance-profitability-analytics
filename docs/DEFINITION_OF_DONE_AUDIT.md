@@ -6,6 +6,12 @@ Primary archive: [Google Drive project root](https://drive.google.com/drive/fold
 
 This audit maps the user-provided master plan to evidence that a recruiter or finance reviewer can inspect. `Complete` means the artifact exists remotely and has passed the documented checks. `Pending external` means the design and handoff are ready but require an external input or desktop application; it is not represented as complete.
 
+## Latest status overlay — 2026-08-30
+
+- Historical peer extraction is closed for VNM FY2006–FY2020, QNS FY2016–FY2020 and KDC FY2016–FY2020; all 25 queue rows have statement metrics, page anchors and basis notes. Long-run ranking still requires the documented QNS revenue-basis and KDC perimeter caveats.
+- The market-fit layer is complete: [role-alignment matrix](ROLE_ALIGNMENT_MATRIX.md), [machine-readable CSV](../data/role_alignment_matrix.csv) and [role-targeted CV variants](CV_ROLE_VARIANTS.md) are committed and mirrored to Drive.
+- The current remote QA run passes the evidence matrix, role matrix, PBIP manifest, M&A, D2C, public-guidance, VNM long-run and peer validators. Gate A (genuine internal snapshot) and Gate B (native PBIX/Desktop QA) remain the only external release gates.
+
 ## 1. Definition-of-done matrix
 
 | Requirement | Evidence | Status | Verification note |
