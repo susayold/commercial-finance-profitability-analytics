@@ -41,3 +41,6 @@ VNM FY2006 remains statement-review-required. VNM FY2007 has summary and/or oper
 - Summary candidates: https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/vnm_legacy_summary_candidates_2007_2015.csv
 - Operating candidates: https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/vnm_legacy_operating_candidates_2007_2015.csv
 
+## VNM legacy backlog update (2026-08-30)
+
+VNM FY2007 is now statement-verified in `data/vnm_statement_metrics_2007.csv`. Only FY2006 remains `statement_review_required`; all other FY2007–FY2015 legacy years have full eight-metric statement layers.
