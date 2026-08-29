@@ -50,3 +50,8 @@ Do not add a Bias/WAPE headline to the CFO page until at least one frozen foreca
 ## Unit-test evidence
 
 The script was run against a four-row synthetic fixture as of 2025-03-31. It correctly retained 3 eligible rows, excluded 1 FUTURE_LEAKAGE row and returned two groups: FE-2025-01 Bias 0.0 / WAPE 10.0% and FE-2025-02 Bias 20.0% / WAPE 20.0%. The input and expected output are versioned in [data/forecast_accuracy_unit_test.csv](../data/forecast_accuracy_unit_test.csv) and [data/forecast_accuracy_unit_test_expected.csv](../data/forecast_accuracy_unit_test_expected.csv), with Drive copies [input](https://drive.google.com/file/d/10dCgHsj3lkeI42LyozagyN2uFtlOgKG1/view) and [expected output](https://drive.google.com/file/d/1I_ZmP46gFLY2cm8V0UrKI0Ivjw7W254R/view).
+
+
+## Native capture workbook
+
+A native Google Sheet template is available at [VietNova Forecast Snapshot Capture & Bias WAPE Backtest](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit). It contains Instructions, Forecast_Snapshot_Input and Backtest_Output tabs, eligibility formulas, a 250-row input capacity and sample synthetic rows. The raw Excel backup is archived on Drive at https://docs.google.com/spreadsheets/d/1rT1lgzs9p6fuBd3dcmvKNrfiiAwkXib8/edit.
