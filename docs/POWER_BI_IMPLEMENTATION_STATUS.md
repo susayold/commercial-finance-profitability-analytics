@@ -93,3 +93,7 @@ FY2008 is now statement-verified from the audited VAS consolidated FY2009 filing
 ## VNM FY2007 statement layer update (2026-08-30)
 
 FY2007 is now statement-verified from the audited VAS consolidated FY2008 filing's comparative column (pages 4–10) and archived in `data/vnm_statement_metrics_2007.csv`. The queue is now 24 `reported_statement_verified` and 1 `statement_review_required` (FY2006); the approved benchmark export remains FY2016–FY2025.
+
+## VNM FY2006 statement layer update (2026-08-30)
+
+FY2006 is now statement-verified from the audited VAS consolidated FY2007 filing's restated comparative column (pages 5–11) and archived in `data/vnm_statement_metrics_2006.csv`. The peer extraction queue is fully verified at 25 rows; the approved benchmark export remains FY2016–FY2025.
