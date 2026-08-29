@@ -45,3 +45,8 @@ Do not add a Bias/WAPE headline to the CFO page until at least one frozen foreca
 
 - Script: [GitHub](../scripts/compute_forecast_accuracy.mjs) · [Drive](https://drive.google.com/file/d/1ej7YSTHACMCopbqgDWKcBi75DM0_pphA/view)
 - Input template: [GitHub](../data/forecast_accuracy_input_template.csv) · [Drive](https://drive.google.com/file/d/1u8xMXGjoN49fmsavi4NZHiojumvaU6EU/view)
+
+
+## Unit-test evidence
+
+The script was run against a four-row synthetic fixture as of 2025-03-31. It correctly retained 3 eligible rows, excluded 1 FUTURE_LEAKAGE row and returned two groups: FE-2025-01 Bias 0.0 / WAPE 10.0% and FE-2025-02 Bias 20.0% / WAPE 20.0%. The input and expected output are versioned in [data/forecast_accuracy_unit_test.csv](../data/forecast_accuracy_unit_test.csv) and [data/forecast_accuracy_unit_test_expected.csv](../data/forecast_accuracy_unit_test_expected.csv), with Drive copies [input](https://drive.google.com/file/d/10dCgHsj3lkeI42LyozagyN2uFtlOgKG1/view) and [expected output](https://drive.google.com/file/d/1I_ZmP46gFLY2cm8V0UrKI0Ivjw7W254R/view).
