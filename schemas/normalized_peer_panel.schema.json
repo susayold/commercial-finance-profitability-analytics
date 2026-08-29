@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Normalized Peer Financial Panel",
+  "description": "Source-lineage-preserving normalized annual and quarterly panel for MCH, VNM, QNS and KDC.",
+  "type": "object",
+  "required": ["company_id", "ticker", "period", "scope", "statement_basis", "metric", "value"],
+  "properties": {
+    "company_id": {"type": "string", "enum": ["MCH", "VNM", "QNS", "KDC"]},
+    "ticker": {"type": "string"},
+    "company_name": {"type": "string"},
+    "peer_role": {"type": "string", "enum": ["primary_anchor", "financial_benchmark", "input_cost_benchmark", "strategic_context"]},
+    "period": {
+      "type": "object",
+      "required": ["period_type", "fiscal_year", "start_date", "end_date"],
+      "properties": {
+        "period_type": {"type": "string", "enum": ["FY", "Q1", "Q2", "Q3", "Q4", "1H", "9M"]},
+        "fiscal_year": {"type": "integer"},
+        "fiscal_quarter": {"type": ["integer", "null"]},
+        "start_date": {"type": "string", "format": "date"},
+        "end_date": {"type": "string", "format": "date"},
+        "months_in_period": {"type": "number"}
+      }
+    },
+    "scope": {"type": "string", "enum": ["consolidated", "separate", "segment", "subgroup"]},
+    "statement_basis": {
+      "type": "object",
+      "required": ["audited_status", "currency", "scale", "accounting_standard"],
+      "properties": {
+        "audited_status": {"type": "string", "enum": ["audited", "reviewed", "unaudited", "reported_in_annual_report"]},
+        "currency": {"type": "string"},
+        "scale": {"type": "string"},
+        "accounting_standard": {"type": "string"},
+        "restatement_status": {"type": "string", "enum": ["original", "restated", "current_authoritative", "not_applicable"]},
+        "fiscal_year_end": {"type": "string", "format": "date"}
+      }
+    },
+    "metric": {"type": "string"},
+    "metric_original_label": {"type": "string"},
+    "value": {"type": ["number", "null"]},
+    "unit": {"type": "string", "enum": ["VND", "VND_mn", "VND_bn", "percent", "days", "count", "text"]},
+    "value_vnd_bn": {"type": ["number", "null"]},
+    "reported_or_calculated": {"type": "string", "enum": ["reported", "calculated", "derived", "proxy", "estimated"]},
+    "calculation_definition": {"type": ["string", "null"]},
+    "source_document_id": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "source_page": {"type": ["integer", "string", "null"]},
+    "source_file_drive_id": {"type": ["string", "null"]},
+    "comparability_status": {"type": "string", "enum": ["comparable", "partially_comparable", "not_comparable", "not_applicable"]},
+    "comparability_note": {"type": ["string", "null"]},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low", "blocked"]},
+    "review_status": {"type": "string", "enum": ["unreviewed", "machine_checked", "human_reviewed", "approved", "rejected"]},
+    "extraction_method": {"type": "string", "enum": ["table", "text", "manual", "company_xlsx", "api"]},
+    "extraction_timestamp_utc": {"type": "string", "format": "date-time"}
+  }
+}
