@@ -30,6 +30,10 @@ All project data, source code, QA scripts and reviewer-facing artifacts are comm
 
 ## Added in the forecast-performance extension
 
+## Website release
+
+The production recruiter site now has a Forecast Performance section with the public-guidance metrics and integrity boundary. [Release note](SITE_FORECAST_SECTION_RELEASE_2026-08-30.md) · [Drive release note](https://drive.google.com/file/d/1Cz5Hl0HH9YLLklKBHJ2FBlTdEyQWz6u9/view) · [source/build archive](https://drive.google.com/file/d/112Fy_UXh1LDXqZp6Dtv480rB03mxmZ8K/view).
+
 - VNM public-guidance analysis report, deterministic JSON output, generator, validator and QA report are now committed and mirrored to Drive: [report](https://drive.google.com/file/d/1G7XgCuQ3MLza4NjetaCwRajPKdLsZQWN/view), [JSON](https://drive.google.com/file/d/1xF72I7FYa7T68e-NfC1aIeAnEXXRByht/view), [generator](https://drive.google.com/file/d/1bvA-P3ihQbf10BZxc1C_IBOwZYgZyjng/view), [validator](https://drive.google.com/file/d/1UU6Ln2p2lnOb_oZ-pre5v_u5TMuv4O-5/view), [QA](https://drive.google.com/file/d/1aFj7k9rL8ERfcNzEbOq5D_9g5y5P0Kck/view).
 - The extension reports metric/regime splits, Bias, WAPE, MAPE, within-2% rate, descriptive error bands and ranked misses; it remains public-guidance evidence and does not close Gate A.
 - CI now regenerates and validates the analysis output from the source CSV on every push and pull request.
