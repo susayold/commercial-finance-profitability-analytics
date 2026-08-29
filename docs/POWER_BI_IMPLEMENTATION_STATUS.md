@@ -74,3 +74,6 @@ VNM FY2016–FY2020 is now available as `data/vnm_statement_metrics_2016_2020.cs
 
 QNS FY2016–FY2020 is now available as audited VAS consolidated statement rows with page anchors in `data/qns_statement_metrics_2016_2019.csv` plus `data/qns_statement_metrics_2020.csv`. All five rows are eligible for peer benchmark visuals. The consolidated benchmark now has 15 statement-verified rows; VNM FY2006–FY2015 candidates remain evidence-gated.
 
+## VNM legacy statement layer update (2026-08-30)
+
+VNM FY2012–FY2015 is now available in `data/vnm_statement_metrics_2012_2013.csv` and `data/vnm_statement_metrics_2014_2015.csv`, with audited VAS consolidated metrics, comparative-column labels and page anchors. These rows are statement-verified for the evidence layer but are intentionally outside the approved FY2016–FY2025 benchmark export until the benchmark scope is explicitly extended. Current queue counts: 19 `reported_statement_verified`, 5 `summary_candidate_review_required` (FY2007–FY2011) and 1 `statement_review_required` (FY2006).
