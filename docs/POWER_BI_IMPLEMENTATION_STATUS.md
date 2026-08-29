@@ -97,3 +97,7 @@ FY2007 is now statement-verified from the audited VAS consolidated FY2008 filing
 ## VNM FY2006 statement layer update (2026-08-30)
 
 FY2006 is now statement-verified from the audited VAS consolidated FY2007 filing's restated comparative column (pages 5–11) and archived in `data/vnm_statement_metrics_2006.csv`. The peer extraction queue is fully verified at 25 rows; the approved benchmark export remains FY2016–FY2025.
+
+## Reproducible build guide (2026-08-30)
+
+The step-by-step implementation guide is available at `powerbi/POWER_BI_BUILD_GUIDE_V2.md` and [Drive](https://drive.google.com/file/d/13BM9_oOwLxyMnO9IPGkaPWcyVB991q_Y/view). It specifies source mapping, import rules, one-to-many relationships, hardened scenario/evidence measures, six-page visual acceptance criteria, QA tolerances and the recruiter walkthrough. The only remaining environment-dependent artifact is the native `.pbix` created in Power BI Desktop.
