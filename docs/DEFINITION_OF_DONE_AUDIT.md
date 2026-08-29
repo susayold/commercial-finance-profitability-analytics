@@ -80,3 +80,8 @@ The VNM panel now spans FY2006–FY2025 in `data/vnm_longrun_panel_2006_2025.csv
 ## 7. Long-run panel QA evidence
 
 The VNM FY2006–FY2025 panel has an executable [validator](../scripts/validate_vnm_longrun_panel.mjs) and [17/17 PASS report](../reports/VNM_LONGRUN_PANEL_QA.md). The validator checks headers, row count, contiguous years, duplicate keys, source URLs, layer/status separation, restatement/basis-break flags, ratio recomputation and blank preservation.
+
+
+## Continuous QA
+
+The repository includes [GitHub Actions finance QA](../.github/workflows/finance-qa.yml) that re-runs the forecast leakage fixture, the VNM long-run panel validator and the Power BI contract JSON checks on every push and pull request. This protects the evidence layer from silent regressions.
