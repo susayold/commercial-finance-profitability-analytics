@@ -211,7 +211,7 @@ Drive mirror for M&A extension:
 
 - Gate A now has a machine-readable [governance schema](schemas/forecast_snapshot_live.schema.json), [structural unit fixture](data/forecast_snapshot_live_unit_test.csv) and [live-submission validator](scripts/validate_live_forecast_submission.mjs). Fixture mode returns `FIXTURE_PASS_NOT_LIVE`; `--mode=live` requires `LIVE_INTERNAL` evidence, non-synthetic source URLs, approval fields and at least one eligible frozen row before releasing observed Bias/WAPE.
 - Gate B now has a machine-readable [QA-01–QA-18 evidence log](powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv) and [evidence validator](scripts/validate_powerbi_qa_evidence.mjs). A PASS row is rejected unless observed value, evidence reference, reviewer and execution timestamp are recorded; a FAIL row must carry an owner, remediation and retest date.
-- Drive mirrors: [source ZIP at commit 0fce808](https://drive.google.com/file/d/1K_6ARYeSIIgzU1oiCJo3eJj_AM_iaI2S/view), [forecast fixture](https://drive.google.com/file/d/1GoatFUjdypKBn_579sttiBRFEv2ps22i/view), [forecast schema](https://drive.google.com/file/d/12Z7gGOiGTlfEDiv_0dpHCq9Ktf2xIWhw/view), [forecast validator](https://drive.google.com/file/d/1z26_vOP_wKsPpEpFhy4XYIoUIQolePuw/view), [Power BI QA log](https://drive.google.com/file/d/1bUIDkqafEQEMfiPhFfd1eg6lrTrKxAa6/view), [Power BI QA validator](https://drive.google.com/file/d/1kL0ulqiiFsf_ogrRPqz10WQ7B8y4CxSs/view).
+- Drive mirrors: [latest source ZIP (site-gate release)](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view), [prior source ZIP at commit 0fce808](https://drive.google.com/file/d/1K_6ARYeSIIgzU1oiCJo3eJj_AM_iaI2S/view), [forecast fixture](https://drive.google.com/file/d/1GoatFUjdypKBn_579sttiBRFEv2ps22i/view), [forecast schema](https://drive.google.com/file/d/12Z7gGOiGTlfEDiv_0dpHCq9Ktf2xIWhw/view), [forecast validator](https://drive.google.com/file/d/1z26_vOP_wKsPpEpFhy4XYIoUIQolePuw/view), [Power BI QA log](https://drive.google.com/file/d/1bUIDkqafEQEMfiPhFfd1eg6lrTrKxAa6/view), [Power BI QA validator](https://drive.google.com/file/d/1kL0ulqiiFsf_ogrRPqz10WQ7B8y4CxSs/view).
 
 
 ## One-page CV draft
@@ -238,7 +238,7 @@ Drive mirror for M&A extension:
 ## Website runtime QA
 
 - [Runtime/access-boundary QA](reports/SITE_RUNTIME_QA_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1z1LGW43fG94bEkFgbPZP3QVYQvYwxZt-/view)
-- Source/build/deployment checks PASS for Sites version 4. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](reports/SITE_GATE_CONTRACT_RELEASE_2026-08-30.md).
+- Source/build/deployment checks PASS for Sites version 4. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](reports/SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 
 ## Archived master plan
