@@ -89,6 +89,7 @@ The VNM FY2006–FY2025 panel has an executable [validator](../scripts/validate_
 The repository includes [GitHub Actions finance QA](../.github/workflows/finance-qa.yml) that re-runs the forecast leakage fixture, the VNM long-run panel validator and the Power BI contract JSON checks on every push and pull request. This protects the evidence layer from silent regressions.
 
 - CI rehearsal evidence: [GitHub report](../reports/CI_QA_LOCAL_REHEARSAL_2026-08-30.md) · [Drive report](https://drive.google.com/file/d/1CUWzZ4PClwQPEMXgNvn679uufSnTntmQ/view).
+- CI now also runs the [PBIP source-manifest validator](../scripts/validate_pbip_source_manifest.mjs) on push and pull request.
 
 - Peer evidence QA: [validator](../scripts/validate_peer_evidence.mjs) and [21/21 PASS report](../reports/PEER_EVIDENCE_QA.md).
 
@@ -118,3 +119,8 @@ A separate VNM FY2018–FY2025 public-guidance proxy is now archived. It contain
 
 - [Methodology](VNM_PUBLIC_GUIDANCE_PROXY.md) · [Dataset](../data/vnm_public_guidance_proxy_2018_2025.csv) · [Validator](../scripts/validate_public_guidance_proxy.mjs) · [QA](../reports/VNM_PUBLIC_GUIDANCE_PROXY_QA.md) · [Drive QA](https://drive.google.com/file/d/17QXfKkUS127vGkdfn1Jx0zpIrPrmld7I/view)
 - Drive archive: [CSV](https://drive.google.com/file/d/1BW6zGnxS-m67lLPLKfZuJn-5M-d4elw-/view) · [Methodology](https://drive.google.com/file/d/1LOmPrCcFGBFUXsdw3hi7WXziebKxHRJL/view) · [Validator](https://drive.google.com/file/d/1Y1nBInfRASnSankqfgmvjzcx7KP7EFq_/view)
+
+
+## 11. Portable Power BI source handoff
+
+The repository now includes a machine-readable [PBIP source manifest](../powerbi/PBIP_SOURCE_MANIFEST.json), a [handoff guide](../powerbi/PBIP_SOURCE_HANDOFF.md) and an executable [manifest validator](../scripts/validate_pbip_source_manifest.mjs). Remote validation passes for 5 dimensions, 9 facts, 15 relationships, 6 report pages and 18 QA test definitions. This artifact is intentionally a portable source scaffold; it is not a native .pbix and does not close Gate B.
