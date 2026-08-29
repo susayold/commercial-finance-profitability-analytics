@@ -31,7 +31,7 @@ Authoritative archives: [GitHub repository](https://github.com/susayold/commerci
 ## Issues and caveats
 
 1. **Medium — Power BI handoff is specification-level.** The repository contains `powerbi/model_contract.json`, `powerbi/measures.dax` and `docs/POWER_BI_IMPLEMENTATION_STATUS.md`; the native `.pbix` must be created in Power BI Desktop using the remote v2 workbook as source.
-2. **Medium — historical peer extraction is not fully approved.** The 25-row queue in `Peer_Extraction_Queue` covers VNM FY2006–2020, QNS FY2016–2020 and KDC FY2016–2020. VNM FY2007–FY2015 now has source-linked summary candidates; all candidates remain review-required until page-level anchors and the full metric set are captured.
+2. **Medium — historical peer extraction is not fully approved.** The 25-row queue in `Peer_Extraction_Queue` covers VNM FY2006–2020, QNS FY2016–2020 and KDC FY2016–2020. VNM FY2006–FY2015 now has source-linked summary candidates; all candidates remain review-required until page-level anchors and the full metric set are captured.
 3. **Medium — cross-company revenue bases differ.** QNS FY2016–2019 uses total revenue in the source summary, while FY2021–2025 uses net revenue. KDC has a 2017 Vocarimex/TAC consolidation-perimeter change and later portfolio changes. Do not rank long-run CAGR across these breaks without re-normalisation.
 4. **Low — synthetic operating economics are illustrative.** VietNova SKU, customer, trade-spend, forecast and cash-cycle values are deterministic scenario data, not reported company data.
 
