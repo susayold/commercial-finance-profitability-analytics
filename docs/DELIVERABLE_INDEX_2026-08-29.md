@@ -32,3 +32,11 @@
 - Every calculated output is formula-driven or reproducible from versioned scripts.
 - Local staging is disposable; remote GitHub / Drive / Sites copies are the authoritative archive.
 
+
+
+## Peer and Power BI implementation
+
+- [Remote peer panel sheet](https://docs.google.com/spreadsheets/d/1HNViR2NV1KPu1H-ZYRADv8amwP1-kzY8QzvmcwT3csE/edit)
+- [Peer review status](docs/PEER_PANEL_REVIEW_STATUS.md)
+- [Power BI model contract](powerbi/model_contract.json)
+- [Power BI measures](powerbi/measures.dax)
