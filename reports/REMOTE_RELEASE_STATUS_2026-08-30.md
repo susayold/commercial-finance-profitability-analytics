@@ -24,7 +24,7 @@ The 30 Aug release adds a source-backed Vietnam hiring matrix for Junior FP&A/Fi
 
 Role-targeted CV variants are also archived for the same three role families: [GitHub](../docs/CV_ROLE_VARIANTS.md) · [Drive](https://drive.google.com/file/d/1nfaqwK6J8_1A0O5wpLZhmakhXLrWgObh/view).
 
-The repository now includes a cross-platform [finance QA runner](../scripts/run_finance_qa.mjs) and [usage guide](../docs/REPRODUCIBLE_QA_RUNNER.md) (Drive copies: [script](https://drive.google.com/file/d/13TxmloAohyUMgor4IJyuJnyxVCt0DJtR/view), [guide](https://drive.google.com/file/d/1A0oiAWHr2E2DpLPapQneAzKTKF6D5w-H/view)). The current rehearsal passes all 13 repository-local checks; it intentionally does not fabricate Gate A or Gate B.
+The repository now includes a cross-platform [finance QA runner](../scripts/run_finance_qa.mjs) and [usage guide](../docs/REPRODUCIBLE_QA_RUNNER.md) (Drive copies: [script](https://drive.google.com/file/d/13TxmloAohyUMgor4IJyuJnyxVCt0DJtR/view), [guide](https://drive.google.com/file/d/1A0oiAWHr2E2DpLPapQneAzKTKF6D5w-H/view)). The current rehearsal passes all 15 repository-local checks; it intentionally does not fabricate Gate A or Gate B.
 
 The commercial stretch modules are now hardened: [promotion ROI](../data/promotion_roi_synthetic.csv) subtracts promotion spend and applies a hurdle, [budget reallocation](../data/budget_reallocation_synthetic.csv) proves fixed-budget conservation, and [pricing simulator](../data/pricing_simulator_synthetic.csv) exposes elasticity, CM delta and break-even price. [Methodology](../docs/PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [QA report](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view).
 
@@ -77,6 +77,7 @@ Drive mirror for M&A extension:
 - [Execution handoff](docs/FINAL_EXTERNAL_GATES_HANDOFF.md) · [Drive copy](https://drive.google.com/file/d/1QGZOL27pumhK1z0UFE1WQ_cN0IjZ5bg7/view)
 - [Live snapshot submission template](data/forecast_snapshot_live_submission_template.csv) · [Drive template](https://drive.google.com/file/d/1WQ_9L7JrbogUjhytealtfeJnXekRJqqu/view)
 - The handoff specifies the exact evidence bundle, acceptance sequence, hard stops and release naming for Gate A (live pre-close forecast accuracy) and Gate B (native Power BI Desktop).
+- Gate A is now executable through the [governance schema](../schemas/forecast_snapshot_live.schema.json), [unit fixture](../data/forecast_snapshot_live_unit_test.csv) and [live validator](../scripts/validate_live_forecast_submission.mjs). Gate B is now executable through the [machine-readable QA evidence log](../powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv) and [evidence validator](../scripts/validate_powerbi_qa_evidence.mjs).
 
 
 ## One-page CV draft

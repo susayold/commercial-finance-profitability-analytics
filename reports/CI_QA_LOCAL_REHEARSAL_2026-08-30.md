@@ -16,8 +16,10 @@ The commands in `.github/workflows/finance-qa.yml` were rehearsed against the cu
 | Promotion ROI validator | PASS — 8 events; four negative-CM stop-loss events; hurdle decisions recalculate |
 | Fixed-budget reallocation validator | PASS — old/new total both VND 4.35bn; capacity and max-increase caps pass |
 | Pricing simulator validator | PASS — 6 scenarios; CM delta and break-even formula recalculate |
-| Cross-platform finance QA runner | PASS — 13 repository-local checks; transient reports removed from OS temp directory |
+| Forecast submission contract | PASS — 12/12 structural checks; output explicitly `FIXTURE_PASS_NOT_LIVE` |
+| Power BI QA evidence-log contract | PASS — QA-01 through QA-18 present; all remain OPEN until Desktop execution |
+| Cross-platform finance QA runner | PASS — 15 repository-local checks; transient reports removed from OS temp directory |
 | Local staging cleanup | PASS — `work/` empty after rehearsal |
 
-This is a reproducibility rehearsal, not evidence of observed forecast performance. The forecast fixture remains synthetic until genuine frozen snapshots are supplied.
+This is a reproducibility rehearsal, not evidence of observed forecast performance. The forecast fixture remains synthetic until genuine frozen snapshots are supplied. The new Gate A contract check returns `FIXTURE_PASS_NOT_LIVE`, and the Power BI evidence-log check confirms all 18 rows remain OPEN until Desktop execution.
 

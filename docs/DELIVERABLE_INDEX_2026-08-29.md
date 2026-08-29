@@ -145,6 +145,12 @@
 - [QA test matrix](../powerbi/QA_TEST_MATRIX.md) · [Drive copy](https://drive.google.com/file/d/1goi-4XMbHbUAeqE9dIHkISHhdZf5MGtb/view)
 - [Executable DAX validation queries](../powerbi/qa_validation_queries.dax) · [Drive copy](https://drive.google.com/file/d/1l2_xVOfEdXzozbON4-7BN6hTt6zlSAog/view)
 - Native PBIX remains Desktop-dependent; the matrix is the release gate before upload.
+- Machine-readable execution log: [QA_EVIDENCE_LOG_TEMPLATE.csv](../powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv) · [validator](../scripts/validate_powerbi_qa_evidence.mjs). The scaffold validator requires exactly QA-01–QA-18 and prevents a PASS without observed value, evidence reference, reviewer and timestamp.
+
+## Forecast submission governance gate
+
+- [Governance schema](../schemas/forecast_snapshot_live.schema.json) · [unit fixture](../data/forecast_snapshot_live_unit_test.csv) · [live validator](../scripts/validate_live_forecast_submission.mjs)
+- Fixture mode proves 12 structural controls while returning `FIXTURE_PASS_NOT_LIVE`; live mode requires approved `LIVE_INTERNAL` evidence, non-synthetic source URLs and at least one eligible frozen row before observed Bias/WAPE can be released.
 
 
 ## Commercial stretch-module hardening — 2026-08-30

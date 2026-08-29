@@ -10,7 +10,7 @@ This handoff converts the remaining requirements into executable steps. Do not r
 
 Provide at least one approved forecast version created before the target accounting period closes. The source can be an exported planning-model CSV, a locked spreadsheet extract or an approved planning-system report, but it must retain the original version ID, creation timestamp and approver.
 
-Use the [live submission template](../data/forecast_snapshot_live_submission_template.csv). Required grain is one row per forecast version × target month × company × brand × channel.
+Use the [live submission template](../data/forecast_snapshot_live_submission_template.csv) and the governance-complete [schema](../schemas/forecast_snapshot_live.schema.json). Required grain is one row per forecast version × target month × company × brand × channel.
 
 ### Minimum evidence bundle
 
@@ -27,9 +27,10 @@ Use the [live submission template](../data/forecast_snapshot_live_submission_tem
 2. Confirm forecast_created_date is earlier than actual_period_close_date and actual_available_date.
 3. After close, populate actual_revenue_vnd without overwriting the frozen forecast.
 4. Set snapshot_status to FROZEN only after approver and source_model_version are present.
-5. Run scripts/compute_forecast_accuracy.mjs with the agreed as-of date.
-6. Archive the immutable input, output and QA report in GitHub and Drive.
-7. Publish Bias/WAPE only with the LIVE_OBSERVED label and eligible/excluded counts.
+5. Run `scripts/validate_live_forecast_submission.mjs <file>.csv <qa>.md --mode=live`; the validator blocks synthetic evidence and future leakage.
+6. Run `scripts/compute_forecast_accuracy.mjs` with the agreed as-of date and reconcile its output to the validator report.
+7. Archive the immutable input, output and QA report in GitHub and Drive.
+8. Publish Bias/WAPE only with the LIVE_OBSERVED label and eligible/excluded counts.
 
 ### Expected live output names
 
@@ -60,7 +61,7 @@ Use the [live submission template](../data/forecast_snapshot_live_submission_tem
 1. Import the v2 workbook and preserve the documented table names.
 2. Apply the relationships and measures from powerbi/PBIP_SOURCE_MANIFEST.json and powerbi/measures.dax.
 3. Build the six pages in the checklist: CFO Executive Summary; Revenue & Margin Drivers; Profitability & Unit Economics; Promotion, Pricing & Allocation; Forecast & Risk; Inventory, Working Capital & Liquidity.
-4. Execute QA-01 through QA-18 in powerbi/QA_TEST_MATRIX.md.
+4. Execute QA-01 through QA-18 in powerbi/QA_TEST_MATRIX.md and record each result in [QA_EVIDENCE_LOG_TEMPLATE.csv](../powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv).
 5. Reconcile headline totals to Excel v2 and record any approved tolerance.
 6. Export a PDF or page screenshots for visual evidence.
 7. Save the native binary as Commercial_Finance_Profitability_Analytics.pbix.
@@ -79,6 +80,7 @@ Use the [live submission template](../data/forecast_snapshot_live_submission_tem
 - Do not create a placeholder .pbix.
 - Do not claim that a PBIP manifest is the native binary.
 - Do not mark QA PASS without evidence for all 18 tests.
+- Run `scripts/validate_powerbi_qa_evidence.mjs` before sign-off; it rejects incomplete PASS evidence and undocumented FAIL remediation.
 - Do not publish a visual that does not reconcile to Excel.
 
 ## Ownership handoff

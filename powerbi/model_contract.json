@@ -251,6 +251,10 @@
       "Sales_Fact[CustomerID]"
     ],
     [
+      "Customer_Master[CustomerID]",
+      "AR[CustomerID]"
+    ],
+    [
       "Channel_Master[ChannelID]",
       "Sales_Fact[ChannelID]"
     ],

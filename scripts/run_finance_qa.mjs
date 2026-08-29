@@ -21,6 +21,8 @@ const tasks = [
   ['promotion_roi', ['scripts/validate_promotion_roi.mjs', 'data/promotion_roi_synthetic.csv']],
   ['budget_reallocation', ['scripts/validate_budget_reallocation.mjs', 'data/budget_reallocation_synthetic.csv']],
   ['pricing_simulator', ['scripts/validate_pricing_simulator.mjs', 'data/pricing_simulator_synthetic.csv']],
+  ['forecast_snapshot_contract', ['scripts/validate_live_forecast_submission.mjs', 'data/forecast_snapshot_live_unit_test.csv', path.join(transient, 'forecast_live_gate_QA.md'), '--mode=fixture']],
+  ['powerbi_qa_evidence_template', ['scripts/validate_powerbi_qa_evidence.mjs', 'powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv']],
   ['pbip_manifest', ['scripts/validate_pbip_source_manifest.mjs']],
   ['mna', ['scripts/validate_mna_accretion_dilution.mjs']],
   ['d2c', ['scripts/validate_d2c_unit_economics.mjs', 'data/d2c_unit_economics_synthetic.csv']],
