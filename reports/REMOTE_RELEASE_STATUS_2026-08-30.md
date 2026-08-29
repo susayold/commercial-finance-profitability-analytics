@@ -34,6 +34,10 @@ All project data, source code, QA scripts and reviewer-facing artifacts are comm
 
 ## PBIP Desktop execution checklist
 
+## Interview conversion pack
+
+A recruiter/interviewer-facing [Finance Analyst / FP&A talk track](../docs/FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md) is now archived with a 90-second pitch, 15-minute walkthrough, STAR stories, evidence mapping and pushback answers. [Drive copy](https://drive.google.com/file/d/1qyKG5FJW5_EdKyu10l-xWUyOU9i5tLRy/view).
+
 A detailed external-execution checklist is now archived: [GitHub checklist](../powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md) · [Drive checklist](https://drive.google.com/file/d/1DHh9LTaI0hnfd4Ebx62hChUIXuWr_IAG/view). It covers prerequisites, PBIP topology, semantic mapping, six pages, QA-01–QA-18, evidence naming and Gate-B release criteria.
 
 The production recruiter site now has a Forecast Performance section with the public-guidance metrics and integrity boundary. [Release note](SITE_FORECAST_SECTION_RELEASE_2026-08-30.md) · [Drive release note](https://drive.google.com/file/d/1Cz5Hl0HH9YLLklKBHJ2FBlTdEyQWz6u9/view) · [source/build archive](https://drive.google.com/file/d/112Fy_UXh1LDXqZp6Dtv480rB03mxmZ8K/view).
