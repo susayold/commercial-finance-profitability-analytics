@@ -36,3 +36,31 @@ CM Hurdle := MAX ( Channel_Master[CMHurdle] )
 Below Hurdle Flag := IF ( [Contribution Margin %] < [CM Hurdle], 1, 0 )
 
 Selected Scenario := SELECTEDVALUE ( 'Scenario Selector'[Scenario], "Base" )
+
+
+// Peer benchmark measures — approved rows only
+Approved Peer Rows :=
+CALCULATE (
+    COUNTROWS ( Peer_Benchmark ),
+    Peer_Benchmark[Source_Status] IN { "reported_summary_verified", "reported_statement_verified" }
+)
+Peer Net Revenue :=
+CALCULATE (
+    SUM ( Peer_Benchmark[Net_Revenue_VND_bn] ),
+    Peer_Benchmark[Source_Status] IN { "reported_summary_verified", "reported_statement_verified" }
+)
+Peer PBT Margin :=
+DIVIDE (
+    CALCULATE ( SUM ( Peer_Benchmark[Profit_Before_Tax_VND_bn] ), Peer_Benchmark[Source_Status] IN { "reported_summary_verified", "reported_statement_verified" } ),
+    [Peer Net Revenue]
+)
+Peer PAT Margin :=
+DIVIDE (
+    CALCULATE ( SUM ( Peer_Benchmark[Profit_After_Tax_VND_bn] ), Peer_Benchmark[Source_Status] IN { "reported_summary_verified", "reported_statement_verified" } ),
+    [Peer Net Revenue]
+)
+Peer Revenue / Assets :=
+DIVIDE (
+    [Peer Net Revenue],
+    CALCULATE ( SUM ( Peer_Benchmark[Total_Assets_VND_bn] ), Peer_Benchmark[Source_Status] IN { "reported_summary_verified", "reported_statement_verified" } )
+)
