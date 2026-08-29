@@ -34,7 +34,7 @@ This audit maps the user-provided master plan to evidence that a recruiter or fi
 | Recruiter understands project in 60 seconds | [production website](https://vn-finance-fpa-case.sangkenny200.chatgpt.site), README, CV draft | Complete | Business finding appears before technical implementation detail |
 | Interviewer can inspect depth for 15–20 minutes | Build guide, Desktop runbook, methodology pack, QA matrix | Complete | Walkthrough path is documented from CFO page to controls |
 
-- MCH OCR triage: [review report](../reports/MCH_OCR_REVIEW_TRIAGE_2026-08-30.md) · [Drive document](https://docs.google.com/document/d/1MRy5T3IC19X77agxXheJ74mZQjAz__IeMbavaJkYQ8I/edit?usp=drivesdk). The 120-row queue is prioritized, but remains unapproved until page-level human review.
+- MCH OCR triage: [review report](../reports/MCH_OCR_REVIEW_TRIAGE_2026-08-30.md) · [Drive document](https://docs.google.com/document/d/1MRy5T3IC19X77agxXheJ74mZQjAz__IeMbavaJkYQ8I/edit?usp=drivesdk). The 120-row queue is prioritized, but remains unapproved until page-level human review. Machine-readable flags are also available at [CSV](../data/mch_ocr_triage_flags.csv) and [Drive Sheet](https://docs.google.com/spreadsheets/d/1UvYD22jwFh1UaolxC_jH7HkpJ8Csi6qS6aTtSBbI4Dw/edit?usp=drivesdk).
 
 ## 2. Remote evidence inventory
 
