@@ -67,3 +67,10 @@
 - [QNS FY2016–FY2020 summary metrics](../data/qns_summary_metrics_2016_2020.csv)
 - Drive CSV: https://drive.google.com/file/d/11ZXiCUnUw_tuZdkO52cqhPUDaICsbbuk/view
 - Native Sheet tab: `QNS_Summary_Metrics_2016_2020`
+
+
+## Verified VNM statement layer
+
+- [VNM FY2016–FY2020 statement metrics](../data/vnm_statement_metrics_2016_2020.csv)
+- Drive CSV: https://drive.google.com/file/d/18IrPvgbW2GHJItmKxZPdQIJXylcYJgZg/view
+- Native Sheet tab: `VNM_Statement_Metrics_2016_2020`
