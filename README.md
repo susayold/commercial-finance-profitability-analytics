@@ -145,3 +145,5 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Forecast capture Sheet QA report](reports/FORECAST_CAPTURE_SHEET_QA.md) · [Drive copy](https://drive.google.com/file/d/16oxmO8IdsfXhZxngLmnGYu2CtCUJW3UO/view)
 
 - Native freeze-gate test: DRAFT rows are blocked; temporary FROZEN test produced metrics/READY and was reverted. See [capture QA](reports/FORECAST_CAPTURE_SHEET_QA.md).
+
+- [Frozen forecast capture archive](data/forecast_snapshot_capture_demo_frozen.csv) · [Archive validator](scripts/validate_forecast_capture_archive.mjs) · [Archive builder](scripts/build_forecast_capture_demo_archive.mjs) · [14/14 QA report](reports/FORECAST_CAPTURE_ARCHIVE_QA.md) · [Drive CSV](https://drive.google.com/file/d/1EBX9s3C16ZRkbLDpwfYVmgV_7Tw3LRCn/view?usp=drivesdk) · [Drive builder](https://drive.google.com/file/d/1Wkg5-FB2pDwe4h7uqbhGn2a4VTaW-Hbg/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1y2R3ISujxkNOGIZysclawoYB4wUvaMWR/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1EODWWBJxWVPxhCGjjQ6qYXfMlUawKE94/view?usp=drivesdk)
