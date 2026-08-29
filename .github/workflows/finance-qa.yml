@@ -88,6 +88,11 @@ jobs:
         run: |
           node scripts/validate_mna_accretion_dilution.mjs
 
+      - name: Validate master plan evidence matrix
+        shell: bash
+        run: |
+          node scripts/validate_master_plan_evidence_matrix.mjs
+
       - name: Validate Power BI model contract JSON
         shell: bash
         run: |
