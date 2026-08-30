@@ -129,7 +129,11 @@ Mirror the job description's wording only when the artifact supports it.
 
 Never claim `native Power BI` or `internal forecast accuracy` until Gate B or Gate A is actually closed.
 
-## 7. Interview conversion matrix
+## 7. Evidence-backed bullet selection
+
+Use the [Finance Analyst CV bullet bank](FINANCE_ANALYST_CV_BULLET_BANK_2026-08-30.md) to select one scale bullet, one decision/driver bullet and one control/evidence bullet for the target role. The bullet bank keeps SIMULATED/DERIVED, PUBLIC_REPORTED/CALCULATED_PUBLIC and PBIP_SCAFFOLD wording explicit; do not copy live forecast accuracy or native PBIX claims before Gate A/B close.
+
+## 8. Interview conversion matrix
 
 | Question | 60–90 second answer structure | Proof to open |
 |---|---|---|
