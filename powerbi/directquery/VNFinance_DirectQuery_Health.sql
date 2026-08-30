@@ -23,26 +23,28 @@ WITH latest AS (
     ORDER BY load_completed_utc DESC, load_started_utc DESC
 )
 SELECT
-    batch_id,
-    status,
+    COALESCE(latest.batch_id, N'NO_LOAD') AS batch_id,
+    COALESCE(latest.status, N'NO_LOAD') AS status,
     source_watermark_utc,
     load_started_utc,
     load_completed_utc,
-    physical_table_count,
-    source_row_count,
-    loaded_row_count,
-    rejected_row_count,
+    COALESCE(physical_table_count, 0) AS physical_table_count,
+    COALESCE(source_row_count, 0) AS source_row_count,
+    COALESCE(loaded_row_count, 0) AS loaded_row_count,
+    COALESCE(rejected_row_count, 0) AS rejected_row_count,
     source_hash_sha256,
     latency_minutes,
     CASE
-        WHEN status = N'SUCCEEDED'
+        WHEN latest.batch_id IS NULL THEN N'FAIL'
+        WHEN latest.status = N'SUCCEEDED'
          AND rejected_row_count = 0
          AND latency_minutes BETWEEN 0 AND @SlaMinutes
         THEN N'PASS'
-        WHEN status = N'SUCCEEDED' THEN N'WARN_STALE'
+        WHEN latest.status = N'SUCCEEDED' THEN N'WARN_STALE'
         ELSE N'FAIL'
     END AS control_status
-FROM latest;
+FROM (SELECT 1 AS sentinel) AS one_row
+LEFT JOIN latest ON 1 = 1;
 
 /* Optional table-level tie-out for a reviewer or monitoring job. */
 SELECT N'Product' AS table_name, COUNT_BIG(*) AS row_count FROM finance.Product

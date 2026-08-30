@@ -7,6 +7,7 @@ This folder is the production migration path for automatic Power BI page refresh
 - `VNFinance_DirectQuery_Schema.sql`: Azure SQL / SQL Server / Fabric-compatible table and index definitions.
 - `VNFinance_DirectQuery_Health.sql`: one-row freshness/control query plus table-level row-count tie-out.
 - `../../scripts/load_directquery_sqlserver.py`: deterministic CSV-to-SQL loader. It is dry-run by default; `--apply` is an explicit transactional replacement.
+- `../../scripts/check_directquery_source.ps1`: optional `sqlcmd` wrapper for the health query; supports integrated security or `SQLCMDPASSWORD` without storing credentials.
 - `../../requirements-directquery.txt`: optional `pyodbc` dependency for the controlled loader host.
 - `../DIRECTQUERY_READINESS.json`: machine-readable migration gates and ownership fields.
 - `../docs/POWER_BI_REFRESH_ARCHITECTURE.md`: current Import contract and claim boundary.
@@ -40,3 +41,5 @@ The report must fail closed or show a visible warning when the watermark exceeds
 ## Claim boundary
 
 The current repository release remains `Import_replace_and_refresh`. This folder makes the DirectQuery migration concrete and reviewable, but it does not claim a live database, service capacity, credentials or a measured Automatic Page Refresh interval. Those are external release gates.
+
+For a repeatable source check on a host with `sqlcmd`, use `scripts/check_directquery_source.ps1 -Server <server> -Database <database> -IntegratedSecurity` or provide `-Username` and the password through the process-level `SQLCMDPASSWORD` environment variable. The command returns a `FAIL` health row when no successful load exists; it never writes credentials to the repository.

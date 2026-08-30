@@ -79,6 +79,8 @@ The realtime migration kit was made executable without pretending that a databas
 
 The standalone DirectQuery readiness validator now passes 34/34 checks, the full finance QA runner passes, the PBIP/PBIT package gate remains 29/29, the artifact-coherence gate remains 15/15 and the claim-boundary gate remains 11/11. GitHub Actions run `33320227118` passed on commit `1eca6f1`. The health query and loader intentionally keep the realtime claim `PENDING`: the next external step is to apply the DDL to a controlled Azure SQL/SQL Server/Fabric source, execute a real load, and then perform native Desktop/Service DirectQuery and Automatic Page Refresh QA.
 
+The source-health step was tightened with a credential-safe `sqlcmd` wrapper (`scripts/check_directquery_source.ps1`) and a one-row `NO_LOAD/FAIL` result for an empty `Refresh_Control`. The readiness validator is now 35/35; the wrapper is syntax-checked but cannot be connection-tested here because this host has no `sqlcmd`, Docker, Azure CLI or SQL database. This is an environment gate, not a claim of live realtime behavior.
+
 ## Deliberate stop point
 
 This process stops **before native Power BI Desktop execution**. The portable PBIP contract, DAX, six-page design, refreshable PBIT, runbook and QA-01–QA-18 matrix are complete, but no placeholder `.pbix` is claimed. Native PBIX creation, visual reconciliation and screenshot evidence still require Power BI Desktop on an execution host.

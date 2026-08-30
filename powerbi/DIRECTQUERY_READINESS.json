@@ -12,6 +12,7 @@
     "ddl": "powerbi/directquery/VNFinance_DirectQuery_Schema.sql",
     "health_query": "powerbi/directquery/VNFinance_DirectQuery_Health.sql",
     "loader": "scripts/load_directquery_sqlserver.py",
+    "health_runner": "scripts/check_directquery_source.ps1",
     "operational_metadata_table": "finance.Refresh_Control"
   },
   "required_external_gates": [

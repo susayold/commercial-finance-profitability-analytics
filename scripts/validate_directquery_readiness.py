@@ -17,12 +17,14 @@ def main() -> int:
     parser.add_argument("--schema", type=Path, default=Path("powerbi/directquery/VNFinance_DirectQuery_Schema.sql"))
     parser.add_argument("--health-query", type=Path, default=Path("powerbi/directquery/VNFinance_DirectQuery_Health.sql"))
     parser.add_argument("--loader", type=Path, default=Path("scripts/load_directquery_sqlserver.py"))
+    parser.add_argument("--health-runner", type=Path, default=Path("scripts/check_directquery_source.ps1"))
     args = parser.parse_args()
 
     readiness = json.loads(args.readiness.read_text(encoding="utf-8"))
     ddl = args.schema.read_text(encoding="utf-8")
     health_query = args.health_query.read_text(encoding="utf-8")
     loader = args.loader.read_text(encoding="utf-8")
+    health_runner = args.health_runner.read_text(encoding="utf-8")
     checks: list[tuple[str, bool, str]] = []
 
     def add(name: str, ok: bool, detail: str = "") -> None:
@@ -45,6 +47,7 @@ def main() -> int:
     add("health query has freshness status", "control_status" in health_query and "latency_minutes" in health_query)
     add("loader defaults to dry-run", "if args.apply" in loader and '"DRY_RUN_PASS"' in loader)
     add("loader records source hash", "source_hash_sha256" in loader)
+    add("health runner is credential-safe", "SQLCMDPASSWORD" in health_runner and "Password" in health_runner and "sqlcmd" in health_runner)
 
     expected_tables = ["Calendar", *TABLES.keys()]
     declarations = re.findall(r"IF OBJECT_ID\(N'finance\.([^']+)', N'U'\)", ddl)

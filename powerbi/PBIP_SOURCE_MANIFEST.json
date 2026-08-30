@@ -13,6 +13,7 @@
     "directquery_schema": "powerbi/directquery/VNFinance_DirectQuery_Schema.sql",
     "directquery_loader": "scripts/load_directquery_sqlserver.py",
     "directquery_health_query": "powerbi/directquery/VNFinance_DirectQuery_Health.sql",
+    "directquery_health_runner": "scripts/check_directquery_source.ps1",
     "directquery_operational_metadata": "finance.Refresh_Control",
     "realtime_claim": "PENDING_DATABASE_AND_DESKTOP_EVIDENCE"
   },
