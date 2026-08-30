@@ -322,7 +322,7 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 
 ## MCH source verification runbook
 
-- [FY2017/FY2020 source verification runbook](docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk)
+- [FY2017/FY2020 source verification runbook](docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk) · [FY2017 indexed evidence memo](reports/MCH_FY2017_WEB_INDEX_EVIDENCE.md) · [CSV](data/mch_fy2017_web_index_evidence.csv) · [8/8 QA](reports/MCH_FY2017_WEB_INDEX_EVIDENCE_QA.md) · [Drive memo](https://drive.google.com/file/d/12fNf-xOHSYsnGxlmoVCQse-g-DSJse8y/view?usp=drivesdk) · [Drive CSV](https://drive.google.com/file/d/12DzqLsaAIHxWvVcaI06zjxW2j5YeoRI9/view?usp=drivesdk)
 - Official annual-report URLs are preserved in the source registry. FY2020 standalone bytes are archived from the official HNX signed PDF as APPROVED with hash/size metadata and statement page anchors; FY2017 remains retrieval-gated. The runbook defines Drive archive, hash, page-review, tie-out and promotion rules; no unverified source is promoted.
 
 
