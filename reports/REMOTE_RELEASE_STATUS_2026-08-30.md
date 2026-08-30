@@ -177,3 +177,10 @@ The paragraphs above retain historical release notes for audit trail. Use this s
 - [Remaining-gates handoff](../docs/REMAINING_GATES_HANDOFF_2026-08-30.md) · [Drive](https://docs.google.com/document/d/1UNB4HHdVQJWOyaLo3W1szCd2v-tlYx4JWf1ItVur9cQ/edit?usp=drivesdk)
 - [Finance Analyst interview walkthrough](../docs/INTERVIEW_WALKTHROUGH_FINANCE_ANALYST_2026-08-30.md) · [Drive](https://drive.google.com/file/d/16JeKPtMA_0kbz6n8376xemYznp3WUQ4H/view)
 - External gates remain: Gate A real internal snapshot/observed Bias-WAPE; Gate B native PBIX and QA-01–QA-18; CV personalization.
+
+## Latest QA sync — 2026-08-30
+
+- CI run [#715](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33300213430) passed after adding the MCH FY2017 indexed-evidence validator to `.github/workflows/finance-qa.yml`.
+- The cross-platform `scripts/run_finance_qa.mjs` now includes the same `mch_fy2017_web_index` check, so the 19-check repository runner covers the indexed-only evidence boundary as well.
+- Drive archive copy of the updated runner: https://drive.google.com/file/d/1vuv3EsRSRR3GnGCnrkNPdCNJy5F7oUGW/view?usp=drivesdk
+- CV role variants now include controlled MBR/CFO-pack, OPEX/CAPEX, FY2017-indexed and LIVE_INTERNAL interview add-ons; GitHub and Drive copies are synchronized.
