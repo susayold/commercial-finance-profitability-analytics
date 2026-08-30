@@ -187,3 +187,11 @@ Use this order for a 15-minute Finance Analyst walkthrough:
 - MCH/VNM/QNS/KDC figures are OBSERVED/DERIVED where stated; basis-break caveats remain visible.
 - Gate A (real internal pre-close snapshot) and Gate B (native Power BI Desktop QA-01–QA-18) remain open.
 - Candidate-specific CV fields must be replaced with real contact, education and experience facts before application.
+
+## Operational driver tree and unit economics (Module F)
+
+- [Operational Driver Tree & Unit Economics contract](../docs/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS.md) · [Driver register CSV](../data/operational_driver_tree_unit_economics.csv) · [QA](../reports/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS_QA.md)
+- [Drive native report](https://docs.google.com/document/d/1oN-nFippLlBKEXKKEsFz7tSoWkT2w-QRVDi-exTlFd0/edit?usp=drivesdk) · [Drive native driver register](https://docs.google.com/spreadsheets/d/1xe2FNuB2Twf0_OvCnTQ8MaQb4U9BtBBLm7epoo9bnkk/edit?usp=drivesdk)
+- The module links operational drivers to net revenue, gross-to-net, contribution, inventory, AR/AP, D2C unit economics and a conditional owned-retail branch. It includes a source-to-metric contract, reconciliation controls, scenario rules and WD-5 to WD+5 cadence.
+- Release boundary: SIMULATED / DERIVED; not evidence of realized commercial impact until approved ERP, promotion, inventory, AR/AP and cohort data are available.
+
