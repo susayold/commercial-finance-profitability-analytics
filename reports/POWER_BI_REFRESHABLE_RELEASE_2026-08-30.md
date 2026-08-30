@@ -8,6 +8,7 @@
 - Project generator: `scripts/build_powerbi_refreshable_project.py`
 - Package/refresh validator: `scripts/validate_powerbi_refreshable_project.py`
 - Refresh architecture: `docs/POWER_BI_REFRESH_ARCHITECTURE.md`
+- DirectQuery readiness: `powerbi/directquery/README.md`, `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`, `powerbi/DIRECTQUERY_READINESS.json`
 - Automated evidence: `reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md`
 
 ## Release metrics
@@ -35,3 +36,5 @@ The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layou
 No native `.pbix` is claimed in this release. The current host has a registered Power BI Desktop MSI but `PBIDesktop.exe` is missing; repair returns Windows Installer error 1730 because Administrator rights are required. Desktop open, data-source binding, refresh, DAX execution and visual-rendering QA therefore remain pending.
 
 The CSV model is Import mode. It supports replacing source files and refreshing without redesigning the report. It does not claim second-level streaming real-time; that requires a supported DirectQuery/LiveConnect source and Automatic Page Refresh.
+
+The DirectQuery extension passes 30/30 offline readiness checks. It remains gated at `READY_FOR_DATABASE_PROVISIONING` until a real database, ingestion watermark, credentials, capacity and native Desktop evidence are available.

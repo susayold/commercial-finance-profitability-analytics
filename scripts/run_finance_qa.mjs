@@ -87,6 +87,14 @@ try {
     relationships: contract.relationships?.length ?? 0,
   });
   if (!contractOk) result.status = 'FAIL';
+
+  const python = process.platform === 'win32' ? 'python' : 'python3';
+  const directQuery = spawnSync(python, ['scripts/validate_directquery_readiness.py'], { cwd: root, encoding: 'utf8' });
+  const directQueryOutput = `${directQuery.stdout ?? ''}${directQuery.stderr ?? ''}`.trim();
+  const directQueryCheck = { name: 'directquery_readiness', status: directQuery.status === 0 ? 'PASS' : 'FAIL' };
+  if (directQueryOutput) directQueryCheck.output_tail = directQueryOutput.split(/\r?\n/).slice(-6).join('\n');
+  result.checks.push(directQueryCheck);
+  if (directQuery.status !== 0) result.status = 'FAIL';
 } finally {
   fs.rmSync(transient, { recursive: true, force: true });
 }

@@ -13,6 +13,10 @@ Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an ex
 - **Native `.pbix`:** not yet claimed. Power BI Desktop executable is missing on the current machine and MSI repair requires Administrator rights, so Desktop open/refresh/render QA remains pending.
 - **Real-time interpretation:** current Import-mode CSV design updates on manual or scheduled refresh. True automatic page refresh requires migration to a supported DirectQuery/LiveConnect source.
 
+## DirectQuery readiness extension — 2026-08-30
+
+The migration path is now source-controlled under `powerbi/directquery/`. It includes a finance-schema DDL for Azure SQL/SQL Server/Fabric, query-path indexes, freshness/incident controls and machine-readable gates. The standalone readiness validator passes 30/30 checks. It is ready for database provisioning but does not claim a live connection, service capacity or a measured refresh interval.
+
 ## Model contract
 
 ### Fact tables

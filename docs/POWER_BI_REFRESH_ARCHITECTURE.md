@@ -57,6 +57,8 @@ This package therefore claims:
 
 For automatic page refresh, migrate the fact tables to a supported DirectQuery source such as Azure SQL or Microsoft Fabric. Preserve table and column names, then replace each CSV Power Query partition with its DirectQuery table. Configure incremental refresh where appropriate and enable Automatic Page Refresh only after measuring source capacity and query latency.
 
+The concrete migration pack is in `powerbi/directquery/`: it includes an Azure SQL/Fabric-compatible schema, query-path indexes, freshness controls and machine-readable external gates in `powerbi/DIRECTQUERY_READINESS.json`.
+
 Do not label a CSV Import report “real-time.” Power BI automatic page refresh applies to DirectQuery and supported LiveConnect models, not ordinary Import-mode CSVs.
 
 ## Open and edit

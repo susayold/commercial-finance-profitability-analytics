@@ -127,6 +127,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Detailed build guide](powerbi/POWER_BI_BUILD_GUIDE_V2.md)
 - [Editable PBIP project](powerbi/native/VNFinance_PBIP/VNFinance_Commercial_Finance.pbip) · [compiled PBIT](powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit)
 - [Refresh architecture](docs/POWER_BI_REFRESH_ARCHITECTURE.md) · [package QA](reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md) · [release record](reports/POWER_BI_REFRESHABLE_RELEASE_2026-08-30.md)
+- [DirectQuery readiness pack](powerbi/directquery/README.md) · [Azure SQL/Fabric schema](powerbi/directquery/VNFinance_DirectQuery_Schema.sql) · [machine-readable gates](powerbi/DIRECTQUERY_READINESS.json)
 - [Drive PBIT](https://drive.google.com/file/d/1FhFTJVzv4Dxz9Z3bY_bu6KILsie0Ry9Y/view?usp=drivesdk) · [Drive handoff bundle (PBIT + PBIP + CSV + QA)](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk)
 - [PBIX release evidence template](powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md) · [Drive copy](https://drive.google.com/file/d/1zeOflHSaBjlna_Nl0vQ2pS2m42XApWi3/view?usp=drivesdk)
 - [18-test QA matrix](powerbi/QA_TEST_MATRIX.md)

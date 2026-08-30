@@ -8,6 +8,7 @@ The repository now includes generated native source under `powerbi/native/` and 
 - Set the `DataRoot` parameter to the folder containing the 14 contract CSV files.
 - Replace CSV data without changing filenames or headers, then select **Refresh**; measures and visuals recalculate without rebuilding the report.
 - See `docs/POWER_BI_REFRESH_ARCHITECTURE.md` for the exact refresh contract and the DirectQuery path for true real-time behavior.
+- See `powerbi/directquery/README.md` and `powerbi/directquery/VNFinance_DirectQuery_Schema.sql` for the database migration package; `powerbi/DIRECTQUERY_READINESS.json` keeps the realtime claim gated until measured evidence exists.
 - Rebuild both source formats with `scripts/build_powerbi_refreshable_project.py` and validate the package with `scripts/validate_powerbi_refreshable_project.py`.
 
 Automated package QA currently passes 29/29 checks. Native Desktop open/refresh/render QA remains a separate gate and is not inferred from source validation.
