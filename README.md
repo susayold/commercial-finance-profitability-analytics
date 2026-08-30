@@ -17,7 +17,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - VNM: 2006-2025
 - QNS: 2016-2025
 - KDC: 2016-2025
-- MCH: 2018, 2019 and 2021-2025
+- MCH: FY2016-FY2025 statement supplement approved; FY2017 comparative caveat retained
 - MCH audited consolidated financial statements: 2016-2025
 - Missing and rejected documents are recorded explicitly; gaps are never filled with unverified copies
 - VietNova synthetic v1.0.0: 36 months, 6,480 sales lines, 36 SKUs, 5 channels, 24 customers, 13 CSV tables + manifest; QA controls PASS (10,152 checks, 0 errors)
@@ -289,4 +289,4 @@ FY2024–FY2025 now have a review-ready 16-row candidate layer covering all eigh
 
 - [MCH approved FY2022–FY2025 supplement](reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [approved CSV](data/mch_statement_metrics_2024_2025_approved.csv) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit) · [Drive memo](https://docs.google.com/document/d/1Ib__7FWjmtGFViexE-f__U2qCGx6xz3AK9qOTB8fLsw/edit)
 
-The approved MCH supplement now covers FY2018–FY2025 (64 rows, all eight metrics), after visual PDF review, statement tie-outs, balance-sheet checks and cash-flow confirmation. FY2016–FY2017 remain blocked. [approved CSV](data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
+The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metrics), after visual PDF review, statement tie-outs, balance-sheet checks and cash-flow confirmation. FY2017 is explicitly flagged as a comparative/corresponding-column year from the audited FY2018 filing. [approved CSV](data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
