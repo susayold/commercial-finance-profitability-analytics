@@ -40,7 +40,7 @@ still need a real Power BI Desktop or cloud workspace.
     stage while still failing closed on deterministic contract/package checks.
 11. Ran the cross-platform finance QA runner after the change: **49/49 PASS**,
     including PBIP source coherence and DirectQuery readiness.
-12. Verified GitHub Actions run [33325626430](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33325626430): the new release-gate step and the full Finance model QA job completed successfully after the current release; CI correctly records the Windows Desktop stage as `EXTERNAL_PENDING` on Ubuntu.
+12. Verified GitHub Actions run [33325806466](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33325806466): the new release-gate step and the full Finance model QA job completed successfully; CI correctly records the Windows Desktop stage as `EXTERNAL_PENDING` on Ubuntu.
 
 ## Evidence boundaries
 
