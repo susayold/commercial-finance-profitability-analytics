@@ -232,7 +232,10 @@ Use a star-like filter direction:
 - `Product[sku_id]` → `Sales`, `Commercial_Costs`, `Inventory`, `Budget`, `Forecast`, `Promotions`
 - `Customer[customer_id]` → `Sales`, `Receivables`
 - `Channel[channel_id]` → `Sales`, `Commercial_Costs`, `Budget`, `Forecast`, `Marketing`, `Promotions`
-- `Scenario Selector` remains disconnected for scenario measures.
+- `Scenario Selector` remains disconnected for scenario measures. Its `base_case`,
+  `revenue_multiplier`, `cogs_multiplier`, and `opex_multiplier` columns are
+  finance-owned inputs: edit the CSV, refresh, and the scenario revenue and
+  EBITDA proxy recalculate without rebuilding the report.
 
 The extended layer adds `Peer_Benchmark`, `Peer_Review_Queue`, `OPEX_Headcount`
 and `CAPEX_Projects` as evidence/planning facts. Their model-native measures

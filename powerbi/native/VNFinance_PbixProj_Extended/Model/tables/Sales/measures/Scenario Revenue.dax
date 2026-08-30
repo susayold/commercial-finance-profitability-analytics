@@ -1,1 +1,5 @@
-SWITCH ( [Selected Scenario], "Budget", [Budget Revenue], "Forecast", [Forecast Revenue], [Net Revenue] )
+VAR Scenario = [Selected Scenario]
+VAR BaseCase = COALESCE ( CALCULATE ( SELECTEDVALUE ( 'Scenario Selector'[base_case] ), 'Scenario Selector'[scenario] = Scenario ), "Actual" )
+VAR BaseRevenue = SWITCH ( BaseCase, "Budget", [Budget Revenue], "Forecast", [Forecast Revenue], [Net Revenue] )
+VAR Multiplier = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[revenue_multiplier] ), 'Scenario Selector'[scenario] = Scenario ), 1 )
+RETURN BaseRevenue * Multiplier

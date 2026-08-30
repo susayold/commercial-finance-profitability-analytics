@@ -1,0 +1,12 @@
+{
+  "name": "revenue_multiplier",
+  "dataType": "double",
+  "sourceColumn": "revenue_multiplier",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

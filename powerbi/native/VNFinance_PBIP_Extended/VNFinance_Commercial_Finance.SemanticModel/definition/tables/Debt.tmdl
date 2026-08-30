@@ -1,67 +1,67 @@
 table Debt
-	lineageTag: fb661adf-1275-4914-9049-2e3845752d66
+	lineageTag: a70639c5-0496-442d-a4e7-e42f886cf9f9
 
 	column month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: month
-		lineageTag: dc3f2fd0-39f6-4794-b334-8c059fd5f39a
+		lineageTag: 0a3297c8-225a-4ee1-89bd-ccfd7f38d543
 		annotation SummarizationSetBy = User
 
 	column facility_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: facility_id
-		lineageTag: ff0531d6-4f34-4116-ab6c-b5dac6efdfd4
+		lineageTag: d29cf9b7-d577-45a3-b70d-475d98c512b5
 		annotation SummarizationSetBy = User
 
 	column opening_balance
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: opening_balance
-		lineageTag: 29736ec9-4d74-4f7c-9e6e-337162de31c6
+		lineageTag: b0249ac1-3949-44e5-9c22-8527f3df3714
 		annotation SummarizationSetBy = User
 
 	column drawdown
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: drawdown
-		lineageTag: c441aac0-7e41-4178-8cc0-50e2739b4135
+		lineageTag: 70ac6459-8f55-4158-bd14-0efb6d1e9ced
 		annotation SummarizationSetBy = User
 
 	column repayment
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: repayment
-		lineageTag: 67f748a3-f1d0-43c8-8c8e-e9645217400b
+		lineageTag: 18548aa7-c26c-4fc4-bf56-4996b48cc35d
 		annotation SummarizationSetBy = User
 
 	column closing_balance
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: closing_balance
-		lineageTag: ae1b631e-5b3f-415c-83ff-a44fef9c9760
+		lineageTag: f81cd9b1-2670-4307-90b2-4f2e22d963ea
 		annotation SummarizationSetBy = User
 
 	column interest_rate
 		dataType: double
 		summarizeBy: none
 		sourceColumn: interest_rate
-		lineageTag: bc030bdd-84cb-4eab-85d4-3ce7613b6d25
+		lineageTag: 9d6899b4-0723-4735-9c88-6c19a06e12c6
 		annotation SummarizationSetBy = User
 
 	column interest_expense
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: interest_expense
-		lineageTag: 0cd93ec1-1302-4cef-9ec6-4b685f3da228
+		lineageTag: 183f4bb4-53c6-45f3-9ffc-b8e7d557dcff
 		annotation SummarizationSetBy = User
 
 	column covenant_headroom
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: covenant_headroom
-		lineageTag: f6afb1d3-c3ab-4456-acb0-23356944fe58
+		lineageTag: aad15ac7-4a73-4b1e-a9c4-ea7ffcd49af8
 		annotation SummarizationSetBy = User
 
 	partition Debt = m

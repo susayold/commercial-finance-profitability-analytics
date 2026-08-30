@@ -144,7 +144,13 @@ def apply_load(connection_string: str, manifest: list[dict[str, Any]], rows_by_t
             placeholders = ",".join("?" for _ in columns)
             sql = f"INSERT INTO [finance].{qident(source_table(table))} ({','.join(qident(c) for c in columns)}) VALUES ({placeholders})"
             cursor.fast_executemany = True
-            cursor.executemany(sql, rows_by_table[table])
+            try:
+                cursor.executemany(sql, rows_by_table[table])
+            except Exception as exc:
+                # Preserve the report-table name in the failure.  pyodbc's
+                # decimal/scale errors otherwise hide which input contract
+                # column needs attention during a migration rehearsal.
+                raise RuntimeError(f"{table}: {exc}") from exc
 
         cursor.execute("DELETE FROM [finance].[Calendar]")
         cursor.execute(

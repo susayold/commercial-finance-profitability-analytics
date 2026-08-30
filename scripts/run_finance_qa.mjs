@@ -50,6 +50,7 @@ const tasks = [
   ['pbip_manifest', ['scripts/validate_pbip_source_manifest.mjs']],
   ['powerbi_measure_column_collisions', ['scripts/validate_powerbi_measure_column_collisions.py']],
   ['powerbi_extended_scope', ['scripts/validate_powerbi_extended_scope.py']],
+  ['powerbi_scenario_drivers', ['scripts/validate_powerbi_scenario_drivers.py', '--json', path.join(transient, 'scenario_driver_QA.json'), '--markdown', path.join(transient, 'scenario_driver_QA.md')]],
   ['mna', ['scripts/validate_mna_accretion_dilution.mjs']],
   ['d2c', ['scripts/validate_d2c_unit_economics.mjs', 'data/d2c_unit_economics_synthetic.csv']],
   ['public_guidance', ['scripts/validate_public_guidance_proxy.mjs', 'data/vnm_public_guidance_proxy_2018_2025.csv']],

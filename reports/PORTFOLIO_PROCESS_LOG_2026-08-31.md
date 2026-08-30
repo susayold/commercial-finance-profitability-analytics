@@ -8,6 +8,32 @@ still need a real Power BI Desktop or cloud workspace.
 
 ## Completed this cycle
 
+### Scenario planning logic made finance-editable (2026-08-31)
+
+The extended Power BI planning layer previously contained five selector rows,
+but its `Scenario Revenue` measure only mapped Budget/Forecast and otherwise
+fell back to Actual. That made Upside/Downside labels visually present but not
+decision-useful. I changed the controlled `scenario_selector.csv` contract to
+carry `base_case`, revenue/COGS/OPEX multipliers, a working-capital day delta
+and a scenario note. The DAX now resolves the selected base case and applies
+the row's drivers to `Scenario Revenue`; `EBITDA Proxy` applies the same
+drivers to base COGS and OPEX. The SQL DirectQuery DDL includes the fields and
+an additive migration block for an existing rehearsal table.
+
+The extended PBIP/PBIT was regenerated with the same 20-table / 60-measure /
+25-relationship / 6-page / 42-visual topology. The extended scope validator
+now checks the seven scenario columns, the five named rows and the presence of
+a non-neutral sensitivity. Input contract QA remains 98/98, extended scope
+QA is 15/15, artifact coherence is 15/15, release gate is PASS with Desktop
+preflight 14/14, and DirectQuery readiness/mapping/health remain 41/41,
+18/18 and 15/15. During the smoke rehearsal, the peer benchmark source's
+nine-decimal normalized VND-bn values exposed a SQL `decimal(19,4)` scale
+loss; the DDL was widened to `decimal(28,9)` and the two-batch LocalDB test
+then returned **PASS** with 29,923 loaded rows, zero rejects, a +1 units
+proof and p95 health-query latency of 0.017 seconds. This is still an
+Import-refresh package; no realtime or native-PBIX claim is promoted by this
+change.
+
 1. Confirmed `PBIDesktop.exe` is present at `D:\Po BI\bin\PBIDesktop.exe` and
    recorded a custom-path preflight result of 14/14 checks.
 2. Added `-Report` to `scripts/powerbi_desktop_preflight.ps1` so host/data

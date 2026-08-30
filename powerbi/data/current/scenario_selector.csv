@@ -1,6 +1,6 @@
-scenario
-Actual
-Budget
-Forecast
-Upside
-Downside
+scenario,base_case,revenue_multiplier,cogs_multiplier,opex_multiplier,working_capital_days_delta,scenario_note
+Actual,Actual,1.00,1.00,1.00,0.0,Historical actual run-rate
+Budget,Budget,1.00,1.00,1.00,0.0,Approved operating plan baseline
+Forecast,Forecast,1.00,1.00,1.00,0.0,Latest rolling outlook baseline
+Upside,Forecast,1.08,1.03,0.97,-2.0,Forecast base plus volume and productivity upside
+Downside,Forecast,0.92,1.04,1.05,3.0,Forecast base with demand pressure and cost inflation

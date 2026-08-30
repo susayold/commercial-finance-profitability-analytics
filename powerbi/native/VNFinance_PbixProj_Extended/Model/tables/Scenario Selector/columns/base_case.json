@@ -1,0 +1,12 @@
+{
+  "name": "base_case",
+  "dataType": "string",
+  "sourceColumn": "base_case",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

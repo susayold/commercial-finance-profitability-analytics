@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "started_at_utc": "2026-08-30T21:14:39.381794+00:00",
-  "completed_at_utc": "2026-08-30T21:14:43.127979+00:00",
+  "started_at_utc": "2026-08-30T21:54:20.928097+00:00",
+  "completed_at_utc": "2026-08-30T21:54:24.802851+00:00",
   "repo_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831",
-  "input_dir": "C:\\Users\\sangk\\AppData\\Local\\Temp\\vnfinance_compact_gate_20260831",
-  "data_root": "C:\\Users\\sangk\\AppData\\Local\\Temp\\vnfinance_compact_gate_20260831",
+  "input_dir": "C:\\VNFinancePowerBI\\data\\compact",
+  "data_root": "C:\\VNFinancePowerBI\\data\\compact",
   "scope": "compact",
   "stages": {
     "input_contract": {
@@ -40,9 +40,9 @@
       "details": {
         "status": "PASS",
         "mode": "finance_refresh_orchestrator",
-        "started_at_utc": "2026-08-30T21:14:40.091924+00:00",
-        "input_dir": "C:\\Users\\sangk\\AppData\\Local\\Temp\\vnfinance_compact_gate_20260831",
-        "data_root": "C:\\Users\\sangk\\AppData\\Local\\Temp\\vnfinance_compact_gate_20260831",
+        "started_at_utc": "2026-08-30T21:54:21.655556+00:00",
+        "input_dir": "C:\\VNFinancePowerBI\\data\\compact",
+        "data_root": "C:\\VNFinancePowerBI\\data\\compact",
         "stages": {
           "import": {
             "requested": true,
@@ -50,10 +50,12 @@
             "exit_code": 0,
             "result": {
               "status": "PASS",
+              "scope": "compact",
+              "file_count": 14,
               "applied": false,
-              "source_dir": "C:\\Users\\sangk\\AppData\\Local\\Temp\\vnfinance_compact_gate_20260831",
-              "data_root": "C:\\Users\\sangk\\AppData\\Local\\Temp\\vnfinance_compact_gate_20260831",
-              "validated_at_utc": "2026-08-30T21:14:40.842659+00:00",
+              "source_dir": "C:\\VNFinancePowerBI\\data\\compact",
+              "data_root": "C:\\VNFinancePowerBI\\data\\compact",
+              "validated_at_utc": "2026-08-30T21:54:22.402200+00:00",
               "validator": {
                 "status": "PASS",
                 "scope": "compact",
@@ -157,9 +159,9 @@
                   "target_rows_before": 5
                 },
                 "source_control.csv": {
-                  "source_sha256": "aa3716416395c34d90f9651ba014a1221c44f42521a1611add7623d802756a8e",
+                  "source_sha256": "a32a2748809e269ed1d01f84dca07782535032164013457fba7d6583108bd6c1",
                   "source_rows": 10,
-                  "target_sha256_before": "aa3716416395c34d90f9651ba014a1221c44f42521a1611add7623d802756a8e",
+                  "target_sha256_before": "a32a2748809e269ed1d01f84dca07782535032164013457fba7d6583108bd6c1",
                   "target_rows_before": 10
                 }
               },
@@ -178,7 +180,7 @@
           }
         },
         "claim_boundary": "Import refresh is automated; DirectQuery/APR and native PBIX evidence remain separate gates.",
-        "completed_at_utc": "2026-08-30T21:14:40.855011+00:00"
+        "completed_at_utc": "2026-08-30T21:54:22.413431+00:00"
       }
     },
     "package": {
@@ -398,6 +400,115 @@
         "evidence_boundary": "Static model-name check; it does not replace native Desktop open/refresh/render QA."
       }
     },
+    "scenario_drivers": {
+      "status": "PASS",
+      "exit_code": 0,
+      "details": {
+        "status": "PASS",
+        "evidence_boundary": "Static source-data arithmetic; native Power BI Desktop visual QA remains a separate gate.",
+        "source_totals_vnd": {
+          "actual": {
+            "revenue": 37824186837.0,
+            "cogs": 19665238767.0,
+            "opex": 5303900000.0
+          },
+          "budget": {
+            "revenue": 40046591355.0,
+            "cogs": 19121185927.0,
+            "opex": 5275000000.0
+          },
+          "forecast": {
+            "revenue": 39472414911.0,
+            "cogs": 18060029369.0,
+            "opex": 5343000000.0
+          }
+        },
+        "scenarios": [
+          {
+            "scenario": "Actual",
+            "base_case": "Actual",
+            "revenue_multiplier": 1.0,
+            "cogs_multiplier": 1.0,
+            "opex_multiplier": 1.0,
+            "working_capital_days_delta": 0.0,
+            "scenario_revenue_vnd": 37824186837.0,
+            "scenario_ebitda_proxy_vnd": 12855048070.0,
+            "scenario_note": "Historical actual run-rate"
+          },
+          {
+            "scenario": "Budget",
+            "base_case": "Budget",
+            "revenue_multiplier": 1.0,
+            "cogs_multiplier": 1.0,
+            "opex_multiplier": 1.0,
+            "working_capital_days_delta": 0.0,
+            "scenario_revenue_vnd": 40046591355.0,
+            "scenario_ebitda_proxy_vnd": 15650405428.0,
+            "scenario_note": "Approved operating plan baseline"
+          },
+          {
+            "scenario": "Forecast",
+            "base_case": "Forecast",
+            "revenue_multiplier": 1.0,
+            "cogs_multiplier": 1.0,
+            "opex_multiplier": 1.0,
+            "working_capital_days_delta": 0.0,
+            "scenario_revenue_vnd": 39472414911.0,
+            "scenario_ebitda_proxy_vnd": 16069385542.0,
+            "scenario_note": "Latest rolling outlook baseline"
+          },
+          {
+            "scenario": "Upside",
+            "base_case": "Forecast",
+            "revenue_multiplier": 1.08,
+            "cogs_multiplier": 1.03,
+            "opex_multiplier": 0.97,
+            "working_capital_days_delta": -2.0,
+            "scenario_revenue_vnd": 42630208103.88,
+            "scenario_ebitda_proxy_vnd": 18845667853.81,
+            "scenario_note": "Forecast base plus volume and productivity upside"
+          },
+          {
+            "scenario": "Downside",
+            "base_case": "Forecast",
+            "revenue_multiplier": 0.92,
+            "cogs_multiplier": 1.04,
+            "opex_multiplier": 1.05,
+            "working_capital_days_delta": 3.0,
+            "scenario_revenue_vnd": 36314621718.12,
+            "scenario_ebitda_proxy_vnd": 11922041174.36,
+            "scenario_note": "Forecast base with demand pressure and cost inflation"
+          }
+        ],
+        "checks": [
+          {
+            "name": "driver columns are present",
+            "status": "PASS",
+            "detail": ""
+          },
+          {
+            "name": "five scenario rows are present",
+            "status": "PASS",
+            "detail": "[\"Actual\", \"Budget\", \"Downside\", \"Forecast\", \"Upside\"]"
+          },
+          {
+            "name": "base cases resolve to source totals",
+            "status": "PASS",
+            "detail": "Actual/Budget/Forecast source totals"
+          },
+          {
+            "name": "Upside and Downside are non-neutral",
+            "status": "PASS",
+            "detail": "Forecast base multiplied by 1.08 / 0.92"
+          },
+          {
+            "name": "Upside EBITDA exceeds Downside",
+            "status": "PASS",
+            "detail": "driver arithmetic direction"
+          }
+        ]
+      }
+    },
     "release_record": {
       "status": "PASS",
       "exit_code": 0,
@@ -406,7 +517,7 @@
         "checks": 12,
         "passed": 12,
         "failed": [],
-        "head_short": "f518e8b",
+        "head_short": "30c7c0b",
         "evidence_boundary": "Record consistency only; it does not prove native Desktop or production Service execution."
       }
     },
@@ -469,7 +580,7 @@
           {
             "name": "DataRoot folder",
             "pass": true,
-            "detail": "C:\\Users\\sangk\\AppData\\Local\\Temp\\vnfinance_compact_gate_20260831"
+            "detail": "C:\\VNFinancePowerBI\\data\\compact"
           },
           {
             "name": "DataRoot CSV count",

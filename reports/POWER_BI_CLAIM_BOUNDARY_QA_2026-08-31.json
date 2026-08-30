@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "checks": 12,
+  "passed": 12,
+  "failed": [],
+  "evidence": [
+    {
+      "name": "DirectQuery readiness JSON parses",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "PBIP source manifest parses",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Current mode is explicitly Import replace-and-refresh",
+      "pass": true,
+      "detail": "Import_replace_and_refresh"
+    },
+    {
+      "name": "Realtime claim is not promoted without external evidence",
+      "pass": true,
+      "detail": "PENDING"
+    },
+    {
+      "name": "Manifest keeps native PBIX claim pending",
+      "pass": true,
+      "detail": "native_desktop_qa=PENDING; native_pbix_claimed=False"
+    },
+    {
+      "name": "All CSV partitions remain Import mode",
+      "pass": true,
+      "detail": "19 CSV Import; 19 DataRoot; 1 calculated Calendar"
+    },
+    {
+      "name": "All 19 CSV partitions use DataRoot",
+      "pass": true,
+      "detail": "19"
+    },
+    {
+      "name": "Runbook disclaims CSV second-level realtime",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Runbook defines Automatic Page Refresh migration",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Release disclaims native PBIX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Native binary boundary note exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Refresh architecture uses canonical marketing filename",
+      "pass": true,
+      "detail": "marketing_spend.csv present; marketing.csv alias absent"
+    }
+  ]
+}

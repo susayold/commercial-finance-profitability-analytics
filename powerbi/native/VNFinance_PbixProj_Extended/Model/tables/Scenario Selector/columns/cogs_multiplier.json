@@ -1,0 +1,12 @@
+{
+  "name": "cogs_multiplier",
+  "dataType": "double",
+  "sourceColumn": "cogs_multiplier",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

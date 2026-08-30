@@ -1,88 +1,88 @@
 table Inventory
-	lineageTag: 7f9c05d2-5e64-4bb0-8908-9aed583431ce
+	lineageTag: 2253507e-27a0-4650-a943-643079a5f070
 
 	column month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: month
-		lineageTag: 84bddac6-428a-4e48-ba9d-825fc15fed37
+		lineageTag: 6b70bc24-7dff-4059-ad5e-8be04b8e1b5d
 		annotation SummarizationSetBy = User
 
 	column warehouse_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: warehouse_id
-		lineageTag: eaa0cfd7-1625-43d7-be83-d13707e0019a
+		lineageTag: f3818f43-66ff-4049-94a2-a812efd7cc84
 		annotation SummarizationSetBy = User
 
 	column sku_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: sku_id
-		lineageTag: 414d0179-3e19-4e51-a244-19c4cdbc6487
+		lineageTag: 66010d22-dc71-47e6-b03a-1bed1272a9df
 		annotation SummarizationSetBy = User
 
 	column opening_units
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: opening_units
-		lineageTag: 90edf931-607c-4608-8f49-a706cae4f26a
+		lineageTag: 495e8d82-9752-4c48-98ca-52ef66828de3
 		annotation SummarizationSetBy = User
 
 	column receipts_units
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: receipts_units
-		lineageTag: ff883fae-6c0f-4f13-a9c0-bda4559b2388
+		lineageTag: 16b3d20f-ebed-4d9c-a800-abd0465b5e79
 		annotation SummarizationSetBy = User
 
 	column sales_units
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: sales_units
-		lineageTag: 81c786b5-bcdc-42c9-be59-c43c0e5abedd
+		lineageTag: 2076983b-2f58-4549-9f63-a7ac76df617b
 		annotation SummarizationSetBy = User
 
 	column closing_units
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: closing_units
-		lineageTag: e3e9ee68-4795-49ed-9583-fce74573b5ee
+		lineageTag: 64882f33-acd8-420d-b666-84312c6a520f
 		annotation SummarizationSetBy = User
 
 	column unit_cost
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: unit_cost
-		lineageTag: 1ddc8141-6ddd-4b4d-a547-44c9ff3b18f6
+		lineageTag: d2adb5dc-dfce-4808-a5db-eae47f3b6655
 		annotation SummarizationSetBy = User
 
 	column inventory_value
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: inventory_value
-		lineageTag: 76ecc140-fd80-4319-9d55-89dbfc2b3d81
+		lineageTag: d491360d-4635-4555-90f0-93196e270810
 		annotation SummarizationSetBy = User
 
 	column days_on_hand
 		dataType: double
 		summarizeBy: none
 		sourceColumn: days_on_hand
-		lineageTag: 11c61b50-84a9-46e1-ac96-d49f66d40237
+		lineageTag: ee75dc27-d16d-40ee-9192-41af9cad8b2e
 		annotation SummarizationSetBy = User
 
 	column stockout_flag
 		dataType: boolean
 		summarizeBy: none
 		sourceColumn: stockout_flag
-		lineageTag: fef11f96-9d60-40b2-9893-4519bc47fc86
+		lineageTag: 704e3683-59a0-4fd8-8995-21bd04149921
 		annotation SummarizationSetBy = User
 
 	column expiry_writeoff
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: expiry_writeoff
-		lineageTag: 94770058-261c-4223-90da-88ba0dda2787
+		lineageTag: 76bce0f5-ffa0-498a-8182-1c5ec9ed3912
 		annotation SummarizationSetBy = User
 
 	partition Inventory = m

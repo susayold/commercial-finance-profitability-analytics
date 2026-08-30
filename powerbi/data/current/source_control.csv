@@ -8,4 +8,4 @@ CTRL-06,OPEX actual/budget/forecast bridge present,PASS,SIMULATED,opex_headcount
 CTRL-07,CAPEX commitment/cash/payback bridge present,PASS,SIMULATED,capex_fixed_asset_planning_synthetic.csv
 CTRL-08,Peer benchmark rows are approved reported data,PASS,PUBLIC_REPORTED,peer_benchmark_approved_2016_2025.csv
 CTRL-09,Unapproved peer candidates remain in review queue,PASS,CONTROL,peer_extraction_queue.csv
-CTRL-10,Scenario selector is disconnected by design,PASS,CONTROL,scenario_selector.csv
+CTRL-10,Scenario selector is disconnected; base case and driver multipliers are editable,PASS,CONTROL,scenario_selector.csv

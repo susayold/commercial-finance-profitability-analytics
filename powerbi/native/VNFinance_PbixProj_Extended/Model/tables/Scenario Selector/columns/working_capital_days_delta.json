@@ -1,0 +1,12 @@
+{
+  "name": "working_capital_days_delta",
+  "dataType": "double",
+  "sourceColumn": "working_capital_days_delta",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

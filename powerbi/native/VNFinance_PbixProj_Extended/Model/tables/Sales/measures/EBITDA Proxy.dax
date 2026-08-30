@@ -1,1 +1,7 @@
-[Gross Profit] - [OPEX Actual]
+VAR Scenario = [Selected Scenario]
+VAR BaseCase = COALESCE ( CALCULATE ( SELECTEDVALUE ( 'Scenario Selector'[base_case] ), 'Scenario Selector'[scenario] = Scenario ), "Actual" )
+VAR BaseCOGS = SWITCH ( BaseCase, "Budget", SUM ( Budget[budget_cogs] ), "Forecast", SUM ( Forecast[forecast_cogs] ), [COGS Total] )
+VAR BaseOPEX = SWITCH ( BaseCase, "Budget", [OPEX Budget], "Forecast", [OPEX Forecast], [OPEX Actual] )
+VAR COGSMultiplier = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[cogs_multiplier] ), 'Scenario Selector'[scenario] = Scenario ), 1 )
+VAR OPEXMultiplier = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[opex_multiplier] ), 'Scenario Selector'[scenario] = Scenario ), 1 )
+RETURN [Scenario Revenue] - BaseCOGS * COGSMultiplier - BaseOPEX * OPEXMultiplier

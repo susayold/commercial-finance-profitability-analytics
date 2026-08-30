@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "checks": 13,
-  "passed": 13,
+  "checks": 15,
+  "passed": 15,
   "failed": [],
   "evidence_boundary": "Extended PBIP/PBIT topology and data-drop contract only; native PBIX and production realtime remain separate gates.",
   "checks_detail": [
@@ -46,9 +46,19 @@
       "detail": ""
     },
     {
+      "name": "scenario selector exposes editable driver columns",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "scenario selector has five rows and a non-neutral sensitivity",
+      "status": "PASS",
+      "detail": "[\"Actual\", \"Budget\", \"Downside\", \"Forecast\", \"Upside\"]"
+    },
+    {
       "name": "extended PBIT is a readable ZIP",
       "status": "PASS",
-      "detail": "15866"
+      "detail": "16208"
     },
     {
       "name": "extended PBIT has 20 tables",

@@ -9,6 +9,7 @@ the Desktop-compatible extended PBIT model without claiming a native binary.
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import re
 import zipfile
@@ -66,6 +67,27 @@ def main() -> int:
         check(results, "extended PBIP report JSON readable", False, str(exc))
 
     check(results, "extended DataRoot additions are present", required_files <= {path.name for path in data.glob("*.csv")}, ", ".join(sorted(required_files - {path.name for path in data.glob('*.csv')})))
+    scenario_path = data / "scenario_selector.csv"
+    required_scenario_columns = {
+        "scenario", "base_case", "revenue_multiplier", "cogs_multiplier",
+        "opex_multiplier", "working_capital_days_delta", "scenario_note",
+    }
+    try:
+        with scenario_path.open(newline="", encoding="utf-8") as handle:
+            scenario_rows = list(csv.DictReader(handle))
+        headers = set(scenario_rows[0]) if scenario_rows else set()
+        check(results, "scenario selector exposes editable driver columns", required_scenario_columns <= headers, ", ".join(sorted(required_scenario_columns - headers)))
+        values = {row.get("scenario", "") for row in scenario_rows}
+        has_sensitivity = any(
+            abs(float(row.get("revenue_multiplier", 1)) - 1) > 1e-9
+            or abs(float(row.get("cogs_multiplier", 1)) - 1) > 1e-9
+            or abs(float(row.get("opex_multiplier", 1)) - 1) > 1e-9
+            for row in scenario_rows
+        )
+        check(results, "scenario selector has five rows and a non-neutral sensitivity", values == {"Actual", "Budget", "Forecast", "Upside", "Downside"} and has_sensitivity, json.dumps(sorted(values)))
+    except (OSError, ValueError, IndexError) as exc:
+        check(results, "scenario selector exposes editable driver columns", False, str(exc))
+        check(results, "scenario selector has five rows and a non-neutral sensitivity", False, str(exc))
     try:
         with zipfile.ZipFile(pbit) as archive:
             model = json.loads(archive.read("DataModelSchema"))

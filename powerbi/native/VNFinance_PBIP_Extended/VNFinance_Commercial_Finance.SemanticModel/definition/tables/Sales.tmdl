@@ -1,399 +1,409 @@
 table Sales
-	lineageTag: 57b5e053-a4b4-41bc-9ff3-ec50256083c1
+	lineageTag: 231c0a47-c4f7-4fcf-bb7f-24ac0b330a26
 
 	measure 'Net Revenue' = SUM ( Sales[net_sales] )
 		formatString: #,0,,.0 M
-		lineageTag: 9a5258eb-f1d0-4d6d-9bb1-0a64c431792b
+		lineageTag: 69dd2bc2-9b9a-4d1b-a838-b36020c0d3bf
 
 	measure 'Gross Sales' = SUM ( Sales[gross_sales] )
 		formatString: #,0,,.0 M
-		lineageTag: 2b42f375-4020-432e-83b9-098480a9247d
+		lineageTag: 8fe01818-2db8-4c0f-b038-1dfac1cd4412
 
 	measure 'COGS Total' = SUM ( Sales[cogs] )
 		formatString: #,0,,.0 M
-		lineageTag: e10176c7-7a7f-4019-8b94-e3a34c52f79a
+		lineageTag: 3f30a45d-d75f-4145-a517-267a4463a763
 
 	measure 'Gross Profit' = [Net Revenue] - [COGS Total]
 		formatString: #,0,,.0 M
-		lineageTag: fd4923ca-713a-425a-82d7-5c8a76320e83
+		lineageTag: 21fa5ce2-7322-4590-a3e2-2606e57db54f
 
 	measure 'Gross Margin %' = DIVIDE ( [Gross Profit], [Net Revenue] )
 		formatString: 0.0%
-		lineageTag: e6096084-35fd-4e98-86b2-8967a701d540
+		lineageTag: 93974251-7936-490b-941a-72e1a5771ffc
 
 	measure 'Contribution Margin' = SUM ( Sales[contribution_margin] )
 		formatString: #,0,,.0 M
-		lineageTag: 08bc9158-6efe-40bf-9a39-200e5aa34427
+		lineageTag: 013412bf-7c51-4fd2-98a3-45a1179bd518
 
 	measure 'Contribution Margin %' = DIVIDE ( [Contribution Margin], [Net Revenue] )
 		formatString: 0.0%
-		lineageTag: 652856c7-3a1e-414f-864d-35bcf5d7743c
+		lineageTag: f87a09b1-55cc-4bb8-8d69-816a18a9c179
 
 	measure 'Units Total' = SUM ( Sales[units] )
 		formatString: #,0
-		lineageTag: ef54aec6-409b-4520-8438-e7b709382576
+		lineageTag: 4b362875-1679-4680-a59a-a94253c49e5c
 
 	measure ASP = DIVIDE ( [Net Revenue], [Units Total] )
 		formatString: #,0
-		lineageTag: 141e804d-48aa-4268-9534-225fc61c232b
+		lineageTag: d5e45086-9a06-489f-9ea3-1731ee6c0669
 
 	measure 'Budget Revenue' = SUM ( Budget[budget_net_sales] )
 		formatString: #,0,,.0 M
-		lineageTag: 316c642e-3be6-4d34-8c78-89c229459e54
+		lineageTag: 7c63881d-f8be-4b2a-aeb4-4a52f7069bfd
 
 	measure 'Forecast Revenue' = SUM ( Forecast[forecast_net_sales] )
 		formatString: #,0,,.0 M
-		lineageTag: e91f5fb9-e08c-4f92-bf8f-b8dd5ec747df
+		lineageTag: 89aeb8fe-84b6-40ad-b856-5acc80191e0a
 
 	measure 'Revenue vs Budget' = [Net Revenue] - [Budget Revenue]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
-		lineageTag: f42e85ea-b8f6-45e5-ab2f-ac698fbc0104
+		lineageTag: 8a34da5e-ba2a-4fb4-a27b-648f6be013bc
 
 	measure 'Revenue vs Budget %' = DIVIDE ( [Revenue vs Budget], [Budget Revenue] )
 		formatString: 0.0%;(0.0%)
-		lineageTag: 18127aa6-b5af-4e99-8cf6-38a1c46ee241
+		lineageTag: 65abfb6a-15ea-44f1-87aa-9e4773cb336c
 
 	measure 'Revenue vs Forecast' = [Net Revenue] - [Forecast Revenue]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
-		lineageTag: 3d80cc63-7d66-4b51-a146-f62897fa3816
+		lineageTag: 1673bcc0-2074-465b-b338-042890521e8c
 
 	measure 'Revenue vs Forecast %' = DIVIDE ( [Revenue vs Forecast], [Forecast Revenue] )
 		formatString: 0.0%;(0.0%)
-		lineageTag: a2bbca34-59d1-4c60-9449-ac69491a2d53
+		lineageTag: 06f47fae-4556-4969-9372-75fd8599d8b2
 
 	measure 'Prior Net Revenue' = CALCULATE ( [Net Revenue], DATEADD ( Calendar[month], -1, MONTH ) )
 		formatString: #,0,,.0 M
-		lineageTag: 8f0569c0-de00-4b05-956e-9444224b415d
+		lineageTag: 13c7a7fd-1940-4390-9da1-c9d74c451d79
 
 	measure 'Revenue Growth %' = DIVIDE ( [Net Revenue] - [Prior Net Revenue], [Prior Net Revenue] )
 		formatString: 0.0%;(0.0%)
-		lineageTag: fbdae33a-42e3-4d87-b99d-d119a84662fb
+		lineageTag: a6bcc022-1c82-4d4e-bac7-123b6d4d2dbf
 
 	measure 'Prior Units' = CALCULATE ( [Units Total], DATEADD ( Calendar[month], -1, MONTH ) )
 		formatString: #,0
-		lineageTag: afae3ea6-c048-4165-8ab3-4af4a7b3568c
+		lineageTag: de3c02eb-fdb4-4495-808e-a9f76d0cdedb
 
 	measure 'Prior ASP' = CALCULATE ( [ASP], DATEADD ( Calendar[month], -1, MONTH ) )
 		formatString: #,0
-		lineageTag: f2dbd0d3-fb7b-44cd-9bff-8712730f1586
+		lineageTag: 21c1986c-1ab0-40e8-8e57-4bdda53b7d17
 
 	measure 'Price Impact' = ( [ASP] - [Prior ASP] ) * [Units Total]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
-		lineageTag: 63ce53c6-7a89-439e-b279-47bf2870d1b4
+		lineageTag: 36f53daf-15ce-4df6-b36e-0a83a9765c2b
 
 	measure 'Volume Impact' = ( [Units Total] - [Prior Units] ) * [Prior ASP]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
-		lineageTag: 8fb2b1b4-f5ba-4fc1-82b0-aca0ec7db2ea
+		lineageTag: 50492ae2-892c-4f8a-97bb-1d15df1cf10a
 
 	measure 'Mix Other Impact' = [Net Revenue] - [Prior Net Revenue] - [Price Impact] - [Volume Impact]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
-		lineageTag: f5a5a584-5bc8-4c8f-a1a8-16ba737bf46b
+		lineageTag: 254241de-e34e-40f3-bf72-b0daa8806dbe
 
 	measure 'Trade Spend' = SUM ( Commercial_Costs[trade_spend] )
 		formatString: #,0,,.0 M
-		lineageTag: 75e613c2-9f6a-4fe9-aa04-1d483281dd26
+		lineageTag: 4894f284-63f7-45bc-8fdf-ef2afe7692b9
 
 	measure 'Marketing Spend' = SUM ( Marketing[spend] )
 		formatString: #,0,,.0 M
-		lineageTag: 91fccf30-9093-42db-950f-4156c824900e
+		lineageTag: 0b98ef09-d71f-48d6-b5ac-fef1738968d9
 
 	measure 'Ending AR' = CALCULATE ( SUM ( Receivables[closing_ar] ), LASTDATE ( Calendar[month] ) )
 		formatString: #,0,,.0 M
-		lineageTag: 06475651-4227-4c51-8d50-7b4a6f59ccf1
+		lineageTag: b8c07b98-6be7-4c00-a059-aca642c812a8
 
 	measure 'Ending Inventory' = CALCULATE ( SUM ( Inventory[inventory_value] ), LASTDATE ( Calendar[month] ) )
 		formatString: #,0,,.0 M
-		lineageTag: e9e3be7b-9e4e-4cb9-97f6-b589ebb95bca
+		lineageTag: f85272b6-1ff1-4d49-b57e-a5b048d18794
 
 	measure 'Ending AP' = CALCULATE ( SUM ( Payables[closing_ap] ), LASTDATE ( Calendar[month] ) )
 		formatString: #,0,,.0 M
-		lineageTag: f5afbd32-a8b7-4ab7-afc2-da85d4ddffd3
+		lineageTag: 75166cd0-23ff-4612-811c-b758a59403d8
 
 	measure DSO = CALCULATE ( AVERAGE ( Receivables[dso] ), LASTDATE ( Calendar[month] ) )
 		formatString: 0.0
-		lineageTag: ad3bf101-a6a1-4448-a0e0-5164eb976a64
+		lineageTag: 1d66bce5-e718-484c-b8ea-48e41f784bbf
 
 	measure DIO = CALCULATE ( AVERAGE ( Inventory[days_on_hand] ), LASTDATE ( Calendar[month] ) )
 		formatString: 0.0
-		lineageTag: 6dcacef1-8890-4183-a00b-d9eccf194f81
+		lineageTag: 9e80dcf4-ec0c-4d9b-a97a-87b28b37fa1f
 
 	measure DPO = CALCULATE ( AVERAGE ( Payables[dpo] ), LASTDATE ( Calendar[month] ) )
 		formatString: 0.0
-		lineageTag: c1978753-f2da-4131-b199-ff93dd9d4725
+		lineageTag: c3cea9fa-1bd3-4c57-b2f2-2f12d5387326
 
 	measure CCC = [DSO] + [DIO] - [DPO]
 		formatString: 0.0
-		lineageTag: 1a972062-6661-4092-8db2-635360318b0b
+		lineageTag: a97de733-e246-4d0c-be4e-c5b9de2103a2
 
 	measure 'Debt Balance' = CALCULATE ( SUM ( Debt[closing_balance] ), LASTDATE ( Calendar[month] ) )
 		formatString: #,0,,.0 M
-		lineageTag: 26333e6e-ffa6-479f-9117-4ba780186803
+		lineageTag: f25532b8-978d-4316-b538-894d4063e3f3
 
 	measure 'Covenant Headroom' = CALCULATE ( SUM ( Debt[covenant_headroom] ), LASTDATE ( Calendar[month] ) )
 		formatString: #,0,,.0 M
-		lineageTag: 17cec5b2-36aa-47d9-af38-1d65d26140e6
+		lineageTag: 395f59f8-8f6a-444c-9ca3-766927cd982d
 
 	measure 'Sales Rows' = COUNTROWS ( Sales )
 		formatString: #,0
-		lineageTag: 81922f21-7616-4a22-8b57-03cbe8029f8e
+		lineageTag: 51988cfc-23a4-497f-a855-3e02df2687b1
 
 	measure 'Product Rows' = COUNTROWS ( Product )
 		formatString: #,0
-		lineageTag: 9feb9b51-2d06-485f-94d4-b521a3185cc6
+		lineageTag: a127b9cd-0bf2-4298-86f3-0ec7485fd5be
 
 	measure 'Customer Rows' = COUNTROWS ( Customer )
 		formatString: #,0
-		lineageTag: 9a0901f2-e0bb-4a09-9d57-043d8697a9b6
+		lineageTag: e4437908-ec9c-4262-b228-a49c96933d3a
 
 	measure 'Refresh Timestamp' = NOW ()
 		formatString: yyyy-mm-dd hh:mm:ss
-		lineageTag: 48b58e4a-cf51-4e9d-97a6-fa09a9434a2d
+		lineageTag: c9b7a100-a9bf-4c6a-8e9d-12dcf1621e76
 
 	measure 'Selected Scenario' = SELECTEDVALUE ( 'Scenario Selector'[scenario], "Actual" )
 		formatString: @
-		lineageTag: 5d053e88-fe26-448c-8185-d3e59e239e00
+		lineageTag: 6e3a4e70-9fa4-488b-8387-57f492e7a059
 
-	measure 'Scenario Revenue' = SWITCH ( [Selected Scenario], "Budget", [Budget Revenue], "Forecast", [Forecast Revenue], [Net Revenue] )
+	measure 'Scenario Revenue' = VAR Scenario = [Selected Scenario]
+VAR BaseCase = COALESCE ( CALCULATE ( SELECTEDVALUE ( 'Scenario Selector'[base_case] ), 'Scenario Selector'[scenario] = Scenario ), "Actual" )
+VAR BaseRevenue = SWITCH ( BaseCase, "Budget", [Budget Revenue], "Forecast", [Forecast Revenue], [Net Revenue] )
+VAR Multiplier = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[revenue_multiplier] ), 'Scenario Selector'[scenario] = Scenario ), 1 )
+RETURN BaseRevenue * Multiplier
 		formatString: #,0,,.0 M
-		lineageTag: cd969bef-8c54-4f0d-97a2-50eedbbed01b
+		lineageTag: 205ba0d0-adb1-4fbd-966a-80ca359977f9
 
-	measure 'EBITDA Proxy' = [Gross Profit] - [OPEX Actual]
+	measure 'EBITDA Proxy' = VAR Scenario = [Selected Scenario]
+VAR BaseCase = COALESCE ( CALCULATE ( SELECTEDVALUE ( 'Scenario Selector'[base_case] ), 'Scenario Selector'[scenario] = Scenario ), "Actual" )
+VAR BaseCOGS = SWITCH ( BaseCase, "Budget", SUM ( Budget[budget_cogs] ), "Forecast", SUM ( Forecast[forecast_cogs] ), [COGS Total] )
+VAR BaseOPEX = SWITCH ( BaseCase, "Budget", [OPEX Budget], "Forecast", [OPEX Forecast], [OPEX Actual] )
+VAR COGSMultiplier = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[cogs_multiplier] ), 'Scenario Selector'[scenario] = Scenario ), 1 )
+VAR OPEXMultiplier = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[opex_multiplier] ), 'Scenario Selector'[scenario] = Scenario ), 1 )
+RETURN [Scenario Revenue] - BaseCOGS * COGSMultiplier - BaseOPEX * OPEXMultiplier
 		formatString: #,0,,.0 M
-		lineageTag: 7daeeee3-77d0-4011-bfc7-20ca8bf5bcc0
+		lineageTag: 4a17f0a1-e82c-4a21-a154-949d60ebac39
 
 	measure 'OPEX Actual' = SUM ( OPEX_Headcount[opex_actual_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: a228ad2f-5f77-44d4-ad09-9bdc0a29027f
+		lineageTag: 0d68c8e7-bb6c-499d-8590-ebe7b845218f
 
 	measure 'OPEX Budget' = SUM ( OPEX_Headcount[opex_budget_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: 6278d407-c09a-454d-a3fc-99e56f73605f
+		lineageTag: 7b5ab70c-d18b-4941-a5b7-fe9533fa562f
 
 	measure 'OPEX Forecast' = SUM ( OPEX_Headcount[opex_forecast_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: d2d14986-97d0-4728-a12d-190109502d1d
+		lineageTag: ca95cec4-8d5a-4278-9815-d0ae6a1df132
 
 	measure 'OPEX vs Budget' = [OPEX Actual] - [OPEX Budget]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
-		lineageTag: 0854f3dc-ec5b-4551-b824-13283435aa20
+		lineageTag: 241055f2-8592-4b43-a22b-16ed02aa1f75
 
 	measure 'OPEX vs Forecast' = [OPEX Actual] - [OPEX Forecast]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
-		lineageTag: 11fdb77f-a37b-4de8-af56-c682cb5deb5b
+		lineageTag: 519126a5-5229-4aff-a995-5651c57f9ba4
 
 	measure 'Average Headcount' = SUM ( OPEX_Headcount[avg_headcount] )
 		formatString: #,0.0
-		lineageTag: 4216bdf0-f9b4-42bf-ae4c-2811eb1e9ff9
+		lineageTag: f9b7e36f-0eff-4992-90f0-5ce2adb324ec
 
 	measure 'CAPEX Budget' = SUM ( CAPEX_Projects[budget_capex_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: 85465f6a-badd-4468-8c1d-265fcf39168c
+		lineageTag: bbdc60bb-5d66-4fbf-822f-80bbe39e2df6
 
 	measure 'CAPEX Actual' = SUM ( CAPEX_Projects[actual_capex_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: eaaff16d-688e-4c34-815c-9181e166f3e0
+		lineageTag: 8ddf39ff-ff83-492e-9ac4-01fb5549e4e0
 
 	measure 'CAPEX Forecast' = SUM ( CAPEX_Projects[forecast_capex_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: fc6a46e9-2e4f-451f-9ab3-6872d2ff29c4
+		lineageTag: 6a1a4f65-fd5a-4d50-847e-94bd53d1c51f
 
 	measure 'CAPEX Committed' = SUM ( CAPEX_Projects[committed_capex_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: 2194dd95-cf2f-4007-abae-299b73176a5d
+		lineageTag: 36ddc263-7e56-4b4d-b115-487e5af0d80c
 
 	measure 'CAPEX Cash Payment' = SUM ( CAPEX_Projects[cash_payment_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: 9f2d032f-814a-4452-9019-e76d9bf10e4b
+		lineageTag: b7e013b7-b0e7-4646-a66f-0a3faa517b37
 
 	measure 'CAPEX Depreciation' = SUM ( CAPEX_Projects[depreciation_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: f27dd06b-20ed-40b5-b2f0-db2d01cbda69
+		lineageTag: 5f40808a-7295-440d-af22-19667e193d9c
 
 	measure 'CAPEX Annual Benefit' = SUM ( CAPEX_Projects[expected_annual_contribution_vnd] )
 		formatString: #,0,,.0 M
-		lineageTag: e1a2254f-9a9e-4a3f-8ccd-c5c50bec2206
+		lineageTag: f7fbf9b0-3dd1-4c64-8f86-cd076136d018
 
 	measure 'CAPEX Payback Months' = AVERAGE ( CAPEX_Projects[payback_months] )
 		formatString: 0.0
-		lineageTag: 8bacaf45-6617-4e30-a748-9686033db18f
+		lineageTag: be92eb6a-08e7-4ba9-8cbd-68144d8e2358
 
 	measure 'CAPEX vs Budget' = [CAPEX Actual] - [CAPEX Budget]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
-		lineageTag: fa04c4b6-0c65-4d9b-8f28-9ffab3f3935b
+		lineageTag: fe08e564-a2d2-4eea-9fda-49ac7ad9e4db
 
 	measure 'Approved Peer Rows' = COUNTROWS ( Peer_Benchmark )
 		formatString: #,0
-		lineageTag: 48607671-4b55-46f0-b18f-295b8e1b1d39
+		lineageTag: 1161f6ae-4175-4ccd-9a6b-0af988c1e62c
 
 	measure 'Peer Revenue' = SUM ( Peer_Benchmark[net_revenue_vnd_bn] )
 		formatString: #,0.0
-		lineageTag: 0570d914-31ba-4f1f-b51f-f3ecb3e857e8
+		lineageTag: 377c5ef0-ec41-465d-a861-9b99305696b6
 
 	measure 'Peer PAT Margin' = DIVIDE ( SUM ( Peer_Benchmark[profit_after_tax_vnd_bn] ), SUM ( Peer_Benchmark[net_revenue_vnd_bn] ) )
 		formatString: 0.0%
-		lineageTag: 65694e9c-a7ea-46a4-b3e0-1bef6b2dbe52
+		lineageTag: 0cd9ff4b-af77-4667-9ea6-4ee48b7d680c
 
 	measure 'Peer CFO Conversion' = DIVIDE ( SUM ( Peer_Benchmark[operating_cash_flow_vnd_bn] ), SUM ( Peer_Benchmark[profit_after_tax_vnd_bn] ) )
 		formatString: 0.0x
-		lineageTag: 10781cde-67ce-4dae-8972-351eb121f838
+		lineageTag: 31c06e51-67af-48db-a4f5-6d93b2dbdfab
 
 	measure 'Peer Review Queue Rows' = COUNTROWS ( Peer_Review_Queue )
 		formatString: #,0
-		lineageTag: a370743b-5ff4-4f21-9bf4-8a37c3fdeae5
+		lineageTag: 0c1e7fcc-f457-451a-b755-0bf537aa0663
 
 	column line_id
 		dataType: string
 		isKey
 		summarizeBy: none
 		sourceColumn: line_id
-		lineageTag: 6d5d2b7d-1abb-4b1a-b551-31c0991c500f
+		lineageTag: 26c892fa-2182-4bbe-9734-0d02d05f3748
 		annotation SummarizationSetBy = User
 
 	column order_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: order_id
-		lineageTag: 551a893e-407c-4b33-8f92-f8bb8ddb61be
+		lineageTag: b5249b39-efd6-4c3f-90ac-247547c0344e
 		annotation SummarizationSetBy = User
 
 	column date
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: date
-		lineageTag: efcc9307-b4c3-4fd4-afb4-a126373c7d1c
+		lineageTag: 3aa1be27-e075-4ef1-8449-45f820237558
 		annotation SummarizationSetBy = User
 
 	column month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: month
-		lineageTag: 9e209630-cf6e-45a0-87a4-76e2178ff10d
+		lineageTag: ca2e0b1f-af88-40b9-9f5f-da6e0e83efb9
 		annotation SummarizationSetBy = User
 
 	column sku_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: sku_id
-		lineageTag: 8535f4da-50b9-40e2-859b-8bf262cbd243
+		lineageTag: fd7d0ff6-6106-4bec-b6fc-ccc72e7da86f
 		annotation SummarizationSetBy = User
 
 	column customer_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: customer_id
-		lineageTag: d9178e7f-b885-45c2-99e1-5b4d76d86918
+		lineageTag: fc3f85f7-5886-4f45-8ad8-c56673857df9
 		annotation SummarizationSetBy = User
 
 	column channel_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: channel_id
-		lineageTag: efd74e1d-b7ff-44ea-9322-198775ce1d02
+		lineageTag: 7a478e6d-b97a-4763-9464-402df8c3fa41
 		annotation SummarizationSetBy = User
 
 	column region
 		dataType: string
 		summarizeBy: none
 		sourceColumn: region
-		lineageTag: 24be97bf-43ff-4322-8e47-e76e9a9de002
+		lineageTag: 8d7a5d36-fb47-4065-95b9-498ef7ed7717
 		annotation SummarizationSetBy = User
 
 	column units
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: units
-		lineageTag: 1a2faf84-fc7d-4bbd-8880-8287fe28e59f
+		lineageTag: c87730fb-a82c-467b-bd48-fabc23465749
 		annotation SummarizationSetBy = User
 
 	column gross_sales
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: gross_sales
-		lineageTag: d6f79205-3850-469e-8aca-dd2d2eec3f72
+		lineageTag: 85fb11af-61d1-488d-b49f-c600504ab80e
 		annotation SummarizationSetBy = User
 
 	column discount
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: discount
-		lineageTag: be8c938d-bf17-4d58-afcf-a7497b475d06
+		lineageTag: b8f25fb1-c7bb-42a8-86e6-ff00b37108c2
 		annotation SummarizationSetBy = User
 
 	column returns
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: returns
-		lineageTag: 04348d81-b0b0-4f56-a366-e6c954f3b25c
+		lineageTag: c60fff49-8c52-49ac-8860-e74674076f42
 		annotation SummarizationSetBy = User
 
 	column net_sales
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: net_sales
-		lineageTag: 02fcd172-d174-4ab2-9ffe-66f04d58a10f
+		lineageTag: 0394ad0d-1eac-4301-8889-a4728aaf84d6
 		annotation SummarizationSetBy = User
 
 	column cogs
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: cogs
-		lineageTag: f3eeaf99-3400-4902-870d-1d42a529916a
+		lineageTag: 994066e2-dd86-4d71-8a72-07b42d14ecff
 		annotation SummarizationSetBy = User
 
 	column freight
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: freight
-		lineageTag: 6efd1bc3-052c-475d-8790-3e1b1c234a3d
+		lineageTag: e8851c7d-f433-4499-b0b1-55e0c45ed864
 		annotation SummarizationSetBy = User
 
 	column payment_fee
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: payment_fee
-		lineageTag: d57c85a0-a3e3-4bd5-a6ed-5988631edb0e
+		lineageTag: 72caaad8-2acb-49ed-a779-c9f04a19971a
 		annotation SummarizationSetBy = User
 
 	column commission
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: commission
-		lineageTag: 6f9246fb-aef5-4e52-b416-29b58d3843c6
+		lineageTag: 9800d5a7-5bdd-4735-b9e6-352056b0dc47
 		annotation SummarizationSetBy = User
 
 	column trade_spend
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: trade_spend
-		lineageTag: d42cc855-d10a-4d40-8c61-bf4d65e98d7c
+		lineageTag: 57022d05-c982-4b2f-833e-d51e87e672ae
 		annotation SummarizationSetBy = User
 
 	column contribution_margin
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: contribution_margin
-		lineageTag: 72e54679-9140-48d7-b51f-e0813213bcf8
+		lineageTag: 4721589f-0460-44bc-8637-4c8b10f1e0af
 		annotation SummarizationSetBy = User
 
 	column promo_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: promo_id
-		lineageTag: 4c26281d-6d8c-4050-881d-289bbd6b5224
+		lineageTag: 1ae8857e-b203-46de-85ee-6cfeb46acb2c
 		annotation SummarizationSetBy = User
 
 	column is_stockout
 		dataType: boolean
 		summarizeBy: none
 		sourceColumn: is_stockout
-		lineageTag: e2a45b6d-3912-4a39-9447-58d41c08efa4
+		lineageTag: 5bbd75c5-a5bd-48b0-b796-76f8b8a5e878
 		annotation SummarizationSetBy = User
 
 	column is_intercompany
 		dataType: boolean
 		summarizeBy: none
 		sourceColumn: is_intercompany
-		lineageTag: 5c57d5c0-4820-4cc9-a5df-188910f0c0d2
+		lineageTag: 0e47c7eb-8ac4-44e8-831d-f250bc660326
 		annotation SummarizationSetBy = User
 
 	partition Sales = m

@@ -66,7 +66,7 @@
 | Source_Control: no blank cells | PASS | 0 |
 | Source_Control: types parse | PASS |  |
 | Source_Control: primary key unique | PASS | 0 |
-| Scenario Selector: headers exact | PASS | expected 1, got 1; order-independent |
+| Scenario Selector: headers exact | PASS | expected 7, got 7; order-independent |
 | Scenario Selector: non-empty | PASS | 5 |
 | Scenario Selector: no blank cells | PASS | 0 |
 | Scenario Selector: types parse | PASS |  |

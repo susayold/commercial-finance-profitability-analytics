@@ -279,8 +279,33 @@ IF OBJECT_ID(N'finance.Scenario_Selector', N'U') IS NULL
 BEGIN
     CREATE TABLE finance.Scenario_Selector (
         scenario nvarchar(40) NOT NULL,
+        base_case nvarchar(40) NOT NULL,
+        revenue_multiplier decimal(12,6) NOT NULL,
+        cogs_multiplier decimal(12,6) NOT NULL,
+        opex_multiplier decimal(12,6) NOT NULL,
+        working_capital_days_delta decimal(12,6) NOT NULL,
+        scenario_note nvarchar(240) NULL,
         CONSTRAINT PK_finance_Scenario_Selector PRIMARY KEY CLUSTERED (scenario)
     );
+END;
+GO
+
+/* Add the scenario driver columns when upgrading an existing DirectQuery
+   rehearsal database created from the one-column selector contract. */
+IF OBJECT_ID(N'finance.Scenario_Selector', N'U') IS NOT NULL
+BEGIN
+    IF COL_LENGTH(N'finance.Scenario_Selector', N'base_case') IS NULL
+        ALTER TABLE finance.Scenario_Selector ADD base_case nvarchar(40) NOT NULL CONSTRAINT DF_Scenario_Selector_base_case DEFAULT N'Actual';
+    IF COL_LENGTH(N'finance.Scenario_Selector', N'revenue_multiplier') IS NULL
+        ALTER TABLE finance.Scenario_Selector ADD revenue_multiplier decimal(12,6) NOT NULL CONSTRAINT DF_Scenario_Selector_revenue_multiplier DEFAULT (1.0);
+    IF COL_LENGTH(N'finance.Scenario_Selector', N'cogs_multiplier') IS NULL
+        ALTER TABLE finance.Scenario_Selector ADD cogs_multiplier decimal(12,6) NOT NULL CONSTRAINT DF_Scenario_Selector_cogs_multiplier DEFAULT (1.0);
+    IF COL_LENGTH(N'finance.Scenario_Selector', N'opex_multiplier') IS NULL
+        ALTER TABLE finance.Scenario_Selector ADD opex_multiplier decimal(12,6) NOT NULL CONSTRAINT DF_Scenario_Selector_opex_multiplier DEFAULT (1.0);
+    IF COL_LENGTH(N'finance.Scenario_Selector', N'working_capital_days_delta') IS NULL
+        ALTER TABLE finance.Scenario_Selector ADD working_capital_days_delta decimal(12,6) NOT NULL CONSTRAINT DF_Scenario_Selector_wc_days_delta DEFAULT (0.0);
+    IF COL_LENGTH(N'finance.Scenario_Selector', N'scenario_note') IS NULL
+        ALTER TABLE finance.Scenario_Selector ADD scenario_note nvarchar(240) NULL;
 END;
 GO
 
@@ -290,14 +315,14 @@ BEGIN
         company                    nvarchar(160) NOT NULL,
         ticker                     nvarchar(40)  NOT NULL,
         fiscal_year                int           NOT NULL,
-        net_revenue_vnd_bn         decimal(19,4) NULL,
-        gross_profit_vnd_bn        decimal(19,4) NULL,
-        operating_profit_vnd_bn    decimal(19,4) NULL,
-        profit_before_tax_vnd_bn   decimal(19,4) NULL,
-        profit_after_tax_vnd_bn    decimal(19,4) NULL,
-        total_assets_vnd_bn        decimal(19,4) NULL,
-        owners_equity_vnd_bn       decimal(19,4) NULL,
-        operating_cash_flow_vnd_bn decimal(19,4) NULL,
+        net_revenue_vnd_bn         decimal(28,9) NULL,
+        gross_profit_vnd_bn        decimal(28,9) NULL,
+        operating_profit_vnd_bn    decimal(28,9) NULL,
+        profit_before_tax_vnd_bn   decimal(28,9) NULL,
+        profit_after_tax_vnd_bn    decimal(28,9) NULL,
+        total_assets_vnd_bn        decimal(28,9) NULL,
+        owners_equity_vnd_bn       decimal(28,9) NULL,
+        operating_cash_flow_vnd_bn decimal(28,9) NULL,
         source_status              nvarchar(80)  NOT NULL,
         source_layer               nvarchar(80)  NOT NULL,
         revenue_basis              nvarchar(120) NOT NULL,

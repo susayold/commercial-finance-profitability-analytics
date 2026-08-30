@@ -190,6 +190,10 @@ def main() -> int:
             python_command(root, "scripts/validate_powerbi_measure_column_collisions.py"),
             root,
         )
+        stages["scenario_drivers"] = run_command(
+            python_command(root, "scripts/validate_powerbi_scenario_drivers.py", "--json", str(temp / "scenario_driver.json"), "--markdown", str(temp / "scenario_driver.md")),
+            root,
+        )
         stages["release_record"] = run_command(
             python_command(root, "scripts/validate_powerbi_release_record.py"),
             root,
@@ -223,6 +227,7 @@ def main() -> int:
         "directquery_health_contract",
         "service_workflow_contract",
         "measure_column_collisions",
+        "scenario_drivers",
         "release_record",
     )
     deterministic_ok = all(stages[name]["status"] == "PASS" and stages[name]["exit_code"] == 0 for name in deterministic_names)

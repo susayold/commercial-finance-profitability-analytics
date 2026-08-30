@@ -1,12 +1,54 @@
 table 'Scenario Selector'
-	lineageTag: 4bea8ac0-1c4a-4244-bef3-5aeef9a98d9f
+	lineageTag: 25afe601-bd24-4c0c-94dc-cdf1c3233bfa
 
 	column scenario
 		dataType: string
 		isKey
 		summarizeBy: none
 		sourceColumn: scenario
-		lineageTag: 67c6eafb-68c7-449e-a3a7-cc8d359dbed1
+		lineageTag: 93622fe0-126c-40c5-b731-eef3bd96ab0d
+		annotation SummarizationSetBy = User
+
+	column base_case
+		dataType: string
+		summarizeBy: none
+		sourceColumn: base_case
+		lineageTag: 3aeb3ba5-0443-4820-9d80-46e3c4f1f333
+		annotation SummarizationSetBy = User
+
+	column revenue_multiplier
+		dataType: double
+		summarizeBy: none
+		sourceColumn: revenue_multiplier
+		lineageTag: 9a291ece-fa20-447e-bd5b-fc0a22bb6f55
+		annotation SummarizationSetBy = User
+
+	column cogs_multiplier
+		dataType: double
+		summarizeBy: none
+		sourceColumn: cogs_multiplier
+		lineageTag: 7e481fb7-1ff9-4203-9f48-769164b2d926
+		annotation SummarizationSetBy = User
+
+	column opex_multiplier
+		dataType: double
+		summarizeBy: none
+		sourceColumn: opex_multiplier
+		lineageTag: 156f09c9-017c-49eb-b982-640e579ecb8f
+		annotation SummarizationSetBy = User
+
+	column working_capital_days_delta
+		dataType: double
+		summarizeBy: none
+		sourceColumn: working_capital_days_delta
+		lineageTag: f5be8e85-1a4d-4700-80f3-6787ba7f32ca
+		annotation SummarizationSetBy = User
+
+	column scenario_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: scenario_note
+		lineageTag: aae48bdd-23b9-4662-80da-00ca64cf80ea
 		annotation SummarizationSetBy = User
 
 	partition 'Scenario Selector' = m
@@ -15,7 +57,7 @@ table 'Scenario Selector'
 			let
 			    Source = Csv.Document(File.Contents(DataRoot & "\\scenario_selector.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-			    Typed = Table.TransformColumnTypes(Promoted, {{"scenario", type text}}, "en-US")
+			    Typed = Table.TransformColumnTypes(Promoted, {{"scenario", type text}, {"base_case", type text}, {"revenue_multiplier", type number}, {"cogs_multiplier", type number}, {"opex_multiplier", type number}, {"working_capital_days_delta", type number}, {"scenario_note", type text}}, "en-US")
 			in
 			    Typed
 

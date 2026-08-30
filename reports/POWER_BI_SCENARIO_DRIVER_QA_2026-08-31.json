@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "evidence_boundary": "Static source-data arithmetic; native Power BI Desktop visual QA remains a separate gate.",
+  "source_totals_vnd": {
+    "actual": {
+      "revenue": 37824186837.0,
+      "cogs": 19665238767.0,
+      "opex": 5303900000.0
+    },
+    "budget": {
+      "revenue": 40046591355.0,
+      "cogs": 19121185927.0,
+      "opex": 5275000000.0
+    },
+    "forecast": {
+      "revenue": 39472414911.0,
+      "cogs": 18060029369.0,
+      "opex": 5343000000.0
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "Actual",
+      "base_case": "Actual",
+      "revenue_multiplier": 1.0,
+      "cogs_multiplier": 1.0,
+      "opex_multiplier": 1.0,
+      "working_capital_days_delta": 0.0,
+      "scenario_revenue_vnd": 37824186837.0,
+      "scenario_ebitda_proxy_vnd": 12855048070.0,
+      "scenario_note": "Historical actual run-rate"
+    },
+    {
+      "scenario": "Budget",
+      "base_case": "Budget",
+      "revenue_multiplier": 1.0,
+      "cogs_multiplier": 1.0,
+      "opex_multiplier": 1.0,
+      "working_capital_days_delta": 0.0,
+      "scenario_revenue_vnd": 40046591355.0,
+      "scenario_ebitda_proxy_vnd": 15650405428.0,
+      "scenario_note": "Approved operating plan baseline"
+    },
+    {
+      "scenario": "Forecast",
+      "base_case": "Forecast",
+      "revenue_multiplier": 1.0,
+      "cogs_multiplier": 1.0,
+      "opex_multiplier": 1.0,
+      "working_capital_days_delta": 0.0,
+      "scenario_revenue_vnd": 39472414911.0,
+      "scenario_ebitda_proxy_vnd": 16069385542.0,
+      "scenario_note": "Latest rolling outlook baseline"
+    },
+    {
+      "scenario": "Upside",
+      "base_case": "Forecast",
+      "revenue_multiplier": 1.08,
+      "cogs_multiplier": 1.03,
+      "opex_multiplier": 0.97,
+      "working_capital_days_delta": -2.0,
+      "scenario_revenue_vnd": 42630208103.88,
+      "scenario_ebitda_proxy_vnd": 18845667853.81,
+      "scenario_note": "Forecast base plus volume and productivity upside"
+    },
+    {
+      "scenario": "Downside",
+      "base_case": "Forecast",
+      "revenue_multiplier": 0.92,
+      "cogs_multiplier": 1.04,
+      "opex_multiplier": 1.05,
+      "working_capital_days_delta": 3.0,
+      "scenario_revenue_vnd": 36314621718.12,
+      "scenario_ebitda_proxy_vnd": 11922041174.36,
+      "scenario_note": "Forecast base with demand pressure and cost inflation"
+    }
+  ],
+  "checks": [
+    {
+      "name": "driver columns are present",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "five scenario rows are present",
+      "status": "PASS",
+      "detail": "[\"Actual\", \"Budget\", \"Downside\", \"Forecast\", \"Upside\"]"
+    },
+    {
+      "name": "base cases resolve to source totals",
+      "status": "PASS",
+      "detail": "Actual/Budget/Forecast source totals"
+    },
+    {
+      "name": "Upside and Downside are non-neutral",
+      "status": "PASS",
+      "detail": "Forecast base multiplied by 1.08 / 0.92"
+    },
+    {
+      "name": "Upside EBITDA exceeds Downside",
+      "status": "PASS",
+      "detail": "driver arithmetic direction"
+    }
+  ]
+}

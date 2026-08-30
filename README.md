@@ -491,7 +491,7 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 
 ## Latest website release
 
-- Site V16 is the current polish release: tighter page rhythm, responsive navigation, aligned cards, improved focus/hover states and corrected Valuation-to-footer flow. The Power BI card now reflects the extended 20-table / 60-measure scope.
+- Site V16 is the current polish release: tighter page rhythm, responsive navigation, aligned cards, improved focus/hover states and corrected Valuation-to-footer flow. The Power BI card now reflects the extended 20-table / 60-measure scope. The extended scenario selector now exposes finance-owned base-case and revenue/COGS/OPEX driver columns, so changing the scenario CSV and refreshing produces genuine Upside/Downside sensitivities.
 - Site V13 adds a direct recruiter-facing Download CV link to the canonical one-page PDF: [release record](reports/SITE_V13_RELEASE_RECORD_2026-08-30.md).
 - [Drive V13 release record](https://drive.google.com/file/d/1Lid3UcV8pPe2UG1X0----a9a9NXyucr2/view?usp=drivesdk) · [Drive V13 source archive](https://drive.google.com/file/d/1Z930nM9IGdePJtaDS0cJPYdpfZbWhGo2/view?usp=drivesdk)
 - Site V12 adds the Equity Research Rehearsal lens (thesis, earnings-quality bridge, scorecard, catalysts, risks and diligence map): [release record](reports/SITE_V12_RELEASE_RECORD_2026-08-30.md).

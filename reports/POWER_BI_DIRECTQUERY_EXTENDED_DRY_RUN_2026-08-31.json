@@ -1,126 +1,94 @@
 {
-  "status": "DRY_RUN_PASS",
-  "mode": "dry-run",
-  "batch_id": "DQ_20260830T211601Z",
-  "source_watermark_utc": "2026-08-30T21:16:01Z",
-  "physical_table_count": 19,
-  "source_row_count": 29923,
-  "source_hash_sha256": "408f238972099fd332e094a3b7170b38d2a0c6cd5dc01b2a56b7f5c4988f0664",
-  "tables": [
-    {
-      "table": "Product",
-      "file": "product_master.csv",
-      "rows": 36,
-      "sha256": "57225e1ebe43cd71b88a60f0c1937c9e1cde8ec51df3cf42d4fd666ca3788d39"
+  "status": "PASS",
+  "mode": "two_batch_localdb_smoke",
+  "instance": "VNFinanceDQ_SMOKE_20260830215229",
+  "database": "VNFinanceDQ_SMOKE_20260830215229",
+  "claim_boundary": "integration evidence only; not production realtime or Power BI Automatic Page Refresh",
+  "ddl_batches": 25,
+  "base": {
+    "batch_id": "DQ_LOCALDB_TWO_BATCH_BASE_20260830T215229Z",
+    "health": {
+      "batch_id": "DQ_LOCALDB_TWO_BATCH_BASE_20260830T215229Z",
+      "status": "SUCCEEDED",
+      "source_watermark_utc": "2026-08-30 21:52:35.000",
+      "load_started_utc": "2026-08-30 21:52:35.750",
+      "load_completed_utc": "2026-08-30 21:52:39.967",
+      "physical_table_count": 19,
+      "source_row_count": 29923,
+      "loaded_row_count": 29923,
+      "rejected_row_count": 0,
+      "source_hash_sha256": "65d523680e347114f777c5e89907fda306c1acca582cc6efa36860028bac792b",
+      "latency_minutes": 0,
+      "control_status": "PASS",
+      "control_reason": "CURRENT"
     },
-    {
-      "table": "Customer",
-      "file": "customer_master.csv",
-      "rows": 24,
-      "sha256": "c1e30396f92c69e5e8d42082646b7bb124d1ffbb55e7bba714b0eb0a60f5199b"
+    "metrics": {
+      "row_count": 6480,
+      "units": 1256859,
+      "net_sales": "37824186837.0000"
     },
-    {
-      "table": "Channel",
-      "file": "channel_master.csv",
-      "rows": 5,
-      "sha256": "2d9846cfe8c9fcc0ca7d0fc2ac61d00e404d6f58ec31b3a1be58cc8669cb95a9"
+    "source_hash_sha256": "65d523680e347114f777c5e89907fda306c1acca582cc6efa36860028bac792b"
+  },
+  "changed": {
+    "batch_id": "DQ_LOCALDB_TWO_BATCH_CHANGED_20260830T215229Z",
+    "health": {
+      "batch_id": "DQ_LOCALDB_TWO_BATCH_CHANGED_20260830T215229Z",
+      "status": "SUCCEEDED",
+      "source_watermark_utc": "2026-08-30 21:52:36.000",
+      "load_started_utc": "2026-08-30 21:52:40.640",
+      "load_completed_utc": "2026-08-30 21:52:45.887",
+      "physical_table_count": 19,
+      "source_row_count": 29923,
+      "loaded_row_count": 29923,
+      "rejected_row_count": 0,
+      "source_hash_sha256": "14f13a56aec3005fbbbd61936c702a9df2a476ffd8cfd724c5058b2115d4e286",
+      "latency_minutes": 0,
+      "control_status": "PASS",
+      "control_reason": "CURRENT"
     },
-    {
-      "table": "Sales",
-      "file": "sales_fact.csv",
-      "rows": 6480,
-      "sha256": "91dfed028b1dd0833861e02108acd6ed5258e0a891ec259cbc49aa111f3b4ce9"
+    "metrics": {
+      "row_count": 6480,
+      "units": 1256860,
+      "net_sales": "37824186837.0000"
     },
-    {
-      "table": "Commercial_Costs",
-      "file": "commercial_costs.csv",
-      "rows": 6480,
-      "sha256": "525d297dd768a51a59d4f497b01fea93b09a9dd2a252e354d521a3f3c2d2f223"
+    "source_hash_sha256": "14f13a56aec3005fbbbd61936c702a9df2a476ffd8cfd724c5058b2115d4e286"
+  },
+  "checks": {
+    "ddl_batches": {
+      "status": "PASS",
+      "value": 25
     },
-    {
-      "table": "Inventory",
-      "file": "inventory.csv",
-      "rows": 2592,
-      "sha256": "596bc96f73fe35c7a11ebd3defab0b1648540ef101bdfa53199d6ba0608b3c57"
+    "base_health_pass": {
+      "status": "PASS"
     },
-    {
-      "table": "Receivables",
-      "file": "receivables.csv",
-      "rows": 864,
-      "sha256": "f7131fd2187dc3f947056113e3b42394ae418077ee7dc9c2b2dcb4e2ad05fb26"
+    "changed_health_pass": {
+      "status": "PASS"
     },
-    {
-      "table": "Payables",
-      "file": "payables.csv",
-      "rows": 144,
-      "sha256": "0ed17e3f79d11f9679c9d03f9886334ea999f31876bc2b9aa721571a3db46bb5"
+    "latest_batch_is_changed": {
+      "status": "PASS"
     },
-    {
-      "table": "Debt",
-      "file": "debt.csv",
-      "rows": 72,
-      "sha256": "776c5cfcbd6e341f6afb205d5d885a20329650f63c6fe468d61f4b37566afa3c"
+    "row_count_stable": {
+      "status": "PASS"
     },
-    {
-      "table": "Budget",
-      "file": "budget.csv",
-      "rows": 6480,
-      "sha256": "ec9412048de0aa3fd2e57c80f2b370e1fd91b243357cb909cc7059e49425070b"
+    "units_delta_plus_one": {
+      "status": "PASS",
+      "observed": 1
     },
-    {
-      "table": "Forecast",
-      "file": "forecast.csv",
-      "rows": 6480,
-      "sha256": "606d90e1898e5dda7ff33d814d0f136f132fe524c6511b7f9255e4a4d7b6981f"
+    "source_hash_changed": {
+      "status": "PASS"
     },
-    {
-      "table": "Marketing",
-      "file": "marketing_spend.csv",
-      "rows": 180,
-      "sha256": "15a5698504f2496756b95ee70b230f7ce2fc1fb3fa311a04bfa98da217dfb736"
-    },
-    {
-      "table": "Promotions",
-      "file": "promotions.csv",
-      "rows": 1,
-      "sha256": "00a1498cfea6b67a0ee889e5ba021c948e153cd57e2e48ef21183fb76ffaed10"
-    },
-    {
-      "table": "Source_Control",
-      "file": "source_control.csv",
-      "rows": 10,
-      "sha256": "aa3716416395c34d90f9651ba014a1221c44f42521a1611add7623d802756a8e"
-    },
-    {
-      "table": "Scenario Selector",
-      "file": "scenario_selector.csv",
-      "rows": 5,
-      "sha256": "ca5f592704ad46ed41009457a861f336637716eba46666573867ea968112302a"
-    },
-    {
-      "table": "Peer_Benchmark",
-      "file": "peer_benchmark_approved_2016_2025.csv",
-      "rows": 30,
-      "sha256": "f4f6477c092ef5dbba77409291bf26026fc84a2137f0c461ea59a64adf5ad60b"
-    },
-    {
-      "table": "Peer_Review_Queue",
-      "file": "peer_extraction_queue.csv",
-      "rows": 25,
-      "sha256": "beb5b94f6dea007bba1131f5276f79bc8f2691b61b002bdcd79c9716c6deeb22"
-    },
-    {
-      "table": "OPEX_Headcount",
-      "file": "opex_headcount_planning_synthetic.csv",
-      "rows": 9,
-      "sha256": "78f472f47e94e5716f13f9910e4a48e63b7484881fbf6bd69901b1778dbe092f"
-    },
-    {
-      "table": "CAPEX_Projects",
-      "file": "capex_fixed_asset_planning_synthetic.csv",
-      "rows": 6,
-      "sha256": "ec29f2044801239c9adc8d301e0fdf1ee5356c529031fa5ece7f9c3b83e04ba0"
+    "changed_loaded_rows_tie": {
+      "status": "PASS"
     }
-  ],
-  "next_step": "Run with --apply --connection-string <secret-free reference> after applying the DirectQuery DDL."
+  },
+  "observed_health_query_seconds_after_commit": 0.014,
+  "health_query_latency": {
+    "samples": 10,
+    "p50_seconds": 0.0142,
+    "p95_seconds": 0.017,
+    "min_seconds": 0.0119,
+    "max_seconds": 0.0185,
+    "all_samples_exposed_changed_pass_batch": true
+  },
+  "temporary_instance_cleanup": "PASS"
 }

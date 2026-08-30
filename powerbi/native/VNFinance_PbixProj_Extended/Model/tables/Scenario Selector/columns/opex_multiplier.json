@@ -1,0 +1,12 @@
+{
+  "name": "opex_multiplier",
+  "dataType": "double",
+  "sourceColumn": "opex_multiplier",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

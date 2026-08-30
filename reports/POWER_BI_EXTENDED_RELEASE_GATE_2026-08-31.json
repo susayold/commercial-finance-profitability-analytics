@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "started_at_utc": "2026-08-30T21:13:29.540020+00:00",
-  "completed_at_utc": "2026-08-30T21:13:33.345868+00:00",
+  "started_at_utc": "2026-08-30T21:53:18.606441+00:00",
+  "completed_at_utc": "2026-08-30T21:53:22.301646+00:00",
   "repo_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831",
   "input_dir": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
   "data_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
@@ -12,6 +12,7 @@
       "exit_code": 0,
       "details": {
         "status": "PASS",
+        "scope": "extended",
         "checks": 98,
         "passed": 98,
         "failed": [],
@@ -44,7 +45,7 @@
       "details": {
         "status": "PASS",
         "mode": "finance_refresh_orchestrator",
-        "started_at_utc": "2026-08-30T21:13:30.215806+00:00",
+        "started_at_utc": "2026-08-30T21:53:19.233528+00:00",
         "input_dir": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
         "data_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
         "stages": {
@@ -54,12 +55,15 @@
             "exit_code": 0,
             "result": {
               "status": "PASS",
+              "scope": "extended",
+              "file_count": 19,
               "applied": false,
               "source_dir": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
               "data_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
-              "validated_at_utc": "2026-08-30T21:13:31.013901+00:00",
+              "validated_at_utc": "2026-08-30T21:53:19.976591+00:00",
               "validator": {
                 "status": "PASS",
+                "scope": "extended",
                 "checks": 98,
                 "passed": 98,
                 "failed": [],
@@ -165,10 +169,40 @@
                   "target_rows_before": 5
                 },
                 "source_control.csv": {
-                  "source_sha256": "aa3716416395c34d90f9651ba014a1221c44f42521a1611add7623d802756a8e",
+                  "source_sha256": "a32a2748809e269ed1d01f84dca07782535032164013457fba7d6583108bd6c1",
                   "source_rows": 10,
-                  "target_sha256_before": "aa3716416395c34d90f9651ba014a1221c44f42521a1611add7623d802756a8e",
+                  "target_sha256_before": "a32a2748809e269ed1d01f84dca07782535032164013457fba7d6583108bd6c1",
                   "target_rows_before": 10
+                },
+                "scenario_selector.csv": {
+                  "source_sha256": "d2eecb3d6403a0e6596809e91a877c445a4313a389ca61304f236652718b6ccf",
+                  "source_rows": 5,
+                  "target_sha256_before": "d2eecb3d6403a0e6596809e91a877c445a4313a389ca61304f236652718b6ccf",
+                  "target_rows_before": 5
+                },
+                "peer_benchmark_approved_2016_2025.csv": {
+                  "source_sha256": "f4f6477c092ef5dbba77409291bf26026fc84a2137f0c461ea59a64adf5ad60b",
+                  "source_rows": 30,
+                  "target_sha256_before": "f4f6477c092ef5dbba77409291bf26026fc84a2137f0c461ea59a64adf5ad60b",
+                  "target_rows_before": 30
+                },
+                "peer_extraction_queue.csv": {
+                  "source_sha256": "beb5b94f6dea007bba1131f5276f79bc8f2691b61b002bdcd79c9716c6deeb22",
+                  "source_rows": 25,
+                  "target_sha256_before": "beb5b94f6dea007bba1131f5276f79bc8f2691b61b002bdcd79c9716c6deeb22",
+                  "target_rows_before": 25
+                },
+                "opex_headcount_planning_synthetic.csv": {
+                  "source_sha256": "78f472f47e94e5716f13f9910e4a48e63b7484881fbf6bd69901b1778dbe092f",
+                  "source_rows": 9,
+                  "target_sha256_before": "78f472f47e94e5716f13f9910e4a48e63b7484881fbf6bd69901b1778dbe092f",
+                  "target_rows_before": 9
+                },
+                "capex_fixed_asset_planning_synthetic.csv": {
+                  "source_sha256": "ec29f2044801239c9adc8d301e0fdf1ee5356c529031fa5ece7f9c3b83e04ba0",
+                  "source_rows": 6,
+                  "target_sha256_before": "ec29f2044801239c9adc8d301e0fdf1ee5356c529031fa5ece7f9c3b83e04ba0",
+                  "target_rows_before": 6
                 }
               },
               "next_step": "Re-run with --apply, then refresh the report in Power BI Desktop"
@@ -186,7 +220,7 @@
           }
         },
         "claim_boundary": "Import refresh is automated; DirectQuery/APR and native PBIX evidence remain separate gates.",
-        "completed_at_utc": "2026-08-30T21:13:31.028093+00:00"
+        "completed_at_utc": "2026-08-30T21:53:19.989989+00:00"
       }
     },
     "package": {
@@ -210,7 +244,7 @@
           "refresh_columns": 22,
           "refresh_delta_vnd": "1000000",
           "refresh_referenced_csv": 19,
-          "pbit_bytes": 15866
+          "pbit_bytes": 16208
         }
       }
     },
@@ -406,6 +440,115 @@
         "evidence_boundary": "Static model-name check; it does not replace native Desktop open/refresh/render QA."
       }
     },
+    "scenario_drivers": {
+      "status": "PASS",
+      "exit_code": 0,
+      "details": {
+        "status": "PASS",
+        "evidence_boundary": "Static source-data arithmetic; native Power BI Desktop visual QA remains a separate gate.",
+        "source_totals_vnd": {
+          "actual": {
+            "revenue": 37824186837.0,
+            "cogs": 19665238767.0,
+            "opex": 5303900000.0
+          },
+          "budget": {
+            "revenue": 40046591355.0,
+            "cogs": 19121185927.0,
+            "opex": 5275000000.0
+          },
+          "forecast": {
+            "revenue": 39472414911.0,
+            "cogs": 18060029369.0,
+            "opex": 5343000000.0
+          }
+        },
+        "scenarios": [
+          {
+            "scenario": "Actual",
+            "base_case": "Actual",
+            "revenue_multiplier": 1.0,
+            "cogs_multiplier": 1.0,
+            "opex_multiplier": 1.0,
+            "working_capital_days_delta": 0.0,
+            "scenario_revenue_vnd": 37824186837.0,
+            "scenario_ebitda_proxy_vnd": 12855048070.0,
+            "scenario_note": "Historical actual run-rate"
+          },
+          {
+            "scenario": "Budget",
+            "base_case": "Budget",
+            "revenue_multiplier": 1.0,
+            "cogs_multiplier": 1.0,
+            "opex_multiplier": 1.0,
+            "working_capital_days_delta": 0.0,
+            "scenario_revenue_vnd": 40046591355.0,
+            "scenario_ebitda_proxy_vnd": 15650405428.0,
+            "scenario_note": "Approved operating plan baseline"
+          },
+          {
+            "scenario": "Forecast",
+            "base_case": "Forecast",
+            "revenue_multiplier": 1.0,
+            "cogs_multiplier": 1.0,
+            "opex_multiplier": 1.0,
+            "working_capital_days_delta": 0.0,
+            "scenario_revenue_vnd": 39472414911.0,
+            "scenario_ebitda_proxy_vnd": 16069385542.0,
+            "scenario_note": "Latest rolling outlook baseline"
+          },
+          {
+            "scenario": "Upside",
+            "base_case": "Forecast",
+            "revenue_multiplier": 1.08,
+            "cogs_multiplier": 1.03,
+            "opex_multiplier": 0.97,
+            "working_capital_days_delta": -2.0,
+            "scenario_revenue_vnd": 42630208103.88,
+            "scenario_ebitda_proxy_vnd": 18845667853.81,
+            "scenario_note": "Forecast base plus volume and productivity upside"
+          },
+          {
+            "scenario": "Downside",
+            "base_case": "Forecast",
+            "revenue_multiplier": 0.92,
+            "cogs_multiplier": 1.04,
+            "opex_multiplier": 1.05,
+            "working_capital_days_delta": 3.0,
+            "scenario_revenue_vnd": 36314621718.12,
+            "scenario_ebitda_proxy_vnd": 11922041174.36,
+            "scenario_note": "Forecast base with demand pressure and cost inflation"
+          }
+        ],
+        "checks": [
+          {
+            "name": "driver columns are present",
+            "status": "PASS",
+            "detail": ""
+          },
+          {
+            "name": "five scenario rows are present",
+            "status": "PASS",
+            "detail": "[\"Actual\", \"Budget\", \"Downside\", \"Forecast\", \"Upside\"]"
+          },
+          {
+            "name": "base cases resolve to source totals",
+            "status": "PASS",
+            "detail": "Actual/Budget/Forecast source totals"
+          },
+          {
+            "name": "Upside and Downside are non-neutral",
+            "status": "PASS",
+            "detail": "Forecast base multiplied by 1.08 / 0.92"
+          },
+          {
+            "name": "Upside EBITDA exceeds Downside",
+            "status": "PASS",
+            "detail": "driver arithmetic direction"
+          }
+        ]
+      }
+    },
     "release_record": {
       "status": "PASS",
       "exit_code": 0,
@@ -414,7 +557,7 @@
         "checks": 12,
         "passed": 12,
         "failed": [],
-        "head_short": "f518e8b",
+        "head_short": "30c7c0b",
         "evidence_boundary": "Record consistency only; it does not prove native Desktop or production Service execution."
       }
     },

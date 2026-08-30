@@ -1,60 +1,60 @@
 table Payables
-	lineageTag: f0c7e965-e313-4def-b304-13502e4c15a4
+	lineageTag: eedb91ba-9557-442a-b031-8eb28f8232b8
 
 	column month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: month
-		lineageTag: 56943cb3-fc4d-4f88-a553-d95c7cd052f4
+		lineageTag: c913c18a-7dec-40a5-a611-19b0a7d05fc0
 		annotation SummarizationSetBy = User
 
 	column supplier_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: supplier_id
-		lineageTag: be84946c-1ead-45a4-ad6b-ff4216c0db69
+		lineageTag: 3c1518bc-b101-4406-a8ff-417e57579852
 		annotation SummarizationSetBy = User
 
 	column opening_ap
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: opening_ap
-		lineageTag: 1f7a13bc-6d93-4bf9-a3ed-e34e38fa0882
+		lineageTag: 3e0570d9-abc6-43a8-8616-91802ce9f0d4
 		annotation SummarizationSetBy = User
 
 	column purchases
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: purchases
-		lineageTag: 1fa6434b-1b19-4906-85a1-39c92b238a5b
+		lineageTag: b936f832-188f-462c-87ae-58e5d30b5d41
 		annotation SummarizationSetBy = User
 
 	column cash_paid
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: cash_paid
-		lineageTag: 8ba19926-a032-4365-be12-b1bcd6eea70f
+		lineageTag: ca4a5d50-e50b-49ef-98d5-a7ac61ed779f
 		annotation SummarizationSetBy = User
 
 	column closing_ap
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: closing_ap
-		lineageTag: ec4a2e07-f632-47c9-a43f-b0af7e11e92b
+		lineageTag: 60e1fb23-dce2-41f5-8b84-2089a1386cd4
 		annotation SummarizationSetBy = User
 
 	column overdue_ap
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: overdue_ap
-		lineageTag: 73cf6ca6-29fa-48c9-b7b6-15cf9450de34
+		lineageTag: 69fa51a5-81d1-4641-af56-0a91c6be29f7
 		annotation SummarizationSetBy = User
 
 	column dpo
 		dataType: double
 		summarizeBy: none
 		sourceColumn: dpo
-		lineageTag: 1e015bcf-b13e-4ed8-8ffb-d7cc0ebbc11b
+		lineageTag: d0e4ac63-a11c-4392-a28d-d0ff6bec8efb
 		annotation SummarizationSetBy = User
 
 	partition Payables = m

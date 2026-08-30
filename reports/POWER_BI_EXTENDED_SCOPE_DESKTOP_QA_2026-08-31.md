@@ -26,7 +26,7 @@ does not silently promote a different binary.
 | PBIT opens | PASS | Desktop displayed the `DataRoot` parameter dialog; no encrypted/corrupt-template error after UTF-16LE container preservation. |
 | Parameter binding | PASS | `DataRoot` was set to the rehearsal folder and **Load** completed. |
 | Extended model hydration | PASS | Data pane exposed `Scenario Selector`, `Peer_Benchmark`, `Peer_Review_Queue`, `OPEX_Headcount` and `CAPEX_Projects` alongside the 15 baseline tables. |
-| Scenario interaction surface | PASS | Executive Output includes the five scenario rows (`Actual`, `Budget`, `Downside`, `Forecast`, `Upside`) and `Scenario Revenue` measure. |
+| Scenario interaction surface | PASS | Executive Output includes the five scenario rows (`Actual`, `Budget`, `Downside`, `Forecast`, `Upside`) and `Scenario Revenue` measure. The selected row now carries a base case plus editable revenue/COGS/OPEX multipliers. |
 | Planning calculations | PASS | Executive customer table showed `Scenario Revenue` and `EBITDA Proxy`; OPEX/CAPEX measures are present in the extended model. |
 | Baseline visual regression | PASS | Existing customer table continued to render values such as `CUST001` Net Revenue `1,913.9 M` and Contribution Margin `872.6 M`. |
 | Key integrity | PASS | Peer and CAPEX month-grain tables intentionally do not declare repeating ticker/project IDs as single-column primary keys. |
@@ -37,7 +37,7 @@ does not silently promote a different binary.
 The generated package contains **20 tables, 60 measures, 25 relationships,
 6 pages and 42 visuals**. The 19-file `DataRoot` contract adds:
 
-- `scenario_selector.csv` (disconnected selector);
+- `scenario_selector.csv` (disconnected selector with base-case and editable driver multipliers);
 - `opex_headcount_planning_synthetic.csv` (cost-centre/headcount bridge);
 - `capex_fixed_asset_planning_synthetic.csv` (approval, commitment, cash,
   depreciation, benefit and payback bridge);

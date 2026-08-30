@@ -266,6 +266,12 @@ TABLES = {
         "file": "scenario_selector.csv",
         "columns": cols(
             ("scenario", "string", {"isKey": True}),
+            ("base_case", "string", {}),
+            ("revenue_multiplier", "double", {}),
+            ("cogs_multiplier", "double", {}),
+            ("opex_multiplier", "double", {}),
+            ("working_capital_days_delta", "double", {}),
+            ("scenario_note", "string", {}),
         ),
     },
     "Peer_Benchmark": {
@@ -411,8 +417,23 @@ MEASURES = [
     ("Customer Rows", "COUNTROWS ( Customer )", "#,0"),
     ("Refresh Timestamp", "NOW ()", "yyyy-mm-dd hh:mm:ss"),
     ("Selected Scenario", 'SELECTEDVALUE ( \'Scenario Selector\'[scenario], "Actual" )', "@"),
-    ("Scenario Revenue", 'SWITCH ( [Selected Scenario], "Budget", [Budget Revenue], "Forecast", [Forecast Revenue], [Net Revenue] )', "#,0,,.0 M"),
-    ("EBITDA Proxy", "[Gross Profit] - [OPEX Actual]", "#,0,,.0 M"),
+    # Scenario Selector is deliberately disconnected.  The selected row
+    # supplies a finance-owned base case and editable driver multipliers, so
+    # Upside/Downside are real planning sensitivities rather than aliases for
+    # Actual.  Replacing scenario_selector.csv and refreshing is sufficient;
+    # the report topology does not need to be rebuilt.
+    ("Scenario Revenue", '''VAR Scenario = [Selected Scenario]
+VAR BaseCase = COALESCE ( CALCULATE ( SELECTEDVALUE ( 'Scenario Selector'[base_case] ), 'Scenario Selector'[scenario] = Scenario ), "Actual" )
+VAR BaseRevenue = SWITCH ( BaseCase, "Budget", [Budget Revenue], "Forecast", [Forecast Revenue], [Net Revenue] )
+VAR Multiplier = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[revenue_multiplier] ), 'Scenario Selector'[scenario] = Scenario ), 1 )
+RETURN BaseRevenue * Multiplier''', "#,0,,.0 M"),
+    ("EBITDA Proxy", '''VAR Scenario = [Selected Scenario]
+VAR BaseCase = COALESCE ( CALCULATE ( SELECTEDVALUE ( 'Scenario Selector'[base_case] ), 'Scenario Selector'[scenario] = Scenario ), "Actual" )
+VAR BaseCOGS = SWITCH ( BaseCase, "Budget", SUM ( Budget[budget_cogs] ), "Forecast", SUM ( Forecast[forecast_cogs] ), [COGS Total] )
+VAR BaseOPEX = SWITCH ( BaseCase, "Budget", [OPEX Budget], "Forecast", [OPEX Forecast], [OPEX Actual] )
+VAR COGSMultiplier = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[cogs_multiplier] ), 'Scenario Selector'[scenario] = Scenario ), 1 )
+VAR OPEXMultiplier = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[opex_multiplier] ), 'Scenario Selector'[scenario] = Scenario ), 1 )
+RETURN [Scenario Revenue] - BaseCOGS * COGSMultiplier - BaseOPEX * OPEXMultiplier''', "#,0,,.0 M"),
     ("OPEX Actual", "SUM ( OPEX_Headcount[opex_actual_vnd] )", "#,0,,.0 M"),
     ("OPEX Budget", "SUM ( OPEX_Headcount[opex_budget_vnd] )", "#,0,,.0 M"),
     ("OPEX Forecast", "SUM ( OPEX_Headcount[opex_forecast_vnd] )", "#,0,,.0 M"),
@@ -521,7 +542,7 @@ def create_source_control(data_dir: Path) -> None:
         ["CTRL-07", "CAPEX commitment/cash/payback bridge present", "PASS", "SIMULATED", "capex_fixed_asset_planning_synthetic.csv"],
         ["CTRL-08", "Peer benchmark rows are approved reported data", "PASS", "PUBLIC_REPORTED", "peer_benchmark_approved_2016_2025.csv"],
         ["CTRL-09", "Unapproved peer candidates remain in review queue", "PASS", "CONTROL", "peer_extraction_queue.csv"],
-        ["CTRL-10", "Scenario selector is disconnected by design", "PASS", "CONTROL", "scenario_selector.csv"],
+        ["CTRL-10", "Scenario selector is disconnected; base case and driver multipliers are editable", "PASS", "CONTROL", "scenario_selector.csv"],
     ]
     path = data_dir / "source_control.csv"
     with path.open("w", newline="", encoding="utf-8") as handle:
