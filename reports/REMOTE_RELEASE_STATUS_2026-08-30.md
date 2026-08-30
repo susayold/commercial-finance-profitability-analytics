@@ -139,3 +139,6 @@ QNS FY2021–FY2025 gross profit and owners' equity are now populated from the F
 - QNS summary Sheet (Drive): https://docs.google.com/spreadsheets/d/1N5Vwwp60war25MIBwpoPz2YaoB9d6OYDsgmJ6lqnXBo/edit
 - Updated normalized panel Sheet (Drive): https://docs.google.com/spreadsheets/d/11v8XpRNMCkaWkhqakjxh1Ao3E0yTP4cLP3Z3Jmg7Owg/edit
 - QNS FY2020 gross profit (VND 2,051bn) and owners' equity (VND 6,605bn) were added as a separately sourced page-32 cross-check; no audited-statement claim is made.
+
+
+- MCH remains intentionally blocked from the approved panel after a 59-row OCR review; the promotion gate and Drive memo are published for human follow-up.
