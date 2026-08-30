@@ -53,6 +53,15 @@ jobs:
             "$RUNNER_TEMP/gate_a_fixture_QA.md" \
             --mode=fixture
 
+      - name: Gate A fixture accuracy report
+        shell: bash
+        run: |
+          node scripts/build_live_forecast_accuracy_report.mjs \
+            data/forecast_snapshot_gate_a_unit_test.csv \
+            "$RUNNER_TEMP/gate_a_accuracy_fixture_report.md" \
+            --mode=fixture
+          grep -F "Release status: **FIXTURE_PASS_NOT_LIVE**" "$RUNNER_TEMP/gate_a_accuracy_fixture_report.md"
+
       - name: D2C unit economics QA
         shell: bash
         run: |
