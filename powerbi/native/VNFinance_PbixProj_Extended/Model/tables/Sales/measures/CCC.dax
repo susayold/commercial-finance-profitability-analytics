@@ -1,1 +1,3 @@
-[DSO] + [DIO] - [DPO]
+VAR Scenario = [Selected Scenario]
+VAR WorkingCapitalDelta = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[working_capital_days_delta] ), 'Scenario Selector'[scenario] = Scenario ), 0 )
+RETURN [DSO] + [DIO] - [DPO] + WorkingCapitalDelta

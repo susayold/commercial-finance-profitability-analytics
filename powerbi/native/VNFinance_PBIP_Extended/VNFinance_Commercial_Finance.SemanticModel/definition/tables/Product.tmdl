@@ -1,68 +1,68 @@
 table Product
-	lineageTag: 2d6a3226-395f-4dc7-ba43-7828e215d8fe
+	lineageTag: 9f118e5c-c11f-4e2e-b9a5-1272c71345de
 
 	column sku_id
 		dataType: string
 		isKey
 		summarizeBy: none
 		sourceColumn: sku_id
-		lineageTag: c1909191-3992-4295-aea4-bdae5c93b33a
+		lineageTag: 9f76faa1-16a9-4594-85f7-1f5b2b2bf656
 		annotation SummarizationSetBy = User
 
 	column brand
 		dataType: string
 		summarizeBy: none
 		sourceColumn: brand
-		lineageTag: 61a78524-50b9-4aa6-bd6e-45d4fee1841b
+		lineageTag: 94023355-146c-4a19-905b-19fd4e572448
 		annotation SummarizationSetBy = User
 
 	column category
 		dataType: string
 		summarizeBy: none
 		sourceColumn: category
-		lineageTag: f55e50aa-67ae-46b8-8e9a-40ba48f91965
+		lineageTag: 64f81b9f-6d08-4b14-9be0-d9851ff7ccbb
 		annotation SummarizationSetBy = User
 
 	column launch_month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: launch_month
-		lineageTag: 438ea68b-e703-490c-ae57-59455166cbdf
+		lineageTag: da2c87ed-76ad-4cdc-a656-1bb70a8b9e9f
 		annotation SummarizationSetBy = User
 
 	column list_price
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: list_price
-		lineageTag: 6f3e443e-b64d-4412-83b9-a77477b5edc3
+		lineageTag: 6ab35d7f-1557-4c22-ba45-df83e2955abe
 		annotation SummarizationSetBy = User
 
 	column pack_size
 		dataType: int64
 		summarizeBy: none
 		sourceColumn: pack_size
-		lineageTag: d58768d6-b862-491c-899a-b2359967070a
+		lineageTag: fb657775-65a2-4576-94b3-4b3e0d09896f
 		annotation SummarizationSetBy = User
 
 	column standard_cogs
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: standard_cogs
-		lineageTag: 5cd241ff-cea7-4847-baef-558721e7bf3b
+		lineageTag: 883ce084-3e5b-4515-aba4-f10966fd5d52
 		annotation SummarizationSetBy = User
 
 	column status
 		dataType: string
 		summarizeBy: none
 		sourceColumn: status
-		lineageTag: e264a158-904f-4527-a0c0-8a3ac040e2d3
+		lineageTag: 79caed1b-d008-4b5a-a89b-d6982e836b4b
 		annotation SummarizationSetBy = User
 
 	column supplier_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: supplier_id
-		lineageTag: 2374d1b0-3621-46dc-a39c-8617cd86638f
+		lineageTag: 860af870-b79c-414d-b95a-005c80ec5887
 		annotation SummarizationSetBy = User
 
 	partition Product = m

@@ -1,130 +1,130 @@
 table Peer_Benchmark
-	lineageTag: abedc8a9-b9e1-49bb-9eae-641a529f0ab9
+	lineageTag: c6802a4f-e8b6-4c4b-99d4-b6cecd92b067
 
 	column company
 		dataType: string
 		summarizeBy: none
 		sourceColumn: company
-		lineageTag: 9b3a3d31-9a9c-4582-980b-f21c0f19b1bc
+		lineageTag: 3ea243e8-85be-4969-afeb-735f9e871d66
 		annotation SummarizationSetBy = User
 
 	column ticker
 		dataType: string
 		summarizeBy: none
 		sourceColumn: ticker
-		lineageTag: 5403072e-251e-4656-be90-f01e312ddb89
+		lineageTag: 44d8f632-b02a-4322-8a99-9d7ae912f402
 		annotation SummarizationSetBy = User
 
 	column fiscal_year
 		dataType: int64
 		summarizeBy: none
 		sourceColumn: fiscal_year
-		lineageTag: 17f091b0-cb0e-4eeb-91dc-1bbd060bd245
+		lineageTag: 32236419-6211-493b-96d1-6216be11fd99
 		annotation SummarizationSetBy = User
 
 	column net_revenue_vnd_bn
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: net_revenue_vnd_bn
-		lineageTag: 19d6d18c-5dbc-4559-8e74-4fde2e06f64d
+		lineageTag: 05484e29-12a4-4a4d-94ac-87998c5e31c1
 		annotation SummarizationSetBy = User
 
 	column gross_profit_vnd_bn
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: gross_profit_vnd_bn
-		lineageTag: 6c3c30a6-39a8-4b74-855f-5efa493ecee4
+		lineageTag: e88a88be-adc7-42f9-8ef1-d3a02dc5d794
 		annotation SummarizationSetBy = User
 
 	column operating_profit_vnd_bn
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: operating_profit_vnd_bn
-		lineageTag: bca1d844-a08b-4f2e-845b-231c9518966c
+		lineageTag: 49bb1c48-daa9-478b-94de-c17e3797067d
 		annotation SummarizationSetBy = User
 
 	column profit_before_tax_vnd_bn
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: profit_before_tax_vnd_bn
-		lineageTag: f9ea5f73-d87e-4962-996e-66cbf05f47dc
+		lineageTag: 0d847a99-b8fb-4512-b9c3-cb8572bab640
 		annotation SummarizationSetBy = User
 
 	column profit_after_tax_vnd_bn
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: profit_after_tax_vnd_bn
-		lineageTag: bbe5b745-e7a2-41fc-b253-77e6a892de56
+		lineageTag: 6861a26d-2146-4bea-8b03-2f872ebbc813
 		annotation SummarizationSetBy = User
 
 	column total_assets_vnd_bn
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: total_assets_vnd_bn
-		lineageTag: 8bca4b5e-fdcb-4fc5-8e85-8d409dcf380f
+		lineageTag: 12331bde-8157-4f04-9485-d1645a4029c6
 		annotation SummarizationSetBy = User
 
 	column owners_equity_vnd_bn
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: owners_equity_vnd_bn
-		lineageTag: 417d07d0-7596-4621-97a2-0f18c6ce0e23
+		lineageTag: c0c0d912-d498-40f7-9b75-d08d9b8a9805
 		annotation SummarizationSetBy = User
 
 	column operating_cash_flow_vnd_bn
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: operating_cash_flow_vnd_bn
-		lineageTag: c06ed2be-b574-4e7f-a21f-32cc24a2b86c
+		lineageTag: a194be8c-1382-46dc-95f9-54fce18840b8
 		annotation SummarizationSetBy = User
 
 	column source_status
 		dataType: string
 		summarizeBy: none
 		sourceColumn: source_status
-		lineageTag: e7c54b37-df76-40a7-a9b5-74b8932342bf
+		lineageTag: 5162f6e5-5165-4f8c-b62a-7955f5d1a17e
 		annotation SummarizationSetBy = User
 
 	column source_layer
 		dataType: string
 		summarizeBy: none
 		sourceColumn: source_layer
-		lineageTag: e173cd31-46d0-499a-9d8f-43dddf69c820
+		lineageTag: dd075105-6e4d-48fc-bb2a-7cc46c1165c7
 		annotation SummarizationSetBy = User
 
 	column revenue_basis
 		dataType: string
 		summarizeBy: none
 		sourceColumn: revenue_basis
-		lineageTag: 56adc16f-02fd-4264-82bc-d18fcdbf70b1
+		lineageTag: 37349ac4-072e-44c9-a8a9-19dd0016daec
 		annotation SummarizationSetBy = User
 
 	column source_document
 		dataType: string
 		summarizeBy: none
 		sourceColumn: source_document
-		lineageTag: 9d924a73-d937-4a62-a224-b592fe0862cf
+		lineageTag: 345aac04-f055-4307-be7e-6816114532da
 		annotation SummarizationSetBy = User
 
 	column source_url
 		dataType: string
 		summarizeBy: none
 		sourceColumn: source_url
-		lineageTag: 3aee5cc4-4779-45e4-bc88-481c1bf1c2ed
+		lineageTag: 6a1dae51-1acc-4493-9c43-960fe60dfc3a
 		annotation SummarizationSetBy = User
 
 	column page_anchor
 		dataType: string
 		summarizeBy: none
 		sourceColumn: page_anchor
-		lineageTag: 831cf0d3-b3a1-45fe-b7cb-f54d3faa8f6c
+		lineageTag: 6862473c-c35d-4c2d-9129-2fee3719d69c
 		annotation SummarizationSetBy = User
 
 	column comparability_note
 		dataType: string
 		summarizeBy: none
 		sourceColumn: comparability_note
-		lineageTag: 19335484-8d44-4c37-aeda-25c49c9dda64
+		lineageTag: a5e8971b-982c-40d9-ad5c-e44118a9d1d9
 		annotation SummarizationSetBy = User
 
 	partition Peer_Benchmark = m

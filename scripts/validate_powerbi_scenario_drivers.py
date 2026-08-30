@@ -75,6 +75,7 @@ def main() -> int:
             "cogs_multiplier": cogs_multiplier,
             "opex_multiplier": opex_multiplier,
             "working_capital_days_delta": float(row["working_capital_days_delta"]),
+            "scenario_ccc_delta_days": float(row["working_capital_days_delta"]),
             "scenario_revenue_vnd": round(scenario_revenue, 2),
             "scenario_ebitda_proxy_vnd": round(scenario_ebitda, 2),
             "scenario_note": row["scenario_note"],
@@ -83,6 +84,7 @@ def main() -> int:
     by_name = {item["scenario"]: item for item in outputs}
     add("base cases resolve to source totals", all(item["base_case"] in bases for item in outputs), "Actual/Budget/Forecast source totals")
     add("Upside and Downside are non-neutral", by_name["Upside"]["scenario_revenue_vnd"] != by_name["Forecast"]["scenario_revenue_vnd"] and by_name["Downside"]["scenario_revenue_vnd"] != by_name["Forecast"]["scenario_revenue_vnd"], "Forecast base multiplied by 1.08 / 0.92")
+    add("working-capital deltas are non-neutral", by_name["Upside"]["scenario_ccc_delta_days"] < 0 and by_name["Downside"]["scenario_ccc_delta_days"] > 0, "CCC adds -2.0 / +3.0 days")
     add("Upside EBITDA exceeds Downside", by_name["Upside"]["scenario_ebitda_proxy_vnd"] > by_name["Downside"]["scenario_ebitda_proxy_vnd"], "driver arithmetic direction")
 
     payload = {
@@ -105,11 +107,11 @@ def main() -> int:
         "",
         "The disconnected selector now chooses a base case and applies finance-owned revenue, COGS and OPEX multipliers. Replace the CSV and refresh the extended PBIT/PBIP to recalculate the same measures.",
         "",
-        "| Scenario | Base | Revenue multiplier | COGS multiplier | OPEX multiplier | Scenario revenue (VND) | EBITDA proxy (VND) |",
-        "|---|---|---:|---:|---:|---:|---:|",
+        "| Scenario | Base | Revenue multiplier | COGS multiplier | OPEX multiplier | CCC delta (days) | Scenario revenue (VND) | EBITDA proxy (VND) |",
+        "|---|---|---:|---:|---:|---:|---:|---:|",
     ]
     lines.extend(
-        f"| {item['scenario']} | {item['base_case']} | {item['revenue_multiplier']:.2f} | {item['cogs_multiplier']:.2f} | {item['opex_multiplier']:.2f} | {item['scenario_revenue_vnd']:,.0f} | {item['scenario_ebitda_proxy_vnd']:,.0f} |"
+        f"| {item['scenario']} | {item['base_case']} | {item['revenue_multiplier']:.2f} | {item['cogs_multiplier']:.2f} | {item['opex_multiplier']:.2f} | {item['scenario_ccc_delta_days']:+.1f} | {item['scenario_revenue_vnd']:,.0f} | {item['scenario_ebitda_proxy_vnd']:,.0f} |"
         for item in outputs
     )
     lines += ["", "## Checks", "", "| Check | Result | Detail |", "|---|---|---|"]

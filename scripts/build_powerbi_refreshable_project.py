@@ -409,7 +409,9 @@ MEASURES = [
     ("DSO", "CALCULATE ( AVERAGE ( Receivables[dso] ), LASTDATE ( Calendar[month] ) )", "0.0"),
     ("DIO", "CALCULATE ( AVERAGE ( Inventory[days_on_hand] ), LASTDATE ( Calendar[month] ) )", "0.0"),
     ("DPO", "CALCULATE ( AVERAGE ( Payables[dpo] ), LASTDATE ( Calendar[month] ) )", "0.0"),
-    ("CCC", "[DSO] + [DIO] - [DPO]", "0.0"),
+    ("CCC", '''VAR Scenario = [Selected Scenario]
+VAR WorkingCapitalDelta = COALESCE ( CALCULATE ( MAX ( 'Scenario Selector'[working_capital_days_delta] ), 'Scenario Selector'[scenario] = Scenario ), 0 )
+RETURN [DSO] + [DIO] - [DPO] + WorkingCapitalDelta''', "0.0"),
     ("Debt Balance", "CALCULATE ( SUM ( Debt[closing_balance] ), LASTDATE ( Calendar[month] ) )", "#,0,,.0 M"),
     ("Covenant Headroom", "CALCULATE ( SUM ( Debt[covenant_headroom] ), LASTDATE ( Calendar[month] ) )", "#,0,,.0 M"),
     ("Sales Rows", "COUNTROWS ( Sales )", "#,0"),

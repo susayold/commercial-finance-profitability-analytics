@@ -1,74 +1,74 @@
 table Marketing
-	lineageTag: 9f9b554b-d576-4758-af76-45dd4a2916e7
+	lineageTag: 332e8d05-9aae-4170-8feb-3d1c64ae20f5
 
 	column month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: month
-		lineageTag: c17618fe-e363-472a-bfef-a60f7285859c
+		lineageTag: 93004c99-c14d-4163-888b-eb6e10b408fe
 		annotation SummarizationSetBy = User
 
 	column channel_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: channel_id
-		lineageTag: 83ea899e-4bca-453b-bfbd-c3e0dd1105b4
+		lineageTag: 5af62354-a5eb-4000-b1f1-03ed03dd9101
 		annotation SummarizationSetBy = User
 
 	column campaign_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: campaign_id
-		lineageTag: 307400ff-8214-407c-ad68-b989e1ea7f71
+		lineageTag: 5a89a439-94d9-4bfa-b38c-7a58fc8d4bc3
 		annotation SummarizationSetBy = User
 
 	column spend
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: spend
-		lineageTag: 6f3cbeb9-90a4-49a7-a573-e4a2a7b50dbe
+		lineageTag: 5e08b3eb-3b1b-4989-b846-16ba1339017d
 		annotation SummarizationSetBy = User
 
 	column impressions
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: impressions
-		lineageTag: de02ebba-e93c-46ec-9437-a0be83b360c3
+		lineageTag: 6b16cc0e-a2e1-48d5-a0e1-d4f562d9031b
 		annotation SummarizationSetBy = User
 
 	column clicks
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: clicks
-		lineageTag: 45e7b0dc-b564-43be-abf3-baf1adf0ef38
+		lineageTag: 4d2bc3ea-a149-4aaf-b34c-a5144bf230ef
 		annotation SummarizationSetBy = User
 
 	column orders
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: orders
-		lineageTag: d49e5964-36a3-44b7-a45b-96ff8ba26bfb
+		lineageTag: b9ea7689-7acc-4196-8f3c-e2bc6d71f06f
 		annotation SummarizationSetBy = User
 
 	column attributed_net_sales
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: attributed_net_sales
-		lineageTag: c3042025-5ce6-4181-89c4-2935af12c0d2
+		lineageTag: 2e860bda-a983-4ca1-88a3-0b103a35886d
 		annotation SummarizationSetBy = User
 
 	column cac
 		dataType: double
 		summarizeBy: none
 		sourceColumn: cac
-		lineageTag: e2021327-2582-47c9-8d46-4d896949a981
+		lineageTag: f5382d69-1697-4070-8798-67af5bd0dc5d
 		annotation SummarizationSetBy = User
 
 	column roas
 		dataType: double
 		summarizeBy: none
 		sourceColumn: roas
-		lineageTag: 4f74b038-91aa-424a-ad43-658e7a006508
+		lineageTag: 83154bff-ae94-47e4-854e-0afca77e4bf4
 		annotation SummarizationSetBy = User
 
 	partition Marketing = m

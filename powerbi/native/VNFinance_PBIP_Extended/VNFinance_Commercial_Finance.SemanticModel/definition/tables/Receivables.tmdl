@@ -1,81 +1,81 @@
 table Receivables
-	lineageTag: a5a5f685-1046-43a6-8941-8351a3872da8
+	lineageTag: 9dd13ad7-9526-465b-a434-74318a2c87dd
 
 	column month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: month
-		lineageTag: ac69051d-5613-4887-b961-c67b342ed0a7
+		lineageTag: e22bf61a-4959-4cb5-a4d2-f23fcb326e2b
 		annotation SummarizationSetBy = User
 
 	column customer_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: customer_id
-		lineageTag: f914d569-7ca3-414c-b613-9984b6724bdf
+		lineageTag: ca9fba39-df9d-4982-b34b-b6fd5451a2ac
 		annotation SummarizationSetBy = User
 
 	column opening_ar
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: opening_ar
-		lineageTag: a78edb6a-2976-44d0-8a3f-861e6ff0f830
+		lineageTag: 1b6edb6c-3a64-4343-a927-63ac36ccb487
 		annotation SummarizationSetBy = User
 
 	column invoiced
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: invoiced
-		lineageTag: edc7fc72-92da-445a-b166-41d269a69afe
+		lineageTag: c46f6a7c-71d7-4f78-bcbc-63d44ea9b8f5
 		annotation SummarizationSetBy = User
 
 	column cash_collected
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: cash_collected
-		lineageTag: b75d41b7-8354-45d5-9a82-87668b339986
+		lineageTag: 978a0458-c286-42e7-bac7-a01e1fc9ed36
 		annotation SummarizationSetBy = User
 
 	column credit_note
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: credit_note
-		lineageTag: 025fd885-20c3-40ae-84d3-9edb34d400f1
+		lineageTag: 971594f9-14c3-4f9c-a391-7321c2080bd9
 		annotation SummarizationSetBy = User
 
 	column closing_ar
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: closing_ar
-		lineageTag: 7cf6c5e6-6ebb-4d8f-8be6-610a66701fb4
+		lineageTag: bdb8686d-6bec-45c4-8637-ee772f7a7318
 		annotation SummarizationSetBy = User
 
 	column overdue_0_30
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: overdue_0_30
-		lineageTag: a7529301-7b25-4cc3-a3ed-6b5f4ee772d4
+		lineageTag: 6e54eb30-1242-4718-82b9-7090cbd5ab29
 		annotation SummarizationSetBy = User
 
 	column overdue_31_60
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: overdue_31_60
-		lineageTag: 5bd39e50-8847-4da2-94c1-4159e56ecd64
+		lineageTag: 54bcdcc9-1033-47a2-8037-82d7fe577b7b
 		annotation SummarizationSetBy = User
 
 	column overdue_61_plus
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: overdue_61_plus
-		lineageTag: c7b6ca76-4b6a-4634-b99d-6995ccf8b1e2
+		lineageTag: ca02eb48-5037-4664-98ef-a9542e4bd1f6
 		annotation SummarizationSetBy = User
 
 	column dso
 		dataType: double
 		summarizeBy: none
 		sourceColumn: dso
-		lineageTag: 47bfc586-cea1-4ea9-9a5c-36bd0097ac15
+		lineageTag: d1f1f3da-3f0c-47d9-aec4-2237f9dbb014
 		annotation SummarizationSetBy = User
 
 	partition Receivables = m

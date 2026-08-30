@@ -1,40 +1,40 @@
 table Source_Control
-	lineageTag: 2b744a85-5d17-45a3-8f15-cfaa691a8236
+	lineageTag: 020b54b2-88af-4734-9149-44681e407e93
 
 	column control_id
 		dataType: string
 		isKey
 		summarizeBy: none
 		sourceColumn: control_id
-		lineageTag: 3fae44b0-8170-42cb-bb5f-60e66a368f8b
+		lineageTag: 7a596fc2-e49e-4fbb-91bf-fbaf83d4415b
 		annotation SummarizationSetBy = User
 
 	column control_name
 		dataType: string
 		summarizeBy: none
 		sourceColumn: control_name
-		lineageTag: 4f87e815-0029-4917-bfd3-bfa6e0d66c20
+		lineageTag: b3bc4915-fe16-4b52-aff5-93c82f926933
 		annotation SummarizationSetBy = User
 
 	column status
 		dataType: string
 		summarizeBy: none
 		sourceColumn: status
-		lineageTag: 6b11bed1-e73c-4629-ba8b-0b70d155e84e
+		lineageTag: d1983133-77ad-43dc-a6e2-d47c18b10895
 		annotation SummarizationSetBy = User
 
 	column evidence_class
 		dataType: string
 		summarizeBy: none
 		sourceColumn: evidence_class
-		lineageTag: 9503dc8c-ee18-4957-9685-6f6e86890e37
+		lineageTag: 3618626b-b814-409e-bb79-4a0a973f7e5c
 		annotation SummarizationSetBy = User
 
 	column source_file
 		dataType: string
 		summarizeBy: none
 		sourceColumn: source_file
-		lineageTag: ce8bff8f-5629-4f43-93e0-f6d7bc59bc53
+		lineageTag: bdc6d963-9d40-49be-b555-defb87182cba
 		annotation SummarizationSetBy = User
 
 	partition Source_Control = m

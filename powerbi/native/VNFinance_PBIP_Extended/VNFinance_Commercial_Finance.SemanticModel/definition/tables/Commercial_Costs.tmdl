@@ -1,81 +1,81 @@
 table Commercial_Costs
-	lineageTag: 40fb2720-140e-451f-85c8-dee359c74c1b
+	lineageTag: bfa85344-00e2-487e-8ecd-64ed34b5ddfd
 
 	column month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: month
-		lineageTag: 23266a70-91bd-4a91-b73e-2daad12484f1
+		lineageTag: aed7bb6f-c8f9-4756-9c51-703716b177b7
 		annotation SummarizationSetBy = User
 
 	column sku_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: sku_id
-		lineageTag: 2e2b5119-6f99-4d27-971c-0db5ba8da28c
+		lineageTag: 8dcdb89b-570d-41e4-8dc1-09c6a216e9bd
 		annotation SummarizationSetBy = User
 
 	column channel_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: channel_id
-		lineageTag: 606b7010-327c-43ca-82c7-002a42d6d192
+		lineageTag: 3483db17-5b0d-469f-b42b-43376e8d0065
 		annotation SummarizationSetBy = User
 
 	column trade_spend
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: trade_spend
-		lineageTag: f82acbab-dca2-4106-bd88-75f8d74ae622
+		lineageTag: 62d898ec-630b-4f43-9ff4-6bd589838b4e
 		annotation SummarizationSetBy = User
 
 	column listing_fee
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: listing_fee
-		lineageTag: 3336874e-a4cd-4768-8265-35df5f41d0bc
+		lineageTag: 1c14ad99-d030-4ca8-b867-1a2dfdeb863d
 		annotation SummarizationSetBy = User
 
 	column rebate
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: rebate
-		lineageTag: 1dee1ec2-c170-4bcd-bc6e-5a758f4ff880
+		lineageTag: 54d3b7f1-1e82-41d0-8244-f686cfcfe899
 		annotation SummarizationSetBy = User
 
 	column freight
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: freight
-		lineageTag: 65066157-0acf-4848-b557-0f697a3b7f26
+		lineageTag: 9390b3ff-1686-4f78-81e9-3242619bc944
 		annotation SummarizationSetBy = User
 
 	column payment_fee
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: payment_fee
-		lineageTag: c9dbf50f-4046-4f85-ad08-8bbb5c859e41
+		lineageTag: 093a7d8c-b955-4a55-8d8c-8f9101bff85c
 		annotation SummarizationSetBy = User
 
 	column commission
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: commission
-		lineageTag: 33896817-68a3-44e5-895f-c8294c2dab64
+		lineageTag: 36849878-f397-4b28-87f1-041584b1f146
 		annotation SummarizationSetBy = User
 
 	column writeoff
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: writeoff
-		lineageTag: 4aa6fec7-6591-443b-bb45-8434f2b638ca
+		lineageTag: 0c65e333-9139-439e-8d2b-c31456362d9d
 		annotation SummarizationSetBy = User
 
 	column cost_version
 		dataType: string
 		summarizeBy: none
 		sourceColumn: cost_version
-		lineageTag: 1420f08e-fda0-4e5e-8b98-3d51c6732c66
+		lineageTag: 01c8aa11-741d-4cb6-9706-67343e895c44
 		annotation SummarizationSetBy = User
 
 	partition Commercial_Costs = m

@@ -1,47 +1,47 @@
 table Channel
-	lineageTag: a1df9dbc-57b9-423d-b5dc-0809f3b515a0
+	lineageTag: 9f0821ba-3bfd-4268-b036-d8533ebdcbbb
 
 	column channel_id
 		dataType: string
 		isKey
 		summarizeBy: none
 		sourceColumn: channel_id
-		lineageTag: 2096c0e6-b5a3-4a03-b0ab-17afd879472d
+		lineageTag: 5831ccd2-341d-407c-b06f-02244c0a1731
 		annotation SummarizationSetBy = User
 
 	column channel_type
 		dataType: string
 		summarizeBy: none
 		sourceColumn: channel_type
-		lineageTag: 99d05e1b-310f-4e64-ae69-0df5a56776e0
+		lineageTag: 66462def-5b64-47ea-9cda-0d61c867df43
 		annotation SummarizationSetBy = User
 
 	column platform_fee_pct
 		dataType: double
 		summarizeBy: none
 		sourceColumn: platform_fee_pct
-		lineageTag: 53f39681-aef8-49d6-907d-15991f358827
+		lineageTag: a8dd99e1-8503-44e9-bfd6-be12b968e07f
 		annotation SummarizationSetBy = User
 
 	column commission_pct
 		dataType: double
 		summarizeBy: none
 		sourceColumn: commission_pct
-		lineageTag: 7f8f1d6f-ec7f-4625-ba31-d3a988b22961
+		lineageTag: 7b9790a4-3d6c-490e-abb9-865ea94a3d2e
 		annotation SummarizationSetBy = User
 
 	column settlement_days
 		dataType: int64
 		summarizeBy: none
 		sourceColumn: settlement_days
-		lineageTag: 1b76980b-7f92-4c9a-a7c7-56fe813a93f5
+		lineageTag: 902c516b-0462-401e-94b8-27d2480e9b1c
 		annotation SummarizationSetBy = User
 
 	column default_discount_pct
 		dataType: double
 		summarizeBy: none
 		sourceColumn: default_discount_pct
-		lineageTag: 9584c1be-0d1f-46bf-8e5b-5612f2b36203
+		lineageTag: 978c0cc3-709c-489e-be3c-7c26d44c4ae9
 		annotation SummarizationSetBy = User
 
 	partition Channel = m

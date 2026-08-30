@@ -26,6 +26,7 @@
       "cogs_multiplier": 1.0,
       "opex_multiplier": 1.0,
       "working_capital_days_delta": 0.0,
+      "scenario_ccc_delta_days": 0.0,
       "scenario_revenue_vnd": 37824186837.0,
       "scenario_ebitda_proxy_vnd": 12855048070.0,
       "scenario_note": "Historical actual run-rate"
@@ -37,6 +38,7 @@
       "cogs_multiplier": 1.0,
       "opex_multiplier": 1.0,
       "working_capital_days_delta": 0.0,
+      "scenario_ccc_delta_days": 0.0,
       "scenario_revenue_vnd": 40046591355.0,
       "scenario_ebitda_proxy_vnd": 15650405428.0,
       "scenario_note": "Approved operating plan baseline"
@@ -48,6 +50,7 @@
       "cogs_multiplier": 1.0,
       "opex_multiplier": 1.0,
       "working_capital_days_delta": 0.0,
+      "scenario_ccc_delta_days": 0.0,
       "scenario_revenue_vnd": 39472414911.0,
       "scenario_ebitda_proxy_vnd": 16069385542.0,
       "scenario_note": "Latest rolling outlook baseline"
@@ -59,6 +62,7 @@
       "cogs_multiplier": 1.03,
       "opex_multiplier": 0.97,
       "working_capital_days_delta": -2.0,
+      "scenario_ccc_delta_days": -2.0,
       "scenario_revenue_vnd": 42630208103.88,
       "scenario_ebitda_proxy_vnd": 18845667853.81,
       "scenario_note": "Forecast base plus volume and productivity upside"
@@ -70,6 +74,7 @@
       "cogs_multiplier": 1.04,
       "opex_multiplier": 1.05,
       "working_capital_days_delta": 3.0,
+      "scenario_ccc_delta_days": 3.0,
       "scenario_revenue_vnd": 36314621718.12,
       "scenario_ebitda_proxy_vnd": 11922041174.36,
       "scenario_note": "Forecast base with demand pressure and cost inflation"
@@ -95,6 +100,11 @@
       "name": "Upside and Downside are non-neutral",
       "status": "PASS",
       "detail": "Forecast base multiplied by 1.08 / 0.92"
+    },
+    {
+      "name": "working-capital deltas are non-neutral",
+      "status": "PASS",
+      "detail": "CCC adds -2.0 / +3.0 days"
     },
     {
       "name": "Upside EBITDA exceeds Downside",

@@ -11,8 +11,8 @@ The repository now includes generated native source under `powerbi/native/`, the
 - The extended `scenario_selector.csv` is an editable planning control: each
   row declares a `base_case` plus revenue/COGS/OPEX multipliers and a working-
   capital day delta. The disconnected selector drives `Scenario Revenue` and
-  `EBITDA Proxy`, so Upside/Downside are sensitivities rather than aliases for
-  Actual.
+  `EBITDA Proxy` and `CCC`, so Upside/Downside are sensitivities rather than
+  aliases for Actual.
 - For a published Import dataset, `scripts/trigger_powerbi_service_refresh.py` can trigger and poll an on-demand Service refresh after the data swap. It is dry-run by default; `--apply` requires a caller-supplied `PBI_ACCESS_TOKEN` and never stores a token in Git.
 - `.github/workflows/powerbi-service-refresh.yml` provides the automatic hook: a push that changes `powerbi/data/current/**` validates the contract and then triggers the published dataset when the repository has `PBI_WORKSPACE_ID`, `PBI_DATASET_ID` and `PBI_ACCESS_TOKEN` GitHub Secrets. Without those secrets it records `SKIPPED` evidence and makes no network call. The deployed dataset must point to the same cloud-accessible source that receives the data swap; a GitHub CSV change alone cannot update a dataset still bound to a local Desktop path.
 - `scripts/run_finance_refresh.py` is the single-command operator flow: it validates and prepares the Import swap, and can additionally apply the DirectQuery load and/or trigger the Service refresh when those explicit flags and runtime credentials are supplied. It writes one combined evidence JSON and never stores tokens or connection strings.

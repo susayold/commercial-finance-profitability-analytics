@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "started_at_utc": "2026-08-30T21:53:18.606441+00:00",
-  "completed_at_utc": "2026-08-30T21:53:22.301646+00:00",
+  "started_at_utc": "2026-08-30T21:58:05.708575+00:00",
+  "completed_at_utc": "2026-08-30T21:58:09.747271+00:00",
   "repo_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831",
   "input_dir": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
   "data_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
@@ -45,7 +45,7 @@
       "details": {
         "status": "PASS",
         "mode": "finance_refresh_orchestrator",
-        "started_at_utc": "2026-08-30T21:53:19.233528+00:00",
+        "started_at_utc": "2026-08-30T21:58:06.337395+00:00",
         "input_dir": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
         "data_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
         "stages": {
@@ -60,7 +60,7 @@
               "applied": false,
               "source_dir": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
               "data_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
-              "validated_at_utc": "2026-08-30T21:53:19.976591+00:00",
+              "validated_at_utc": "2026-08-30T21:58:07.084537+00:00",
               "validator": {
                 "status": "PASS",
                 "scope": "extended",
@@ -220,7 +220,7 @@
           }
         },
         "claim_boundary": "Import refresh is automated; DirectQuery/APR and native PBIX evidence remain separate gates.",
-        "completed_at_utc": "2026-08-30T21:53:19.989989+00:00"
+        "completed_at_utc": "2026-08-30T21:58:07.095370+00:00"
       }
     },
     "package": {
@@ -244,7 +244,7 @@
           "refresh_columns": 22,
           "refresh_delta_vnd": "1000000",
           "refresh_referenced_csv": 19,
-          "pbit_bytes": 16208
+          "pbit_bytes": 16256
         }
       }
     },
@@ -471,6 +471,7 @@
             "cogs_multiplier": 1.0,
             "opex_multiplier": 1.0,
             "working_capital_days_delta": 0.0,
+            "scenario_ccc_delta_days": 0.0,
             "scenario_revenue_vnd": 37824186837.0,
             "scenario_ebitda_proxy_vnd": 12855048070.0,
             "scenario_note": "Historical actual run-rate"
@@ -482,6 +483,7 @@
             "cogs_multiplier": 1.0,
             "opex_multiplier": 1.0,
             "working_capital_days_delta": 0.0,
+            "scenario_ccc_delta_days": 0.0,
             "scenario_revenue_vnd": 40046591355.0,
             "scenario_ebitda_proxy_vnd": 15650405428.0,
             "scenario_note": "Approved operating plan baseline"
@@ -493,6 +495,7 @@
             "cogs_multiplier": 1.0,
             "opex_multiplier": 1.0,
             "working_capital_days_delta": 0.0,
+            "scenario_ccc_delta_days": 0.0,
             "scenario_revenue_vnd": 39472414911.0,
             "scenario_ebitda_proxy_vnd": 16069385542.0,
             "scenario_note": "Latest rolling outlook baseline"
@@ -504,6 +507,7 @@
             "cogs_multiplier": 1.03,
             "opex_multiplier": 0.97,
             "working_capital_days_delta": -2.0,
+            "scenario_ccc_delta_days": -2.0,
             "scenario_revenue_vnd": 42630208103.88,
             "scenario_ebitda_proxy_vnd": 18845667853.81,
             "scenario_note": "Forecast base plus volume and productivity upside"
@@ -515,6 +519,7 @@
             "cogs_multiplier": 1.04,
             "opex_multiplier": 1.05,
             "working_capital_days_delta": 3.0,
+            "scenario_ccc_delta_days": 3.0,
             "scenario_revenue_vnd": 36314621718.12,
             "scenario_ebitda_proxy_vnd": 11922041174.36,
             "scenario_note": "Forecast base with demand pressure and cost inflation"
@@ -542,6 +547,11 @@
             "detail": "Forecast base multiplied by 1.08 / 0.92"
           },
           {
+            "name": "working-capital deltas are non-neutral",
+            "status": "PASS",
+            "detail": "CCC adds -2.0 / +3.0 days"
+          },
+          {
             "name": "Upside EBITDA exceeds Downside",
             "status": "PASS",
             "detail": "driver arithmetic direction"
@@ -557,7 +567,7 @@
         "checks": 12,
         "passed": 12,
         "failed": [],
-        "head_short": "30c7c0b",
+        "head_short": "7155078",
         "evidence_boundary": "Record consistency only; it does not prove native Desktop or production Service execution."
       }
     },

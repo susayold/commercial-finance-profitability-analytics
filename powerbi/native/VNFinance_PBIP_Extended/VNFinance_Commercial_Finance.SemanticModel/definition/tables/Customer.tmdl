@@ -1,54 +1,54 @@
 table Customer
-	lineageTag: 80b12eca-608b-418a-897a-e7866c472120
+	lineageTag: f4192e4f-82d2-43b2-8ef7-56d03cc56ee4
 
 	column customer_id
 		dataType: string
 		isKey
 		summarizeBy: none
 		sourceColumn: customer_id
-		lineageTag: 8f8ab493-4245-460b-8801-f1e0c43a07e3
+		lineageTag: 2462191e-f558-43b3-be71-4ba140698e6f
 		annotation SummarizationSetBy = User
 
 	column customer_type
 		dataType: string
 		summarizeBy: none
 		sourceColumn: customer_type
-		lineageTag: 562e12c1-2c06-4ed7-974c-c9fc3792e296
+		lineageTag: e7b8cd0b-02ef-4c23-9f50-57fb3428f3bb
 		annotation SummarizationSetBy = User
 
 	column segment
 		dataType: string
 		summarizeBy: none
 		sourceColumn: segment
-		lineageTag: e077caf2-6dc2-44b3-8841-8d5758416b65
+		lineageTag: 6703f4ab-6975-4f10-9091-ba41e134ef5e
 		annotation SummarizationSetBy = User
 
 	column region
 		dataType: string
 		summarizeBy: none
 		sourceColumn: region
-		lineageTag: ed3031ad-8a50-42a8-87e0-665c78d4cfcf
+		lineageTag: 96b5aeee-4a9a-4ce8-b278-f4a79adf0d64
 		annotation SummarizationSetBy = User
 
 	column payment_terms_days
 		dataType: int64
 		summarizeBy: none
 		sourceColumn: payment_terms_days
-		lineageTag: 301c823c-192c-4309-9585-7f0014ff5d33
+		lineageTag: bbfca0a6-4a7c-45b1-a9fd-ab0ba6711833
 		annotation SummarizationSetBy = User
 
 	column credit_limit
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: credit_limit
-		lineageTag: f003c5b6-167e-4dde-b14f-057bacb657e2
+		lineageTag: 3d6f204a-4606-485d-a2d9-90f68389661e
 		annotation SummarizationSetBy = User
 
 	column acquisition_month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: acquisition_month
-		lineageTag: 531a2f5d-a1d2-472e-bfbf-b0e4b76c9fdc
+		lineageTag: 987feec2-b64d-4267-b385-3e1a07c6d276
 		annotation SummarizationSetBy = User
 
 	partition Customer = m

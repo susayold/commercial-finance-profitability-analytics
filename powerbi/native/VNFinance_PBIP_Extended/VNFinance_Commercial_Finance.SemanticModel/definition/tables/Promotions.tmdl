@@ -1,103 +1,103 @@
 table Promotions
-	lineageTag: e7f43b7f-67a4-471a-b120-af7b11193762
+	lineageTag: 79efe39d-f3b9-4582-b94c-71cfecb1274a
 
 	column promo_id
 		dataType: string
 		isKey
 		summarizeBy: none
 		sourceColumn: promo_id
-		lineageTag: 19eea808-914c-4066-9728-e9c6eb54aa5c
+		lineageTag: 511618f3-d7ae-4353-9e59-d9c160c381a2
 		annotation SummarizationSetBy = User
 
 	column start_date
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: start_date
-		lineageTag: 871e38ec-a396-4980-be8e-a57c49304abe
+		lineageTag: 9d768baa-46e5-41bb-acca-5594ed5c2bdc
 		annotation SummarizationSetBy = User
 
 	column end_date
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: end_date
-		lineageTag: f73b2c49-eadd-45b7-99dd-b8e89f96eef1
+		lineageTag: cc695fc3-9c56-4c77-a4ea-16ed110ca329
 		annotation SummarizationSetBy = User
 
 	column channel_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: channel_id
-		lineageTag: e83bdb85-a211-4eee-9a3d-003c7ade7e25
+		lineageTag: 537cea28-10ae-4654-a1d4-55fadb7a7aaf
 		annotation SummarizationSetBy = User
 
 	column sku_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: sku_id
-		lineageTag: 5ac37eb0-0a95-4ecc-be00-17cc9a98e944
+		lineageTag: f2378ffd-e8ff-474b-8903-377bc4715582
 		annotation SummarizationSetBy = User
 
 	column mechanic
 		dataType: string
 		summarizeBy: none
 		sourceColumn: mechanic
-		lineageTag: 54039656-0217-4d8d-b593-5e66218cc8e8
+		lineageTag: 3523277e-92e1-4503-95d3-ef7ba7503bc3
 		annotation SummarizationSetBy = User
 
 	column planned_discount_pct
 		dataType: double
 		summarizeBy: none
 		sourceColumn: planned_discount_pct
-		lineageTag: df115150-f792-41be-a4e7-823528da3069
+		lineageTag: 918415ff-ee47-4d0b-9646-2fa7329ef86c
 		annotation SummarizationSetBy = User
 
 	column planned_units_lift_pct
 		dataType: double
 		summarizeBy: none
 		sourceColumn: planned_units_lift_pct
-		lineageTag: fcef1ac7-c54b-489c-b9bf-c7c98ec81768
+		lineageTag: eaeceb0e-25af-4e61-a117-a7a39e4553ea
 		annotation SummarizationSetBy = User
 
 	column actual_discount_pct
 		dataType: double
 		summarizeBy: none
 		sourceColumn: actual_discount_pct
-		lineageTag: 0308da1d-613d-493c-98a7-27e0f977bafb
+		lineageTag: d1a1a0dc-91f7-41c8-9756-3be3df243562
 		annotation SummarizationSetBy = User
 
 	column incremental_units
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: incremental_units
-		lineageTag: 2eff7f87-1de9-4611-98be-9f62a1c80c95
+		lineageTag: d41f6eb2-9fe6-4803-8847-b84157aa7047
 		annotation SummarizationSetBy = User
 
 	column baseline_units
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: baseline_units
-		lineageTag: 8d47dff5-32a5-40fd-865b-dddf66a2948d
+		lineageTag: 43b7c9d0-1522-4c49-9cef-c764691b8fbb
 		annotation SummarizationSetBy = User
 
 	column promo_spend
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: promo_spend
-		lineageTag: fb164bf2-741c-41a8-9efd-c319889bdf5e
+		lineageTag: b1cbafd9-483e-49c7-8bf6-23a1e7bf16df
 		annotation SummarizationSetBy = User
 
 	column roi
 		dataType: double
 		summarizeBy: none
 		sourceColumn: roi
-		lineageTag: eb4814dd-d954-458f-b5d7-8b6e3b3c9fe6
+		lineageTag: 6c67604a-445a-432d-8d38-96ceccef4ad1
 		annotation SummarizationSetBy = User
 
 	column status
 		dataType: string
 		summarizeBy: none
 		sourceColumn: status
-		lineageTag: 8eb2062d-1fa2-41ae-bd2c-d755159036d4
+		lineageTag: 0d9fbb29-7d83-4d9e-9ae7-2552fee9dabc
 		annotation SummarizationSetBy = User
 
 	partition Promotions = m

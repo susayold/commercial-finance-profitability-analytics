@@ -1,67 +1,67 @@
 table Budget
-	lineageTag: 5e2a501e-3c44-486e-8a97-5b1d5e02379f
+	lineageTag: 44b348e3-bd2d-40e0-84c1-58bb7bbc1b9b
 
 	column month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: month
-		lineageTag: 192b7a58-3c2b-413a-bf72-109c07891012
+		lineageTag: 33b548f2-6947-424d-b987-9e8a859a87ec
 		annotation SummarizationSetBy = User
 
 	column sku_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: sku_id
-		lineageTag: 9656d1a2-b027-44c3-9989-7dbd8b6b193a
+		lineageTag: bb26f49e-19a9-46cb-8fc7-c96b1940323f
 		annotation SummarizationSetBy = User
 
 	column channel_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: channel_id
-		lineageTag: 884fee7e-59ad-4f10-b092-bdfcdabecdec
+		lineageTag: d3276c60-69ee-4b42-970b-28e17d247379
 		annotation SummarizationSetBy = User
 
 	column version
 		dataType: string
 		summarizeBy: none
 		sourceColumn: version
-		lineageTag: a7c9f2a1-0b78-429a-9fcb-4cb8f74a7a63
+		lineageTag: b2775f4b-addf-44ec-960c-e3aa183e0b7d
 		annotation SummarizationSetBy = User
 
 	column budget_units
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: budget_units
-		lineageTag: 475b5afc-9919-47df-8d26-5b941a49e1fb
+		lineageTag: 99d5f74b-4b78-4571-9dd1-1d59177b6db5
 		annotation SummarizationSetBy = User
 
 	column budget_net_sales
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: budget_net_sales
-		lineageTag: 8a0f42ff-9198-4cb7-b1dd-d6902e95a864
+		lineageTag: 9fb1098c-22d2-4022-ae72-4de17e0f19ea
 		annotation SummarizationSetBy = User
 
 	column budget_cogs
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: budget_cogs
-		lineageTag: 1dff111d-f693-40d7-8232-f9bb98890c29
+		lineageTag: e3bcc018-aae2-4a72-ab79-2cf1677e333e
 		annotation SummarizationSetBy = User
 
 	column budget_trade_spend
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: budget_trade_spend
-		lineageTag: fd1fd7f3-9ab4-4bab-b54f-0040a84d5672
+		lineageTag: 9036ed50-9bb8-45a5-bf64-ae5978960a7f
 		annotation SummarizationSetBy = User
 
 	column budget_opex
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: budget_opex
-		lineageTag: 1555f69e-0182-4f86-b04b-fe5a51d7dfa6
+		lineageTag: 1526ff8e-ee55-479c-822d-9f3a67859a48
 		annotation SummarizationSetBy = User
 
 	partition Budget = m

@@ -1,54 +1,54 @@
 table 'Scenario Selector'
-	lineageTag: 25afe601-bd24-4c0c-94dc-cdf1c3233bfa
+	lineageTag: 96050259-c9f3-468e-8847-05cfa949c8e1
 
 	column scenario
 		dataType: string
 		isKey
 		summarizeBy: none
 		sourceColumn: scenario
-		lineageTag: 93622fe0-126c-40c5-b731-eef3bd96ab0d
+		lineageTag: be0e131f-4cb2-4213-bf98-ebb44c2a35e2
 		annotation SummarizationSetBy = User
 
 	column base_case
 		dataType: string
 		summarizeBy: none
 		sourceColumn: base_case
-		lineageTag: 3aeb3ba5-0443-4820-9d80-46e3c4f1f333
+		lineageTag: b1e73700-4b5c-4fbb-a58b-a40053f9e0f2
 		annotation SummarizationSetBy = User
 
 	column revenue_multiplier
 		dataType: double
 		summarizeBy: none
 		sourceColumn: revenue_multiplier
-		lineageTag: 9a291ece-fa20-447e-bd5b-fc0a22bb6f55
+		lineageTag: b0f00c73-9872-4d76-949f-258a181f1640
 		annotation SummarizationSetBy = User
 
 	column cogs_multiplier
 		dataType: double
 		summarizeBy: none
 		sourceColumn: cogs_multiplier
-		lineageTag: 7e481fb7-1ff9-4203-9f48-769164b2d926
+		lineageTag: 8460d07f-19c3-4bc3-a1af-f8fcbcab0535
 		annotation SummarizationSetBy = User
 
 	column opex_multiplier
 		dataType: double
 		summarizeBy: none
 		sourceColumn: opex_multiplier
-		lineageTag: 156f09c9-017c-49eb-b982-640e579ecb8f
+		lineageTag: 5d719217-1c1a-4471-b275-cc0dbf410400
 		annotation SummarizationSetBy = User
 
 	column working_capital_days_delta
 		dataType: double
 		summarizeBy: none
 		sourceColumn: working_capital_days_delta
-		lineageTag: f5be8e85-1a4d-4700-80f3-6787ba7f32ca
+		lineageTag: 6cd6042f-d13c-449b-a17c-b8f5f9e5f8d0
 		annotation SummarizationSetBy = User
 
 	column scenario_note
 		dataType: string
 		summarizeBy: none
 		sourceColumn: scenario_note
-		lineageTag: aae48bdd-23b9-4662-80da-00ca64cf80ea
+		lineageTag: 0ab594ea-12d9-41f8-bc53-954d9af6268d
 		annotation SummarizationSetBy = User
 
 	partition 'Scenario Selector' = m

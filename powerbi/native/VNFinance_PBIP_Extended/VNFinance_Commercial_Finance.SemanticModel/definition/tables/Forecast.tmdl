@@ -1,74 +1,74 @@
 table Forecast
-	lineageTag: 1245d2d3-00c0-405e-920f-5b52e4e26e13
+	lineageTag: 181def38-61e7-437b-babb-5a39202d776a
 
 	column snapshot_month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: snapshot_month
-		lineageTag: 3f41ef1c-63c7-432a-bb55-d79edbcaa27e
+		lineageTag: b40175d1-5ffc-42c0-aff6-d9a809ade53b
 		annotation SummarizationSetBy = User
 
 	column target_month
 		dataType: dateTime
 		summarizeBy: none
 		sourceColumn: target_month
-		lineageTag: 64c5fcec-bb98-4645-bb7b-244ca232fbe9
+		lineageTag: a6da6a03-71e0-44b8-a4e3-efd1b2f72f14
 		annotation SummarizationSetBy = User
 
 	column sku_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: sku_id
-		lineageTag: be2632c6-8758-4f3b-bb71-b8d0f95c98dc
+		lineageTag: 2d880ccf-b3bf-4a87-bae0-09cf021baa40
 		annotation SummarizationSetBy = User
 
 	column channel_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: channel_id
-		lineageTag: 489b9ae8-a302-472e-b4ec-497cd752dea8
+		lineageTag: a1371d33-7993-4afa-881d-eeeb6204517f
 		annotation SummarizationSetBy = User
 
 	column forecast_units
 		dataType: int64
 		summarizeBy: sum
 		sourceColumn: forecast_units
-		lineageTag: 57f3606c-d15c-41f6-aebd-faad83edc2a8
+		lineageTag: 28fe83ad-13b3-4dc3-b6d6-7a08db4be24d
 		annotation SummarizationSetBy = User
 
 	column forecast_net_sales
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: forecast_net_sales
-		lineageTag: e9f8ecd4-7c71-474e-b8f4-15a08541373c
+		lineageTag: 8ae9bce8-d8f3-4189-84f2-e30565a7f7f5
 		annotation SummarizationSetBy = User
 
 	column forecast_cogs
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: forecast_cogs
-		lineageTag: d7b451d8-2869-4519-afb2-a07fbc9f42bd
+		lineageTag: 3a5dfc4f-69eb-41d6-a7b0-fc18109484b8
 		annotation SummarizationSetBy = User
 
 	column forecast_trade_spend
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: forecast_trade_spend
-		lineageTag: 3aca1bc5-453e-4bc6-9202-a8e708d791c5
+		lineageTag: 390c9157-d78f-437b-90d1-4f81f2f4b85c
 		annotation SummarizationSetBy = User
 
 	column forecast_opex
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: forecast_opex
-		lineageTag: 2bb5c6c4-9d84-41e3-9b1b-467e07676b53
+		lineageTag: 7a4a1136-1106-4c1e-8da7-14664b4aac85
 		annotation SummarizationSetBy = User
 
 	column forecast_version
 		dataType: string
 		summarizeBy: none
 		sourceColumn: forecast_version
-		lineageTag: 579b8993-b983-4452-8e0a-efb4d180c6c4
+		lineageTag: f462f42d-191d-4917-b5b7-1fe77c6b7f76
 		annotation SummarizationSetBy = User
 
 	partition Forecast = m

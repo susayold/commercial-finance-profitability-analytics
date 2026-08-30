@@ -18,7 +18,9 @@ carry `base_case`, revenue/COGS/OPEX multipliers, a working-capital day delta
 and a scenario note. The DAX now resolves the selected base case and applies
 the row's drivers to `Scenario Revenue`; `EBITDA Proxy` applies the same
 drivers to base COGS and OPEX. The SQL DirectQuery DDL includes the fields and
-an additive migration block for an existing rehearsal table.
+an additive migration block for an existing rehearsal table. The `CCC` measure
+now also adds the selected row's working-capital day delta, so the same control
+changes the cash-cycle KPI rather than leaving that input unused.
 
 The extended PBIP/PBIT was regenerated with the same 20-table / 60-measure /
 25-relationship / 6-page / 42-visual topology. The extended scope validator

@@ -58,7 +58,7 @@
     {
       "name": "extended PBIT is a readable ZIP",
       "status": "PASS",
-      "detail": "16208"
+      "detail": "16256"
     },
     {
       "name": "extended PBIT has 20 tables",

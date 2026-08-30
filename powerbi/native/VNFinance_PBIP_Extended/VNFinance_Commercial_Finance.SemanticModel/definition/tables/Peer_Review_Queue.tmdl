@@ -1,81 +1,81 @@
 table Peer_Review_Queue
-	lineageTag: 4a7dd474-3cbe-411b-9677-4c8ff83faa3f
+	lineageTag: a0c7b217-8b9d-4ce8-88f5-f240ad255d6a
 
 	column company
 		dataType: string
 		summarizeBy: none
 		sourceColumn: company
-		lineageTag: c6cff080-b574-4193-8d9b-bbbf6eb58e1e
+		lineageTag: 5dfa32bf-200e-4a57-a7be-771c8000ed84
 		annotation SummarizationSetBy = User
 
 	column ticker
 		dataType: string
 		summarizeBy: none
 		sourceColumn: ticker
-		lineageTag: aecb95e4-7586-4669-a212-11e083b7524e
+		lineageTag: fa31b505-346c-4096-97c8-079990b56cc6
 		annotation SummarizationSetBy = User
 
 	column fiscal_year
 		dataType: int64
 		summarizeBy: none
 		sourceColumn: fiscal_year
-		lineageTag: 8baf567c-128f-46af-94a6-706a57157fa2
+		lineageTag: 2f415f79-d6a3-487a-a9bd-9c4c781e3130
 		annotation SummarizationSetBy = User
 
 	column source_document
 		dataType: string
 		summarizeBy: none
 		sourceColumn: source_document
-		lineageTag: 02afb359-402c-4f1d-b20a-0a37171d4ff7
+		lineageTag: e63ea2b5-e167-4745-9bd9-ffff54ddf082
 		annotation SummarizationSetBy = User
 
 	column source_layer
 		dataType: string
 		summarizeBy: none
 		sourceColumn: source_layer
-		lineageTag: 7d002c9a-6455-4440-a5da-2a097beae267
+		lineageTag: d0c94169-4120-4e75-9766-2b6177d781b4
 		annotation SummarizationSetBy = User
 
 	column review_status
 		dataType: string
 		summarizeBy: none
 		sourceColumn: review_status
-		lineageTag: c5240934-6a4f-4ab1-9e9b-860054d1ed48
+		lineageTag: ed49bbbf-9887-4994-bfe5-a978d62e51a7
 		annotation SummarizationSetBy = User
 
 	column required_metrics
 		dataType: string
 		summarizeBy: none
 		sourceColumn: required_metrics
-		lineageTag: 7c240d94-3d86-420c-a70f-8d92862fac5d
+		lineageTag: 17966506-c3fa-4477-a101-3c574c2a13a6
 		annotation SummarizationSetBy = User
 
 	column source_url
 		dataType: string
 		summarizeBy: none
 		sourceColumn: source_url
-		lineageTag: 3d16f703-3c8f-46e4-ba15-333ef33a2588
+		lineageTag: 78f993c0-e95b-425a-b2e9-8ac809ecee2f
 		annotation SummarizationSetBy = User
 
 	column page_anchor
 		dataType: string
 		summarizeBy: none
 		sourceColumn: page_anchor
-		lineageTag: 9d180ffa-193e-4cf9-afc6-ddbfe653b08e
+		lineageTag: ad9fcec8-25f8-45de-a1e9-255f69e5f4b7
 		annotation SummarizationSetBy = User
 
 	column reported_basis
 		dataType: string
 		summarizeBy: none
 		sourceColumn: reported_basis
-		lineageTag: c633587d-46ca-4553-b794-80357215d5d6
+		lineageTag: 0f98df9c-cbcc-4fe2-afe0-0ef983b44222
 		annotation SummarizationSetBy = User
 
 	column reviewer_note
 		dataType: string
 		summarizeBy: none
 		sourceColumn: reviewer_note
-		lineageTag: 7bc46f82-f244-4611-a625-1ace8ea43cd0
+		lineageTag: c50497b3-f8f6-4b3e-8543-35ace0861e06
 		annotation SummarizationSetBy = User
 
 	partition Peer_Review_Queue = m

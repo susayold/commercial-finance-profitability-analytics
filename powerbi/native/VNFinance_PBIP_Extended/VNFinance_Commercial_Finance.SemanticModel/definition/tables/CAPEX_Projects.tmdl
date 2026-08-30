@@ -1,144 +1,144 @@
 table CAPEX_Projects
-	lineageTag: 1573d595-f964-479b-b219-efbb4af23dc7
+	lineageTag: d3c162e6-0bd8-4261-ac56-2845ca1d163d
 
 	column period
 		dataType: string
 		summarizeBy: none
 		sourceColumn: period
-		lineageTag: 32050a61-fd09-4ee4-ae0f-e680683d9e01
+		lineageTag: 515dd1b5-dcca-4a41-94da-cdb19bf29aaf
 		annotation SummarizationSetBy = User
 
 	column project_id
 		dataType: string
 		summarizeBy: none
 		sourceColumn: project_id
-		lineageTag: 84a9b916-c492-4455-b19b-3bcf8abaa918
+		lineageTag: 6a2e2319-3832-4757-992e-4936cb5ce4c6
 		annotation SummarizationSetBy = User
 
 	column cost_center
 		dataType: string
 		summarizeBy: none
 		sourceColumn: cost_center
-		lineageTag: 004eae04-457a-4cd6-95e3-51e5183f3200
+		lineageTag: bb701b17-f8d1-4ce5-8e85-a5f2cf56c309
 		annotation SummarizationSetBy = User
 
 	column capex_type
 		dataType: string
 		summarizeBy: none
 		sourceColumn: capex_type
-		lineageTag: 7215bdf4-e246-46ac-91da-027ccc35d39d
+		lineageTag: f35854a6-e58b-4b8d-a7e9-4d481c07c3c2
 		annotation SummarizationSetBy = User
 
 	column approval_status
 		dataType: string
 		summarizeBy: none
 		sourceColumn: approval_status
-		lineageTag: 16125474-fc95-4a33-a9e8-36abdec44faa
+		lineageTag: 2e636bab-8326-48e2-959e-efd7ba11ebdd
 		annotation SummarizationSetBy = User
 
 	column budget_capex_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: budget_capex_vnd
-		lineageTag: eea58317-047c-4493-8f63-3abde948deaf
+		lineageTag: 8d042cb9-7e39-45fd-b125-f6ba8e722e99
 		annotation SummarizationSetBy = User
 
 	column actual_capex_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: actual_capex_vnd
-		lineageTag: 934070ac-eb10-4be4-b75b-aea763823ed1
+		lineageTag: b7f429cc-d4f6-4990-8b34-6fa794c023dc
 		annotation SummarizationSetBy = User
 
 	column forecast_capex_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: forecast_capex_vnd
-		lineageTag: b08e34cb-aaa6-4925-b151-60f3c7361366
+		lineageTag: 7b605e9f-000d-49ea-a6d8-cc9d5f47b85e
 		annotation SummarizationSetBy = User
 
 	column committed_capex_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: committed_capex_vnd
-		lineageTag: bbf04f08-7e59-435d-9f45-31e9f81aa497
+		lineageTag: 75385c30-f207-46af-a4fa-7187be48bfdc
 		annotation SummarizationSetBy = User
 
 	column asset_cost_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: asset_cost_vnd
-		lineageTag: 701b0a9d-9540-416b-9a51-b0ad80f5fa8b
+		lineageTag: 66fd41ee-1ba8-41ad-ae6e-ff70724e2727
 		annotation SummarizationSetBy = User
 
 	column in_service_period
 		dataType: string
 		summarizeBy: none
 		sourceColumn: in_service_period
-		lineageTag: d8f73f17-8693-4b93-a531-1e33a4efc7c1
+		lineageTag: dbff3df1-f3b4-4ff4-9d89-30a454c2d33f
 		annotation SummarizationSetBy = User
 
 	column useful_life_months
 		dataType: int64
 		summarizeBy: none
 		sourceColumn: useful_life_months
-		lineageTag: c024b155-ff02-4888-96f7-f13c29cdfc29
+		lineageTag: cf4ae44c-9920-4e9f-b5d1-926e7c64b3e5
 		annotation SummarizationSetBy = User
 
 	column depreciation_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: depreciation_vnd
-		lineageTag: c3e8ffc1-a888-45fd-9a2f-da5624c7a710
+		lineageTag: 24b7dd31-6cfb-4077-a2d6-2d9c3147c5f5
 		annotation SummarizationSetBy = User
 
 	column expected_annual_contribution_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: expected_annual_contribution_vnd
-		lineageTag: 26f99517-94ec-40e6-8d74-313c55c61597
+		lineageTag: a5cf1896-42a6-4517-8f10-bb546b1ee232
 		annotation SummarizationSetBy = User
 
 	column payback_months
 		dataType: double
 		summarizeBy: none
 		sourceColumn: payback_months
-		lineageTag: 2c0dde1b-740d-49bd-befd-29ad7b819334
+		lineageTag: f4b3255f-ba30-4bd8-8952-ce034123b064
 		annotation SummarizationSetBy = User
 
 	column cash_payment_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: cash_payment_vnd
-		lineageTag: cd33d11c-e146-45fd-ae44-c903b13a7b70
+		lineageTag: 945a31b3-3a82-41dc-8766-feb145d75b8c
 		annotation SummarizationSetBy = User
 
 	column budget_variance_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: budget_variance_vnd
-		lineageTag: 7b25e4d8-a66c-4583-90b3-79a96a5cefa1
+		lineageTag: 33a3fcc6-2bb1-453d-a1fe-e83bf96df0db
 		annotation SummarizationSetBy = User
 
 	column forecast_variance_vnd
 		dataType: double
 		summarizeBy: sum
 		sourceColumn: forecast_variance_vnd
-		lineageTag: 21671575-d6fe-4d4c-b124-16050879937c
+		lineageTag: 71e76c0d-e70b-4b81-bc23-c903e232b11f
 		annotation SummarizationSetBy = User
 
 	column evidence_class
 		dataType: string
 		summarizeBy: none
 		sourceColumn: evidence_class
-		lineageTag: f7d7918d-e452-4298-b315-9135aa62dadd
+		lineageTag: 8253f819-bfc3-4021-8040-e1b0dfbb7717
 		annotation SummarizationSetBy = User
 
 	column source_system
 		dataType: string
 		summarizeBy: none
 		sourceColumn: source_system
-		lineageTag: 158ff862-ffb8-4a9a-91e5-e5471c54f369
+		lineageTag: 94f2c504-04c1-46e0-a9c7-39c6f6fc9de2
 		annotation SummarizationSetBy = User
 
 	partition CAPEX_Projects = m
