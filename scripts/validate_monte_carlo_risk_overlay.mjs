@@ -10,7 +10,7 @@ must("header",csv[0]==="metric,statistic,value,unit,threshold,threshold_directio
 const rows=csv.slice(1).map(x=>x.split(","));
 must("row_count",rows.length===25);
 must("metrics",["revenue","ebitda_proxy","ebitda_margin","ccc","joint_downside"].every(m=>rows.some(r=>r[0]===m)));
-must("five_percentiles_each",["revenue","ebitda_proxy","ebitda_margin","ccc"].every(m=>rows.filter(r=>r[0]===m&&r[1].startsWith("p")).length===5));
+must("five_percentiles_each",["revenue","ebitda_proxy","ebitda_margin","ccc"].every(m=>rows.filter(r=>r[0]===m&&/^p(05|25|50|75|95)$/.test(r[1])).length===5));
 must("evidence_class",rows.every(r=>r.length===9&&r[8]==="SIMULATED_DERIVED"));
 must("seed_and_n",rows.every(r=>r[6]==="5000"&&r[7]==="20260830"));
 must("boundary",report.includes("not a live probabilistic forecast")&&report.includes("Gate A remains open"));
