@@ -34,4 +34,4 @@ npm run build
 - MCH credit memo QA (15/15): https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_CREDIT_MEMO_QA.md
 - QNS/KDC basis bridge QA (12/12): https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/PEER_BASIS_PERIMETER_BRIDGE_QA.md
 
-The GitHub source mirror restores the MCH public-finance lens and points the recruiter card to the finance-first CV V2. Production Sites version 6 remains the live deployment, with the source versioned in the bound Sites repository and mirrored in this project.
+The GitHub source mirror restores the MCH public-finance lens and points the recruiter card to the finance-first CV V2. Production Sites version 7 is the live deployment, with the source versioned in the bound Sites repository and mirrored in this project. V7 release record: https://docs.google.com/document/d/1lwV1D9OxlKi0Pt-cMHjyiOvFFLtf5bPuv4hqoc59sZQ/edit?usp=drivesdk
