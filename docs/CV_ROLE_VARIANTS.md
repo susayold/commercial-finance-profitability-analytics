@@ -46,9 +46,6 @@ Use one base CV and swap the summary plus the first two project bullets for the 
 
 ## Evidence add-ons (use only when the vacancy rewards operating-pack depth)
 
-
-## Evidence add-ons (use only when the vacancy rewards operating-pack depth)
-
 Keep the core project bullets concise, then select one proof point when the application or interview rewards operating-finance depth:
 
 - **Monthly Business Review / CFO pack:** reference the management-pack workflow (KPI dictionary, recommendation register, close/forecast cadence and risk log) with 10/10 QA; describe it as an operating-pack design built on synthetic/public-guidance evidence, not as an employer deliverable.
