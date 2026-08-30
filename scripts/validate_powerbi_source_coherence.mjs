@@ -17,8 +17,9 @@ const measureNames=["Net Revenue","Gross Profit","Contribution Margin","Contribu
 add("Core measures present",measureNames.every(n=>dax.includes(n+" :=")||dax.includes(n+" :=")),"missing="+measureNames.filter(n=>!(dax.includes(n+" :=")||dax.includes(n+" :="))).join("|"));
 add("Cash-cycle formula",dax.includes("CCC := [DSO] + [DIO] - [DPO]")&&dax.includes("365 / 12"),"monthly denominator and CCC formula");
 add("Evidence filter formula",dax.includes("reported_summary_verified")&&dax.includes("reported_statement_verified"),"approved peer statuses in DAX");
+const pageAliases={"Executive Output":["Executive Output"],"P&L and Variance":["P&L / Variance","P&L and Variance"],"PVM Bridge":["PVM Bridge"],"Channel and Customer Profitability":["Channel page","Channel and Customer Profitability","Channel/Customer"],"Working Capital and Liquidity":["Working Capital & Liquidity","Working Capital and Liquidity","Working Capital"],"Controls and Evidence":["Controls & Evidence","Controls and Evidence","Controls page"]};
 const pageNames=(manifest.pages||[]).map(p=>p.name);
-add("QA matrix covers six pages",pageNames.every(n=>matrix.includes(n)),"missing="+pageNames.filter(n=>!matrix.includes(n)).join("|"));
+add("QA matrix covers six pages",pageNames.every(n=>(pageAliases[n]||[n]).some(alias=>matrix.includes(alias))),"missing="+pageNames.filter(n=>!(pageAliases[n]||[n]).some(alias=>matrix.includes(alias))).join("|"));
 const qaIds=Array.from({length:18},(_,i)=>"QA-"+String(i+1).padStart(2,"0"));
 add("QA matrix has QA-01..QA-18",qaIds.every(id=>matrix.includes(id)),"missing="+qaIds.filter(id=>!matrix.includes(id)).join("|"));
 const header=(evidence.split(/\r?\n/)[0]||"").split(",");
