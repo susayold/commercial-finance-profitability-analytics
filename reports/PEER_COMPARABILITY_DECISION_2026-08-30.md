@@ -94,3 +94,8 @@ Use official category/channel disclosures and the audited archive to calibrate t
 ## Reviewer conclusion
 
 The panel is strong enough for a finance-analyst portfolio because it demonstrates judgement about what not to compare. VNM supports long-run trend claims; QNS and KDC support bounded context and stress analysis; MCH remains a commercial anchor with explicit OCR controls. A single cross-company CAGR table that ignores revenue basis or perimeter changes would be less credible than this scoped decision.
+
+
+## QNS evidence-layer update
+
+The QNS FY2025 Annual Report provides a readable consolidated management summary for FY2021–FY2025 (report pages 27–28). Gross profit and owners' equity are now populated in the normalized panel for these years. The values are still tagged `reported_in_annual_report` and `partially_comparable` rather than audited statement-level because the supplied report does not yield accepted line-level statement extraction. Operating profit and operating cash flow remain unavailable. Use QNS for long-run context with the evidence-tier flag visible; do not imply audited statement provenance for these promoted rows. See `reports/QNS_REPORTED_SUMMARY_EVIDENCE_2021_2025.md`.
