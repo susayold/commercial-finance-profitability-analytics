@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+import fs from "node:fs";
+
+const read=(p)=>fs.readFileSync(p,"utf8");
+const manifest=JSON.parse(read(process.argv[2]||"powerbi/PBIP_SOURCE_MANIFEST.json"));
+const contract=JSON.parse(read(process.argv[3]||"powerbi/model_contract.json"));
+const dax=read(process.argv[4]||"powerbi/measures.dax");
+const matrix=read(process.argv[5]||"powerbi/QA_TEST_MATRIX.md");
+const evidence=read(process.argv[6]||"powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv");
+const checks=[]; const add=(name,pass,detail)=>checks.push({name,pass:Boolean(pass),detail:String(detail)});
+add("Non-native boundary",manifest.artifact_type==="PBIP_SOURCE_SCAFFOLD_NOT_NATIVE_PBIX"&&manifest.evidence_policy?.native_pbix_claimed===false,"artifact_type="+manifest.artifact_type);
+add("Dimension parity",manifest.dimensions?.length===contract.dimensions?.length&&manifest.dimensions.every((d,i)=>d.name===contract.dimensions[i].name),"manifest="+(manifest.dimensions?.length||0)+" contract="+(contract.dimensions?.length||0));
+add("Fact parity",manifest.facts?.length===contract.facts?.length&&manifest.facts.every((f,i)=>f.name===contract.facts[i].name),"manifest="+(manifest.facts?.length||0)+" contract="+(contract.facts?.length||0));
+add("Relationship parity",manifest.relationships?.length===contract.relationships?.length,"manifest="+(manifest.relationships?.length||0)+" contract="+(contract.relationships?.length||0));
+add("Page parity",manifest.pages?.length===contract.pages?.length&&manifest.pages.every((p,i)=>p.name===contract.pages[i].name),"manifest="+(manifest.pages?.length||0)+" contract="+(contract.pages?.length||0));
+const measureNames=["Net Revenue","Gross Profit","Contribution Margin","Contribution Margin %","Budget Revenue","Revenue Variance","Forecast Revenue","DSO","DIO","DPO","CCC","Promotion ROI","Below Hurdle Flag","Selected Scenario","Approved Peer Rows","Peer Evidence Coverage"];
+add("Core measures present",measureNames.every(n=>dax.includes(n+" :=")||dax.includes(n+" :=")),"missing="+measureNames.filter(n=>!(dax.includes(n+" :=")||dax.includes(n+" :="))).join("|"));
+add("Cash-cycle formula",dax.includes("CCC := [DSO] + [DIO] - [DPO]")&&dax.includes("365 / 12"),"monthly denominator and CCC formula");
+add("Evidence filter formula",dax.includes("reported_summary_verified")&&dax.includes("reported_statement_verified"),"approved peer statuses in DAX");
+const pageNames=(manifest.pages||[]).map(p=>p.name);
+add("QA matrix covers six pages",pageNames.every(n=>matrix.includes(n)),"missing="+pageNames.filter(n=>!matrix.includes(n)).join("|"));
+const qaIds=Array.from({length:18},(_,i)=>"QA-"+String(i+1).padStart(2,"0"));
+add("QA matrix has QA-01..QA-18",qaIds.every(id=>matrix.includes(id)),"missing="+qaIds.filter(id=>!matrix.includes(id)).join("|"));
+const header=(evidence.split(/\r?\n/)[0]||"").split(",");
+const ids=evidence.trim().split(/\r?\n/).slice(1).map(x=>x.split(",")[0]);
+add("Evidence template schema",["id","test","expected_result","tolerance","observed_value","evidence_reference","reviewer","executed_at","status","owner","remediation","retest_date"].every(x=>header.includes(x)),"header_fields="+header.length);
+add("Evidence template has exactly 18 rows",ids.length===18&&qaIds.every(id=>ids.includes(id)),"rows="+ids.length);
+add("Native release remains gated",manifest.qa_contract?.native_desktop_required===true&&manifest.external_steps_remaining?.length>=3,"native desktop is required");
+const passed=checks.filter(c=>c.pass).length;
+console.log(JSON.stringify({status:passed===checks.length?"PASS":"FAIL",checks:checks.length,passed,details:checks},null,2));
+if(passed!==checks.length)process.exit(1);
