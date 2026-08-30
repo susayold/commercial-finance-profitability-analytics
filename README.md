@@ -316,6 +316,7 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 
 - [Remaining-gates handoff](docs/REMAINING_GATES_HANDOFF_2026-08-30.md) · [Drive handoff](https://docs.google.com/document/d/1UNB4HHdVQJWOyaLo3W1szCd2v-tlYx4JWf1ItVur9cQ/edit?usp=drivesdk)
 - [Finance Analyst interview walkthrough](docs/INTERVIEW_WALKTHROUGH_FINANCE_ANALYST_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/16JeKPtMA_0kbz6n8376xemYznp3WUQ4H/view?usp=drivesdk)
+- [Finance Analyst CV bullet bank](docs/FINANCE_ANALYST_CV_BULLET_BANK_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1PEycoK7tBPlmH1NfRT2342jtUdszWiRK/view?usp=drivesdk)
 - Gate A, Gate B, FY2017 retrieval and CV personalization remain explicitly input-gated; no unsupported evidence is promoted.
 
 ## MCH source verification runbook
