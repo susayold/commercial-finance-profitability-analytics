@@ -134,7 +134,7 @@ A separate VNM FY2018–FY2025 public-guidance proxy is now archived. It contain
 
 ## 11. Portable Power BI source handoff
 
-The repository now includes a machine-readable [PBIP source manifest](../powerbi/PBIP_SOURCE_MANIFEST.json), a [handoff guide](../powerbi/PBIP_SOURCE_HANDOFF.md) and an executable [manifest validator](../scripts/validate_pbip_source_manifest.mjs). Remote validation passes for 5 dimensions, 9 facts, 15 relationships, 6 report pages and 18 QA test definitions. This artifact is intentionally a portable source scaffold; it is not a native .pbix and does not close Gate B.
+The repository now includes a machine-readable [PBIP source manifest](../powerbi/PBIP_SOURCE_MANIFEST.json), a [handoff guide](../powerbi/PBIP_SOURCE_HANDOFF.md) and an executable [manifest validator](../scripts/validate_pbip_source_manifest.mjs). Remote validation passes for 5 dimensions, 9 facts, 17 relationships, 6 report pages and 18 QA test definitions. This artifact is intentionally a portable source scaffold; it is not a native .pbix and does not close Gate B.
 
 
 ## 12. Public-guidance performance research extension
