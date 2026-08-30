@@ -71,7 +71,7 @@ Durable code and documentation are pushed to GitHub. Durable reports, source arc
 
 The Power BI work was continued through the environment boundary without overstating a native binary. The package now contains a real editable PBIP/PBIR/TMDL project, a compiled PBIT, 14 `DataRoot`-bound CSV partitions, a 78/78 replacement-input contract gate, a 29/29 package gate, a 30/30 DirectQuery readiness gate, and a detailed Desktop runbook/checklist. A controlled source mutation is proven to preserve schema/row count and detect a +VND 1,000,000 delta; the remaining native test is to open Desktop, refresh the canvas and capture visual evidence.
 
-The latest remote sync is GitHub commit `1eb75af` with CI run `33315590670` PASS. The Drive bundle was updated in place at file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX` and includes the PBIP/PBIT source, current synthetic CSVs, DirectQuery schema, validators, CI workflow and runbook/checklist. The bundle is remote-authoritative; the temporary clone used for packaging was deleted after verification.
+The latest remote sync is GitHub commit `b36787a` with CI run `33315755439` PASS. The Drive bundle was updated in place at file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX` and includes the PBIP/PBIT source, current synthetic CSVs, DirectQuery schema, validators, CI workflow and runbook/checklist. The bundle is remote-authoritative; the temporary clone used for packaging was deleted after verification.
 
 ## Deliberate stop point
 
