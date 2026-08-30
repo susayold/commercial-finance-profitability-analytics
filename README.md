@@ -196,6 +196,8 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 
 
+- Site V6 release record: [GitHub source/deployment note](site/README.md) · [Drive mirror](https://docs.google.com/document/d/1WSaAd7YVTVclTnSKYoqqXdvxpK_GACSFc0cG-XJxXlY/edit?usp=drivesdk)
+
 ## MCH credit-screening extension
 
 - [Finance-analyst credit memo](reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md) · [Drive mirror](https://docs.google.com/document/d/15h8U_55cR5MBZV5KewQMvyJ6bjtVahKO0V5rXn-oXZQ/edit?usp=drivesdk)
