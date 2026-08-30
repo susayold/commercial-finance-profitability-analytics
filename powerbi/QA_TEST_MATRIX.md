@@ -16,13 +16,13 @@ This matrix is the release gate for the native Power BI file. Run the tests in P
 | QA-08 | Is the budget bridge directionally correct? | Variance waterfall | Revenue variance equals Actual − Budget; waterfall components sum to the headline variance within rounding. OPEX budget and forecast variance measures also reconcile to the OPEX fact. | P&L / Variance page |
 | QA-09 | Does the PVM bridge explain growth? | PVM bridge | Price + Volume + Mix + Trade-spend bridge equals period-over-period net revenue / contribution movement within ±VND 100m. | PVM_Bridge tab |
 | QA-10 | Is the hurdle rule visible? | Channel scatter / table | Rows with Contribution Margin % below Channel_Master[CMHurdle] show Below Hurdle Flag = 1; no blank hurdle values for active channels. | Channel page |
-| QA-11 | Are cash-cycle measures interpretable? | DSO / DIO / DPO / CCC cards | DSO, DIO, DPO use monthly denominator convention (365/12) and CCC = DSO + DIO − DPO. | Working Capital page |
+| QA-11 | Are cash-cycle measures interpretable? | DSO / DIO / DPO / CCC cards | DSO, DIO, DPO use monthly denominator convention (365/12) and CCC = DSO + DIO − DPO; CAPEX cash timing is shown separately from depreciation. | Working Capital page |
 | QA-12 | Are peer rows evidence-gated? | Peer benchmark table | Only reported_summary_verified and reported_statement_verified rows appear in benchmark trend visuals; review-required rows appear only in the queue. | Controls & Evidence page |
 | QA-13 | Does peer evidence coverage read correctly? | [Peer Evidence Coverage] card | Coverage = approved rows / total peer rows. Current queue baseline is 25 verified rows; any change is documented before refresh. | Queue Sheet and source registry |
 | QA-14 | Are peer margins mathematically consistent? | Peer table | Gross / operating / PBT / PAT margins equal the corresponding profit divided by net revenue; no divide-by-zero blanks for approved rows. | Approved peer CSV |
 | QA-15 | Are units and basis labelled? | Tooltip / subtitle | Operating facts state “synthetic VND”; peer facts state “reported VND bn”; QNS revenue-basis caveat is visible. | Page subtitles and evidence legend |
 | QA-16 | Does the historical VNM layer preserve caveats? | Peer evidence detail | FY2006 is labelled a restated comparative under VAS 25; FY2007 PAT > PBT is not flagged as an arithmetic error and has a reconciliation note. | VNM merged layer and protocol |
-| QA-17 | Are refresh controls present? | Controls page | Last refresh timestamp, source file names, source URL / page anchor and model version are populated. | Refresh metadata table |
+| QA-17 | Are refresh controls present? | Controls page | Last refresh timestamp, source file names (including OPEX and CAPEX facts), source URL / page anchor and model version are populated. | Refresh metadata table |
 | QA-18 | Can a reviewer reproduce the executive answer? | Executive Output walkthrough | Starting at Executive Output, a reviewer can reach the driver, owner and action within five minutes without opening hidden calculations. | Recruiter website narrative |
 
 ## Release decision
