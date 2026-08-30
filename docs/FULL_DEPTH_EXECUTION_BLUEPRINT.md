@@ -1158,7 +1158,7 @@ Completed and remotely verified:
 
 Immediate next sprint:
 
-1. Human-review the MCH OCR queue and capture page-level approvals.
+1. Preserve the MCH page-reviewed supplement and FY2017 comparative caveat in all downstream models.
 2. Extend extraction review to VNM, QNS and KDC.
 3. Expand the workbook from v1 management proxy lines to the full 28-sheet model specification.
 4. Implement the Power BI semantic model and six report pages.
@@ -1211,5 +1211,5 @@ The two latest MCH years now have a complete eight-metric candidate layer and ex
 ### MCH latest-year statement approval (2026-08-30)
 Visual QA and tie-outs now support an approved FY2024–FY2025 MCH supplement covering all eight metrics. It is intentionally separate from the 240-row core panel; FY2016–FY2023 remain blocked until equivalent page-level review is completed.
 
-### MCH FY2018 extension (2026-08-30)
-The visually reviewed approved MCH supplement now covers FY2018–FY2025 with all eight normalized metrics and explicit printed-page anchors. FY2016–FY2017 remain blocked; the core 240-row panel is unchanged. FY2018 cash-flow page 10 was visually confirmed before promotion.
+### MCH FY2016–FY2025 completion (2026-08-30)
+The visually reviewed approved MCH supplement now covers FY2016–FY2025 with all eight normalized metrics and explicit printed-page anchors. FY2016 and FY2018–FY2025 use their audited statements; FY2017 uses the audited FY2018 comparative/corresponding columns and is flagged accordingly. The core 240-row panel is unchanged.
