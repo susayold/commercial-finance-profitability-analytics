@@ -27,9 +27,13 @@
 
 PBIT SHA-256: `7E7A417C7028678C44F2500B185FCA3D669193EC62B620EB7E48EA7A6EC6E095`
 
+The next line records the preliminary bundle before the DirectQuery files were added; the current checksum is repeated in the claim-boundary section below.
+
 Drive bundle `VNFinance_PowerBI_Refreshable_Package_2026-08-30.zip`: 916,598 bytes, SHA-256 `12285DAE5702E7F09499D1DAE74689E156F0E687B9155A87DB778FF46542814F`.
 
 ## Claim boundary
+
+**Current Drive bundle checksum (supersedes the preliminary checksum above):** 924,991 bytes, SHA-256 `8B78A912494017DE584AF50BA1E6FEBA4B6AD4FF2BB5701AC0D186B71FA366A0`.
 
 The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layout`, metadata, settings, diagram layout, content types and theme parts. The `.pbip` is editable source using TMDL and PBIR binding.
 
