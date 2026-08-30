@@ -63,3 +63,10 @@ A 21-row VNM/QNS/KDC scorecard now derives FY2020–FY2025 revenue/asset CAGR, F
 ## CV evidence refresh
 
 The finance-first CV V2 and evidence map now include the MCH statement-analysis layer (11/11 controls) and the 21-row peer financial-quality scorecard (11/11 controls). Candidate-specific contact, education and experience fields remain intentionally bracketed until supplied.
+
+
+## Monthly Business Review / CFO Operating Pack extension
+
+A detailed recruiter-facing operating pack is now delivered: executive Base/Upside/Downside KPI lens, variance/PVM bridge design, commercial profitability agenda, working-capital triggers, scenario pre-conditions, eight owner/action rows and a release checklist. The KPI pack has a native Drive Sheet plus raw CSV; validator status is 10/10 PASS. Values are explicitly PROXY_DERIVED or SYNTHETIC_ASSUMPTION, and Gate A/B remain open.
+
+Drive pack: https://docs.google.com/document/d/1C7joqU6Dsyued-Zc5HrFnrMXiLW3Bkks0iaevLcVbNs/edit?usp=drivesdk. Drive KPI Sheet: https://docs.google.com/spreadsheets/d/1YWai5MSnAiRS2W9d0JXQsQ9soCZ2_odkvsR7S64-JmU/edit?usp=drivesdk.
