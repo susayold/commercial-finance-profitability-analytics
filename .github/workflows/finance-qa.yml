@@ -168,6 +168,14 @@ jobs:
         run: |
           node scripts/validate_master_plan_evidence_matrix.mjs
 
+      - name: Validate liquidity stress schedule
+        shell: bash
+        run: |
+          node scripts/validate_liquidity_stress.mjs \
+            data/liquidity_stress_synthetic.csv \
+            "$RUNNER_TEMP/liquidity_stress_QA.md"
+          grep -F "Liquidity stress QA: 9/9 checks PASS" "$RUNNER_TEMP/liquidity_stress_QA.md"
+
       - name: Validate Block A design lock
         shell: bash
         run: |
