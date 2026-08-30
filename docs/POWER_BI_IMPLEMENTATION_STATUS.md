@@ -21,7 +21,7 @@ The migration path is now source-controlled under `powerbi/directquery/`. It inc
 
 The Desktop execution material is now aligned to the generated package rather than the earlier scaffold. `powerbi/POWER_BI_DESKTOP_RUNBOOK.md` documents both PBIP editing and PBIT instantiation, the `DataRoot` binding, all 14 CSV filenames, contract validation, the controlled +VND 1,000,000 data-swap, native QA-01–QA-18 and the DirectQuery migration gate. `powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md` is the evidence checklist for the external execution host.
 
-The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and now includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow and process/status records. The current bundle is 977,862 bytes with SHA-256 `A1F665B093CD992CE9C8C81FEAB196CD4BC7E8FC0D95B7CD4A500171928EB15E`. The final CI run `33315755439` passed on commit `b36787a`.
+The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and now includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow, process/status records and the Desktop preflight script. The current bundle is 979,776 bytes with SHA-256 `708EBB751C141F20EDC0A73BF7789CB8399543AEFC4DE2980EFEE2B5714382FA`. The final preflight-gate CI run is recorded after push.
 
 The authoritative generated PBIP/PBIT inventory is 15 tables, 37 measures, 23 relationships, six pages and 39 visual containers. The older Excel-oriented names in the historical sections below are retained as model-contract context; use the PBIP/PBIT inventory and manifest when opening Desktop.
 
