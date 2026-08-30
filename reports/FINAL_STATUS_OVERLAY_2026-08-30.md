@@ -108,3 +108,6 @@ The reviewer path now orders live site → FP&A model → MBR pack → recommend
 ## Monte Carlo risk overlay extension
 
 Module L now has a reproducible 5,000-draw risk overlay with seeded output, percentile bands, downside breach probabilities, joint downside and decision triggers. The independence assumption and Gate A production boundary are explicit; validator and Drive mirrors are complete.
+
+
+Monte Carlo reproducibility note: the builder newline bug was fixed; CI now rebuilds and diffs the 5,000-draw output before validating the risk overlay. Latest Drive builder copy: https://drive.google.com/file/d/1mz5iDcReO_kpMc0e-62M7LUwWTh6T2MF/view?usp=drivesdk
