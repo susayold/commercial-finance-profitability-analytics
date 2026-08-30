@@ -33,7 +33,7 @@ Drive bundle `VNFinance_PowerBI_Refreshable_Package_2026-08-30.zip`: 916,598 byt
 
 ## Claim boundary
 
-**Current Drive bundle checksum (supersedes the preliminary checksum above):** 924,991 bytes, SHA-256 `8B78A912494017DE584AF50BA1E6FEBA4B6AD4FF2BB5701AC0D186B71FA366A0`.
+**Current Drive bundle checksum (supersedes the preliminary checksum above):** 925,159 bytes, SHA-256 `156978D43A231EA6A0419161FEE23F6389DA9BD3C79E89953187BBBFC8DD33AA`. This GitHub release record is authoritative for the latest Drive object; the copy embedded inside the ZIP is a packaging-time snapshot.
 
 The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layout`, metadata, settings, diagram layout, content types and theme parts. The `.pbip` is editable source using TMDL and PBIR binding.
 
