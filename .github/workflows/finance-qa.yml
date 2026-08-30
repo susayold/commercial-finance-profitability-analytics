@@ -49,6 +49,7 @@ jobs:
           path: |
             ${{ runner.temp }}/powerbi_input_contract_QA.md
             ${{ runner.temp }}/powerbi_refreshable_package_QA.md
+            ${{ runner.temp }}/powerbi_artifact_coherence_QA.md
             powerbi/DIRECTQUERY_READINESS.json
             reports/POWER_BI_DIRECTQUERY_READINESS_QA.md
 
@@ -189,6 +190,12 @@ jobs:
             powerbi/measures.dax \
             powerbi/QA_TEST_MATRIX.md \
             powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv
+
+      - name: Validate generated PBIP/PBIT artifact coherence
+        shell: bash
+        run: |
+          python scripts/validate_powerbi_artifact_coherence.py \
+            --report "$RUNNER_TEMP/powerbi_artifact_coherence_QA.md"
 
       - name: Validate M&A accretion dilution case
         shell: bash

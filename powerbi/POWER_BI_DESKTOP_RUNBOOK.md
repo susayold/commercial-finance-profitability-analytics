@@ -20,6 +20,7 @@ Use the latest GitHub `main` branch and the Drive bundle. Do not use an old loca
 - Compiled template: `powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit`
 - Legacy pbi-tools source: `powerbi/native/VNFinance_PbixProj`
 - Package manifest: `powerbi/PBIP_SOURCE_MANIFEST.json`
+- Generated-artifact coherence validator: `scripts/validate_powerbi_artifact_coherence.py`
 - Refresh architecture: `docs/POWER_BI_REFRESH_ARCHITECTURE.md`
 - Data contract validator: `scripts/validate_powerbi_input_contract.py`
 - Desktop QA matrix: `powerbi/QA_TEST_MATRIX.md`
@@ -38,6 +39,8 @@ python scripts/validate_powerbi_refreshable_project.py `
 ```
 
 Both commands must return `PASS` before opening Desktop.
+
+The manifest also declares a `scope_contract`: the broader `model_contract.json` is the full Excel design, while `package_inventory` is the compact PBIP/PBIT topology actually opened by Desktop. Run the artifact-coherence validator whenever the generator or compiled template changes.
 
 On a Windows execution host, the one-command preflight also checks the Desktop executable, package paths and (when supplied) the 14-file input folder:
 
