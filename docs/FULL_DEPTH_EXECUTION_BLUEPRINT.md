@@ -445,7 +445,7 @@ Business-perimeter changes:
 
 ### Implemented normalized peer evidence layer
 
-The schema above is now executable as a long-form export with one company × FY × metric row. The approved VNM/QNS/KDC file contains 240 rows and passes 18/18 checks; the MCH intake contains 80 explicitly blocked rows and passes 14/14 structural checks. See data/normalized_peer_panel_approved_2016_2025.csv, data/normalized_peer_panel_intake_template.csv, scripts/validate_normalized_peer_panel.mjs, docs/NORMALIZED_PEER_PANEL_METHODOLOGY.md and the two QA reports under reports/.
+The schema above is now executable as a long-form export with one company × FY × metric row. The approved VNM/QNS/KDC file contains 240 rows and passes 18/18 checks; the MCH core-panel intake remains a separate 80-row template and passes 14/14 structural checks. A separate page-reviewed MCH statement supplement is approved for FY2016–FY2025. See data/normalized_peer_panel_approved_2016_2025.csv, data/normalized_peer_panel_intake_template.csv, scripts/validate_normalized_peer_panel.mjs, docs/NORMALIZED_PEER_PANEL_METHODOLOGY.md and the two QA reports under reports/.
 
 ## 8. VietNova hidden-truth generator
 
@@ -1192,7 +1192,7 @@ Remaining work after the 2026-08-30 hardening pass:
 1. **Gate A — external source:** supply an approved real internal pre-close forecast snapshot, then run the governance schema/validator in `--mode=live` and publish observed Bias/WAPE only after the close and availability evidence is archived.
 2. **Gate B — external desktop:** load the remote workbook and approved peer panel in Power BI Desktop, execute QA-01–QA-18, reconcile visuals to Excel and archive the native PBIX plus evidence.
 3. **Candidate-specific CV fields:** replace placeholders in `CV_ONE_PAGE_DRAFT.md` with the candidate's real contact, education and experience facts before sending applications.
-4. **Optional evidence expansion:** the peer comparability decision is now documented in [`reports/PEER_COMPARABILITY_DECISION_2026-08-30.md`](../reports/PEER_COMPARABILITY_DECISION_2026-08-30.md). Remaining optional work is page-level human review of the separate MCH OCR queue or a perimeter/basis-adjusted extension of QNS/KDC; neither is required to claim the current scoped VNM/QNS/KDC evidence.
+4. **Optional evidence expansion:** the peer comparability decision is now documented in [`reports/PEER_COMPARABILITY_DECISION_2026-08-30.md`](../reports/PEER_COMPARABILITY_DECISION_2026-08-30.md). MCH page-level review is complete for the separate FY2016–FY2025 supplement; remaining optional work is a perimeter/basis-adjusted extension of QNS/KDC.
 
 The Gate A intake contract (`schemas/forecast_snapshot_live.schema.json`, `scripts/validate_live_forecast_submission.mjs`) and Gate B evidence contract (`powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv`, `scripts/validate_powerbi_qa_evidence.mjs`) are now complete, so no analytical redesign is required when those external inputs arrive.
 
@@ -1203,13 +1203,13 @@ The field-level follow-through is captured in [`docs/EXTERNAL_GATES_EXECUTION_PA
 The QNS FY2025 report review is complete for the readable five-year management summary. FY2021–FY2025 gross profit and owners' equity are now populated in the normalized panel; the companion extract and evidence memo preserve the 27–28 page anchor and the summary-vs-statement caveat. Remaining QNS work is optional statement-level retrieval or a basis-adjusted perimeter analysis, not silent interpolation.
 
 ### MCH OCR queue gate (2026-08-30)
-The 59-row MCH OCR workbench is now formally documented as intake-only. Implausible values and uneven metric coverage make automatic promotion unsafe. A page-level human review gate, tie-out protocol and reviewer fields are specified in `reports/MCH_OCR_REVIEW_DECISION_2026-08-30.md`; no MCH rows enter the approved panel until that gate is met.
+The 59-row MCH OCR workbench remains formally intake-only. Implausible values and uneven metric coverage make automatic promotion unsafe. The separate 80-row MCH statement supplement passed page-level review and is approved; OCR candidates do not enter the approved peer panel automatically.
 
 ### MCH latest-year candidate layer (2026-08-30)
-The two latest MCH years now have a complete eight-metric candidate layer and explicit tie-out evidence. Visual sign-off remains the gating item before promotion; this is deliberate evidence-layer separation, not missing work. [MCH candidate reconciliation](reports/MCH_STATEMENT_CANDIDATE_RECONCILIATION_2024_2025.md) · [candidate CSV](data/mch_statement_candidates_2024_2025.csv) · [Drive candidate Sheet](https://docs.google.com/spreadsheets/d/1L8sRGR-4DI3bxE7ODqzjo9Bq18d4UjvADVUPjUDZKBE/edit) · [Drive reconciliation memo](https://docs.google.com/document/d/1HHWzjsW0I4PjyJYBsCawGx7_e141gLSESbodhpadU5s/edit)
+The two latest MCH years were the initial candidate layer and now have explicit tie-out evidence. The approved statement supplement has since been extended to FY2016–FY2025 with visual sign-off, tie-outs and the FY2017 comparative caveat. [MCH candidate reconciliation](reports/MCH_STATEMENT_CANDIDATE_RECONCILIATION_2024_2025.md) · [candidate CSV](data/mch_statement_candidates_2024_2025.csv) · [Drive candidate Sheet](https://docs.google.com/spreadsheets/d/1L8sRGR-4DI3bxE7ODqzjo9Bq18d4UjvADVUPjUDZKBE/edit) · [Drive reconciliation memo](https://docs.google.com/document/d/1HHWzjsW0I4PjyJYBsCawGx7_e141gLSESbodhpadU5s/edit)
 
 ### MCH latest-year statement approval (2026-08-30)
-Visual QA and tie-outs now support an approved FY2024–FY2025 MCH supplement covering all eight metrics. It is intentionally separate from the 240-row core panel; FY2016–FY2023 remain blocked until equivalent page-level review is completed.
+Visual QA and tie-outs now support an approved FY2016–FY2025 MCH supplement covering all eight metrics. It is intentionally separate from the 240-row core panel; FY2017 retains the comparative/corresponding-column caveat.
 
 ### MCH FY2016–FY2025 completion (2026-08-30)
 The visually reviewed approved MCH supplement now covers FY2016–FY2025 with all eight normalized metrics and explicit printed-page anchors. FY2016 and FY2018–FY2025 use their audited statements; FY2017 uses the audited FY2018 comparative/corresponding columns and is flagged accordingly. The core 240-row panel is unchanged.
