@@ -380,3 +380,10 @@ The [evidence matrix](data/master_plan_evidence_matrix.csv) and [QA report](repo
 
 - [15-minute review path and release boundaries](docs/DELIVERABLE_INDEX_2026-08-29.md) · [Drive refresh copy](https://drive.google.com/file/d/1s60auQyHV58bWy2mjlGSuAtI5KLVMJVt/view?usp=drivesdk)
 - The review path now orders site → FP&A model → MBR → recommendation register → KPI dictionary → battle cards → close calendar → public/strategic extensions.
+
+
+## Monte Carlo risk overlay
+
+- [Risk overlay report](reports/MONTE_CARLO_RISK_OVERLAY_2026-08-30.md) · [Output CSV](data/monte_carlo_risk_overlay_2026-08-30.csv) · [Builder](scripts/build_monte_carlo_risk_overlay.mjs) · [Validator](scripts/validate_monte_carlo_risk_overlay.mjs) · [QA](reports/MONTE_CARLO_RISK_OVERLAY_QA.md)
+- [Drive native report](https://docs.google.com/document/d/1vm6paEerCLN20Bt4q5q8bAKz8YEnEE6Ilkf2DIjubs0/edit?usp=drivesdk) · [Drive native output Sheet](https://docs.google.com/spreadsheets/d/1HvW-ewvUj05SFCmA4ljQjeDYtKg5m0dk-Dc_eph3_kY/edit?usp=drivesdk) · [Drive CSV](https://drive.google.com/file/d/1cKerh2MZogeJXx9mmVlC6D311KNWT68j/view?usp=drivesdk) · [Drive builder](https://drive.google.com/file/d/13cuQBTTYxggb6ADqdGtG52s5THmxYc6u/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1gcqwaHwRLC2rHnp8UapwdKRc7za4iumP/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1g6Ey6lUpOJb3ZqVII2rIPT1ml9_Mbq42/view?usp=drivesdk)
+- The overlay runs 5,000 deterministic draws, reports P05/P25/P50/P75/P95, downside breach probabilities and a joint-downside probability. It is explicitly synthetic and independent-assumption limited.
