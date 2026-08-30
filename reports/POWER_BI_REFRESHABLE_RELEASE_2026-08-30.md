@@ -31,6 +31,8 @@ GitHub Actions Finance model QA passed in run [33314651136](https://github.com/s
 
 Latest workflow run [33314916251](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33314916251) also passed on commit `8b74198`, after adding the replacement-data input contract gate and its QA artifact upload.
 
+Current Drive bundle after the CI/input-contract sync: 931,445 bytes, SHA-256 `E635DE2774E9AFCEDCC98B0EC05A304BE624C9D1E6F1106E1597B8318A95860F`.
+
 PBIT SHA-256: `7E7A417C7028678C44F2500B185FCA3D669193EC62B620EB7E48EA7A6EC6E095`
 
 The next line records the preliminary bundle before the DirectQuery files were added; the current checksum is repeated in the claim-boundary section below.
