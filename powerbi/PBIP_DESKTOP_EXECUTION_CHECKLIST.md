@@ -35,6 +35,8 @@ Authoritative data inputs:
 - VietNova FPA Model v2: https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit
 - Approved peer panel: data/peer_benchmark_approved_2016_2025.csv
 - Controls-only queue: data/peer_extraction_queue.csv
+- OPEX/headcount fact: data/opex_headcount_planning_synthetic.csv (SIMULATED)
+- CAPEX project fact: data/capex_fixed_asset_planning_synthetic.csv (SIMULATED)
 - Public-guidance proxy (separate demo only): data/vnm_public_guidance_proxy_2018_2025.csv
 
 ## 2. Create and save the project
