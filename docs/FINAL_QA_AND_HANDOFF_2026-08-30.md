@@ -170,3 +170,8 @@ Battle cards v2 are now included in the remote QA surface and Drive archive. The
 ## Master-plan matrix refresh (2026-08-30)
 
 The evidence matrix and QA report now reflect the latest MBR, KPI dictionary, recommendation register and Battle Cards v2 artifacts. No status was promoted without linked evidence; Gate A/B remain pending by design.
+
+
+## Monthly close cadence handoff (2026-08-30)
+
+The WD-5 to WD+5 close/forecast calendar is now in the remote QA surface and Drive archive. It defines handoffs, controls, escalation and release timing; it does not represent a live company close.
