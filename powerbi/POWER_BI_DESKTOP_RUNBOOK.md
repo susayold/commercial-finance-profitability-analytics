@@ -145,6 +145,25 @@ make sure the published dataset reads from the cloud copy that is updated by
 the data-swap process; the Power BI Service cannot read a developer's local
 `DataRoot` folder.
 
+### One-command operator flow
+
+For a controlled handoff, use `scripts/run_finance_refresh.py` to keep the
+Import, DirectQuery and Service evidence in one JSON file. A safe dry-run is:
+
+```powershell
+python scripts/run_finance_refresh.py `
+  --input-dir powerbi/data/current `
+  --data-root C:\PBI\data\current `
+  --report C:\PBI\evidence\finance_refresh.json
+```
+
+Add `--apply` to copy the validated Import files. Add
+`--directquery-apply` only when `VNFINANCE_SQL_CONNECTION` points to the
+approved SQL source. Add `--service-apply --workspace-id <guid>
+--dataset-id <guid>` only for a published dataset and provide
+`PBI_ACCESS_TOKEN` in the process environment. The command fails closed when a
+requested credential or connection is missing.
+
 ## 4. Model inventory and expected topology
 
 The current model contains **15 tables, 37 measures, 23 relationships, 6 pages and 39 visual containers**.

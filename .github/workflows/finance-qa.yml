@@ -80,6 +80,14 @@ jobs:
             --report "$RUNNER_TEMP/powerbi_data_swap_QA.json" \
             --apply
 
+      - name: Exercise unified finance refresh orchestrator dry-run
+        shell: bash
+        run: |
+          python scripts/run_finance_refresh.py \
+            --input-dir powerbi/data/current \
+            --data-root "$RUNNER_TEMP/vnfinance_powerbi_orchestrator_target" \
+            --report "$RUNNER_TEMP/finance_refresh_orchestrator_QA.json"
+
       - name: Exercise DirectQuery loader dry-run
         shell: bash
         run: |
@@ -104,6 +112,7 @@ jobs:
             ${{ runner.temp }}/powerbi_input_contract_QA.md
             ${{ runner.temp }}/powerbi_refreshable_package_QA.md
             ${{ runner.temp }}/powerbi_data_swap_QA.json
+            ${{ runner.temp }}/finance_refresh_orchestrator_QA.json
             ${{ runner.temp }}/directquery_loader_QA.json
             ${{ runner.temp }}/powerbi_service_refresh_QA.json
             ${{ runner.temp }}/powerbi_claim_boundary_QA.json
