@@ -1,142 +1,109 @@
-# PBIP Desktop Execution Checklist — VNFinance Commercial Finance v2
+# PBIP / PBIT Desktop Execution Checklist — VNFinance Commercial Finance
 
-Status: READY FOR EXTERNAL POWER BI DESKTOP EXECUTION  
-Owner: portfolio author  
-Source of truth: PBIP_SOURCE_MANIFEST.json
+**Status:** READY FOR EXTERNAL POWER BI DESKTOP EXECUTION; native PBIX and realtime evidence remain pending.
+**Source of truth:** `powerbi/PBIP_SOURCE_MANIFEST.json` plus the package QA reports.
 
-This checklist closes the preparation work for the native Power BI gate. It does not claim that a native PBIX exists. Power BI Desktop must still create/save the binary and execute the visual tests.
+Use this checklist on the execution host. Check a box only when the evidence exists; source/package checks do not substitute for native Desktop evidence.
 
-## 0. Prerequisites and evidence policy
+## A. Host and release preflight
 
-- Use a current Power BI Desktop build that supports Power BI Projects (PBIP). PBIP is still a preview feature in Microsoft's documentation.
-- Keep the project root short (for example, C:\PBI\VNFinance_v2) to avoid Windows path-length failures.
-- Enable Power BI Project (.pbip) save option under File > Options and settings > Options > Preview features.
-- Optional: enable Store reports using enhanced metadata format (PBIR) if you want source-controlled report definition folders. Do not enable TMDL unless you are intentionally converting the semantic model format.
-- Do not store cache.abf or localSettings.json in Git/Drive as evidence; they are machine-local state.
-- Use the evidence labels already defined in docs/CLAIM_GOVERNANCE.md: OBSERVED, DERIVED, SIMULATED and ASSUMPTION.
+- [ ] Current Power BI Desktop is installed and opens.
+- [ ] Exact Desktop version copied from **File > About Power BI**.
+- [ ] PBIP preview enabled; PBIR/TMDL enabled only when supported by the build.
+- [ ] Working path is short and disposable (`C:\PBI\...`).
+- [ ] Latest GitHub commit and Drive bundle identified.
+- [ ] PBIT SHA256 recorded.
+- [ ] `validate_powerbi_input_contract.py` returns `PASS` for the active data folder.
+- [ ] `validate_powerbi_refreshable_project.py` returns `PASS`.
 
-Official references:  
-[PBIP overview](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview) · [Report folder / PBIR](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-report) · [Semantic model folder](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-dataset)
+## B. Open and bind
 
-## 1. Assemble the source package
+- [ ] PBIP entry point opens: `powerbi/native/VNFinance_PBIP/VNFinance_Commercial_Finance.pbip`.
+- [ ] PBIT alternative opens: `powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit`.
+- [ ] `DataRoot` points to the intended folder, not Downloads or a stale clone.
+- [ ] All 14 CSV files are present with the expected filenames.
+- [ ] Refresh Preview / Close & Apply completes without credential or privacy errors.
+- [ ] A dated working `.pbix` is saved only after the first successful refresh.
 
-Open these remote artifacts before starting:
+## C. Semantic model checks
 
-1. PBIP_SOURCE_MANIFEST.json
-2. model_contract.json
-3. measures.dax
-4. QA_TEST_MATRIX.md
-5. POWER_BI_BUILD_GUIDE_V2.md
-6. POWER_BI_DESKTOP_RUNBOOK.md
-7. PBIX_RELEASE_EVIDENCE_TEMPLATE.md
+- [ ] 15 tables are visible: `Calendar`, `Product`, `Customer`, `Channel`, `Sales`, `Commercial_Costs`, `Inventory`, `Receivables`, `Payables`, `Debt`, `Budget`, `Forecast`, `Marketing`, `Promotions`, `Source_Control`.
+- [ ] 37 measures are present and no measure shows an error.
+- [ ] 23 relationships exist and have the intended single-direction dimension-to-fact flow.
+- [ ] No fact-to-fact relationship was introduced.
+- [ ] Calendar month is unique/contiguous and used for time slicing.
+- [ ] Scenario selector is disconnected.
+- [ ] Numeric, date and boolean types remain unchanged.
+- [ ] Blank `promo_id` remains nullable; other required identifiers are not silently blank.
 
-Authoritative data inputs:
+## D. Page and visual checks
 
-- VietNova FPA Model v2: https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit
-- Approved peer panel: data/peer_benchmark_approved_2016_2025.csv
-- Controls-only queue: data/peer_extraction_queue.csv
-- OPEX/headcount fact: data/opex_headcount_planning_synthetic.csv (SIMULATED)
-- CAPEX project fact: data/capex_fixed_asset_planning_synthetic.csv (SIMULATED)
-- Public-guidance proxy (separate demo only): data/vnm_public_guidance_proxy_2018_2025.csv
+- [ ] Six pages exist with the expected names.
+- [ ] 39 visual containers load without “visual has errors”.
+- [ ] Executive Output: cards, scenario selector and action table respond.
+- [ ] P&L and Variance: actual/budget/forecast and variance table reconcile.
+- [ ] PVM Bridge: price/volume/mix and residual are visible; tolerance is disclosed.
+- [ ] Channel and Customer Profitability: hurdle flag and drill path work.
+- [ ] Working Capital and Liquidity: DSO/DIO/DPO/CCC, AR/AP and debt load.
+- [ ] Controls and Evidence: row counts, source status, evidence class and refresh timestamp load.
+- [ ] Every page states units and synthetic/reported evidence class.
 
-## 2. Create and save the project
+## E. Controlled data-swap test
 
-1. In Power BI Desktop, select File > Open or start a blank report.
-2. Load the v2 workbook. Preserve the workbook's tab names and row grain; do not flatten all facts into one table.
-3. Load the approved peer CSV as a separate fact table.
-4. Load the review queue only as a controls table. Do not allow it into benchmark visuals.
-5. Save As > Power BI Project and name the project VNFinance_Commercial_Finance_v2.
-6. Confirm the expected topology:
+- [ ] Copy the current input folder to a dated test folder.
+- [ ] Change exactly one valid numeric cell (recommended: first `Sales[net_sales]` and `Sales[contribution_margin]` by +VND 1,000,000).
+- [ ] Run the input-contract validator on the changed folder.
+- [ ] Point `DataRoot` to the changed folder and select **Refresh**.
+- [ ] Capture before/after card values and the refresh timestamp.
+- [ ] Confirm the expected VND 1,000,000 delta flows through the relevant visual/measure.
+- [ ] Restore the baseline `DataRoot` or close without saving the test PBIX.
 
-   - VNFinance_Commercial_Finance_v2.pbip
-   - VNFinance_Commercial_Finance_v2.Report/definition.pbir
-   - VNFinance_Commercial_Finance_v2.SemanticModel/definition.pbism
-   - report definition folder or report.json
-   - semantic model definition folder or model.bim
+## F. QA-01–QA-18 release gate
 
-7. Reopen the saved .pbip once before adding visuals. This catches path and source-connection problems early.
+- [ ] QA-01 through QA-04: model/row-count and source-contract checks.
+- [ ] QA-05 through QA-08: P&L, budget/forecast and tie-out checks.
+- [ ] QA-09 through QA-12: PVM, channel/customer profitability and hurdle checks.
+- [ ] QA-13 through QA-16: working capital, liquidity, peer evidence and controls checks.
+- [ ] QA-17: no material unresolved control failure; owner/remediation documented for exceptions.
+- [ ] QA-18: five-minute recruiter walkthrough completed.
+- [ ] VND 100m PVM tolerance shown on the page and in evidence.
+- [ ] Review-required peer rows excluded from benchmark visuals.
+- [ ] VNM FY2006 / FY2007 evidence notes visible where applicable.
 
-## 3. Model the semantic layer
+## G. Realtime / DirectQuery gate (separate from Import PASS)
 
-Required dimensions: Calendar, Product_Master, Customer_Master, Channel_Master and Scenario Selector.
+- [ ] Azure SQL, SQL Server or Fabric database is provisioned.
+- [ ] `powerbi/directquery/VNFinance_DirectQuery_Schema.sql` applied successfully.
+- [ ] All 15 logical tables are loaded with source freshness columns.
+- [ ] Desktop partitions are DirectQuery, not CSV Import.
+- [ ] Query latency, gateway/network and capacity checks pass.
+- [ ] Automatic Page Refresh interval is configured and documented.
+- [ ] Two refresh cycles show new source rows without manual file replacement.
+- [ ] Realtime screenshots and source timestamp are archived.
+- [ ] Only then change `realtime_claim` from `PENDING_DATABASE_AND_DESKTOP_EVIDENCE` to PASS.
 
-Required facts: Sales_Fact, Commercial_Costs, Inventory, AR, AP, Budget, Forecast_Versions, OPEX_Headcount, CAPEX_Projects, Peer_Benchmark and Peer_Review_Queue.
+## H. Archive / handoff
 
-Required relationships: 17. Validate one-to-many direction and confirm the Scenario Selector remains disconnected.
+- [ ] Native PBIX opens after close and reopen.
+- [ ] PBIP/PBIT source and PBIX evidence uploaded to Drive.
+- [ ] GitHub contains only safe text/source metadata and synthetic extracts.
+- [ ] Release evidence includes commit, PBIT SHA256, Drive file ID, Desktop version, date, QA results and screenshots.
+- [ ] `.pbi/cache.abf` and `.pbi/localSettings.json` are absent from Git/Drive.
+- [ ] Disposable Desktop working folder deleted after remote copies are verified.
+- [ ] Repository status and manifest reflect the correct gate state.
 
-Data-type controls:
+## Evidence record template
 
-- DateKey and FiscalYear are numeric/date-compatible.
-- Revenue, cost and profit fields are numeric.
-- Ticker and evidence-status fields remain text.
-- Reported peer values are VND bn; synthetic operating values are labelled synthetic VND.
-- Do not silently convert blanks to zero where a blank means “not validated”.
-
-Paste measures from measures.dax, then confirm that the measure names used by the report pages exist.
-
-## 4. Build the six report pages
-
-| Page | Decision question | Minimum evidence |
-|---|---|---|
-| Executive Output | What decision should the CFO make this month? | Revenue, contribution, CCC, scenario selector, owner/action |
-| P&L and Variance | Why did actuals miss or beat plan? | Actual vs budget/forecast and waterfall |
-| PVM Bridge | Was growth price, volume, mix or spend? | Reconciled PVM bridge and residual |
-| Channel and Customer Profitability | Which growth pays back after cost-to-serve? | Channel/customer matrix, hurdle flag, drill path |
-| Working Capital and Liquidity | Where is cash trapped? | DSO, DIO, DPO, CCC, minimum cash/revolver |
-| Controls and Evidence | Can a reviewer trust the number? | Tie-outs, refresh metadata, evidence status, queue count |
-
-Every page must contain a subtitle or tooltip that states the relevant unit and evidence class.
-
-## 5. Execute QA-01 through QA-18
-
-Run the full QA matrix in order. Record observed value, expected value, reviewer initials, timestamp and retest status in PBIX_RELEASE_EVIDENCE_TEMPLATE.md.
-
-The release rule is:
-
-- QA-01 through QA-17: PASS
-- QA-18: reviewer walkthrough demonstrated within five minutes
-- Any failed test remains visible with owner, remediation and retest date
-- The VND 100m tolerance is disclosed, not silently rounded away
-
-## 6. Capture and archive evidence
-
-Use this naming convention:
-
-- VNFinance_Commercial_Finance_v2.pbix
-- VNFinance_PBIX_RELEASE_EVIDENCE_YYYY-MM-DD.md
-- VNFinance_PBIX_QA_SCREENSHOTS_YYYY-MM-DD.pdf
-- VNFinance_PBIX_VISUAL_TIEOUT_YYYY-MM-DD.md
-
-The visual tie-out should include:
-
-- Executive Output vs Excel CFO_Output
-- P&L totals vs Excel P&L
-- OPEX actual/budget/forecast and headcount bridge vs opex_headcount_planning_synthetic.csv
-- CAPEX actual/commitment/depreciation/payback and cash timing vs capex_fixed_asset_planning_synthetic.csv
-- Channel total vs Excel channel profitability
-- CCC vs Excel working-capital tab
-- Peer trend vs approved peer CSV
-- Controls page showing queue/evidence status
-
-Upload the PBIX and visual evidence to the private Drive project folder. Commit only text/source metadata to GitHub; do not commit machine-local cache files.
-
-## 7. Final release decision
-
-Mark Gate B PASS only when:
-
-1. The native PBIX opens after closing and reopening.
-2. QA-01 through QA-17 are passing.
-3. QA-18 walkthrough is demonstrated.
-4. Visual tie-outs are archived.
-5. The binary and evidence pack are uploaded to Drive.
-6. The release record identifies the exact Power BI Desktop version and execution date.
-
-Until these conditions are met, keep the repository status as PBIP_SOURCE_SCAFFOLD_NOT_NATIVE_PBIX.
-
-## 8. Important boundary
-
-The VNM public-guidance analysis is useful for forecast-versus-actual communication, but it is not an internal pre-close snapshot. It must remain separate from Forecast_Snapshot_Input and cannot close Gate A.
-
-## 9. Automated preflight before opening Desktop
-
-Run scripts/validate_powerbi_source_coherence.mjs against the manifest, model contract, DAX pack, QA matrix and evidence template. The preflight must return 13/13 PASS before Desktop execution. See reports/POWER_BI_SOURCE_COHERENCE_QA.md. This verifies source alignment only; it does not create a native PBIX.
+| Field | Value |
+|---|---|
+| Desktop version | `TBD` |
+| Git commit | `TBD` |
+| PBIT SHA256 | `TBD` |
+| DataRoot | `TBD` |
+| Input-contract result | `PASS/FAIL` |
+| Native refresh result | `PASS/FAIL/PENDING` |
+| QA-01–QA-17 | `PASS/FAIL/PENDING` |
+| QA-18 walkthrough | `PASS/PENDING` |
+| DirectQuery/realtime | `PASS/PENDING` |
+| Drive evidence link | `TBD` |
+| Reviewer / timestamp | `TBD` |

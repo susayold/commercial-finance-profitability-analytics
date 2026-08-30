@@ -1,104 +1,164 @@
-# Power BI Desktop Runbook — VNFinance Commercial Finance v2
+# Power BI Desktop Runbook — VNFinance Commercial Finance
 
-## Purpose
+**Purpose.** This runbook is the execution guide for the real, editable Power BI package in this repository. It separates three capabilities that are often incorrectly conflated:
 
-This runbook converts the remote model contract into a native PBIX/PBIP deliverable. The Excel v2 workbook remains the finance calculation and audit source; Power BI is the management consumption layer.
+| Capability | Current package | What the user does |
+|---|---|---|
+| Editable report/model source | `VNFinance_Commercial_Finance.pbip` | Open the PBIP project in Power BI Desktop and edit visuals, model metadata and DAX. |
+| Reusable template | `Commercial_Finance_Profitability_Analytics.pbit` | Open the template, bind `DataRoot`, then save a new `.pbix`. |
+| Continuous realtime | DirectQuery readiness pack only | Provision a SQL/Fabric source, migrate the partitions, then enable Automatic Page Refresh. |
 
-## Remote inputs
+The checked-in source is real PBIP/PBIR/TMDL and the compiled artifact is a real PBIT archive. A native `.pbix` is deliberately not claimed until Power BI Desktop has opened, refreshed, rendered and passed the visual QA gate.
 
-1. Download the v2 workbook from https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit.
-2. Download the approved peer CSV from https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/peer_benchmark_approved_2016_2025.csv.
-3. Keep raw official reports in the private Drive archive; do not copy them into the public repository.
-4. Open the model contract, measures and QA matrix:
-   - powerbi/model_contract.json
-   - powerbi/measures.dax
-   - powerbi/QA_TEST_MATRIX.md
-   - powerbi/qa_validation_queries.dax
+## 1. Get the authoritative package
 
-## Desktop setup
+Use the latest GitHub `main` branch and the Drive bundle. Do not use an old local clone as the source of truth.
 
-1. Install the current Power BI Desktop release.
-2. Enable Power BI Project (.pbip) preview. Optionally enable enhanced report format (PBIR) and TMDL if source-controlled authoring is required.
-3. Create a short local working path such as C:\VNFinancePBIP to avoid Windows path-length issues.
-4. Save the project as VNFinance_Commercial_Finance.pbip. The local copy is disposable; remote GitHub and Drive copies are authoritative after upload.
+- GitHub repository: `https://github.com/susayold/commercial-finance-profitability-analytics`
+- Drive project folder: `https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR`
+- Editable PBIP entry point: `powerbi/native/VNFinance_PBIP/VNFinance_Commercial_Finance.pbip`
+- Compiled template: `powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit`
+- Legacy pbi-tools source: `powerbi/native/VNFinance_PbixProj`
+- Package manifest: `powerbi/PBIP_SOURCE_MANIFEST.json`
+- Refresh architecture: `docs/POWER_BI_REFRESH_ARCHITECTURE.md`
+- Data contract validator: `scripts/validate_powerbi_input_contract.py`
+- Desktop QA matrix: `powerbi/QA_TEST_MATRIX.md`
+- Release evidence template: `powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md`
 
-## Import sequence
+Before Desktop work, verify the package and data locally:
 
-1. Get Data → Excel → select the downloaded v2 workbook.
-2. Load the contract tables: Calendar, Product_Master, Customer_Master, Channel_Master, Sales_Fact, Commercial_Costs, Inventory, AR, AP, Budget, Forecast_Versions, Peer_Benchmark and Peer_Review_Queue.
-3. Import the approved peer CSV as Peer_Benchmark_Approved if the workbook table is not available. Keep the original Source_Status, Source_Layer, Revenue_Basis, Page_Anchor, Comparability_Note and Source_URL columns.
-4. Set data types before creating measures:
-   - DateKey = Date
-   - FiscalYear = Whole number
-   - IDs = Text
-   - VND amounts = Decimal number
-   - Units = Whole number
-   - Rates and margins = Decimal number
-5. Disable automatic date/time if it creates hidden date tables that conflict with Calendar.
+```powershell
+python scripts/validate_powerbi_input_contract.py --input-dir data/current
+python scripts/validate_powerbi_refreshable_project.py `
+  --pbit powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit `
+  --pbip powerbi/native/VNFinance_PBIP `
+  --pbixproj powerbi/native/VNFinance_PbixProj `
+  --data-dir data/current `
+  --report reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md
+```
 
-## Relationship rules
+Both commands must return `PASS` before opening Desktop.
 
-Create one-to-many, single-direction relationships from dimensions to facts:
+## 2. Desktop host preflight
 
-- Calendar[DateKey] → every monthly fact DateKey
-- Product_Master[ProductID] → Sales_Fact and Inventory
-- Customer_Master[CustomerID] → Sales_Fact and AR
-- Channel_Master[ChannelID] → Sales_Fact, Commercial_Costs, Budget and Forecast_Versions
+1. Install a current Power BI Desktop release on the execution host. This host must have the Desktop executable; a ZIP, PBIT or PBIP file alone cannot execute native refresh/render QA.
+2. Enable **Power BI Project (.pbip)** under **File > Options and settings > Options > Preview features**. Enable PBIR/TMDL only if the installed build exposes those options.
+3. Use a short path such as `C:\PBI\VNFinance_Commercial_Finance` when extracting the Drive bundle. Keep the GitHub/Drive copies authoritative and treat the Desktop checkout as disposable.
+4. Close any stale copy of the report. Do not mix a `.pbit` opened from Downloads with a PBIP opened from another folder; this is the most common cause of an apparently “unchanged” refresh.
+5. Record the exact Desktop version from **File > About Power BI** in the release evidence file.
 
-Do not create fact-to-fact relationships. Keep Scenario Selector disconnected. Mark Calendar as the date table only after DateKey is unique and contiguous.
+## 3. Import mode: replace data, keep the report
 
-## Measures and formatting
+This is the supported no-database workflow. The model uses one Text parameter, `DataRoot`, and every CSV partition resolves its file from that folder. Keep the filenames, headers, types and key rules unchanged.
 
-1. Paste powerbi/measures.dax into the model, then resolve table names if the imported workbook adds a prefix.
-2. Format VND measures as VND bn or VND mm consistently; never mix units on a visual.
-3. Format margin, growth, variance and coverage measures as percentages.
-4. Add a visible subtitle: “VietNova operating facts are synthetic; peer facts are reported and source-linked.”
-5. Add a refresh timestamp and model version to the Controls & Evidence page.
+### Required input files (14)
 
-## Page build order
+`sales_fact.csv`, `commercial_costs.csv`, `inventory.csv`, `receivables.csv`, `payables.csv`, `debt.csv`, `budget.csv`, `forecast.csv`, `marketing_spend.csv`, `promotions.csv`, `product_master.csv`, `customer_master.csv`, `channel_master.csv`, and `source_control.csv`.
 
-### 1. Executive Output
+`Calendar` is generated by Power Query from the minimum and maximum month in `sales_fact.csv`; it is not a fifteenth CSV input.
 
-Cards: Net Revenue, Gross Profit, Contribution Margin %, Operating Profit proxy, CCC. Add Base/Upside/Downside slicer, risk flag and an action table with owner, financial mechanism and monitoring KPI.
+### One-time binding
 
-### 2. P&L / Variance
+1. Open the PBIT (new report) or the PBIP (source-controlled project).
+2. When prompted, set `DataRoot` to the absolute path of the active input folder, for example `C:\PBI\VNFinance\data\current`.
+3. In **Transform data > Edit parameters**, confirm the value, then select **Refresh Preview** and **Close & Apply**.
+4. If Desktop asks for credentials, choose the local-file permission level appropriate for the folder. Do not hard-code a personal Downloads path into a query.
+5. Save a working `.pbix` only after the first successful refresh. The `.pbix` is an execution output; the PBIP/PBIT remains the reproducible source.
 
-Use a line or clustered column chart for Actual vs Budget vs Forecast. Add a waterfall for Revenue Variance and a table of the top drivers. Keep favorable/unfavorable labels separate from source signs.
+### Repeatable data replacement
 
-### 3. PVM Bridge
+1. Copy the replacement CSVs into the same `DataRoot` folder, preserving the 14 filenames.
+2. Run `validate_powerbi_input_contract.py` against that folder. It checks order-independent headers, required/nullable cells, numeric/date/boolean types, primary-key uniqueness, foreign-key coverage, gross-to-net identity and contribution identity.
+3. In the open report select **Home > Refresh**. No page, visual or measure rebuild is required.
+4. Check the refresh timestamp and row/control counts on **Controls and Evidence**.
+5. Save the `.pbix` if you need a point-in-time handoff. For a controlled change test, edit one valid numeric value only, refresh, and record the expected delta in the release evidence file.
 
-Use the reconciled PVM_Bridge output. Show Price, Volume, Mix, Discount, Returns, Unit COGS and residual. Display the comparison period and the VND 100m deterministic rounding tolerance.
+The deterministic package QA already proves the contract with a `+VND 1,000,000` data swap. Native Desktop QA must still confirm that the canvas actually changes after refresh.
 
-### 4. Channel & Customer Profitability
+## 4. Model inventory and expected topology
 
-Show channel contribution margin, a 25% hurdle reference, customer drill-through and SKU detail. Flag below-hurdle growth with Below Hurdle Flag.
+The current model contains **15 tables, 37 measures, 23 relationships, 6 pages and 39 visual containers**.
 
-### 5. Working Capital & Liquidity
+Tables are `Calendar`, `Product`, `Customer`, `Channel`, `Sales`, `Commercial_Costs`, `Inventory`, `Receivables`, `Payables`, `Debt`, `Budget`, `Forecast`, `Marketing`, `Promotions` and `Source_Control`.
 
-Show DSO, DIO, DPO, CCC, AR ageing, inventory cover, debt/liquidity stress and cash-release actions. State the monthly 365/12 convention.
+Use a star-like filter direction:
 
-### 6. Controls & Evidence
+- `Calendar[month]` → monthly facts (`Sales`, `Commercial_Costs`, `Inventory`, `Receivables`, `Payables`, `Debt`, `Budget`, `Forecast`, `Marketing`)
+- `Product[sku_id]` → `Sales`, `Commercial_Costs`, `Inventory`, `Budget`, `Forecast`, `Promotions`
+- `Customer[customer_id]` → `Sales`, `Receivables`
+- `Channel[channel_id]` → `Sales`, `Commercial_Costs`, `Budget`, `Forecast`, `Marketing`, `Promotions`
+- `Scenario Selector` remains disconnected for scenario measures.
 
-Show row counts, tie-outs, negative-sales count, evidence coverage, source URL/page anchor, peer queue status, synthetic-vs-reported legend, refresh timestamp and failed-control owner.
+Do not create fact-to-fact joins. Do not “fix” duplicate keys by deleting rows; fail the input contract and repair the source.
 
-## QA execution
+## 5. Open/bind sequence (two valid paths)
 
-1. Run QA-01 through QA-18 in powerbi/QA_TEST_MATRIX.md.
-2. Run powerbi/qa_validation_queries.dax as a DAX query or reproduce its measures on the Controls page.
-3. Record observed values, reviewer initials, timestamp and remediation for any failure.
-4. Do not filter away failed rows. A release is PASS only when QA-01–QA-17 pass and QA-18 is demonstrated.
-5. Confirm peer trends exclude review-required rows and that the current queue baseline is 25/25 reported_statement_verified.
-6. Confirm VNM FY2006 is labelled a VAS 25 restated comparative and FY2007 PAT > PBT is supported by the reconciliation note.
+### Path A — PBIP editing
 
-## Save and remote archive
+1. Open `VNFinance_Commercial_Finance.pbip`.
+2. Confirm the Report points to `VNFinance_Commercial_Finance.SemanticModel`.
+3. Confirm `DataRoot` in the semantic model expressions and set it through Desktop if the path differs on the host.
+4. Refresh, then edit pages/measures as required.
+5. Save the text project. Commit only intentional text changes; ignore `.pbi/cache.abf` and `.pbi/localSettings.json`.
 
-1. Save the native PBIX.
-2. Save as PBIP/PBIR if source-controlled project files are desired.
-3. Upload the PBIX binary and, if used, the PBIP folder to the project Drive folder: https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR.
-4. Commit only text metadata, model definitions and safe synthetic extracts to GitHub. Keep raw private reports out of Git history.
-5. Update docs/FINAL_QA_AND_HANDOFF_2026-08-30.md with the PBIX file link, Desktop version, refresh timestamp and QA results.
-6. Delete the local working copy after confirming both remote uploads.
+### Path B — PBIT instantiation
 
-## Recruiter walkthrough
+1. Open `Commercial_Finance_Profitability_Analytics.pbit`.
+2. Set `DataRoot` when prompted.
+3. Refresh and validate the six pages.
+4. **File > Save As** a new `.pbix` with a dated name.
+5. Keep the PBIT checksum and the input contract result next to the PBIX evidence.
 
-Start on Executive Output. State the decision, change the scenario, trace the largest variance to PVM, drill into channel/customer economics, show the working-capital action and finish on Controls & Evidence. Target duration: five minutes.
+## 6. Page-by-page finance review
+
+| Page | Review action | Minimum result |
+|---|---|---|
+| Executive Output | Change Base/Upside/Downside and inspect cards/action table. | Revenue, contribution, revenue-vs-budget and CCC respond to the scenario. |
+| P&L and Variance | Compare actual, budget and forecast by month; inspect variance table. | Variances reconcile to the source rows and use consistent VND units. |
+| PVM Bridge | Select a period/SKU and inspect price, volume and mix impacts. | Residual is within the stated VND 100m tolerance. |
+| Channel and Customer Profitability | Filter channel/segment/customer and inspect hurdle flag. | Below-hurdle growth is visible rather than hidden by a filter. |
+| Working Capital and Liquidity | Trend DSO, DIO, DPO, CCC, AR/AP and debt. | Monthly 365/12 convention and cash-release action are visible. |
+| Controls and Evidence | Inspect source rows, status, evidence class and refresh timestamp. | Synthetic vs reported data and unresolved gates are explicit. |
+
+Every page should retain a unit/evidence subtitle: operating data are synthetic; peer facts are reported and source-linked.
+
+## 7. Native QA and evidence
+
+Execute `QA-01` through `QA-18` in order. Record observed value, expected value, reviewer, Desktop version, timestamp, screenshot filename and remediation for every exception. Release rule:
+
+- `QA-01`–`QA-17`: PASS;
+- `QA-18`: five-minute recruiter walkthrough demonstrated;
+- no failed row may be hidden by a visual filter;
+- the VND 100m PVM tolerance is disclosed;
+- peer visuals exclude review-required rows;
+- VNM FY2006 is labelled as a VAS 25 restated comparative and FY2007 PAT > PBT has its reconciliation note.
+
+Recommended evidence names:
+
+```text
+VNFinance_Commercial_Finance_v2.pbix
+VNFinance_PBIX_RELEASE_EVIDENCE_YYYY-MM-DD.md
+VNFinance_PBIX_QA_SCREENSHOTS_YYYY-MM-DD.pdf
+VNFinance_PBIX_VISUAL_TIEOUT_YYYY-MM-DD.md
+```
+
+## 8. Realtime boundary and DirectQuery route
+
+CSV Import is refreshable, not second-level realtime. Replacing files does not push values into an already-open canvas until a refresh runs. Power BI Automatic Page Refresh applies to supported DirectQuery/LiveConnect models.
+
+For the realtime variant:
+
+1. Provision Azure SQL, SQL Server or Microsoft Fabric with `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`.
+2. Load the same 15 logical tables and preserve names/columns.
+3. Replace each CSV partition with a DirectQuery table in Desktop; keep the same measures and relationships.
+4. Validate query latency, source freshness, gateway/network and capacity limits.
+5. Enable **Automatic Page Refresh** only after those checks and document the interval and source timestamp.
+6. Mark the realtime claim `PASS` only with a live database, a successful Desktop/Service refresh test and evidence screenshots. Until then keep `PENDING_DATABASE_AND_DESKTOP_EVIDENCE`.
+
+The migration schema and machine-readable gates are intentionally included now so the project can move to realtime without redesigning the finance model.
+
+## 9. Archive and recruiter handoff
+
+Upload the PBIP source, PBIT, any verified PBIX and evidence pack to the private Drive project folder. Push text/source metadata and safe synthetic extracts to GitHub; never publish private raw company reports. Update the release record with Git commit, PBIT SHA256, Drive file ID, Desktop version, refresh timestamp and QA status.
+
+The five-minute walkthrough is: **Executive Output → scenario change → largest variance → PVM driver → channel/customer economics → working-capital action → Controls and Evidence**.
