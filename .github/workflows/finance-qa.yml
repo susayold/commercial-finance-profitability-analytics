@@ -123,6 +123,16 @@ jobs:
         run: |
           node scripts/validate_pbip_source_manifest.mjs
 
+      - name: Validate Power BI source coherence
+        shell: bash
+        run: |
+          node scripts/validate_powerbi_source_coherence.mjs \
+            powerbi/PBIP_SOURCE_MANIFEST.json \
+            powerbi/model_contract.json \
+            powerbi/measures.dax \
+            powerbi/QA_TEST_MATRIX.md \
+            powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv
+
       - name: Validate M&A accretion dilution case
         shell: bash
         run: |
