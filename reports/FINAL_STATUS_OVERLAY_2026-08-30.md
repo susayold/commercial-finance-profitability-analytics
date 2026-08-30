@@ -117,3 +117,8 @@ Monte Carlo validator maintenance: report threshold aligned to the 3,788-charact
 
 
 Monte Carlo QA hardening: the workflow reruns the seeded builder and validates the committed output; the standalone comparator is archived for reviewer reproduction. Drive comparator: https://drive.google.com/file/d/1eDx_fLi36b8pm3NAA3D1TdG0GwIsZ21S/view?usp=drivesdk
+
+## Operational driver tree and unit economics extension
+
+Module F now connects operational events to the P&L and cash bridge: revenue tree, gross-to-net leakage, contribution profit, inventory/service, AR/DSO, D2C LTV/CAC/payback and a conditional owned-retail branch. The report is 11,613 characters, the driver register has 22 machine-readable rows, and its validator is wired into Finance model QA. Drive report: https://docs.google.com/document/d/1oN-nFippLlBKEXKKEsFz7tSoWkT2w-QRVDi-exTlFd0/edit?usp=drivesdk ; native register: https://docs.google.com/spreadsheets/d/1xe2FNuB2Twf0_OvCnTQ8MaQb4U9BtBBLm7epoo9bnkk/edit?usp=drivesdk. Evidence class remains SIMULATED / DERIVED and is not evidence of realized impact.
+
