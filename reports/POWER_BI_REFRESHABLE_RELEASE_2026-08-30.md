@@ -1,6 +1,7 @@
 # Power BI Refreshable Release — 2026-08-30
 
 **Authoritative source commit:** `4c3e5f1a85639416b3d0873bf2b631cdb8dc3bb9`  
+**Release-record commit:** `18278ba493e7c7df4b03a4b10554fffbb3512604`  
 **Portfolio site:** `https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#powerbi` (private Sites version 14)
 
 ## Delivered
@@ -71,7 +72,7 @@ Drive bundle `VNFinance_PowerBI_Refreshable_Package_2026-08-30.zip`: 916,598 byt
 
 ## Claim boundary
 
-The private Drive bundle is updated in place at file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`; its Drive metadata and the GitHub commit recorded in `BUNDLE_CONTENTS.md` are the authoritative sync evidence. Any checksum in this report is a packaging-time snapshot, not a second source of truth.
+The private Drive bundle is updated in place at file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`; its Drive metadata and the GitHub release-record commit above are the authoritative sync evidence. Any checksum in this report is a packaging-time snapshot, not a second source of truth.
 
 The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layout`, metadata, settings, diagram layout, content types and theme parts. The `.pbip` is editable source using TMDL and PBIR binding.
 
