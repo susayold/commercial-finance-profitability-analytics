@@ -48,6 +48,12 @@ On a Windows execution host, the one-command preflight also checks the Desktop e
 .\scripts\powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot .\powerbi\data\current
 ```
 
+If Desktop is installed outside the two default Windows locations, pass the executable explicitly:
+
+```powershell
+.\scripts\powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot .\powerbi\data\current -DesktopPath 'D:\Po BI\bin\PBIDesktop.exe'
+```
+
 `PASS` means the host is ready for native execution. `PENDING` is an actionable host/data gate; it is not evidence that a PBIX was opened or refreshed.
 
 ## 2. Desktop host preflight
