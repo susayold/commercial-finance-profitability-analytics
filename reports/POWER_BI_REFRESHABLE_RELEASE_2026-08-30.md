@@ -35,7 +35,7 @@ Latest workflow run [33314916251](https://github.com/susayold/commercial-finance
 
 Latest workflow run [33315439814](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33315439814) passed on commit `ff1e623`, after completing the Desktop runbook/checklist. The full workflow completed in 29 seconds with all QA steps green.
 
-Current Drive bundle after the runbook/CI sync: 969,639 bytes, SHA-256 `504341EF4F195542194CBFEBB8169F43B10F1D40F7FAC8711AA94217CCBCF1F5`.
+Current Drive bundle after the runbook/status/process-log sync: 977,862 bytes, SHA-256 `A1F665B093CD992CE9C8C81FEAB196CD4BC7E8FC0D95B7CD4A500171928EB15E`.
 
 PBIT SHA-256: `7E7A417C7028678C44F2500B185FCA3D669193EC62B620EB7E48EA7A6EC6E095`
 
@@ -45,7 +45,7 @@ Drive bundle `VNFinance_PowerBI_Refreshable_Package_2026-08-30.zip`: 916,598 byt
 
 ## Claim boundary
 
-**Current Drive bundle checksum (supersedes the preliminary checksums above):** 969,639 bytes, SHA-256 `504341EF4F195542194CBFEBB8169F43B10F1D40F7FAC8711AA94217CCBCF1F5`. Drive file ID remains `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`; the copy embedded inside the ZIP is a packaging-time snapshot of the release record.
+**Current Drive bundle checksum (supersedes the preliminary checksums above):** 977,862 bytes, SHA-256 `A1F665B093CD992CE9C8C81FEAB196CD4BC7E8FC0D95B7CD4A500171928EB15E`. Drive file ID remains `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`; the copy embedded inside the ZIP is a packaging-time snapshot of the release record.
 
 The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layout`, metadata, settings, diagram layout, content types and theme parts. The `.pbip` is editable source using TMDL and PBIR binding.
 
