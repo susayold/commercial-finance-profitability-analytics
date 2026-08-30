@@ -2,7 +2,8 @@
 
 ## Live / review-first
 
-- Recruiter website: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
+- Recruiter website: https://vn-finance-fpa-case.sangkenny200.chatgpt.site (Sites v8; [release record](../reports/SITE_V8_RELEASE_RECORD_2026-08-30.md))
+- Current-state status overlay: [GitHub](../reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive](https://docs.google.com/document/d/1hokvGptWOnSoN8GO2SK124iEPpEHw8fXsA8Kp51FKkU/edit?usp=drivesdk)
 - GitHub repository: https://github.com/susayold/commercial-finance-profitability-analytics
 - Google Drive project root: https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR
 
@@ -48,6 +49,14 @@
 
 - Final QA and remote handoff record: docs/FINAL_QA_AND_HANDOFF_2026-08-30.md
 - Drive copy: https://drive.google.com/file/d/1xQIm44FZnwH_Xdhv4vp8sAD9OHENY2Zh/view?usp=drivesdk
+- [Current-state addendum](../reports/FINAL_QA_HANDOFF_ADDENDUM_2026-08-30.md) · [Drive addendum](https://drive.google.com/file/d/1TZ_1HGzvO-u-O96nAtPzR95DYjn0pZNR/view?usp=drivesdk)
+
+
+## MCH FY2017 indexed evidence
+
+- [Evidence memo](../reports/MCH_FY2017_WEB_INDEX_EVIDENCE.md) · [CSV](../data/mch_fy2017_web_index_evidence.csv) · [8/8 QA](../reports/MCH_FY2017_WEB_INDEX_EVIDENCE_QA.md)
+- [Drive memo](https://drive.google.com/file/d/12fNf-xOHSYsnGxlmoVCQse-g-DSJse8y/view?usp=drivesdk) · [Drive CSV](https://drive.google.com/file/d/12DzqLsaAIHxWvVcaI06zjxW2j5YeoRI9/view?usp=drivesdk)
+- Status remains `INDEXED_ONLY` until standalone PDF bytes/hash and page-level review are archived; audited FY2018 comparative/corresponding columns remain approved provenance.
 
 
 ## Legacy peer candidates
