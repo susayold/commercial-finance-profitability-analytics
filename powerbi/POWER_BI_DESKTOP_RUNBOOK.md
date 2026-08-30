@@ -174,6 +174,24 @@ approved SQL source. Add `--service-apply --workspace-id <guid>
 `PBI_ACCESS_TOKEN` in the process environment. The command fails closed when a
 requested credential or connection is missing.
 
+For recurring CSV drops, `scripts/watch_powerbi_refresh.py` hashes all 14
+contract files, waits for a stable copy and delegates to the same orchestrator.
+It is dry-run by default; use `--apply` to copy the validated files and add
+`--service-apply` only when the published dataset and runtime secrets are
+configured. A watcher can automate the trigger, but it does not turn Import
+mode into second-level realtime: the Desktop/API refresh and the DirectQuery /
+Automatic Page Refresh production gates still apply.
+
+```powershell
+python scripts/watch_powerbi_refresh.py `
+  --input-dir C:\PBI\incoming `
+  --data-root C:\PBI\data\current `
+  --report C:\PBI\evidence\watch_refresh.json `
+  --interval-seconds 30 `
+  --settle-seconds 3 `
+  --apply
+```
+
 ## 4. Model inventory and expected topology
 
 The current model contains **15 tables, 37 measures, 23 relationships, 6 pages and 39 visual containers**.
