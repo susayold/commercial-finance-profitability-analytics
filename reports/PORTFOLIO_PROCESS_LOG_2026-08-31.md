@@ -54,6 +54,9 @@ still need a real Power BI Desktop or cloud workspace.
 16. Corrected the refresh architecture filename list to use the canonical
     `marketing_spend.csv` partition and added a claim-boundary regression check
     so the documentation cannot drift from the Power Query/source contract.
+17. Added `scripts/validate_powerbi_docs_contract.py` and wired it into CI; it
+    compares the canonical 14-file tuple, runbook list, PBIP/PbixProj
+    `DataRoot` references and committed CSV fixture.
 
 ## Evidence boundaries
 

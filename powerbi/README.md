@@ -24,6 +24,7 @@ The repository now includes generated native source under `powerbi/native/` and 
 - On a Windows execution host, run `scripts/powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot <folder>` to check Desktop installation, package paths and input readiness before opening PBIP/PBIT.
 - Add `-Report reports/POWER_BI_DESKTOP_PREFLIGHT_YYYY-MM-DD.json` to retain the exact host/data gate output; `PENDING` means Desktop is absent or a required input is missing, not that native PBIX QA passed.
 - `scripts/validate_powerbi_artifact_coherence.py` checks the generated PBIP/PBIT topology directly (15 tables, 37 measures, 23 relationships, 6 pages and 39 visuals) against `package_inventory` in `PBIP_SOURCE_MANIFEST.json`.
+- `scripts/validate_powerbi_docs_contract.py` checks that the runbook, Power Query references and committed fixture all use the same 14 canonical CSV filenames.
 
 Automated package QA currently passes 29/29 checks. Native Desktop open/refresh/render QA remains a separate gate and is not inferred from source validation.
 

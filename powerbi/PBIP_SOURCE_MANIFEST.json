@@ -19,6 +19,7 @@
     "native_desktop_handoff": "powerbi/POWER_BI_NATIVE_DESKTOP_HANDOFF_2026-08-31.md",
     "native_pbix_validator": "scripts/validate_native_pbix_release.py",
     "current_release_status": "reports/POWER_BI_CURRENT_RELEASE_STATUS_2026-08-31.md",
+    "docs_contract_validator": "scripts/validate_powerbi_docs_contract.py",
     "service_refresh_orchestrator": "scripts/trigger_powerbi_service_refresh.py",
     "service_refresh_workflow": ".github/workflows/powerbi-service-refresh.yml",
     "service_refresh_automation": "github_push_to_main_with_secrets",

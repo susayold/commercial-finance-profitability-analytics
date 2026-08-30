@@ -287,6 +287,13 @@ jobs:
             --repo-root . \
             --report "$RUNNER_TEMP/powerbi_claim_boundary_QA.json"
 
+      - name: Validate Power BI documentation/source contract
+        shell: bash
+        run: |
+          python scripts/validate_powerbi_docs_contract.py \
+            --repo-root . \
+            --report "$RUNNER_TEMP/powerbi_docs_contract_QA.json"
+
       - name: Validate M&A accretion dilution case
         shell: bash
         run: |
