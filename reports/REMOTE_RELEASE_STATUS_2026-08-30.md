@@ -135,3 +135,6 @@ Drive mirror for M&A extension:
 ### QNS reported-summary enrichment
 
 QNS FY2021–FY2025 gross profit and owners' equity are now populated from the FY2025 annual-report management summary (pages 27–28). The evidence tier is explicit: reported annual-report summary, partially comparable, not audited statement-line extraction. Companion CSV/report are mirrored to Drive alongside the updated normalized panel.
+- QNS evidence memo (Drive): https://docs.google.com/document/d/1gH1Gd9PR4-h-Q0tB-VzdXgFKn5LfjcGDEwzHI_lsU7g/edit
+- QNS summary Sheet (Drive): https://docs.google.com/spreadsheets/d/1N5Vwwp60war25MIBwpoPz2YaoB9d6OYDsgmJ6lqnXBo/edit
+- Updated normalized panel Sheet (Drive): https://docs.google.com/spreadsheets/d/11v8XpRNMCkaWkhqakjxh1Ao3E0yTP4cLP3Z3Jmg7Owg/edit
