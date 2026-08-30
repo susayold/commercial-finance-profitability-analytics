@@ -153,6 +153,18 @@ I would connect approved ERP/CRM extracts, lock the chart-of-accounts mapping, a
 
 > The project shows how I would operate as a finance analyst: define the decision, reconcile the number, explain the driver, quantify the trade-off, assign the action and preserve an audit trail.
 
+## Equity-research extension (5-minute optional path)
+
+If the interviewer asks about public-company analysis, use this sequence:
+
+1. **Thesis:** “MCH is a durable long-run earnings franchise, but the FY2025 margin reset and cash-conversion drop make the current view watch / conditional upside.”
+2. **Evidence:** Show the FY2016–FY2025 table: revenue CAGR 9.24%, PAT CAGR 10.34%, operating margin 29.17% in FY2024 versus 25.41% in FY2025, and CFO/PAT 116.50% versus 31.52%.
+3. **Judgement:** Explain that profit remains positive, but cash conversion is the highest-value question; do not call it distress without debt, cash and maturity evidence.
+4. **Valuation:** Show the Base/Upside/Downside FCFF/DCF frame and the VND 40,673.8bn–101,614.9bn EV range. Explain that 67.15% of Base EV is terminal value, so assumptions matter.
+5. **Boundary:** State that no equity value or price target is published without net debt/net cash, diluted shares, current price and an approved forward forecast.
+
+**One-line answer:** “I used the research pack to form a falsifiable view and a diligence list, not to manufacture a target price from incomplete evidence.”
+
 
 ## Customer profitability and concentration extension
 

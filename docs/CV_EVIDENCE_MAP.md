@@ -65,6 +65,13 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Do not claim causal promotion lift without a control design.
 - Do not claim OCR figures are approved until a human reviewer signs off.
 
+## Equity research / valuation add-on (V3)
+
+- **Safe CV bullet:** Analysed MCH FY2016–FY2025 public statements, deriving 9.24% revenue CAGR, 10.34% PAT CAGR, FY2025 margin of 25.41% and CFO/PAT of 31.52%; produced a credit memo and equity-research rehearsal with 22/22 QA (**PUBLIC / CALCULATED**).
+- **Safe valuation bullet:** Built a Base/Upside/Downside FCFF/DCF rehearsal with an EV range of VND 40,673.8bn–101,614.9bn; stopped at EV because net debt, diluted shares, approved forecast and market price are unavailable (**ANALYST_ASSUMPTION_REHEARSAL**).
+- **Artifact chain:** `reports/MCH_EQUITY_RESEARCH_REHEARSAL.md`, `data/mch_equity_research_summary.json`, `data/mch_equity_research_scorecard.csv`, `reports/MCH_EQUITY_RESEARCH_REHEARSAL_QA.md`, `reports/MCH_VALUATION_REHEARSAL.md`.
+- **Interview proof:** Start with the thesis, show the ten-year table, explain why FY2025 CFO/PAT is the watch item, show the scorecard, then state the diligence question that would change the view. Do not convert the rehearsal into a buy/sell recommendation.
+
 
 - Built a transparent synthetic M&A accretion/dilution screen linking target standalone forecasts, revenue/cost synergies, integration costs and financing interest to Year-1 dilution, Year-2 EPS accretion of 17.16%, incremental FCFF and deal NPV of VND 28.39bn; included a 12-cell entry-multiple / synergy-realization sensitivity grid and explicit diligence caveats.
 

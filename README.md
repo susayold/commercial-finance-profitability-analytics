@@ -51,7 +51,7 @@ Every output distinguishes reported fact, calculated fact, synthetic fact, assum
 
 ## Current status overlay
 
-See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1hokvGptWOnSoN8GO2SK124iEPpEHw8fXsA8Kp51FKkU/edit?usp=drivesdk) · [Equity refresh copy](https://drive.google.com/file/d/1Hxd-5_1uIrUwUdtnKxS67I2KoGnjDiUZ/view?usp=drivesdk) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
+See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1hokvGptWOnSoN8GO2SK124iEPpEHw8fXsA8Kp51FKkU/edit?usp=drivesdk) · [Equity refresh copy](https://drive.google.com/file/d/1Hxd-5_1uIrUwUdtnKxS67I2KoGnjDiUZ/view?usp=drivesdk) · [CV refresh copy](https://drive.google.com/file/d/1OiaaLgFCaAsEMM1VO6L-gAEuL2h6500d/view?usp=drivesdk) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
 
 ## Status
 
@@ -271,6 +271,8 @@ Drive mirror for M&A extension:
 
 - [Finance Analyst / Junior FP&A CV draft](docs/FINANCE_ANALYST_CV_ONE_PAGE.md) · [Drive copy](https://drive.google.com/file/d/1rRpc9qNKcia0MeckGhqzrVnJ_iyed7RB/view)
 - [Finance-first one-page CV V2](docs/FINANCE_ANALYST_CV_ONE_PAGE_V2.md) · [Drive copy](https://docs.google.com/document/d/1pf5jUlWAajDPUj4Rs4GL6xnWyAKi_kXPLVLy59lIviU/edit?usp=drivesdk) · [Evidence map](docs/CV_EVIDENCE_MAP.md) · [Drive evidence map](https://docs.google.com/document/d/1YjloTkCbzTMCfOO19O1BVf5M0SOXxWFzJx7i0QGHLus/edit?usp=drivesdk)
+- [Finance-first one-page CV V3](docs/FINANCE_ANALYST_CV_ONE_PAGE_V3.md) · [Drive CV V3](https://drive.google.com/file/d/1wFqp82bQWbyCqQOwwxnG1JfHSt5YTJqS/view?usp=drivesdk) · [Role variants V2](docs/CV_ROLE_VARIANTS_V2.md) · [Drive variants](https://drive.google.com/file/d/1PvVITP5jQsFlF8vsIsxg81QQ8Y8au4B7/view?usp=drivesdk) · [CV V3 QA 16/16](reports/CV_V3_QA.md) · [Drive QA](https://drive.google.com/file/d/1ZKqI-nKkagM6d0AzVoH98K5tC3o-XAvg/view?usp=drivesdk)
+- [Research evidence map](docs/CV_EVIDENCE_MAP.md) · [Drive map](https://drive.google.com/file/d/1mf27fa2TogqDywRs4DwYHs38DSUXuPuF/view?usp=drivesdk) · [Interview talk track](docs/FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md) · [Drive talk track](https://drive.google.com/file/d/1piEmwkzb__5DyTMXWErdT9YAoBBJccI9/view?usp=drivesdk)
 - Bullets are restricted to validated evidence and explicitly label synthetic/public-guidance outputs; replace bracketed personal fields before use.
 
 
@@ -468,6 +470,7 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 - [Drive V12 release record](https://drive.google.com/file/d/1e8irlZ5wabYck4kJr2ZgJ3n5CQJxlzv2/view?usp=drivesdk) · [Drive V12 source archive](https://drive.google.com/file/d/1ihlMy6AZ5k_p3BMbWSCmYVoKH911UsB7/view?usp=drivesdk)
 - Site V11 adds the public-company valuation rehearsal lens (base EV, scenarios, sensitivity and EV-only evidence boundary): [release record](reports/SITE_V11_RELEASE_RECORD_2026-08-30.md).
 - [Drive V11 release record](https://drive.google.com/file/d/1jLSEF0bNZe5Folz170yuk3DF4cLQXx54/view?usp=drivesdk) · [Drive V11 source archive](https://drive.google.com/file/d/1SXAwrk3gT8zxdcuRo6HeWrmfaTAYlJt0/view?usp=drivesdk)
+- CV V3 packaging is now aligned to V12 research evidence; personal fields remain the only candidate-specific placeholders before sending applications.
 - Site V10 previously surfaced the Next Execution Sprint with Gate A/B handoffs, CV personalization status and playbook QA: [release record](reports/SITE_V10_RELEASE_RECORD_2026-08-30.md).
 - [Drive V10 release record](https://drive.google.com/file/d/1QDHv3IWW4M4MIJdGo-2wOlj6OW9GjOre/view?usp=drivesdk) · [Drive V10 source archive](https://drive.google.com/file/d/1THONrHKe1DGLHSbmH0Fpx6XqkDpFdxkX/view?usp=drivesdk)
 - Site V9 customer-economics decision lens remains included: [V9 release record](reports/SITE_V9_RELEASE_RECORD_2026-08-30.md) · [Drive release record](https://drive.google.com/file/d/1vZn_kPRFlURjye_3Bbxikq62BWVUy1BK/view?usp=drivesdk).

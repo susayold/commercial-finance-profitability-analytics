@@ -144,3 +144,7 @@ The MCH Finance Analyst Lens now includes a separate EV-only FCFF/DCF rehearsal.
 ## MCH equity research rehearsal extension
 
 The public-finance layer now includes a standalone equity-research rehearsal: a ten-year thesis, earnings-quality bridge, five-dimension 1–5 scorecard, catalyst/risk map, EV-only valuation frame and decision-oriented diligence list. The builder and validator pass 22/22 checks. The stance is WATCH / CONDITIONAL UPSIDE with medium confidence; historical public evidence, analyst judgement and forward assumptions remain visibly separated.
+
+## CV V3 packaging extension
+
+The finance-first CV is now refreshed as a 45-line one-page V3 with five recruiter-first project bullets, evidence-class wording and direct GitHub/portfolio links. Role-targeted variants cover Junior FP&A, Business Finance, Finance Data Analyst and Fundamental/Equity Research Analyst. The evidence map and interview talk track include the new MCH research/valuation proof. CV package validator passes 16/16; bracketed personal fields remain the only candidate-specific input required before sending.
