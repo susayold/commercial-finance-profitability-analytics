@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import fs from "node:fs";
-function parseCsv(text){const rows=[];let row=[],field="",quoted=false;for(let i=0;i<text.length;i++){const ch=text[i],next=text[i+1];if(quoted){if(ch==='"'&&next==='"'){field+='"';i++;}else if(ch==='"')quoted=false;else field+=ch;}else if(ch==='"')quoted=true;else if(ch===","){row.push(field);field="";}else if(ch==="\\n"){row.push(field.replace(/\\r$/,""));rows.push(row);row=[];field="";}else field+=ch;}if(field.length||row.length){row.push(field);rows.push(row);}const header=(rows.shift()||[]).map(x=>x.trim());return rows.filter(r=>r.some(x=>x!=="")).map(r=>Object.fromEntries(header.map((h,i)=>[h,(r[i]??"").trim()])));}
+function parseCsv(text){const rows=[];let row=[],field="",quoted=false;for(let i=0;i<text.length;i++){const ch=text[i],next=text[i+1];if(quoted){if(ch==='"'&&next==='"'){field+='"';i++;}else if(ch==='"')quoted=false;else field+=ch;}else if(ch==='"')quoted=true;else if(ch===","){row.push(field);field="";}else if(ch==="\n"){row.push(field.replace(/\r$/,""));rows.push(row);row=[];field="";}else field+=ch;}if(field.length||row.length){row.push(field);rows.push(row);}const header=(rows.shift()||[]).map(x=>x.trim());return rows.filter(r=>r.some(x=>x!=="")).map(r=>Object.fromEntries(header.map((h,i)=>[h,(r[i]??"").trim()])));}
 const [dataPath="data/opex_headcount_planning_synthetic.csv",reportPath="reports/OPEX_HEADCOUNT_PLANNING_QA.md"]=process.argv.slice(2);
 const rows=parseCsv(fs.readFileSync(dataPath,"utf8"));
 const req=["period","cost_center","function","headcount_open","hires","exits","headcount_close","avg_headcount","avg_salary_vnd","payroll_vnd","benefits_vnd","bonus_vnd","non_payroll_opex_vnd","opex_actual_vnd","opex_budget_vnd","opex_forecast_vnd","budget_variance_vnd","forecast_variance_vnd","evidence_class","source_system"];
@@ -23,6 +23,6 @@ const report=fs.readFileSync(process.argv[3]||"docs/OPEX_HEADCOUNT_PLANNING_MODU
 add("Report governance detail",report.includes("owner")&&report.includes("guardrail")&&report.includes("Release boundary"),"missing governance text");
 const passed=checks.filter(c=>c.pass).length;
 const lines=["# OPEX & Headcount Planning QA","","**Overall status: "+(passed===checks.length?"PASS":"FAIL")+" ("+passed+"/"+checks.length+" checks passed)**","","| Check | Status | Detail |","|---|---|---|",...checks.map(c=>"| "+c.name+" | "+(c.pass?"PASS":"FAIL")+" | "+c.detail.replace(/\\|/g,"\\\\|")+" |"),""];
-fs.writeFileSync(reportPath,lines.join("\\n"),"utf8");
+fs.writeFileSync(reportPath,lines.join("\n"),"utf8");
 console.log(JSON.stringify({status:passed===checks.length?"PASS":"FAIL",checks:checks.length,passed,rows:rows.length}));
 if(passed!==checks.length)process.exit(1);
