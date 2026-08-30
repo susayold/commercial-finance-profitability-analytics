@@ -30,7 +30,6 @@ Every row keeps the two source record IDs and URLs used for the calculation.
 | VNM | 1.28% | 18.30% | 14.79% | n/a | 1.94% | n/a | n/a | Trend candidate; missing gross-profit/equity/OCF blocks those ratios |
 | QNS | 10.26% | 20.92% | 18.12% | 33.33% | 9.42% | 74.19% | n/a | Context only; revenue-basis bridge remains open |
 | KDC | 1.70% | 8.03% | 6.49% | 18.50% | 2.40% | 55.64% | 14.67% | Context only; perimeter transition and missing 2021–2023 PAT block clean trend claims |
-```
 
 ## Analyst interpretation
 
