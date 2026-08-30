@@ -11,6 +11,7 @@
 | GitHub source of truth | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) | Versioned source, synthetic data, model logic, QA scripts and reports |
 | Private Drive project root | [Google Drive project folder](https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR) | Archived public filings, workbooks, exports, binaries and handoff files |
 | Full reproducible archive | [Project tar.gz](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) | GitHub `main` snapshot at the release commit shown below |
+| Boss handoff file | [Drive copy](https://drive.google.com/file/d/1dr0DVS0paVtUsij0M7zctm9nul5587gn/view?usp=drivesdk) · [GitHub copy](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/BOSS_HANDOFF_PACK_2026-08-31.md) | This navigation index |
 
 ## 2. Recommended review order
 
