@@ -31,3 +31,20 @@ The FY2024 and FY2025 values were visually checked against the official PDF stat
 ## Boundary
 
 This supplement is safe for a latest-year MCH case study, trend bridge or working-capital discussion. It must not be used to calculate a ten-year CAGR or to imply that FY2016–FY2023 are approved. The older-year OCR queue remains a separate human-review workstream.
+
+## FY2023 extension (visual review completed 2026-08-30)
+
+The same visual review was completed for the FY2023 audited consolidated statement PDF. Printed pages 5–10 (PDF positions 6–11) confirm all eight normalized metrics:
+
+| Metric | FY2023 VND bn | Printed page |
+|---|---:|---:|
+| Net revenue | 28,240.9926 | 8 |
+| Gross profit | 12,974.3683 | 8 |
+| Operating profit | 8,094.7558 | 8 |
+| Profit before tax | 8,098.8466 | 8 |
+| Profit after tax | 7,194.1702 | 8 |
+| Total assets | 40,552.6889 | 6 |
+| Owners' equity | 26,375.5592 | 7 |
+| Operating cash flow | 6,255.5856 | 10 |
+
+The approved CSV now covers FY2023–FY2025 (24 rows). FY2016–FY2022 remain outside the approved supplement until equivalent page-level review is completed.
