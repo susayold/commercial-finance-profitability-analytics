@@ -10,7 +10,7 @@ Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an ex
 - **Editable `.pbip`:** generated with TMDL semantic model source, PBIR report binding, parameterized Power Query and source-controlled artifacts.
 - **Data replacement contract:** passed a controlled VND 1,000,000 source mutation with identical schema and row count; all 14 CSV partitions reference the single `DataRoot` parameter.
 - **Baseline fixture:** the 14 synthetic refresh inputs are now committed at `powerbi/data/current/` and mirrored in the Drive bundle, so the GitHub and Drive starting points are reproducible.
-- **Automated QA:** 29/29 package, source and refresh-contract checks passed.
+- **Automated QA:** 29/29 package, source and refresh-contract checks passed; CI also rebuilds the committed fixture from seed `20260829` and diffs it for deterministic parity.
 - **Native `.pbix`:** not yet claimed. Power BI Desktop executable is missing on the current machine and MSI repair requires Administrator rights, so Desktop open/refresh/render QA remains pending.
 - **Real-time interpretation:** current Import-mode CSV design updates on manual or scheduled refresh. True automatic page refresh requires migration to a supported DirectQuery/LiveConnect source.
 
