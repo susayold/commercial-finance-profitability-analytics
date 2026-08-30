@@ -12,7 +12,7 @@ Finance Analyst / Junior FP&A candidate focused on management P&L, budgeting, ro
 
 ### CORE SKILLS
 
-FP&A · Annual budgeting · Rolling forecast · Management reporting · Variance analysis · Price–Volume–Mix · Gross-to-net · Product/channel/customer profitability · Promotion and pricing ROI · Working capital · DSO/DIO/DPO/CCC · Liquidity stress testing · Excel financial modelling · Financial statement analysis · Power BI-ready modelling · Finance communication
+FP&A · Annual budgeting · Rolling forecast · Management reporting · Variance analysis · Price–Volume–Mix · Gross-to-net · Product/channel/customer profitability · Promotion and pricing ROI · Working capital · DSO/DIO/DPO/CCC · Liquidity stress testing · Excel financial modelling · Financial statement analysis · Power BI-ready modelling · Operational driver trees · Unit economics · Finance communication
 
 ### SELECTED PROJECT
 
@@ -23,7 +23,7 @@ Commercial Finance & Profitability Analytics — VietNova Consumer JSC / Vietnam
 - Produced CFO-ready outputs (variance bridge, cash/CCC diagnostic, scenario downside and management actions) with explicit owner, timing, guardrail and evidence class; synthetic operating values are labelled SIMULATED.
 - Built the public-company finance layer using page-reviewed Masan Consumer statements for FY2016–FY2025: FY2025 operating margin compressed from 29.17% to 25.41%, PAT declined 14.6% and CFO/PAT fell to 31.5%; added DuPont/ROA/ROE and leverage-proxy diagnostics with 11/11 analysis controls, while the credit-memo trend validator passes 15/15 checks.
 - Added an evidence-controlled peer view: VNM long-run panel FY2006–FY2025 plus a 21-row VNM/QNS/KDC financial-quality scorecard; VNM is the trend candidate, QNS/KDC are context-only, scorecard QA passes 11/11 and basis/perimeter bridge QA passes 12/12 while unadjusted cross-break CAGR remains blocked.
-- Packaged the analysis as a CFO memo, management deck, recruiter website and reproducible GitHub Actions QA workflow. Power BI is delivered as a PBIP source/QA contract; native PBIX remains an explicitly documented Desktop gate.
+- Built an operational driver and unit-economics tree linking customer/outlet, orders, units and ASP to gross-to-net, contribution, inventory cash, AR/DSO and D2C LTV/CAC; added a 22-row source-to-metric register, reconciliation controls, owners, guardrails and WD-5–WD+5 finance cadence. Packaged the analysis as a CFO memo, management deck, recruiter website and reproducible GitHub Actions QA workflow. Power BI is delivered as a PBIP source/QA contract with 13/13 source-coherence preflight; native PBIX remains an explicitly documented Desktop gate.
 
 ### EDUCATION
 
