@@ -11,7 +11,7 @@ Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an ex
 - **Data replacement contract:** passed a controlled VND 1,000,000 source mutation with identical schema and row count; all 14 CSV partitions reference the single `DataRoot` parameter.
 - **Baseline fixture:** the 14 synthetic refresh inputs are now committed at `powerbi/data/current/` and mirrored in the Drive bundle, so the GitHub and Drive starting points are reproducible.
 - **Automated QA:** 29/29 package, source and refresh-contract checks passed; CI also rebuilds the committed fixture from seed `20260829` and diffs it for deterministic parity.
-- **Native `.pbix`:** not yet claimed. Power BI Desktop executable is missing on the current machine and MSI repair requires Administrator rights, so Desktop open/refresh/render QA remains pending.
+- **Native `.pbix`:** not yet claimed. Power BI Desktop is installed at the machine's custom path `D:\Po BI\bin\PBIDesktop.exe` (version `2.157.879.0`) and the PBIP launch process is alive. The custom-path preflight passes 14/14 checks; native data-source binding, refresh, DAX execution and visual-render evidence remain pending because the current Computer Use runtime could not expose a targetable Power BI window.
 - **Real-time interpretation:** current Import-mode CSV design updates on manual or scheduled refresh. True automatic page refresh requires migration to a supported DirectQuery/LiveConnect source.
 
 ## DirectQuery readiness extension — 2026-08-30
@@ -21,6 +21,8 @@ The migration path is now source-controlled under `powerbi/directquery/`. It inc
 ## Desktop runbook and remote bundle update — 2026-08-30
 
 The Desktop execution material is now aligned to the generated package rather than the earlier scaffold. `powerbi/POWER_BI_DESKTOP_RUNBOOK.md` documents both PBIP editing and PBIT instantiation, the `DataRoot` binding, all 14 CSV filenames, contract validation, the controlled +VND 1,000,000 data-swap, native QA-01–QA-18 and the DirectQuery migration gate. `powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md` is the evidence checklist for the external execution host.
+
+The execution-host record is tracked in `reports/POWER_BI_DESKTOP_NATIVE_QA_2026-08-30.md`: the custom-path Desktop executable and all portable/package gates pass, while model binding, refresh and visual capture remain explicitly pending.
 
 The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow, process/status records, Desktop preflight script and PBIP/PBIT coherence gate. The current bundle is 1,011,299 bytes with SHA-256 `9E11F0FC907C95544B98A2D88FC1EB2CA8B184DF0FA9720F628661435BDD4F7D`.
 

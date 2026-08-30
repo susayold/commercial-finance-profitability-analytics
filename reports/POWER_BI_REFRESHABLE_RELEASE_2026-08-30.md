@@ -13,6 +13,7 @@
 - Desktop execution runbook/checklist: `powerbi/POWER_BI_DESKTOP_RUNBOOK.md`, `powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md`
 - DirectQuery readiness: `powerbi/directquery/README.md`, `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`, `powerbi/DIRECTQUERY_READINESS.json`
 - Automated evidence: `reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md`
+- Native execution evidence: `reports/POWER_BI_DESKTOP_NATIVE_QA_2026-08-30.md`
 
 ## Release metrics
 
@@ -54,7 +55,7 @@ Drive bundle `VNFinance_PowerBI_Refreshable_Package_2026-08-30.zip`: 916,598 byt
 
 The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layout`, metadata, settings, diagram layout, content types and theme parts. The `.pbip` is editable source using TMDL and PBIR binding.
 
-No native `.pbix` is claimed in this release. The current host has a registered Power BI Desktop MSI but `PBIDesktop.exe` is missing; repair returns Windows Installer error 1730 because Administrator rights are required. Desktop open, data-source binding, refresh, DAX execution and visual-rendering QA therefore remain pending.
+No native `.pbix` is claimed in this release. Power BI Desktop is now installed at a custom path (`D:\Po BI\bin\PBIDesktop.exe`, version `2.157.879.0`) and the PBIP launch process is alive. The custom-path preflight passes 14/14 checks, but native data-source binding, refresh, DAX execution and visual-rendering evidence are still pending because the current Computer Use UI runtime could not expose a targetable Power BI window for the Refresh/canvas actions.
 
 The CSV model is Import mode. It supports replacing source files and refreshing without redesigning the report. It does not claim second-level streaming real-time; that requires a supported DirectQuery/LiveConnect source and Automatic Page Refresh.
 
