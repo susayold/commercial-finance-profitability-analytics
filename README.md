@@ -202,6 +202,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - [Finance-analyst credit memo](reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md) · [Drive mirror](https://docs.google.com/document/d/15h8U_55cR5MBZV5KewQMvyJ6bjtVahKO0V5rXn-oXZQ/edit?usp=drivesdk)
 - Lender-style view: WATCH / CONDITIONAL SUPPORT. FY2025 equity ratio is 54.9%, but CFO/PAT fell to 31.5%; debt-service capacity remains unproven until debt, interest, maturity and working-capital schedules are provided.
+- Automated credit-memo trend QA: [15/15 checks PASS](reports/MCH_CREDIT_MEMO_QA.md) · [validator](scripts/validate_mch_credit_memo.mjs) · [Drive QA Doc](https://docs.google.com/document/d/1LdV0ricHr9pr-sX1fN6JS6-znpUkToa15FsqrIG-rsc/edit?usp=drivesdk).
 
 ## M&A / strategic stretch
 
