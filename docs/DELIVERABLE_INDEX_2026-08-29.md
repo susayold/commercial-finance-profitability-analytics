@@ -195,3 +195,9 @@ Use this order for a 15-minute Finance Analyst walkthrough:
 - The module links operational drivers to net revenue, gross-to-net, contribution, inventory, AR/AP, D2C unit economics and a conditional owned-retail branch. It includes a source-to-metric contract, reconciliation controls, scenario rules and WD-5 to WD+5 cadence.
 - Release boundary: SIMULATED / DERIVED; not evidence of realized commercial impact until approved ERP, promotion, inventory, AR/AP and cohort data are available.
 
+## Gate B preflight artifacts
+
+- [Power BI source coherence QA](../reports/POWER_BI_SOURCE_COHERENCE_QA.md)
+- [Reviewer walkthrough](../powerbi/POWER_BI_REVIEWER_WALKTHROUGH.md)
+- [PBIP Desktop checklist](../powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md)
+- Native PBIX remains an external Gate B deliverable; the scaffold is deliberately labelled non-native.
