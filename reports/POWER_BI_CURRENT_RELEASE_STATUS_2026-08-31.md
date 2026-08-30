@@ -10,7 +10,7 @@ binary/source bundle is mirrored in the private Drive file linked below.
 |---|---|
 | GitHub repository | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) |
 | Handoff commit | [`25f8278`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/25f827855feeec25ad1d3e187be7d987ead4e830) — last fully gated handoff |
-| Current repository head | [`9519647`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/95196471a310692fda5576f6eb8bb43da8a85177) — editable scenario drivers + extended PBIT/DirectQuery QA |
+| Current repository head | [`cb7c687`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/cb7c687e0878479e9026ed6a2fc279b73fea66ae) — CCC working-capital scenario driver + extended PBIT/DirectQuery QA |
 | Latest validated CI | [Finance model QA](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127) — PASS |
 | Latest local release gate | [Compact gate](POWER_BI_COMPACT_RELEASE_GATE_2026-08-31.json) + [extended gate](POWER_BI_EXTENDED_RELEASE_GATE_2026-08-31.json) — PASS; Desktop preflight 14/14 |
 | Drive bundle | [VNFinance Commercial Finance project archive](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) |
