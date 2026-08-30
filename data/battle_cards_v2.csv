@@ -1,0 +1,4 @@
+card,request,finance_value_equation,approval_evidence,guardrail,green_action,red_action
+A,Marketing +15% budget,Incremental CM - CAC - fees - fulfilment,matched baseline and repeat-rate plan,LTV/CAC >= 1.0x; ROI >= 25%,release capped test tranche,stop and escalate risk-cap breach
+B,Deeper customer discount,Incremental CM - cost-to-serve - cash cost,customer P&L volume floor payment commitment,CM% >= 25%; DSO <= plan + 5d,conditional time-bound rebate,stop negative contribution
+C,Higher inventory buffer,Avoided lost CM - carry cost - markdown risk,SKU forecast lead time aging release plan,service >= 95%; DIO within case,time-box hero SKU buffer,stop slow SKU and escalate liquidity
