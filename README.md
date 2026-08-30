@@ -51,7 +51,7 @@ Every output distinguishes reported fact, calculated fact, synthetic fact, assum
 
 ## Current status overlay
 
-See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1hokvGptWOnSoN8GO2SK124iEPpEHw8fXsA8Kp51FKkU/edit?usp=drivesdk) · [Equity refresh copy](https://drive.google.com/file/d/1Hxd-5_1uIrUwUdtnKxS67I2KoGnjDiUZ/view?usp=drivesdk) · [CV refresh copy](https://drive.google.com/file/d/1OiaaLgFCaAsEMM1VO6L-gAEuL2h6500d/view?usp=drivesdk) · [CV PDF refresh](https://drive.google.com/file/d/1y6HNrP2EmJKhMegXC5f2wy1Y95F8QQ4Y/view?usp=drivesdk) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
+See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1hokvGptWOnSoN8GO2SK124iEPpEHw8fXsA8Kp51FKkU/edit?usp=drivesdk) · [Equity refresh copy](https://drive.google.com/file/d/1Hxd-5_1uIrUwUdtnKxS67I2KoGnjDiUZ/view?usp=drivesdk) · [CV refresh copy](https://drive.google.com/file/d/1OiaaLgFCaAsEMM1VO6L-gAEuL2h6500d/view?usp=drivesdk) · [CV PDF V13 refresh](https://drive.google.com/file/d/17c4DLVHDa4wuAtffGQycmn9hruYkqizU/view?usp=drivesdk) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
 
 ## Status
 
@@ -467,6 +467,8 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 
 ## Latest website release
 
+- Site V13 adds a direct recruiter-facing Download CV link to the canonical one-page PDF: [release record](reports/SITE_V13_RELEASE_RECORD_2026-08-30.md).
+- [Drive V13 release record](https://drive.google.com/file/d/1Lid3UcV8pPe2UG1X0----a9a9NXyucr2/view?usp=drivesdk) · [Drive V13 source archive](https://drive.google.com/file/d/1Z930nM9IGdePJtaDS0cJPYdpfZbWhGo2/view?usp=drivesdk)
 - Site V12 adds the Equity Research Rehearsal lens (thesis, earnings-quality bridge, scorecard, catalysts, risks and diligence map): [release record](reports/SITE_V12_RELEASE_RECORD_2026-08-30.md).
 - [Drive V12 release record](https://drive.google.com/file/d/1e8irlZ5wabYck4kJr2ZgJ3n5CQJxlzv2/view?usp=drivesdk) · [Drive V12 source archive](https://drive.google.com/file/d/1ihlMy6AZ5k_p3BMbWSCmYVoKH911UsB7/view?usp=drivesdk)
 - Site V11 adds the public-company valuation rehearsal lens (base EV, scenarios, sensitivity and EV-only evidence boundary): [release record](reports/SITE_V11_RELEASE_RECORD_2026-08-30.md).

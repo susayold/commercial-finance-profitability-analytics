@@ -152,3 +152,7 @@ The finance-first CV is now refreshed as a 45-line one-page V3 with five recruit
 ## CV V3 PDF extension
 
 The CV V3 template is now rendered as a one-page A4 PDF with a recruiter-oriented hierarchy, finance-first skills, five concise project bullets and explicit evidence boundary. The rendered file is text-extractable, visually reviewed and passes 6/6 PDF QA checks. It remains a template until the candidate replaces bracketed personal fields.
+
+## Recruiter download link extension
+
+Site V13 now points the footer Download CV action to the canonical Drive PDF and updates the recruiter card to CV V3. The source mirror, site archive and release record are versioned; deployment succeeded with owner-only access.
