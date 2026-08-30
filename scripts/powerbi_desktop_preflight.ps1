@@ -23,6 +23,13 @@ function Resolve-ExistingPath {
 $root = Resolve-ExistingPath $ProjectRoot
 if (-not $root) { throw "ProjectRoot does not exist: $ProjectRoot" }
 
+# Prefer the committed, reproducible fixture when the caller does not pass a
+# replacement folder explicitly. An explicit DataRoot always wins.
+if (-not $DataRoot) {
+    $defaultDataRoot = Join-Path $root "powerbi\\data\\current"
+    if (Test-Path -LiteralPath $defaultDataRoot -PathType Container) { $DataRoot = $defaultDataRoot }
+}
+
 $desktopCandidates = @(
     "C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe",
     "C:\Program Files (x86)\Microsoft Power BI Desktop\bin\PBIDesktop.exe"
@@ -56,6 +63,14 @@ if ($DataRoot) {
     if ($dataPath) {
         $csvCount = @(Get-ChildItem -LiteralPath $dataPath -Filter "*.csv" -File).Count
         Add-Check "DataRoot CSV count" ($csvCount -eq 14) "$csvCount found; expected 14"
+        $requiredDataFiles = @(
+            "sales_fact.csv", "commercial_costs.csv", "inventory.csv", "receivables.csv",
+            "payables.csv", "debt.csv", "budget.csv", "forecast.csv", "marketing_spend.csv",
+            "promotions.csv", "product_master.csv", "customer_master.csv", "channel_master.csv",
+            "source_control.csv"
+        )
+        $missingDataFiles = @($requiredDataFiles | Where-Object { -not (Test-Path -LiteralPath (Join-Path $dataPath $_) -PathType Leaf) })
+        Add-Check "DataRoot required filenames" ($missingDataFiles.Count -eq 0) $(if ($missingDataFiles.Count -eq 0) { "all 14 present" } else { "missing: " + ($missingDataFiles -join ", ") })
         $validator = Join-Path $root "scripts\validate_powerbi_input_contract.py"
         $python = Get-Command python -ErrorAction SilentlyContinue
         Add-Check "Python runtime" ([bool]$python) $(if ($python) { $python.Source } else { "python not found" })
