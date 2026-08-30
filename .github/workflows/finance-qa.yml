@@ -20,6 +20,24 @@ jobs:
         with:
           node-version: 20
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate refreshable Power BI package
+        shell: bash
+        run: |
+          python scripts/generate_vietnova_data.py --output-dir "$RUNNER_TEMP/vnfinance_powerbi_data"
+          python -c "from pathlib import Path; from scripts.build_powerbi_refreshable_project import create_source_control; create_source_control(Path(r'$RUNNER_TEMP/vnfinance_powerbi_data'))"
+          python scripts/validate_vietnova_data.py --input-dir "$RUNNER_TEMP/vnfinance_powerbi_data"
+          python scripts/validate_powerbi_refreshable_project.py \
+            --pbit powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit \
+            --pbip powerbi/native/VNFinance_PBIP \
+            --pbixproj powerbi/native/VNFinance_PbixProj \
+            --data-dir "$RUNNER_TEMP/vnfinance_powerbi_data" \
+            --report "$RUNNER_TEMP/powerbi_refreshable_package_QA.md"
+
       - name: Forecast accuracy unit test
         shell: bash
         run: |

@@ -6,6 +6,8 @@
 
 The runner executes the evidence matrix, role-alignment matrix, promotion ROI, fixed-budget reallocation, pricing, forecast-submission contract, Power BI evidence-log contract, PBIP manifest, DirectQuery readiness pack, M&A, D2C, public-guidance, VNM long-run, peer-evidence, MCH OCR workbench, customer profitability schedule and summary, and QNS/KDC adjustment-feasibility validators, then checks the Power BI contract shape. It also validates the approved normalized peer panel and the blocked MCH normalized intake template. It prints one JSON summary with 44 total checks (42 Node validator invocations, one Python DirectQuery-readiness invocation, plus the Power BI contract-shape check) and exits non-zero on any failure. The forecast-submission check is fixture mode only; it proves mechanics without claiming live company performance.
 
+The GitHub Actions workflow additionally generates the deterministic 14-file Power BI source fixture, adds `source_control.csv`, validates the 10,152-row-level data contract, and validates the committed PBIT/PBIP package against that fixture. The workflow installs Python explicitly; the package check intentionally does not attempt to fabricate a native `.pbix` or Desktop-render evidence.
+
 ## Usage
 
 ```bash
