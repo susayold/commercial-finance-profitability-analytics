@@ -40,3 +40,6 @@ The PDFs are image-based. Values below were extracted in memory with RapidOCR an
 ## Visual sign-off gate
 
 A reviewer must open the source PDF pages and confirm every current-year value, comparative column, sign, decimal and page anchor. Only after that review should the rows be copied into the approved normalized panel with `audited_status=audited`, `review_status=approved`, and a named reviewer. Until then, keep the 16-row CSV as a review-ready candidate layer and keep MCH out of the approved peer panel.
+
+## Visual QA outcome (2026-08-30)
+Rendered statement pages were visually inspected for both PDFs: printed pages 5–10 (PDF positions 6–11), including income statement, balance sheet and operating cash flow. All 16 candidate rows were confirmed and promoted to the separate approved latest-two-year supplement. This candidate file remains as the pre-promotion audit trail.
