@@ -457,3 +457,5 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 ## External gate readiness
 
 The current release boundary is machine-checkable in the [readiness report](reports/EXTERNAL_GATE_READINESS.md), [readiness JSON](data/external_gate_readiness.json) and [10/10 QA](reports/EXTERNAL_GATE_READINESS_QA.md). Gate A and Gate B remain explicitly open until real internal forecast evidence and native Power BI Desktop evidence are supplied.
+
+Drive mirrors: [Gate readiness report](https://drive.google.com/file/d/19va7iv_Y2VqruqEtAIID2ptogyMXZWvF/view?usp=drivesdk) · [readiness JSON](https://drive.google.com/file/d/1v4FUyvjqmO7Iw1F8FCS-ebwKf43OcFTe/view?usp=drivesdk) · [QA](https://drive.google.com/file/d/1MBAe9s2geemTe1F9MmoX266TVAarfcxz/view?usp=drivesdk).
