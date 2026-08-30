@@ -83,6 +83,8 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - [Peer comparability decision memo](reports/PEER_COMPARABILITY_DECISION_2026-08-30.md) · [Drive memo](https://docs.google.com/document/d/184FPk4ZcPaWVtWm4qqRsvsG3RO0D_Lv9tS46yKXqCGk/edit?usp=drivesdk) — VNM is the long-run trend benchmark; QNS/KDC remain bounded context until basis/perimeter controls are closed.
 
+- Normalized peer evidence layer: [approved long-form CSV](data/normalized_peer_panel_approved_2016_2025.csv), [blocked MCH intake template](data/normalized_peer_panel_intake_template.csv), [methodology](docs/NORMALIZED_PEER_PANEL_METHODOLOGY.md), [validator](scripts/validate_normalized_peer_panel.mjs), [approved QA](reports/NORMALIZED_PEER_PANEL_QA.md) and [template QA](reports/NORMALIZED_PEER_PANEL_TEMPLATE_QA.md). [Drive native Sheet](https://docs.google.com/spreadsheets/d/11v8XpRNMCkaWkhqakjxh1Ao3E0yTP4cLP3Z3Jmg7Owg/edit?usp=drivesdk) · [Drive approved CSV](https://drive.google.com/file/d/10TEXjoohSV4J75TpmTFvoWt8nVXgPnrd/view) · [Drive MCH template](https://drive.google.com/file/d/1oZS-UL-Z1oDPH4QJOLH1_JToTE9bUqN-/view) · [Drive methodology](https://drive.google.com/file/d/1ezRb7YYtgX13suCgF7ztwWvAoeCuaTW3/view).
+
 ## Peer and Power BI follow-through
 ## Peer and Power BI follow-through
 
