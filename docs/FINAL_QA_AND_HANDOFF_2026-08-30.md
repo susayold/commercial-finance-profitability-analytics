@@ -197,3 +197,7 @@ The Module F contract is now committed to GitHub and mirrored to Drive. It defin
 
 
 Automated QA evidence: operational driver validator PASS (15/15) locally and in GitHub Finance model QA run 557 (PASS): https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33293756170
+
+## Gate A intake contract handoff (2026-08-30)
+
+The full Gate A evidence contract and validator are committed and wired into CI. Template mode prevents accidental release; fixture mode returns FIXTURE_PASS_NOT_LIVE; live mode requires approved LIVE_INTERNAL evidence, pre-close cutoff, closed actuals, HTTPS source URIs and a non-empty eligible FROZEN set. No live performance claim was fabricated.
