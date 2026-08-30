@@ -52,7 +52,7 @@ The execution-host record is tracked in `reports/POWER_BI_DESKTOP_NATIVE_QA_2026
 
 The repeatable replacement workflow is also executable through `scripts/prepare_powerbi_refresh.py`. Its smoke test validated and applied all 14 contract files, emitted per-file SHA-256/row-count evidence, and returned `PASS`; this automates the safe file hand-off while keeping the Desktop `Home > Refresh` step explicit.
 
-The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow, process/status records, Desktop preflight script and PBIP/PBIT coherence gate. The latest verified bundle is 1,339,298 bytes with SHA-256 `46173ce21159a6d48eed67e75b7acfd42f72d2c92f5cde5a9389efa2b2084e84`.
+The private Drive bundle is replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow, process/status records, Desktop preflight script and PBIP/PBIT coherence gate. Treat the Drive file metadata as the authoritative current size/hash because the archive changes whenever release records change.
 
 The authoritative generated PBIP/PBIT inventory is 15 tables, 37 measures, 23 relationships, six pages and 39 visual containers. The older Excel-oriented names in the historical sections below are retained as model-contract context; use the PBIP/PBIT inventory and manifest when opening Desktop.
 

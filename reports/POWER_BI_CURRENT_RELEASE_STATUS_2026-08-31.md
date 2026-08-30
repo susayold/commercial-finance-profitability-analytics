@@ -9,7 +9,7 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Item | Current value |
 |---|---|
 | GitHub repository | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) |
-| Handoff commit | [`f07cda6`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/f07cda6b9c8bde810fa8bcf448e566882527fd3f) |
+| Handoff commit | [`3256972`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/3256972911687b6a0d8cbd69a285446d223ffe48) |
 | Latest validated CI | [Finance model QA](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127) — PASS |
 | Drive bundle | [VNFinance Power BI refreshable package](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) |
 | Power BI Desktop host | `D:\Po BI\bin\PBIDesktop.exe` |
