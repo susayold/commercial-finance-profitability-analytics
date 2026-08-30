@@ -71,6 +71,15 @@ jobs:
             --data-dir "$RUNNER_TEMP/vnfinance_powerbi_data" \
             --report "$RUNNER_TEMP/powerbi_refreshable_package_QA.md"
 
+      - name: Exercise controlled Power BI data-swap runner
+        shell: bash
+        run: |
+          python scripts/prepare_powerbi_refresh.py \
+            --input-dir powerbi/data/current \
+            --data-root "$RUNNER_TEMP/vnfinance_powerbi_swap_target" \
+            --report "$RUNNER_TEMP/powerbi_data_swap_QA.json" \
+            --apply
+
       - name: Upload Power BI QA artifact
         uses: actions/upload-artifact@v4
         with:
@@ -79,6 +88,7 @@ jobs:
           path: |
             ${{ runner.temp }}/powerbi_input_contract_QA.md
             ${{ runner.temp }}/powerbi_refreshable_package_QA.md
+            ${{ runner.temp }}/powerbi_data_swap_QA.json
             ${{ runner.temp }}/powerbi_artifact_coherence_QA.md
             powerbi/DIRECTQUERY_READINESS.json
             reports/POWER_BI_DIRECTQUERY_READINESS_QA.md

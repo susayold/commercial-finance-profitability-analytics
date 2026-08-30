@@ -23,6 +23,7 @@ Use the latest GitHub `main` branch and the Drive bundle. Do not use an old loca
 - Generated-artifact coherence validator: `scripts/validate_powerbi_artifact_coherence.py`
 - Refresh architecture: `docs/POWER_BI_REFRESH_ARCHITECTURE.md`
 - Data contract validator: `scripts/validate_powerbi_input_contract.py`
+- Controlled data-swap runner: `scripts/prepare_powerbi_refresh.py`
 - Desktop QA matrix: `powerbi/QA_TEST_MATRIX.md`
 - Release evidence template: `powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md`
 
@@ -84,11 +85,21 @@ This is the supported no-database workflow. The model uses one Text parameter, `
 
 ### Repeatable data replacement
 
-1. Copy the replacement CSVs into the same `DataRoot` folder, preserving the 14 filenames.
-2. Run `validate_powerbi_input_contract.py` against that folder. It checks order-independent headers, required/nullable cells, numeric/date/boolean types, primary-key uniqueness, foreign-key coverage, gross-to-net identity and contribution identity.
+1. Put the replacement CSVs in a candidate folder, preserving the 14 filenames.
+2. Run the controlled runner. It validates the candidate and records hashes/row counts; add `--apply` only when the candidate should replace the active `DataRoot`:
+
+```powershell
+python scripts/prepare_powerbi_refresh.py `
+  --input-dir C:\PBI\incoming\2025Q4 `
+  --data-root C:\PBI\VNFinance\data\current `
+  --report C:\PBI\evidence\refresh_swap_2025Q4.json `
+  --apply
+```
+
+If validation fails, no target file is copied. The runner invokes `validate_powerbi_input_contract.py`, which checks headers, required/nullable cells, numeric/date/boolean types, primary-key uniqueness, foreign-key coverage, gross-to-net identity and contribution identity.
 3. In the open report select **Home > Refresh**. No page, visual or measure rebuild is required.
 4. Check the refresh timestamp and row/control counts on **Controls and Evidence**.
-5. Save the `.pbix` if you need a point-in-time handoff. For a controlled change test, edit one valid numeric value only, refresh, and record the expected delta in the release evidence file.
+5. Save the `.pbix` if you need a point-in-time handoff. For a controlled change test, retain the runner manifest plus expected delta in the release evidence file.
 
 The deterministic package QA already proves the contract with a `+VND 1,000,000` data swap. Native Desktop QA must still confirm that the canvas actually changes after refresh.
 

@@ -31,6 +31,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - Missing and rejected documents are recorded explicitly; gaps are never filled with unverified copies
 - VietNova synthetic v1.0.0: 36 months, 6,480 sales lines, 36 SKUs, 5 channels, 24 customers, 13 CSV tables + manifest; QA controls PASS (10,152 checks, 0 errors)
 - Power BI refresh fixture: `powerbi/data/current/` contains the 14 CSV inputs plus manifest/source-control metadata; it is mirrored in the Drive Power BI bundle.
+- Power BI data-swap runner: `scripts/prepare_powerbi_refresh.py` validates candidate CSVs, records file hashes/row counts and applies only the 14 contract files when invoked with `--apply`.
 - Synthetic generator, ledger schema, hidden-truth event specification and QA validator are versioned in `scripts/` and `schemas/`
 - MCH OCR extraction pipeline: 125 machine candidates across FY2016-FY2025, 59 canonical review candidates and an explicit 120-row review queue; no OCR row is approved automatically
 
