@@ -201,3 +201,9 @@ Use this order for a 15-minute Finance Analyst walkthrough:
 - [Reviewer walkthrough](../powerbi/POWER_BI_REVIEWER_WALKTHROUGH.md)
 - [PBIP Desktop checklist](../powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md)
 - Native PBIX remains an external Gate B deliverable; the scaffold is deliberately labelled non-native.
+
+## Gate A accuracy artifacts
+
+- [Leakage-safe report builder](../scripts/build_live_forecast_accuracy_report.mjs)
+- [Fixture accuracy report](../reports/FORECAST_ACCURACY_FIXTURE_REPORT.md)
+- Run live mode only after the full Gate A intake contract is populated with approved internal evidence.
