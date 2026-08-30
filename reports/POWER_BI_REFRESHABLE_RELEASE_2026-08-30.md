@@ -1,5 +1,8 @@
 # Power BI Refreshable Release — 2026-08-30
 
+**Authoritative source commit:** `4c3e5f1a85639416b3d0873bf2b631cdb8dc3bb9`  
+**Portfolio site:** `https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#powerbi` (private Sites version 14)
+
 ## Delivered
 
 - Compiled Power BI Template: `powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit`
@@ -18,7 +21,10 @@
 - DirectQuery provisioning controls: `scripts/load_directquery_sqlserver.py`, `powerbi/directquery/VNFinance_DirectQuery_Health.sql`, `requirements-directquery.txt`
 - DirectQuery health runner: `scripts/check_directquery_source.ps1` (sqlcmd; password only through `SQLCMDPASSWORD`)
 - DirectQuery LocalDB integration evidence: `reports/POWER_BI_DIRECTQUERY_LOCALDB_SMOKE_QA_2026-08-30.md`
+- DirectQuery two-batch freshness evidence: `reports/POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-30.md`
 - Power BI Service refresh orchestrator: `scripts/trigger_powerbi_service_refresh.py`, dry-run evidence in `reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-30.md`
+- Unified finance refresh orchestrator: `scripts/run_finance_refresh.py`
+- Machine-readable Desktop host preflight: `scripts/powerbi_desktop_preflight.ps1 -Report <path>`
 - Automated evidence: `reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md`
 - Native execution evidence: `reports/POWER_BI_DESKTOP_NATIVE_QA_2026-08-30.md`
 
@@ -35,10 +41,13 @@
 | Baseline sales rows | 6,480 |
 | Automated checks | 29/29 PASS |
 | Data-swap test | +VND 1,000,000 detected with identical schema and row count |
+| DirectQuery two-batch smoke | PASS — source metric changed, control batch advanced, zero rejects |
 
 Replacement-data input contract: **78/78 PASS** on the deterministic fixture (headers, type parsing, required-cell completeness, keys, referential integrity and finance identities). GitHub Actions runs this gate before the PBIT package gate.
 
 The controlled data-swap runner smoke test returned `PASS` with `applied=true`, 14/14 files and the same 78/78 input-contract checks; its JSON manifest records source/target hashes and row counts before Desktop refresh.
+
+The two-batch LocalDB rehearsal returned `PASS`: Sales units changed from `1,256,859` to `1,256,860`, the source hash changed, the latest `Refresh_Control` batch advanced, health remained `PASS`, and the health query completed in `0.0152s`. This is source-freshness evidence, not a production realtime claim.
 
 GitHub Actions Finance model QA passed in run [33314651136](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33314651136) on commit `04b5400` (including the generated-data/PBIT/PBIP package validation and the 44-check regression runner). The workflow remains available at `.github/workflows/finance-qa.yml` for every push and pull request.
 
@@ -49,6 +58,8 @@ Latest workflow run [33315439814](https://github.com/susayold/commercial-finance
 The final documentation-sync run [33315755439](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33315755439) also passed on commit `b36787a`.
 
 The artifact-coherence run [33316673755](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33316673755) passed on commit `6e205ec`; it adds the direct PBIP/PBIT topology gate and uploaded QA report.
+
+The current public GitHub source is commit `4c3e5f1a85639416b3d0873bf2b631cdb8dc3bb9`; the Drive bundle was updated in place after this commit. Archive checksum at packaging time: `1,316,762` bytes, SHA-256 `E72F1AD79029D8FC0E4511735115DF6FFCB2E3DB59D379006F23DE02B24B624E`.
 
 The earlier Drive bundle snapshot (before the native execution-host record and custom Desktop-path support) was 1,011,299 bytes, SHA-256 `9E11F0FC907C95544B98A2D88FC1EB2CA8B184DF0FA9720F628661435BDD4F7D`.
 
@@ -64,7 +75,7 @@ The private Drive bundle is updated in place at file ID `1PAOAS0D60Ueh20b26i9MqB
 
 The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layout`, metadata, settings, diagram layout, content types and theme parts. The `.pbip` is editable source using TMDL and PBIR binding.
 
-No native `.pbix` is claimed in this release. Power BI Desktop is now installed at a custom path (`D:\Po BI\bin\PBIDesktop.exe`, version `2.157.879.0`) and the PBIP launch process is alive. The custom-path preflight passes 14/14 checks, but native data-source binding, refresh, DAX execution and visual-rendering evidence are still pending because the current Computer Use UI runtime could not expose a targetable Power BI window for the Refresh/canvas actions.
+No native `.pbix` is claimed in this release. Power BI Desktop is installed at a custom path (`D:\Po BI\bin\PBIDesktop.exe`, version `2.157.879.0`). The custom-path preflight passes 14/14 checks, but native data-source binding, refresh, DAX execution and visual-rendering evidence remain pending because the current Computer Use runtime could not expose a targetable Power BI window for the Refresh/canvas actions. The preflight now supports `-Report` so that this host gate can be retained without implying native QA.
 
 The CSV model is Import mode. It supports replacing source files and refreshing without redesigning the report. It does not claim second-level streaming real-time; that requires a supported DirectQuery/LiveConnect source and Automatic Page Refresh.
 
