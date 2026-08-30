@@ -88,3 +88,8 @@ A 12-row recommendation register now completes Module P: each row contains a dec
 ## Finance Business Partnering battle cards v2 extension
 
 The mandatory negotiation module now has a decision matrix and three fully structured cards for Marketing budget, Sales discount and Supply Chain inventory. Each card specifies finance value equation, approval evidence, green/amber/red guardrails, stop/scale rule, escalation and interview conversion. Validator is wired into CI; Drive native Doc/Sheet and raw files are archived.
+
+
+## Master-plan coverage audit refresh
+
+The evidence matrix now links the MBR pack, KPI dictionary, Management Recommendation Register and Battle Cards v2. It remains 28 rows with 20 mandatory-core requirements; all core rows are complete or complete-with-caveat, while Gate A and Gate B are the only pending external rows.
