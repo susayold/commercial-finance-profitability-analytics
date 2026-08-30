@@ -233,3 +233,6 @@ MCH remains intentionally blocked from the approved panel. The 59-row OCR workbe
 
 ### MCH latest-year supplement
 FY2024–FY2025 MCH statements were visually reviewed and tie-outs passed; an approved eight-metric supplement is published. The core peer panel remains 240 rows and older MCH years remain blocked.
+
+### MCH FY2023 extension
+FY2023 was visually reviewed and tie-outs passed; the approved MCH supplement now covers FY2023–FY2025. FY2016–FY2022 remain blocked and are not represented as approved.
