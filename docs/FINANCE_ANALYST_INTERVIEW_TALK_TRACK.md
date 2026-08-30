@@ -152,3 +152,8 @@ I would connect approved ERP/CRM extracts, lock the chart-of-accounts mapping, a
 ## Closing sentence
 
 > The project shows how I would operate as a finance analyst: define the decision, reconcile the number, explain the driver, quantify the trade-off, assign the action and preserve an audit trail.
+
+
+## Customer profitability and concentration extension
+
+I added a 24-customer profitability layer that bridges gross-to-net leakage, contribution, DSO and an illustrative working-capital cost. The top five accounts represent 28.62% of gross sales and 30.88% of after-WC contribution in the synthetic rehearsal. The important Finance Business Partner signal is C06: high revenue but 14.58% contribution margin and 88.72-day DSO, so I would review trade terms, service cost and payment terms before protecting incremental volume.
