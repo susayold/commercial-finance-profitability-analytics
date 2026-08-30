@@ -346,3 +346,6 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 
 - [KPI dictionary and control contract](docs/FINANCE_ANALYST_KPI_DICTIONARY.md) · [CSV extract](data/finance_analyst_kpi_dictionary.csv) · [Validator](scripts/validate_finance_analyst_kpi_dictionary.mjs) · [QA](reports/FINANCE_ANALYST_KPI_DICTIONARY_QA.md)
 - [Drive native dictionary](https://docs.google.com/document/d/1Fh2HWNnQ5b3vdCFaUfwfNEIwM9i8T9gDlgYYkrEUh7s/edit?usp=drivesdk) · [Drive native Sheet](https://docs.google.com/spreadsheets/d/1O8c8uy80hlzhEKxKwGpdV9PvYz_M0PvN8E38kpFeQK4/edit?usp=drivesdk) · [Drive CSV](https://drive.google.com/file/d/1V-kWmRU9fyTIe9JjUcw8nW54cf8udu2U/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1BvG-LYPDLo_Ere_iHoM6qwkeax-M-ey9/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1pxIzRF3MtaJRiQzTvg0X4oxlBCDe65fX/view?usp=drivesdk)
+
+
+Validator maintenance note: the KPI dictionary validator threshold was aligned to the current 8,406-character report; CI now validates the canonical script at scripts/validate_finance_analyst_kpi_dictionary.mjs. Latest Drive validator copy: https://drive.google.com/file/d/1HJ9BUitYgbxe2tDzHwj29JqLWD8XfapW/view?usp=drivesdk
