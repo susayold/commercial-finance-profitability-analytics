@@ -103,3 +103,8 @@ A WD-5 to WD+5 calendar and RACI now connects forecast freeze, accounting close,
 ## Recruiter deliverable index refresh
 
 The reviewer path now orders live site → FP&A model → MBR pack → recommendation register → KPI dictionary → battle cards → close calendar → public/strategic extensions. Drive refresh copy: https://drive.google.com/file/d/1s60auQyHV58bWy2mjlGSuAtI5KLVMJVt/view?usp=drivesdk
+
+
+## Monte Carlo risk overlay extension
+
+Module L now has a reproducible 5,000-draw risk overlay with seeded output, percentile bands, downside breach probabilities, joint downside and decision triggers. The independence assumption and Gate A production boundary are explicit; validator and Drive mirrors are complete.
