@@ -75,3 +75,7 @@ Use the machine-readable contract before submitting real data:
 - [Gate A intake QA](../reports/GATE_A_INTAKE_CONTRACT_QA.md)
 
 Run template mode first, then replace the fixture with the redacted internal CSV and run --mode=live. The live mode requires HTTPS source evidence, LIVE_INTERNAL classification, a pre-close cutoff, closed actuals, approval metadata, SHA-256 and at least one eligible FROZEN row.
+
+## Accuracy report builder
+
+After the intake validator passes, run scripts/build_live_forecast_accuracy_report.mjs to produce the leakage-safe report with eligible/excluded counts, Bias, WAPE, MAPE diagnostic, as-of/model metadata and a management action. Fixture output is archived at reports/FORECAST_ACCURACY_FIXTURE_REPORT.md; use --mode=live only for approved internal evidence.
