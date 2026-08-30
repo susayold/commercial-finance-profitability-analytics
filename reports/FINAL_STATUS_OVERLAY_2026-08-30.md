@@ -132,3 +132,7 @@ A cost-center OPEX/headcount module now bridges opening headcount, hires/exits, 
 ## CAPEX and fixed-asset planning extension
 
 A project-level CAPEX module now connects approval, commitment, cash payment, in-service date, depreciation, benefit and payback. Six synthetic project-month rows pass 15/15 controls and the CAPEX_Projects fact is integrated into the PBIP contract/DAX; no real investment or return claim is made.
+
+## Next execution sprint extension
+
+The remaining work is now captured in a single [execution playbook](../docs/NEXT_EXECUTION_SPRINT_2026-08-30.md) with a machine-readable validator and QA report. It sequences candidate personalization, Gate A internal forecast accuracy, Gate B native Power BI Desktop, final QA/release and a 14-day application cadence. The playbook is execution-ready at 12/12 PASS, but it does not close the two external evidence gates: Gate A still needs a genuine approved pre-close snapshot and Gate B still needs a native `.pbix` plus QA-01–QA-18 visual evidence.
