@@ -6,7 +6,7 @@ All project data, source code, QA scripts and reviewer-facing artifacts are comm
 
 ## Latest remote sync
 
-The latest GitHub `main` content includes the site gate-contract release and the refreshed release index (see the repository commit history for the current SHA). The recruiter site gate-contract release is Sites version 5. The site-gate source archive is [commercial-finance-profitability-analytics-source-2026-08-30-site-gate.zip](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view); normalized peer additions and later QA updates are mirrored individually in GitHub and Drive below. Release evidence is [SITE_GATE_CONTRACT_RELEASE_2026-08-30.md](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+The latest GitHub `main` content includes the site gate-contract release and the refreshed release index (see the repository commit history for the current SHA). The recruiter site gate-contract release is Sites version 6. The site-gate source archive is [commercial-finance-profitability-analytics-source-2026-08-30-site-gate.zip](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view); normalized peer additions and later QA updates are mirrored individually in GitHub and Drive below. Release evidence is [SITE_GATE_CONTRACT_RELEASE_2026-08-30.md](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 ## Newly closed evidence in this release
 
@@ -16,6 +16,7 @@ The latest GitHub `main` content includes the site gate-contract release and the
 | D2C unit economics | data/d2c_unit_economics_synthetic.csv, docs/D2C_UNIT_ECONOMICS.md, scripts/validate_d2c_unit_economics.mjs | Native Sheet plus CSV, methodology, validator and QA report | PASS; six native controls |
 | Portable Power BI handoff | powerbi/PBIP_SOURCE_MANIFEST.json, powerbi/PBIP_SOURCE_HANDOFF.md, scripts/validate_pbip_source_manifest.mjs | Manifest, handoff and validator copies | PASS; 5 dimensions, 9 facts, 15 relationships, 6 pages, 18 QA definitions |
 | Continuous QA | .github/workflows/finance-qa.yml | CI rehearsal report | PASS; CI now runs forecast leakage, frozen archive, peer, VNM, D2C, public-guidance, PBIP manifest and contract checks |
+| MCH credit screening | reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md, reports/MCH_CREDIT_MEMO_QA.md, scripts/validate_mch_credit_memo.mjs | Memo, QA report and validator are mirrored to Drive | PASS; lender-style WATCH / CONDITIONAL SUPPORT with explicit debt-service limitation; trend QA 15/15 |
 
 ## Explicit remaining gates
 
@@ -56,7 +57,7 @@ The commercial stretch modules are now hardened:The commercial stretch modules a
 
 ## Website release
 
-The production recruiter site is now Sites version 5. The Forecast Performance section links directly to the Gate A intake validator and the Gate B QA-01–QA-18 evidence log while keeping public-guidance metrics explicitly Gate-A-excluded. [Gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+The production recruiter site is now Sites version 6. The Forecast Performance section links directly to the Gate A intake validator and the Gate B QA-01–QA-18 evidence log while keeping public-guidance metrics explicitly Gate-A-excluded. [Gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 ## PBIP Desktop execution checklist
 
@@ -121,7 +122,7 @@ Drive mirror for M&A extension:
 ## Website runtime QA
 
 - [Runtime/access-boundary QA](reports/SITE_RUNTIME_QA_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1z1LGW43fG94bEkFgbPZP3QVYQvYwxZt-/view)
-- Source/build/deployment checks PASS for Sites version 5. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+- Source/build/deployment checks PASS for Sites version 6. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 
 ## Archived master plan
