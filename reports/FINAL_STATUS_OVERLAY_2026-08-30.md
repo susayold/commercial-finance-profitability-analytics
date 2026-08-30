@@ -132,3 +132,7 @@ Gate A tooling is now complete: 26-field immutable evidence schema, empty redact
 ## Gate B source-coherence extension
 
 Power BI preflight now checks manifest/contract parity, core DAX measures, six-page coverage, QA-01–QA-18 evidence schema and the native-release hard stop. Result: 13/13 PASS. This is PBIP scaffold evidence only; native PBIX execution remains pending.
+
+## Gate A accuracy-report extension
+
+The accuracy report builder is now committed and CI-tested in fixture mode. It emits eligible/excluded populations, Bias/WAPE/MAPE diagnostics, evidence metadata and a management action; it cannot return LIVE_OBSERVED_READY without real LIVE_INTERNAL rows.
