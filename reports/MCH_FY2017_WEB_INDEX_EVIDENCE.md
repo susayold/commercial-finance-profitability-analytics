@@ -1,13 +1,14 @@
 # MCH FY2017 Web-Indexed Statement Evidence
 
 Status: `INDEXED_ONLY` (not approved)  
-Source: official Masan Consumer annual-report PDF URL  
-URL: https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf  
+Source: official Masan Consumer annual-report PDF URLs
+Primary URL: https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf
+Alternate official media URL: https://masanconsumer.com/wp-content/uploads/2024/12/Bao-cao-thuong-nien-nam-2017-3.pdf
 Indexed PDF metadata: 75 pages; web text indexed from the official PDF.
 
 ## Why this layer exists
 
-The official FY2017 PDF is discoverable and readable through the web index, but direct byte retrieval from the current runtime returns a TLS/404 error. The evidence below is therefore stored as a bounded text extraction layer. It confirms the FY2017 values already carried as comparative/corresponding-column evidence in the audited FY2018 filing, but it does not promote the standalone PDF to `APPROVED`.
+The official FY2017 PDF is discoverable and readable through the web index, but direct byte retrieval from the current runtime returns a TLS handshake error on both official media URLs; the alternate URL is retained as a second official retrieval candidate. The evidence below is therefore stored as a bounded text extraction layer. It confirms the FY2017 values already carried as comparative/corresponding-column evidence in the audited FY2018 filing, but it does not promote the standalone PDF to `APPROVED`.
 
 ## Page-level evidence
 
