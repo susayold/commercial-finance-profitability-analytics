@@ -203,3 +203,5 @@ The paragraphs above retain historical release notes for audit trail. Use this s
 - Latest CI confirmation: [run #774](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33301908452) passed after adding the derived customer profitability summary and 14/14 validator; the preceding runner/workflow commits (#770–#773) also passed. The repository-local runner now covers 24 validators plus contract-shape (25 total checks).
 
 - Final CI confirmation for this update: [run #775](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33301960821) passed. Durable GitHub and Drive mirrors are synchronized; the local staging directory is empty.
+
+- Latest runner coverage update: [CI run #778](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33302213464) passed after expanding `run_finance_qa.mjs` to all 40 repository-local validators plus Power BI contract-shape validation (41 total checks). This supersedes older historical check-count notes above.
