@@ -215,3 +215,6 @@ All eight normalized metrics for FY2024 and FY2025 are captured in a review-read
 
 ### MCH latest-year approval (2026-08-30)
 FY2024–FY2025 statement supplement is approved after visual page review and tie-outs. It is separate from the 240-row core panel and covers only the latest two years; older MCH years remain blocked.MCH FY2024–FY2025 approved supplement: visual page review completed for printed pages 5–10 (PDF positions 6–11), with all eight metrics and statement/balance-sheet tie-outs confirmed. The supplement is latest-two-year only; FY2016–FY2023 remain blocked and no ten-year CAGR is permitted. See `reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md`, `data/mch_statement_metrics_2024_2025_approved.csv`, and Drive memo https://docs.google.com/document/d/1Ib__7FWjmtGFViexE-f__U2qCGx6xz3AK9qOTB8fLsw/edit.
+
+### MCH FY2023 extension
+FY2023 has joined the visually reviewed approved supplement. The supplement now covers FY2023–FY2025 (24 rows); FY2016–FY2022 remain blocked. [approved CSV](data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
