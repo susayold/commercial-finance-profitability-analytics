@@ -28,6 +28,7 @@ Use the latest GitHub `main` branch and the Drive bundle. Do not use an old loca
 - Native binary boundary note: `powerbi/POWER_BI_NATIVE_BINARY_BOUNDARY.md`
 - Desktop QA matrix: `powerbi/QA_TEST_MATRIX.md`
 - Release evidence template: `powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md`
+- Native Desktop handoff: `powerbi/POWER_BI_NATIVE_DESKTOP_HANDOFF_2026-08-31.md`
 
 Before Desktop work, verify the package and data locally:
 

@@ -21,6 +21,7 @@ earlier execution history.
 - **DirectQuery latency baseline:** the rerun sampled 10 post-commit health queries; p50 was `0.0134s` and p95 `0.0153s` on LocalDB. This is a local baseline only, not a production capacity claim.
 - **DirectQuery operating gate:** `powerbi/directquery/PRODUCTION_ACCEPTANCE_MATRIX.md` defines G0-G8 for schema, ingestion, tie-out, health, Desktop, Service, APR and rollback.
 - **Desktop host:** `D:\Po BI\bin\PBIDesktop.exe` is present; custom-path preflight passes 14/14. Native binding, refresh, rendering and `.pbix` save evidence are still pending because the Computer Use kernel fails before exposing a targetable window.
+- **Native Desktop handoff:** `powerbi/POWER_BI_NATIVE_DESKTOP_HANDOFF_2026-08-31.md` packages the exact preflight, binding, QA-01–QA-18, data-swap and native-save sequence for the next working Desktop host.
 - **Realtime claim:** remains `PENDING`; the repository does not label CSV Import as second-level realtime and has no production database/capacity/APR evidence yet.
 
 ## Refreshable package status — 2026-08-30
