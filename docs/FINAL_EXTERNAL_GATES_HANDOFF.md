@@ -98,3 +98,7 @@ Use the [live submission template](../data/forecast_snapshot_live_submission_tem
 - PBIP manifest, DAX, handoff and Desktop checklist: complete.
 - Genuine live snapshot: pending external source.
 - Native PBIX: pending Power BI Desktop.
+
+## Gate A implementation extension
+
+The repository now contains a full immutable intake contract (schemas/forecast_snapshot_gate_a.schema.json), empty handoff template, deterministic fixture, and three-mode validator. This closes the tooling/preflight portion of Gate A while preserving the actual evidence gate: only a real LIVE_INTERNAL FROZEN row with approved source/actuals URIs can return LIVE_OBSERVED_READY. The fixture remains explicitly non-live.
