@@ -179,11 +179,12 @@ CSV Import is refreshable, not second-level realtime. Replacing files does not p
 For the realtime variant:
 
 1. Provision Azure SQL, SQL Server or Microsoft Fabric with `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`.
-2. Load the same 15 logical tables and preserve names/columns.
-3. Replace each CSV partition with a DirectQuery table in Desktop; keep the same measures and relationships.
-4. Validate query latency, source freshness, gateway/network and capacity limits.
-5. Enable **Automatic Page Refresh** only after those checks and document the interval and source timestamp.
-6. Mark the realtime claim `PASS` only with a live database, a successful Desktop/Service refresh test and evidence screenshots. Until then keep `PENDING_DATABASE_AND_DESKTOP_EVIDENCE`.
+2. Run the loader in dry-run mode, review its per-file row counts and SHA-256 evidence, then run `python scripts/load_directquery_sqlserver.py --apply --connection-string ...` on a controlled SQL Server-compatible host. For Azure SQL/Fabric, use an approved managed pipeline with the same contract.
+3. Run `powerbi/directquery/VNFinance_DirectQuery_Health.sql`; retain the `Refresh_Control` batch, watermark, latency and table-count output.
+4. Replace each CSV partition with a DirectQuery table in Desktop; keep the same measures and relationships.
+5. Validate query latency, source freshness, gateway/network and capacity limits.
+6. Enable **Automatic Page Refresh** only after those checks and document the interval and source timestamp.
+7. Mark the realtime claim `PASS` only with a live database, a successful Desktop/Service refresh test and evidence screenshots. Until then keep `PENDING_DATABASE_AND_DESKTOP_EVIDENCE`.
 
 The migration schema and machine-readable gates are intentionally included now so the project can move to realtime without redesigning the finance model.
 

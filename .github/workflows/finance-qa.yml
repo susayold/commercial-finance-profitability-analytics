@@ -80,6 +80,13 @@ jobs:
             --report "$RUNNER_TEMP/powerbi_data_swap_QA.json" \
             --apply
 
+      - name: Exercise DirectQuery loader dry-run
+        shell: bash
+        run: |
+          python scripts/load_directquery_sqlserver.py \
+            --input-dir powerbi/data/current \
+            --report "$RUNNER_TEMP/directquery_loader_QA.json"
+
       - name: Upload Power BI QA artifact
         uses: actions/upload-artifact@v4
         with:
@@ -89,6 +96,7 @@ jobs:
             ${{ runner.temp }}/powerbi_input_contract_QA.md
             ${{ runner.temp }}/powerbi_refreshable_package_QA.md
             ${{ runner.temp }}/powerbi_data_swap_QA.json
+            ${{ runner.temp }}/directquery_loader_QA.json
             ${{ runner.temp }}/powerbi_claim_boundary_QA.json
             ${{ runner.temp }}/powerbi_artifact_coherence_QA.md
             powerbi/DIRECTQUERY_READINESS.json

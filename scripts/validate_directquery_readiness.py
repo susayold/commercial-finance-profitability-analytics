@@ -15,10 +15,14 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--readiness", type=Path, default=Path("powerbi/DIRECTQUERY_READINESS.json"))
     parser.add_argument("--schema", type=Path, default=Path("powerbi/directquery/VNFinance_DirectQuery_Schema.sql"))
+    parser.add_argument("--health-query", type=Path, default=Path("powerbi/directquery/VNFinance_DirectQuery_Health.sql"))
+    parser.add_argument("--loader", type=Path, default=Path("scripts/load_directquery_sqlserver.py"))
     args = parser.parse_args()
 
     readiness = json.loads(args.readiness.read_text(encoding="utf-8"))
     ddl = args.schema.read_text(encoding="utf-8")
+    health_query = args.health_query.read_text(encoding="utf-8")
+    loader = args.loader.read_text(encoding="utf-8")
     checks: list[tuple[str, bool, str]] = []
 
     def add(name: str, ok: bool, detail: str = "") -> None:
@@ -37,11 +41,16 @@ def main() -> int:
     add("Import cannot be labelled realtime", readiness.get("realtime_claim", {}).get("must_not_label_import_csv_as_realtime") is True)
     add("freshness controls present", len(readiness.get("operational_controls", [])) >= 7)
     add("finance schema declaration", "CREATE SCHEMA finance" in ddl)
+    add("Refresh_Control metadata table declared", "CREATE TABLE finance.Refresh_Control" in ddl)
+    add("health query has freshness status", "control_status" in health_query and "latency_minutes" in health_query)
+    add("loader defaults to dry-run", "if args.apply" in loader and '"DRY_RUN_PASS"' in loader)
+    add("loader records source hash", "source_hash_sha256" in loader)
 
     expected_tables = ["Calendar", *TABLES.keys()]
     declarations = re.findall(r"IF OBJECT_ID\(N'finance\.([^']+)', N'U'\)", ddl)
     add("all report tables declared", set(expected_tables) <= set(declarations), f"{len(set(declarations))} declarations")
-    add("no unexpected table names", set(declarations) <= set(expected_tables), ", ".join(sorted(set(declarations) - set(expected_tables))) or "none")
+    allowed_tables = set(expected_tables) | {"Refresh_Control"}
+    add("no unexpected table names", set(declarations) <= allowed_tables, ", ".join(sorted(set(declarations) - allowed_tables)) or "none")
     for table, spec in TABLES.items():
         expected_columns = [name for name, _, _ in spec["columns"]]
         if table == "Calendar":

@@ -9,7 +9,10 @@
     "report_tables": 15,
     "preserve_table_names": true,
     "preserve_column_names": true,
-    "ddl": "powerbi/directquery/VNFinance_DirectQuery_Schema.sql"
+    "ddl": "powerbi/directquery/VNFinance_DirectQuery_Schema.sql",
+    "health_query": "powerbi/directquery/VNFinance_DirectQuery_Health.sql",
+    "loader": "scripts/load_directquery_sqlserver.py",
+    "operational_metadata_table": "finance.Refresh_Control"
   },
   "required_external_gates": [
     "Azure SQL or Fabric Warehouse provisioned",
@@ -31,6 +34,8 @@
     "rejected_row_count",
     "latency_minutes",
     "control_status",
-    "incident_owner"
+    "incident_owner",
+    "finance.Refresh_Control batch status",
+    "source_hash_sha256"
   ]
 }

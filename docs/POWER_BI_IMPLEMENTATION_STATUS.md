@@ -16,7 +16,9 @@ Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an ex
 
 ## DirectQuery readiness extension — 2026-08-30
 
-The migration path is now source-controlled under `powerbi/directquery/`. It includes a finance-schema DDL for Azure SQL/SQL Server/Fabric, query-path indexes, freshness/incident controls and machine-readable gates. The standalone readiness validator passes 30/30 checks. It is ready for database provisioning but does not claim a live connection, service capacity or a measured refresh interval.
+The migration path is now source-controlled under `powerbi/directquery/`. It includes a finance-schema DDL for Azure SQL/SQL Server/Fabric, query-path indexes, a deterministic `pyodbc` loader (dry-run by default, explicit transactional `--apply`), a `Refresh_Control` watermark table, a health query and machine-readable gates. The standalone readiness validator now checks the loader/health contract as well as the schema. It is ready for database provisioning but does not claim a live connection, service capacity or a measured refresh interval.
+
+The committed fixture loader dry-run is recorded in `reports/POWER_BI_DIRECTQUERY_LOADER_DRY_RUN_2026-08-30.md` (14 tables, 29,843 rows, source hash `64af4a20…`).
 
 ## Desktop runbook and remote bundle update — 2026-08-30
 

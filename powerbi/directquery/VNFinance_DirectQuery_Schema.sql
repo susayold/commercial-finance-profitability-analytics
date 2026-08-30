@@ -273,6 +273,34 @@ BEGIN
 END;
 GO
 
+/* Operational metadata deliberately sits outside the 15 report-facing tables.
+   Power BI can expose this through a one-row health query, while the finance
+   facts remain stable for the Import-to-DirectQuery migration. */
+IF OBJECT_ID(N'finance.Refresh_Control', N'U') IS NULL
+BEGIN
+    CREATE TABLE finance.Refresh_Control (
+        batch_id                nvarchar(120) NOT NULL,
+        status                  nvarchar(40)  NOT NULL,
+        source_watermark_utc    datetime2(3)  NOT NULL,
+        load_started_utc        datetime2(3)  NOT NULL,
+        load_completed_utc      datetime2(3)  NULL,
+        physical_table_count    int           NOT NULL,
+        source_row_count        bigint        NOT NULL,
+        loaded_row_count        bigint        NOT NULL,
+        rejected_row_count      bigint        NOT NULL,
+        source_hash_sha256      nvarchar(64)  NULL,
+        error_message           nvarchar(2000) NULL,
+        CONSTRAINT PK_finance_Refresh_Control PRIMARY KEY CLUSTERED (batch_id)
+    );
+END;
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = N'IX_finance_Refresh_Control_Status_Completed' AND object_id = OBJECT_ID(N'finance.Refresh_Control'))
+    CREATE NONCLUSTERED INDEX IX_finance_Refresh_Control_Status_Completed
+        ON finance.Refresh_Control (status, load_completed_utc DESC)
+        INCLUDE (source_watermark_utc, source_row_count, loaded_row_count, rejected_row_count, source_hash_sha256);
+GO
+
 /* Query-path indexes: dimensions first, then common monthly slices. */
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name = N'IX_finance_Sales_Month_Channel' AND object_id = OBJECT_ID(N'finance.Sales'))
     CREATE NONCLUSTERED INDEX IX_finance_Sales_Month_Channel ON finance.Sales ([month], channel_id) INCLUDE (net_sales, cogs, contribution_margin, units);
