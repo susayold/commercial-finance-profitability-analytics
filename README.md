@@ -396,3 +396,14 @@ Monte Carlo validator maintenance: report non-triviality threshold is aligned to
 
 
 Monte Carlo QA hardening: the seeded builder is rerun in CI and the committed output is validated; a standalone comparator remains archived for local/reviewer reproduction. Drive comparator: https://drive.google.com/file/d/1eDx_fLi36b8pm3NAA3D1TdG0GwIsZ21S/view?usp=drivesdk
+
+## Operational Driver Tree & Unit Economics (Module F)
+
+- Contract: [docs/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS.md](docs/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS.md)
+- Machine-readable register: [data/operational_driver_tree_unit_economics.csv](data/operational_driver_tree_unit_economics.csv)
+- QA: [reports/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS_QA.md](reports/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS_QA.md)
+- Native Drive report: https://docs.google.com/document/d/1oN-nFippLlBKEXKKEsFz7tSoWkT2w-QRVDi-exTlFd0/edit?usp=drivesdk
+- Native Drive register: https://docs.google.com/spreadsheets/d/1xe2FNuB2Twf0_OvCnTQ8MaQb4U9BtBBLm7epoo9bnkk/edit?usp=drivesdk
+
+The module maps revenue, gross-to-net, contribution, inventory, working capital, customer and D2C drivers to owners, guardrails and decisions. It includes a source-to-metric contract, reconciliation controls, scenario labelling and a monthly finance cadence. All case inputs remain SIMULATED / DERIVED until approved source data exists.
+
