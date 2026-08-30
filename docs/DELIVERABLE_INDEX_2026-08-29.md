@@ -22,6 +22,8 @@
 - `docs/CFO_MEMO_V1.md` — decision narrative and owners
 - `docs/BATTLE_CARDS_V1.md` — interview-ready challenge / response prompts
 - `docs/CV_EVIDENCE_MAP.md` — evidence-backed CV bullet mapping
+- `docs/FINANCE_ANALYST_CV_BULLET_BANK_2026-08-30.md` — quantified bullets by target role and evidence class
+- `docs/INTERVIEW_WALKTHROUGH_FINANCE_ANALYST_2026-08-30.md` — 15-minute reviewer walkthrough and 10 interview answers
 - `docs/CV_ONE_PAGE_DRAFT.md` — one-page English CV draft
 - `docs/WEBSITE_CONTENT_SPEC.md` — recruiter information architecture
 
@@ -178,7 +180,8 @@ Use this order for a 15-minute Finance Analyst walkthrough:
 4. [Management Recommendation Register](../reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md) · [Drive native register](https://docs.google.com/document/d/14dQcHGVRLWdVeVZ5faigCk8G15B5tbib_Q5qr87HhXU/edit?usp=drivesdk) — show owner, value equation, guardrail and review date.
 5. [Finance Analyst KPI Dictionary](../docs/FINANCE_ANALYST_KPI_DICTIONARY.md) · [Drive native dictionary](https://docs.google.com/document/d/1Fh2HWNnQ5b3vdCFaUfwfNEIwM9i8T9gDlgYYkrEUh7s/edit?usp=drivesdk) — prove denominator, grain, evidence class and control discipline.
 6. [Battle Cards v2](../docs/BATTLE_CARDS_V2.md) · [Drive native cards](https://docs.google.com/document/d/1gmyvvRhvAaxdYcuEAyXA15r1r5XKx7mNxyQLN5qGA-8/edit?usp=drivesdk) — convert analysis into commercial negotiation decisions.
-7. [Monthly close calendar / RACI](../docs/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR.md) · [Drive native calendar](https://docs.google.com/document/d/1OdG_wEBHp0Ho8CxuItYp68hYelavC5V6up4qd-lDR4Y/edit?usp=drivesdk) — explain how the work runs every close.
+7. [Finance Analyst interview walkthrough](../docs/INTERVIEW_WALKTHROUGH_FINANCE_ANALYST_2026-08-30.md) · [CV bullet bank](../docs/FINANCE_ANALYST_CV_BULLET_BANK_2026-08-30.md) — rehearse evidence-safe explanations before the application.
+8. [Monthly close calendar / RACI](../docs/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR.md) · [Drive native calendar](https://docs.google.com/document/d/1OdG_wEBHp0Ho8CxuItYp68hYelavC5V6up4qd-lDR4Y/edit?usp=drivesdk) — explain how the work runs every close.
 8. [MCH financial-statement analysis](../reports/MCH_FINANCIAL_STATEMENT_ANALYSIS_2026-08-30.md) and [M&A screen](../docs/MNA_ACCRETION_DILUTION.md) — use as public-finance and strategic stretch only.
 
 ## Current release boundaries
