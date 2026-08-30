@@ -43,7 +43,7 @@ jobs:
           ignore = {"README.md"}
 
           def normalized(path):
-              return path.read_bytes().replace(b"\\r\\n", b"\\n")
+              return path.read_bytes().replace(b"\r\n", b"\n")
 
           left_files = {p.name for p in left.iterdir() if p.is_file() and p.name not in ignore}
           right_files = {p.name for p in right.iterdir() if p.is_file() and p.name not in ignore}
