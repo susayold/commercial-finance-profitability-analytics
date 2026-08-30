@@ -229,10 +229,10 @@ The candidate application and CV build pack is now linked from the repository RE
 FY2021–FY2025 gross profit and owners' equity were promoted from the readable QNS FY2025 management summary (pages 27–28), with evidence-tier flags preserved. The evidence memo and Drive native Sheet are linked from the release artifacts; operating profit and operating cash flow remain explicitly unavailable.
 
 ### MCH OCR control
-MCH remains intentionally blocked from the approved panel. The 59-row OCR workbench and a page-level promotion gate are documented; no unresolved OCR candidate is presented as verified data.
+MCH remains separate from the 240-row core panel, but the 80-row FY2016–FY2025 supplement is approved after page-level review; only the FY2017 comparative/corresponding-column caveat remains.
 
 ### MCH latest-year supplement
 FY2024–FY2025 MCH statements were visually reviewed and tie-outs passed; an approved eight-metric supplement is published. The core peer panel remains 240 rows and older MCH years remain blocked.
 
-### MCH FY2018 extension
-FY2018 was visually reviewed (including the cash-flow statement) and tie-outs passed; the approved MCH supplement now covers FY2018–FY2025 (64 rows, all eight metrics). FY2016–FY2017 remain blocked and are not represented as approved.
+### MCH FY2016–FY2025 completion
+FY2016 and FY2018–FY2025 were visually reviewed (including cash-flow statements) and tie-outs passed; FY2017 was validated from the audited FY2018 comparative/corresponding columns. The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metrics) with the FY2017 caveat retained.
