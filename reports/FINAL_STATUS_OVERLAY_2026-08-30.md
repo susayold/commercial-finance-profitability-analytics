@@ -114,3 +114,6 @@ Monte Carlo reproducibility note: the builder newline bug was fixed; CI now rebu
 
 
 Monte Carlo validator maintenance: report threshold aligned to the 3,788-character risk memo; CI will rerun on the corrected validator. Latest Drive validator copy: https://drive.google.com/file/d/1yDtKh5idle6STfSpoF_M95fDPoIfypP3/view?usp=drivesdk
+
+
+Monte Carlo QA hardening: the workflow now uses a committed rebuild comparator, avoiding shell heredoc ambiguity and normalizing newline endings before comparison. Drive comparator: https://drive.google.com/file/d/1eDx_fLi36b8pm3NAA3D1TdG0GwIsZ21S/view?usp=drivesdk
