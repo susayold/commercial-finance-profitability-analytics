@@ -1,0 +1,42 @@
+# Portfolio process log — 2026-08-31
+
+## Scope
+
+This log records the latest Power BI execution work after the 2026-08-30
+release. It separates verified repository changes from external gates that
+still need a real Power BI Desktop or cloud workspace.
+
+## Completed this cycle
+
+1. Confirmed `PBIDesktop.exe` is present at `D:\Po BI\bin\PBIDesktop.exe` and
+   recorded a custom-path preflight result of 14/14 checks.
+2. Added `-Report` to `scripts/powerbi_desktop_preflight.ps1` so host/data
+   readiness can be archived as JSON without implying native QA.
+3. Added `powerbi/directquery/PRODUCTION_ACCEPTANCE_MATRIX.md` with nine
+   production gates, freshness fields, security/capacity controls and rollback.
+4. Added `scripts/watch_powerbi_refresh.py`, which hashes all 14 contract files,
+   waits for stable copies, validates the source and delegates to the unified
+   refresh orchestrator. Failed hashes remain unacknowledged and retry.
+5. Executed a two-batch watcher QA on disposable copies: baseline contract hash
+   `bbca96cd...f574`, changed hash `1009a053...6144a`, and `Sales[units]` changed
+   from 121 to 122 in the target DataRoot. Both batches returned `PASS`.
+6. Linked the acceptance matrix from the private recruiter site and deployed
+   Sites version 15. The site remains owner-only.
+7. Pushed the complete source/data/evidence state to GitHub and replaced the
+   Drive bundle in place. All temporary test clones, archives and input folders
+   were removed after verification.
+
+## Evidence boundaries
+
+| Capability | Current evidence | Claim |
+|---|---|---|
+| Editable model | PBIP/PBIR/TMDL source + PBIT | PASS |
+| Contract refresh | 78/78 input checks + watcher two-batch QA | PASS |
+| Local DirectQuery mechanics | LocalDB two-batch smoke | Rehearsal only |
+| Native PBIX | Desktop executable exists; UI kernel failed before target window | PENDING |
+| Production realtime | Cloud DB, gateway/capacity and APR not provisioned | PENDING |
+
+The next executable action is to open the PBIP/PBIT in Power BI Desktop, set
+`DataRoot`, refresh, capture QA-01–QA-18 and save the native `.pbix`. Only after
+that evidence exists should `native_desktop_qa` or the realtime claim be
+promoted.

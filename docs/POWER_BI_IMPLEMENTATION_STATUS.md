@@ -4,6 +4,19 @@
 
 Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an explicit finance grain, reusable measures and a management page flow. The workbook remains the calculation and audit source; Power BI is the consumption layer.
 
+## Current release overlay — 2026-08-31
+
+Use this section for the current hand-off; dated sections below preserve the
+earlier execution history.
+
+- **GitHub release:** commit `9519384ded5d121de55619c17c5ca27e1c81a263`.
+- **Drive bundle:** file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`, updated in place after the watcher QA.
+- **Recruiter site:** private Sites version 15 at `https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#powerbi`.
+- **Data-drop automation:** `scripts/watch_powerbi_refresh.py` passed a two-batch test; the contract hash changed and the target DataRoot reflected `Sales[units]` `121 -> 122`.
+- **DirectQuery operating gate:** `powerbi/directquery/PRODUCTION_ACCEPTANCE_MATRIX.md` defines G0-G8 for schema, ingestion, tie-out, health, Desktop, Service, APR and rollback.
+- **Desktop host:** `D:\Po BI\bin\PBIDesktop.exe` is present; custom-path preflight passes 14/14. Native binding, refresh, rendering and `.pbix` save evidence are still pending because the Computer Use kernel fails before exposing a targetable window.
+- **Realtime claim:** remains `PENDING`; the repository does not label CSV Import as second-level realtime and has no production database/capacity/APR evidence yet.
+
 ## Refreshable package status — 2026-08-30
 
 - **Compiled `.pbit`:** created and package-validated; 15 tables, 37 measures, 23 relationships, six pages and 39 visual containers.
