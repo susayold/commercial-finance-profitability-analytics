@@ -136,3 +136,11 @@ Drive mirror for M&A extension:
 - QA: [10/10 design controls and 15/15 automated checks](../reports/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS_QA.md)
 - Evidence boundary: SIMULATED / DERIVED; never phrase the bullet as realized company impact.
 - Gate A/B wording: [Gate A intake contract](GATE_A_B_USER_INPUT_CHECKLIST.md) and [Power BI source-coherence QA](../reports/POWER_BI_SOURCE_COHERENCE_QA.md) are preflight evidence only; native PBIX and LIVE_INTERNAL forecast accuracy remain open.
+
+## OPEX and headcount planning evidence
+
+- CV bullet: cost-center bridge from opening headcount → hires/exits → payroll → benefits/bonus → total OPEX → budget/forecast variance.
+- Direct report: [OPEX & Headcount Planning Module](OPEX_HEADCOUNT_PLANNING_MODULE.md)
+- Synthetic register: [opex_headcount_planning_synthetic.csv](../data/opex_headcount_planning_synthetic.csv)
+- QA: [OPEX/headcount QA](../reports/OPEX_HEADCOUNT_PLANNING_QA.md) — 13/13 automated checks.
+- Evidence boundary: SIMULATED / DERIVED; do not describe employees, salaries or savings as real company outcomes.
