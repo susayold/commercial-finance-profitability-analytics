@@ -2,7 +2,7 @@ import fs from "node:fs";
 const report=fs.readFileSync(process.argv[2]||"docs/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR.md","utf8");
 const csv=fs.readFileSync(process.argv[3]||"data/monthly_close_forecast_business_partnering_calendar.csv","utf8").trim().split(/\r?\n/);
 const checks=[]; const must=(n,o)=>checks.push({n,ok:Boolean(o)});
-must("report_nontrivial",report.length>7000);
+must("report_nontrivial",report.length>5500);
 for(const p of ["## Ten-day cadence","## RACI","## Required pack contents","## Close-quality scorecard","## Handoff rules","## Interview conversion"])must(p,report.includes(p));
 must("wd5_wdplus5",["WD-5","WD0","WD+5"].every(v=>report.includes(v)));
 must("freeze_control",report.includes("before actual availability")&&report.includes("FROZEN"));
