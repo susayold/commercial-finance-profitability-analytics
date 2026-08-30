@@ -1,0 +1,16 @@
+import fs from "node:fs";
+const report=fs.readFileSync(process.argv[2]||"docs/FINANCE_ANALYST_KPI_DICTIONARY.md","utf8");
+const csv=fs.readFileSync(process.argv[3]||"data/finance_analyst_kpi_dictionary.csv","utf8").trim().split(/\r?\n/);
+const checks=[]; const must=(n,o)=>checks.push({n,ok:Boolean(o)});
+for(const p of ["## 1. P&L and planning KPIs","## 2. Commercial profitability KPIs","## 3. Working capital and liquidity KPIs","## 4. Forecast, control and evidence KPIs","## 5. Credit and strategic-finance KPIs","## 6. Evidence and release rules"]) must(p,report.includes(p));
+must("report_nontrivial",report.length>9000);
+must("header",csv[0]==="domain,kpi,unit,grain,evidence_class,control,decision_use");
+const rows=csv.slice(1).map(x=>x.split(","));
+must("row_count",rows.length===26);
+must("domains",["P&L","Commercial","Working capital","Forecast","Controls","Credit","M&A"].every(d=>rows.some(r=>r[0]===d)));
+must("required_fields",rows.every(r=>r.length===7&&r[1]&&r[3]&&r[4]&&r[5]&&r[6]));
+must("evidence_controls",["SIMULATED","CALCULATED","DERIVED","PROXY_DERIVED","OBSERVED_DERIVED","SYNTHETIC_DERIVED"].every(e=>rows.some(r=>r[4]===e)));
+must("release_rules",report.includes("A public-company metric with a basis break")&&report.includes("A forecast metric requires a frozen snapshot"));
+const failed=checks.filter(c=>!c.ok); for(const c of checks) console.log((c.ok?"PASS ":"FAIL ")+c.n);
+console.log("Overall status: "+(failed.length?"FAIL":"PASS")+" ("+(checks.length-failed.length)+"/"+checks.length+" checks passed)");
+if(failed.length)process.exit(1);
