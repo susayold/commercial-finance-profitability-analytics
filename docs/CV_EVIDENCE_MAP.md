@@ -19,7 +19,9 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Built a formula-driven D2C unit-economics module linking acquisition spend, repeat orders, gross margin and variable service costs to CAC, LTV/CAC, payback and scale/hold decisions; included Base/Downside/Upside sensitivities and six automated control checks (synthetic case).
 - Built a source-linked public-guidance proxy for Vinamilk FY2018–FY2025 with 16 AGM/IR guidance-versus-actual observations, explicit revenue-basis controls and aggregate Bias/WAPE (public guidance, not internal forecast).
 - Built a page-reviewed Masan Consumer FY2016–FY2025 finance trend and lender-style credit memo; FY2025 margin compression, PAT decline and cash-conversion warning are calculated from reported statements, with a 15/15 automated QA report.
+- Added a financial-statement analysis layer using net margin, asset turnover, equity multiplier, DuPont ROE, ROA/ROE, CFO/revenue and debt/equity proxy; 11/11 controls pass and FY2024/FY2025 follow-ups are explicitly documented.
 - Built a QNS/KDC basis-perimeter bridge that calculates only within-window descriptive growth, retains source lineage and blocks misleading cross-break CAGR; validator and QA report pass 12/12.
+- Built a 21-row peer financial-quality scorecard for VNM/QNS/KDC with CAGR, margins, capital and cash metrics, source-record lineage, controlled blanks and rankability guardrails; validator and QA report pass 11/11.
 - Authored a portable Power BI source handoff with a machine-readable semantic manifest covering 5 dimensions, 9 facts, 15 relationships, 6 report pages and 18 QA tests; wired manifest validation into GitHub Actions (native PBIX remains Desktop-dependent).
 - Extended the public-guidance proxy into a reproducible forecast-performance analysis with metric/regime splits, Bias/WAPE/MAPE, within-2% accuracy bands and ranked misses; kept the evidence explicitly outside the internal forecast gate.
 - Prepared a finance-analyst interview talk track that traces one KPI from source to P&L to decision, including a 90-second pitch, 15-minute reviewer tour, STAR stories and honest responses to data/PBIX limitations.
@@ -38,6 +40,8 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 | Commercial finance | Promotion_Pricing, Budget_Allocation | Hurdle and marginal ROI |
 | D2C unit economics | D2C Unit Economics Sheet, d2c_unit_economics_synthetic.csv | CAC/LTV/payback; six native checks PASS; CI validator |
 | Public guidance / forecast-vs-actual | VNM public guidance proxy FY2018–FY2025 | 16 rows; Bias -2.63%; WAPE 3.14%; Gate A excluded |
+| MCH financial-statement analysis | MCH FY2016–FY2025 statement analysis dataset/report | DuPont, ROA/ROE, CFO/revenue and leverage proxy; 11/11 controls PASS |
+| Peer financial-quality scorecard | VNM/QNS/KDC scorecard/report | 21 rows; source lineage; VNM trend candidate; QNS/KDC context-only; 11/11 controls PASS |
 | Power BI source handoff | powerbi/PBIP_SOURCE_MANIFEST.json, PBIP_SOURCE_HANDOFF.md, PBIP_DESKTOP_EXECUTION_CHECKLIST.md | 5 dimensions; 9 facts; 15 relationships; 18 QA definitions; Desktop runbook and CI validator PASS |
 | Public guidance performance analysis | data/vnm_public_guidance_proxy_analysis.json, VNM_PUBLIC_GUIDANCE_ANALYSIS.md | Metric/regime Bias-WAPE-MAPE splits, descriptive bands, ranked misses; CI validator |
 | Data governance | Source_Register, peer review queue | OCR not auto-approved |
