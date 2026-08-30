@@ -33,6 +33,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - Power BI refresh fixture: `powerbi/data/current/` contains the 14 CSV inputs plus manifest/source-control metadata; it is mirrored in the Drive Power BI bundle.
 - Power BI data-swap runner: `scripts/prepare_powerbi_refresh.py` validates candidate CSVs, records file hashes/row counts and applies only the 14 contract files when invoked with `--apply`.
 - Power BI claim-boundary validator: `scripts/validate_powerbi_claim_boundary.py` keeps Import-mode, native-PBIX and DirectQuery/Automatic Page Refresh claims evidence-gated.
+- Native binary boundary: `powerbi/POWER_BI_NATIVE_BINARY_BOUNDARY.md` explains why model-containing projects require Desktop to produce a native `.pbix`.
 - Synthetic generator, ledger schema, hidden-truth event specification and QA validator are versioned in `scripts/` and `schemas/`
 - MCH OCR extraction pipeline: 125 machine candidates across FY2016-FY2025, 59 canonical review candidates and an explicit 120-row review queue; no OCR row is approved automatically
 

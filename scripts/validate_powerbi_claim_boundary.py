@@ -24,6 +24,7 @@ def main() -> int:
     semantic_root = root / "powerbi" / "native" / "VNFinance_PBIP" / "VNFinance_Commercial_Finance.SemanticModel"
     runbook_path = root / "powerbi" / "POWER_BI_DESKTOP_RUNBOOK.md"
     release_path = root / "reports" / "POWER_BI_REFRESHABLE_RELEASE_2026-08-30.md"
+    boundary_path = root / "powerbi" / "POWER_BI_NATIVE_BINARY_BOUNDARY.md"
 
     try:
         readiness = json.loads(readiness_path.read_text(encoding="utf-8"))
@@ -75,6 +76,8 @@ def main() -> int:
     add("Runbook disclaims CSV second-level realtime", "not second-level realtime" in runbook)
     add("Runbook defines Automatic Page Refresh migration", "Automatic Page Refresh" in runbook)
     add("Release disclaims native PBIX", "No native `.pbix` is claimed" in release)
+    boundary = boundary_path.read_text(encoding="utf-8") if boundary_path.exists() else ""
+    add("Native binary boundary note exists", boundary_path.is_file() and "pbi-tools" in boundary and "Power BI Desktop" in boundary)
 
     failed = [name for name, passed, _ in checks if not passed]
     payload = {
