@@ -125,12 +125,15 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 ## Power BI QA handoff
 
 - [Detailed build guide](powerbi/POWER_BI_BUILD_GUIDE_V2.md)
+- [Editable PBIP project](powerbi/native/VNFinance_PBIP/VNFinance_Commercial_Finance.pbip) · [compiled PBIT](powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit)
+- [Refresh architecture](docs/POWER_BI_REFRESH_ARCHITECTURE.md) · [package QA](reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md) · [release record](reports/POWER_BI_REFRESHABLE_RELEASE_2026-08-30.md)
+- [Drive PBIT](https://drive.google.com/file/d/1FhFTJVzv4Dxz9Z3bY_bu6KILsie0Ry9Y/view?usp=drivesdk) · [Drive handoff bundle (PBIT + PBIP + CSV + QA)](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk)
 - [PBIX release evidence template](powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md) · [Drive copy](https://drive.google.com/file/d/1zeOflHSaBjlna_Nl0vQ2pS2m42XApWi3/view?usp=drivesdk)
 - [18-test QA matrix](powerbi/QA_TEST_MATRIX.md)
 - [Executable DAX validation queries](powerbi/qa_validation_queries.dax)
 - [Final QA and remote handoff](docs/FINAL_QA_AND_HANDOFF_2026-08-30.md)
 - Current evidence baseline: peer extraction queue 25/25 rows reported_statement_verified; VNM statement layer complete FY2006–FY2020 (15 rows, eight metrics per year).
-- Native .pbix remains Desktop-dependent and is intentionally not represented by a placeholder file.
+- Native .pbix remains Desktop-dependent and is intentionally not represented by a placeholder file; the real editable PBIP/PBIT release is available above.
 
 ## Public-guidance forecast performance analysis
 
@@ -139,14 +142,14 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - The report decomposes the 16-row VNM public-guidance proxy by metric and period, with Bias, WAPE, MAPE, within-2% rate, descriptive error bands and worst misses.
 - Key readout: PBT WAPE 4.89% versus revenue WAPE 2.79%; FY2022 PBT is the largest miss at -12.533% of guidance. These are public-guidance observations, not internal forecast accuracy.
 
-## PBIP source handoff (portable Power BI build contract)
+## PBIP source handoff (editable Power BI build contract)
 
 - [PBIP source manifest](powerbi/PBIP_SOURCE_MANIFEST.json) · [Drive copy](https://drive.google.com/file/d/1ZusZswCyESNKSFp-B1A_IOHZ3KtNiFnz/view)
 - [PBIP handoff instructions](docs/PBIP_SOURCE_HANDOFF.md) · [Drive copy](https://drive.google.com/file/d/1MFMxCBM3HRG4Ffge5OwlV9ENkEOPn806/view)
 - [Desktop execution checklist](powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md) · covers prerequisites, topology, six-page build, QA-01–QA-18 and release evidence naming.
 - [Manifest validator](scripts/validate_pbip_source_manifest.mjs) · [Drive copy](https://drive.google.com/file/d/1fHLaWb1W1MwnVECFgabThpghA971u8XL/view)
 - Remote validation: 5 dimensions, 9 facts, 17 relationships, 6 report pages and 18 QA tests — PASS.
-- This is a portable source scaffold, not a native .pbix; the binary remains a Power BI Desktop-dependent release gate.
+- The repository now contains the generated editable PBIP, the compiled PBIT and a parameterized CSV Import refresh contract. A native .pbix is still a separate Desktop save/QA gate.
 
 ## Financial analyst methodology pack
 
