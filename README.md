@@ -446,3 +446,9 @@ The module links opening headcount, hires/exits, payroll, benefits, bonus and no
 [Module](docs/CAPEX_FIXED_ASSET_PLANNING_MODULE.md) · [Synthetic data](data/capex_fixed_asset_planning_synthetic.csv) · [QA](reports/CAPEX_FIXED_ASSET_PLANNING_QA.md)
 
 The module links approval, commitment, cash payment, depreciation, benefits and payback by project. It is SIMULATED / DERIVED and not evidence of realized company investment returns.
+
+
+## Latest website release
+
+- Site V9 now surfaces the customer-economics decision lens with concentration, after-WC contribution and C06 review signal: [release record](reports/SITE_V9_RELEASE_RECORD_2026-08-30.md) · [Drive release record](https://drive.google.com/file/d/1vZn_kPRFlURjye_3Bbxikq62BWVUy1BK/view?usp=drivesdk).
+- Production: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
