@@ -17,4 +17,4 @@ Date: 2026-08-30
 | 9 | CSV contains 22 machine-readable driver rows | PASS |
 | 10 | Synthetic / production release boundary is explicit | PASS |
 
-The tree is an operating-control rehearsal, not evidence of realized impact.
+Automated validator result: PASS (15/15 checks passed). The tree is an operating-control rehearsal, not evidence of realized impact.
