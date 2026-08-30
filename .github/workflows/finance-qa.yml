@@ -41,6 +41,14 @@ jobs:
             "$RUNNER_TEMP/forecast_capture_archive_QA.md"
           grep -F "**Overall status: PASS** (14/14 checks passed)" "$RUNNER_TEMP/forecast_capture_archive_QA.md"
 
+      - name: CAPEX and fixed-asset planning QA
+        shell: bash
+        run: |
+          node scripts/validate_capex_fixed_asset_planning.mjs \
+            data/capex_fixed_asset_planning_synthetic.csv \
+            docs/CAPEX_FIXED_ASSET_PLANNING_MODULE.md \
+            "$RUNNER_TEMP/capex_QA.md"
+
       - name: OPEX and headcount planning QA
         shell: bash
         run: |
