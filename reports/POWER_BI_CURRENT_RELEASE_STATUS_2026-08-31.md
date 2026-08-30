@@ -11,7 +11,7 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | GitHub repository | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) |
 | Handoff commit | [`607e329`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/607e329969d5c0238f5c37740953529a4345abf7) |
 | Latest validated CI | [Finance model QA](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127) — PASS |
-| Latest local release gate | `607e329` — PASS; nine deterministic stages and Desktop preflight 14/14 |
+| Latest local release gate | `b4f0c42` — PASS; ten deterministic stages and Desktop preflight 14/14 |
 | Drive bundle | [VNFinance Power BI refreshable package](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) |
 | Power BI Desktop host | `D:\Po BI\bin\PBIDesktop.exe` |
 | Desktop version recorded by preflight | `2.157.879.0 (26.08)` |
@@ -28,7 +28,8 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Data replacement | Two-batch LocalDB QA; `Sales[units]` 1,256,859 → 1,256,860; 20 health samples | PASS |
 | Refresh orchestration | `run_finance_refresh.py` + `prepare_powerbi_refresh.py` | PASS |
 | DirectQuery mechanics | Ephemeral LocalDB two-batch, 20-sample latency and 5-state health QA | PASS — local only |
-| Native PBIX | Requires Desktop open, refresh, render, save and reopen evidence | PENDING |
+| Native PBIX observed artifact | `powerbi/releases/Commercial_Finance_Profitability_Analytics_native.pbix`; Desktop open, refresh, Save As and reopen observed | PASS — observed workflow |
+| Native PBIX | Formal QA-01–QA-18 evidence sheet and full visual sign-off remain open | PENDING |
 | Production realtime | Requires cloud database, gateway/capacity and APR measurements | PENDING |
 
 ## Data replacement contract
@@ -63,11 +64,11 @@ replace-data proof, then save and reopen a native `.pbix`. Run
 `READY_TO_CLAIM` only when the PBIX container, all observed QA rows and Desktop
 metadata are present; a PBIT renamed to PBIX is rejected.
 
-No native PBIX is claimed in this release. The official Desktop Bridge returned
-its method manifest, but repeated status calls returned `Host is not ready to
-accept operations`; the Computer Use runtime also failed before it could
-expose a targetable Desktop window. No refresh/render evidence has been
-invented or inferred from the source package.
+The observed native file is now checked in and mirrored to Drive. Desktop
+opened the repaired PBIT, saved a native PBIX, reopened it, refreshed it, and
+showed the `Units Total` +1 proof (`1,256,859 → 1,256,860`) after changing only
+the CSV input. The formal QA-01–QA-18 matrix remains pending because this
+release does not promote a partial screenshot set to a full visual sign-off.
 
 ## Production realtime gate
 
@@ -84,8 +85,9 @@ realtime.
 
 ## Operator next action
 
-1. Enable Desktop Bridge external-tool access on a working Power BI Desktop host.
-2. Open the PBIP or PBIT on that host and set `DataRoot` to the 14-file input folder.
-3. Refresh, complete QA-01–QA-18 and the +1 units replace-data proof.
-4. Save/reopen the native PBIX and upload the PBIX plus evidence to private
-   Drive; keep credentials, cache files and personal paths out of GitHub.
+1. Execute and record the remaining QA-01–QA-18 visual matrix on a review
+   workstation.
+2. If production second-level freshness is required, provision the database,
+   gateway/capacity and DirectQuery/APR acceptance path in the matrix.
+3. Keep credentials, cache files and personal paths out of GitHub; the
+   checked-in PBIP/PBIT and observed PBIX are the reproducible handoff.

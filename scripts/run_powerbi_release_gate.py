@@ -155,6 +155,10 @@ def main() -> int:
             python_command(root, "scripts/validate_powerbi_service_workflow.py"),
             root,
         )
+        stages["measure_column_collisions"] = run_command(
+            python_command(root, "scripts/validate_powerbi_measure_column_collisions.py"),
+            root,
+        )
         stages["release_record"] = run_command(
             python_command(root, "scripts/validate_powerbi_release_record.py"),
             root,
@@ -187,6 +191,7 @@ def main() -> int:
         "directquery_mapping",
         "directquery_health_contract",
         "service_workflow_contract",
+        "measure_column_collisions",
         "release_record",
     )
     deterministic_ok = all(stages[name]["status"] == "PASS" and stages[name]["exit_code"] == 0 for name in deterministic_names)

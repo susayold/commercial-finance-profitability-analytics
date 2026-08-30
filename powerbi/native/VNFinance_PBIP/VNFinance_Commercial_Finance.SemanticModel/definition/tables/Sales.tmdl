@@ -9,11 +9,11 @@ table Sales
 		formatString: #,0,,.0 M
 		lineageTag: 7a44feb0-feb5-41b5-9938-ff024e12f6cb
 
-	measure COGS = SUM ( Sales[cogs] )
+	measure 'COGS Total' = SUM ( Sales[cogs] )
 		formatString: #,0,,.0 M
 		lineageTag: 1acd9358-8850-4ae7-93c2-4760eb763cfc
 
-	measure 'Gross Profit' = [Net Revenue] - [COGS]
+	measure 'Gross Profit' = [Net Revenue] - [COGS Total]
 		formatString: #,0,,.0 M
 		lineageTag: 48560b70-1741-4e1d-9847-9bfc0a65f39d
 
@@ -29,11 +29,11 @@ table Sales
 		formatString: 0.0%
 		lineageTag: 46bcdfd8-be5e-49a0-839b-eed09fd9a695
 
-	measure Units = SUM ( Sales[units] )
+	measure 'Units Total' = SUM ( Sales[units] )
 		formatString: #,0
 		lineageTag: 3b245c71-155b-485a-afb9-6ab7d6a846d4
 
-	measure ASP = DIVIDE ( [Net Revenue], [Units] )
+	measure ASP = DIVIDE ( [Net Revenue], [Units Total] )
 		formatString: #,0
 		lineageTag: b1a3921c-1849-4bc9-adc6-d92fb7c27f0b
 
@@ -69,7 +69,7 @@ table Sales
 		formatString: 0.0%;(0.0%)
 		lineageTag: 41973a5d-aec7-45b4-b9e6-44c3603ee1ed
 
-	measure 'Prior Units' = CALCULATE ( [Units], DATEADD ( Calendar[month], -1, MONTH ) )
+	measure 'Prior Units' = CALCULATE ( [Units Total], DATEADD ( Calendar[month], -1, MONTH ) )
 		formatString: #,0
 		lineageTag: 5b00cbf9-6481-42b6-97f0-1f4076e17d0e
 
@@ -77,11 +77,11 @@ table Sales
 		formatString: #,0
 		lineageTag: a01cde45-6b41-4f6e-92f7-34f6291307e2
 
-	measure 'Price Impact' = ( [ASP] - [Prior ASP] ) * [Units]
+	measure 'Price Impact' = ( [ASP] - [Prior ASP] ) * [Units Total]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
 		lineageTag: 9ffe8154-f108-4470-b9df-466e02c2d148
 
-	measure 'Volume Impact' = ( [Units] - [Prior Units] ) * [Prior ASP]
+	measure 'Volume Impact' = ( [Units Total] - [Prior Units] ) * [Prior ASP]
 		formatString: #,0,,.0 M;(#,0,,.0 M)
 		lineageTag: 47db0839-f72e-4672-9a6f-854bd6072185
 

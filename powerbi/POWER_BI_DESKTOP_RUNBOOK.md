@@ -8,7 +8,11 @@
 | Reusable template | `Commercial_Finance_Profitability_Analytics.pbit` | Open the template, bind `DataRoot`, then save a new `.pbix`. |
 | Continuous realtime | DirectQuery readiness pack only | Provision a SQL/Fabric source, migrate the partitions, then enable Automatic Page Refresh. |
 
-The checked-in source is real PBIP/PBIR/TMDL and the compiled artifact is a real PBIT archive. A native `.pbix` is deliberately not claimed until Power BI Desktop has opened, refreshed, rendered and passed the visual QA gate.
+The checked-in source is real PBIP/PBIR/TMDL, the compiled artifact is a real
+PBIT archive, and `powerbi/releases/Commercial_Finance_Profitability_Analytics_native.pbix`
+is an observed Desktop Save As output. The native file proves the open,
+refresh, save/reopen and data-only replacement workflow; the formal QA-01–QA-18
+visual gate remains separate and is not inferred from a partial screenshot set.
 
 ## 1. Get the authoritative package
 

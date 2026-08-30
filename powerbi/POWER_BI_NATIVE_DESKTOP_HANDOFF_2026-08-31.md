@@ -1,6 +1,11 @@
 # Native Power BI Desktop handoff — VNFinance Commercial Finance
 
-This is the last-mile execution sheet for producing a genuine native PBIX. PBIP/PBIT are real editable and reproducible artifacts; only Power BI Desktop can prove observed refresh, rendering, close/reopen and native PBIX save.
+This is the last-mile execution sheet for producing and reviewing a genuine
+native PBIX. PBIP/PBIT are real editable and reproducible artifacts. A first
+native Desktop artifact has now been produced and its open, refresh, Save As,
+reopen and +1 data-swap observation are recorded in
+`reports/POWER_BI_NATIVE_PBIX_DESKTOP_QA_2026-08-31.md`; the full visual QA
+matrix still requires a reviewer sign-off.
 
 ## Inputs
 
@@ -61,5 +66,6 @@ Import refresh is not realtime. Follow powerbi/directquery/PRODUCTION_ACCEPTANCE
 |---|---|
 | Contract/package/release gate | PASS |
 | LocalDB two-batch and latency rehearsal | PASS, local only |
-| Native Desktop open/refresh/render/save | PENDING, targetable Desktop UI required |
+| Native Desktop open/refresh/save/reopen | PASS — observed artifact and +1 units proof recorded |
+| Full QA-01–QA-18 visual matrix | PENDING, reviewer evidence sheet required |
 | Production DirectQuery/APR | PENDING, cloud database and capacity evidence required |

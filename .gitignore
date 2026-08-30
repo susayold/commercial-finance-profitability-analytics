@@ -2,6 +2,7 @@
 raw-reports/
 *.pdf
 *.pbix
+!powerbi/releases/Commercial_Finance_Profitability_Analytics_native.pbix
 *.xlsx
 *.xlsb
 

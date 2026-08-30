@@ -1,1 +1,1 @@
-CALCULATE ( [Units], DATEADD ( Calendar[month], -1, MONTH ) )
+CALCULATE ( [Units Total], DATEADD ( Calendar[month], -1, MONTH ) )

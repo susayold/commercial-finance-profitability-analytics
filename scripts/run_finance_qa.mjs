@@ -48,6 +48,7 @@ const tasks = [
   ['forecast_snapshot_contract', ['scripts/validate_live_forecast_submission.mjs', 'data/forecast_snapshot_live_unit_test.csv', path.join(transient, 'forecast_live_gate_QA.md'), '--mode=fixture']],
   ['powerbi_qa_evidence_template', ['scripts/validate_powerbi_qa_evidence.mjs', 'powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv']],
   ['pbip_manifest', ['scripts/validate_pbip_source_manifest.mjs']],
+  ['powerbi_measure_column_collisions', ['scripts/validate_powerbi_measure_column_collisions.py']],
   ['mna', ['scripts/validate_mna_accretion_dilution.mjs']],
   ['d2c', ['scripts/validate_d2c_unit_economics.mjs', 'data/d2c_unit_economics_synthetic.csv']],
   ['public_guidance', ['scripts/validate_public_guidance_proxy.mjs', 'data/vnm_public_guidance_proxy_2018_2025.csv']],
@@ -68,7 +69,14 @@ const tasks = [
 const result = { status: 'PASS', runner: 'run_finance_qa.mjs', checks: [] };
 try {
   for (const [name, args] of tasks) {
-    const run = spawnSync(process.execPath, args, { cwd: root, encoding: 'utf8' });
+    // Most validators are Node scripts, but a few repository gates are
+    // intentionally Python so they can share the same implementation with
+    // the release gate. Dispatch by script suffix instead of asking Node to
+    // parse Python source (which would create a false QA failure).
+    const interpreter = args[0]?.endsWith('.py')
+      ? (process.platform === 'win32' ? 'python' : 'python3')
+      : process.execPath;
+    const run = spawnSync(interpreter, args, { cwd: root, encoding: 'utf8' });
     const output = `${run.stdout ?? ''}${run.stderr ?? ''}`.trim();
     const check = { name, status: run.status === 0 ? 'PASS' : 'FAIL' };
     if (output) check.output_tail = output.split(/\r?\n/).slice(-6).join('\n');

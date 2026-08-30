@@ -102,6 +102,16 @@ still need a real Power BI Desktop or cloud workspace.
     validator checks commit/Drive links, current Import mode, latest replacement
     delta, DirectQuery local-only boundary and explicit native/realtime pending
     gates; it is now part of both finance QA and the release gate.
+27. Removed the Power BI Desktop load blocker caused by same-table measure and
+    column name collisions (`COGS`/`cogs` and `Units`/`units`). The aggregate
+    measures are now `COGS Total` and `Units Total`, and the new static
+    `validate_powerbi_measure_column_collisions.py` gate runs in both Finance QA
+    and the release gate. Desktop then loaded the repaired PBIT, saved a native
+    PBIX, reopened it, refreshed it and showed the replace-data-only proof:
+    `Sales[units]` 1,256,859 → 1,256,860 after changing only one CSV value.
+    The baseline file was restored and the native PBIX was saved again. The
+    observed native artifact and evidence sheet are checked in; the complete
+    QA-01–QA-18 matrix remains a separate pending sign-off.
 
 ## Evidence boundaries
 
@@ -110,10 +120,11 @@ still need a real Power BI Desktop or cloud workspace.
 | Editable model | PBIP/PBIR/TMDL source + PBIT | PASS |
 | Contract refresh | 78/78 input checks + watcher two-batch QA | PASS |
 | Local DirectQuery mechanics | LocalDB two-batch smoke | Rehearsal only |
-| Native PBIX | Desktop executable + 14/14 preflight; Bridge manifest found but host not ready; UI helper failed before target window | PENDING |
+| Native PBIX | Desktop open/refresh/Save As/reopen observed; `Units Total` +1 proof; full QA-01–QA-18 matrix not promoted | PASS — observed workflow; formal matrix PENDING |
 | Production realtime | Cloud DB, gateway/capacity and APR not provisioned | PENDING |
 
-The next executable action is to enable Desktop Bridge external-tool access,
-open the PBIP/PBIT in Power BI Desktop, set `DataRoot`, refresh, capture
-QA-01–QA-18 and save the native `.pbix`. Only after that evidence exists should
-`native_desktop_qa` or the realtime claim be promoted.
+The next executable action is to complete and review QA-01–QA-18 on a second
+workstation (or promote only after an equivalent full evidence pack). The
+production realtime claim still requires a provisioned cloud database,
+gateway/capacity and measured DirectQuery/APR acceptance; the observed Import
+PBIX does not imply second-level realtime.

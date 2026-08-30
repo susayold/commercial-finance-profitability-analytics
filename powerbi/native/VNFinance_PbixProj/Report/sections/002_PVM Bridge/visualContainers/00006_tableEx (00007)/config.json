@@ -23,7 +23,7 @@
           "queryRef": "Product.category"
         },
         {
-          "queryRef": "Sales.Units"
+          "queryRef": "Sales.Units Total"
         },
         {
           "queryRef": "Sales.ASP"
@@ -87,7 +87,7 @@
             },
             "Property": "Units"
           },
-          "Name": "Sales.Units",
+          "Name": "Sales.Units Total",
           "NativeReferenceName": "Units"
         },
         {

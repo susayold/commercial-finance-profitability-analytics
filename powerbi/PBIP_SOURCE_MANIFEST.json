@@ -5,10 +5,13 @@
   "release_artifacts": {
     "editable_pbip": "powerbi/native/VNFinance_PBIP/VNFinance_Commercial_Finance.pbip",
     "compiled_pbit": "powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit",
+    "native_pbix_observed": "powerbi/releases/Commercial_Finance_Profitability_Analytics_native.pbix",
+    "native_desktop_evidence": "reports/POWER_BI_NATIVE_PBIX_DESKTOP_QA_2026-08-31.md",
     "pbixproj_source": "powerbi/native/VNFinance_PbixProj",
     "refresh_parameter": "DataRoot",
     "refresh_mode": "Import_replace_and_refresh",
     "native_desktop_qa": "PENDING",
+    "native_desktop_observed": "OPEN_REFRESH_SAVE_REOPEN_PASS; full QA-01-QA-18 matrix pending",
     "directquery_readiness": "powerbi/DIRECTQUERY_READINESS.json",
     "directquery_schema": "powerbi/directquery/VNFinance_DirectQuery_Schema.sql",
     "directquery_loader": "scripts/load_directquery_sqlserver.py",
@@ -57,12 +60,12 @@
     "measure_names": [
       "Net Revenue",
       "Gross Sales",
-      "COGS",
+      "COGS Total",
       "Gross Profit",
       "Gross Margin %",
       "Contribution Margin",
       "Contribution Margin %",
-      "Units",
+      "Units Total",
       "ASP",
       "Budget Revenue",
       "Forecast Revenue",
@@ -433,9 +436,8 @@
     "native_desktop_required": true
   },
   "external_steps_remaining": [
-    "Repair or reinstall Power BI Desktop with Administrator rights on the execution host.",
-    "Open the committed PBIP or compiled PBIT, set DataRoot, and execute a native refresh.",
     "Execute QA-01 through QA-18 and record results in PBIX_RELEASE_EVIDENCE_TEMPLATE.md.",
-    "Save and upload a native PBIX only after Desktop open, refresh, DAX, and visual-rendering QA pass."
+    "Review the observed native PBIX evidence on a second workstation before promoting formal native_desktop_qa.",
+    "Provision the cloud database, gateway/capacity and Automatic Page Refresh acceptance path if production realtime is required."
   ]
 }

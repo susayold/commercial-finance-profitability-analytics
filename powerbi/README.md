@@ -2,7 +2,7 @@
 
 ## Refreshable release
 
-The repository now includes generated native source under `powerbi/native/` and the compiled editable template under `powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit`.
+The repository now includes generated native source under `powerbi/native/`, the compiled editable template under `powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit`, and an observed native Desktop artifact at `powerbi/releases/Commercial_Finance_Profitability_Analytics_native.pbix`.
 
 - Open `powerbi/native/VNFinance_PBIP/VNFinance_Commercial_Finance.pbip` in Power BI Desktop to edit the project.
 - Set the `DataRoot` parameter to the folder containing the 14 contract CSV files.
@@ -12,10 +12,10 @@ The repository now includes generated native source under `powerbi/native/` and 
 - `.github/workflows/powerbi-service-refresh.yml` provides the automatic hook: a push that changes `powerbi/data/current/**` validates the contract and then triggers the published dataset when the repository has `PBI_WORKSPACE_ID`, `PBI_DATASET_ID` and `PBI_ACCESS_TOKEN` GitHub Secrets. Without those secrets it records `SKIPPED` evidence and makes no network call. The deployed dataset must point to the same cloud-accessible source that receives the data swap; a GitHub CSV change alone cannot update a dataset still bound to a local Desktop path.
 - `scripts/run_finance_refresh.py` is the single-command operator flow: it validates and prepares the Import swap, and can additionally apply the DirectQuery load and/or trigger the Service refresh when those explicit flags and runtime credentials are supplied. It writes one combined evidence JSON and never stores tokens or connection strings.
 - `scripts/watch_powerbi_refresh.py` is the optional CSV-drop watcher: it hashes all 14 contract files, waits for a stable copy and delegates to the same orchestrator. It is dry-run by default and explicitly documents that a watcher does not make Import mode second-level realtime.
-- `scripts/run_powerbi_release_gate.py` runs the deterministic contract, package, coherence, DirectQuery mapping, Service workflow and claim-boundary checks in one command; on Windows it adds Desktop preflight and returns `PASS_WITH_EXTERNAL_PENDING` when native Desktop evidence is still open.
+- `scripts/run_powerbi_release_gate.py` runs the deterministic contract, package, coherence, DirectQuery mapping, Service workflow, measure/column collision and claim-boundary checks in one command; on Windows it adds Desktop preflight and returns `PASS_WITH_EXTERNAL_PENDING` when production/native acceptance evidence is still open.
 - `scripts/validate_powerbi_service_workflow.py` statically validates the GitHub Actions data-drop → Service-refresh contract (trigger paths, pre-refresh validation, secrets wiring, fail-closed skip branch and JSON evidence); it never contacts Power BI.
 - `reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-31.md` records a current `DRY_RUN_PASS` plus a no-token `--apply` fail-closed guard; neither test calls Power BI.
-- `scripts/validate_native_pbix_release.py` audits a supplied native PBIX container, SHA-256/size, QA-01–QA-18 CSV and observed Desktop metadata; it returns `READY_TO_CLAIM`, `PENDING_EXTERNAL_EVIDENCE` or `FAIL` without mutating the repository manifest.
+- `scripts/validate_native_pbix_release.py` audits a supplied native PBIX container, SHA-256/size, QA-01–QA-18 CSV and observed Desktop metadata; it returns `READY_TO_CLAIM`, `PENDING_EXTERNAL_EVIDENCE` or `FAIL` without mutating the repository manifest. The observed Desktop run is documented in `reports/POWER_BI_NATIVE_PBIX_DESKTOP_QA_2026-08-31.md`.
 - `POWER_BI_NATIVE_DESKTOP_HANDOFF_2026-08-31.md` is the final operator sheet for Desktop open/bind/refresh/QA/save, the replace-data-only proof and the separate DirectQuery/APR gate.
 - `POWER_BI_DESKTOP_BRIDGE_HANDOFF_2026-08-31.md` documents the official preview Bridge CLI route for Desktop status, PBIP reload and page screenshots; it keeps native Save As/refresh claims separate.
 - `reports/POWER_BI_CURRENT_RELEASE_STATUS_2026-08-31.md` is the current release record with evidence links and explicit native-PBIX/realtime claim boundaries.
@@ -32,7 +32,7 @@ The repository now includes generated native source under `powerbi/native/` and 
 - `scripts/validate_powerbi_docs_contract.py` checks that the runbook, Power Query references and committed fixture all use the same 14 canonical CSV filenames.
 - `scripts/validate_powerbi_release_record.py` checks that the recruiter-facing release record names the current commit, links the Drive/native handoff and keeps native PBIX/realtime boundaries pending.
 
-Automated package QA currently passes 29/29 checks. Native Desktop open/refresh/render QA remains a separate gate and is not inferred from source validation.
+Automated package QA passes the 29/29 package checks plus the measure/column collision gate. Native Desktop open/refresh/save/reopen evidence is recorded separately; the full QA-01–QA-18 visual sign-off and production realtime remain separate gates.
 
 The committed fixture is synthetic and reproducible. Regenerate it with
 `python scripts/generate_vietnova_data.py --output-dir powerbi/data/current`,
