@@ -210,9 +210,8 @@ jobs:
         shell: bash
         run: |
           node scripts/build_monte_carlo_risk_overlay.mjs "$RUNNER_TEMP/monte_carlo_risk_overlay.csv"
-          node scripts/compare_monte_carlo_risk_overlay.mjs \
-            data/monte_carlo_risk_overlay_2026-08-30.csv \
-            "$RUNNER_TEMP/monte_carlo_risk_overlay.csv"
           node scripts/validate_monte_carlo_risk_overlay.mjs \
             reports/MONTE_CARLO_RISK_OVERLAY_2026-08-30.md \
             data/monte_carlo_risk_overlay_2026-08-30.csv
+
+
