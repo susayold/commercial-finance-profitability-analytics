@@ -185,3 +185,8 @@ The index now has a 15-minute review order and explicit release boundaries for s
 ## Monte Carlo risk overlay handoff (2026-08-30)
 
 A seeded 5,000-draw synthetic risk overlay is now included in the remote QA surface and Drive archive. It is a risk rehearsal, not internal forecast accuracy; Gate A remains open.
+
+
+## Monte Carlo reproducibility correction
+
+The builder now writes newline-delimited CSV correctly; CI rebuilds and diffs the 5,000-draw output before running the validator. The earlier failed run was a formatting mismatch, not a model-data change.
