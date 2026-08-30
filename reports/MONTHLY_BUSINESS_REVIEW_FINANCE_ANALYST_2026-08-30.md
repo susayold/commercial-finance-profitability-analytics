@@ -30,7 +30,7 @@ The pack is designed to be refreshed from locked snapshots, even though this rel
 | Revenue variance | Actual − Budget | period, version, revenue | **OPEN** — live internal snapshot required |
 | Gross-profit variance | Actual GP − Budget GP | net revenue, COGS | **OPEN** — live internal snapshot required |
 | EBITDA-proxy variance | Actual proxy − Budget proxy | proxy P&L lines | **OPEN** — replace proxy Opex/OCF with CoA mapping |
-| Forecast bias | (Forecast − Actual) / Actual | FROZEN forecast snapshot | **OPEN / Gate A** |
+| Forecast bias | (Forecast − Actual) / Actual | FROZEN forecast snapshot | **OPEN / Gate A; Gate B remains open** |
 | WAPE | sum(abs(Forecast−Actual)) / sum(abs(Actual)) | eligible frozen history | **OPEN / Gate A** |
 
 The evidence contract intentionally refuses to call a DRAFT snapshot “forecast accuracy”. See docs/FORECAST_ACCURACY_BACKTEST.md and the Gate A intake schema.
@@ -105,7 +105,7 @@ Do not average scenarios into a fake “most likely” number. Present the Base 
 3. Drill to channel/customer/SKU and test the 25% CM hurdle.
 4. Translate DSO/DIO/DPO movement into cash actions and owners.
 5. Show scenario boundary; state what evidence would move the plan to Upside or Downside.
-6. Finish on Controls & Evidence; call out open Gate A/B rather than hiding them.
+6. Finish on Controls & Evidence; call out open Gate A and Gate B rather than hiding them.
 
 ## Release checklist
 
