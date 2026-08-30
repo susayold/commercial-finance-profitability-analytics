@@ -5,13 +5,13 @@ Authoritative archives: [GitHub repository](https://github.com/susayold/commerci
 
 ## Overall assessment
 
-**Share with caveats.** The finance case is coherent, source-linked and recruiter-ready for a Junior FP&A / Finance Analyst portfolio. The Excel v2 model, synthetic ledger, management narrative, deck, website and peer-panel layer are complete enough to demonstrate operating-finance judgment. Two items remain intentionally open: (1) a native Power BI `.pbix` file is not available in this environment, so the semantic model and DAX are delivered as an implementation contract; and (2) genuine internal pre-close forecast snapshots are not available, so observed internal Bias/WAPE cannot be claimed. The VNM FY2006–FY2020 statement layer and QNS/KDC legacy statement rows are now archived and validator-checked; historical comparability caveats remain.
+**Share with caveats.** The finance case is coherent, source-linked and recruiter-ready for a Junior FP&A / Finance Analyst portfolio. The Excel v2 model, synthetic ledger, management narrative, deck, Sites v8 website and peer-panel layer are complete enough to demonstrate operating-finance judgment. Two items remain intentionally open: (1) a native Power BI `.pbix` file is not available in this environment, so the semantic model and DAX are delivered as an implementation contract; and (2) genuine internal pre-close forecast snapshots are not available, so observed internal Bias/WAPE cannot be claimed. The VNM FY2006–FY2020 statement layer and QNS/KDC legacy statement rows are now archived and validator-checked; historical comparability caveats remain.
 
 ## Methodology review
 
 - **Decision question:** connect revenue growth to contribution margin, cash conversion and an explicit CFO action.
 - **Operating data:** deterministic synthetic VietNova ledger; synthetic facts are labelled in the model, deck and website.
-- **Public data:** official annual reports / audited statements archived in Drive; public peers are used for calibration and benchmark context, not as a substitute for private operating data.
+- **Public data:** official annual reports / audited statements archived in Drive; public peers are used for calibration and benchmark context, not as a substitute for private operating data. The Masan Consumer FY2017 official report is also represented by a bounded 8-metric `INDEXED_ONLY` evidence layer with 8/8 QA; standalone bytes/hash remain pending.
 - **Peer panel:** VNM, QNS and KDC FY2021–FY2025 from latest official report summaries, with source URL, original basis and comparability note retained.
 - **Long-run comparability:** VNM FY2016–FY2025 CAGR is calculated only on a consistent VAS summary basis. QNS and KDC long-run CAGR are deliberately not calculated because of revenue-definition and consolidation-perimeter breaks.
 
@@ -26,7 +26,7 @@ Authoritative archives: [GitHub repository](https://github.com/susayold/commerci
 | QNS FY2021–25 CAGR | 9.58% (rounded), matches the remote analyst summary |
 | KDC FY2021–25 CAGR | -3.63% (rounded), matches the remote analyst summary |
 | Workbook controls | v2 model status PASS; nine control checks PASS; formula-error scan zero matches |
-| Website / deck | Production deployment succeeded; deck render passed overflow QA |
+| Website / deck | Sites v8 production deployment succeeded; deck render passed overflow QA |
 
 ## Issues and caveats
 
