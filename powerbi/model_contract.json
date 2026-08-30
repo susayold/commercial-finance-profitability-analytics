@@ -207,6 +207,36 @@
         "Source_Layer",
         "Required_Metrics"
       ]
+    },
+    {
+      "name": "OPEX_Headcount",
+      "grain": "cost center x month",
+      "keys": [
+        "period",
+        "cost_center"
+      ],
+      "measures": [
+        "headcount_open",
+        "hires",
+        "exits",
+        "headcount_close",
+        "avg_headcount",
+        "avg_salary_vnd",
+        "payroll_vnd",
+        "benefits_vnd",
+        "bonus_vnd",
+        "non_payroll_opex_vnd",
+        "opex_actual_vnd",
+        "opex_budget_vnd",
+        "opex_forecast_vnd",
+        "budget_variance_vnd",
+        "forecast_variance_vnd"
+      ],
+      "attributes": [
+        "function",
+        "evidence_class",
+        "source_system"
+      ]
     }
   ],
   "relationships": [
@@ -269,6 +299,10 @@
     [
       "Channel_Master[ChannelID]",
       "Forecast_Versions[ChannelID]"
+    ],
+    [
+      "Calendar[YearMonth]",
+      "OPEX_Headcount[period]"
     ]
   ],
   "pages": [
@@ -282,7 +316,8 @@
         "contribution margin",
         "CCC",
         "risk flag",
-        "action table"
+        "action table",
+        "OPEX variance"
       ]
     },
     {
@@ -291,7 +326,8 @@
       "visuals": [
         "actual vs budget vs forecast",
         "variance waterfall",
-        "top drivers"
+        "top drivers",
+        "OPEX/headcount bridge"
       ]
     },
     {
@@ -341,6 +377,7 @@
     "Checks[MODEL STATUS] equals PASS",
     "No negative sales facts",
     "Every visual shows evidence classification and refresh timestamp",
-    "Unapproved peer candidates are excluded from benchmark trend visuals and clearly flagged in Controls & Evidence"
+    "Unapproved peer candidates are excluded from benchmark trend visuals and clearly flagged in Controls & Evidence",
+    "OPEX actual, budget and forecast reconcile by cost center with headcount bridge"
   ]
 }
