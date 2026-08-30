@@ -18,6 +18,7 @@ The latest GitHub `main` content includes the site gate-contract release and the
 | Continuous QA | .github/workflows/finance-qa.yml | CI rehearsal report | PASS; CI now runs forecast leakage, frozen archive, peer, VNM, D2C, public-guidance, PBIP manifest and contract checks |
 | MCH credit screening | reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md, reports/MCH_CREDIT_MEMO_QA.md, scripts/validate_mch_credit_memo.mjs | Memo, QA report and validator are mirrored to Drive | PASS; lender-style WATCH / CONDITIONAL SUPPORT with explicit debt-service limitation; trend QA 15/15 |
 | QNS/KDC basis bridge | reports/PEER_BASIS_PERIMETER_BRIDGE_2026-08-30.md, data/peer_basis_perimeter_bridge_2016_2025.csv, scripts/validate_peer_basis_perimeter_bridge.mjs, reports/PEER_BASIS_PERIMETER_BRIDGE_QA.md | Report, native Sheet, validator and QA report mirrored to Drive | PASS; 12/12 controls; segmented within-basis CAGRs; full-period splice remains blocked |
+| Gate A/B intake | docs/GATE_A_B_USER_INPUT_CHECKLIST.md | User-input checklist mirrored to Drive | READY; exact fields, evidence files and acceptance rules documented; gates remain external |
 
 ## Explicit remaining gates
 
