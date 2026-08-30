@@ -7,13 +7,13 @@ This matrix is the release gate for the native Power BI file. Run the tests in P
 | ID | Test / business question | Power BI object | Expected result / tolerance | Evidence |
 |---|---|---|---|---|
 | QA-01 | Is the model loaded at the intended grain? | Model view + row-count cards | Calendar, Sales_Fact, Commercial_Costs, Inventory, AR, AP, Budget and Forecast_Versions row counts match the v2 workbook metadata. | Source workbook tab counts and model contract |
-| QA-02 | Does revenue reconcile? | [Net Revenue] card and Excel tie-out card | Power BI Net Revenue equals Excel PnL Net Revenue within ±VND 100m after deterministic rounding. | Excel Checks and Power BI Checks page |
+| QA-02 | Does revenue reconcile? | [Net Revenue] card and Excel tie-out card | Power BI Net Revenue equals Excel PnL Net Revenue within ±VND 100m after deterministic rounding; OPEX_Headcount actual/budget/forecast rows are loaded at cost-center × month grain. | Excel Checks and Power BI Checks page |
 | QA-03 | Does gross profit reconcile? | [Gross Profit] card | Net Revenue - COGS equals the Excel P&L gross profit within ±VND 100m. | PnL tab and DAX measure |
 | QA-04 | Does contribution reconcile by channel? | Channel matrix + total card | Sum of channel contribution margin equals total contribution margin; residual ≤VND 100m. | Channel_Profitability and matrix total |
 | QA-05 | Are there impossible sales values? | Sales_Fact diagnostic table | Count of rows where Net Revenue < 0, Units < 0 or COGS < 0 is zero. | Diagnostic DAX table / filter |
 | QA-06 | Are discounts and returns bounded? | Sales diagnostic table | Discount + Returns ≤ Gross Sales for every invoice line; violations = 0. | Sales_Fact row-level check |
 | QA-07 | Is the selected scenario deterministic? | Scenario slicer | Base / Upside / Downside changes forecast and variance visuals only; actual revenue is unchanged. | Scenario selector and three screenshots |
-| QA-08 | Is the budget bridge directionally correct? | Variance waterfall | Revenue variance equals Actual − Budget; waterfall components sum to the headline variance within rounding. | P&L / Variance page |
+| QA-08 | Is the budget bridge directionally correct? | Variance waterfall | Revenue variance equals Actual − Budget; waterfall components sum to the headline variance within rounding. OPEX budget and forecast variance measures also reconcile to the OPEX fact. | P&L / Variance page |
 | QA-09 | Does the PVM bridge explain growth? | PVM bridge | Price + Volume + Mix + Trade-spend bridge equals period-over-period net revenue / contribution movement within ±VND 100m. | PVM_Bridge tab |
 | QA-10 | Is the hurdle rule visible? | Channel scatter / table | Rows with Contribution Margin % below Channel_Master[CMHurdle] show Below Hurdle Flag = 1; no blank hurdle values for active channels. | Channel page |
 | QA-11 | Are cash-cycle measures interpretable? | DSO / DIO / DPO / CCC cards | DSO, DIO, DPO use monthly denominator convention (365/12) and CCC = DSO + DIO − DPO. | Working Capital page |
