@@ -263,3 +263,8 @@ The cross-platform finance runner now covers all 42 validator invocations across
 ## Website V9 release
 
 Site V9 is deployed at https://vn-finance-fpa-case.sangkenny200.chatgpt.site with a customer-economics decision callout. [Release record](../reports/SITE_V9_RELEASE_RECORD_2026-08-30.md) and Drive archive retain the source commit, build archive hash and deployment status. This changes presentation only; all customer values remain synthetic rehearsal evidence.
+
+
+## External gate readiness artifact
+
+The release boundary is now machine-readable in [external_gate_readiness.json](../data/external_gate_readiness.json) with a [10/10 governance validator](../reports/EXTERNAL_GATE_READINESS_QA.md). It explicitly records Gate A as pending live internal evidence and Gate B as pending native PBIX/Desktop evidence; no production claim is enabled.
