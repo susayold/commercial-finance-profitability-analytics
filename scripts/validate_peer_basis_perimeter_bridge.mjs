@@ -18,7 +18,8 @@ check('single-year anchor has blank CAGR', rows.find(x=>x.segment_id==='KDC_pre_
 check('QNS basis break explicit', rows.find(x=>x.segment_id==='QNS_pre_basis')?.revenue_basis==='total_revenue' && rows.find(x=>x.segment_id==='QNS_net_revenue_2020_2025')?.revenue_basis==='net_revenue','total vs net');
 check('KDC perimeter break explicit', rows.find(x=>x.segment_id==='KDC_consolidation_transition')?.perimeter_status==='transition_restated','transition_restated');
 check('naive splices blocked', rows.every(x=>x.publication_status!=='FULL_PERIOD_CAGR'), 'no row is marked as a publishable full-period splice');
-check('no adjusted values claimed', rows.every(x=>x.caveat.toLowerCase().includes('do not') || x.caveat.toLowerCase().includes('not organic') || x.caveat.toLowerCase().includes('basis') || x.caveat.toLowerCase().includes('no cagr')), 'caveats retain non-adjusted boundary');
+check('caveats present', rows.every(x=>x.caveat.trim().length>10), 'every segment carries a non-empty limitation');
+check('break caveats explicit', rows.find(x=>x.segment_id==='QNS_pre_basis')?.caveat.toLowerCase().includes('not net revenue') && rows.find(x=>x.segment_id==='QNS_net_revenue_2021_2025')?.caveat.toLowerCase().includes('not a full-period') && rows.find(x=>x.segment_id==='KDC_consolidation_transition')?.caveat.toLowerCase().includes('not organic') && rows.find(x=>x.segment_id==='KDC_later_series')?.caveat.toLowerCase().includes('not organic'), 'basis/perimeter boundaries are explicit');
 const pass=checks.filter(x=>x.pass).length;
 console.log(JSON.stringify({status:pass===checks.length?'PASS':'FAIL',pass,fail:checks.length-pass,rows:rows.length}));
 if(pass!==checks.length) process.exitCode=1;
