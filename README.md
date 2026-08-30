@@ -274,3 +274,8 @@ Drive mirror for M&A extension:
 - Promotion ROI now subtracts spend and applies a 25% hurdle; fixed-budget allocation now conserves the VND 4.35bn approved budget and checks capacity/max-increase constraints.
 - [Pricing simulator synthetic data](data/pricing_simulator_synthetic.csv) · [validator](scripts/validate_pricing_simulator.mjs) · integrated workbook tab `Pricing_Simulator` · [Drive CSV](https://drive.google.com/file/d/1ztUZZTUNMoKIDiPsHheeVtPj0t7GPn5T/view) · [Drive validator](https://drive.google.com/file/d/1_WJXVSBdPOM4QCavzqFq5y9TF-3xuNWy/view)
 
+
+
+### Latest evidence-layer update
+
+QNS FY2021–FY2025 gross profit and owners' equity are now included from the readable FY2025 management summary table (pages 27–28), with evidence-tier flags preserved. See [QNS reported summary evidence](reports/QNS_REPORTED_SUMMARY_EVIDENCE_2021_2025.md) and [QNS source extract](data/qns_reported_summary_metrics_2021_2025.csv).
