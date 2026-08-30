@@ -18,7 +18,7 @@ earlier execution history.
 - **Recruiter site:** private Sites version 15 at `https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#powerbi`.
 - **Data-drop automation:** `scripts/watch_powerbi_refresh.py` passed a two-batch test; the contract hash changed and the target DataRoot reflected `Sales[units]` `121 -> 122`.
 - **DirectQuery freshness rehearsal:** the LocalDB two-batch harness was rerun with a runtime watermark; both health controls returned `PASS`, `Sales[units]` moved `1,256,859 -> 1,256,860`, and the ephemeral instance was deleted.
-- **DirectQuery latency baseline:** the rerun sampled 10 post-commit health queries; p50 was `0.0134s` and p95 `0.0153s` on LocalDB. This is a local baseline only, not a production capacity claim.
+- **DirectQuery latency baseline:** the latest rerun sampled 20 post-commit health queries; p50 was `0.0135s` and p95 `0.0156s` on LocalDB. This is a local baseline only, not a production capacity claim.
 - **DirectQuery operating gate:** `powerbi/directquery/PRODUCTION_ACCEPTANCE_MATRIX.md` defines G0-G8 for schema, ingestion, tie-out, health, Desktop, Service, APR and rollback.
 - **Desktop host:** `D:\Po BI\bin\PBIDesktop.exe` is present; custom-path preflight passes 14/14. Native binding, refresh, rendering and `.pbix` save evidence are still pending: the official Desktop Bridge manifest was discovered, but status calls returned `Host is not ready to accept operations`, and the Windows Computer Use helper could not expose a targetable window.
 - **Native Desktop handoff:** `powerbi/POWER_BI_NATIVE_DESKTOP_HANDOFF_2026-08-31.md` packages the exact preflight, binding, QA-01–QA-18, data-swap and native-save sequence for the next working Desktop host.

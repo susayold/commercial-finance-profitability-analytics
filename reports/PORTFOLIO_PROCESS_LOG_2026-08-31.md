@@ -42,8 +42,9 @@ still need a real Power BI Desktop or cloud workspace.
     including PBIP source coherence and DirectQuery readiness.
 12. Verified GitHub Actions run [33327789127](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127): the new release-gate step and the full Finance model QA job completed successfully; CI correctly records the Windows Desktop stage as `EXTERNAL_PENDING` on Ubuntu.
 13. Extended the LocalDB smoke harness with a configurable post-commit health
-    latency sample. The current 10-sample run recorded p50 `0.0134s` and p95
-    `0.0153s`; this baseline is explicitly labelled local rehearsal evidence.
+    latency sample. The latest 20-sample run recorded p50 `0.0135s` and p95
+    `0.0156s` (min `0.0112s`, max `0.0172s`); this baseline is explicitly
+    labelled local rehearsal evidence.
 14. Added `powerbi/POWER_BI_NATIVE_DESKTOP_HANDOFF_2026-08-31.md`, a single
     operator sheet for Desktop preflight, binding, QA-01–QA-18, replace-data-only
     proof, native PBIX save/reopen and the separate realtime migration gate.
