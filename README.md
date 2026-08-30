@@ -393,3 +393,6 @@ Monte Carlo reproducibility note: the builder writes real newline-delimited CSV 
 
 
 Monte Carlo validator maintenance: report non-triviality threshold is aligned to the 3,788-character risk memo; latest Drive validator copy: https://drive.google.com/file/d/1yDtKh5idle6STfSpoF_M95fDPoIfypP3/view?usp=drivesdk
+
+
+Monte Carlo QA hardening: [rebuild comparator](scripts/compare_monte_carlo_risk_overlay.mjs) now normalizes newline endings and compares the rebuilt seeded output to the committed CSV; Drive comparator: https://drive.google.com/file/d/1eDx_fLi36b8pm3NAA3D1TdG0GwIsZ21S/view?usp=drivesdk
