@@ -35,6 +35,12 @@
 - [PBIT parameter load](evidence/POWER_BI_PBIT_PARAMETER_LOAD_2026-08-31.png)
 - [Native PBIX reopened in Desktop](evidence/POWER_BI_NATIVE_PBIX_REOPEN_2026-08-31.png)
 - [Executive Output after native save](evidence/POWER_BI_NATIVE_PBIX_EXECUTIVE_OUTPUT_2026-08-31.png)
+- [P&L and Variance](evidence/POWER_BI_NATIVE_PBIX_PL_VARIANCE_2026-08-31.png)
+- [PVM Bridge](evidence/POWER_BI_NATIVE_PBIX_PVM_BRIDGE_2026-08-31.png)
+- [Channel and Customer Profitability](evidence/POWER_BI_NATIVE_PBIX_CHANNEL_CUSTOMER_2026-08-31.png)
+- [Working Capital and Liquidity](evidence/POWER_BI_NATIVE_PBIX_WORKING_CAPITAL_2026-08-31.png)
+- [Controls and Evidence](evidence/POWER_BI_NATIVE_PBIX_CONTROLS_2026-08-31.png)
+- [Page-capture index](POWER_BI_NATIVE_PAGE_CAPTURE_INDEX_2026-08-31.md)
 
 ## Claim boundary
 

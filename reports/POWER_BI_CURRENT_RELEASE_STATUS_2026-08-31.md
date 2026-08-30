@@ -30,6 +30,7 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Refresh orchestration | `run_finance_refresh.py` + `prepare_powerbi_refresh.py` | PASS |
 | DirectQuery mechanics | Ephemeral LocalDB two-batch, 20-sample latency and 5-state health QA | PASS — local only |
 | Native PBIX observed artifact | `powerbi/releases/Commercial_Finance_Profitability_Analytics_native.pbix`; Desktop open, refresh, Save As and reopen observed | PASS — observed workflow |
+| Native page captures | Six report pages captured from the reopened PBIX; [capture index](POWER_BI_NATIVE_PAGE_CAPTURE_INDEX_2026-08-31.md) | PASS — visual evidence |
 | Native PBIX | Formal QA-01–QA-18 evidence sheet and full visual sign-off remain open | PENDING |
 | Production realtime | Requires cloud database, gateway/capacity and APR measurements | PENDING |
 

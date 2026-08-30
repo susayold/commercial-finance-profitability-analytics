@@ -124,6 +124,11 @@ still need a real Power BI Desktop or cloud workspace.
     implementation status and validation report now point to the observed
     native PBIX evidence while keeping the complete QA-01–QA-18 sign-off and
     production DirectQuery/APR acceptance explicitly pending.
+30. Reopened the committed PBIX in Desktop and captured all six report pages
+    through the UI: Executive Output, P&L and Variance, PVM Bridge, Channel and
+    Customer Profitability, Working Capital and Liquidity, and Controls and
+    Evidence. The page-capture index records the visible KPI/table evidence and
+    keeps the formal QA-01–QA-18 release rule separate.
 
 ## Evidence boundaries
 
