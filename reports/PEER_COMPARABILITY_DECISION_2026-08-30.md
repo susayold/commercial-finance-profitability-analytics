@@ -102,3 +102,6 @@ The QNS FY2025 Annual Report provides a readable consolidated management summary
 
 ## MCH OCR decision update
 The MCH OCR workbench contains 59 candidate rows for FY2016–FY2025, but remains blocked pending page-level human review. Implausible OCR candidates (for example FY2018 cash VND 119,982 and FY2022 cash VND 13,013) demonstrate why these rows must not enter the approved panel automatically. See `reports/MCH_OCR_REVIEW_DECISION_2026-08-30.md`.
+
+## MCH FY2024–FY2025 candidate layer
+A review-ready 16-row candidate dataset now captures all eight normalized metrics for FY2024 and FY2025 from official consolidated statements. Statement and balance-sheet tie-outs pass, but the image-based PDFs still require visual sign-off. Keep these rows outside the approved panel until the sign-off gate is complete. [MCH candidate reconciliation](reports/MCH_STATEMENT_CANDIDATE_RECONCILIATION_2024_2025.md) · [candidate CSV](data/mch_statement_candidates_2024_2025.csv) · [Drive candidate Sheet](https://docs.google.com/spreadsheets/d/1L8sRGR-4DI3bxE7ODqzjo9Bq18d4UjvADVUPjUDZKBE/edit) · [Drive reconciliation memo](https://docs.google.com/document/d/1HHWzjsW0I4PjyJYBsCawGx7_e141gLSESbodhpadU5s/edit)
