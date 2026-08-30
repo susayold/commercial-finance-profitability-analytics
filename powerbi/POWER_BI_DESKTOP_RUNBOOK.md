@@ -54,9 +54,10 @@ The manifest also declares a `scope_contract`: the broader `model_contract.json`
 
 The extended package is a separate, source-controlled PBIP/PBIT topology with 20
 tables, 60 measures, 25 relationships, 6 pages and 42 visuals. It has been
-opened and hydrated in Desktop against the 19-file contract. The compact native
-PBIX remains the observed binary; no extended native PBIX claim is made until a
-separate Save As/reopen and QA-01–QA-18 evidence cycle is captured.
+opened and hydrated in Desktop against the 19-file contract. A real native PBIX
+candidate is archived and intake-validated, but it is not promoted to a full
+extended native release until a separate Save As/reopen and QA-01–QA-18 evidence
+cycle is captured on that exact scope.
 
 On a Windows execution host, the one-command preflight also checks the Desktop executable, package paths and (when supplied) the 14-file input folder:
 

@@ -35,6 +35,7 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Native page captures | Six report pages captured from the reopened PBIX; [capture index](POWER_BI_NATIVE_PAGE_CAPTURE_INDEX_2026-08-31.md) | PASS — visual evidence |
 | Row-level native QA coverage | [Partial evidence map](POWER_BI_NATIVE_QA_PARTIAL_EVIDENCE_2026-08-31.md) separates observed/source-backed rows from pending reviewer rows | PASS — scoped evidence |
 | Extended planning/evidence scope | [Extended Desktop QA](POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md); Scenario, OPEX, CAPEX, approved peers and review queue hydrated from 19-file DataRoot | PASS — extended PBIT/PBIP; native PBIX not claimed |
+| Extended native PBIX candidate | [Intake report](POWER_BI_EXTENDED_NATIVE_PBIX_INTAKE_2026-08-31.md) · [Drive candidate](https://drive.google.com/file/d/1mqZ_ZkMqCXu7qnpO3L6gZ5L0U1TybmGE/view) | PASS — real container; QA-01–QA-18 sign-off pending |
 | Scenario driver sensitivity | [Scenario-driver QA](POWER_BI_SCENARIO_DRIVER_QA_2026-08-31.md); five rows, base-case selection, revenue/COGS/OPEX multipliers and arithmetic output | PASS — static source-level rehearsal; native visual sign-off remains separate |
 | Native PBIX | Compact workflow observed; formal QA-01–QA-18 evidence sheet and full visual sign-off remain open | PENDING |
 | Production realtime | Requires cloud database, gateway/capacity and APR measurements | PENDING |

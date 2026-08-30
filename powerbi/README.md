@@ -45,8 +45,10 @@ binary:
   **Refresh** recalculates the model; no report rebuild is required.
 - Desktop hydration of the extended PBIT and the scenario/planning/peer tables
   is recorded in `reports/POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md`.
-  An extended native PBIX is intentionally not claimed until a reviewer saves,
-  reopens and executes the full QA-01–QA-18 matrix on that exact scope.
+  A real native PBIX candidate is now archived in Drive and intake-validated;
+  it remains a candidate until a reviewer saves/reopens that exact scope and
+  executes the full QA-01–QA-18 matrix. See
+  `reports/POWER_BI_EXTENDED_NATIVE_PBIX_INTAKE_2026-08-31.md`.
 - See `powerbi/directquery/README.md`, `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`, `powerbi/directquery/VNFinance_DirectQuery_Health.sql`, `scripts/load_directquery_sqlserver.py` and `scripts/check_directquery_source.ps1` for the database migration package; `powerbi/DIRECTQUERY_READINESS.json` keeps the realtime claim gated until measured evidence exists.
 - `powerbi/directquery/DIRECTQUERY_MIGRATION_CONTRACT.json` and `scripts/validate_directquery_mapping.py` lock a 20-table migration mapping (the compact 15-table baseline plus five planning/evidence tables) and preserve the 60-measure/25-relationship/6-page extended topology before switching storage mode. The mapping is a production design contract; it does not claim a provisioned database, gateway or Automatic Page Refresh deployment.
 - `reports/POWER_BI_DIRECTQUERY_HEALTH_CONTRACT_QA_2026-08-31.md` records 5/5 LocalDB health-state cases, including stale, rejected-row and failed-load warnings.

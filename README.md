@@ -113,7 +113,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Long-run comparability summary: data/peer_analyst_summary_longrun.csv
 - Power BI implementation status: docs/POWER_BI_IMPLEMENTATION_STATUS.md
 - Compact native PBIX: [Desktop QA record](reports/POWER_BI_NATIVE_PBIX_DESKTOP_QA_2026-08-31.md) · [page-capture index](reports/POWER_BI_NATIVE_PAGE_CAPTURE_INDEX_2026-08-31.md) · [Drive binary](https://drive.google.com/file/d/15wJmM8POBNonWIfslSAdh8ihSUZZNc3W/view?usp=drivesdk).
-- Extended editable scope: [PBIP source](powerbi/native/VNFinance_PBIP_Extended/VNFinance_Commercial_Finance.pbip) · [PBIT package](powerbi/releases/Commercial_Finance_Profitability_Analytics_extended.pbit) · [20-table Desktop QA](reports/POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md) · [Drive PBIT](https://drive.google.com/file/d/1MhuMrznyyJcqXroyQ0nZeuZs8zjo9M8t/view).
+- Extended editable scope: [PBIP source](powerbi/native/VNFinance_PBIP_Extended/VNFinance_Commercial_Finance.pbip) · [PBIT package](powerbi/releases/Commercial_Finance_Profitability_Analytics_extended.pbit) · [20-table Desktop QA](reports/POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md) · [Drive PBIT](https://drive.google.com/file/d/1MhuMrznyyJcqXroyQ0nZeuZs8zjo9M8t/view) · [native PBIX candidate intake](reports/POWER_BI_EXTENDED_NATIVE_PBIX_INTAKE_2026-08-31.md) · [Drive native candidate](https://drive.google.com/file/d/1mqZ_ZkMqCXu7qnpO3L6gZ5L0U1TybmGE/view).
 - Native PBIX formal QA-01–QA-18 sign-off and production realtime remain explicitly pending; the repository never infers them from source/package checks alone.
 
 ## Remote release status
