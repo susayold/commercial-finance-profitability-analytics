@@ -158,3 +158,9 @@ jobs:
           if (!Array.isArray(contract.relationships) || contract.relationships.length === 0) throw new Error("model contract has no relationships");
           console.log(JSON.stringify({dimensions: contract.dimensions.length, facts: contract.facts.length, pages: contract.pages.length, relationships: contract.relationships.length, status: "PASS"}));
           NODE
+
+
+      - name: Validate MCH financial statement analysis
+        shell: bash
+        run: |
+          node scripts/validate_mch_financial_statement_analysis.mjs data/mch_financial_statement_analysis_2016_2025.csv
