@@ -190,3 +190,8 @@ A seeded 5,000-draw synthetic risk overlay is now included in the remote QA surf
 ## Monte Carlo reproducibility correction
 
 The builder now writes newline-delimited CSV correctly; CI reruns the seeded builder and validates the committed output. The standalone comparator remains available for reviewer-side exact comparison.
+
+## Operational driver tree handoff (2026-08-30)
+
+The Module F contract is now committed to GitHub and mirrored to Drive. It defines the operational-to-financial chain, source fields, reconciliation formulas, owner/guardrail/decision-use metadata, scenario labelling and monthly close cadence. The driver register contains 22 rows and the QA document records 10/10 PASS. This remains synthetic/derived rehearsal evidence; Gate A and Gate B are still open.
+
