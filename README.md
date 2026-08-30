@@ -13,7 +13,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 
 ## Current data foundation
 
-- 57 official PDFs archived in Google Drive (47 annual reports + 10 MCH audited consolidated statements)
+- 58 official PDFs archived in Google Drive (47 annual reports + 10 MCH audited consolidated statements)
 - VNM: 2006-2025
 - QNS: 2016-2025
 - KDC: 2016-2025
