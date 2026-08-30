@@ -41,6 +41,7 @@
 - [Working Capital and Liquidity](evidence/POWER_BI_NATIVE_PBIX_WORKING_CAPITAL_2026-08-31.png)
 - [Controls and Evidence](evidence/POWER_BI_NATIVE_PBIX_CONTROLS_2026-08-31.png)
 - [Page-capture index](POWER_BI_NATIVE_PAGE_CAPTURE_INDEX_2026-08-31.md)
+- [Row-level partial QA coverage](POWER_BI_NATIVE_QA_PARTIAL_EVIDENCE_2026-08-31.md)
 
 ## Claim boundary
 

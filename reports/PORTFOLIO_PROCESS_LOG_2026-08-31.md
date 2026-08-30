@@ -129,6 +129,11 @@ still need a real Power BI Desktop or cloud workspace.
     Customer Profitability, Working Capital and Liquidity, and Controls and
     Evidence. The page-capture index records the visible KPI/table evidence and
     keeps the formal QA-01–QA-18 release rule separate.
+31. Added a row-level native QA coverage map that records exact source totals,
+    visible page values, screenshot references and the remaining reviewer/model
+    gaps. QA-05/QA-06 are source-backed zero-violation checks; QA-01–QA-04,
+    QA-09, QA-11 and QA-17 have scoped native observations; QA-07, QA-08,
+    QA-10, QA-12–QA-16 and QA-18 remain pending rather than being inferred.
 
 ## Evidence boundaries
 
