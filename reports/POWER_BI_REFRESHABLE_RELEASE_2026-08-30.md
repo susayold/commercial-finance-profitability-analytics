@@ -18,6 +18,7 @@
 - DirectQuery provisioning controls: `scripts/load_directquery_sqlserver.py`, `powerbi/directquery/VNFinance_DirectQuery_Health.sql`, `requirements-directquery.txt`
 - DirectQuery health runner: `scripts/check_directquery_source.ps1` (sqlcmd; password only through `SQLCMDPASSWORD`)
 - DirectQuery LocalDB integration evidence: `reports/POWER_BI_DIRECTQUERY_LOCALDB_SMOKE_QA_2026-08-30.md`
+- Power BI Service refresh orchestrator: `scripts/trigger_powerbi_service_refresh.py`, dry-run evidence in `reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-30.md`
 - Automated evidence: `reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md`
 - Native execution evidence: `reports/POWER_BI_DESKTOP_NATIVE_QA_2026-08-30.md`
 

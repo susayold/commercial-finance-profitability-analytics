@@ -134,6 +134,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [DirectQuery readiness pack](powerbi/directquery/README.md) · [Azure SQL/Fabric schema](powerbi/directquery/VNFinance_DirectQuery_Schema.sql) · [transactional loader](scripts/load_directquery_sqlserver.py) · [health query](powerbi/directquery/VNFinance_DirectQuery_Health.sql) · [machine-readable gates](powerbi/DIRECTQUERY_READINESS.json)
 - [Loader dry-run evidence](reports/POWER_BI_DIRECTQUERY_LOADER_DRY_RUN_2026-08-30.md)
 - [LocalDB DirectQuery integration evidence](reports/POWER_BI_DIRECTQUERY_LOCALDB_SMOKE_QA_2026-08-30.md)
+- [Power BI Service refresh orchestrator](scripts/trigger_powerbi_service_refresh.py) · [dry-run evidence](reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-30.md)
 - [Drive schema](https://drive.google.com/file/d/1bEPy126gWX9qM1iHQvDiEbLVGE3eWUOJ/view?usp=drivesdk) · [Drive readiness JSON](https://drive.google.com/file/d/1Dm7nymYxXqH-KLZOc7S87bQDeWzPkZjK/view?usp=drivesdk) · [Drive readiness QA](https://drive.google.com/file/d/1VgHwExWSwS7XhjpJqQ0gHM6-QZuDiS2a/view?usp=drivesdk)
 - [Drive PBIT](https://drive.google.com/file/d/1FhFTJVzv4Dxz9Z3bY_bu6KILsie0Ry9Y/view?usp=drivesdk) · [Drive handoff bundle (PBIT + PBIP + CSV + QA)](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk)
 - [PBIX release evidence template](powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md) · [Drive copy](https://drive.google.com/file/d/1zeOflHSaBjlna_Nl0vQ2pS2m42XApWi3/view?usp=drivesdk)

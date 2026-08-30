@@ -105,6 +105,29 @@ If validation fails, no target file is copied. The runner invokes `validate_powe
 
 The deterministic package QA already proves the contract with a `+VND 1,000,000` data swap. Native Desktop QA must still confirm that the canvas actually changes after refresh.
 
+### Published Import refresh (no Desktop interaction)
+
+When the report is published as an **Import** semantic model, the data-swap
+runner can be followed by `scripts/trigger_powerbi_service_refresh.py`. Run it
+without `--apply` first to inspect the endpoint and polling plan. For a real
+workspace, put a short-lived token with the required dataset write permission
+in the process environment and run:
+
+```powershell
+$env:PBI_ACCESS_TOKEN = '<token supplied by the operator>'
+python scripts/trigger_powerbi_service_refresh.py `
+  --workspace-id <workspace-guid> `
+  --dataset-id <dataset-guid> `
+  --apply `
+  --report C:\PBI\evidence\service_refresh.json
+```
+
+The helper POSTs an on-demand refresh, polls refresh history and returns
+`APPLY_PASS` only after a terminal `Completed` result. It never stores the
+token, workspace ID or dataset ID in Git. This automates Import refresh after a
+data replacement; it is not DirectQuery Automatic Page Refresh or second-level
+realtime.
+
 ## 4. Model inventory and expected topology
 
 The current model contains **15 tables, 37 measures, 23 relationships, 6 pages and 39 visual containers**.

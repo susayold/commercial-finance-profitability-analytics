@@ -83,6 +83,8 @@ The source-health step was tightened with a credential-safe `sqlcmd` wrapper (`s
 
 The loader was then connection-tested against an ephemeral SQL Server LocalDB instance through the installed 64-bit SQL Server ODBC driver and `pyodbc 5.3.0`. The checked-in DDL executed in 19 batches, `--apply` loaded all 29,843 source rows, and the health query returned `SUCCEEDED/PASS` with 14 physical tables, 36 calendar rows and zero rejects. The instance/database were deleted after the evidence report was captured. This closes the loader/database integration gate while leaving the Power BI DirectQuery model, service capacity and Automatic Page Refresh gates open.
 
+To make the Import path operational after a controlled data swap, commit `9d75769` also adds `scripts/trigger_powerbi_service_refresh.py`. Its default dry-run prints the POST endpoint, `NoNotification` payload and polling boundary; `--apply` requires a caller-supplied `PBI_ACCESS_TOKEN`, polls refresh history and returns `APPLY_PASS` only for a terminal `Completed` result. The dry-run is included in `reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-30.md`; no tenant, dataset or token is embedded.
+
 ## Deliberate stop point
 
 This process stops **before native Power BI Desktop execution**. The portable PBIP contract, DAX, six-page design, refreshable PBIT, runbook and QA-01–QA-18 matrix are complete, but no placeholder `.pbix` is claimed. Native PBIX creation, visual reconciliation and screenshot evidence still require Power BI Desktop on an execution host.

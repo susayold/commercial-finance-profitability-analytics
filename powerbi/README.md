@@ -8,6 +8,7 @@ The repository now includes generated native source under `powerbi/native/` and 
 - Set the `DataRoot` parameter to the folder containing the 14 contract CSV files.
 - A QA-approved baseline fixture is committed at `powerbi/data/current/` (14 CSV inputs plus `manifest.json`); the same fixture is included in the Drive release bundle.
 - Replace CSV data without changing filenames or headers, then select **Refresh**; measures and visuals recalculate without rebuilding the report.
+- For a published Import dataset, `scripts/trigger_powerbi_service_refresh.py` can trigger and poll an on-demand Service refresh after the data swap. It is dry-run by default; `--apply` requires a caller-supplied `PBI_ACCESS_TOKEN` and never stores a token in Git.
 - See `docs/POWER_BI_REFRESH_ARCHITECTURE.md` for the exact refresh contract and the DirectQuery path for true real-time behavior.
 - See `powerbi/directquery/README.md`, `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`, `powerbi/directquery/VNFinance_DirectQuery_Health.sql`, `scripts/load_directquery_sqlserver.py` and `scripts/check_directquery_source.ps1` for the database migration package; `powerbi/DIRECTQUERY_READINESS.json` keeps the realtime claim gated until measured evidence exists.
 - Rebuild both source formats with `scripts/build_powerbi_refreshable_project.py` and validate the package with `scripts/validate_powerbi_refreshable_project.py`.
