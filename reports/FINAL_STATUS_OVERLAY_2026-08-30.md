@@ -13,7 +13,7 @@ This note supersedes earlier dated progress paragraphs where they conflict with 
 | MCH FY2017 | Uses audited FY2018 comparative/corresponding columns; confidence and caveat are explicit | reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md |
 | MCH OCR queue | 59 machine-review candidates remain intake-only and unapproved; this queue is distinct from the approved page-reviewed supplement | reports/MCH_OCR_REVIEW_DECISION_2026-08-30.md |
 | MCH analyst layer | Trend CSV/report and recruiter case-study walkthrough are complete | data/mch_finance_analyst_trend_2016_2025.csv, reports/MCH_FINANCE_ANALYST_CASE_STUDY_WALKTHROUGH.md |\n| Credit screening | Lender-style MCH memo is complete with conditions, stress screen and evidence boundaries | reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md |
-| Recruiter website | Sites version 5 is deployed and includes the MCH Finance Analyst Lens | https://vn-finance-fpa-case.sangkenny200.chatgpt.site |
+| Recruiter website | Sites version 6 is deployed and includes the MCH Finance Analyst Lens plus credit-memo link | https://vn-finance-fpa-case.sangkenny200.chatgpt.site |
 | Forecast proxy | VNM public-guidance analysis is complete but explicitly not internal forecast accuracy | reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md |
 | Power BI | Portable PBIP source contract and QA definitions are complete; native PBIX/Desktop evidence remains open | powerbi/PBIP_SOURCE_MANIFEST.json, powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv |
 
