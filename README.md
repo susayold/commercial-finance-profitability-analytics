@@ -451,6 +451,7 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 ## Latest website release
 
 - Site V10 now surfaces the Next Execution Sprint with Gate A/B handoffs, CV personalization status and playbook QA: [release record](reports/SITE_V10_RELEASE_RECORD_2026-08-30.md).
+- [Drive V10 release record](https://drive.google.com/file/d/1QDHv3IWW4M4MIJdGo-2wOlj6OW9GjOre/view?usp=drivesdk) · [Drive V10 source archive](https://drive.google.com/file/d/1THONrHKe1DGLHSbmH0Fpx6XqkDpFdxkX/view?usp=drivesdk)
 - Site V9 customer-economics decision lens remains included: [V9 release record](reports/SITE_V9_RELEASE_RECORD_2026-08-30.md) · [Drive release record](https://drive.google.com/file/d/1vZn_kPRFlURjye_3Bbxikq62BWVUy1BK/view?usp=drivesdk).
 - Production: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 
@@ -463,6 +464,7 @@ Drive mirrors: [Gate readiness report](https://drive.google.com/file/d/19va7iv_Y
 
 ## Next execution sprint
 
+- Drive mirrors: [playbook](https://drive.google.com/file/d/1JBPq7s05PCzS3RXv3SGq5-NI7tUjScY1/view?usp=drivesdk) · [QA](https://drive.google.com/file/d/1sTDiltOSQjj9b-6QGuAEv7YmNDmd9ZZC/view?usp=drivesdk) · [validator](https://drive.google.com/file/d/19XF_1z358fLCpISB4hgHt-w3e6iJq-H0/view?usp=drivesdk)
 - [Detailed execution playbook](docs/NEXT_EXECUTION_SPRINT_2026-08-30.md) · [Validator](scripts/validate_next_execution_sprint.mjs) · [QA](reports/NEXT_EXECUTION_SPRINT_QA.md)
 - The playbook turns the remaining work into an executable handoff: candidate personalization, one genuine internal forecast snapshot for Gate A, native Power BI Desktop execution for Gate B, full QA/release and a 14-day application cadence.
 - It preserves the evidence boundary: no synthetic row is relabelled as live, no PBIP scaffold is described as a native PBIX, and no CV impact bullet is published without a matching artifact.
