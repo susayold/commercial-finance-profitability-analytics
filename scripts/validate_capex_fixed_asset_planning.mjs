@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+import fs from "node:fs";
+function parseCsv(text){const rows=[];let row=[],field="",quoted=false;for(let i=0;i<text.length;i++){const ch=text[i],next=text[i+1];if(quoted){if(ch==='"'&&next==='"'){field+='"';i++;}else if(ch==='"')quoted=false;else field+=ch;}else if(ch==='"')quoted=true;else if(ch===","){row.push(field);field="";}else if(ch==="\n"){row.push(field.replace(/\r$/,""));rows.push(row);row=[];field="";}else field+=ch;}if(field.length||row.length){row.push(field);rows.push(row);}const header=(rows.shift()||[]).map(x=>x.trim());return {header,rows:rows.filter(r=>r.some(x=>x!=="")).map(r=>Object.fromEntries(header.map((h,i)=>[h,(r[i]??"").trim()])))};}
+const [dataPath="data/capex_fixed_asset_planning_synthetic.csv",sourceReportPath="docs/CAPEX_FIXED_ASSET_PLANNING_MODULE.md",qaOutputPath="reports/CAPEX_FIXED_ASSET_PLANNING_QA.md"]=process.argv.slice(2);
+const {header,rows}=parseCsv(fs.readFileSync(dataPath,"utf8"));
+const req=["period","project_id","cost_center","capex_type","approval_status","budget_capex_vnd","actual_capex_vnd","forecast_capex_vnd","committed_capex_vnd","asset_cost_vnd","in_service_period","useful_life_months","depreciation_vnd","expected_annual_contribution_vnd","payback_months","cash_payment_vnd","budget_variance_vnd","forecast_variance_vnd","evidence_class","source_system"];
+const checks=[];const add=(name,pass,detail)=>checks.push({name,pass:Boolean(pass),detail:String(detail)});
+add("Required headers",req.every(h=>header.includes(h)),"missing="+req.filter(h=>!header.includes(h)).join("|"));
+add("Expected row count",rows.length===6,"rows="+rows.length);
+const keys=rows.map(r=>[r.period,r.project_id].join("|"));
+add("Unique project-period grain",new Set(keys).size===keys.length,"duplicates="+(keys.length-new Set(keys).size));
+const n=k=>Number(k);
+add("Budget variance",rows.every(r=>Math.abs(n(r.budget_variance_vnd)-(n(r.actual_capex_vnd)-n(r.budget_capex_vnd)))<0.01),"violations="+rows.filter(r=>Math.abs(n(r.budget_variance_vnd)-(n(r.actual_capex_vnd)-n(r.budget_capex_vnd)))>=0.01).length);
+add("Forecast variance",rows.every(r=>Math.abs(n(r.forecast_variance_vnd)-(n(r.actual_capex_vnd)-n(r.forecast_capex_vnd)))<0.01),"violations="+rows.filter(r=>Math.abs(n(r.forecast_variance_vnd)-(n(r.actual_capex_vnd)-n(r.forecast_capex_vnd)))>=0.01).length);
+add("Cash within commitment",rows.every(r=>n(r.cash_payment_vnd)<=n(r.committed_capex_vnd)+0.01),"violations="+rows.filter(r=>n(r.cash_payment_vnd)>n(r.committed_capex_vnd)+0.01).length);
+add("Depreciation service-date rule",rows.every(r=>r.period<r.in_service_period?n(r.depreciation_vnd)===0:n(r.depreciation_vnd)>0),"violations="+rows.filter(r=>r.period<r.in_service_period?n(r.depreciation_vnd)!==0:n(r.depreciation_vnd)<=0).length);
+add("Depreciation arithmetic",rows.every(r=>Math.abs(n(r.depreciation_vnd)-(r.period<r.in_service_period?0:n(r.asset_cost_vnd)/n(r.useful_life_months)))<0.1),"violations="+rows.filter(r=>Math.abs(n(r.depreciation_vnd)-(r.period<r.in_service_period?0:n(r.asset_cost_vnd)/n(r.useful_life_months)))>=0.1).length);
+add("Payback arithmetic",rows.every(r=>Math.abs(n(r.payback_months)-(n(r.asset_cost_vnd)/n(r.expected_annual_contribution_vnd)*12))<0.05),"violations="+rows.filter(r=>Math.abs(n(r.payback_months)-(n(r.asset_cost_vnd)/n(r.expected_annual_contribution_vnd)*12))>=0.05).length);
+add("Approval status explicit",rows.every(r=>["APPROVED","IN_REVIEW","CANCELLED"].includes(r.approval_status)),"invalid="+rows.filter(r=>!["APPROVED","IN_REVIEW","CANCELLED"].includes(r.approval_status)).length);
+const nonNegative=["budget_capex_vnd","actual_capex_vnd","forecast_capex_vnd","committed_capex_vnd","asset_cost_vnd","useful_life_months","depreciation_vnd","expected_annual_contribution_vnd","payback_months","cash_payment_vnd"];
+add("Non-negative values",rows.every(r=>nonNegative.every(k=>n(r[k])>=0)),"violations="+rows.filter(r=>!nonNegative.every(k=>n(r[k])>=0)).length);
+add("Synthetic evidence boundary",rows.every(r=>r.evidence_class==="SIMULATED"),"non_synthetic="+rows.filter(r=>r.evidence_class!=="SIMULATED").length);
+add("Source system explicit",rows.every(r=>r.source_system==="synthetic_capex"),"invalid="+rows.filter(r=>r.source_system!=="synthetic_capex").length);
+const report=fs.readFileSync(sourceReportPath,"utf8");
+add("Report guardrails",/cash/i.test(report)&&/depreciation/i.test(report)&&/payback/i.test(report),"missing cash/depreciation/payback");
+add("Report release boundary",report.includes("Release boundary"),"missing release boundary");
+const passed=checks.filter(c=>c.pass).length;
+const lines=["# CAPEX & Fixed-Asset Planning QA","","**Overall status: "+(passed===checks.length?"PASS":"FAIL")+" ("+passed+"/"+checks.length+" checks passed)**","","| Check | Status | Detail |","|---|---|---|",...checks.map(c=>"| "+c.name+" | "+(c.pass?"PASS":"FAIL")+" | "+c.detail.replace(/\|/g,"\\|")+" |"),""];
+fs.writeFileSync(qaOutputPath,lines.join("\n"),"utf8");
+console.log(JSON.stringify({status:passed===checks.length?"PASS":"FAIL",checks:checks.length,passed,rows:rows.length}));
+if(passed!==checks.length)process.exit(1);
