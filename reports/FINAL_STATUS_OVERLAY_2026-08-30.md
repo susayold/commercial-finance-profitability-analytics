@@ -93,3 +93,8 @@ The mandatory negotiation module now has a decision matrix and three fully struc
 ## Master-plan coverage audit refresh
 
 The evidence matrix now links the MBR pack, KPI dictionary, Management Recommendation Register and Battle Cards v2. It remains 28 rows with 20 mandatory-core requirements; all core rows are complete or complete-with-caveat, while Gate A and Gate B are the only pending external rows.
+
+
+## Monthly close operating cadence extension
+
+A WD-5 to WD+5 calendar and RACI now connects forecast freeze, accounting close, actuals QA, PVM review, business-partner challenge and CFO sign-off. Validator status is 10/10 PASS; the process remains a synthetic operating rehearsal.
