@@ -1,0 +1,26 @@
+metric,statistic,value,unit,threshold,threshold_direction,simulation_count,seed,evidence_class
+revenue,p05,75.1453,VND_bn,76.9,below,5000,20260830,SIMULATED_DERIVED
+revenue,p25,78.0782,VND_bn,76.9,below,5000,20260830,SIMULATED_DERIVED
+revenue,p50,80.0887,VND_bn,76.9,below,5000,20260830,SIMULATED_DERIVED
+revenue,p75,82.1052,VND_bn,76.9,below,5000,20260830,SIMULATED_DERIVED
+revenue,p95,85.0906,VND_bn,76.9,below,5000,20260830,SIMULATED_DERIVED
+revenue,probability_breach,0.1440,probability,76.9,below,5000,20260830,SIMULATED_DERIVED
+ebitda_proxy,p05,52.1091,VND_bn,53.1,below,5000,20260830,SIMULATED_DERIVED
+ebitda_proxy,p25,55.8553,VND_bn,53.1,below,5000,20260830,SIMULATED_DERIVED
+ebitda_proxy,p50,58.4312,VND_bn,53.1,below,5000,20260830,SIMULATED_DERIVED
+ebitda_proxy,p75,61.1382,VND_bn,53.1,below,5000,20260830,SIMULATED_DERIVED
+ebitda_proxy,p95,64.5729,VND_bn,53.1,below,5000,20260830,SIMULATED_DERIVED
+ebitda_proxy,probability_breach,0.0788,probability,53.1,below,5000,20260830,SIMULATED_DERIVED
+ebitda_margin,p05,26.8035,percent,25,below,5000,20260830,SIMULATED_DERIVED
+ebitda_margin,p25,28.5405,percent,25,below,5000,20260830,SIMULATED_DERIVED
+ebitda_margin,p50,29.6902,percent,25,below,5000,20260830,SIMULATED_DERIVED
+ebitda_margin,p75,30.8998,percent,25,below,5000,20260830,SIMULATED_DERIVED
+ebitda_margin,p95,32.6302,percent,25,below,5000,20260830,SIMULATED_DERIVED
+ebitda_margin,probability_breach,0.0044,probability,25,below,5000,20260830,SIMULATED_DERIVED
+ccc,p05,43.3615,days,68.8,above,5000,20260830,SIMULATED_DERIVED
+ccc,p25,50.2968,days,68.8,above,5000,20260830,SIMULATED_DERIVED
+ccc,p50,55.0043,days,68.8,above,5000,20260830,SIMULATED_DERIVED
+ccc,p75,59.7676,days,68.8,above,5000,20260830,SIMULATED_DERIVED
+ccc,p95,66.5158,days,68.8,above,5000,20260830,SIMULATED_DERIVED
+ccc,probability_breach,0.0232,probability,68.8,above,5000,20260830,SIMULATED_DERIVED
+joint_downside,probability_breach,0.0004,probability,revenue<76.9 & EBITDA<53.1 & CCC>68.8,joint,5000,20260830,SIMULATED_DERIVED
