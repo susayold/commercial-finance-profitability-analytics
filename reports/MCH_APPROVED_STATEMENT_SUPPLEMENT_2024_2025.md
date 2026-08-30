@@ -1,15 +1,16 @@
-# MCH Approved Statement Supplement — FY2018–FY2025
+# MCH Approved Statement Supplement — FY2016–FY2025
 
 **Review date:** 2026-08-30  
-**Scope:** Consolidated VAS statements; VND bn; FY2018–FY2025 page-reviewed supplement.
+**Scope:** Consolidated VAS statements; VND bn; FY2016–FY2025 page-reviewed supplement (80 rows, eight metrics per year).
 
 ## Promotion decision
 
-FY2018–FY2025 values were visually checked against official PDF statement pages and reconciled through income-statement, balance-sheet and cash-flow tie-outs. They are approved as an eight-year supplement, not as a complete FY2016–FY2025 MCH series. FY2016–FY2017 remain blocked in the OCR workbench pending equivalent page-level review.
+FY2016 and FY2018–FY2025 were visually checked against their official audited consolidated PDF statement pages. FY2017 uses the FY2017 comparative column in the audited FY2018 filing; the balance-sheet fields use the 1/1/2018 corresponding column and are explicitly flagged audited_comparative / corresponding_column. No value was interpolated. This creates a complete ten-year evidence layer while preserving the FY2017 basis caveat.
 
 ## Sources and page anchors
 
-- [FY2018 audited consolidated statements](https://masanconsumer.com/wp-content/uploads/2024/12/2018-Consolidated-Financial-Statement-audited.pdf)
+- [FY2016 audited consolidated statements](https://masanconsumer.com/wp-content/uploads/2024/12/Consolidated-Financial-Statements-3.pdf)
+- [FY2017 comparative / FY2018 audited statements](https://masanconsumer.com/wp-content/uploads/2024/12/2018-Consolidated-Financial-Statement-audited.pdf)
 - [FY2019 audited consolidated statements](https://masanconsumer.com/wp-content/uploads/2024/12/2019-Consolidated-Financial-Statement-audited.pdf)
 - [FY2020 audited consolidated statements](https://masanconsumer.com/wp-content/uploads/2024/12/2020-consolidated-financial-statement-audited.pdf)
 - [FY2021 audited consolidated statements](https://masanconsumer.com/wp-content/uploads/2024/12/2021-Consolidated-Financial-Statement-audited.pdf)
@@ -23,6 +24,8 @@ FY2018–FY2025 values were visually checked against official PDF statement page
 
 | FY | Net revenue | Gross profit | Operating profit | PBT | PAT | Total assets | Equity | CFO |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 2016 | 13,789.7594 | 6,249.8185 | 3,162.7376 | 3,162.8525 | 2,791.1122 | 17,377.8262 | 11,928.4383 | 2,967.7420 |
+| 2017* | 13,213.6403 | 6,032.5814 | 2,624.3615 | 2,621.9676 | 2,245.9977 | 17,645.0566 | 11,331.8275 | 2,112.9503 |
 | 2018 | 17,006.4756 | 7,618.3933 | 3,913.3074 | 3,894.4052 | 3,397.4794 | 17,052.8052 | 10,881.2125 | 3,899.5843 |
 | 2019 | 18,487.5418 | 7,957.6735 | 4,512.7856 | 4,491.7793 | 4,061.6781 | 20,469.6073 | 12,406.9670 | 3,968.2972 |
 | 2020 | 23,342.7345 | 9,919.2141 | 5,406.9115 | 5,391.0278 | 4,597.5713 | 25,533.4066 | 14,282.9848 | 4,678.3385 |
@@ -32,12 +35,14 @@ FY2018–FY2025 values were visually checked against official PDF statement page
 | 2024 | 30,897.2256 | 14,404.6852 | 9,012.5914 | 9,004.3129 | 7,920.5375 | 27,899.9604 | 11,327.8268 | 9,227.2835 |
 | 2025 | 30,556.5366 | 13,906.3426 | 7,764.6843 | 7,764.9234 | 6,764.1487 | 33,966.2036 | 18,662.1413 | 2,132.3306 |
 
+* FY2017 comparative values from audited FY2018 filing; balance-sheet values are the 1/1/2018 corresponding column.
+
 ## Reconciliations
 
-- Gross profit equals net revenue less cost of sales for every FY2018–FY2025 statement; PBT and PAT bridge to statement totals.
-- Assets and total resources tie for every year: FY2018 17,052,805,203,719; FY2019 20,469,607,311,898; FY2020 25,533,406,553,025; FY2021 30,204,150,159,141; FY2022 33,516,643,085,520; FY2023 40,552,688,935,453; FY2024 27,899,960,446,330; FY2025 33,966,203,646,418.
+- Gross profit equals net revenue less cost of sales for every FY2016–FY2025 statement; PBT and PAT bridge to statement totals.
+- Assets and total resources tie for FY2016–FY2025; FY2017 is tied using the corresponding 1/1/2018 balance-sheet column.
 - CFO values tie to cash-flow statement code 20 for each year.
 
 ## Boundary
 
-This supplement is safe for FY2018–FY2025 MCH case studies, trend bridges and working-capital discussion. It must not be used to calculate a ten-year CAGR or imply that FY2016–FY2017 are approved. The older-year OCR queue remains a separate human-review workstream.
+This supplement supports a full FY2016–FY2025 MCH trend bridge, margin analysis and working-capital discussion with the FY2017 comparative caveat visible. Keep comparability_status, audited_status and comparability_note in downstream models; do not silently treat FY2017 as an independent 31-Dec audited filing.
