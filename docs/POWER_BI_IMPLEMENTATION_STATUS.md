@@ -9,7 +9,8 @@ Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an ex
 Use this section for the current hand-off; dated sections below preserve the
 earlier execution history.
 
-- **GitHub release:** commit `9519384ded5d121de55619c17c5ca27e1c81a263`.
+- **GitHub release:** commit `9daaa5fb1bb14a4922a221ad9a77d168b397838a`.
+- **One-command release gate:** `scripts/run_powerbi_release_gate.py` returns `PASS` on the current fixture and host; it intentionally reports external Desktop/cloud gates separately instead of overstating native PBIX or production realtime.
 - **Drive bundle:** file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`, updated in place after the watcher QA.
 - **Recruiter site:** private Sites version 15 at `https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#powerbi`.
 - **Data-drop automation:** `scripts/watch_powerbi_refresh.py` passed a two-batch test; the contract hash changed and the target DataRoot reflected `Sales[units]` `121 -> 122`.

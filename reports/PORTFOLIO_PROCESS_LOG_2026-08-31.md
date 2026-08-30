@@ -25,6 +25,11 @@ still need a real Power BI Desktop or cloud workspace.
 7. Pushed the complete source/data/evidence state to GitHub and replaced the
    Drive bundle in place. All temporary test clones, archives and input folders
    were removed after verification.
+8. Added `scripts/run_powerbi_release_gate.py`, a single deterministic command
+   that runs input-contract, refresh dry-run, package, artifact-coherence,
+   claim-boundary and Windows Desktop preflight checks. The current fixture
+   returned `PASS` across all six stages; the command never treats a missing
+   cloud workspace or native UI evidence as a hidden success.
 
 ## Evidence boundaries
 
