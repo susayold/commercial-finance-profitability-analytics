@@ -279,3 +279,4 @@ Drive mirror for M&A extension:
 ### Latest evidence-layer update
 
 QNS FY2021–FY2025 gross profit and owners' equity are now included from the readable FY2025 management summary table (pages 27–28), with evidence-tier flags preserved. See [QNS reported summary evidence](reports/QNS_REPORTED_SUMMARY_EVIDENCE_2021_2025.md) and [QNS source extract](data/qns_reported_summary_metrics_2021_2025.csv).
+- [QNS evidence memo on Drive](https://docs.google.com/document/d/1gH1Gd9PR4-h-Q0tB-VzdXgFKn5LfjcGDEwzHI_lsU7g/edit) · [QNS summary Sheet on Drive](https://docs.google.com/spreadsheets/d/1N5Vwwp60war25MIBwpoPz2YaoB9d6OYDsgmJ6lqnXBo/edit) · [normalized panel Sheet](https://docs.google.com/spreadsheets/d/11v8XpRNMCkaWkhqakjxh1Ao3E0yTP4cLP3Z3Jmg7Owg/edit)
