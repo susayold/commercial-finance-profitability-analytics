@@ -31,6 +31,8 @@ const tasks = [
   ['vnm_longrun', ['scripts/validate_vnm_longrun_panel.mjs', 'data/vnm_longrun_panel_2006_2025.csv', path.join(transient, 'vnm_longrun_QA.md')]],
   ['peer_evidence', ['scripts/validate_peer_evidence.mjs', 'data/peer_benchmark_approved_2016_2025.csv', 'data/peer_extraction_queue.csv', 'data/vnm_statement_metrics_2006_2020.csv', path.join(transient, 'peer_QA.md')]],
   ['mch_ocr_workbench', ['scripts/validate_mch_ocr_workbench.mjs', 'data/mch_ocr_review_workbench_template.csv']],
+  ['normalized_peer_approved', ['scripts/validate_normalized_peer_panel.mjs', 'data/normalized_peer_panel_approved_2016_2025.csv', '--mode=approved']],
+  ['normalized_peer_template', ['scripts/validate_normalized_peer_panel.mjs', 'data/normalized_peer_panel_intake_template.csv', '--mode=template']],
 ];
 
 const result = { status: 'PASS', runner: 'run_finance_qa.mjs', checks: [] };
