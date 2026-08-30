@@ -358,6 +358,7 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 
 - [Finance Analyst valuation report](reports/MCH_VALUATION_REHEARSAL.md) · [Methodology](docs/MCH_VALUATION_REHEARSAL_METHODOLOGY.md) · [Forecast CSV](data/mch_valuation_rehearsal_forecast.csv) · [Sensitivity CSV](data/mch_valuation_rehearsal_sensitivity.csv) · [Summary JSON](data/mch_valuation_rehearsal_summary.json)
 - [Builder](scripts/build_mch_valuation_rehearsal.mjs) · [Validator](scripts/validate_mch_valuation_rehearsal.mjs) · [QA](reports/MCH_VALUATION_REHEARSAL_QA.md)
+- Drive mirrors: [report](https://drive.google.com/file/d/1VcJYBfFauE_DgEXlbZJoTCGpMZWuMIbK/view?usp=drivesdk) · [methodology](https://drive.google.com/file/d/1QS7o2_JF_LYloAjV5TsWfGNJvgaRFVV6/view?usp=drivesdk) · [forecast CSV](https://drive.google.com/file/d/1vaWO8vbPzU4MNoFBr3Rhk5xc9HcP3vEY/view?usp=drivesdk) · [sensitivity CSV](https://drive.google.com/file/d/1QwQUHsofjMcLm-mlkK_vvlP-c-Dc3r5d/view?usp=drivesdk) · [summary JSON](https://drive.google.com/file/d/1zay2jnCGCdRI9Zl60n61IPaIFlyU-PfS/view?usp=drivesdk) · [QA](https://drive.google.com/file/d/1CD3ogd34EPiNURhgd1XvIL2CwTTgCNoC/view?usp=drivesdk)
 - The module starts from the reported FY2025 MCH anchor and builds an illustrative FY2026–FY2030 FCFF/DCF across Base/Upside/Downside cases. Base EV is VND 75,928.0bn; the scenario range is VND 40,673.8bn–101,614.9bn. The output intentionally stops at EV: net debt, diluted shares, market price and approved forward guidance are missing, so no price target is claimed.
 
 - [Native Drive analysis Sheet](https://docs.google.com/spreadsheets/d/1f4o0myaW6ejjtRVIO_PPT_ODezJo0ANrTQPYxRQ58SI/edit?usp=drivesdk) — reviewer-facing table with one row per FY2016–FY2025 and formula-ready ratio columns.
@@ -456,7 +457,9 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 
 ## Latest website release
 
-- Site V10 now surfaces the Next Execution Sprint with Gate A/B handoffs, CV personalization status and playbook QA: [release record](reports/SITE_V10_RELEASE_RECORD_2026-08-30.md).
+- Site V11 adds the public-company valuation rehearsal lens (base EV, scenarios, sensitivity and EV-only evidence boundary): [release record](reports/SITE_V11_RELEASE_RECORD_2026-08-30.md).
+- [Drive V11 release record](https://drive.google.com/file/d/1jLSEF0bNZe5Folz170yuk3DF4cLQXx54/view?usp=drivesdk) · [Drive V11 source archive](https://drive.google.com/file/d/1SXAwrk3gT8zxdcuRo6HeWrmfaTAYlJt0/view?usp=drivesdk)
+- Site V10 previously surfaced the Next Execution Sprint with Gate A/B handoffs, CV personalization status and playbook QA: [release record](reports/SITE_V10_RELEASE_RECORD_2026-08-30.md).
 - [Drive V10 release record](https://drive.google.com/file/d/1QDHv3IWW4M4MIJdGo-2wOlj6OW9GjOre/view?usp=drivesdk) · [Drive V10 source archive](https://drive.google.com/file/d/1THONrHKe1DGLHSbmH0Fpx6XqkDpFdxkX/view?usp=drivesdk)
 - Site V9 customer-economics decision lens remains included: [V9 release record](reports/SITE_V9_RELEASE_RECORD_2026-08-30.md) · [Drive release record](https://drive.google.com/file/d/1vZn_kPRFlURjye_3Bbxikq62BWVUy1BK/view?usp=drivesdk).
 - Production: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
