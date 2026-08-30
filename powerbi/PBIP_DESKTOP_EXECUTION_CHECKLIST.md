@@ -58,7 +58,7 @@ Authoritative data inputs:
 
 Required dimensions: Calendar, Product_Master, Customer_Master, Channel_Master and Scenario Selector.
 
-Required facts: Sales_Fact, Commercial_Costs, Inventory, AR, AP, Budget, Forecast_Versions, OPEX_Headcount, Peer_Benchmark and Peer_Review_Queue.
+Required facts: Sales_Fact, Commercial_Costs, Inventory, AR, AP, Budget, Forecast_Versions, OPEX_Headcount, CAPEX_Projects, Peer_Benchmark and Peer_Review_Queue.
 
 Required relationships: 15. Validate one-to-many direction and confirm the Scenario Selector remains disconnected.
 
@@ -110,6 +110,7 @@ The visual tie-out should include:
 - Executive Output vs Excel CFO_Output
 - P&L totals vs Excel P&L
 - OPEX actual/budget/forecast and headcount bridge vs opex_headcount_planning_synthetic.csv
+- CAPEX actual/commitment/depreciation/payback and cash timing vs capex_fixed_asset_planning_synthetic.csv
 - Channel total vs Excel channel profitability
 - CCC vs Excel working-capital tab
 - Peer trend vs approved peer CSV
