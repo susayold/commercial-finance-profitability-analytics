@@ -74,6 +74,10 @@ still need a real Power BI Desktop or cloud workspace.
     temporary path. No token, network request or dataset side effect was used;
     the evidence is archived in
     `reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-31.md`.
+21. Invoked the Service helper's `--apply` branch without a token using the
+    same disposable IDs. It returned exit code `1` with the expected
+    fail-closed message before writing an evidence file or making a network
+    request; this guard is documented in the dated dry-run record.
 
 ## Evidence boundaries
 

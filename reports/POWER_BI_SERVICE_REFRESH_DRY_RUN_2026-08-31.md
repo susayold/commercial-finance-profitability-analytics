@@ -27,3 +27,15 @@ deleted after inspection. A real published dataset requires the workspace and
 dataset IDs plus an authorized `PBI_ACCESS_TOKEN`; only then can the operator
 run `--apply` and obtain `APPLY_PASS` after a terminal `Completed` refresh.
 Credentials and tenant-specific identifiers are never persisted by the helper.
+
+## Fail-closed guard
+
+The apply branch was also invoked with the same disposable IDs and no token.
+It returned exit code `1` with the expected error before constructing an API
+request:
+
+```text
+--apply requires --access-token or PBI_ACCESS_TOKEN; no token is stored in the repository
+```
+
+No evidence file was created and no network side effect occurred.
