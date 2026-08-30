@@ -33,6 +33,7 @@ const tasks = [
   ['mch_ocr_workbench', ['scripts/validate_mch_ocr_workbench.mjs', 'data/mch_ocr_review_workbench_template.csv']],
   ['normalized_peer_approved', ['scripts/validate_normalized_peer_panel.mjs', 'data/normalized_peer_panel_approved_2016_2025.csv', '--mode=approved']],
   ['normalized_peer_template', ['scripts/validate_normalized_peer_panel.mjs', 'data/normalized_peer_panel_intake_template.csv', '--mode=template']],
+  ['peer_basis_adjustment_feasibility', ['scripts/validate_peer_basis_adjustment_feasibility.mjs']],
 ];
 
 const result = { status: 'PASS', runner: 'run_finance_qa.mjs', checks: [] };
