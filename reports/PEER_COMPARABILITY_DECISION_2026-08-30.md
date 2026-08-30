@@ -70,7 +70,7 @@ Use official category/channel disclosures and the audited archive to calibrate t
 
 - QNS comparability is limited by the documented switch from total-revenue basis in FY2016–FY2019 to net-revenue summary in the later layer.
 - KDC comparability is limited by Vocarimex/TAC consolidation and subsequent portfolio/perimeter changes.
-- MCH OCR values have unresolved page-level review, including missing-candidate concentration, adjacent-year duplicate signals and low-value outlier flags.
+- The original MCH OCR values had unresolved flags; all ten years are now covered by a separate page-reviewed supplement, with FY2017 explicitly sourced from the FY2018 comparative/corresponding column.
 - FY2025 cross-sectional ratios are directional benchmarks, not proof of operating superiority; accounting policy, product mix and capital structure differ.
 - A normalized trend panel requires preserving original reported values alongside any adjusted values and documenting each bridge.
 - No inference here establishes causality or internal forecast accuracy.
@@ -108,4 +108,4 @@ A review-ready 16-row candidate dataset now captures all eight normalized metric
 
 MCH FY2024–FY2025 approved supplement: visual page review completed for printed pages 5–10 (PDF positions 6–11), with all eight metrics and statement/balance-sheet tie-outs confirmed. The supplement is latest-two-year only; FY2016–FY2023 remain blocked and no ten-year CAGR is permitted. See `reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md`, `data/mch_statement_metrics_2024_2025_approved.csv`, and Drive memo https://docs.google.com/document/d/1Ib__7FWjmtGFViexE-f__U2qCGx6xz3AK9qOTB8fLsw/edit.
 
-MCH approval now covers FY2018–FY2025 (64 rows; all eight normalized metrics). Visual PDF review, income-statement tie-outs, balance-sheet checks and cash-flow confirmation pass for each year; FY2016–FY2017 remain blocked, so no ten-year CAGR is calculated. [approved CSV](data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
+MCH approval now covers FY2016–FY2025 (80 rows; all eight normalized metrics). Visual PDF review, income-statement tie-outs, balance-sheet checks and cash-flow confirmation pass for each year. FY2017 is a comparative/corresponding-column year from the audited FY2018 filing and must retain its source-layer caveat in downstream CAGR work. [approved CSV](data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
