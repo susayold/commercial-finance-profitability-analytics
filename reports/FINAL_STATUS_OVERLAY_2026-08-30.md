@@ -144,3 +144,7 @@ CV V2 now includes the operational driver/unit-economics evidence with controlle
 ## OPEX and headcount planning extension
 
 A cost-center OPEX/headcount module now bridges opening headcount, hires/exits, payroll, benefits, bonus and non-payroll spend to budget/forecast variance. It has 9 synthetic cost-center-month rows, 13/13 validator checks and an explicit no-real-company-impact boundary.
+
+## CAPEX and fixed-asset planning extension
+
+A project-level CAPEX module now connects approval, commitment, cash payment, in-service date, depreciation, benefit and payback. Six synthetic project-month rows pass 15/15 controls and the CAPEX_Projects fact is integrated into the PBIP contract/DAX; no real investment or return claim is made.
