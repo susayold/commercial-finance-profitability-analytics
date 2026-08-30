@@ -1,0 +1,13 @@
+id,domain,decision,quantified_anchor,owner,guardrail,evidence_class,next_review
+REC-01,Commercial,reallocate promotion budget,VND 4.35bn budget; VND 55m modeled incremental contribution,Commercial finance,ROI >= 25%; CM% >= 25%,SIMULATED_DERIVED,Next monthly close
+REC-02,Commercial,stop negative promotions,4 negative-contribution cases,Revenue growth manager,ROI >= 25%,SIMULATED_DERIVED,Post-promotion review
+REC-03,Pricing,enforce marketplace price floors,net CM hurdle 25%,E-commerce finance,CM% >= 25%; volume drop <= 3%,SIMULATED_DERIVED,Two-week test
+REC-04,Working capital,collect overdue accounts,CCC Base 54.8d vs Downside 68.8d,AR lead,DSO <= Base + 5d,PROXY_DERIVED,Weekly cash call
+REC-05,Working capital,reduce slow-SKU inventory,CCC downside +14.0d,Supply-chain finance,service level >= 95%,PROXY_DERIVED,Weekly S&OP
+REC-06,FP&A,gate Upside case,revenue 80.1bn Base vs 83.3bn Upside,FP&A lead,two closes above hurdle,SIMULATED_DERIVED,Forecast cycle
+REC-07,Controls,map proxy lines to CoA,coverage target 98%,Finance systems,CoA coverage >= 98%,SYNTHETIC_ASSUMPTION,Month-end close
+REC-08,Credit,use MCH cash conversion watch,CFO/PAT 31.5%; equity ratio 54.9%,Credit reviewer,debt interest maturity evidence,OBSERVED_DERIVED,Annual-report refresh
+REC-09,D2C,improve retention before scale,LTV/CAC 0.72x; payback 3.33 orders,D2C finance,LTV/CAC >= 1.0x,SIMULATED_DERIVED,Monthly cohort review
+REC-10,M&A,screen NovaBite with sensitivities,17.16% Year-2 EPS accretion; NPV 28.39bn,Corporate finance,diligence and leverage complete,SYNTHETIC_DERIVED,Investment committee
+REC-11,Forecast,capture frozen snapshot,Gate A open,FP&A lead,approver version dates present,GOVERNANCE_CONTROL,Before next close
+REC-12,Power BI,complete native QA,18 evidence rows required,Reporting lead,observed value reviewer timestamp,GOVERNANCE_CONTROL,Before public release
