@@ -29,12 +29,12 @@ Use the latest GitHub `main` branch and the Drive bundle. Do not use an old loca
 Before Desktop work, verify the package and data locally:
 
 ```powershell
-python scripts/validate_powerbi_input_contract.py --input-dir data/current
+python scripts/validate_powerbi_input_contract.py --input-dir powerbi/data/current
 python scripts/validate_powerbi_refreshable_project.py `
   --pbit powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit `
   --pbip powerbi/native/VNFinance_PBIP `
   --pbixproj powerbi/native/VNFinance_PbixProj `
-  --data-dir data/current `
+  --data-dir powerbi/data/current `
   --report reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md
 ```
 
@@ -45,7 +45,7 @@ The manifest also declares a `scope_contract`: the broader `model_contract.json`
 On a Windows execution host, the one-command preflight also checks the Desktop executable, package paths and (when supplied) the 14-file input folder:
 
 ```powershell
-.\scripts\powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot .\data\current
+.\scripts\powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot .\powerbi\data\current
 ```
 
 `PASS` means the host is ready for native execution. `PENDING` is an actionable host/data gate; it is not evidence that a PBIX was opened or refreshed.
