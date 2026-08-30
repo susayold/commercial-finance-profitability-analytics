@@ -1,0 +1,10 @@
+company,ticker,fiscal_year,metric,value_vnd_bn,unit,source_url,pdf_page,source_status,confidence,notes
+Masan Consumer,MCH,2017,net_revenue,13213.640273416,VND_bn,https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf,38,INDEXED_ONLY,MEDIUM,Audited consolidated income statement code 10
+Masan Consumer,MCH,2017,gross_profit,6032.581436138,VND_bn,https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf,38,INDEXED_ONLY,MEDIUM,Audited consolidated income statement code 20
+Masan Consumer,MCH,2017,operating_profit,2624.361539165,VND_bn,https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf,38,INDEXED_ONLY,MEDIUM,Audited consolidated income statement code 30
+Masan Consumer,MCH,2017,profit_before_tax,2621.967572364,VND_bn,https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf,38,INDEXED_ONLY,MEDIUM,Audited consolidated income statement code 50
+Masan Consumer,MCH,2017,profit_after_tax,2245.997676081,VND_bn,https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf,38,INDEXED_ONLY,MEDIUM,Audited consolidated income statement code 60
+Masan Consumer,MCH,2017,total_assets,17645.056559773,VND_bn,https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf,37,INDEXED_ONLY,MEDIUM,Audited consolidated balance sheet total assets code 270
+Masan Consumer,MCH,2017,equity,11331.827459740,VND_bn,https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf,38,INDEXED_ONLY,MEDIUM,Total resources/equity line code 440; summary anchor p31
+Masan Consumer,MCH,2017,cfo,2112.950267691,VND_bn,https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf,39,INDEXED_ONLY,MEDIUM,Net cash from operating activities code 20
+
