@@ -1,0 +1,2 @@
+actual_discount_pct,baseline_units,channel_id,end_date,incremental_units,mechanic,planned_discount_pct,planned_units_lift_pct,promo_id,promo_spend,roi,sku_id,start_date,status
+0.22,1000,EC,2024-09-30,300,deep_discount,0.2,0.3,PROMO_2024_09,50000000,0.8,SKU001,2024-09-01,completed

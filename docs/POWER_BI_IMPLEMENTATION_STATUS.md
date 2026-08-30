@@ -9,6 +9,7 @@ Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an ex
 - **Compiled `.pbit`:** created and package-validated; 15 tables, 37 measures, 23 relationships, six pages and 39 visual containers.
 - **Editable `.pbip`:** generated with TMDL semantic model source, PBIR report binding, parameterized Power Query and source-controlled artifacts.
 - **Data replacement contract:** passed a controlled VND 1,000,000 source mutation with identical schema and row count; all 14 CSV partitions reference the single `DataRoot` parameter.
+- **Baseline fixture:** the 14 synthetic refresh inputs are now committed at `powerbi/data/current/` and mirrored in the Drive bundle, so the GitHub and Drive starting points are reproducible.
 - **Automated QA:** 29/29 package, source and refresh-contract checks passed.
 - **Native `.pbix`:** not yet claimed. Power BI Desktop executable is missing on the current machine and MSI repair requires Administrator rights, so Desktop open/refresh/render QA remains pending.
 - **Real-time interpretation:** current Import-mode CSV design updates on manual or scheduled refresh. True automatic page refresh requires migration to a supported DirectQuery/LiveConnect source.
@@ -21,7 +22,7 @@ The migration path is now source-controlled under `powerbi/directquery/`. It inc
 
 The Desktop execution material is now aligned to the generated package rather than the earlier scaffold. `powerbi/POWER_BI_DESKTOP_RUNBOOK.md` documents both PBIP editing and PBIT instantiation, the `DataRoot` binding, all 14 CSV filenames, contract validation, the controlled +VND 1,000,000 data-swap, native QA-01–QA-18 and the DirectQuery migration gate. `powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md` is the evidence checklist for the external execution host.
 
-The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and now includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow, process/status records, Desktop preflight script and PBIP/PBIT coherence gate. The current bundle is 984,155 bytes with SHA-256 `DAF2686B8B5CFA66C506949A9366028843C94523D2D258B50E3E72453B2C486B`. The artifact-coherence CI run `33316673755` passed on commit `6e205ec`.
+The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow, process/status records, Desktop preflight script and PBIP/PBIT coherence gate. The current bundle is 984,155 bytes with SHA-256 `DAF2686B8B5CFA66C506949A9366028843C94523D2D258B50E3E72453B2C486B`.
 
 The authoritative generated PBIP/PBIT inventory is 15 tables, 37 measures, 23 relationships, six pages and 39 visual containers. The older Excel-oriented names in the historical sections below are retained as model-contract context; use the PBIP/PBIT inventory and manifest when opening Desktop.
 

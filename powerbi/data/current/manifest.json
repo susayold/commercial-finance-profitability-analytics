@@ -1,0 +1,21 @@
+{
+  "dataset_version": "v1.0.0",
+  "seed": 20260829,
+  "months": 36,
+  "sales_fact_rows": 6480,
+  "sku_count": 36,
+  "channel_count": 5,
+  "customer_count": 24,
+  "event_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10"
+  ]
+}

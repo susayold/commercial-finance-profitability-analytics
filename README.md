@@ -14,10 +14,10 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 ## Current release index — 2026-08-30
 
 - Production site: [V13 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
-- Latest GitHub main commit: `64047c44d2ffdda8a873de216aff8bd8549f35f6`
+- Latest GitHub main commit: `226a783f1062c0299a1a4324f8c3fde925e715a5`
 - Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-30.md)
 - Current boundary: all finance, public-company, valuation, equity-research, CV and QA work is complete; Gate A genuine internal evidence and Gate B native Power BI Desktop evidence remain open.
-- The native Power BI phase is intentionally paused until a separate user-approved plan is agreed.
+- The editable PBIP/PBIT phase is delivered; native `.pbix` Desktop evidence remains an explicit environment gate.
 
 ## Current data foundation
 
@@ -30,6 +30,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - MCH audited consolidated financial statements: 2016-2025
 - Missing and rejected documents are recorded explicitly; gaps are never filled with unverified copies
 - VietNova synthetic v1.0.0: 36 months, 6,480 sales lines, 36 SKUs, 5 channels, 24 customers, 13 CSV tables + manifest; QA controls PASS (10,152 checks, 0 errors)
+- Power BI refresh fixture: `powerbi/data/current/` contains the 14 CSV inputs plus manifest/source-control metadata; it is mirrored in the Drive Power BI bundle.
 - Synthetic generator, ledger schema, hidden-truth event specification and QA validator are versioned in `scripts/` and `schemas/`
 - MCH OCR extraction pipeline: 125 machine candidates across FY2016-FY2025, 59 canonical review candidates and an explicit 120-row review queue; no OCR row is approved automatically
 

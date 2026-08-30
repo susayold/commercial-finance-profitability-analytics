@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Generate deterministic VietNova synthetic operating data.
 
-The output is a runtime artifact. Upload the QA-approved result to Drive under
-03_Synthetic_Company; do not commit raw generated rows to Git by default.
+The output is synthetic and reproducible. The Power BI refresh fixture is
+committed under ``powerbi/data/current`` and mirrored in the Drive release
+bundle; other experiments may still be written to an untracked directory.
 """
 from __future__ import annotations
 import argparse, csv, json, random

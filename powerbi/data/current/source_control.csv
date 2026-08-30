@@ -1,0 +1,6 @@
+control_id,control_name,status,evidence_class,source_file
+CTRL-01,Synthetic ledger manifest present,PASS,SIMULATED,manifest.json
+CTRL-02,Sales fact schema stable,PASS,SIMULATED,sales_fact.csv
+CTRL-03,Budget and forecast sources separate,PASS,SIMULATED,budget.csv | forecast.csv
+CTRL-04,Refresh uses DataRoot parameter,PASS,CONTROL,Power Query parameter
+CTRL-05,True real-time requires DirectQuery,OPEN,ARCHITECTURE,DirectQuery-compatible source
