@@ -17,6 +17,7 @@ const root = process.cwd();
 const transient = fs.mkdtempSync(path.join(os.tmpdir(), 'vietnova-finance-qa-'));
 const tasks = [
   ['evidence_matrix', ['scripts/validate_master_plan_evidence_matrix.mjs']],
+  ['liquidity_stress', ['scripts/validate_liquidity_stress.mjs', 'data/liquidity_stress_synthetic.csv']],
   ['block_a_design_lock', ['scripts/validate_block_a_design_lock.mjs', 'data/block_a_design_lock.csv']],
   ['role_alignment', ['scripts/validate_role_alignment_matrix.mjs']],
   ['promotion_roi', ['scripts/validate_promotion_roi.mjs', 'data/promotion_roi_synthetic.csv']],
