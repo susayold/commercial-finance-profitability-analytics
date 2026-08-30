@@ -163,3 +163,11 @@ The release gate now has a reviewer-facing matrix in [powerbi/QA_TEST_MATRIX.md]
 ## Desktop execution runbook (2026-08-30)
 
 The native PBIX handoff is operationalized in [powerbi/POWER_BI_DESKTOP_RUNBOOK.md](../powerbi/POWER_BI_DESKTOP_RUNBOOK.md) and [Drive](https://drive.google.com/file/d/1GdN43ajowcg9qjIf5fmwnX9Qarfd64Us/view). It specifies remote inputs, Power BI data types, relationships, six-page build order, QA execution, PBIP/PBIR save options and the remote archive procedure.
+
+## Service refresh dry-run evidence (2026-08-31)
+
+The current refresh orchestrator was rerun with disposable identifiers and no
+token. It returned `DRY_RUN_PASS` without a network request. See
+[the dated evidence record](../reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-31.md).
+This validates the Import refresh contract only; it does not claim a live
+workspace, gateway, DirectQuery source or Automatic Page Refresh.

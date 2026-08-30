@@ -68,6 +68,12 @@ still need a real Power BI Desktop or cloud workspace.
     command exited 0 and the Windows preflight returned 14/14 PASS; this proves
     package/host readiness only and does not promote native PBIX or production
     realtime claims.
+20. Executed a fresh Power BI Service refresh dry-run against disposable IDs on
+    `main` commit `2903d9f`. The helper returned `DRY_RUN_PASS`, emitted the
+    documented Import refresh endpoint/payload and wrote JSON only to a
+    temporary path. No token, network request or dataset side effect was used;
+    the evidence is archived in
+    `reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-31.md`.
 
 ## Evidence boundaries
 
