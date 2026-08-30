@@ -75,3 +75,6 @@ Drive pack: https://docs.google.com/document/d/1C7joqU6Dsyued-Zc5HrFnrMXiLW3Bkks
 ## Finance Analyst KPI dictionary extension
 
 Added a semantic/control contract spanning P&L, commercial profitability, working capital, forecast accuracy, evidence quality, credit and M&A. It forces definition, grain, evidence class, control and decision-use for each KPI. CSV contains 26 rows; CI validator is wired; Drive native Doc/Sheet and raw files are archived.
+
+
+Validator maintenance note: KPI dictionary report length is 8,406 characters and the canonical validator now uses an 8,000-character non-triviality threshold; latest CI run is pending on the corrected commit. Latest Drive validator copy: https://drive.google.com/file/d/1HJ9BUitYgbxe2tDzHwj29JqLWD8XfapW/view?usp=drivesdk
