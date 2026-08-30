@@ -106,3 +106,7 @@ The repository now contains a full immutable intake contract (schemas/forecast_s
 ## Gate B preflight extension
 
 A source-coherence validator and reviewer walkthrough now compare the PBIP manifest, model contract, DAX measures, six-page QA matrix and QA evidence log. The preflight returns 13/13 PASS and is wired into CI; Gate B remains OPEN until a real Power BI Desktop PBIX and QA-01–QA-18 visual evidence are supplied.
+
+## Gate A accuracy-report extension
+
+A leakage-safe report builder now produces overall and target-period/channel Bias, WAPE and MAPE diagnostics, population counts, exclusion reasons and a management action. CI exercises it in fixture mode and preserves the FIXTURE_PASS_NOT_LIVE boundary; live mode remains gated by internal evidence.
