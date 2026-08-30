@@ -333,3 +333,10 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 
 - [Scorecard report](reports/PEER_FINANCIAL_QUALITY_SCORECARD_2026-08-30.md) · [CSV](data/peer_financial_quality_scorecard_2020_2025.csv) · [Validator](scripts/validate_peer_financial_quality_scorecard.mjs) · [QA](reports/PEER_FINANCIAL_QUALITY_SCORECARD_QA.md)
 - The scorecard covers revenue/asset CAGR, FY2025 margins, equity ratio and CFO/PAT with source-record lineage. VNM is the only long-run trend candidate; QNS/KDC remain context-only and missing components stay blank.
+
+
+## Monthly Business Review / CFO Operating Pack
+
+- [Finance Analyst operating pack](reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md) · [KPI CSV](data/monthly_business_review_kpi_pack_2026-08-30.csv) · [Validator](scripts/validate_monthly_business_review.mjs) · [QA](reports/MONTHLY_BUSINESS_REVIEW_QA.md)
+- [Drive native pack](https://docs.google.com/document/d/1C7joqU6Dsyued-Zc5HrFnrMXiLW3Bkks0iaevLcVbNs/edit?usp=drivesdk) · [Drive native KPI Sheet](https://docs.google.com/spreadsheets/d/1YWai5MSnAiRS2W9d0JXQsQ9soCZ2_odkvsR7S64-JmU/edit?usp=drivesdk) · [Drive raw KPI CSV](https://drive.google.com/file/d/1bbiHU9LbUrtpFdUfiUToegIiamqT-KnB/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1fEdL0Bkl-TkvQKp7A36TFq2MUFS9-fS3/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1kJwAUZDyq5dD9t7KNz4oLlwIRfLW6gID/view?usp=drivesdk)
+- The pack adds an executive scenario table, actual-vs-budget/forecast bridge contract, PVM formulas, channel/customer/SKU profitability agenda, DSO/DIO/DPO cash triggers, owner-action tracker and a 15-minute reviewer script. All headline values remain proxy/derived until Gate A and production CoA mapping are supplied.
