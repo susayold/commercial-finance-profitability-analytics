@@ -412,3 +412,9 @@ The module maps revenue, gross-to-net, contribution, inventory, working capital,
 [Module](docs/OPEX_HEADCOUNT_PLANNING_MODULE.md) · [Synthetic data](data/opex_headcount_planning_synthetic.csv) · [QA](reports/OPEX_HEADCOUNT_PLANNING_QA.md)
 
 The module links opening headcount, hires/exits, payroll, benefits, bonus and non-payroll spend to budget and forecast variance. It is a SIMULATED / DERIVED FP&A rehearsal, not real company evidence.
+
+## CAPEX and fixed-asset planning
+
+[Module](docs/CAPEX_FIXED_ASSET_PLANNING_MODULE.md) · [Synthetic data](data/capex_fixed_asset_planning_synthetic.csv) · [QA](reports/CAPEX_FIXED_ASSET_PLANNING_QA.md)
+
+The module links approval, commitment, cash payment, depreciation, benefits and payback by project. It is SIMULATED / DERIVED and not evidence of realized company investment returns.
