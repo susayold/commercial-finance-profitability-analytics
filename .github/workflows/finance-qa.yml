@@ -89,6 +89,14 @@ jobs:
         run: |
           node scripts/validate_mch_ocr_workbench.mjs data/mch_ocr_review_workbench_template.csv
 
+      - name: Validate MCH credit memo trend layer
+        shell: bash
+        run: |
+          node scripts/validate_mch_credit_memo.mjs \
+            data/mch_finance_analyst_trend_2016_2025.csv \
+            "$RUNNER_TEMP/mch_credit_memo_QA.md"
+          grep -F "**Overall status: PASS** (15/15 checks passed)" "$RUNNER_TEMP/mch_credit_memo_QA.md"
+
       - name: Validate PBIP source manifest
         shell: bash
         run: |
