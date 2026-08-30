@@ -15,6 +15,7 @@ Use this checklist on the execution host. Check a box only when the evidence exi
 - [ ] PBIT SHA256 recorded.
 - [ ] `validate_powerbi_input_contract.py` returns `PASS` for the active data folder.
 - [ ] `validate_powerbi_refreshable_project.py` returns `PASS`.
+- [ ] `powerbi_desktop_preflight.ps1` returns `PASS` on the execution host (or its `PENDING` items are explicitly resolved).
 
 ## B. Open and bind
 

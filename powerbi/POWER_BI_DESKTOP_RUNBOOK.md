@@ -39,6 +39,14 @@ python scripts/validate_powerbi_refreshable_project.py `
 
 Both commands must return `PASS` before opening Desktop.
 
+On a Windows execution host, the one-command preflight also checks the Desktop executable, package paths and (when supplied) the 14-file input folder:
+
+```powershell
+.\scripts\powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot .\data\current
+```
+
+`PASS` means the host is ready for native execution. `PENDING` is an actionable host/data gate; it is not evidence that a PBIX was opened or refreshed.
+
 ## 2. Desktop host preflight
 
 1. Install a current Power BI Desktop release on the execution host. This host must have the Desktop executable; a ZIP, PBIT or PBIP file alone cannot execute native refresh/render QA.

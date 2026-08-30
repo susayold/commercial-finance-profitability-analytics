@@ -11,6 +11,7 @@ The repository now includes generated native source under `powerbi/native/` and 
 - See `powerbi/directquery/README.md` and `powerbi/directquery/VNFinance_DirectQuery_Schema.sql` for the database migration package; `powerbi/DIRECTQUERY_READINESS.json` keeps the realtime claim gated until measured evidence exists.
 - Rebuild both source formats with `scripts/build_powerbi_refreshable_project.py` and validate the package with `scripts/validate_powerbi_refreshable_project.py`.
 - Validate any replacement dataset first with `scripts/validate_powerbi_input_contract.py`; the CI workflow runs this gate before package QA.
+- On a Windows execution host, run `scripts/powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot <folder>` to check Desktop installation, package paths and input readiness before opening PBIP/PBIT.
 
 Automated package QA currently passes 29/29 checks. Native Desktop open/refresh/render QA remains a separate gate and is not inferred from source validation.
 
