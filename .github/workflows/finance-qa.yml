@@ -31,6 +31,9 @@ jobs:
           python scripts/generate_vietnova_data.py --output-dir "$RUNNER_TEMP/vnfinance_powerbi_data"
           python -c "from pathlib import Path; from scripts.build_powerbi_refreshable_project import create_source_control; create_source_control(Path(r'$RUNNER_TEMP/vnfinance_powerbi_data'))"
           python scripts/validate_vietnova_data.py --input-dir "$RUNNER_TEMP/vnfinance_powerbi_data"
+          python scripts/validate_powerbi_input_contract.py \
+            --input-dir "$RUNNER_TEMP/vnfinance_powerbi_data" \
+            --report "$RUNNER_TEMP/powerbi_input_contract_QA.md"
           python scripts/validate_powerbi_refreshable_project.py \
             --pbit powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit \
             --pbip powerbi/native/VNFinance_PBIP \
@@ -44,6 +47,7 @@ jobs:
           name: powerbi-refreshable-qa
           if-no-files-found: error
           path: |
+            ${{ runner.temp }}/powerbi_input_contract_QA.md
             ${{ runner.temp }}/powerbi_refreshable_package_QA.md
             powerbi/DIRECTQUERY_READINESS.json
             reports/POWER_BI_DIRECTQUERY_READINESS_QA.md

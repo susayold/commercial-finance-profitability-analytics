@@ -12,6 +12,8 @@ The default mode is **replace-and-refresh**:
 4. Select **Home > Refresh** after each data replacement.
 5. Measures and visuals recalculate from the refreshed semantic model; no report rebuild is required.
 
+Before step 4, run `scripts/validate_powerbi_input_contract.py --input-dir <folder>`. It rejects header/type drift, blank cells, duplicate dimension keys, broken fact-to-dimension references and broken gross-to-net/contribution identities.
+
 ## Source contract
 
 All Power Query partitions use one required Text parameter:
