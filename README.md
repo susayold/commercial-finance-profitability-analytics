@@ -327,3 +327,9 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 - The layer decomposes reported profit into margin, efficiency and capital-structure drivers and flags FY2025 cash conversion (CFO/revenue 6.98%) plus FY2024 equity-base sensitivity. All ratios are calculated and caveated; no standalone valuation claim is made.
 
 - [Native Drive analysis Sheet](https://docs.google.com/spreadsheets/d/1f4o0myaW6ejjtRVIO_PPT_ODezJo0ANrTQPYxRQ58SI/edit?usp=drivesdk) — reviewer-facing table with one row per FY2016–FY2025 and formula-ready ratio columns.
+
+
+## Peer financial-quality scorecard
+
+- [Scorecard report](reports/PEER_FINANCIAL_QUALITY_SCORECARD_2026-08-30.md) · [CSV](data/peer_financial_quality_scorecard_2020_2025.csv) · [Validator](scripts/validate_peer_financial_quality_scorecard.mjs) · [QA](reports/PEER_FINANCIAL_QUALITY_SCORECARD_QA.md)
+- The scorecard covers revenue/asset CAGR, FY2025 margins, equity ratio and CFO/PAT with source-record lineage. VNM is the only long-run trend candidate; QNS/KDC remain context-only and missing components stay blank.
