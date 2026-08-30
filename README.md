@@ -51,7 +51,7 @@ Every output distinguishes reported fact, calculated fact, synthetic fact, assum
 
 ## Current status overlay
 
-See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
+See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1hokvGptWOnSoN8GO2SK124iEPpEHw8fXsA8Kp51FKkU/edit?usp=drivesdk) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
 
 ## Status
 
