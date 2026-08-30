@@ -97,3 +97,15 @@ Headcount Close := SUM ( OPEX_Headcount[headcount_close] )
 Average Headcount := SUM ( OPEX_Headcount[avg_headcount] )
 Payroll Cost := SUM ( OPEX_Headcount[payroll_vnd] )
 OPEX per FTE := DIVIDE ( [OPEX Actual], [Average Headcount] )
+
+// CAPEX and fixed-asset planning measures — synthetic until approved capex/FA/GL evidence
+CAPEX Actual := SUM ( CAPEX_Projects[actual_capex_vnd] )
+CAPEX Budget := SUM ( CAPEX_Projects[budget_capex_vnd] )
+CAPEX Forecast := SUM ( CAPEX_Projects[forecast_capex_vnd] )
+CAPEX Committed := SUM ( CAPEX_Projects[committed_capex_vnd] )
+CAPEX Cash Payment := SUM ( CAPEX_Projects[cash_payment_vnd] )
+CAPEX Budget Variance := [CAPEX Actual] - [CAPEX Budget]
+CAPEX Forecast Variance := [CAPEX Actual] - [CAPEX Forecast]
+Depreciation := SUM ( CAPEX_Projects[depreciation_vnd] )
+Expected Annual Contribution := SUM ( CAPEX_Projects[expected_annual_contribution_vnd] )
+CAPEX Payback Months := DIVIDE ( SUMX ( CAPEX_Projects, CAPEX_Projects[asset_cost_vnd] ), [Expected Annual Contribution] ) * 12
