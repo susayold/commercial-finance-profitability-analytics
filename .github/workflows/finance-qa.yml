@@ -191,3 +191,10 @@ jobs:
           node scripts/validate_management_recommendation_register.mjs \
             reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md \
             data/management_recommendation_register_2026-08-30.csv
+
+      - name: Validate Finance Business Partnering battle cards v2
+        shell: bash
+        run: |
+          node scripts/validate_battle_cards_v2.mjs \
+            docs/BATTLE_CARDS_V2.md \
+            data/battle_cards_v2.csv
