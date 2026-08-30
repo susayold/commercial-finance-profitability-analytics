@@ -155,6 +155,10 @@ def main() -> int:
             python_command(root, "scripts/validate_powerbi_service_workflow.py"),
             root,
         )
+        stages["release_record"] = run_command(
+            python_command(root, "scripts/validate_powerbi_release_record.py"),
+            root,
+        )
 
         preflight = root / "scripts" / "powerbi_desktop_preflight.ps1"
         powershell = shutil.which("powershell") or shutil.which("pwsh")
@@ -183,6 +187,7 @@ def main() -> int:
         "directquery_mapping",
         "directquery_health_contract",
         "service_workflow_contract",
+        "release_record",
     )
     deterministic_ok = all(stages[name]["status"] == "PASS" and stages[name]["exit_code"] == 0 for name in deterministic_names)
     desktop_ok = stages["desktop_preflight"]["status"] == "PASS" and stages["desktop_preflight"]["exit_code"] == 0

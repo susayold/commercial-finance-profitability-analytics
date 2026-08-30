@@ -9,8 +9,9 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Item | Current value |
 |---|---|
 | GitHub repository | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) |
-| Handoff commit | [`3256972`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/3256972911687b6a0d8cbd69a285446d223ffe48) |
+| Handoff commit | [`83e95ae`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/83e95ae118455e3a5123c57d503021395bb43050) |
 | Latest validated CI | [Finance model QA](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127) — PASS |
+| Latest local release gate | `83e95ae` — PASS; eight deterministic stages and Desktop preflight 14/14 |
 | Drive bundle | [VNFinance Power BI refreshable package](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) |
 | Power BI Desktop host | `D:\Po BI\bin\PBIDesktop.exe` |
 | Desktop version recorded by preflight | `2.157.879.0 (26.08)` |
@@ -24,9 +25,9 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Reusable template | `powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit` | PASS |
 | Model topology | 15 tables, 37 measures, 23 relationships, 6 pages, 39 visuals | PASS |
 | Input contract | 14 CSV partitions, 78/78 deterministic checks | PASS |
-| Data replacement | Watcher two-batch QA; `Sales[units]` 121 → 122 | PASS |
+| Data replacement | Two-batch LocalDB QA; `Sales[units]` 1,256,859 → 1,256,860; 20 health samples | PASS |
 | Refresh orchestration | `run_finance_refresh.py` + `prepare_powerbi_refresh.py` | PASS |
-| DirectQuery mechanics | Ephemeral LocalDB two-batch and latency rehearsal | PASS — local only |
+| DirectQuery mechanics | Ephemeral LocalDB two-batch, 20-sample latency and 5-state health QA | PASS — local only |
 | Native PBIX | Requires Desktop open, refresh, render, save and reopen evidence | PENDING |
 | Production realtime | Requires cloud database, gateway/capacity and APR measurements | PENDING |
 
@@ -48,6 +49,10 @@ candidate CSV drop
 The watcher deliberately does not claim second-level realtime: Import mode
 still needs a Desktop/API refresh. The model design, measures, relationships
 and visuals are not rebuilt when the data files change.
+
+The DirectQuery health query additionally returns `control_reason` beside
+`control_status`, allowing the Controls & Evidence page to distinguish a
+current batch from stale, rejected-row, failed-load or no-load states.
 
 ## Native PBIX gate
 

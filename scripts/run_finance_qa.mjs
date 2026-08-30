@@ -109,6 +109,13 @@ try {
   if (directQueryHealthOutput) directQueryHealthCheck.output_tail = directQueryHealthOutput.split(/\r?\n/).slice(-6).join('\n');
   result.checks.push(directQueryHealthCheck);
   if (directQueryHealthContract.status !== 0) result.status = 'FAIL';
+
+  const releaseRecord = spawnSync(python, ['scripts/validate_powerbi_release_record.py'], { cwd: root, encoding: 'utf8' });
+  const releaseRecordOutput = `${releaseRecord.stdout ?? ''}${releaseRecord.stderr ?? ''}`.trim();
+  const releaseRecordCheck = { name: 'powerbi_release_record', status: releaseRecord.status === 0 ? 'PASS' : 'FAIL' };
+  if (releaseRecordOutput) releaseRecordCheck.output_tail = releaseRecordOutput.split(/\r?\n/).slice(-6).join('\n');
+  result.checks.push(releaseRecordCheck);
+  if (releaseRecord.status !== 0) result.status = 'FAIL';
 } finally {
   fs.rmSync(transient, { recursive: true, force: true });
 }

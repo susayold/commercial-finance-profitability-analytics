@@ -97,6 +97,11 @@ still need a real Power BI Desktop or cloud workspace.
     change. Both batches remained `PASS`, `Sales[units]` moved `1,256,859 →
     1,256,860`, all 20 health samples exposed the changed batch and the
     latency baseline was p50 `0.0132s` / p95 `0.0153s`; cleanup was PASS.
+26. Corrected the recruiter-facing release record from the older `3256972`
+    handoff to current HEAD and added a release-record validator. The
+    validator checks commit/Drive links, current Import mode, latest replacement
+    delta, DirectQuery local-only boundary and explicit native/realtime pending
+    gates; it is now part of both finance QA and the release gate.
 
 ## Evidence boundaries
 
