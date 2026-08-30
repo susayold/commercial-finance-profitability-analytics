@@ -34,7 +34,7 @@ The repository now includes a cross-platform [finance QA runner](../scripts/run_
 
 ## Peer comparability decision
 
-The approved panel is now governed by a comparability decision memo: [GitHub memo](PEER_COMPARABILITY_DECISION_2026-08-30.md) · [Drive memo](https://docs.google.com/document/d/184FPk4ZcPaWVtWm4qqRsvsG3RO0D_Lv9tS46yKXqCGk/edit?usp=drivesdk). VNM is the clean long-run benchmark; QNS and KDC remain bounded context because revenue basis/perimeter changes prevent an unqualified full-period CAGR; MCH OCR remains outside the verified peer panel pending page-level review.
+The approved panel is now governed by a comparability decision memo: [GitHub memo](PEER_COMPARABILITY_DECISION_2026-08-30.md) · [Drive memo](https://docs.google.com/document/d/184FPk4ZcPaWVtWm4qqRsvsG3RO0D_Lv9tS46yKXqCGk/edit?usp=drivesdk). VNM is the clean long-run benchmark; QNS and KDC remain bounded context because revenue basis/perimeter changes prevent an unqualified full-period CAGR; MCH remains outside the 240-row core peer panel, but its separate FY2016–FY2025 statement supplement is now page-reviewed and approved with an explicit FY2017 comparative caveat.
 
 ## Normalized peer panel evidence
 
@@ -147,4 +147,4 @@ QNS FY2021–FY2025 gross profit and owners' equity are now populated from the F
 
 - MCH FY2024–FY2025 approved supplement released after visual page review and tie-outs; it remains separate from the 240-row core panel and does not imply FY2016–FY2023 approval.
 
-- MCH approved supplement extended through FY2018–FY2025: 64 rows across eight years, all eight metrics, visual review, tie-outs and cash-flow confirmation complete; FY2016–FY2017 remain blocked. [approved CSV](../data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
+- MCH approved supplement extended through FY2016–FY2025: 80 rows across ten years, all eight metrics, visual review, tie-outs and cash-flow confirmation complete. FY2017 retains the comparative/corresponding-column caveat from the audited FY2018 filing. [approved CSV](../data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
