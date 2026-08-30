@@ -133,6 +133,8 @@ jobs:
             ${{ runner.temp }}/powerbi_release_gate.json
             ${{ runner.temp }}/powerbi_claim_boundary_QA.json
             ${{ runner.temp }}/powerbi_artifact_coherence_QA.md
+            ${{ runner.temp }}/powerbi_docs_contract_QA.json
+            ${{ runner.temp }}/powerbi_service_workflow_contract_QA.json
             powerbi/DIRECTQUERY_READINESS.json
             reports/POWER_BI_DIRECTQUERY_READINESS_QA.md
 
@@ -293,6 +295,13 @@ jobs:
           python scripts/validate_powerbi_docs_contract.py \
             --repo-root . \
             --report "$RUNNER_TEMP/powerbi_docs_contract_QA.json"
+
+      - name: Validate Power BI Service refresh workflow contract
+        shell: bash
+        run: |
+          python scripts/validate_powerbi_service_workflow.py \
+            --repo-root . \
+            --report "$RUNNER_TEMP/powerbi_service_workflow_contract_QA.json"
 
       - name: Validate M&A accretion dilution case
         shell: bash
