@@ -267,4 +267,4 @@ Site V9 is deployed at https://vn-finance-fpa-case.sangkenny200.chatgpt.site wit
 
 ## External gate readiness artifact
 
-The release boundary is now machine-readable in [external_gate_readiness.json](../data/external_gate_readiness.json) with a [10/10 governance validator](../reports/EXTERNAL_GATE_READINESS_QA.md). It explicitly records Gate A as pending live internal evidence and Gate B as pending native PBIX/Desktop evidence; no production claim is enabled.
+The release boundary is now machine-readable in [external_gate_readiness.json](../data/external_gate_readiness.json) with a [10/10 governance validator](../reports/EXTERNAL_GATE_READINESS_QA.md). Drive mirrors: [report](https://drive.google.com/file/d/19va7iv_Y2VqruqEtAIID2ptogyMXZWvF/view?usp=drivesdk), [JSON](https://drive.google.com/file/d/1v4FUyvjqmO7Iw1F8FCS-ebwKf43OcFTe/view?usp=drivesdk), [QA](https://drive.google.com/file/d/1MBAe9s2geemTe1F9MmoX266TVAarfcxz/view?usp=drivesdk). It explicitly records Gate A as pending live internal evidence and Gate B as pending native PBIX/Desktop evidence; no production claim is enabled.
