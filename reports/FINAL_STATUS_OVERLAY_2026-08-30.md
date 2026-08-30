@@ -47,7 +47,7 @@ All durable data, code, reports, validators, website source and Drive mirrors ar
 
 ## MCH source retrieval control
 
-The official FY2017 and FY2020 annual-report URLs are accompanied by a detailed [source-verification runbook](../docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) and Drive mirror (https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk). FY2020 bytes are now archived from the official HNX signed PDF and classified `ARCHIVED_PENDING_REVIEW` with hash/size recorded; FY2017 remains `INDEXED_ONLY` until a retrievable official PDF is archived. The approved FY2016–FY2025 supplement and FY2017 comparative provenance are unchanged.
+The official FY2017 and FY2020 annual-report URLs are accompanied by a detailed [source-verification runbook](../docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) and Drive mirror (https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk). FY2020 bytes are now archived from the official HNX signed PDF, page-reviewed and classified `APPROVED` with hash/size and statement anchors recorded; FY2017 remains `INDEXED_ONLY` until a retrievable official PDF is archived. The approved FY2016–FY2025 supplement and FY2017 comparative provenance are unchanged.
 
 
 ## MCH financial-statement analysis extension
