@@ -244,3 +244,9 @@ The optional feasibility step is now complete: four QNS/KDC break-register rows,
 ## Current status overlay
 
 See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
+
+## Latest QA sync — 2026-08-30
+
+- CI run [#719](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33300357901) passed after the MCH FY2017 indexed-evidence validator was added to both the GitHub workflow and the cross-platform runner.
+- The runner now reports 20 total checks: 19 repository-local validators plus Power BI contract-shape validation. FY2017 remains a controlled `INDEXED_ONLY` layer; no standalone PDF-byte claim is made.
+- Updated Drive runner archive: https://drive.google.com/file/d/1vuv3EsRSRR3GnGCnrkNPdCNJy5F7oUGW/view?usp=drivesdk
