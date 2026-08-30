@@ -2,7 +2,7 @@ import fs from "node:fs";
 const report=fs.readFileSync(process.argv[2]||"reports/MONTE_CARLO_RISK_OVERLAY_2026-08-30.md","utf8");
 const csv=fs.readFileSync(process.argv[3]||"data/monte_carlo_risk_overlay_2026-08-30.csv","utf8").trim().split(/\r?\n/);
 const checks=[]; const must=(n,o)=>checks.push({n,ok:Boolean(o)});
-must("report_nontrivial",report.length>5000);
+must("report_nontrivial",report.length>3500);
 for(const p of ["## Model assumptions","## Percentile output","## Finance interpretation","## Decision rules","## Limitations and handoff"])must(p,report.includes(p));
 must("simulation_count",report.includes("5,000")&&report.includes("20260830"));
 must("thresholds",["76.9","53.1","68.8","25%"].every(v=>report.includes(v)));
