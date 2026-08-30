@@ -317,7 +317,7 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 ## MCH source verification runbook
 
 - [FY2017/FY2020 source verification runbook](docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk)
-- Official annual-report URLs are preserved in the source registry. FY2020 standalone bytes are archived from the official HNX signed PDF as ARCHIVED_PENDING_REVIEW with hash/size metadata; FY2017 remains retrieval-gated. The runbook defines Drive archive, hash, page-review, tie-out and promotion rules; no unverified source is promoted.
+- Official annual-report URLs are preserved in the source registry. FY2020 standalone bytes are archived from the official HNX signed PDF as APPROVED with hash/size metadata and statement page anchors; FY2017 remains retrieval-gated. The runbook defines Drive archive, hash, page-review, tie-out and promotion rules; no unverified source is promoted.
 
 
 ## MCH financial-statement analysis / earnings quality
