@@ -1,7 +1,7 @@
 {
   "artifact_type": "REAL_EDITABLE_PBIP_AND_COMPILED_PBIT_NATIVE_PBIX_PENDING",
   "project_name": "VNFinance_Commercial_Finance",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "release_artifacts": {
     "editable_pbip": "powerbi/native/VNFinance_PBIP/VNFinance_Commercial_Finance.pbip",
     "compiled_pbit": "powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit",
@@ -15,6 +15,8 @@
     "directquery_health_query": "powerbi/directquery/VNFinance_DirectQuery_Health.sql",
     "directquery_health_runner": "scripts/check_directquery_source.ps1",
     "service_refresh_orchestrator": "scripts/trigger_powerbi_service_refresh.py",
+    "service_refresh_workflow": ".github/workflows/powerbi-service-refresh.yml",
+    "service_refresh_automation": "github_push_to_main_with_secrets",
     "directquery_operational_metadata": "finance.Refresh_Control",
     "realtime_claim": "PENDING_DATABASE_AND_DESKTOP_EVIDENCE"
   },

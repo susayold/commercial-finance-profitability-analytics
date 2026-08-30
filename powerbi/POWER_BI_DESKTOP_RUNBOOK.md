@@ -128,6 +128,23 @@ token, workspace ID or dataset ID in Git. This automates Import refresh after a
 data replacement; it is not DirectQuery Automatic Page Refresh or second-level
 realtime.
 
+### GitHub-triggered Service refresh
+
+`.github/workflows/powerbi-service-refresh.yml` is the repeatable automation
+hook for a published Import dataset. It runs the input-contract checks whenever
+`powerbi/data/current/**` changes on `main`, then calls the same refresh helper
+when these repository Secrets are present:
+
+- `PBI_WORKSPACE_ID`
+- `PBI_DATASET_ID`
+- `PBI_ACCESS_TOKEN`
+
+The workflow writes a refresh-evidence artifact for each run. If any Secret is
+missing, it records `SKIPPED` and does not call Power BI. Before enabling it,
+make sure the published dataset reads from the cloud copy that is updated by
+the data-swap process; the Power BI Service cannot read a developer's local
+`DataRoot` folder.
+
 ## 4. Model inventory and expected topology
 
 The current model contains **15 tables, 37 measures, 23 relationships, 6 pages and 39 visual containers**.

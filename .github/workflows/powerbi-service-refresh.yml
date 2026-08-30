@@ -1,0 +1,75 @@
+name: Power BI Service refresh
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "powerbi/data/current/**"
+      - "scripts/prepare_powerbi_refresh.py"
+      - "scripts/trigger_powerbi_service_refresh.py"
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    name: Validate and refresh published dataset
+    runs-on: ubuntu-latest
+    env:
+      PBI_WORKSPACE_ID: ${{ secrets.PBI_WORKSPACE_ID }}
+      PBI_DATASET_ID: ${{ secrets.PBI_DATASET_ID }}
+      PBI_ACCESS_TOKEN: ${{ secrets.PBI_ACCESS_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate replacement data before any refresh
+        shell: bash
+        run: |
+          python scripts/validate_vietnova_data.py --input-dir powerbi/data/current
+          python scripts/validate_powerbi_input_contract.py \
+            --input-dir powerbi/data/current \
+            --report "$RUNNER_TEMP/powerbi_service_refresh_input_contract.md"
+
+      - name: Trigger Power BI Service refresh when credentials are configured
+        shell: bash
+        run: |
+          if [[ -z "${PBI_WORKSPACE_ID:-}" || -z "${PBI_DATASET_ID:-}" || -z "${PBI_ACCESS_TOKEN:-}" ]]; then
+            python - "$RUNNER_TEMP/powerbi_service_refresh_apply.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          out = Path(sys.argv[1])
+          out.write_text(json.dumps({
+              "status": "SKIPPED",
+              "reason": "Configure PBI_WORKSPACE_ID, PBI_DATASET_ID and PBI_ACCESS_TOKEN GitHub Secrets before enabling Service refresh.",
+              "side_effect": "none",
+          }, indent=2) + "\n", encoding="utf-8")
+          print("SERVICE_REFRESH_SKIPPED: GitHub Secrets are not configured")
+          PY
+          else
+            python scripts/trigger_powerbi_service_refresh.py \
+              --workspace-id "$PBI_WORKSPACE_ID" \
+              --dataset-id "$PBI_DATASET_ID" \
+              --apply \
+              --timeout-seconds 900 \
+              --poll-seconds 15 \
+              --report "$RUNNER_TEMP/powerbi_service_refresh_apply.json"
+          fi
+
+      - name: Upload refresh evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: powerbi-service-refresh-${{ github.run_id }}
+          if-no-files-found: error
+          path: |
+            ${{ runner.temp }}/powerbi_service_refresh_input_contract.md
+            ${{ runner.temp }}/powerbi_service_refresh_apply.json
