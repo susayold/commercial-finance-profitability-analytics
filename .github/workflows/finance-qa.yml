@@ -168,6 +168,14 @@ jobs:
         run: |
           node scripts/validate_master_plan_evidence_matrix.mjs
 
+      - name: Validate inventory quality schedule
+        shell: bash
+        run: |
+          node scripts/validate_inventory_quality.mjs \
+            data/inventory_quality_synthetic.csv \
+            "$RUNNER_TEMP/inventory_quality_QA.md"
+          grep -F "Inventory quality QA: 9/9 checks PASS" "$RUNNER_TEMP/inventory_quality_QA.md"
+
       - name: Validate liquidity stress schedule
         shell: bash
         run: |
