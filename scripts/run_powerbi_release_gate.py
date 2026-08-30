@@ -78,8 +78,14 @@ def main() -> int:
     parser.add_argument("--input-dir", type=Path, default=None)
     parser.add_argument("--data-root", type=Path, default=None)
     parser.add_argument("--desktop-path", type=Path, default=None)
-    parser.add_argument("--report", type=Path, required=True)
+    parser.add_argument("--report", type=Path, required=True, help="JSON evidence output; must end in .json")
     args = parser.parse_args()
+
+    # The release gate writes a machine-readable payload.  Requiring a JSON
+    # suffix prevents a rehearsal from silently overwriting a Markdown release
+    # record when an operator passes the wrong path.
+    if args.report.suffix.lower() != ".json":
+        parser.error("--report must point to a .json evidence file")
 
     root = args.repo_root.resolve()
     input_dir = (args.input_dir or root / "powerbi" / "data" / "current").resolve()
