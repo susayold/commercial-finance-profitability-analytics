@@ -31,7 +31,7 @@ The archived signed HNX PDF was reviewed at statement level. PDF pages 30–34 (
 
 ## FY2017 retrieval attempt record
 
-On 2026-08-30 the official Masan Consumer URL `https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf` was confirmed by the company site/search index and opened as an indexed PDF result. Direct download attempts from this runtime returned a TLS protocol error (PowerShell/cURL) or HTTP 404 (Node fetch), so no bytes, hash or page count were recorded. The source remains `INDEXED_ONLY`; the FY2018 audited comparative/corresponding columns remain the approved FY2017 provenance. No aggregator copy was substituted.
+On 2026-08-30 the official Masan Consumer URL `https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf` was confirmed by the company site/search index and opened as an indexed PDF result. Direct download attempts from this runtime returned a TLS protocol error (PowerShell/cURL) or HTTP 404 (Node fetch), so no bytes, hash or page count were recorded. The source remains `INDEXED_ONLY`; the FY2018 audited comparative/corresponding columns remain the approved FY2017 provenance. No aggregator copy was substituted. The bounded extraction is available in [MCH_FY2017_WEB_INDEX_EVIDENCE.md](../reports/MCH_FY2017_WEB_INDEX_EVIDENCE.md), with [CSV](../data/mch_fy2017_web_index_evidence.csv) and [8/8 QA](../reports/MCH_FY2017_WEB_INDEX_EVIDENCE_QA.md).
 
 ## Required source-log fields
 
