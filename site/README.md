@@ -14,7 +14,7 @@ This folder documents the recruiter-facing Sites implementation for the Commerci
 - Ten-year MCH Finance Analyst trend lens (FY2016–FY2025) with growth, margins, CFO/PAT and provenance caveats
 - MCH lender-style credit memo with conditional-support view, cash-conversion triggers and stress screen
 - Forecast Gate A intake contract and Power BI Gate B QA-01–QA-18 evidence links
-- Direct links to the v2 workbook, dashboard render, CFO memo, MCH trend report and GitHub repository
+- Direct links to the v2 workbook, dashboard render, CFO memo, MCH trend report, credit memo QA, finance-first CV V2 and GitHub repository
 
 The page is intentionally recruiter-first: open the model, trace the checks, then read the finance recommendation. The forecast section keeps the public-guidance proxy separate from the pending internal snapshot gate. The MCH section demonstrates how a finance analyst turns audited filing history into a decision-relevant trend layer without silently mixing it into the 240-row normalized peer core. The credit memo extends the same evidence into a lender-style decision.
 
@@ -26,3 +26,12 @@ npm run build
 ```
 
 `@vitejs/plugin-rsc` and `tailwindcss` are declared as dev dependencies so a fresh clone can reproduce the production build.
+
+
+## Current recruiter links
+
+- Finance-first CV V2: https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_CV_ONE_PAGE_V2.md
+- MCH credit memo QA (15/15): https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_CREDIT_MEMO_QA.md
+- QNS/KDC basis bridge QA (12/12): https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/PEER_BASIS_PERIMETER_BRIDGE_QA.md
+
+The GitHub source mirror restores the MCH public-finance lens and points the recruiter card to the finance-first CV V2. Production Sites version 6 remains the live deployment; a source-repository refresh is pending because the artifact Git remote is currently slow to clone.
