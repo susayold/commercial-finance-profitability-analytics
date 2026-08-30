@@ -253,3 +253,8 @@ See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) for the a
 - CI run [#719](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33300357901) passed after the MCH FY2017 indexed-evidence validator was added to both the GitHub workflow and the cross-platform runner.
 - The runner now reports 20 total checks: 19 repository-local validators plus Power BI contract-shape validation. FY2017 remains a controlled `INDEXED_ONLY` layer; no standalone PDF-byte claim is made.
 - Updated Drive runner archive: https://drive.google.com/file/d/1vuv3EsRSRR3GnGCnrkNPdCNJy5F7oUGW/view?usp=drivesdk
+
+
+## Latest full-run QA sync — 2026-08-30
+
+The cross-platform finance runner now covers all 40 repository-local validators plus the Power BI contract-shape check (41 total checks). [CI run #778](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33302213464) passed. Older historical check-count paragraphs remain for audit history only and are superseded by this overlay.
