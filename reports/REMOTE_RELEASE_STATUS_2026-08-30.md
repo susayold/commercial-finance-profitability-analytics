@@ -184,3 +184,5 @@ The paragraphs above retain historical release notes for audit trail. Use this s
 - The cross-platform `scripts/run_finance_qa.mjs` now includes the same `mch_fy2017_web_index` check, so the 19-check repository runner covers the indexed-only evidence boundary as well.
 - Drive archive copy of the updated runner: https://drive.google.com/file/d/1vuv3EsRSRR3GnGCnrkNPdCNJy5F7oUGW/view?usp=drivesdk
 - CV role variants now include controlled MBR/CFO-pack, OPEX/CAPEX, FY2017-indexed and LIVE_INTERNAL interview add-ons; GitHub and Drive copies are synchronized.
+
+- Block A is now formalized as a 20-row proposed design lock: [GitHub](../docs/BLOCK_A_DESIGN_LOCK_2026-08-30.md) · [Drive](https://drive.google.com/file/d/1VSYN59q7n90equWSSNg_GbbE5TUyFN2t/view?usp=drivesdk). It remains PROPOSED pending candidate approval; no real-company claim is introduced.
