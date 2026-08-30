@@ -168,6 +168,12 @@ jobs:
         run: |
           node scripts/validate_master_plan_evidence_matrix.mjs
 
+      - name: Validate external gate readiness
+        shell: bash
+        run: |
+          node scripts/validate_external_gate_readiness.mjs data/external_gate_readiness.json | tee external-gate-readiness-qa.txt
+          grep -F "External gate readiness QA: 10/10 checks PASS" external-gate-readiness-qa.txt
+
       - name: Validate customer profitability layer
         shell: bash
         run: |
