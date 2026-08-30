@@ -30,6 +30,12 @@
       "type": "github_csv",
       "path": "data/opex_headcount_planning_synthetic.csv",
       "role": "synthetic_OPEX_headcount_fact"
+    },
+    {
+      "name": "capex_fixed_asset_planning_synthetic",
+      "type": "github_csv",
+      "path": "data/capex_fixed_asset_planning_synthetic.csv",
+      "role": "synthetic_CAPEX_fixed_asset_fact"
     }
   ],
   "dimensions": [
@@ -186,6 +192,25 @@
         "opex_forecast_vnd"
       ],
       "evidence_class": "SIMULATED"
+    },
+    {
+      "name": "CAPEX_Projects",
+      "grain": "project x month",
+      "keys": [
+        "period",
+        "project_id"
+      ],
+      "measures": [
+        "budget_capex_vnd",
+        "actual_capex_vnd",
+        "forecast_capex_vnd",
+        "committed_capex_vnd",
+        "depreciation_vnd",
+        "expected_annual_contribution_vnd",
+        "payback_months",
+        "cash_payment_vnd"
+      ],
+      "evidence_class": "SIMULATED"
     }
   ],
   "relationships": [
@@ -252,6 +277,10 @@
     [
       "Calendar[YearMonth]",
       "OPEX_Headcount[period]"
+    ],
+    [
+      "Calendar[YearMonth]",
+      "CAPEX_Projects[period]"
     ]
   ],
   "pages": [
