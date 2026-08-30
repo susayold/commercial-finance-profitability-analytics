@@ -213,6 +213,13 @@ jobs:
           node scripts/validate_mch_financial_statement_analysis.mjs data/mch_financial_statement_analysis_2016_2025.csv
 
 
+      - name: Validate MCH FY2017 indexed evidence boundary
+        shell: bash
+        run: |
+          node scripts/validate_mch_fy2017_web_evidence.mjs \
+            data/mch_fy2017_web_index_evidence.csv \
+            reports/MCH_FY2017_WEB_INDEX_EVIDENCE_QA.md
+
       - name: Validate peer financial quality scorecard
         shell: bash
         run: |
