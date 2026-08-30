@@ -29,3 +29,6 @@ The workbench holds 59 OCR candidate rows spanning FY2016–FY2025. Candidates i
 ## Current project treatment
 
 MCH remains a strategic-context / intake candidate and is not included in the 240-row approved panel. The 80-row MCH intake template remains intentionally blocked. This preserves analytical integrity while keeping the OCR queue auditable and ready for a focused human review pass.
+
+## FY2024–FY2025 candidate layer
+A separate 16-row candidate dataset now captures all eight normalized metrics for FY2024 and FY2025 from the official consolidated statements, with statement-equation and balance-sheet tie-outs. It remains `pending_visual_signoff` and is not part of the approved panel. See [MCH statement candidate reconciliation](MCH_STATEMENT_CANDIDATE_RECONCILIATION_2024_2025.md) and the [Drive candidate Sheet](https://docs.google.com/spreadsheets/d/1L8sRGR-4DI3bxE7ODqzjo9Bq18d4UjvADVUPjUDZKBE/edit).
