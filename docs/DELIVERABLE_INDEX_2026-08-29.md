@@ -166,3 +166,24 @@
 - Formula chain: price change → elasticity volume response → new units → scenario contribution → contribution delta → break-even price change.
 - Six synthetic scenarios and seven validator checks PASS; two scenarios have negative CM delta and remain visible as decision warnings.
 - [Drive CSV](https://drive.google.com/file/d/1ztUZZTUNMoKIDiPsHheeVtPj0t7GPn5T/view) · [Drive validator](https://drive.google.com/file/d/1_WJXVSBdPOM4QCavzqFq5y9TF-3xuNWy/view) · [Drive workbook](https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit?usp=drivesdk)
+
+
+## Recruiter review path — refreshed 2026-08-30
+
+Use this order for a 15-minute Finance Analyst walkthrough:
+
+1. [Live recruiter site](https://vn-finance-fpa-case.sangkenny200.chatgpt.site) — start with the decision layer and evidence boundary.
+2. [VietNova FP&A v2 model](https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit) — open Executive Output, PVM, profitability, working capital and Checks.
+3. [Monthly Business Review pack](../reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md) · [Drive native pack](https://docs.google.com/document/d/1C7joqU6Dsyued-Zc5HrFnrMXiLW3Bkks0iaevLcVbNs/edit?usp=drivesdk) — show KPI call, bridge, scenario boundary and action tracker.
+4. [Management Recommendation Register](../reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md) · [Drive native register](https://docs.google.com/document/d/14dQcHGVRLWdVeVZ5faigCk8G15B5tbib_Q5qr87HhXU/edit?usp=drivesdk) — show owner, value equation, guardrail and review date.
+5. [Finance Analyst KPI Dictionary](../docs/FINANCE_ANALYST_KPI_DICTIONARY.md) · [Drive native dictionary](https://docs.google.com/document/d/1Fh2HWNnQ5b3vdCFaUfwfNEIwM9i8T9gDlgYYkrEUh7s/edit?usp=drivesdk) — prove denominator, grain, evidence class and control discipline.
+6. [Battle Cards v2](../docs/BATTLE_CARDS_V2.md) · [Drive native cards](https://docs.google.com/document/d/1gmyvvRhvAaxdYcuEAyXA15r1r5XKx7mNxyQLN5qGA-8/edit?usp=drivesdk) — convert analysis into commercial negotiation decisions.
+7. [Monthly close calendar / RACI](../docs/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR.md) · [Drive native calendar](https://docs.google.com/document/d/1OdG_wEBHp0Ho8CxuItYp68hYelavC5V6up4qd-lDR4Y/edit?usp=drivesdk) — explain how the work runs every close.
+8. [MCH financial-statement analysis](../reports/MCH_FINANCIAL_STATEMENT_ANALYSIS_2026-08-30.md) and [M&A screen](../docs/MNA_ACCRETION_DILUTION.md) — use as public-finance and strategic stretch only.
+
+## Current release boundaries
+
+- VietNova operating detail is SIMULATED; executive values are PROXY_DERIVED until live internal evidence exists.
+- MCH/VNM/QNS/KDC figures are OBSERVED/DERIVED where stated; basis-break caveats remain visible.
+- Gate A (real internal pre-close snapshot) and Gate B (native Power BI Desktop QA-01–QA-18) remain open.
+- Candidate-specific CV fields must be replaced with real contact, education and experience facts before application.
