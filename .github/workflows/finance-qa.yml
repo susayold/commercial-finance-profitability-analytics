@@ -164,3 +164,9 @@ jobs:
         shell: bash
         run: |
           node scripts/validate_mch_financial_statement_analysis.mjs data/mch_financial_statement_analysis_2016_2025.csv
+
+
+      - name: Validate peer financial quality scorecard
+        shell: bash
+        run: |
+          node scripts/validate_peer_financial_quality_scorecard.mjs data/peer_financial_quality_scorecard_2020_2025.csv
