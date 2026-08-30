@@ -95,6 +95,13 @@ try {
   if (directQueryOutput) directQueryCheck.output_tail = directQueryOutput.split(/\r?\n/).slice(-6).join('\n');
   result.checks.push(directQueryCheck);
   if (directQuery.status !== 0) result.status = 'FAIL';
+
+  const directQueryMapping = spawnSync(python, ['scripts/validate_directquery_mapping.py'], { cwd: root, encoding: 'utf8' });
+  const directQueryMappingOutput = `${directQueryMapping.stdout ?? ''}${directQueryMapping.stderr ?? ''}`.trim();
+  const directQueryMappingCheck = { name: 'directquery_mapping', status: directQueryMapping.status === 0 ? 'PASS' : 'FAIL' };
+  if (directQueryMappingOutput) directQueryMappingCheck.output_tail = directQueryMappingOutput.split(/\r?\n/).slice(-6).join('\n');
+  result.checks.push(directQueryMappingCheck);
+  if (directQueryMapping.status !== 0) result.status = 'FAIL';
 } finally {
   fs.rmSync(transient, { recursive: true, force: true });
 }

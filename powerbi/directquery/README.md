@@ -16,6 +16,8 @@ This folder is the production migration path for automatic Power BI page refresh
 - `../DIRECTQUERY_READINESS.json`: machine-readable migration gates and ownership fields.
 - `../docs/POWER_BI_REFRESH_ARCHITECTURE.md`: current Import contract and claim boundary.
 - `PRODUCTION_ACCEPTANCE_MATRIX.md`: gate-by-gate cloud, Desktop, Service and Automatic Page Refresh acceptance criteria.
+- `DIRECTQUERY_MIGRATION_CONTRACT.json`: explicit 15-table Import-to-DirectQuery mapping, runtime connection contract, freshness fields and preservation counts.
+- `../../scripts/validate_directquery_mapping.py`: structural check that the mapping, DDL declarations and PBIP table files agree before a Desktop migration.
 
 ## Migration sequence
 
@@ -28,6 +30,10 @@ This folder is the production migration path for automatic Power BI page refresh
 7. Publish to a workspace with an appropriate capacity, configure the data-source credentials and gateway/private endpoint as required, then enable Automatic Page Refresh on the Executive Output page.
 8. Measure p50/p95 visual query latency, source CPU, refresh failure rate and data freshness. Set the page interval from observed capacity—not from a portfolio assumption.
 9. Run the native QA-01–QA-18 matrix plus a two-user concurrency test. Only then change `native_desktop_qa` and `realtime_status` from `PENDING` to an evidence-backed status.
+
+Before step 6, run `python scripts/validate_directquery_mapping.py`. It fails
+closed if a report table is missing, a source is outside the `finance` schema,
+the PBIP table set drifts, or the operational freshness fields are not explicit.
 
 ## Freshness contract
 

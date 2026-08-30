@@ -61,6 +61,12 @@ For automatic page refresh, migrate the fact tables to a supported DirectQuery s
 
 The concrete migration pack is in `powerbi/directquery/`: it includes an Azure SQL/Fabric-compatible schema, query-path indexes, a transactional SQL Server-compatible loader, a freshness/control query and machine-readable external gates in `powerbi/DIRECTQUERY_READINESS.json`. The loader is dry-run by default and records a source hash, row counts, batch status and UTC watermark in `finance.Refresh_Control` when explicitly applied.
 
+`powerbi/directquery/DIRECTQUERY_MIGRATION_CONTRACT.json` is the explicit
+15-table mapping for the migration. Run
+`python scripts/validate_directquery_mapping.py` before changing storage mode;
+it checks that the mapping, DDL and PBIP table files agree and that the
+37-measure/23-relationship/6-page preservation counts remain locked.
+
 For a published Import dataset, `scripts/trigger_powerbi_service_refresh.py` provides a separate on-demand orchestration path: it can POST a refresh request and poll the dataset's refresh history, using a caller-supplied `PBI_ACCESS_TOKEN`. It is dry-run by default and does not change the realtime boundary; replacing CSVs plus an Import refresh is still not DirectQuery Automatic Page Refresh.
 
 The service helper is intentionally separate from the DirectQuery migration:

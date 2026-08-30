@@ -22,6 +22,7 @@ The repository now includes generated native source under `powerbi/native/` and 
 - `reports/POWER_BI_WATCHER_TWO_BATCH_QA_2026-08-31.md` records a two-batch watcher test where the contract hash changed and the target DataRoot updated from 121 to 122 units.
 - See `docs/POWER_BI_REFRESH_ARCHITECTURE.md` for the exact refresh contract and the DirectQuery path for true real-time behavior.
 - See `powerbi/directquery/README.md`, `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`, `powerbi/directquery/VNFinance_DirectQuery_Health.sql`, `scripts/load_directquery_sqlserver.py` and `scripts/check_directquery_source.ps1` for the database migration package; `powerbi/DIRECTQUERY_READINESS.json` keeps the realtime claim gated until measured evidence exists.
+- `powerbi/directquery/DIRECTQUERY_MIGRATION_CONTRACT.json` and `scripts/validate_directquery_mapping.py` lock the 15-table mapping and preserve the 37-measure/23-relationship/6-page topology before switching storage mode.
 - Rebuild both source formats with `scripts/build_powerbi_refreshable_project.py` and validate the package with `scripts/validate_powerbi_refreshable_project.py`.
 - Validate any replacement dataset first with `scripts/validate_powerbi_input_contract.py`; the CI workflow validates both the committed fixture and the generated package before package QA.
 - On a Windows execution host, run `scripts/powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot <folder>` to check Desktop installation, package paths and input readiness before opening PBIP/PBIT.
