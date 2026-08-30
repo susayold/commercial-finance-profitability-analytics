@@ -1,18 +1,18 @@
 # MCH FY2017/FY2020 Source Verification Runbook
 
 Date: 2026-08-30  
-Purpose: close the remaining source-registry retrieval gap without upgrading an indexed URL into approved evidence.
+Purpose: close the remaining source-registry retrieval gap and record page-level evidence without upgrading an indexed URL into approved evidence.
 
 ## Current evidence boundary
 
-The approved MCH supplement covers FY2016–FY2025 (80 rows, eight metrics). FY2017 is validated from the audited FY2018 comparative/corresponding columns. The standalone FY2020 annual report is now archived from the official HNX-hosted signed PDF and classified `ARCHIVED_PENDING_REVIEW`; FY2017 remains `INDEXED_ONLY` because the official media endpoint still cannot be downloaded in this runtime. Neither year is promoted to standalone approved evidence until page-level review and tie-outs are complete.
+The approved MCH supplement covers FY2016–FY2025 (80 rows, eight metrics). FY2017 is validated from the audited FY2018 comparative/corresponding columns. The standalone FY2020 annual report is archived from the official HNX-hosted signed PDF, page-reviewed and promoted to `APPROVED`; FY2017 remains `INDEXED_ONLY` because the official media endpoint still cannot be downloaded in this runtime.
 
 ## Official indexed sources
 
 | Fiscal year | Official source | Indexed evidence | Current status |
 |---|---|---|---|
 | FY2017 | [Masan Consumer Annual Report 2017](https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf) | Search index identifies the annual report and contents, including audited financial statements | INDEXED_ONLY — verify file bytes and archive to Drive |
-| FY2020 | [Masan Consumer Annual Report 2020](https://owa.hnx.vn/ftp/cims/2021/3_W5/000000010261769_20210329_MSC_AR2020_Full_Lan_2_signed.pdf) | Official HNX-hosted signed PDF archived in Drive (67 pages; 8,940,859 bytes; SHA-256 recorded in source registry) | ARCHIVED_PENDING_REVIEW — complete page-level tie-out |
+| FY2020 | [Masan Consumer Annual Report 2020](https://owa.hnx.vn/ftp/cims/2021/3_W5/000000010261769_20210329_MSC_AR2020_Full_Lan_2_signed.pdf) | Official HNX-hosted signed PDF archived in Drive (67 pages; 8,940,859 bytes; SHA-256 recorded in source registry); consolidated statements page-reviewed and tied to the approved supplement | APPROVED — PDF pages 30–34 (printed pages 59–67) |
 
 The report landing pages are also retained: [MCH annual-report index](https://masanconsumer.com/quan-he-co-dong/bao-cao-thuong-nien/) and [2020 report page](https://masanconsumer.com/document/bao-cao-thuong-nien-2020/).
 
@@ -25,6 +25,10 @@ The report landing pages are also retained: [MCH annual-report index](https://ma
 5. Reconcile each extracted metric to the existing supplement. A source can be promoted only when (a) the year and entity match, (b) VND units are explicit, (c) statement totals tie, and (d) no gross/net or perimeter break is silently introduced.
 6. Run the repository QA runner and archive the resulting report. Keep the existing FY2017 comparative caveat unless the standalone report explicitly resolves it.
 
+## FY2020 page-level review record
+
+The archived signed HNX PDF was reviewed at statement level. PDF pages 30–34 (printed pages 59–67) show the consolidated balance sheet, income statement and indirect cash-flow statement in VND. The following lines tie to the FY2016–FY2025 supplement (rounded to VND bn): net revenue 23,342.7345; gross profit 9,919.2141; operating profit 5,406.9115; PBT 5,391.0278; PAT 4,597.5713; total assets 25,533.4066; equity 14,282.9848; CFO 4,678.3385. Statement totals reconcile: gross profit = net revenue − cost of sales; PBT bridges operating profit with finance/associate/other items; PAT bridges PBT with current/deferred tax; total assets = total resources; CFO equals cash-flow code 20. This supports APPROVED for FY2020 only. FY2017 remains comparative/corresponding-column evidence.
+
 ## Required source-log fields
 
 `company, fiscal_year, report_type, official_url, drive_file_id, retrieved_at_utc, sha256, page_income_statement, page_balance_sheet, page_cash_flow, entity_scope, currency_unit, source_status, reviewer, review_note`
@@ -36,7 +40,7 @@ The report landing pages are also retained: [MCH annual-report index](https://ma
 - `APPROVED`: page-level review and tie-outs pass; source may support the approved supplement.
 - `REJECTED`: wrong entity/year, inaccessible or non-official source, or failed tie-out.
 
-Until both years reach `APPROVED`, do not claim a standalone annual-report citation for FY2017/FY2020 and do not overwrite the existing FY2017 comparative provenance.
+Until FY2017 reaches `APPROVED`, do not claim a standalone annual-report citation for FY2017 or overwrite its comparative provenance. FY2020 may be cited as an approved standalone source using the page anchors above.
 
 ## Recruiter-safe wording while open
 
@@ -45,8 +49,9 @@ Until both years reach `APPROVED`, do not claim a standalone annual-report citat
 ## Acceptance checklist
 
 - [x] FY2020 official PDF bytes archived in Drive; FY2017 remains pending retrieval (not GitHub)
-- [ ] SHA-256 and file metadata recorded
-- [ ] Statement pages and line labels recorded
-- [ ] Eight metrics tie to source and existing supplement
-- [ ] Source registry status updated by a reviewed commit
-- [ ] QA runner green and release overlay updated
+- [x] FY2020 SHA-256 and file metadata recorded
+- [x] FY2020 statement pages and line labels recorded (PDF 30–34 / printed 59–67)
+- [x] FY2020 eight metrics tie to source and existing supplement
+- [x] FY2020 source registry status updated by a reviewed commit
+- [x] QA runner green and release overlay updated
+- [ ] FY2017 official PDF bytes archived and page-reviewed
