@@ -11,13 +11,13 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - Operating model: deterministic synthetic SKU-channel-customer ledger calibrated to public economics
 - Outputs: Excel, Power BI, CFO memo, management deck, battle cards and recruiter-first website
 
-## Current release index — 2026-08-30
+## Current release index — 2026-08-31
 
-- Production site: [V13 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
-- Latest GitHub main commit: `9fea918fc461ea9b5e7e685aa4d0f9ed4c3c7e2a`
-- Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-30.md)
-- Current boundary: all finance, public-company, valuation, equity-research, CV and QA work is complete; Gate A genuine internal evidence and Gate B native Power BI Desktop evidence remain open.
-- The editable PBIP/PBIT phase is delivered; native `.pbix` Desktop evidence remains an explicit environment gate.
+- Production site: [V16 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
+- Latest GitHub main commit: `9cf71eff2c10430852ae7dd35837d1e699c61c24`
+- Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-31.md)
+- Current boundary: the finance, public-company, valuation, equity-research, CV and editable Power BI workstreams are delivered; Gate A genuine internal evidence, formal full QA-01–QA-18 sign-off and production DirectQuery/APR evidence remain open.
+- A compact native `.pbix` has been opened, refreshed, saved, reopened and data-swap tested in Desktop. The extended 20-table PBIP/PBIT is validated separately and is not silently promoted as an extended native PBIX.
 
 ## Current data foundation
 
@@ -30,8 +30,8 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - MCH audited consolidated financial statements: 2016-2025
 - Missing and rejected documents are recorded explicitly; gaps are never filled with unverified copies
 - VietNova synthetic v1.0.0: 36 months, 6,480 sales lines, 36 SKUs, 5 channels, 24 customers, 13 CSV tables + manifest; QA controls PASS (10,152 checks, 0 errors)
-- Power BI refresh fixture: `powerbi/data/current/` contains the 14 CSV inputs plus manifest/source-control metadata; it is mirrored in the Drive Power BI bundle.
-- Power BI data-swap runner: `scripts/prepare_powerbi_refresh.py` validates candidate CSVs, records file hashes/row counts and applies only the 14 contract files when invoked with `--apply`.
+- Power BI refresh fixture: `powerbi/data/current/` contains the 19-file extended CSV contract plus manifest/source-control metadata; the compact 14-file contract remains supported for the observed native PBIX.
+- Power BI data-swap runner: `scripts/prepare_powerbi_refresh.py` validates candidate CSVs, records file hashes/row counts and applies the selected compact or extended contract when invoked with `--apply`.
 - Power BI claim-boundary validator: `scripts/validate_powerbi_claim_boundary.py` keeps Import-mode, native-PBIX and DirectQuery/Automatic Page Refresh claims evidence-gated.
 - Native binary boundary: `powerbi/POWER_BI_NATIVE_BINARY_BOUNDARY.md` explains why model-containing projects require Desktop to produce a native `.pbix`.
 - Synthetic generator, ledger schema, hidden-truth event specification and QA validator are versioned in `scripts/` and `schemas/`
@@ -69,7 +69,7 @@ See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive
 
 Phase 1A complete: remote infrastructure, source archive, registry, synthetic operating ledger, MCH OCR review layer and executable Excel FP&A model v1.
 
-Current state: Excel v2, management memo/deck, recruiter site, peer-panel review layer, full VNM FY2006–FY2025 panel and Power BI semantic contract are delivered; only the genuine internal forecast snapshot (Gate A) and native PBIX/Desktop QA (Gate B) remain external next actions.
+Current state: Excel v2, management memo/deck, recruiter site, peer-panel review layer, full VNM FY2006–FY2025 panel, observed compact native PBIX and extended editable Power BI scope are delivered; only the genuine internal forecast snapshot (Gate A), formal full native QA matrix and production realtime acceptance remain external next actions.
 
 ## FP&A model v2 — full 28-tab finance analyst model
 
@@ -108,12 +108,13 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Normalized peer evidence layer: [approved long-form CSV](data/normalized_peer_panel_approved_2016_2025.csv), [KDC FY2024–FY2025 exact statement supplement](data/kdc_statement_metrics_2024_2025.csv), [MCH core-panel intake template (intentionally separate)](data/normalized_peer_panel_intake_template.csv), [methodology](docs/NORMALIZED_PEER_PANEL_METHODOLOGY.md), [validator](scripts/validate_normalized_peer_panel.mjs), [approved QA](reports/NORMALIZED_PEER_PANEL_QA.md) and [template QA](reports/NORMALIZED_PEER_PANEL_TEMPLATE_QA.md). [Drive native Sheet](https://docs.google.com/spreadsheets/d/11v8XpRNMCkaWkhqakjxh1Ao3E0yTP4cLP3Z3Jmg7Owg/edit?usp=drivesdk) · [Drive approved CSV](https://drive.google.com/file/d/10TEXjoohSV4J75TpmTFvoWt8nVXgPnrd/view) · [Drive KDC supplement](https://drive.google.com/file/d/16TZWVvN6XgVneG_jlubnHa9jeFhXZVqR/view) · [Drive MCH template](https://drive.google.com/file/d/1oZS-UL-Z1oDPH4QJOLH1_JToTE9bUqN-/view) · [Drive methodology](https://drive.google.com/file/d/1ezRb7YYtgX13suCgF7ztwWvAoeCuaTW3/view).
 
 ## Peer and Power BI follow-through
-## Peer and Power BI follow-through
 
 - Calculated peer summary: data/peer_analyst_summary.csv
 - Long-run comparability summary: data/peer_analyst_summary_longrun.csv
 - Power BI implementation status: docs/POWER_BI_IMPLEMENTATION_STATUS.md
-- Native PBIX creation is an explicit next action; no placeholder PBIX is claimed.
+- Compact native PBIX: [Desktop QA record](reports/POWER_BI_NATIVE_PBIX_DESKTOP_QA_2026-08-31.md) · [page-capture index](reports/POWER_BI_NATIVE_PAGE_CAPTURE_INDEX_2026-08-31.md) · [Drive binary](https://drive.google.com/file/d/15wJmM8POBNonWIfslSAdh8ihSUZZNc3W/view?usp=drivesdk).
+- Extended editable scope: [PBIP source](powerbi/native/VNFinance_PBIP_Extended/VNFinance_Commercial_Finance.pbip) · [PBIT package](powerbi/releases/Commercial_Finance_Profitability_Analytics_extended.pbit) · [20-table Desktop QA](reports/POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md) · [Drive PBIT](https://drive.google.com/file/d/1MhuMrznyyJcqXroyQ0nZeuZs8zjo9M8t/view).
+- Native PBIX formal QA-01–QA-18 sign-off and production realtime remain explicitly pending; the repository never infers them from source/package checks alone.
 
 ## Remote release status
 
@@ -490,6 +491,7 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 
 ## Latest website release
 
+- Site V16 is the current polish release: tighter page rhythm, responsive navigation, aligned cards, improved focus/hover states and corrected Valuation-to-footer flow. The Power BI card now reflects the extended 20-table / 60-measure scope.
 - Site V13 adds a direct recruiter-facing Download CV link to the canonical one-page PDF: [release record](reports/SITE_V13_RELEASE_RECORD_2026-08-30.md).
 - [Drive V13 release record](https://drive.google.com/file/d/1Lid3UcV8pPe2UG1X0----a9a9NXyucr2/view?usp=drivesdk) · [Drive V13 source archive](https://drive.google.com/file/d/1Z930nM9IGdePJtaDS0cJPYdpfZbWhGo2/view?usp=drivesdk)
 - Site V12 adds the Equity Research Rehearsal lens (thesis, earnings-quality bridge, scorecard, catalysts, risks and diligence map): [release record](reports/SITE_V12_RELEASE_RECORD_2026-08-30.md).
@@ -505,7 +507,7 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 
 ## External gate readiness
 
-The current release boundary is machine-checkable in the [readiness report](reports/EXTERNAL_GATE_READINESS.md), [readiness JSON](data/external_gate_readiness.json) and [10/10 QA](reports/EXTERNAL_GATE_READINESS_QA.md). Gate A and Gate B remain explicitly open until real internal forecast evidence and native Power BI Desktop evidence are supplied.
+The current release boundary is machine-checkable in the [readiness report](reports/EXTERNAL_GATE_READINESS.md), [readiness JSON](data/external_gate_readiness.json) and [10/10 QA](reports/EXTERNAL_GATE_READINESS_QA.md). Gate A remains open until real internal forecast evidence is supplied; native compact PBIX workflow evidence is observed, while formal full QA-01–QA-18 sign-off and production DirectQuery/APR remain open.
 
 Drive mirrors: [Gate readiness report](https://drive.google.com/file/d/19va7iv_Y2VqruqEtAIID2ptogyMXZWvF/view?usp=drivesdk) · [readiness JSON](https://drive.google.com/file/d/1v4FUyvjqmO7Iw1F8FCS-ebwKf43OcFTe/view?usp=drivesdk) · [QA](https://drive.google.com/file/d/1MBAe9s2geemTe1F9MmoX266TVAarfcxz/view?usp=drivesdk).
 

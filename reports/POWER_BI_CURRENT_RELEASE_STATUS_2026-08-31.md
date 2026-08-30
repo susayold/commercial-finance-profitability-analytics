@@ -9,10 +9,11 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Item | Current value |
 |---|---|
 | GitHub repository | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) |
-| Handoff commit | [`25f8278`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/25f827855feeec25ad1d3e187be7d987ead4e830) |
+| Handoff commit | [`25f8278`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/25f827855feeec25ad1d3e187be7d987ead4e830) — last fully gated handoff |
+| Current repository head | [`9cf71ef`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/9cf71eff2c10430852ae7dd35837d1e699c61c24) — site polish + extended-scope source/docs sync |
 | Latest validated CI | [Finance model QA](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127) — PASS |
-| Latest local release gate | `25f8278` — PASS; ten deterministic stages and Desktop preflight 14/14 |
-| Drive bundle | [VNFinance Power BI refreshable package](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) |
+| Latest local release gate | [Compact gate](POWER_BI_COMPACT_RELEASE_GATE_2026-08-31.json) + [extended gate](POWER_BI_EXTENDED_RELEASE_GATE_2026-08-31.json) — PASS; Desktop preflight 14/14 |
+| Drive bundle | [VNFinance Commercial Finance project archive](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) |
 | Native PBIX on Drive | [VNFinance Commercial Finance native PBIX](https://drive.google.com/file/d/15wJmM8POBNonWIfslSAdh8ihSUZZNc3W/view?usp=drivesdk) |
 | Power BI Desktop host | `D:\Po BI\bin\PBIDesktop.exe` |
 | Desktop version recorded by preflight | `2.157.879.0 (26.08)` |
@@ -34,7 +35,7 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Native page captures | Six report pages captured from the reopened PBIX; [capture index](POWER_BI_NATIVE_PAGE_CAPTURE_INDEX_2026-08-31.md) | PASS — visual evidence |
 | Row-level native QA coverage | [Partial evidence map](POWER_BI_NATIVE_QA_PARTIAL_EVIDENCE_2026-08-31.md) separates observed/source-backed rows from pending reviewer rows | PASS — scoped evidence |
 | Extended planning/evidence scope | [Extended Desktop QA](POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md); Scenario, OPEX, CAPEX, approved peers and review queue hydrated from 19-file DataRoot | PASS — extended PBIT/PBIP; native PBIX not claimed |
-| Native PBIX | Formal QA-01–QA-18 evidence sheet and full visual sign-off remain open | PENDING |
+| Native PBIX | Compact workflow observed; formal QA-01–QA-18 evidence sheet and full visual sign-off remain open | PENDING |
 | Production realtime | Requires cloud database, gateway/capacity and APR measurements | PENDING |
 
 ## Data replacement contract

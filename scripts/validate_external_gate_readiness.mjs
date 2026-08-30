@@ -12,8 +12,8 @@ add('gate_a_minimum', readiness.gate_a.minimum_live_rows_required >= 1, 'minimum
 add('gate_a_contracts', readiness.gate_a.template_contract === 'PASS' && readiness.gate_a.fixture_contract === 'PASS', 'template and fixture contracts pass');
 add('gate_a_blockers', Array.isArray(readiness.gate_a.blockers) && readiness.gate_a.blockers.length >= 3, 'blockers=' + readiness.gate_a.blockers.length);
 add('gate_b_pending', readiness.gate_b.status === 'PENDING_EXTERNAL_DESKTOP', readiness.gate_b.status);
-add('gate_b_scaffold_only', readiness.gate_b.pbip_source_scaffold_present === true && readiness.gate_b.native_pbix_present === false, 'PBIP scaffold=true; native_pbix=false');
-add('gate_b_visual_gap', readiness.gate_b.visual_evidence_rows_present === 0 && readiness.gate_b.minimum_visual_evidence_rows_required === 18, 'visual evidence=0/18');
+add('gate_b_native_observed', readiness.gate_b.pbip_source_scaffold_present === true && readiness.gate_b.native_pbix_present === true && typeof readiness.gate_b.native_pbix_sha256 === 'string' && readiness.gate_b.native_pbix_sha256.length === 64, 'PBIP scaffold + compact native PBIX observed');
+add('gate_b_visual_gap', readiness.gate_b.visual_evidence_rows_present > 0 && readiness.gate_b.visual_evidence_rows_present < readiness.gate_b.minimum_visual_evidence_rows_required && readiness.gate_b.minimum_visual_evidence_rows_required === 18, 'scoped visual evidence=' + readiness.gate_b.visual_evidence_rows_present + '/18; formal matrix remains open');
 add('gate_b_blockers', Array.isArray(readiness.gate_b.blockers) && readiness.gate_b.blockers.length >= 3, 'blockers=' + readiness.gate_b.blockers.length);
 const passed = checks.filter((x) => x.pass).length;
 const overall = checks.every((x) => x.pass);

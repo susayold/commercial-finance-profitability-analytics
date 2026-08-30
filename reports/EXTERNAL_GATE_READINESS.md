@@ -1,4 +1,4 @@
-# External Gate Readiness — 2026-08-30
+# External Gate Readiness — 2026-08-31
 
 **Overall status:** REVIEW-READY / NOT PRODUCTION
 
@@ -22,16 +22,16 @@ The repository may demonstrate mechanics with `DEMO_FIXTURE_ONLY` and public-gui
 **Status:** PENDING_EXTERNAL_DESKTOP
 
 - Portable PBIP source scaffold: present.
-- Native `.pbix`: absent.
-- Visual evidence captured: 0/18.
-- Required evidence: Power BI Desktop refresh, QA-01 through QA-18 execution, visual tie-out to Excel, saved native PBIX and archived screenshots/PDF.
+- Compact native `.pbix`: observed and archived; its SHA-256 is recorded in `data/external_gate_readiness.json` and the native Desktop QA record.
+- Page-render evidence captured: 6/18 required visual QA rows (one capture for each report page).
+- Remaining evidence: QA-01 through QA-18 observed values, reviewer/timestamp, visual tie-out to Excel and a separately reviewed extended-scope native PBIX if that scope is promoted.
 
-The portable semantic contract and DAX are reviewable design evidence; they do not constitute a native PBIX claim.
+The portable semantic contract and DAX are reviewable design evidence; the compact binary is observed workflow evidence, while the extended package is still not claimed as a native PBIX.
 
 ## Decision rule
 
 The current allowed claim is:
 
-> Synthetic rehearsal and portable source/QA design are review-ready; external gates remain open.
+> Synthetic rehearsal, editable source and a compact native PBIX workflow are review-ready; formal QA-01–QA-18 and production gates remain open.
 
 The machine-readable source is [external_gate_readiness.json](../data/external_gate_readiness.json), validated by [validate_external_gate_readiness.mjs](../scripts/validate_external_gate_readiness.mjs).

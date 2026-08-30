@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-30",
+  "as_of": "2026-08-31",
   "overall_status": "REVIEW_READY_NOT_PRODUCTION",
   "gate_a": {
     "status": "PENDING_EXTERNAL_INPUT",
@@ -17,15 +17,17 @@
   },
   "gate_b": {
     "status": "PENDING_EXTERNAL_DESKTOP",
-    "native_pbix_present": false,
+    "native_pbix_present": true,
+    "native_pbix_scope": "compact_baseline",
+    "native_pbix_sha256": "DFA3EC096D46DF2DDCEDA9B3333FA5506FB98B8DE9414C5A792BFE558F301644",
     "pbip_source_scaffold_present": true,
     "qa_definitions_required": 18,
-    "visual_evidence_rows_present": 0,
+    "visual_evidence_rows_present": 6,
     "minimum_visual_evidence_rows_required": 18,
     "blockers": [
-      "Power BI Desktop execution is required",
-      "Native PBIX binary has not been archived",
-      "QA-01 through QA-18 visual evidence has not been captured"
+      "Formal QA-01 through QA-18 evidence rows still require observed values, reviewer and timestamp",
+      "The six page captures are scoped render evidence, not full visual tie-out",
+      "Extended 20-table scope still needs a separately reviewed native PBIX if promoted"
     ]
   },
   "release_policy": {

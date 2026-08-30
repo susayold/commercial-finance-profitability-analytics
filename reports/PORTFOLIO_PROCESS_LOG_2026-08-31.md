@@ -146,6 +146,27 @@ still need a real Power BI Desktop or cloud workspace.
     `reports/POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md`; no extended
     native PBIX claim was made, and the compact observed PBIX remains unchanged.
 
+33. Published the recruiter-site alignment polish as Sites version 16: the
+    page rhythm, max-widths, navigation overflow, card baselines, focus/hover
+    states, mobile controls and Valuation-to-footer order were corrected. The
+    Power BI card now reflects the extended 20-table / 60-measure scope. The
+    validated source was pushed to the Site repository, saved and deployed
+    owner-only at the existing production URL.
+
+34. Pushed the complete extended Power BI source/data/docs plus the site polish
+    to GitHub `main`, refreshed the Drive project archive in place and uploaded
+    the extended PBIT as a separate editable binary. The current repository
+    head is `9cf71ef`; the formal native QA and production realtime boundaries
+    remain unchanged.
+
+35. Reconciled the machine-readable external-gate readiness layer with the
+    evidence now present: the compact native PBIX is archived with its SHA-256
+    and six page-render captures are recorded as scoped evidence (6/18), while
+    the formal QA-01–QA-18 sign-off, extended native PBIX promotion and
+    production DirectQuery/APR acceptance remain pending. The readiness
+    validator and cross-platform Finance QA runner both return PASS without
+    weakening the no-overclaim release policy.
+
 ## Evidence boundaries
 
 | Capability | Current evidence | Claim |
