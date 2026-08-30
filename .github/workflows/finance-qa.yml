@@ -213,3 +213,9 @@ jobs:
             reports/MONTE_CARLO_RISK_OVERLAY_2026-08-30.md \
             data/monte_carlo_risk_overlay_2026-08-30.csv
 
+      - name: Validate operational driver tree and unit economics
+        shell: bash
+        run: |
+          node scripts/validate_operational_driver_tree.mjs \
+            docs/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS.md \
+            data/operational_driver_tree_unit_economics.csv
