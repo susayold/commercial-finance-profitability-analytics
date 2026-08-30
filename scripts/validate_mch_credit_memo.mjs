@@ -65,9 +65,9 @@ const fy2024 = byYear(2024);
 const fy2025 = byYear(2025);
 
 const close = (actual, expected, tolerance) => Math.abs(Number(actual) - expected) <= tolerance;
-check('FY2025 revenue tie-out', close(fy2025?.net_revenue_vnd_bn, 30556.536605941, 0.01), String(fy2025?.net_revenue_vnd_bn));
-check('FY2025 PAT tie-out', close(fy2025?.profit_after_tax_vnd_bn, 6764.148714587, 0.01), String(fy2025?.profit_after_tax_vnd_bn));
-check('FY2025 CFO tie-out', close(fy2025?.operating_cash_flow_vnd_bn, 2132.330611639, 0.01), String(fy2025?.operating_cash_flow_vnd_bn));
+check('FY2025 revenue tie-out', close(Number(fy2025?.net_revenue_vnd_bn) / 1e9, 30556.536605941, 0.01), `${fy2025?.net_revenue_vnd_bn} VND`);
+check('FY2025 PAT tie-out', close(Number(fy2025?.profit_after_tax_vnd_bn) / 1e9, 6764.148714587, 0.01), `${fy2025?.profit_after_tax_vnd_bn} VND`);
+check('FY2025 CFO tie-out', close(Number(fy2025?.operating_cash_flow_vnd_bn) / 1e9, 2132.330611639, 0.01), `${fy2025?.operating_cash_flow_vnd_bn} VND`);
 check('FY2025 CFO/PAT recompute', close(fy2025?.cfo_to_pat_pct, Number(fy2025?.operating_cash_flow_vnd_bn) / Number(fy2025?.profit_after_tax_vnd_bn) * 100, 0.05), String(fy2025?.cfo_to_pat_pct));
 check('FY2024 CFO/PAT recompute', close(fy2024?.cfo_to_pat_pct, Number(fy2024?.operating_cash_flow_vnd_bn) / Number(fy2024?.profit_after_tax_vnd_bn) * 100, 0.05), String(fy2024?.cfo_to_pat_pct));
 const cagr = (Number(fy2025?.net_revenue_vnd_bn) / Number(fy2016?.net_revenue_vnd_bn)) ** (1 / 9) - 1;
