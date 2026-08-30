@@ -67,9 +67,15 @@ The CV package includes one primary one-page template, four role variants, an ev
 
 Durable code and documentation are pushed to GitHub. Durable reports, source archives, spreadsheets and the CV PDF are mirrored to the private Drive project folder. Temporary clones and build files are deleted after verification; no local working copy is part of the deliverable.
 
+### 8. Power BI refreshability continuation
+
+The Power BI work was continued through the environment boundary without overstating a native binary. The package now contains a real editable PBIP/PBIR/TMDL project, a compiled PBIT, 14 `DataRoot`-bound CSV partitions, a 78/78 replacement-input contract gate, a 29/29 package gate, a 30/30 DirectQuery readiness gate, and a detailed Desktop runbook/checklist. A controlled source mutation is proven to preserve schema/row count and detect a +VND 1,000,000 delta; the remaining native test is to open Desktop, refresh the canvas and capture visual evidence.
+
+The latest remote sync is GitHub commit `1eb75af` with CI run `33315590670` PASS. The Drive bundle was updated in place at file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX` and includes the PBIP/PBIT source, current synthetic CSVs, DirectQuery schema, validators, CI workflow and runbook/checklist. The bundle is remote-authoritative; the temporary clone used for packaging was deleted after verification.
+
 ## Deliberate stop point
 
-This process stops **before native Power BI Desktop execution**. The portable PBIP contract, DAX, six-page design, runbook and QA-01–QA-18 matrix are complete, but no placeholder `.pbix` is claimed. Native PBIX creation, visual reconciliation and screenshot evidence require a separate plan and will not be started automatically.
+This process stops **before native Power BI Desktop execution**. The portable PBIP contract, DAX, six-page design, refreshable PBIT, runbook and QA-01–QA-18 matrix are complete, but no placeholder `.pbix` is claimed. Native PBIX creation, visual reconciliation and screenshot evidence still require Power BI Desktop on an execution host.
 
 Gate A is also not promoted to live: it still needs one genuine approved internal pre-close forecast snapshot with immutable version, cutoff, close date, actual-availability date, approver and source evidence. The synthetic fixture remains useful for testing the pipeline but cannot support an observed Bias/WAPE claim.
 
@@ -77,4 +83,4 @@ Gate A is also not promoted to live: it still needs one genuine approved interna
 
 1. Supply candidate-specific CV fields and freeze the recruiter-facing wording.
 2. If available, submit the redacted Gate A evidence packet and run the live validator.
-3. Stop here and jointly plan the native Power BI Desktop phase before any PBIX work begins.
+3. Run the external Desktop checklist when Power BI Desktop is available; do not mark the native PBIX or realtime gates PASS until the evidence is archived.

@@ -17,6 +17,14 @@ Turn the v2 Excel model into a reviewer-ready Power BI semantic model with an ex
 
 The migration path is now source-controlled under `powerbi/directquery/`. It includes a finance-schema DDL for Azure SQL/SQL Server/Fabric, query-path indexes, freshness/incident controls and machine-readable gates. The standalone readiness validator passes 30/30 checks. It is ready for database provisioning but does not claim a live connection, service capacity or a measured refresh interval.
 
+## Desktop runbook and remote bundle update — 2026-08-30
+
+The Desktop execution material is now aligned to the generated package rather than the earlier scaffold. `powerbi/POWER_BI_DESKTOP_RUNBOOK.md` documents both PBIP editing and PBIT instantiation, the `DataRoot` binding, all 14 CSV filenames, contract validation, the controlled +VND 1,000,000 data-swap, native QA-01–QA-18 and the DirectQuery migration gate. `powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md` is the evidence checklist for the external execution host.
+
+The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and now includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema and CI workflow. The current bundle is 969,639 bytes with SHA-256 `504341EF4F195542194CBFEBB8169F43B10F1D40F7FAC8711AA94217CCBCF1F5`. GitHub Actions run `33315590670` passed on commit `1eb75af`.
+
+The authoritative generated PBIP/PBIT inventory is 15 tables, 37 measures, 23 relationships, six pages and 39 visual containers. The older Excel-oriented names in the historical sections below are retained as model-contract context; use the PBIP/PBIT inventory and manifest when opening Desktop.
+
 ## Model contract
 
 ### Fact tables
