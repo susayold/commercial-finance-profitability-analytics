@@ -41,7 +41,7 @@ The first executable model is now available:
 ## Start here
 
 - [Full-depth execution blueprint](docs/FULL_DEPTH_EXECUTION_BLUEPRINT.md)
-- [Source registry](data/source_registry.csv)
+- [Source registry](data/source_registry.csv) · [Drive snapshot (FY2020 APPROVED)](https://drive.google.com/file/d/1llxbbQSPlc4xmAL-kf3NgZdyZzjJbHix/view?usp=drivesdk)
 - [.gitignore and storage guardrails](.gitignore)
 
 ## Evidence policy
