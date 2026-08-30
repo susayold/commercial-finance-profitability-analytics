@@ -362,3 +362,8 @@ Validator maintenance note: the KPI dictionary validator threshold was aligned t
 
 - [Battle cards v2](docs/BATTLE_CARDS_V2.md) · [Decision-matrix CSV](data/battle_cards_v2.csv) · [Validator](scripts/validate_battle_cards_v2.mjs) · [QA](reports/BATTLE_CARDS_V2_QA.md)
 - [Drive native cards](https://docs.google.com/document/d/1gmyvvRhvAaxdYcuEAyXA15r1r5XKx7mNxyQLN5qGA-8/edit?usp=drivesdk) · [Drive native Sheet](https://docs.google.com/spreadsheets/d/1PYlnzqPs4vr9PFKKULBvljEaEkMrvlEuWJpI7pGnqfY/edit?usp=drivesdk) · [Drive CSV](https://drive.google.com/file/d/1OkJ9d5_h2kRqDmdVefBLdU2uBQIFCx93/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1Oz4mEQQ-Erhu-oIfcWr8LBB3HKvKD71d/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/15yk8sBtQKubQRudZwnWv2DVzuZEuaF91/view?usp=drivesdk)
+
+
+## Master-plan coverage audit refresh
+
+The [evidence matrix](data/master_plan_evidence_matrix.csv) and [QA report](reports/MASTER_PLAN_EVIDENCE_MATRIX_QA.md) now include the MBR pack, KPI dictionary, Management Recommendation Register and Battle Cards v2. Coverage remains 28 rows: 20 mandatory core, 3 conditional, 1 strategic stretch, 2 external gates and 2 recruiting deliverables. All core rows are complete or caveated; Gate A/B remain pending external evidence.
