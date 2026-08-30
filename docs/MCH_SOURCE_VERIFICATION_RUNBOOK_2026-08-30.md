@@ -44,7 +44,7 @@ Until FY2017 reaches `APPROVED`, do not claim a standalone annual-report citatio
 
 ## Recruiter-safe wording while open
 
-“MCH FY2016–FY2025 statement supplement is approved with explicit FY2017 comparative provenance; two standalone annual-report attachment URLs are indexed in the source registry but remain retrieval-gated pending Drive archive and page review.”
+“MCH FY2016–FY2025 statement supplement is approved with explicit FY2017 comparative provenance; FY2020 standalone annual-report evidence is approved with page anchors, while FY2017 remains retrieval-gated pending official PDF archive and page review.”
 
 ## Acceptance checklist
 
