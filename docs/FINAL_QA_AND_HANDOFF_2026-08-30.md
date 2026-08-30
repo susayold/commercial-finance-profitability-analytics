@@ -213,3 +213,7 @@ The leakage-safe accuracy report builder and archived fixture report are now ava
 ## CV evidence refresh (2026-08-30)
 
 The one-page CV V2 and evidence map now reference the operational driver tree and PBIP source-coherence preflight without claiming realized impact, live forecast accuracy or native PBIX completion. Drive CV copy: https://drive.google.com/file/d/1EpA1i3aRlXNwweWnf1v-M_PvjkkjIqrj/view?usp=drivesdk
+
+## OPEX and headcount planning handoff (2026-08-30)
+
+The FP&A scope now includes a detailed cost-center workforce/OPEX bridge with scenario rules, guardrails and monthly cadence. GitHub Actions validates the arithmetic and evidence boundary; the fixture is synthetic and must be replaced with HRIS/payroll/GL extracts for production use.
