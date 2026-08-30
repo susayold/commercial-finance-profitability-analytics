@@ -1,0 +1,17 @@
+import fs from "node:fs";
+const report=fs.readFileSync(process.argv[2]||"docs/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS.md","utf8");
+const csv=fs.readFileSync(process.argv[3]||"data/operational_driver_tree_unit_economics.csv","utf8").trim().split(/\r?\n/);
+const checks=[]; const must=(n,o)=>checks.push({n,ok:Boolean(o)});
+must("report_nontrivial",report.length>7500);
+for(const p of ["## 1. Revenue driver tree","## 2. Gross-to-net waterfall","## 3. Contribution-profit tree","## 4. Inventory and service tree","## 5. Customer and AR tree","## 6. D2C unit-economics tree","## 7. Conditional owned-retail branch"])must(p,report.includes(p));
+must("core_formulas",["Net Revenue","Contribution Profit","CCC = DSO + DIO − DPO","LTV / CAC","Payback orders"].every(v=>report.includes(v)));
+must("conditional_branch",report.includes("not activated")&&report.includes("Do not force store metrics"));
+must("header",csv[0]==="domain,node,formula,grain,owner,guardrail,decision_use,evidence_class");
+const rows=csv.slice(1).map(x=>x.split(","));
+must("row_count",rows.length===22);
+must("required_fields",rows.every(r=>r.length===8&&r.every(Boolean)));
+must("domains",["Revenue","Gross-to-net","Contribution","Inventory","Working capital","Customer","D2C","Retail"].every(d=>rows.some(r=>r[0]===d)));
+must("boundary",report.includes("synthetic")&&report.includes("not evidence of realized"));
+const failed=checks.filter(c=>!c.ok); for(const c of checks) console.log((c.ok?"PASS ":"FAIL ")+c.n);
+console.log("Overall status: "+(failed.length?"FAIL":"PASS")+" ("+(checks.length-failed.length)+"/"+checks.length+" checks passed)");
+if(failed.length)process.exit(1);
