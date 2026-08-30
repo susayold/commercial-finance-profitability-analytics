@@ -374,3 +374,9 @@ The [evidence matrix](data/master_plan_evidence_matrix.csv) and [QA report](repo
 - [Operating calendar and RACI](docs/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR.md) · [Cadence CSV](data/monthly_close_forecast_business_partnering_calendar.csv) · [Validator](scripts/validate_monthly_close_calendar.mjs) · [QA](reports/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR_QA.md)
 - [Drive native calendar](https://docs.google.com/document/d/1OdG_wEBHp0Ho8CxuItYp68hYelavC5V6up4qd-lDR4Y/edit?usp=drivesdk) · [Drive native Sheet](https://docs.google.com/spreadsheets/d/1ZQgxnPRXgfSkp-Eml35X2ql074BqUz8m3FVsBsr9MPc/edit?usp=drivesdk) · [Drive CSV](https://drive.google.com/file/d/16rUpEGqaIM6gcR4ooVFCgAXFQ476GDUI/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1FFZmB5GgsOKYXn3CoR2VF-L0myeNBz5O/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1cJ2ECf-tocWCmkZYGNmOe1TNMKW469GB/view?usp=drivesdk)
 - The schedule covers WD-5 forecast freeze through WD+5 publication, with RACI, SLA, subledger tie-outs, PVM review, CFO sign-off and escalation rules.
+
+
+## Recruiter deliverable index refresh
+
+- [15-minute review path and release boundaries](docs/DELIVERABLE_INDEX_2026-08-29.md) · [Drive refresh copy](https://drive.google.com/file/d/1s60auQyHV58bWy2mjlGSuAtI5KLVMJVt/view?usp=drivesdk)
+- The review path now orders site → FP&A model → MBR → recommendation register → KPI dictionary → battle cards → close calendar → public/strategic extensions.
