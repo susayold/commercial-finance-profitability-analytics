@@ -5,7 +5,7 @@ Purpose: close the remaining source-registry retrieval gap and record page-level
 
 ## Current evidence boundary
 
-The approved MCH supplement covers FY2016–FY2025 (80 rows, eight metrics). FY2017 is validated from the audited FY2018 comparative/corresponding columns. The standalone FY2020 annual report is archived from the official HNX-hosted signed PDF, page-reviewed and promoted to `APPROVED`; FY2017 remains `INDEXED_ONLY` because the official media endpoint still cannot be downloaded in this runtime.
+The approved MCH supplement covers FY2016–FY2025 (80 rows, eight metrics). FY2017 is validated from the audited FY2018 comparative/corresponding columns. The standalone FY2020 annual report is archived from the official HNX-hosted signed PDF, page-reviewed and promoted to `APPROVED`; FY2017 remains `INDEXED_ONLY` because the official company PDF is discoverable in search but direct byte retrieval currently fails with a TLS/404 response in this runtime.
 
 ## Official indexed sources
 
@@ -28,6 +28,10 @@ The report landing pages are also retained: [MCH annual-report index](https://ma
 ## FY2020 page-level review record
 
 The archived signed HNX PDF was reviewed at statement level. PDF pages 30–34 (printed pages 59–67) show the consolidated balance sheet, income statement and indirect cash-flow statement in VND. The following lines tie to the FY2016–FY2025 supplement (rounded to VND bn): net revenue 23,342.7345; gross profit 9,919.2141; operating profit 5,406.9115; PBT 5,391.0278; PAT 4,597.5713; total assets 25,533.4066; equity 14,282.9848; CFO 4,678.3385. Statement totals reconcile: gross profit = net revenue − cost of sales; PBT bridges operating profit with finance/associate/other items; PAT bridges PBT with current/deferred tax; total assets = total resources; CFO equals cash-flow code 20. This supports APPROVED for FY2020 only. FY2017 remains comparative/corresponding-column evidence.
+
+## FY2017 retrieval attempt record
+
+On 2026-08-30 the official Masan Consumer URL `https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf` was confirmed by the company site/search index and opened as an indexed PDF result. Direct download attempts from this runtime returned a TLS protocol error (PowerShell/cURL) or HTTP 404 (Node fetch), so no bytes, hash or page count were recorded. The source remains `INDEXED_ONLY`; the FY2018 audited comparative/corresponding columns remain the approved FY2017 provenance. No aggregator copy was substituted.
 
 ## Required source-log fields
 
