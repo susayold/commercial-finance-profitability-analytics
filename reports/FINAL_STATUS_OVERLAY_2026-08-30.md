@@ -53,3 +53,8 @@ The official FY2017 and FY2020 annual-report URLs are now accompanied by a detai
 ## MCH financial-statement analysis extension
 
 A calculated FY2016–FY2025 financial-statement analysis layer is now archived: margin, average-asset turnover, equity multiplier, DuPont ROE, ROA, average-equity ROE, CFO/revenue and debt/equity proxy. The validator passes 11/11 controls. FY2025 CFO/revenue is 6.98% and FY2024 ROE is explicitly flagged for equity-base review; no causal or valuation claim is added. Drive report: https://docs.google.com/document/d/1FgZurJC5pqdAwn9_jISfnujGavFtZAiXQl1klXsHMqQ/edit?usp=drivesdk.
+
+
+## Peer financial-quality scorecard extension
+
+A 21-row VNM/QNS/KDC scorecard now derives FY2020–FY2025 revenue/asset CAGR, FY2025 profitability, equity ratio and CFO/PAT where source components exist. Validator status is 11/11 PASS. VNM is the only trend candidate; QNS/KDC remain context-only with basis/perimeter flags and controlled blanks. See [scorecard](../reports/PEER_FINANCIAL_QUALITY_SCORECARD_2026-08-30.md) and [QA](../reports/PEER_FINANCIAL_QUALITY_SCORECARD_QA.md).
