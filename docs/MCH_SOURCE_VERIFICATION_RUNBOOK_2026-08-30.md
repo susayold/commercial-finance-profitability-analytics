@@ -5,20 +5,20 @@ Purpose: close the remaining source-registry retrieval gap without upgrading an 
 
 ## Current evidence boundary
 
-The approved MCH supplement covers FY2016–FY2025 (80 rows, eight metrics). FY2017 is validated from the audited FY2018 comparative/corresponding columns. The source registry still marks the standalone FY2017 and FY2020 annual-report attachments as `GAP / OFFICIAL_ATTACHMENT_UNAVAILABLE` because the runtime download check returned an HTTP 404. This runbook preserves the official indexed URLs and defines the evidence needed before changing the status.
+The approved MCH supplement covers FY2016–FY2025 (80 rows, eight metrics). FY2017 is validated from the audited FY2018 comparative/corresponding columns. The standalone FY2020 annual report is now archived from the official HNX-hosted signed PDF and classified `ARCHIVED_PENDING_REVIEW`; FY2017 remains `INDEXED_ONLY` because the official media endpoint still cannot be downloaded in this runtime. Neither year is promoted to standalone approved evidence until page-level review and tie-outs are complete.
 
 ## Official indexed sources
 
 | Fiscal year | Official source | Indexed evidence | Current status |
 |---|---|---|---|
-| FY2017 | [Masan Consumer Annual Report 2017](https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf) | Search index identifies the annual report and contents, including audited financial statements | GAP — verify file bytes and archive to Drive |
-| FY2020 | [Masan Consumer Annual Report 2020](https://masanconsumer.com/wp-content/uploads/2021/03/Bao-cao-thuong-nien-nam-2020.pdf) | Search index identifies the annual report and report pages | GAP — verify file bytes and archive to Drive |
+| FY2017 | [Masan Consumer Annual Report 2017](https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf) | Search index identifies the annual report and contents, including audited financial statements | INDEXED_ONLY — verify file bytes and archive to Drive |
+| FY2020 | [Masan Consumer Annual Report 2020](https://owa.hnx.vn/ftp/cims/2021/3_W5/000000010261769_20210329_MSC_AR2020_Full_Lan_2_signed.pdf) | Official HNX-hosted signed PDF archived in Drive (67 pages; 8,940,859 bytes; SHA-256 recorded in source registry) | ARCHIVED_PENDING_REVIEW — complete page-level tie-out |
 
 The report landing pages are also retained: [MCH annual-report index](https://masanconsumer.com/quan-he-co-dong/bao-cao-thuong-nien/) and [2020 report page](https://masanconsumer.com/document/bao-cao-thuong-nien-2020/).
 
 ## Closure procedure
 
-1. Open the official PDF URL in a normal browser session. If the CDN returns 404, use the corresponding official landing page's download control; do not substitute an aggregator.
+1. Open the official PDF URL in a normal browser session. For FY2020, use the archived HNX signed PDF in Drive; for FY2017, use the Masan Consumer landing-page download control if the CDN returns a protocol/404 error; do not substitute an aggregator.
 2. Save the received PDF directly into the private Drive project root under `01_Raw_Reports/MCH/` with the naming convention `MCH_Annual_Report_FY2017.pdf` or `MCH_Annual_Report_FY2020.pdf`.
 3. Record Drive file ID, MIME type, byte size, retrieval timestamp and SHA-256 in `data/source_registry.csv` and the Drive source log.
 4. Page-review the consolidated income statement, balance sheet and cash-flow statement. Record page numbers and the exact Vietnamese line labels for the eight approved metrics.
@@ -44,7 +44,7 @@ Until both years reach `APPROVED`, do not claim a standalone annual-report citat
 
 ## Acceptance checklist
 
-- [ ] Official PDF bytes archived in Drive (not GitHub)
+- [x] FY2020 official PDF bytes archived in Drive; FY2017 remains pending retrieval (not GitHub)
 - [ ] SHA-256 and file metadata recorded
 - [ ] Statement pages and line labels recorded
 - [ ] Eight metrics tie to source and existing supplement
