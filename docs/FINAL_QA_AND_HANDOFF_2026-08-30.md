@@ -195,3 +195,5 @@ The builder now writes newline-delimited CSV correctly; CI reruns the seeded bui
 
 The Module F contract is now committed to GitHub and mirrored to Drive. It defines the operational-to-financial chain, source fields, reconciliation formulas, owner/guardrail/decision-use metadata, scenario labelling and monthly close cadence. The driver register contains 22 rows and the QA document records 10/10 PASS. This remains synthetic/derived rehearsal evidence; Gate A and Gate B are still open.
 
+
+Automated QA evidence: operational driver validator PASS (15/15) locally and in GitHub Finance model QA run 557 (PASS): https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33293756170
