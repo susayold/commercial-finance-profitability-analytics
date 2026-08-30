@@ -209,3 +209,7 @@ The PBIP source scaffold now has a machine-checked coherence layer (13/13 PASS) 
 ## Gate A accuracy-report handoff (2026-08-30)
 
 The leakage-safe accuracy report builder and archived fixture report are now available. It calculates overall and period/channel metrics and preserves explicit exclusion and evidence boundaries. CI runs the builder in fixture mode; production live mode remains pending real internal data.
+
+## CV evidence refresh (2026-08-30)
+
+The one-page CV V2 and evidence map now reference the operational driver tree and PBIP source-coherence preflight without claiming realized impact, live forecast accuracy or native PBIX completion. Drive CV copy: https://drive.google.com/file/d/1EpA1i3aRlXNwweWnf1v-M_PvjkkjIqrj/view?usp=drivesdk
