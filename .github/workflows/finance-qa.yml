@@ -184,3 +184,10 @@ jobs:
           node scripts/validate_finance_analyst_kpi_dictionary.mjs \
             docs/FINANCE_ANALYST_KPI_DICTIONARY.md \
             data/finance_analyst_kpi_dictionary.csv
+
+      - name: Validate management recommendation register
+        shell: bash
+        run: |
+          node scripts/validate_management_recommendation_register.mjs \
+            reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md \
+            data/management_recommendation_register_2026-08-30.csv
