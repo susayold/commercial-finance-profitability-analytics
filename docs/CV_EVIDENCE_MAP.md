@@ -18,6 +18,8 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Built a source-linked VNM long-run panel spanning FY2006–FY2025, deriving revenue growth, margins, cash conversion and asset efficiency while flagging the FY2021 statement-to-summary basis break.
 - Built a formula-driven D2C unit-economics module linking acquisition spend, repeat orders, gross margin and variable service costs to CAC, LTV/CAC, payback and scale/hold decisions; included Base/Downside/Upside sensitivities and six automated control checks (synthetic case).
 - Built a source-linked public-guidance proxy for Vinamilk FY2018–FY2025 with 16 AGM/IR guidance-versus-actual observations, explicit revenue-basis controls and aggregate Bias/WAPE (public guidance, not internal forecast).
+- Built a page-reviewed Masan Consumer FY2016–FY2025 finance trend and lender-style credit memo; FY2025 margin compression, PAT decline and cash-conversion warning are calculated from reported statements, with a 15/15 automated QA report.
+- Built a QNS/KDC basis-perimeter bridge that calculates only within-window descriptive growth, retains source lineage and blocks misleading cross-break CAGR; validator and QA report pass 12/12.
 - Authored a portable Power BI source handoff with a machine-readable semantic manifest covering 5 dimensions, 9 facts, 15 relationships, 6 report pages and 18 QA tests; wired manifest validation into GitHub Actions (native PBIX remains Desktop-dependent).
 - Extended the public-guidance proxy into a reproducible forecast-performance analysis with metric/regime splits, Bias/WAPE/MAPE, within-2% accuracy bands and ranked misses; kept the evidence explicitly outside the internal forecast gate.
 - Prepared a finance-analyst interview talk track that traces one KPI from source to P&L to decision, including a 90-second pitch, 15-minute reviewer tour, STAR stories and honest responses to data/PBIX limitations.
@@ -82,6 +84,8 @@ Drive mirror for M&A extension:
 
 
 ## One-page CV draft
+
+- Finance-first V2: [FINANCE_ANALYST_CV_ONE_PAGE_V2.md](FINANCE_ANALYST_CV_ONE_PAGE_V2.md) · [Drive copy](https://docs.google.com/document/d/1pf5jUlWAajDPUj4Rs4GL6xnWyAKi_kXPLVLy59lIviU/edit?usp=drivesdk)
 
 - [Finance Analyst / Junior FP&A CV draft](docs/FINANCE_ANALYST_CV_ONE_PAGE.md) · [Drive copy](https://drive.google.com/file/d/1rRpc9qNKcia0MeckGhqzrVnJ_iyed7RB/view)
 - Bullets are restricted to validated evidence and explicitly label synthetic/public-guidance outputs; replace bracketed personal fields before use.
