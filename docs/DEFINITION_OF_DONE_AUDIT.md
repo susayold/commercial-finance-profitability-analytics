@@ -258,3 +258,8 @@ See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) for the a
 ## Latest full-run QA sync — 2026-08-30
 
 The cross-platform finance runner now covers all 42 validator invocations across 40 unique repository-local validator files plus the Power BI contract-shape check (43 total checks; Gate A runs in template and fixture modes). [CI run #778](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33302213464) passed. Older historical check-count paragraphs remain for audit history only and are superseded by this overlay.
+
+
+## Website V9 release
+
+Site V9 is deployed at https://vn-finance-fpa-case.sangkenny200.chatgpt.site with a customer-economics decision callout. [Release record](../reports/SITE_V9_RELEASE_RECORD_2026-08-30.md) and Drive archive retain the source commit, build archive hash and deployment status. This changes presentation only; all customer values remain synthetic rehearsal evidence.
