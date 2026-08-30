@@ -1197,3 +1197,7 @@ Remaining work after the 2026-08-30 hardening pass:
 The Gate A intake contract (`schemas/forecast_snapshot_live.schema.json`, `scripts/validate_live_forecast_submission.mjs`) and Gate B evidence contract (`powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv`, `scripts/validate_powerbi_qa_evidence.mjs`) are now complete, so no analytical redesign is required when those external inputs arrive.
 
 The field-level follow-through is captured in [`docs/EXTERNAL_GATES_EXECUTION_PACK.md`](EXTERNAL_GATES_EXECUTION_PACK.md) and its Drive mirror; it defines the intake grain, eligibility rules, six-page PBIX contract, QA evidence requirements, RACI and CV conversion rules.
+
+
+### QNS evidence-layer enrichment (2026-08-30)
+The QNS FY2025 report review is complete for the readable five-year management summary. FY2021–FY2025 gross profit and owners' equity are now populated in the normalized panel; the companion extract and evidence memo preserve the 27–28 page anchor and the summary-vs-statement caveat. Remaining QNS work is optional statement-level retrieval or a basis-adjusted perimeter analysis, not silent interpolation.
