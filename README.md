@@ -450,7 +450,8 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 
 ## Latest website release
 
-- Site V9 now surfaces the customer-economics decision lens with concentration, after-WC contribution and C06 review signal: [release record](reports/SITE_V9_RELEASE_RECORD_2026-08-30.md) · [Drive release record](https://drive.google.com/file/d/1vZn_kPRFlURjye_3Bbxikq62BWVUy1BK/view?usp=drivesdk).
+- Site V10 now surfaces the Next Execution Sprint with Gate A/B handoffs, CV personalization status and playbook QA: [release record](reports/SITE_V10_RELEASE_RECORD_2026-08-30.md).
+- Site V9 customer-economics decision lens remains included: [V9 release record](reports/SITE_V9_RELEASE_RECORD_2026-08-30.md) · [Drive release record](https://drive.google.com/file/d/1vZn_kPRFlURjye_3Bbxikq62BWVUy1BK/view?usp=drivesdk).
 - Production: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 
 
