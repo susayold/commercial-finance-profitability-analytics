@@ -170,3 +170,10 @@ jobs:
         shell: bash
         run: |
           node scripts/validate_peer_financial_quality_scorecard.mjs data/peer_financial_quality_scorecard_2020_2025.csv
+
+      - name: Validate Monthly Business Review operating pack
+        shell: bash
+        run: |
+          node scripts/validate_monthly_business_review.mjs \
+            reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md \
+            data/monthly_business_review_kpi_pack_2026-08-30.csv
