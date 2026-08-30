@@ -17,6 +17,8 @@ This folder documents the recruiter-facing Sites implementation for the Commerci
 - Direct links to the v2 workbook, dashboard render, CFO memo, MCH trend report, credit memo QA, finance-first CV V2 and GitHub repository
 - Next Execution Sprint panel with Gate A/B evidence handoffs, CV personalization path and a 12/12 structural playbook QA link
 - MCH public-company valuation rehearsal with FCFF/DCF scenario range, WACC/terminal-growth sensitivity and an explicit EV-only boundary
+- MCH equity-research rehearsal with ten-year thesis, earnings-quality bridge, scorecard, catalysts/risks and diligence actions
+- One-page Finance Analyst CV V3 PDF download link routed to the canonical Drive artifact
 
 The page is intentionally recruiter-first: open the model, trace the checks, then read the finance recommendation. The forecast section keeps the public-guidance proxy separate from the pending internal snapshot gate. The MCH section demonstrates how a finance analyst turns audited filing history into a decision-relevant trend layer without silently mixing it into the 240-row normalized peer core. The credit memo extends the same evidence into a lender-style decision.
 
@@ -32,7 +34,8 @@ npm run build
 
 ## Current recruiter links
 
-- Finance-first CV V2: https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_CV_ONE_PAGE_V2.md
+- Finance-first CV V3: https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_CV_ONE_PAGE_V3.md
+- One-page CV V3 PDF: https://drive.google.com/file/d/1Gm2kGAoktzWA-DDakfrzo_-sL1sL9jax/view?usp=drivesdk
 - MCH credit memo QA (15/15): https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_CREDIT_MEMO_QA.md
 - QNS/KDC basis bridge QA (12/12): https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/PEER_BASIS_PERIMETER_BRIDGE_QA.md
 
