@@ -1,0 +1,185 @@
+{
+  "evidence_class": "SYNTHETIC_REHEARSAL",
+  "period": "FY2025",
+  "unit": "VND_mn",
+  "source_file": "data/customer_profitability_synthetic.csv",
+  "row_count": 24,
+  "totals": {
+    "gross_sales_vnd_mn": 288300,
+    "net_sales_vnd_mn": 256287,
+    "contribution_vnd_mn": 103221,
+    "working_capital_cost_vnd_mn": 3085,
+    "contribution_after_wc_cost_vnd_mn": 100136,
+    "ar_balance_vnd_mn": 30844
+  },
+  "derived": {
+    "net_sales_margin_pct": 40.28,
+    "after_wc_margin_pct": 39.07,
+    "dso_days": 43.93,
+    "top5_gross_sales_share_pct": 28.62,
+    "top5_after_wc_contribution_share_pct": 30.88
+  },
+  "channel_summary": {
+    "General Trade": {
+      "customer_count": 4,
+      "gross_sales_vnd_mn": 46050,
+      "net_sales_vnd_mn": 42274,
+      "contribution_vnd_mn": 17320,
+      "working_capital_cost_vnd_mn": 521,
+      "contribution_after_wc_cost_vnd_mn": 16799,
+      "ar_balance_vnd_mn": 5212,
+      "contribution_margin_pct": 40.97,
+      "after_wc_margin_pct": 39.74,
+      "dso_days": 45
+    },
+    "Modern Trade": {
+      "customer_count": 6,
+      "gross_sales_vnd_mn": 75000,
+      "net_sales_vnd_mn": 62164,
+      "contribution_vnd_mn": 20049,
+      "working_capital_cost_vnd_mn": 1332,
+      "contribution_after_wc_cost_vnd_mn": 18717,
+      "ar_balance_vnd_mn": 13314,
+      "contribution_margin_pct": 32.25,
+      "after_wc_margin_pct": 30.11,
+      "dso_days": 78.17
+    },
+    "Marketplace": {
+      "customer_count": 5,
+      "gross_sales_vnd_mn": 59250,
+      "net_sales_vnd_mn": 53025,
+      "contribution_vnd_mn": 21077,
+      "working_capital_cost_vnd_mn": 436,
+      "contribution_after_wc_cost_vnd_mn": 20641,
+      "ar_balance_vnd_mn": 4359,
+      "contribution_margin_pct": 39.75,
+      "after_wc_margin_pct": 38.93,
+      "dso_days": 30.01
+    },
+    "D2C": {
+      "customer_count": 5,
+      "gross_sales_vnd_mn": 61500,
+      "net_sales_vnd_mn": 57068,
+      "contribution_vnd_mn": 27706,
+      "working_capital_cost_vnd_mn": 110,
+      "contribution_after_wc_cost_vnd_mn": 27596,
+      "ar_balance_vnd_mn": 1095,
+      "contribution_margin_pct": 48.55,
+      "after_wc_margin_pct": 48.36,
+      "dso_days": 7
+    },
+    "Wholesale": {
+      "customer_count": 4,
+      "gross_sales_vnd_mn": 46500,
+      "net_sales_vnd_mn": 41756,
+      "contribution_vnd_mn": 17069,
+      "working_capital_cost_vnd_mn": 686,
+      "contribution_after_wc_cost_vnd_mn": 16383,
+      "ar_balance_vnd_mn": 6864,
+      "contribution_margin_pct": 40.88,
+      "after_wc_margin_pct": 39.24,
+      "dso_days": 60
+    }
+  },
+  "top5_by_gross_sales": [
+    {
+      "customer_id": "C06",
+      "customer_name": "MT National Account",
+      "channel": "Modern Trade",
+      "metric_vnd_mn": 18000,
+      "contribution_margin_pct": 14.58,
+      "dso_days": 88.72,
+      "strategic_flag": "Y"
+    },
+    {
+      "customer_id": "C24",
+      "customer_name": "Customer 24",
+      "channel": "D2C",
+      "metric_vnd_mn": 16800,
+      "contribution_margin_pct": 48.55,
+      "dso_days": 7,
+      "strategic_flag": "Y"
+    },
+    {
+      "customer_id": "C23",
+      "customer_name": "Customer 23",
+      "channel": "Marketplace",
+      "metric_vnd_mn": 16350,
+      "contribution_margin_pct": 39.75,
+      "dso_days": 30.01,
+      "strategic_flag": "N"
+    },
+    {
+      "customer_id": "C22",
+      "customer_name": "Customer 22",
+      "channel": "Modern Trade",
+      "metric_vnd_mn": 15900,
+      "contribution_margin_pct": 37.58,
+      "dso_days": 75.01,
+      "strategic_flag": "N"
+    },
+    {
+      "customer_id": "C21",
+      "customer_name": "Customer 21",
+      "channel": "General Trade",
+      "metric_vnd_mn": 15450,
+      "contribution_margin_pct": 40.97,
+      "dso_days": 45.01,
+      "strategic_flag": "N"
+    }
+  ],
+  "top5_by_after_wc_contribution": [
+    {
+      "customer_id": "C24",
+      "customer_name": "Customer 24",
+      "channel": "D2C",
+      "metric_vnd_mn": 7539,
+      "contribution_margin_pct": 48.55,
+      "dso_days": 7,
+      "strategic_flag": "Y"
+    },
+    {
+      "customer_id": "C19",
+      "customer_name": "Customer 19",
+      "channel": "D2C",
+      "metric_vnd_mn": 6529,
+      "contribution_margin_pct": 48.55,
+      "dso_days": 7,
+      "strategic_flag": "N"
+    },
+    {
+      "customer_id": "C23",
+      "customer_name": "Customer 23",
+      "channel": "Marketplace",
+      "metric_vnd_mn": 5696,
+      "contribution_margin_pct": 39.75,
+      "dso_days": 30.01,
+      "strategic_flag": "N"
+    },
+    {
+      "customer_id": "C21",
+      "customer_name": "Customer 21",
+      "channel": "General Trade",
+      "metric_vnd_mn": 5636,
+      "contribution_margin_pct": 40.97,
+      "dso_days": 45.01,
+      "strategic_flag": "N"
+    },
+    {
+      "customer_id": "C14",
+      "customer_name": "Customer 14",
+      "channel": "D2C",
+      "metric_vnd_mn": 5519,
+      "contribution_margin_pct": 48.55,
+      "dso_days": 7,
+      "strategic_flag": "N"
+    }
+  ],
+  "review_flags": [
+    {
+      "customer_id": "C06",
+      "reason": "high revenue / low contribution margin / long DSO",
+      "action": "review trade terms, service cost and payment terms before protecting incremental volume"
+    }
+  ]
+}
