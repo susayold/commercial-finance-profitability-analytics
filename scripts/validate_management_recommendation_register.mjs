@@ -1,0 +1,16 @@
+import fs from "node:fs";
+const report=fs.readFileSync(process.argv[2]||"reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md","utf8");
+const csv=fs.readFileSync(process.argv[3]||"data/management_recommendation_register_2026-08-30.csv","utf8").trim().split(/\r?\n/);
+const checks=[]; const must=(n,o)=>checks.push({n,ok:Boolean(o)});
+must("report_nontrivial",report.length>9000);
+for(const p of ["## Recommendation register","## Recommendation-to-evidence map","## How to present recommendations in an interview","## Release boundary"])must(p,report.includes(p));
+must("recommendation_ids",Array.from({length:12},(_,i)=>"REC-"+String(i+1).padStart(2,"0")).every(id=>report.includes(id)));
+must("header",csv[0]==="id,domain,decision,quantified_anchor,owner,guardrail,evidence_class,next_review");
+const rows=csv.slice(1).map(x=>x.split(","));
+must("row_count",rows.length===12);
+must("required_fields",rows.every(r=>r.length===8&&r.every(Boolean)));
+must("evidence_classes",["SIMULATED_DERIVED","PROXY_DERIVED","SYNTHETIC_ASSUMPTION","OBSERVED_DERIVED","GOVERNANCE_CONTROL"].every(e=>rows.some(r=>r[6]===e)));
+must("release_boundary",report.includes("does not claim realized savings")&&report.includes("remains conditional"));
+const failed=checks.filter(c=>!c.ok); for(const c of checks) console.log((c.ok?"PASS ":"FAIL ")+c.n);
+console.log("Overall status: "+(failed.length?"FAIL":"PASS")+" ("+(checks.length-failed.length)+"/"+checks.length+" checks passed)");
+if(failed.length)process.exit(1);
