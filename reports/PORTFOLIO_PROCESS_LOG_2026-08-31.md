@@ -40,7 +40,7 @@ still need a real Power BI Desktop or cloud workspace.
     stage while still failing closed on deterministic contract/package checks.
 11. Ran the cross-platform finance QA runner after the change: **49/49 PASS**,
     including PBIP source coherence and DirectQuery readiness.
-12. Verified GitHub Actions run [33325806466](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33325806466): the new release-gate step and the full Finance model QA job completed successfully; CI correctly records the Windows Desktop stage as `EXTERNAL_PENDING` on Ubuntu.
+12. Verified GitHub Actions run [33327789127](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127): the new release-gate step and the full Finance model QA job completed successfully; CI correctly records the Windows Desktop stage as `EXTERNAL_PENDING` on Ubuntu.
 13. Extended the LocalDB smoke harness with a configurable post-commit health
     latency sample. The current 10-sample run recorded p50 `0.0134s` and p95
     `0.0153s`; this baseline is explicitly labelled local rehearsal evidence.
@@ -58,9 +58,15 @@ still need a real Power BI Desktop or cloud workspace.
     compares the canonical 14-file tuple, runbook list, PBIP/PbixProj
     `DataRoot` references and committed CSV fixture.
 18. Tested the official Power BI Desktop Bridge CLI against the custom Desktop
-    path. The Bridge returned its method manifest, but repeated status calls
-    reported `Host is not ready to accept operations`; this is recorded as a
-    host-readiness blocker, not as native render or PBIX evidence.
+    path. The Bridge returned its method manifest (`application.state.get/v1`,
+    `report.snapshot.capture/v1` and `file.reload/v1`), but repeated status
+    calls reported `Host is not ready to accept operations`; this is recorded as
+    a host-readiness blocker, not as native render or PBIX evidence.
+19. Reran `scripts/run_powerbi_release_gate.py` with
+    `--desktop-path D:\\Po BI\\bin\\PBIDesktop.exe` on a clean clone. The
+    command exited 0 and the Windows preflight returned 14/14 PASS; this proves
+    package/host readiness only and does not promote native PBIX or production
+    realtime claims.
 
 ## Evidence boundaries
 
@@ -69,10 +75,10 @@ still need a real Power BI Desktop or cloud workspace.
 | Editable model | PBIP/PBIR/TMDL source + PBIT | PASS |
 | Contract refresh | 78/78 input checks + watcher two-batch QA | PASS |
 | Local DirectQuery mechanics | LocalDB two-batch smoke | Rehearsal only |
-| Native PBIX | Desktop executable exists; UI kernel failed before target window | PENDING |
+| Native PBIX | Desktop executable + 14/14 preflight; Bridge manifest found but host not ready; UI helper failed before target window | PENDING |
 | Production realtime | Cloud DB, gateway/capacity and APR not provisioned | PENDING |
 
-The next executable action is to open the PBIP/PBIT in Power BI Desktop, set
-`DataRoot`, refresh, capture QA-01–QA-18 and save the native `.pbix`. Only after
-that evidence exists should `native_desktop_qa` or the realtime claim be
-promoted.
+The next executable action is to enable Desktop Bridge external-tool access,
+open the PBIP/PBIT in Power BI Desktop, set `DataRoot`, refresh, capture
+QA-01–QA-18 and save the native `.pbix`. Only after that evidence exists should
+`native_desktop_qa` or the realtime claim be promoted.

@@ -13,14 +13,14 @@ earlier execution history.
 - **One-command release gate:** `scripts/run_powerbi_release_gate.py` returns `PASS` on the current fixture and host; it intentionally reports external Desktop/cloud gates separately instead of overstating native PBIX or production realtime.
 - **CI release gate:** `.github/workflows/finance-qa.yml` now runs the same release gate on every QA run and uploads its JSON evidence; Linux CI is expected to show `PASS_WITH_EXTERNAL_PENDING` only for the unavailable Windows Desktop stage.
 - **Full repository QA:** `node scripts/run_finance_qa.mjs` passed 49/49 checks after the DirectQuery harness fix.
-- **GitHub Actions evidence:** last verified workflow run [33325806466](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33325806466) completed successfully; its release-gate artifact records Linux `PASS_WITH_EXTERNAL_PENDING` only for the unavailable Windows Desktop stage.
+- **GitHub Actions evidence:** last verified workflow run [33327789127](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127) completed successfully; its release-gate artifact records Linux `PASS_WITH_EXTERNAL_PENDING` only for the unavailable Windows Desktop stage.
 - **Drive bundle:** file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX` is updated in place from the current main branch archive.
 - **Recruiter site:** private Sites version 15 at `https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#powerbi`.
 - **Data-drop automation:** `scripts/watch_powerbi_refresh.py` passed a two-batch test; the contract hash changed and the target DataRoot reflected `Sales[units]` `121 -> 122`.
 - **DirectQuery freshness rehearsal:** the LocalDB two-batch harness was rerun with a runtime watermark; both health controls returned `PASS`, `Sales[units]` moved `1,256,859 -> 1,256,860`, and the ephemeral instance was deleted.
 - **DirectQuery latency baseline:** the rerun sampled 10 post-commit health queries; p50 was `0.0134s` and p95 `0.0153s` on LocalDB. This is a local baseline only, not a production capacity claim.
 - **DirectQuery operating gate:** `powerbi/directquery/PRODUCTION_ACCEPTANCE_MATRIX.md` defines G0-G8 for schema, ingestion, tie-out, health, Desktop, Service, APR and rollback.
-- **Desktop host:** `D:\Po BI\bin\PBIDesktop.exe` is present; custom-path preflight passes 14/14. Native binding, refresh, rendering and `.pbix` save evidence are still pending because the Computer Use kernel fails before exposing a targetable window.
+- **Desktop host:** `D:\Po BI\bin\PBIDesktop.exe` is present; custom-path preflight passes 14/14. Native binding, refresh, rendering and `.pbix` save evidence are still pending: the official Desktop Bridge manifest was discovered, but status calls returned `Host is not ready to accept operations`, and the Windows Computer Use helper could not expose a targetable window.
 - **Native Desktop handoff:** `powerbi/POWER_BI_NATIVE_DESKTOP_HANDOFF_2026-08-31.md` packages the exact preflight, binding, QA-01–QA-18, data-swap and native-save sequence for the next working Desktop host.
 - **Desktop Bridge handoff:** `powerbi/POWER_BI_DESKTOP_BRIDGE_HANDOFF_2026-08-31.md` records the official preview CLI route for status, PBIP reload and screenshots; the observed host reached the Bridge manifest but remained not-ready for operations.
 - **Native PBIX intake validator:** `scripts/validate_native_pbix_release.py` audits a supplied PBIX plus observed QA CSV/metadata and keeps `READY_TO_CLAIM` separate from incomplete external evidence.
@@ -35,7 +35,7 @@ earlier execution history.
 - **Data replacement contract:** passed a controlled VND 1,000,000 source mutation with identical schema and row count; all 14 CSV partitions reference the single `DataRoot` parameter.
 - **Baseline fixture:** the 14 synthetic refresh inputs are now committed at `powerbi/data/current/` and mirrored in the Drive bundle, so the GitHub and Drive starting points are reproducible.
 - **Automated QA:** 29/29 package, source and refresh-contract checks passed; CI also rebuilds the committed fixture from seed `20260829` and diffs it for deterministic parity.
-- **Native `.pbix`:** not yet claimed. Power BI Desktop is installed at the machine's custom path `D:\Po BI\bin\PBIDesktop.exe` (version `2.157.879.0`) and the PBIP launch process is alive. The custom-path preflight passes 14/14 checks; native data-source binding, refresh, DAX execution and visual-render evidence remain pending because the current Computer Use runtime could not expose a targetable Power BI window.
+- **Native `.pbix`:** not yet claimed. Power BI Desktop is installed at the machine's custom path `D:\Po BI\bin\PBIDesktop.exe` (version `2.157.879.0`) and the PBIP launch process is alive. The custom-path preflight passes 14/14 checks; the Bridge manifest is discoverable, but the host is not ready for operations and the current Computer Use runtime could not expose a targetable Power BI window, so native data-source binding, refresh, DAX execution and visual-render evidence remain pending.
 - **Real-time interpretation:** current Import-mode CSV design updates on manual or scheduled refresh. True automatic page refresh requires migration to a supported DirectQuery/LiveConnect source.
 
 ## DirectQuery readiness extension — 2026-08-30
@@ -52,7 +52,7 @@ The execution-host record is tracked in `reports/POWER_BI_DESKTOP_NATIVE_QA_2026
 
 The repeatable replacement workflow is also executable through `scripts/prepare_powerbi_refresh.py`. Its smoke test validated and applied all 14 contract files, emitted per-file SHA-256/row-count evidence, and returned `PASS`; this automates the safe file hand-off while keeping the Desktop `Home > Refresh` step explicit.
 
-The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow, process/status records, Desktop preflight script and PBIP/PBIT coherence gate. The current bundle is 1,011,299 bytes with SHA-256 `9E11F0FC907C95544B98A2D88FC1EB2CA8B184DF0FA9720F628661435BDD4F7D`.
+The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow, process/status records, Desktop preflight script and PBIP/PBIT coherence gate. The latest verified bundle is 1,339,298 bytes with SHA-256 `46173ce21159a6d48eed67e75b7acfd42f72d2c92f5cde5a9389efa2b2084e84`.
 
 The authoritative generated PBIP/PBIT inventory is 15 tables, 37 measures, 23 relationships, six pages and 39 visual containers. The older Excel-oriented names in the historical sections below are retained as model-contract context; use the PBIP/PBIT inventory and manifest when opening Desktop.
 
