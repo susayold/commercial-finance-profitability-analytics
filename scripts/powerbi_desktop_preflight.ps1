@@ -26,7 +26,7 @@ if (-not $root) { throw "ProjectRoot does not exist: $ProjectRoot" }
 # Prefer the committed, reproducible fixture when the caller does not pass a
 # replacement folder explicitly. An explicit DataRoot always wins.
 if (-not $DataRoot) {
-    $defaultDataRoot = Join-Path $root "powerbi\\data\\current"
+    $defaultDataRoot = Join-Path $root "powerbi\data\current"
     if (Test-Path -LiteralPath $defaultDataRoot -PathType Container) { $DataRoot = $defaultDataRoot }
 }
 
