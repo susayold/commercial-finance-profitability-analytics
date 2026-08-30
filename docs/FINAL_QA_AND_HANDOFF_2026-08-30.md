@@ -165,3 +165,8 @@ The register is now in the remote QA surface and Drive archive. It is a decision
 ## Business partnering closeout (2026-08-30)
 
 Battle cards v2 are now included in the remote QA surface and Drive archive. The cards demonstrate conditional approval, contribution-versus-cash trade-offs and escalation discipline; they remain a synthetic rehearsal rather than realized company impact.
+
+
+## Master-plan matrix refresh (2026-08-30)
+
+The evidence matrix and QA report now reflect the latest MBR, KPI dictionary, recommendation register and Battle Cards v2 artifacts. No status was promoted without linked evidence; Gate A/B remain pending by design.
