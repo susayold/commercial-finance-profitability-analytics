@@ -78,6 +78,16 @@ still need a real Power BI Desktop or cloud workspace.
     same disposable IDs. It returned exit code `1` with the expected
     fail-closed message before writing an evidence file or making a network
     request; this guard is documented in the dated dry-run record.
+22. Added an explicit DirectQuery migration contract and wired both its
+    17-check validator and the 12-check Service workflow validator into the
+    one-command Power BI release gate. This keeps storage-mode migration and
+    data-drop automation in the same deterministic preflight rather than
+    relying on documentation-only review.
+23. Reran the release gate with the installed Desktop path. All seven
+    deterministic stages passed (78/78 input checks, package/coherence/claim
+    boundary, 17/17 DirectQuery mapping and 12/12 Service workflow checks);
+    Desktop preflight was 14/14. The output still explicitly leaves native
+    PBIX rendering and production APR as external evidence gates.
 
 ## Evidence boundaries
 

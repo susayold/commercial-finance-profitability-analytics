@@ -143,6 +143,14 @@ def main() -> int:
             python_command(root, "scripts/validate_powerbi_claim_boundary.py", "--repo-root", str(root), "--report", str(claim_report)),
             root,
         )
+        stages["directquery_mapping"] = run_command(
+            python_command(root, "scripts/validate_directquery_mapping.py"),
+            root,
+        )
+        stages["service_workflow_contract"] = run_command(
+            python_command(root, "scripts/validate_powerbi_service_workflow.py"),
+            root,
+        )
 
         preflight = root / "scripts" / "powerbi_desktop_preflight.ps1"
         powershell = shutil.which("powershell") or shutil.which("pwsh")
@@ -162,7 +170,15 @@ def main() -> int:
                 result["status"] = "EXTERNAL_PENDING"
             stages["desktop_preflight"] = result
 
-    deterministic_names = ("input_contract", "refresh_dry_run", "package", "artifact_coherence", "claim_boundary")
+    deterministic_names = (
+        "input_contract",
+        "refresh_dry_run",
+        "package",
+        "artifact_coherence",
+        "claim_boundary",
+        "directquery_mapping",
+        "service_workflow_contract",
+    )
     deterministic_ok = all(stages[name]["status"] == "PASS" and stages[name]["exit_code"] == 0 for name in deterministic_names)
     desktop_ok = stages["desktop_preflight"]["status"] == "PASS" and stages["desktop_preflight"]["exit_code"] == 0
     if not deterministic_ok:

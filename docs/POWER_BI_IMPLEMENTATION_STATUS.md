@@ -171,3 +171,13 @@ token. It returned `DRY_RUN_PASS` without a network request. See
 [the dated evidence record](../reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-31.md).
 This validates the Import refresh contract only; it does not claim a live
 workspace, gateway, DirectQuery source or Automatic Page Refresh.
+
+## DirectQuery migration contract (2026-08-31)
+
+The release gate now runs the explicit 15-table mapping check before any
+storage-mode migration. `powerbi/directquery/DIRECTQUERY_MIGRATION_CONTRACT.json`
+locks the `finance` schema, runtime-only connection policy, key columns,
+freshness fields and preservation counts (37 measures, 23 relationships, six
+pages and 39 visual containers). The current gate result is **PASS** with
+DirectQuery mapping **17/17** and Service workflow contract **12/12**; these
+are structural checks, not a provisioned cloud realtime deployment.
