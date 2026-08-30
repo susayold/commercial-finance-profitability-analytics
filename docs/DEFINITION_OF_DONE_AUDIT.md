@@ -227,3 +227,6 @@ The candidate application and CV build pack is now linked from the repository RE
 
 ### QNS evidence-layer enrichment
 FY2021–FY2025 gross profit and owners' equity were promoted from the readable QNS FY2025 management summary (pages 27–28), with evidence-tier flags preserved. The evidence memo and Drive native Sheet are linked from the release artifacts; operating profit and operating cash flow remain explicitly unavailable.
+
+### MCH OCR control
+MCH remains intentionally blocked from the approved panel. The 59-row OCR workbench and a page-level promotion gate are documented; no unresolved OCR candidate is presented as verified data.
