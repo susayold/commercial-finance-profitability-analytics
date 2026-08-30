@@ -22,6 +22,7 @@ earlier execution history.
 - **DirectQuery operating gate:** `powerbi/directquery/PRODUCTION_ACCEPTANCE_MATRIX.md` defines G0-G8 for schema, ingestion, tie-out, health, Desktop, Service, APR and rollback.
 - **Desktop host:** `D:\Po BI\bin\PBIDesktop.exe` is present; custom-path preflight passes 14/14. Native binding, refresh, rendering and `.pbix` save evidence are still pending because the Computer Use kernel fails before exposing a targetable window.
 - **Native Desktop handoff:** `powerbi/POWER_BI_NATIVE_DESKTOP_HANDOFF_2026-08-31.md` packages the exact preflight, binding, QA-01–QA-18, data-swap and native-save sequence for the next working Desktop host.
+- **Desktop Bridge handoff:** `powerbi/POWER_BI_DESKTOP_BRIDGE_HANDOFF_2026-08-31.md` records the official preview CLI route for status, PBIP reload and screenshots; the observed host reached the Bridge manifest but remained not-ready for operations.
 - **Native PBIX intake validator:** `scripts/validate_native_pbix_release.py` audits a supplied PBIX plus observed QA CSV/metadata and keeps `READY_TO_CLAIM` separate from incomplete external evidence.
 - **Current release record:** `reports/POWER_BI_CURRENT_RELEASE_STATUS_2026-08-31.md` consolidates the verified refresh contract, native PBIX handoff and production realtime boundary for the latest handoff.
 - **Documentation/source contract gate:** `scripts/validate_powerbi_docs_contract.py` now compares the 14 canonical CSV names across the refresh script, runbook, PBIP/PbixProj queries and committed fixture.

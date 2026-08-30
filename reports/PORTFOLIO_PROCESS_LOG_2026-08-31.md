@@ -57,6 +57,10 @@ still need a real Power BI Desktop or cloud workspace.
 17. Added `scripts/validate_powerbi_docs_contract.py` and wired it into CI; it
     compares the canonical 14-file tuple, runbook list, PBIP/PbixProj
     `DataRoot` references and committed CSV fixture.
+18. Tested the official Power BI Desktop Bridge CLI against the custom Desktop
+    path. The Bridge returned its method manifest, but repeated status calls
+    reported `Host is not ready to accept operations`; this is recorded as a
+    host-readiness blocker, not as native render or PBIX evidence.
 
 ## Evidence boundaries
 

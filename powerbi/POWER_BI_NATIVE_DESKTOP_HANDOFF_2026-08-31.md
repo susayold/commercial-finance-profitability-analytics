@@ -35,6 +35,11 @@ The deterministic result must be PASS. Retain the JSON; it does not prove native
 4. Capture Executive Output, scenarios, P&L/variance, PVM, channel/customer, working-capital and Controls & Evidence pages.
 5. Hard-stop on visual errors, missing measures/relationships, finance-control failure, stale controls, scenario changes to actuals or unapproved peer trend rows.
 
+For a supported external-evidence route, see
+`POWER_BI_DESKTOP_BRIDGE_HANDOFF_2026-08-31.md`. The Bridge can discover the
+open PBIP, reload saved PBIP/PBIR edits and capture page PNGs; it does not
+replace the native Desktop refresh, Save As or QA sign-off steps below.
+
 ## 3. Replace-data-only proof
 
 1. Copy baseline inputs to a dated candidate and change exactly one valid value, recommended first Sales units plus one.
