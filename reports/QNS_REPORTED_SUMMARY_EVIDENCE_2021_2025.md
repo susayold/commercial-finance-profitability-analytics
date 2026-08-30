@@ -37,3 +37,7 @@ The QNS FY2025 Annual Report contains a clearly readable five-year management su
 - Source values were transcribed directly from the table; no interpolation or OCR estimation was used.
 - The normalized panel validator must pass with 240 rows and 8 metric rows per company-year.
 - This supplement is intentionally separate from the audited KDC statement supplement so reviewers can distinguish evidence tiers.
+
+
+## FY2020 cross-check
+The QNS FY2021 Annual Report management summary (page 32) provides FY2020 gross profit of VND 2,051bn and owners' equity of VND 6,605bn. These two rows were also populated in the normalized panel as reported annual-report summary values. The panel keeps the FY2020 source document/page distinct from the FY2021–FY2025 extract.
