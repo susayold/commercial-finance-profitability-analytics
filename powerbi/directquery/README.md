@@ -9,6 +9,7 @@ This folder is the production migration path for automatic Power BI page refresh
 - `../../scripts/load_directquery_sqlserver.py`: deterministic CSV-to-SQL loader. It is dry-run by default; `--apply` is an explicit transactional replacement.
 - `../../scripts/check_directquery_source.ps1`: optional `sqlcmd` wrapper for the health query; supports integrated security or `SQLCMDPASSWORD` without storing credentials.
 - `../../requirements-directquery.txt`: optional `pyodbc` dependency for the controlled loader host.
+- `../../reports/POWER_BI_DIRECTQUERY_LOCALDB_SMOKE_QA_2026-08-30.md`: real ephemeral SQL Server LocalDB integration evidence; production realtime remains gated.
 - `../DIRECTQUERY_READINESS.json`: machine-readable migration gates and ownership fields.
 - `../docs/POWER_BI_REFRESH_ARCHITECTURE.md`: current Import contract and claim boundary.
 

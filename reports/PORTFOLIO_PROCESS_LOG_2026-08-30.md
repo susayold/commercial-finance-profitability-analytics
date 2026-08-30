@@ -79,7 +79,9 @@ The realtime migration kit was made executable without pretending that a databas
 
 The standalone DirectQuery readiness validator now passes 34/34 checks, the full finance QA runner passes, the PBIP/PBIT package gate remains 29/29, the artifact-coherence gate remains 15/15 and the claim-boundary gate remains 11/11. GitHub Actions run `33320227118` passed on commit `1eca6f1`. The health query and loader intentionally keep the realtime claim `PENDING`: the next external step is to apply the DDL to a controlled Azure SQL/SQL Server/Fabric source, execute a real load, and then perform native Desktop/Service DirectQuery and Automatic Page Refresh QA.
 
-The source-health step was tightened with a credential-safe `sqlcmd` wrapper (`scripts/check_directquery_source.ps1`) and a one-row `NO_LOAD/FAIL` result for an empty `Refresh_Control`. The readiness validator is now 35/35; the wrapper is syntax-checked but cannot be connection-tested here because this host has no `sqlcmd`, Docker, Azure CLI or SQL database. This is an environment gate, not a claim of live realtime behavior.
+The source-health step was tightened with a credential-safe `sqlcmd` wrapper (`scripts/check_directquery_source.ps1`) and a one-row `NO_LOAD/FAIL` result for an empty `Refresh_Control`. The readiness validator is now 35/35; the wrapper itself remains syntax-checked only because this host has no `sqlcmd`, while the underlying query was connection-tested through LocalDB below. This is an environment gate, not a claim of live realtime behavior.
+
+The loader was then connection-tested against an ephemeral SQL Server LocalDB instance through the installed 64-bit SQL Server ODBC driver and `pyodbc 5.3.0`. The checked-in DDL executed in 19 batches, `--apply` loaded all 29,843 source rows, and the health query returned `SUCCEEDED/PASS` with 14 physical tables, 36 calendar rows and zero rejects. The instance/database were deleted after the evidence report was captured. This closes the loader/database integration gate while leaving the Power BI DirectQuery model, service capacity and Automatic Page Refresh gates open.
 
 ## Deliberate stop point
 

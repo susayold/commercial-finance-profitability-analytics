@@ -17,6 +17,7 @@
 - DirectQuery readiness: `powerbi/directquery/README.md`, `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`, `powerbi/DIRECTQUERY_READINESS.json`
 - DirectQuery provisioning controls: `scripts/load_directquery_sqlserver.py`, `powerbi/directquery/VNFinance_DirectQuery_Health.sql`, `requirements-directquery.txt`
 - DirectQuery health runner: `scripts/check_directquery_source.ps1` (sqlcmd; password only through `SQLCMDPASSWORD`)
+- DirectQuery LocalDB integration evidence: `reports/POWER_BI_DIRECTQUERY_LOCALDB_SMOKE_QA_2026-08-30.md`
 - Automated evidence: `reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md`
 - Native execution evidence: `reports/POWER_BI_DESKTOP_NATIVE_QA_2026-08-30.md`
 
@@ -67,3 +68,5 @@ No native `.pbix` is claimed in this release. Power BI Desktop is now installed 
 The CSV model is Import mode. It supports replacing source files and refreshing without redesigning the report. It does not claim second-level streaming real-time; that requires a supported DirectQuery/LiveConnect source and Automatic Page Refresh.
 
 The DirectQuery extension passes 35/35 offline readiness checks. The committed loader dry-run covers 14 tables and 29,843 rows with source hash `64af4a205f600c039cceb2405d6a1457cc50cd0a2878421580274161678a9ada`. The health query now returns a deterministic `NO_LOAD/FAIL` row when no batch exists. It remains gated at `READY_FOR_DATABASE_PROVISIONING` until a real database, ingestion watermark, credentials, capacity and native Desktop evidence are available.
+
+An ephemeral SQL Server LocalDB integration smoke test also passed: DDL 19/19 batches, `--apply` loaded 29,843/29,843 rows across 14 physical tables, Calendar generated 36 rows, rejected rows 0 and health `SUCCEEDED/PASS`. The smoke evidence is retained in the report above; the instance was deleted after capture.
