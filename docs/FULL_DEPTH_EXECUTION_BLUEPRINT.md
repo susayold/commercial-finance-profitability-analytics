@@ -1201,3 +1201,6 @@ The field-level follow-through is captured in [`docs/EXTERNAL_GATES_EXECUTION_PA
 
 ### QNS evidence-layer enrichment (2026-08-30)
 The QNS FY2025 report review is complete for the readable five-year management summary. FY2021–FY2025 gross profit and owners' equity are now populated in the normalized panel; the companion extract and evidence memo preserve the 27–28 page anchor and the summary-vs-statement caveat. Remaining QNS work is optional statement-level retrieval or a basis-adjusted perimeter analysis, not silent interpolation.
+
+### MCH OCR queue gate (2026-08-30)
+The 59-row MCH OCR workbench is now formally documented as intake-only. Implausible values and uneven metric coverage make automatic promotion unsafe. A page-level human review gate, tie-out protocol and reviewer fields are specified in `reports/MCH_OCR_REVIEW_DECISION_2026-08-30.md`; no MCH rows enter the approved panel until that gate is met.
