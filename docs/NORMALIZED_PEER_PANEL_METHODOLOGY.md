@@ -15,6 +15,7 @@ One row represents one company × fiscal period × metric observation.
 - MCH has a separate 80-row intake template (10 years × 8 metrics) because its OCR candidates are not yet page-level approved.
 - Canonical schema: schemas/normalized_peer_panel.schema.json.
 - Approved export: data/normalized_peer_panel_approved_2016_2025.csv.
+- KDC FY2024–FY2025 exact statement supplement: data/kdc_statement_metrics_2024_2025.csv (audited FY2025 filing; FY2024 comparative; page anchors 165–171).
 - Blocked MCH intake: data/normalized_peer_panel_intake_template.csv.
 
 The eight metrics are:
