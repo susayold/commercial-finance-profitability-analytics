@@ -9,6 +9,7 @@
 - Package/refresh validator: `scripts/validate_powerbi_refreshable_project.py`
 - Replacement-data contract validator: `scripts/validate_powerbi_input_contract.py`
 - Controlled data-swap runner: `scripts/prepare_powerbi_refresh.py`
+- Realtime/native claim-boundary validator: `scripts/validate_powerbi_claim_boundary.py`
 - Generated PBIP/PBIT coherence validator: `scripts/validate_powerbi_artifact_coherence.py`
 - Refresh architecture: `docs/POWER_BI_REFRESH_ARCHITECTURE.md`
 - Desktop execution runbook/checklist: `powerbi/POWER_BI_DESKTOP_RUNBOOK.md`, `powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md`

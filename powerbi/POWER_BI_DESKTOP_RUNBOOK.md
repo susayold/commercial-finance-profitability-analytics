@@ -24,6 +24,7 @@ Use the latest GitHub `main` branch and the Drive bundle. Do not use an old loca
 - Refresh architecture: `docs/POWER_BI_REFRESH_ARCHITECTURE.md`
 - Data contract validator: `scripts/validate_powerbi_input_contract.py`
 - Controlled data-swap runner: `scripts/prepare_powerbi_refresh.py`
+- Realtime/native claim-boundary validator: `scripts/validate_powerbi_claim_boundary.py`
 - Desktop QA matrix: `powerbi/QA_TEST_MATRIX.md`
 - Release evidence template: `powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md`
 
