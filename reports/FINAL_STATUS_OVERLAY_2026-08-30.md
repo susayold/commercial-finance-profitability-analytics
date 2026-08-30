@@ -128,3 +128,7 @@ Operational driver tree automated QA: local validator PASS (15/15); GitHub Finan
 ## Gate A intake contract extension
 
 Gate A tooling is now complete: 26-field immutable evidence schema, empty redacted handoff template, fixture, and template/fixture/live validator. Local template and fixture checks pass; the real LIVE_INTERNAL snapshot remains required before releasing observed Bias/WAPE.
+
+## Gate B source-coherence extension
+
+Power BI preflight now checks manifest/contract parity, core DAX measures, six-page coverage, QA-01–QA-18 evidence schema and the native-release hard stop. Result: 13/13 PASS. This is PBIP scaffold evidence only; native PBIX execution remains pending.
