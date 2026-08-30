@@ -102,3 +102,7 @@ Use the [live submission template](../data/forecast_snapshot_live_submission_tem
 ## Gate A implementation extension
 
 The repository now contains a full immutable intake contract (schemas/forecast_snapshot_gate_a.schema.json), empty handoff template, deterministic fixture, and three-mode validator. This closes the tooling/preflight portion of Gate A while preserving the actual evidence gate: only a real LIVE_INTERNAL FROZEN row with approved source/actuals URIs can return LIVE_OBSERVED_READY. The fixture remains explicitly non-live.
+
+## Gate B preflight extension
+
+A source-coherence validator and reviewer walkthrough now compare the PBIP manifest, model contract, DAX measures, six-page QA matrix and QA evidence log. The preflight returns 13/13 PASS and is wired into CI; Gate B remains OPEN until a real Power BI Desktop PBIX and QA-01–QA-18 visual evidence are supplied.
