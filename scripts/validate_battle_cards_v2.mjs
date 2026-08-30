@@ -1,0 +1,17 @@
+import fs from "node:fs";
+const report=fs.readFileSync(process.argv[2]||"docs/BATTLE_CARDS_V2.md","utf8");
+const csv=fs.readFileSync(process.argv[3]||"data/battle_cards_v2.csv","utf8").trim().split(/\r?\n/);
+const checks=[]; const must=(n,o)=>checks.push({n,ok:Boolean(o)});
+must("report_nontrivial",report.length>6500);
+for(const p of ["## Card A","## Card B","## Card C","## Meeting scorecard","## Escalation path","## Interview conversion"])must(p,report.includes(p));
+must("value_equations",["Incremental CM","LTV/CAC","Avoided lost CM"].every(v=>report.includes(v)));
+must("guardrails",["25%","5 days","95%"].every(v=>report.includes(v)));
+must("header",csv[0]==="card,request,finance_value_equation,approval_evidence,guardrail,green_action,red_action");
+const rows=csv.slice(1).map(x=>x.split(","));
+must("row_count",rows.length===3);
+must("required_fields",rows.every(r=>r.length===7&&r.every(Boolean)));
+must("cards",["A","B","C"].every(id=>rows.some(r=>r[0]===id)));
+must("boundary",report.includes("synthetic")&&report.includes("production-ready"));
+const failed=checks.filter(c=>!c.ok); for(const c of checks) console.log((c.ok?"PASS ":"FAIL ")+c.n);
+console.log("Overall status: "+(failed.length?"FAIL":"PASS")+" ("+(checks.length-failed.length)+"/"+checks.length+" checks passed)");
+if(failed.length)process.exit(1);
