@@ -195,6 +195,12 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - This is AGM/public guidance, not an internal forecast snapshot; every row is explicitly `PUBLIC_GUIDANCE_PROXY` and `gate_a_eligible=NO`.
 
 
+
+## MCH credit-screening extension
+
+- [Finance-analyst credit memo](reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md) · [Drive mirror](https://docs.google.com/document/d/15h8U_55cR5MBZV5KewQMvyJ6bjtVahKO0V5rXn-oXZQ/edit?usp=drivesdk)
+- Lender-style view: WATCH / CONDITIONAL SUPPORT. FY2025 equity ratio is 54.9%, but CFO/PAT fell to 31.5%; debt-service capacity remains unproven until debt, interest, maturity and working-capital schedules are provided.
+
 ## M&A / strategic stretch
 
 - [Synthetic M&A accretion/dilution case](docs/MNA_ACCRETION_DILUTION.md)
