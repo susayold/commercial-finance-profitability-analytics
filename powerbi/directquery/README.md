@@ -11,7 +11,7 @@ This folder is the production migration path for automatic Power BI page refresh
 - `../../requirements-directquery.txt`: optional `pyodbc` dependency for the controlled loader host.
 - `../../reports/POWER_BI_DIRECTQUERY_LOCALDB_SMOKE_QA_2026-08-30.md`: real ephemeral SQL Server LocalDB integration evidence; production realtime remains gated.
 - `../../reports/POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-30.md`: two-batch freshness evidence showing a changed source metric and latest control batch.
-- `../../reports/POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-31.md`: rerun with a runtime watermark; both health controls are `PASS`, the changed batch is exposed and `Sales[units]` moves by +1.
+- `../../reports/POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-31.md`: rerun with a runtime watermark and 10-query latency sample; both health controls are `PASS`, the changed batch is exposed and `Sales[units]` moves by +1.
 - `../../scripts/run_directquery_localdb_smoke.py`: reproducible Windows-only harness that provisions, loads, mutates, verifies and deletes an ephemeral LocalDB instance.
 - `../DIRECTQUERY_READINESS.json`: machine-readable migration gates and ownership fields.
 - `../docs/POWER_BI_REFRESH_ARCHITECTURE.md`: current Import contract and claim boundary.

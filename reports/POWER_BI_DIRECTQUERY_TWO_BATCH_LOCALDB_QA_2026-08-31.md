@@ -13,9 +13,9 @@ instance was deleted after the run.
 |---|---|
 | Overall status | **PASS** |
 | DDL execution | **PASS** — 19 batches |
-| Ephemeral instance | `VNFinanceDQ_SMOKE_20260830172807` (deleted) |
-| First batch | `DQ_LOCALDB_TWO_BATCH_BASE_20260830T172807Z` |
-| Second batch | `DQ_LOCALDB_TWO_BATCH_CHANGED_20260830T172807Z` |
+| Ephemeral instance | `VNFinanceDQ_SMOKE_20260830174131` (deleted) |
+| First batch | `DQ_LOCALDB_TWO_BATCH_BASE_20260830T174131Z` |
+| Second batch | `DQ_LOCALDB_TWO_BATCH_CHANGED_20260830T174131Z` |
 | Physical tables | 14 |
 | Source rows, both batches | 29,843 |
 | Loaded rows, both batches | 29,843 |
@@ -25,7 +25,8 @@ instance was deleted after the run.
 | Source hash | `64af4a205f600c039cceb2405d6a1457cc50cd0a2878421580274161678a9ada` → `b4f241de988253fad9e64041bcf3168a975797fe15e1f9b51c54eadb61e09b76` |
 | Latest health batch | **PASS** — second batch exposed |
 | Health control status | **PASS** for both batches |
-| Health query after second commit | 0.0162 seconds on LocalDB |
+| Health query after second commit | 0.0136 seconds (first sample) on LocalDB |
+| Health query latency benchmark | **10 samples**; p50 `0.0134s`, p95 `0.0153s`, min `0.0115s`, max `0.0155s`; every sample exposed the changed `PASS` batch |
 | Temporary instance cleanup | **PASS** |
 
 The test proves source-side batch replacement, control-row freshness and a

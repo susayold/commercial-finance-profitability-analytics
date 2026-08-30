@@ -157,6 +157,18 @@ def serializable(value: Any) -> Any:
     return value
 
 
+def percentile(values: list[float], fraction: float) -> float:
+    """Return a linearly interpolated percentile for a non-empty sample."""
+    if not values:
+        raise ValueError("percentile requires at least one sample")
+    ordered = sorted(values)
+    position = (len(ordered) - 1) * fraction
+    lower = int(position)
+    upper = min(lower + 1, len(ordered) - 1)
+    weight = position - lower
+    return ordered[lower] + (ordered[upper] - ordered[lower]) * weight
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", type=Path, default=REPO_ROOT / "powerbi" / "data" / "current")
@@ -165,11 +177,14 @@ def main() -> int:
     parser.add_argument("--report", type=Path, help="write JSON evidence")
     parser.add_argument("--instance-name", default="", help="LocalDB instance name; defaults to a UTC timestamp")
     parser.add_argument("--database", default="", help="database name; defaults to an ephemeral name")
+    parser.add_argument("--health-samples", type=int, default=10, help="number of post-commit health-query latency samples (default: 10)")
     parser.add_argument("--keep-instance", action="store_true", help="leave the instance for manual inspection")
     args = parser.parse_args()
 
     if os.name != "nt":
         raise RuntimeError("This smoke test requires Windows SQL Server LocalDB")
+    if args.health_samples < 1:
+        raise ValueError("--health-samples must be at least 1")
     sql_localdb = find_sqllocaldb()
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     instance = args.instance_name or f"VNFinanceDQ_SMOKE_{stamp.replace('T', '').replace(':', '').replace('Z', '')}"
@@ -213,8 +228,17 @@ def main() -> int:
             apply_load(database_connection, changed_manifest, changed_rows, changed_batch, changed_watermark)
             after_apply = time.perf_counter()
             changed_metrics = scalar_metrics(database_connection)
-            changed_health = health_row(database_connection, args.health_query)
-            health_elapsed = time.perf_counter() - after_apply
+            health_latencies: list[float] = []
+            health_samples: list[dict[str, Any]] = []
+            for _ in range(args.health_samples):
+                health_started = time.perf_counter()
+                sampled_health = health_row(database_connection, args.health_query)
+                health_latencies.append(time.perf_counter() - health_started)
+                health_samples.append(sampled_health)
+            changed_health = health_samples[-1]
+            health_elapsed = health_latencies[0]
+            if any(sample.get("batch_id") != changed_batch or sample.get("control_status") != "PASS" for sample in health_samples):
+                raise RuntimeError("post-commit health samples did not consistently expose the changed PASS batch")
 
         expected_unit_delta = changed_metrics["units"] - base_metrics["units"]
         checks = {
@@ -235,6 +259,14 @@ def main() -> int:
                 "changed": {"batch_id": changed_batch, "health": {k: serializable(v) for k, v in changed_health.items()}, "metrics": changed_metrics, "source_hash_sha256": source_hash(changed_manifest)},
                 "checks": checks,
                 "observed_health_query_seconds_after_commit": round(health_elapsed, 4),
+                "health_query_latency": {
+                    "samples": len(health_latencies),
+                    "p50_seconds": round(percentile(health_latencies, 0.50), 4),
+                    "p95_seconds": round(percentile(health_latencies, 0.95), 4),
+                    "min_seconds": round(min(health_latencies), 4),
+                    "max_seconds": round(max(health_latencies), 4),
+                    "all_samples_exposed_changed_pass_batch": True,
+                },
                 "temporary_instance_cleanup": "PENDING",
             }
         )

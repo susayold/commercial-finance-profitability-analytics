@@ -41,6 +41,9 @@ still need a real Power BI Desktop or cloud workspace.
 11. Ran the cross-platform finance QA runner after the change: **49/49 PASS**,
     including PBIP source coherence and DirectQuery readiness.
 12. Verified GitHub Actions run [33325806466](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33325806466): the new release-gate step and the full Finance model QA job completed successfully; CI correctly records the Windows Desktop stage as `EXTERNAL_PENDING` on Ubuntu.
+13. Extended the LocalDB smoke harness with a configurable post-commit health
+    latency sample. The current 10-sample run recorded p50 `0.0134s` and p95
+    `0.0153s`; this baseline is explicitly labelled local rehearsal evidence.
 
 ## Evidence boundaries
 

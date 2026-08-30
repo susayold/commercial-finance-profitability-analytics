@@ -32,7 +32,7 @@ been refreshed.
 
 | Environment | Purpose | Minimum evidence | Claim allowed |
 |---|---|---|---|
-| LocalDB smoke | Prove DDL, loader, mutation and health-query mechanics | `POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-30.md`; instance deleted after run | Contract rehearsal only |
+| LocalDB smoke | Prove DDL, loader, mutation, health-query mechanics and a local latency baseline | `POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-31.md`; instance deleted after run | Contract rehearsal only |
 | Staging Azure SQL/Fabric | Prove cloud ingestion, identity, query latency and failure recovery | Two successful batches, one rejected-file test, health output, p50/p95 query timings, gateway/private-endpoint test | Staging freshness only |
 | Production | Support recruiter-facing realtime claim | Approved owner, capacity, source SLA, native Desktop/Service evidence, APR interval, two-user concurrency and rollback drill | Measured production freshness, with interval stated |
 
