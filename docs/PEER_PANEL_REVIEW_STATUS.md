@@ -209,3 +209,6 @@ The normalized peer export now promotes KDC FY2024 and FY2025 from the audited K
 
 ### MCH OCR queue decision (2026-08-30)
 The MCH workbench remains intake-only: 59 RapidOCR candidates across FY2016–FY2025 are flagged `needs_human_review`, with visible implausible values requiring source-page confirmation. No MCH row is promoted to the approved panel. The promotion gate and Drive memo are documented in `reports/MCH_OCR_REVIEW_DECISION_2026-08-30.md`.
+
+### MCH FY2024–FY2025 candidate reconciliation (2026-08-30)
+All eight normalized metrics for FY2024 and FY2025 are captured in a review-ready candidate layer with tie-outs. Status remains `pending_visual_signoff`; no MCH rows are promoted. [MCH candidate reconciliation](reports/MCH_STATEMENT_CANDIDATE_RECONCILIATION_2024_2025.md) · [candidate CSV](data/mch_statement_candidates_2024_2025.csv) · [Drive candidate Sheet](https://docs.google.com/spreadsheets/d/1L8sRGR-4DI3bxE7ODqzjo9Bq18d4UjvADVUPjUDZKBE/edit) · [Drive reconciliation memo](https://docs.google.com/document/d/1HHWzjsW0I4PjyJYBsCawGx7_e141gLSESbodhpadU5s/edit)
