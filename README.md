@@ -318,3 +318,10 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 
 - [FY2017/FY2020 source verification runbook](docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk)
 - Official annual-report URLs are preserved as indexed sources, but standalone FY2017/FY2020 attachment bytes remain retrieval-gated. The runbook defines Drive archive, hash, page-review, tie-out and promotion rules; no unverified source is promoted.
+
+
+## MCH financial-statement analysis / earnings quality
+
+- [Analysis report](reports/MCH_FINANCIAL_STATEMENT_ANALYSIS_2026-08-30.md) · [dataset](data/mch_financial_statement_analysis_2016_2025.csv) · [validator](scripts/validate_mch_financial_statement_analysis.mjs) · [QA](reports/MCH_FINANCIAL_STATEMENT_ANALYSIS_QA.md)
+- [Drive report](https://docs.google.com/document/d/1FgZurJC5pqdAwn9_jISfnujGavFtZAiXQl1klXsHMqQ/edit?usp=drivesdk) · [Drive dataset](https://drive.google.com/file/d/1VmufGdZqnW8UEsZzy_26fjZvOAqBTqws/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1KLPbnCjNXvWTZBSz9DzlF9SNe2FiLCt-/view?usp=drivesdk) · [Drive QA](https://docs.google.com/document/d/1OHA7cUGLrRGbnFKgvZYX9i9cfEXUa-7VSAMfum9R0qs/edit?usp=drivesdk)
+- The layer decomposes reported profit into margin, efficiency and capital-structure drivers and flags FY2025 cash conversion (CFO/revenue 6.98%) plus FY2024 equity-base sensitivity. All ratios are calculated and caveated; no standalone valuation claim is made.
