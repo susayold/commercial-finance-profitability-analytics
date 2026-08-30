@@ -101,6 +101,11 @@ jobs:
         run: |
           node scripts/validate_peer_basis_perimeter_bridge.mjs data/peer_basis_perimeter_bridge_2016_2025.csv
 
+      - name: Validate QNS/KDC adjustment feasibility ledger
+        shell: bash
+        run: |
+          node scripts/validate_peer_basis_adjustment_feasibility.mjs
+
       - name: Validate PBIP source manifest
         shell: bash
         run: |
