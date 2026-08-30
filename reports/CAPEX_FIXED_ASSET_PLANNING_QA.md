@@ -1,24 +1,22 @@
 # CAPEX & Fixed-Asset Planning QA
 
-Date: 2026-08-30
+**Overall status: PASS (15/15 checks passed)**
 
-**Overall status: PASS (14/14 checks passed)**
+| Check | Status | Detail |
+|---|---|---|
+| Required headers | PASS | missing= |
+| Expected row count | PASS | rows=6 |
+| Unique project-period grain | PASS | duplicates=0 |
+| Budget variance | PASS | violations=0 |
+| Forecast variance | PASS | violations=0 |
+| Cash within commitment | PASS | violations=0 |
+| Depreciation service-date rule | PASS | violations=0 |
+| Depreciation arithmetic | PASS | violations=0 |
+| Payback arithmetic | PASS | violations=0 |
+| Approval status explicit | PASS | invalid=0 |
+| Non-negative values | PASS | violations=0 |
+| Synthetic evidence boundary | PASS | non_synthetic=0 |
+| Source system explicit | PASS | invalid=0 |
+| Report guardrails | PASS | missing cash/depreciation/payback |
+| Report release boundary | PASS | missing release boundary |
 
-| # | Control | Result |
-|---:|---|---|
-| 1 | Required fields and six project-month rows | PASS |
-| 2 | Unique project-period grain | PASS |
-| 3 | Budget variance arithmetic | PASS |
-| 4 | Forecast variance arithmetic | PASS |
-| 5 | Cash payment does not exceed commitment | PASS |
-| 6 | Depreciation starts only in service period | PASS |
-| 7 | Depreciation equals asset cost/useful life | PASS |
-| 8 | Payback months uses annual contribution | PASS |
-| 9 | Approval status is explicit | PASS |
-| 10 | Non-negative capex/cash values | PASS |
-| 11 | Synthetic evidence boundary | PASS |
-| 12 | Source system is explicit | PASS |
-| 13 | Report has cash/depreciation/payback guardrails | PASS |
-| 14 | Report release boundary is explicit | PASS |
-
-The module is a synthetic investment-governance rehearsal, not evidence of realized company returns.
