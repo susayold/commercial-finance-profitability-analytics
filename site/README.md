@@ -16,6 +16,7 @@ This folder documents the recruiter-facing Sites implementation for the Commerci
 - Forecast Gate A intake contract and Power BI Gate B QA-01–QA-18 evidence links
 - Direct links to the v2 workbook, dashboard render, CFO memo, MCH trend report, credit memo QA, finance-first CV V2 and GitHub repository
 - Power BI delivery panel with editable PBIP/PBIT links, one-command refresh automation, GitHub-triggered Service refresh and two-batch DirectQuery freshness evidence
+- DirectQuery acceptance matrix link for cloud provisioning, Desktop migration, APR measurement, security and rollback gates
 - Next Execution Sprint panel with Gate A/B evidence handoffs, CV personalization path and a 12/12 structural playbook QA link
 - MCH public-company valuation rehearsal with FCFF/DCF scenario range, WACC/terminal-growth sensitivity and an explicit EV-only boundary
 - MCH equity-research rehearsal with ten-year thesis, earnings-quality bridge, scorecard, catalysts/risks and diligence actions
