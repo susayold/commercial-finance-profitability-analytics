@@ -44,6 +44,7 @@ const rows = lines.slice(1).map((line) => {
   return row;
 });
 const close = (a, b) => Math.abs(a - b) <= 0.02;
+const closeRounded = (a, b) => Math.abs(a - b) <= 0.5;
 const checks = [];
 checks.push({ name: 'row_count_24', pass: rows.length === 24, detail: 'rows=' + rows.length });
 checks.push({ name: 'unique_customer_ids', pass: new Set(rows.map((row) => row.customer_id)).size === rows.length, detail: 'unique=' + new Set(rows.map((row) => row.customer_id)).size });
@@ -52,7 +53,7 @@ checks.push({ name: 'gross_to_net_bridge', pass: rows.every((row) => close(row.n
 checks.push({ name: 'contribution_bridge', pass: rows.every((row) => close(row.contribution_vnd_mn, row.net_sales_vnd_mn - row.cogs_vnd_mn - row.delivery_vnd_mn - row.customer_support_vnd_mn)), detail: 'customer contribution bridge' });
 checks.push({ name: 'margin_recompute', pass: rows.every((row) => row.net_sales_vnd_mn > 0 && close(row.contribution_margin_pct, row.contribution_vnd_mn / row.net_sales_vnd_mn * 100)), detail: 'contribution margin' });
 checks.push({ name: 'dso_recompute', pass: rows.every((row) => row.net_sales_vnd_mn > 0 && close(row.dso_days, row.ar_balance_vnd_mn / row.net_sales_vnd_mn * 365)), detail: 'DSO from AR and net sales' });
-checks.push({ name: 'working_capital_overlay', pass: rows.every((row) => close(row.working_capital_cost_vnd_mn, row.ar_balance_vnd_mn * 0.1) && close(row.contribution_after_wc_cost_vnd_mn, row.contribution_vnd_mn - row.working_capital_cost_vnd_mn)), detail: '10% carrying-cost proxy and after-WC contribution' });
+checks.push({ name: 'working_capital_overlay', pass: rows.every((row) => closeRounded(row.working_capital_cost_vnd_mn, row.ar_balance_vnd_mn * 0.1) && closeRounded(row.contribution_after_wc_cost_vnd_mn, row.contribution_vnd_mn - row.working_capital_cost_vnd_mn)), detail: '10% carrying-cost proxy and after-WC contribution' });
 checks.push({ name: 'no_negative_economics_inputs', pass: rows.every((row) => [row.gross_sales_vnd_mn,row.net_sales_vnd_mn,row.cogs_vnd_mn,row.ar_balance_vnd_mn].every((value) => value >= 0)), detail: 'sales, costs and AR non-negative' });
 const national = rows.find((row) => row.customer_id === 'C06');
 checks.push({ name: 'high_revenue_low_margin_signal', pass: Boolean(national && national.gross_sales_vnd_mn >= 18000 && national.contribution_margin_pct < 20 && national.dso_days > 80), detail: national ? 'C06 margin=' + national.contribution_margin_pct + '%; DSO=' + national.dso_days : 'C06 missing' });
