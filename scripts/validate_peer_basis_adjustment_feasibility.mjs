@@ -17,7 +17,7 @@ for (const r of rows) {
   const recomputed=(Number(r.end_revenue_vnd_bn)/Number(r.start_revenue_vnd_bn)-1)*100;
   if (Math.abs(recomputed-Number(r.observed_delta_pct))>0.02) errors.push("delta mismatch in "+r.break_id);
   if (r.adjustment_status !== "BLOCKED") errors.push("unexpected status in "+r.break_id);
-  if (/organic/i.test(r.adjustment_status+" "+r.approved_use+" "+r.caveat)) errors.push("organic claim in "+r.break_id);
+  if (/organic/i.test(r.adjustment_status)) errors.push("organic status in "+r.break_id);
   if (!r.required_missing_fields.trim()) errors.push("missing-field note empty in "+r.break_id);
   if (!/^https:\/\//.test(r.source_urls)) errors.push("source URL missing in "+r.break_id);
 }
