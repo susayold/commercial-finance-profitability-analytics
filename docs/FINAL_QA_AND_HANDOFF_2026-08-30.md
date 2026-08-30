@@ -145,3 +145,8 @@ The forecast accuracy gate now has a native [Google Sheet capture template](http
 ## Forecast governance close control (2026-08-30)
 
 A detailed [forecast snapshot close calendar](FORECAST_SNAPSHOT_CLOSE_CALENDAR.md) is now archived. It specifies the monthly WD-5 to month+1 operating cadence, immutable snapshot fields, freeze protocol, RACI, leakage-safe eligibility rule, exception treatment and recruiter evidence pack. The native [capture Sheet](https://docs.google.com/spreadsheets/d/1jv9rl49WDkwmRx8p41C10P0epbPY-Oq8AlihxQGJMfg/edit) remains the operational input surface; synthetic rows are unit-test fixtures only.
+
+
+## Monthly Business Review operating-pack closeout (2026-08-30)
+
+The Finance Analyst operating pack is now included in the remote QA surface. It is a synthetic management-review rehearsal with proxy KPIs, PVM/variance formulas, working-capital triggers, scenario boundaries, an owner/value-equation/guardrail/date tracker and an 8-point release checklist. GitHub validator and CI check the report and KPI CSV; Drive stores the native pack, Sheet, raw CSV, QA and validator. It does not close Gate A or Gate B.
