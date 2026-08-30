@@ -180,3 +180,8 @@ The WD-5 to WD+5 close/forecast calendar is now in the remote QA surface and Dri
 ## Recruiter deliverable index refresh (2026-08-30)
 
 The index now has a 15-minute review order and explicit release boundaries for synthetic, public, Gate A and Gate B evidence. Drive refresh copy is archived.
+
+
+## Monte Carlo risk overlay handoff (2026-08-30)
+
+A seeded 5,000-draw synthetic risk overlay is now included in the remote QA surface and Drive archive. It is a risk rehearsal, not internal forecast accuracy; Gate A remains open.
