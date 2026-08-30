@@ -1207,3 +1207,6 @@ The 59-row MCH OCR workbench is now formally documented as intake-only. Implausi
 
 ### MCH latest-year candidate layer (2026-08-30)
 The two latest MCH years now have a complete eight-metric candidate layer and explicit tie-out evidence. Visual sign-off remains the gating item before promotion; this is deliberate evidence-layer separation, not missing work. [MCH candidate reconciliation](reports/MCH_STATEMENT_CANDIDATE_RECONCILIATION_2024_2025.md) · [candidate CSV](data/mch_statement_candidates_2024_2025.csv) · [Drive candidate Sheet](https://docs.google.com/spreadsheets/d/1L8sRGR-4DI3bxE7ODqzjo9Bq18d4UjvADVUPjUDZKBE/edit) · [Drive reconciliation memo](https://docs.google.com/document/d/1HHWzjsW0I4PjyJYBsCawGx7_e141gLSESbodhpadU5s/edit)
+
+### MCH latest-year statement approval (2026-08-30)
+Visual QA and tie-outs now support an approved FY2024–FY2025 MCH supplement covering all eight metrics. It is intentionally separate from the 240-row core panel; FY2016–FY2023 remain blocked until equivalent page-level review is completed.
