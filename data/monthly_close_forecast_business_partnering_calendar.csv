@@ -1,0 +1,12 @@
+timing,activity,primary_owner,input,output,control_sla,escalation
+WD-5,Freeze latest forecast,FP&A lead,forecast version and approver,FROZEN snapshot,created before actual availability,Finance manager
+WD-4,Sales flash and pipeline review,Sales finance,orders shipments returns,revenue risk list,top account and channel cut,Commercial director
+WD-3,Promotion and pricing checkpoint,Revenue growth manager,campaign calendar ASP trade spend,stop scale proposals,ROI and CM hurdle, CFO
+WD-2,Inventory and supply review,Supply-chain finance,aging demand lead time,DIO and service actions,A/B SKU coverage,COO/CFO
+WD-1,Pre-close bridge,FP&A analyst,flash P&L PVM WC,pre-close commentary,residual reviewed,Controller
+WD0,Accounting close,Financial controller,GL AR AP inventory accruals,closed actuals,subledger tie-outs,Controller
+WD+1,Actuals load and QA,Finance systems,closed actuals and mappings,validated actual dataset,CoA/sign checks,Systems owner
+WD+2,Variance and PVM review,FP&A analyst,actual budget frozen forecast PY,driver bridge,residual within tolerance,FP&A manager
+WD+3,Business partner challenge,Finance BP,bridge and customer/channel P&L,decisions and owners,guardrails applied,CFO
+WD+4,CFO pack sign-off,FP&A lead/CFO,MBR pack and recommendation register,approved management pack,evidence/action completeness,CFO office
+WD+5,Publish and action follow-up,FP&A analyst,signed pack and tracker,distributed pack,next dates archived,CFO office
