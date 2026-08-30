@@ -14,7 +14,8 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 ## Current release index — 2026-08-31
 
 - Production site: [V16 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
-- Latest GitHub main commit: `9cf71eff2c10430852ae7dd35837d1e699c61c24`
+- Latest GitHub main commit: `647a93b620171f7ac5334c11bf737897e127b62a`
+- [Boss handoff pack](reports/BOSS_HANDOFF_PACK_2026-08-31.md) — one-click review order, remote export manifest and evidence boundaries
 - Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-31.md)
 - Current boundary: the finance, public-company, valuation, equity-research, CV and editable Power BI workstreams are delivered; Gate A genuine internal evidence, formal full QA-01–QA-18 sign-off and production DirectQuery/APR evidence remain open.
 - A compact native `.pbix` has been opened, refreshed, saved, reopened and data-swap tested in Desktop. The extended 20-table PBIP/PBIT is validated separately and is not silently promoted as an extended native PBIX.
