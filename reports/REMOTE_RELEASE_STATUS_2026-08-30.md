@@ -130,3 +130,8 @@ Drive mirror for M&A extension:
 - [Drive archive](https://drive.google.com/file/d/1blpG-4CKWkjPpuwXwOFRkwI038XXMOnK/view)
 - The detailed plan is now stored remotely; no local output copy is retained.
 
+
+
+### QNS reported-summary enrichment
+
+QNS FY2021–FY2025 gross profit and owners' equity are now populated from the FY2025 annual-report management summary (pages 27–28). The evidence tier is explicit: reported annual-report summary, partially comparable, not audited statement-line extraction. Companion CSV/report are mirrored to Drive alongside the updated normalized panel.
