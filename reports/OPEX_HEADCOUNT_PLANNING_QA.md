@@ -2,7 +2,7 @@
 
 Date: 2026-08-30
 
-**Overall status: PASS (12/12 checks passed)**
+**Overall status: PASS (13/13 checks passed)**
 
 | # | Control | Result |
 |---:|---|---|
@@ -18,5 +18,6 @@ Date: 2026-08-30
 | 10 | Non-negative workforce and OPEX values | PASS |
 | 11 | Synthetic evidence boundary | PASS |
 | 12 | Report includes owner, guardrail and release boundary | PASS |
+| 13 | Validator output path is separate from source report | PASS |
 
 The module is a synthetic FP&A workforce/OPEX rehearsal, not evidence of realized company impact.
