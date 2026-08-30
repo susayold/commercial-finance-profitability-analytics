@@ -102,6 +102,13 @@ try {
   if (directQueryMappingOutput) directQueryMappingCheck.output_tail = directQueryMappingOutput.split(/\r?\n/).slice(-6).join('\n');
   result.checks.push(directQueryMappingCheck);
   if (directQueryMapping.status !== 0) result.status = 'FAIL';
+
+  const directQueryHealthContract = spawnSync(python, ['scripts/validate_directquery_health_contract.py'], { cwd: root, encoding: 'utf8' });
+  const directQueryHealthOutput = `${directQueryHealthContract.stdout ?? ''}${directQueryHealthContract.stderr ?? ''}`.trim();
+  const directQueryHealthCheck = { name: 'directquery_health_contract', status: directQueryHealthContract.status === 0 ? 'PASS' : 'FAIL' };
+  if (directQueryHealthOutput) directQueryHealthCheck.output_tail = directQueryHealthOutput.split(/\r?\n/).slice(-6).join('\n');
+  result.checks.push(directQueryHealthCheck);
+  if (directQueryHealthContract.status !== 0) result.status = 'FAIL';
 } finally {
   fs.rmSync(transient, { recursive: true, force: true });
 }

@@ -83,11 +83,20 @@ still need a real Power BI Desktop or cloud workspace.
     one-command Power BI release gate. This keeps storage-mode migration and
     data-drop automation in the same deterministic preflight rather than
     relying on documentation-only review.
-23. Reran the release gate with the installed Desktop path. All seven
+23. Reran the release gate with the installed Desktop path. All eight
     deterministic stages passed (78/78 input checks, package/coherence/claim
     boundary, 17/17 DirectQuery mapping and 12/12 Service workflow checks);
     Desktop preflight was 14/14. The output still explicitly leaves native
     PBIX rendering and production APR as external evidence gates.
+24. Hardened the DirectQuery health query with an explicit `control_reason`
+    (`CURRENT`, `STALE_WATERMARK`, `REJECTED_ROWS`, `LOAD_FAILED`, `NO_LOAD`)
+    and exercised all five states against disposable LocalDB control rows.
+    The state-machine run returned **5/5 PASS** with cleanup PASS; the static
+    health contract is now part of the one-command release gate.
+25. Reran the two-batch DirectQuery LocalDB integration after the health-query
+    change. Both batches remained `PASS`, `Sales[units]` moved `1,256,859 →
+    1,256,860`, all 20 health samples exposed the changed batch and the
+    latency baseline was p50 `0.0132s` / p95 `0.0153s`; cleanup was PASS.
 
 ## Evidence boundaries
 

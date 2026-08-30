@@ -13,6 +13,8 @@ This folder is the production migration path for automatic Power BI page refresh
 - `../../reports/POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-30.md`: two-batch freshness evidence showing a changed source metric and latest control batch.
 - `../../reports/POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-31.md`: rerun with a runtime watermark and 10-query latency sample; both health controls are `PASS`, the changed batch is exposed and `Sales[units]` moves by +1.
 - `../../scripts/run_directquery_localdb_smoke.py`: reproducible Windows-only harness that provisions, loads, mutates, verifies and deletes an ephemeral LocalDB instance.
+- `../../scripts/run_directquery_health_contract_smoke.py`: Windows-only state-machine test for `NO_LOAD`, current, stale, rejected-row and failed-batch health states.
+- `../../reports/POWER_BI_DIRECTQUERY_HEALTH_CONTRACT_QA_2026-08-31.md`: 5/5 health-state integration evidence with cleanup PASS.
 - `../DIRECTQUERY_READINESS.json`: machine-readable migration gates and ownership fields.
 - `../docs/POWER_BI_REFRESH_ARCHITECTURE.md`: current Import contract and claim boundary.
 - `PRODUCTION_ACCEPTANCE_MATRIX.md`: gate-by-gate cloud, Desktop, Service and Automatic Page Refresh acceptance criteria.
@@ -47,7 +49,7 @@ Every load must publish a UTC watermark and batch status outside the fact tables
 - control status (`PASS`, `WARN`, `FAIL`);
 - owner and incident link when stale.
 
-The report must fail closed or show a visible warning when the watermark exceeds the agreed SLA. A fast visual query against stale data is not real-time analytics.
+The report must fail closed or show a visible warning when the watermark exceeds the agreed SLA. The health query returns `control_status` plus `control_reason` (`CURRENT`, `STALE_WATERMARK`, `REJECTED_ROWS`, `LOAD_FAILED` or `NO_LOAD`) so the warning is actionable. A fast visual query against stale data is not real-time analytics.
 
 ## Claim boundary
 

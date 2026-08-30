@@ -37,6 +37,10 @@
   "operational_control": {
     "source_table": "finance.Refresh_Control",
     "required_fields": ["batch_id", "status", "source_watermark_utc", "load_started_utc", "load_completed_utc", "physical_table_count", "source_row_count", "loaded_row_count", "rejected_row_count", "source_hash_sha256"],
+    "health_query_outputs": {
+      "control_status": ["PASS", "WARN", "FAIL"],
+      "control_reason": ["CURRENT", "STALE_WATERMARK", "REJECTED_ROWS", "LOAD_FAILED", "NO_LOAD", "CLOCK_SKEW"]
+    },
     "freshness_rule": "show STALE or INVESTIGATE when the latest successful source_watermark_utc exceeds the agreed SLA"
   },
   "migration_acceptance": [

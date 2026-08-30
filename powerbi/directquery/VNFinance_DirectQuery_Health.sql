@@ -36,13 +36,19 @@ SELECT
     latency_minutes,
     CASE
         WHEN latest.batch_id IS NULL THEN N'FAIL'
-        WHEN latest.status = N'SUCCEEDED'
-         AND rejected_row_count = 0
-         AND latency_minutes BETWEEN 0 AND @SlaMinutes
-        THEN N'PASS'
-        WHEN latest.status = N'SUCCEEDED' THEN N'WARN_STALE'
-        ELSE N'FAIL'
-    END AS control_status
+        WHEN latest.status <> N'SUCCEEDED' THEN N'FAIL'
+        WHEN rejected_row_count > 0 THEN N'WARN'
+        WHEN latency_minutes BETWEEN 0 AND @SlaMinutes THEN N'PASS'
+        ELSE N'WARN'
+    END AS control_status,
+    CASE
+        WHEN latest.batch_id IS NULL THEN N'NO_LOAD'
+        WHEN latest.status <> N'SUCCEEDED' THEN N'LOAD_FAILED'
+        WHEN rejected_row_count > 0 THEN N'REJECTED_ROWS'
+        WHEN latency_minutes < 0 THEN N'CLOCK_SKEW'
+        WHEN latency_minutes <= @SlaMinutes THEN N'CURRENT'
+        ELSE N'STALE_WATERMARK'
+    END AS control_reason
 FROM (SELECT 1 AS sentinel) AS one_row
 LEFT JOIN latest ON 1 = 1;
 

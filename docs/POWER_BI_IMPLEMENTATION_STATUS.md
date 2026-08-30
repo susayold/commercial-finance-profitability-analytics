@@ -181,3 +181,13 @@ freshness fields and preservation counts (37 measures, 23 relationships, six
 pages and 39 visual containers). The current gate result is **PASS** with
 DirectQuery mapping **17/17** and Service workflow contract **12/12**; these
 are structural checks, not a provisioned cloud realtime deployment.
+
+The DirectQuery health query now exposes a `control_reason` beside the
+`control_status`. A disposable LocalDB state-machine run covers no-load,
+current, stale, rejected-row and failed-load cases at **5/5 PASS**; the
+release gate also checks the SQL contract statically before migration.
+
+The refreshed two-batch LocalDB evidence remains **PASS** after this change:
+20 post-commit health samples consistently expose the changed batch, with
+`Sales[units]` moving by +1 and p50/p95 health-query latency of `0.0132s` /
+`0.0153s`. See [the dated integration record](../reports/POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-31.md).

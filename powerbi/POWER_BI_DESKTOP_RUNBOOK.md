@@ -25,6 +25,7 @@ Use the latest GitHub `main` branch and the Drive bundle. Do not use an old loca
 - Data contract validator: `scripts/validate_powerbi_input_contract.py`
 - Controlled data-swap runner: `scripts/prepare_powerbi_refresh.py`
 - Realtime/native claim-boundary validator: `scripts/validate_powerbi_claim_boundary.py`
+- DirectQuery mapping and health validators: `scripts/validate_directquery_mapping.py` and `scripts/validate_directquery_health_contract.py`
 - Native binary boundary note: `powerbi/POWER_BI_NATIVE_BINARY_BOUNDARY.md`
 - Desktop QA matrix: `powerbi/QA_TEST_MATRIX.md`
 - Release evidence template: `powerbi/PBIX_RELEASE_EVIDENCE_TEMPLATE.md`
@@ -268,7 +269,7 @@ For the realtime variant:
 
 1. Provision Azure SQL, SQL Server or Microsoft Fabric with `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`.
 2. Run the loader in dry-run mode, review its per-file row counts and SHA-256 evidence, then run `python scripts/load_directquery_sqlserver.py --apply --connection-string ...` on a controlled SQL Server-compatible host. For Azure SQL/Fabric, use an approved managed pipeline with the same contract.
-3. Run `powerbi/directquery/VNFinance_DirectQuery_Health.sql`; retain the `Refresh_Control` batch, watermark, latency and table-count output.
+3. Run `scripts/validate_directquery_mapping.py` and `scripts/validate_directquery_health_contract.py`, then run `powerbi/directquery/VNFinance_DirectQuery_Health.sql`; retain the `Refresh_Control` batch, watermark, latency, `control_status` and `control_reason` output.
    On a Windows rehearsal host, `python scripts/run_directquery_localdb_smoke.py --report <evidence.json>` proves the two-batch source update and cleans up its ephemeral LocalDB instance automatically.
 4. Replace each CSV partition with a DirectQuery table in Desktop; keep the same measures and relationships.
 5. Validate query latency, source freshness, gateway/network and capacity limits.

@@ -55,6 +55,8 @@ def main() -> int:
     control = contract.get("operational_control", {})
     required_control = {"batch_id", "status", "source_watermark_utc", "load_completed_utc", "source_row_count", "loaded_row_count", "rejected_row_count", "source_hash_sha256"}
     add("operational freshness fields are explicit", required_control <= set(control.get("required_fields", [])))
+    health_outputs = control.get("health_query_outputs", {})
+    add("health output states are explicit", set(health_outputs.get("control_status", [])) == {"PASS", "WARN", "FAIL"} and {"CURRENT", "STALE_WATERMARK", "REJECTED_ROWS", "LOAD_FAILED", "NO_LOAD", "CLOCK_SKEW"} <= set(health_outputs.get("control_reason", [])))
     add("claim boundary is present", "does not claim" in contract.get("claim_boundary", ""))
 
     failed = [name for name, ok, _ in checks if not ok]

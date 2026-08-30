@@ -66,6 +66,7 @@ Every successful ingestion batch must write:
 | `rejected_row_count` | Explicitly zero or a linked reject file; never omitted |
 | `source_hash_sha256` | Hash of the validated input manifest or extract |
 | `control_status` | `PASS`, `WARN` or `FAIL` based on the agreed SLA |
+| `control_reason` | `CURRENT`, `STALE_WATERMARK`, `REJECTED_ROWS`, `LOAD_FAILED`, `NO_LOAD` or `CLOCK_SKEW`; explains why a status is not healthy |
 | `incident_owner` | Named owner and incident link when status is not `PASS` |
 
 The report's Controls and Evidence page must expose the latest successful
