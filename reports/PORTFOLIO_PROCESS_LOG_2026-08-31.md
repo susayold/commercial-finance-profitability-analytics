@@ -47,6 +47,10 @@ still need a real Power BI Desktop or cloud workspace.
 14. Added `powerbi/POWER_BI_NATIVE_DESKTOP_HANDOFF_2026-08-31.md`, a single
     operator sheet for Desktop preflight, binding, QA-01–QA-18, replace-data-only
     proof, native PBIX save/reopen and the separate realtime migration gate.
+15. Added `scripts/validate_native_pbix_release.py` and tested both paths with
+    disposable ZIP fixtures: complete QA/metadata returns `READY_TO_CLAIM`,
+    missing external evidence returns `PENDING_EXTERNAL_EVIDENCE` (exit 2),
+    and a PBIT passed as PBIX is rejected (exit 1).
 
 ## Evidence boundaries
 

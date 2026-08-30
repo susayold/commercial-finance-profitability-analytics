@@ -46,6 +46,8 @@ The deterministic result must be PASS. Retain the JSON; it does not prove native
 
 After all 18 QA rows pass, save VNFinance_Commercial_Finance_YYYYMMDD_native.pbix, close/reopen that exact file, record SHA-256/size/version/DataRoot/timestamp, and upload PBIX plus evidence to private Drive. Never commit cache.abf, localSettings.json, credentials or personal paths.
 
+To audit the saved file before upload, run `scripts/validate_native_pbix_release.py` with `--pbix`, `--qa-csv`, `--desktop-version`, `--data-root`, `--refresh-timestamp` and `--report`. It returns `READY_TO_CLAIM` only when the PBIX container is valid, all 18 QA rows are observed `PASS`, and the Desktop metadata is populated; exit code `2` means `PENDING_EXTERNAL_EVIDENCE`, while an invalid/disguised artifact returns exit code `1`. The validator never edits the repository manifest.
+
 ## 5. Separate realtime gate
 
 Import refresh is not realtime. Follow powerbi/directquery/PRODUCTION_ACCEPTANCE_MATRIX.md: provision Azure SQL/SQL Server/Fabric, load UTC-watermarked batches, migrate all 14 partitions to DirectQuery, publish through approved gateway/capacity, measure freshness and p50/p95 latency, configure Automatic Page Refresh, and capture a changed batch after the APR cycle. Promote realtime_claim only after every production gate has observed evidence.

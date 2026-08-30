@@ -112,6 +112,12 @@ jobs:
             --data-root "$RUNNER_TEMP/vnfinance_powerbi_release_gate_target" \
             --report "$RUNNER_TEMP/powerbi_release_gate.json"
 
+      - name: Check native PBIX intake validator
+        shell: bash
+        run: |
+          python -m py_compile scripts/validate_native_pbix_release.py
+          python scripts/validate_native_pbix_release.py --help >/dev/null
+
       - name: Upload Power BI QA artifact
         uses: actions/upload-artifact@v4
         with:
