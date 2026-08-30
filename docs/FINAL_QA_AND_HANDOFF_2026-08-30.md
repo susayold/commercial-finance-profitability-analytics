@@ -201,3 +201,7 @@ Automated QA evidence: operational driver validator PASS (15/15) locally and in 
 ## Gate A intake contract handoff (2026-08-30)
 
 The full Gate A evidence contract and validator are committed and wired into CI. Template mode prevents accidental release; fixture mode returns FIXTURE_PASS_NOT_LIVE; live mode requires approved LIVE_INTERNAL evidence, pre-close cutoff, closed actuals, HTTPS source URIs and a non-empty eligible FROZEN set. No live performance claim was fabricated.
+
+## Gate B source-coherence handoff (2026-08-30)
+
+The PBIP source scaffold now has a machine-checked coherence layer (13/13 PASS) and a six-page reviewer walkthrough. The validator is in CI and the walkthrough is stored in powerbi/POWER_BI_REVIEWER_WALKTHROUGH.md. Native PBIX creation, visual tie-outs and QA-01–QA-18 execution remain external requirements.
