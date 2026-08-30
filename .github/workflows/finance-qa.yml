@@ -97,6 +97,10 @@ jobs:
             "$RUNNER_TEMP/mch_credit_memo_QA.md"
           grep -F "**Overall status: PASS** (15/15 checks passed)" "$RUNNER_TEMP/mch_credit_memo_QA.md"
 
+      - name: Validate QNS/KDC basis perimeter bridge
+        run: |
+          node scripts/validate_peer_basis_perimeter_bridge.mjs data/peer_basis_perimeter_bridge_2016_2025.csv
+
       - name: Validate PBIP source manifest
         shell: bash
         run: |
