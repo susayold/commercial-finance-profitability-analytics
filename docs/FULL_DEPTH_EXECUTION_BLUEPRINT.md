@@ -1210,3 +1210,6 @@ The two latest MCH years now have a complete eight-metric candidate layer and ex
 
 ### MCH latest-year statement approval (2026-08-30)
 Visual QA and tie-outs now support an approved FY2024–FY2025 MCH supplement covering all eight metrics. It is intentionally separate from the 240-row core panel; FY2016–FY2023 remain blocked until equivalent page-level review is completed.
+
+### MCH FY2023 extension (2026-08-30)
+The visually reviewed approved MCH supplement now covers FY2023–FY2025 with all eight normalized metrics and explicit printed-page anchors. FY2016–FY2022 remain blocked; the core 240-row panel is unchanged.
