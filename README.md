@@ -407,3 +407,8 @@ Monte Carlo QA hardening: the seeded builder is rerun in CI and the committed ou
 
 The module maps revenue, gross-to-net, contribution, inventory, working capital, customer and D2C drivers to owners, guardrails and decisions. It includes a source-to-metric contract, reconciliation controls, scenario labelling and a monthly finance cadence. All case inputs remain SIMULATED / DERIVED until approved source data exists.
 
+## OPEX and headcount planning
+
+[Module](docs/OPEX_HEADCOUNT_PLANNING_MODULE.md) · [Synthetic data](data/opex_headcount_planning_synthetic.csv) · [QA](reports/OPEX_HEADCOUNT_PLANNING_QA.md)
+
+The module links opening headcount, hires/exits, payroll, benefits, bonus and non-payroll spend to budget and forecast variance. It is a SIMULATED / DERIVED FP&A rehearsal, not real company evidence.
