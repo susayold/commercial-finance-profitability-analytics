@@ -204,6 +204,12 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - Site V6 release record: [GitHub source/deployment note](site/README.md) · [Drive mirror](https://docs.google.com/document/d/1WSaAd7YVTVclTnSKYoqqXdvxpK_GACSFc0cG-XJxXlY/edit?usp=drivesdk)
 
+## Customer profitability and concentration
+
+- [Methodology](docs/CUSTOMER_PROFITABILITY_METHODOLOGY.md) · [Synthetic customer P&L](data/customer_profitability_synthetic.csv) · [Validator](scripts/validate_customer_profitability.mjs) · [10/10 QA report](reports/CUSTOMER_PROFITABILITY_QA.md)
+- [Drive customer P&L](https://drive.google.com/file/d/1S9zo-2x90wd3kHCQE-3HnKgzXf7EiQs4/view?usp=drivesdk) · [Drive methodology](https://drive.google.com/file/d/1-fX1ha3FRjueADxB6JKwoJVHUOySauZ9/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1aVU-W46JXXZ6_ZgnPpBQxzE-QYIab3th/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/18F5b6jsL8MMppfDfqu7VIe7zM8owYqnX/view?usp=drivesdk)
+- The layer separates gross-to-net leakage, contribution, DSO and working-capital cost. C06 is intentionally a high-revenue / low-margin / long-DSO review account; all values are synthetic rehearsal evidence.
+
 ## Inventory quality, aging, shrinkage and wastage
 
 - [Methodology](docs/INVENTORY_QUALITY_METHODOLOGY.md) · [Synthetic schedule](data/inventory_quality_synthetic.csv) · [Validator](scripts/validate_inventory_quality.mjs) · [9/9 QA report](reports/INVENTORY_QUALITY_QA.md)
