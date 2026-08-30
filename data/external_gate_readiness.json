@@ -1,0 +1,36 @@
+{
+  "as_of": "2026-08-30",
+  "overall_status": "REVIEW_READY_NOT_PRODUCTION",
+  "gate_a": {
+    "status": "PENDING_EXTERNAL_INPUT",
+    "evidence_class_present": ["DEMO_FIXTURE_ONLY", "PUBLIC_GUIDANCE_PROXY"],
+    "live_internal_rows_present": 0,
+    "minimum_live_rows_required": 1,
+    "template_contract": "PASS",
+    "fixture_contract": "PASS",
+    "eligible_live_rows": 0,
+    "blockers": [
+      "No approved internal pre-close forecast snapshot",
+      "No internal source-model version and approver for a LIVE_INTERNAL row",
+      "No closed actuals tied to the frozen internal forecast"
+    ]
+  },
+  "gate_b": {
+    "status": "PENDING_EXTERNAL_DESKTOP",
+    "native_pbix_present": false,
+    "pbip_source_scaffold_present": true,
+    "qa_definitions_required": 18,
+    "visual_evidence_rows_present": 0,
+    "minimum_visual_evidence_rows_required": 18,
+    "blockers": [
+      "Power BI Desktop execution is required",
+      "Native PBIX binary has not been archived",
+      "QA-01 through QA-18 visual evidence has not been captured"
+    ]
+  },
+  "release_policy": {
+    "publish_live_forecast_accuracy": false,
+    "publish_native_pbix_claim": false,
+    "allowed_claim": "Synthetic rehearsal and portable source/QA design are review-ready; external gates remain open."
+  }
+}
