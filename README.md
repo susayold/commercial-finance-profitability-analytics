@@ -11,6 +11,14 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - Operating model: deterministic synthetic SKU-channel-customer ledger calibrated to public economics
 - Outputs: Excel, Power BI, CFO memo, management deck, battle cards and recruiter-first website
 
+## Current release index — 2026-08-30
+
+- Production site: [V13 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
+- Latest GitHub main commit: `64047c44d2ffdda8a873de216aff8bd8549f35f6`
+- Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-30.md)
+- Current boundary: all finance, public-company, valuation, equity-research, CV and QA work is complete; Gate A genuine internal evidence and Gate B native Power BI Desktop evidence remain open.
+- The native Power BI phase is intentionally paused until a separate user-approved plan is agreed.
+
 ## Current data foundation
 
 - 58 official PDFs archived in Google Drive (47 annual reports + 10 MCH audited consolidated statements)

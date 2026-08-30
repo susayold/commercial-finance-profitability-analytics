@@ -6,7 +6,7 @@
 
 | Check | Status | Detail |
 |---|---|---|
-| cv_exists | PASS | characters=3818 |
+| cv_exists | PASS | characters=3862 |
 | finance_first_positioning | PASS | title, profile and finance scope |
 | core_skill_coverage | PASS | primary Finance Analyst keywords present |
 | project_bullet_count | PASS | project_bullets=5 |
