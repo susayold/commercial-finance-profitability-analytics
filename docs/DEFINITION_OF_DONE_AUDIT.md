@@ -237,6 +237,10 @@ FY2024–FY2025 MCH statements were visually reviewed and tie-outs passed; the a
 ### MCH FY2016–FY2025 completion
 FY2016 and FY2018–FY2025 were visually reviewed (including cash-flow statements) and tie-outs passed; FY2017 was validated from the audited FY2018 comparative/corresponding columns. The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metrics) with the FY2017 caveat retained.
 
+## QNS/KDC adjustment-feasibility extension
+
+The optional feasibility step is now complete: four QNS/KDC break-register rows, a machine-readable ledger and a validator pass 10/10 controls. The artifact documents the exact entity, consolidation and gross-to-net bridges required before an adjusted full-period CAGR can be published. The adjusted series itself remains blocked; no unqualified organic-growth claim is introduced. See [feasibility report](../reports/PEER_BASIS_ADJUSTMENT_FEASIBILITY_2026-08-30.md), [QA](../reports/PEER_BASIS_ADJUSTMENT_FEASIBILITY_QA.md) and [Drive mirror](https://docs.google.com/document/d/1j4n34qdg3L4wlCcsf2KlQfakMzw3zqNIAVCnoO21eLM/edit?usp=drivesdk).
+
 ## Current status overlay
 
 See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
