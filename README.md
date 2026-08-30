@@ -313,3 +313,8 @@ The FY2024–FY2025 16-row candidate layer is retained as an audit-trail artifac
 - [MCH credit memo QA — 15/15 PASS](reports/MCH_CREDIT_MEMO_QA.md) · [Drive QA](https://docs.google.com/document/d/1LdV0ricHr9pr-sX1fN6JS6-znpUkToa15FsqrIG-rsc/edit?usp=drivesdk)
 
 The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metrics), after visual PDF review, statement tie-outs, balance-sheet checks and cash-flow confirmation. FY2017 is explicitly flagged as a comparative/corresponding-column year from the audited FY2018 filing. [approved CSV](data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
+
+## MCH source verification runbook
+
+- [FY2017/FY2020 source verification runbook](docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk)
+- Official annual-report URLs are preserved as indexed sources, but standalone FY2017/FY2020 attachment bytes remain retrieval-gated. The runbook defines Drive archive, hash, page-review, tie-out and promotion rules; no unverified source is promoted.
