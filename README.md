@@ -134,6 +134,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [DirectQuery readiness pack](powerbi/directquery/README.md) · [Azure SQL/Fabric schema](powerbi/directquery/VNFinance_DirectQuery_Schema.sql) · [transactional loader](scripts/load_directquery_sqlserver.py) · [health query](powerbi/directquery/VNFinance_DirectQuery_Health.sql) · [machine-readable gates](powerbi/DIRECTQUERY_READINESS.json)
 - [Loader dry-run evidence](reports/POWER_BI_DIRECTQUERY_LOADER_DRY_RUN_2026-08-30.md)
 - [LocalDB DirectQuery integration evidence](reports/POWER_BI_DIRECTQUERY_LOCALDB_SMOKE_QA_2026-08-30.md)
+- [Two-batch LocalDB freshness evidence](reports/POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-30.md) · [reproducible harness](scripts/run_directquery_localdb_smoke.py)
 - [Power BI Service refresh orchestrator](scripts/trigger_powerbi_service_refresh.py) · [dry-run evidence](reports/POWER_BI_SERVICE_REFRESH_DRY_RUN_2026-08-30.md)
 - [GitHub-triggered Service refresh workflow](.github/workflows/powerbi-service-refresh.yml) · validates changed data and refreshes a published dataset only when `PBI_WORKSPACE_ID`, `PBI_DATASET_ID` and `PBI_ACCESS_TOKEN` Secrets are configured
 - [Drive schema](https://drive.google.com/file/d/1bEPy126gWX9qM1iHQvDiEbLVGE3eWUOJ/view?usp=drivesdk) · [Drive readiness JSON](https://drive.google.com/file/d/1Dm7nymYxXqH-KLZOc7S87bQDeWzPkZjK/view?usp=drivesdk) · [Drive readiness QA](https://drive.google.com/file/d/1VgHwExWSwS7XhjpJqQ0gHM6-QZuDiS2a/view?usp=drivesdk)

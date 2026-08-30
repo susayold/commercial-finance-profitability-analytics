@@ -221,6 +221,7 @@ For the realtime variant:
 1. Provision Azure SQL, SQL Server or Microsoft Fabric with `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`.
 2. Run the loader in dry-run mode, review its per-file row counts and SHA-256 evidence, then run `python scripts/load_directquery_sqlserver.py --apply --connection-string ...` on a controlled SQL Server-compatible host. For Azure SQL/Fabric, use an approved managed pipeline with the same contract.
 3. Run `powerbi/directquery/VNFinance_DirectQuery_Health.sql`; retain the `Refresh_Control` batch, watermark, latency and table-count output.
+   On a Windows rehearsal host, `python scripts/run_directquery_localdb_smoke.py --report <evidence.json>` proves the two-batch source update and cleans up its ephemeral LocalDB instance automatically.
 4. Replace each CSV partition with a DirectQuery table in Desktop; keep the same measures and relationships.
 5. Validate query latency, source freshness, gateway/network and capacity limits.
 6. Enable **Automatic Page Refresh** only after those checks and document the interval and source timestamp.

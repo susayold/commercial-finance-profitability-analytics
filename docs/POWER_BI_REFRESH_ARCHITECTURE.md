@@ -70,6 +70,13 @@ must query a live source. The helper requires the operator to supply dataset
 write permission at runtime and returns a terminal refresh result; it does not
 publish credentials or tenant identifiers.
 
+The DirectQuery pack now includes a two-batch LocalDB harness and evidence
+report. It loads the baseline, mutates one source value in a temporary copy,
+loads the second batch and checks that the latest `Refresh_Control` row and
+source metric change together. This is source-side freshness evidence only;
+Desktop visual refresh and production Automatic Page Refresh remain separate
+release gates.
+
 Do not label a CSV Import report “real-time.” Power BI automatic page refresh applies to DirectQuery and supported LiveConnect models, not ordinary Import-mode CSVs.
 
 ## Open and edit

@@ -14,6 +14,8 @@
     "directquery_loader": "scripts/load_directquery_sqlserver.py",
     "directquery_health_query": "powerbi/directquery/VNFinance_DirectQuery_Health.sql",
     "directquery_health_runner": "scripts/check_directquery_source.ps1",
+    "directquery_localdb_two_batch_smoke": "scripts/run_directquery_localdb_smoke.py",
+    "directquery_localdb_two_batch_evidence": "reports/POWER_BI_DIRECTQUERY_TWO_BATCH_LOCALDB_QA_2026-08-30.md",
     "service_refresh_orchestrator": "scripts/trigger_powerbi_service_refresh.py",
     "service_refresh_workflow": ".github/workflows/powerbi-service-refresh.yml",
     "service_refresh_automation": "github_push_to_main_with_secrets",
