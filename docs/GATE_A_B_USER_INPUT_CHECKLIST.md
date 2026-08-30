@@ -4,6 +4,12 @@ Date: 2026-08-30
 
 This checklist is the smallest evidence bundle needed to close the two remaining external gates. It is an intake guide, not a substitute for the evidence itself.
 
+## Current remote state
+
+- Recruiter site: Sites v8 is deployed at https://vn-finance-fpa-case.sangkenny200.chatgpt.site; release provenance is recorded in [SITE_V8_RELEASE_RECORD_2026-08-30.md](../reports/SITE_V8_RELEASE_RECORD_2026-08-30.md).
+- Public-data boundary: MCH FY2017 is intentionally `INDEXED_ONLY`; its bounded eight-metric evidence and 8/8 QA are documented in [MCH_FY2017_WEB_INDEX_EVIDENCE.md](../reports/MCH_FY2017_WEB_INDEX_EVIDENCE.md). This does not satisfy Gate A or Gate B and must not be presented as internal forecast evidence.
+- No native PBIX or LIVE_INTERNAL snapshot is claimed until the acceptance rules below pass.
+
 ## Gate A — real internal forecast accuracy
 
 ### Minimum data file
