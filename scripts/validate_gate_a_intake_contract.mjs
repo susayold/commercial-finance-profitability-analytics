@@ -3,11 +3,15 @@ import fs from "node:fs";
 
 function parseCsv(text) {
   const rows=[]; let row=[], field="", quoted=false;
-  for(let i=0;i<text.length;i++){const ch=text[i],next=text[i+1];
-    if(quoted){if(ch==="""&&next==="""){field+=""";i++;} else if(ch===""") quoted=false; else field+=ch;}
-    else if(ch===""") quoted=true;
-    else if(ch===","){row.push(field);field="";}
-    else if(ch==="\n"){row.push(field.replace(/\r$/,""));rows.push(row);row=[];field="";}
+  for(let i=0;i<text.length;i++){
+    const ch=text[i], next=text[i+1];
+    if(quoted){
+      if(ch === '"' && next === '"'){field+='"';i++;}
+      else if(ch === '"') quoted=false;
+      else field+=ch;
+    } else if(ch === '"') quoted=true;
+    else if(ch === ","){row.push(field);field="";}
+    else if(ch === "\n"){row.push(field.replace(/\r$/,""));rows.push(row);row=[];field="";}
     else field+=ch;
   }
   if(field.length||row.length){row.push(field);rows.push(row);}
@@ -25,7 +29,8 @@ if(mode==="template"){
   add("Template has no data rows",rows.length===0,"rows="+rows.length);
 } else {
   add("Non-empty submission",rows.length>0,"rows="+rows.length);
-  add("Unique snapshot grain",new Set(rows.map(r=>[r.snapshot_id,r.forecast_version_id,r.target_period,r.company_id,r.brand_id,r.channel_id].join("|"))).size===rows.length,"duplicates="+(rows.length-new Set(rows.map(r=>[r.snapshot_id,r.forecast_version_id,r.target_period,r.company_id,r.brand_id,r.channel_id].join("|"))).size));
+  const keys=rows.map(r=>[r.snapshot_id,r.forecast_version_id,r.target_period,r.company_id,r.brand_id,r.channel_id].join("|"));
+  add("Unique snapshot grain",new Set(keys).size===keys.length,"duplicates="+(keys.length-new Set(keys).size));
   const parseDate=v=>{const d=new Date(v);return v&&!Number.isNaN(d.getTime())?d:null};
   const validMonth=v=>/^\d{4}-(0[1-9]|1[0-2])$/.test(v||"");
   add("Date, month and numeric types",rows.every(r=>parseDate(r.forecast_created_at)&&parseDate(r.forecast_cutoff_at)&&parseDate(r.actual_available_at)&&parseDate(r.actual_period_close_date)&&validMonth(r.target_period)&&Number.isFinite(Number(r.forecast_revenue_vnd))&&Number.isFinite(Number(r.actual_revenue_vnd))),"invalid="+rows.filter(r=>!(parseDate(r.forecast_created_at)&&parseDate(r.forecast_cutoff_at)&&parseDate(r.actual_available_at)&&parseDate(r.actual_period_close_date)&&validMonth(r.target_period))).length);
