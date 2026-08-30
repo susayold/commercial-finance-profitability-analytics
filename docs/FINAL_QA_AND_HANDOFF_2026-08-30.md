@@ -160,3 +160,8 @@ The KPI dictionary is now part of the remote QA surface. It is designed to preve
 ## Management recommendation handoff (2026-08-30)
 
 The register is now in the remote QA surface and Drive archive. It is a decision-support rehearsal with explicit synthetic/proxy/public/governance labels; it does not claim realized savings, revenue uplift or investment returns.
+
+
+## Business partnering closeout (2026-08-30)
+
+Battle cards v2 are now included in the remote QA surface and Drive archive. The cards demonstrate conditional approval, contribution-versus-cash trade-offs and escalation discipline; they remain a synthetic rehearsal rather than realized company impact.
