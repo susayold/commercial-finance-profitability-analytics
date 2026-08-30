@@ -6,6 +6,7 @@ This addendum supersedes stale version references in earlier raw handoff copies.
 
 - Recruiter website: **Sites v8** is deployed at https://vn-finance-fpa-case.sangkenny200.chatgpt.site.
 - GitHub source, data, validators and reports are current in https://github.com/susayold/commercial-finance-profitability-analytics.
+- Finance model QA runs 696–699 are PASS; the latest run is recorded at https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33299285698.
 - Drive project root: https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR.
 
 ## FY2017 evidence boundary
