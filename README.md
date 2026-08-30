@@ -452,3 +452,8 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 
 - Site V9 now surfaces the customer-economics decision lens with concentration, after-WC contribution and C06 review signal: [release record](reports/SITE_V9_RELEASE_RECORD_2026-08-30.md) · [Drive release record](https://drive.google.com/file/d/1vZn_kPRFlURjye_3Bbxikq62BWVUy1BK/view?usp=drivesdk).
 - Production: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
+
+
+## External gate readiness
+
+The current release boundary is machine-checkable in the [readiness report](reports/EXTERNAL_GATE_READINESS.md), [readiness JSON](data/external_gate_readiness.json) and [10/10 QA](reports/EXTERNAL_GATE_READINESS_QA.md). Gate A and Gate B remain explicitly open until real internal forecast evidence and native Power BI Desktop evidence are supplied.
