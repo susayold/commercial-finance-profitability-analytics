@@ -1,0 +1,6 @@
+dimension,score_1_to_5,stance,evidence,monitor_or_change,evidence_class
+Earnings durability,4,Positive long-run compounding,Revenue CAGR 9.24%; PAT CAGR 10.34%; ten years remain profitable.,Re-rate lower if revenue contraction persists or PAT CAGR breaks below revenue growth.,CALCULATED_PUBLIC_REHEARSAL
+Margin quality,3,Positive but normalising,Operating margin peaked at 29.17% in FY2024 and fell to 25.41% in FY2025.,Upgrade if margin stabilises above 25%; downgrade if the FY2025 reset continues.,CALCULATED_PUBLIC_REHEARSAL
+Cash conversion,2,Primary watch item,CFO/PAT fell from 116.50% to 31.52% year on year; cause is not isolated in this layer.,"Upgrade only after AR, inventory, AP, tax and one-off cash bridge reconciles.",CALCULATED_PUBLIC_REHEARSAL
+Capital resilience,4,"Balance-sheet buffer, incomplete debt view","FY2025 equity ratio is 54.94%; gross debt, maturities and interest coverage are not sourced.","Re-score after debt schedule, cash balance and covenant headroom are verified.",CALCULATED_PUBLIC_REHEARSAL
+Valuation support,3,Wide EV range / diligence required,"DCF rehearsal spans VND 40,673.8bn–101,614.9bn; base terminal value is 67.15% of EV.","Narrow range after approved forecast, capex/WC history, net debt and shares are available.",ANALYST_ASSUMPTION_REHEARSAL

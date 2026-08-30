@@ -140,3 +140,7 @@ The remaining work is now captured in a single [execution playbook](../docs/NEXT
 ## MCH valuation rehearsal extension
 
 The MCH Finance Analyst Lens now includes a separate EV-only FCFF/DCF rehearsal. It starts from the reported FY2025 revenue/margin/cash-conversion anchor, projects FY2026–FY2030 Base/Upside/Downside cases and tests a 5×5 WACC/terminal-growth grid. The builder and validator pass 19/19 checks. Forward inputs are `ANALYST_ASSUMPTION_REHEARSAL`; net debt, diluted shares, market price and approved guidance remain missing, so no equity value or price target is published.
+
+## MCH equity research rehearsal extension
+
+The public-finance layer now includes a standalone equity-research rehearsal: a ten-year thesis, earnings-quality bridge, five-dimension 1–5 scorecard, catalyst/risk map, EV-only valuation frame and decision-oriented diligence list. The builder and validator pass 22/22 checks. The stance is WATCH / CONDITIONAL UPSIDE with medium confidence; historical public evidence, analyst judgement and forward assumptions remain visibly separated.

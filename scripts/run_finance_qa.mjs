@@ -61,6 +61,7 @@ const tasks = [
   ['peer_basis_adjustment_feasibility', ['scripts/validate_peer_basis_adjustment_feasibility.mjs']],
   ['next_execution_sprint', ['scripts/validate_next_execution_sprint.mjs']],
   ['mch_valuation_rehearsal', ['scripts/validate_mch_valuation_rehearsal.mjs']],
+  ['mch_equity_research_rehearsal', ['scripts/validate_mch_equity_research_rehearsal.mjs']],
 ];
 
 const result = { status: 'PASS', runner: 'run_finance_qa.mjs', checks: [] };

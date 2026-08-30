@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "evidence_class": "CALCULATED_PUBLIC_REHEARSAL",
+  "issuer": "MCH",
+  "as_of_fiscal_year": 2025,
+  "historical_period": "FY2016-FY2025",
+  "stance": "WATCH_CONDITIONAL_UPSIDE",
+  "confidence": "MEDIUM",
+  "thesis": "Durable long-run earnings franchise, but FY2025 margin normalisation and cash-conversion weakness require evidence before re-rating.",
+  "metrics": {
+    "revenue_cagr_pct": 9.24,
+    "pat_cagr_pct": 10.34,
+    "operating_profit_cagr_pct": 10.49,
+    "fy2025_revenue_yoy_pct": -1.1,
+    "fy2025_operating_profit_yoy_pct": -13.85,
+    "fy2025_pat_yoy_pct": -14.6,
+    "fy2025_operating_margin_pct": 25.41,
+    "fy2024_operating_margin_pct": 29.17,
+    "fy2025_pat_margin_pct": 22.14,
+    "fy2024_pat_margin_pct": 25.64,
+    "fy2025_cfo_to_pat_pct": 31.52,
+    "fy2024_cfo_to_pat_pct": 116.5,
+    "fy2025_equity_ratio_pct": 54.94,
+    "fy2025_roa_proxy_pct": 21.87,
+    "peak_operating_margin_fy": 2024,
+    "peak_operating_margin_pct": 29.17,
+    "weakest_cfo_conversion_fy": 2025,
+    "weakest_cfo_to_pat_pct": 31.52
+  },
+  "scorecard": {
+    "total_score": 16,
+    "max_score": 25,
+    "rows": 5
+  },
+  "valuation_frame": {
+    "base_ev_vnd_bn": 75927.972496,
+    "scenario_min_ev_vnd_bn": 40673.805876,
+    "scenario_max_ev_vnd_bn": 101614.933492,
+    "sensitivity_min_ev_vnd_bn": 58366.970194,
+    "sensitivity_max_ev_vnd_bn": 110784.50426,
+    "output_boundary": "EV_ONLY_NO_EQUITY_VALUE_OR_PRICE_TARGET"
+  },
+  "catalysts": [
+    "cash bridge closes",
+    "operating margin stabilises",
+    "mix/trade-spend bridge disclosed",
+    "approved forecast narrows DCF range"
+  ],
+  "risks": [
+    "persistent cash leakage",
+    "margin erosion",
+    "mix opacity",
+    "DCF terminal-value sensitivity",
+    "FY2017 and missing debt/equity evidence boundaries"
+  ],
+  "missing_inputs": [
+    "net debt or net cash",
+    "diluted shares outstanding",
+    "current market price",
+    "approved management forecast",
+    "capex and working-capital history"
+  ]
+}

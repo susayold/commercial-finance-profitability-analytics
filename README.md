@@ -363,6 +363,13 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 
 - [Native Drive analysis Sheet](https://docs.google.com/spreadsheets/d/1f4o0myaW6ejjtRVIO_PPT_ODezJo0ANrTQPYxRQ58SI/edit?usp=drivesdk) — reviewer-facing table with one row per FY2016–FY2025 and formula-ready ratio columns.
 
+## MCH equity research rehearsal
+
+- [Fundamental equity-research report](reports/MCH_EQUITY_RESEARCH_REHEARSAL.md) · [Methodology](docs/MCH_EQUITY_RESEARCH_METHODOLOGY.md) · [Scorecard CSV](data/mch_equity_research_scorecard.csv) · [Summary JSON](data/mch_equity_research_summary.json)
+- [Builder](scripts/build_mch_equity_research_rehearsal.mjs) · [Validator](scripts/validate_mch_equity_research_rehearsal.mjs) · [QA](reports/MCH_EQUITY_RESEARCH_REHEARSAL_QA.md)
+- Drive mirrors: [report](https://drive.google.com/file/d/11XjG31Rq5G9D53qVwe9kaKoXh9WBwP_h/view?usp=drivesdk) · [methodology](https://drive.google.com/file/d/1Y1EMXrAbMsg_4EI0WM6kKtECCSagfL4a/view?usp=drivesdk) · [scorecard](https://drive.google.com/file/d/1cIowI-53kl4LtxHw9G28WzkdS1P1PvTG/view?usp=drivesdk) · [summary JSON](https://drive.google.com/file/d/1aLMn72xFXOB90Hm-7DJgYxM79qR6wgiz/view?usp=drivesdk) · [QA](https://drive.google.com/file/d/1m1Jka4VzfqTtpbYYN5Weki4qhczgCQRE/view?usp=drivesdk)
+- The report is a watch / conditional-upside rehearsal: 9.24% revenue CAGR, 10.34% PAT CAGR, FY2025 CFO/PAT of 31.52% and a 16/25 structured scorecard. It deliberately stops before a price target because equity-value inputs remain incomplete.
+
 
 ## Peer financial-quality scorecard
 
@@ -457,6 +464,8 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 
 ## Latest website release
 
+- Site V12 adds the Equity Research Rehearsal lens (thesis, earnings-quality bridge, scorecard, catalysts, risks and diligence map): [release record](reports/SITE_V12_RELEASE_RECORD_2026-08-30.md).
+- [Drive V12 release record](https://drive.google.com/file/d/1jLSEF0bNZe5Folz170yuk3DF4cLQXx54/view?usp=drivesdk) · [Drive V12 source archive](https://drive.google.com/file/d/1ihlMy6AZ5k_p3BMbWSCmYVoKH911UsB7/view?usp=drivesdk)
 - Site V11 adds the public-company valuation rehearsal lens (base EV, scenarios, sensitivity and EV-only evidence boundary): [release record](reports/SITE_V11_RELEASE_RECORD_2026-08-30.md).
 - [Drive V11 release record](https://drive.google.com/file/d/1jLSEF0bNZe5Folz170yuk3DF4cLQXx54/view?usp=drivesdk) · [Drive V11 source archive](https://drive.google.com/file/d/1SXAwrk3gT8zxdcuRo6HeWrmfaTAYlJt0/view?usp=drivesdk)
 - Site V10 previously surfaced the Next Execution Sprint with Gate A/B handoffs, CV personalization status and playbook QA: [release record](reports/SITE_V10_RELEASE_RECORD_2026-08-30.md).
