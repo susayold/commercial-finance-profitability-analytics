@@ -9,10 +9,11 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Item | Current value |
 |---|---|
 | GitHub repository | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) |
-| Handoff commit | [`607e329`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/607e329969d5c0238f5c37740953529a4345abf7) |
+| Handoff commit | [`ca38654`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/ca38654c90cbd7e416549f5f083533edb0362628) |
 | Latest validated CI | [Finance model QA](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127) — PASS |
-| Latest local release gate | `b4f0c42` — PASS; ten deterministic stages and Desktop preflight 14/14 |
+| Latest local release gate | `ca38654` — PASS; ten deterministic stages and Desktop preflight 14/14 |
 | Drive bundle | [VNFinance Power BI refreshable package](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) |
+| Native PBIX on Drive | [VNFinance Commercial Finance native PBIX](https://drive.google.com/file/d/15wJmM8POBNonWIfslSAdh8ihSUZZNc3W/view?usp=drivesdk) |
 | Power BI Desktop host | `D:\Po BI\bin\PBIDesktop.exe` |
 | Desktop version recorded by preflight | `2.157.879.0 (26.08)` |
 | Current operating mode | `Import_replace_and_refresh` |

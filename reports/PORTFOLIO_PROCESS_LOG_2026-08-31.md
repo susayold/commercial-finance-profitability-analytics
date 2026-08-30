@@ -112,6 +112,13 @@ still need a real Power BI Desktop or cloud workspace.
     The baseline file was restored and the native PBIX was saved again. The
     observed native artifact and evidence sheet are checked in; the complete
     QA-01–QA-18 matrix remains a separate pending sign-off.
+28. Committed the native PBIX as
+    `powerbi/releases/Commercial_Finance_Profitability_Analytics_native.pbix`
+    (1,456,507 bytes; SHA-256
+    `DFA3EC096D46DF2DDCEDA9B3333FA5506FB98B8DE9414C5A792BFE558F301644`),
+    pushed commit `ca38654` to GitHub and uploaded the same bytes to the private
+    Drive file `15wJmM8POBNonWIfslSAdh8ihSUZZNc3W`. The release gate now returns
+    PASS across ten deterministic stages plus the 14/14 Desktop preflight.
 
 ## Evidence boundaries
 

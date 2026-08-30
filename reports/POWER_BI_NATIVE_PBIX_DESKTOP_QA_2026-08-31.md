@@ -12,6 +12,7 @@
 | DataRoot used | `powerbi/data/current` in the disposable Desktop checkout |
 | Operating mode | Import with `DataRoot` parameter and explicit refresh |
 | Evidence timestamp | 2026-08-31 02:44:45 +07:00 |
+| Drive copy | [VNFinance Commercial Finance native PBIX](https://drive.google.com/file/d/15wJmM8POBNonWIfslSAdh8ihSUZZNc3W/view?usp=drivesdk) |
 
 ## What was actually executed
 
