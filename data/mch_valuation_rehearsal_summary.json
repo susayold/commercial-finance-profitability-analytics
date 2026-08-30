@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "evidence_class": "ANALYST_ASSUMPTION_REHEARSAL",
+  "historical_anchor": {
+    "fiscal_year": 2025,
+    "revenue_vnd_bn": 30556.536606,
+    "operating_margin_pct": 25.4109,
+    "pat_margin_pct": 22.1365,
+    "cfo_to_pat_pct": 31.524,
+    "source_note": "Page-reviewed audited statement source"
+  },
+  "forecast_period": "FY2026-FY2030",
+  "scenarios": [
+    {
+      "scenario": "Base",
+      "revenue_cagr": 0.06,
+      "ebit_margin": 0.25,
+      "tax_rate": 0.2,
+      "da_pct_revenue": 0.015,
+      "capex_pct_revenue": 0.018,
+      "dnwc_pct_revenue": 0.005,
+      "wacc": 0.12,
+      "terminal_growth": 0.03,
+      "pv_explicit_fcff_vnd_bn": 24943.340956,
+      "pv_terminal_vnd_bn": 50984.631539,
+      "enterprise_value_vnd_bn": 75927.972496
+    },
+    {
+      "scenario": "Upside",
+      "revenue_cagr": 0.08,
+      "ebit_margin": 0.27,
+      "tax_rate": 0.2,
+      "da_pct_revenue": 0.015,
+      "capex_pct_revenue": 0.018,
+      "dnwc_pct_revenue": 0.003,
+      "wacc": 0.11,
+      "terminal_growth": 0.03,
+      "pv_explicit_fcff_vnd_bn": 29574.79417,
+      "pv_terminal_vnd_bn": 72040.139322,
+      "enterprise_value_vnd_bn": 101614.933492
+    },
+    {
+      "scenario": "Downside",
+      "revenue_cagr": 0.02,
+      "ebit_margin": 0.22,
+      "tax_rate": 0.22,
+      "da_pct_revenue": 0.015,
+      "capex_pct_revenue": 0.022,
+      "dnwc_pct_revenue": 0.008,
+      "wacc": 0.14,
+      "terminal_growth": 0.02,
+      "pv_explicit_fcff_vnd_bn": 17350.429876,
+      "pv_terminal_vnd_bn": 23323.376,
+      "enterprise_value_vnd_bn": 40673.805876
+    }
+  ],
+  "base_sensitivity": {
+    "wacc_range": [
+      0.1,
+      0.14
+    ],
+    "terminal_growth_range": [
+      0.02,
+      0.04
+    ],
+    "min_enterprise_value_vnd_bn": 58366.970194,
+    "max_enterprise_value_vnd_bn": 110784.50426
+  },
+  "output_boundary": "EV_ONLY_NO_EQUITY_VALUE_OR_PRICE_TARGET",
+  "missing_inputs": [
+    "net debt or net cash",
+    "diluted shares outstanding",
+    "current market price",
+    "approved management forecast",
+    "capex and working-capital history"
+  ]
+}

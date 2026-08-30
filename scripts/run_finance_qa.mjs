@@ -60,6 +60,7 @@ const tasks = [
   ['normalized_peer_template', ['scripts/validate_normalized_peer_panel.mjs', 'data/normalized_peer_panel_intake_template.csv', '--mode=template']],
   ['peer_basis_adjustment_feasibility', ['scripts/validate_peer_basis_adjustment_feasibility.mjs']],
   ['next_execution_sprint', ['scripts/validate_next_execution_sprint.mjs']],
+  ['mch_valuation_rehearsal', ['scripts/validate_mch_valuation_rehearsal.mjs']],
 ];
 
 const result = { status: 'PASS', runner: 'run_finance_qa.mjs', checks: [] };

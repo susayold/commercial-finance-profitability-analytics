@@ -16,6 +16,7 @@ This folder documents the recruiter-facing Sites implementation for the Commerci
 - Forecast Gate A intake contract and Power BI Gate B QA-01–QA-18 evidence links
 - Direct links to the v2 workbook, dashboard render, CFO memo, MCH trend report, credit memo QA, finance-first CV V2 and GitHub repository
 - Next Execution Sprint panel with Gate A/B evidence handoffs, CV personalization path and a 12/12 structural playbook QA link
+- MCH public-company valuation rehearsal with FCFF/DCF scenario range, WACC/terminal-growth sensitivity and an explicit EV-only boundary
 
 The page is intentionally recruiter-first: open the model, trace the checks, then read the finance recommendation. The forecast section keeps the public-guidance proxy separate from the pending internal snapshot gate. The MCH section demonstrates how a finance analyst turns audited filing history into a decision-relevant trend layer without silently mixing it into the 240-row normalized peer core. The credit memo extends the same evidence into a lender-style decision.
 

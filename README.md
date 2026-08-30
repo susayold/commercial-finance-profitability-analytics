@@ -354,6 +354,12 @@ The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metri
 - [Drive report](https://docs.google.com/document/d/1FgZurJC5pqdAwn9_jISfnujGavFtZAiXQl1klXsHMqQ/edit?usp=drivesdk) · [Drive dataset](https://drive.google.com/file/d/1VmufGdZqnW8UEsZzy_26fjZvOAqBTqws/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1KLPbnCjNXvWTZBSz9DzlF9SNe2FiLCt-/view?usp=drivesdk) · [Drive QA](https://docs.google.com/document/d/1OHA7cUGLrRGbnFKgvZYX9i9cfEXUa-7VSAMfum9R0qs/edit?usp=drivesdk)
 - The layer decomposes reported profit into margin, efficiency and capital-structure drivers and flags FY2025 cash conversion (CFO/revenue 6.98%) plus FY2024 equity-base sensitivity. All ratios are calculated and caveated; no standalone valuation claim is made.
 
+## MCH valuation rehearsal
+
+- [Finance Analyst valuation report](reports/MCH_VALUATION_REHEARSAL.md) · [Methodology](docs/MCH_VALUATION_REHEARSAL_METHODOLOGY.md) · [Forecast CSV](data/mch_valuation_rehearsal_forecast.csv) · [Sensitivity CSV](data/mch_valuation_rehearsal_sensitivity.csv) · [Summary JSON](data/mch_valuation_rehearsal_summary.json)
+- [Builder](scripts/build_mch_valuation_rehearsal.mjs) · [Validator](scripts/validate_mch_valuation_rehearsal.mjs) · [QA](reports/MCH_VALUATION_REHEARSAL_QA.md)
+- The module starts from the reported FY2025 MCH anchor and builds an illustrative FY2026–FY2030 FCFF/DCF across Base/Upside/Downside cases. Base EV is VND 75,928.0bn; the scenario range is VND 40,673.8bn–101,614.9bn. The output intentionally stops at EV: net debt, diluted shares, market price and approved forward guidance are missing, so no price target is claimed.
+
 - [Native Drive analysis Sheet](https://docs.google.com/spreadsheets/d/1f4o0myaW6ejjtRVIO_PPT_ODezJo0ANrTQPYxRQ58SI/edit?usp=drivesdk) — reviewer-facing table with one row per FY2016–FY2025 and formula-ready ratio columns.
 
 

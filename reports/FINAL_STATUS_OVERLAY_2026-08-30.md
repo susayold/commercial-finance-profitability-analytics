@@ -136,3 +136,7 @@ A project-level CAPEX module now connects approval, commitment, cash payment, in
 ## Next execution sprint extension
 
 The remaining work is now captured in a single [execution playbook](../docs/NEXT_EXECUTION_SPRINT_2026-08-30.md) with a machine-readable validator and QA report. It sequences candidate personalization, Gate A internal forecast accuracy, Gate B native Power BI Desktop, final QA/release and a 14-day application cadence. The playbook is execution-ready at 12/12 PASS, but it does not close the two external evidence gates: Gate A still needs a genuine approved pre-close snapshot and Gate B still needs a native `.pbix` plus QA-01–QA-18 visual evidence.
+
+## MCH valuation rehearsal extension
+
+The MCH Finance Analyst Lens now includes a separate EV-only FCFF/DCF rehearsal. It starts from the reported FY2025 revenue/margin/cash-conversion anchor, projects FY2026–FY2030 Base/Upside/Downside cases and tests a 5×5 WACC/terminal-growth grid. The builder and validator pass 19/19 checks. Forward inputs are `ANALYST_ASSUMPTION_REHEARSAL`; net debt, diluted shares, market price and approved guidance remain missing, so no equity value or price target is published.
