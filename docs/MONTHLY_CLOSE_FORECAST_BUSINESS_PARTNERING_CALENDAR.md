@@ -3,7 +3,7 @@
 Date: 2026-08-30  
 Scope: VietNova Finance Analyst / FP&A operating rhythm.
 
-This is a synthetic operating-process design. It defines who provides what evidence, when the KPI pack is frozen, how variances are explained and when management decisions are escalated.
+This is a synthetic operating-process design and not a claim of a live company close. It defines who provides what evidence, when the KPI pack is frozen, how variances are explained and when management decisions are escalated.
 
 ## Operating principles
 
