@@ -189,4 +189,4 @@ A seeded 5,000-draw synthetic risk overlay is now included in the remote QA surf
 
 ## Monte Carlo reproducibility correction
 
-The builder now writes newline-delimited CSV correctly; CI rebuilds and diffs the 5,000-draw output before running the validator. The earlier failed run was a formatting mismatch, not a model-data change.
+The builder now writes newline-delimited CSV correctly; CI reruns the seeded builder and validates the committed output. The standalone comparator remains available for reviewer-side exact comparison.
