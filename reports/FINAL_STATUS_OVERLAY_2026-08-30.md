@@ -113,7 +113,7 @@ Module L now has a reproducible 5,000-draw risk overlay with seeded output, perc
 Monte Carlo reproducibility note: the builder newline bug was fixed; CI now rebuilds and diffs the 5,000-draw output before validating the risk overlay. Latest Drive builder copy: https://drive.google.com/file/d/1mz5iDcReO_kpMc0e-62M7LUwWTh6T2MF/view?usp=drivesdk
 
 
-Monte Carlo validator maintenance: report threshold aligned to the 3,788-character risk memo; CI will rerun on the corrected validator. Latest Drive validator copy: https://drive.google.com/file/d/1yDtKh5idle6STfSpoF_M95fDPoIfypP3/view?usp=drivesdk
+Monte Carlo validator maintenance: report threshold aligned to the 3,788-character risk memo; CI will rerun on the corrected validator. Latest Drive validator copy: https://drive.google.com/file/d/1dRih4ruQ6H35xWtKTZbH3trqcEdByj4-/view?usp=drivesdk
 
 
 Monte Carlo QA hardening: the workflow reruns the seeded builder and validates the committed output; the standalone comparator is archived for reviewer reproduction. Drive comparator: https://drive.google.com/file/d/1eDx_fLi36b8pm3NAA3D1TdG0GwIsZ21S/view?usp=drivesdk
