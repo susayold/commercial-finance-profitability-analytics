@@ -32,6 +32,8 @@
 
 Replacement-data input contract: **78/78 PASS** on the deterministic fixture (headers, type parsing, required-cell completeness, keys, referential integrity and finance identities). GitHub Actions runs this gate before the PBIT package gate.
 
+The controlled data-swap runner smoke test returned `PASS` with `applied=true`, 14/14 files and the same 78/78 input-contract checks; its JSON manifest records source/target hashes and row counts before Desktop refresh.
+
 GitHub Actions Finance model QA passed in run [33314651136](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33314651136) on commit `04b5400` (including the generated-data/PBIT/PBIP package validation and the 44-check regression runner). The workflow remains available at `.github/workflows/finance-qa.yml` for every push and pull request.
 
 Latest workflow run [33314916251](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33314916251) also passed on commit `8b74198`, after adding the replacement-data input contract gate and its QA artifact upload.

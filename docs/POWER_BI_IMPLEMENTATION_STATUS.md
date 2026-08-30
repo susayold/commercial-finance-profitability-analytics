@@ -24,6 +24,8 @@ The Desktop execution material is now aligned to the generated package rather th
 
 The execution-host record is tracked in `reports/POWER_BI_DESKTOP_NATIVE_QA_2026-08-30.md`: the custom-path Desktop executable and all portable/package gates pass, while model binding, refresh and visual capture remain explicitly pending.
 
+The repeatable replacement workflow is also executable through `scripts/prepare_powerbi_refresh.py`. Its smoke test validated and applied all 14 contract files, emitted per-file SHA-256/row-count evidence, and returned `PASS`; this automates the safe file hand-off while keeping the Desktop `Home > Refresh` step explicit.
+
 The private Drive bundle has been replaced in place (file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`) and includes the runbook/checklist, PBIP/PBIT source, generated current CSVs, validators, DirectQuery schema, CI workflow, process/status records, Desktop preflight script and PBIP/PBIT coherence gate. The current bundle is 1,011,299 bytes with SHA-256 `9E11F0FC907C95544B98A2D88FC1EB2CA8B184DF0FA9720F628661435BDD4F7D`.
 
 The authoritative generated PBIP/PBIT inventory is 15 tables, 37 measures, 23 relationships, six pages and 39 visual containers. The older Excel-oriented names in the historical sections below are retained as model-contract context; use the PBIP/PBIT inventory and manifest when opening Desktop.
