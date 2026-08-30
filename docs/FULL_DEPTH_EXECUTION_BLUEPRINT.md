@@ -1188,7 +1188,7 @@ Remaining work after the 2026-08-30 hardening pass:
 1. **Gate A — external source:** supply an approved real internal pre-close forecast snapshot, then run the governance schema/validator in `--mode=live` and publish observed Bias/WAPE only after the close and availability evidence is archived.
 2. **Gate B — external desktop:** load the remote workbook and approved peer panel in Power BI Desktop, execute QA-01–QA-18, reconcile visuals to Excel and archive the native PBIX plus evidence.
 3. **Candidate-specific CV fields:** replace placeholders in `CV_ONE_PAGE_DRAFT.md` with the candidate's real contact, education and experience facts before sending applications.
-4. **Optional evidence expansion:** human-review the separate MCH OCR queue or extend the approved peer benchmark window only when a comparability decision and page-level source evidence are available; these are not required to claim the current VNM/QNS/KDC scope.
+4. **Optional evidence expansion:** the peer comparability decision is now documented in [`reports/PEER_COMPARABILITY_DECISION_2026-08-30.md`](../reports/PEER_COMPARABILITY_DECISION_2026-08-30.md). Remaining optional work is page-level human review of the separate MCH OCR queue or a perimeter/basis-adjusted extension of QNS/KDC; neither is required to claim the current scoped VNM/QNS/KDC evidence.
 
 The Gate A intake contract (`schemas/forecast_snapshot_live.schema.json`, `scripts/validate_live_forecast_submission.mjs`) and Gate B evidence contract (`powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv`, `scripts/validate_powerbi_qa_evidence.mjs`) are now complete, so no analytical redesign is required when those external inputs arrive.
 
