@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/susayold/commercial-finance-profitability-analytics/schemas/forecast_snapshot_gate_a.schema.json",
+  "title": "Gate A forecast snapshot evidence row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "snapshot_id","forecast_version_id","source_model_version","forecast_created_at","forecast_cutoff_at",
+    "actual_period_close_date","actual_available_at","snapshot_status","evidence_class",
+    "company_id","brand_id","channel_id","target_period","forecast_revenue_vnd","actual_revenue_vnd",
+    "approver_name","approver_role","approval_reference","source_system","source_export_uri","actuals_source_uri",
+    "gate_a_eligible","exclusion_reason","mapping_note","sha256"
+  ],
+  "properties": {
+    "snapshot_id": {"type":"string","minLength":1},
+    "forecast_version_id": {"type":"string","minLength":1},
+    "source_model_version": {"type":"string","minLength":1},
+    "forecast_created_at": {"type":"string","format":"date-time"},
+    "forecast_cutoff_at": {"type":"string","format":"date-time"},
+    "actual_period_close_date": {"type":"string","format":"date"},
+    "actual_available_at": {"type":"string","format":"date-time"},
+    "snapshot_status": {"enum":["DRAFT","FROZEN","SUPERSEDED"]},
+    "evidence_class": {"enum":["LIVE_INTERNAL","SIMULATED","DEMO_FIXTURE_ONLY"]},
+    "company_id": {"type":"string","minLength":1},
+    "brand_id": {"type":"string","minLength":1},
+    "channel_id": {"type":"string","minLength":1},
+    "target_period": {"type":"string","pattern":"^[0-9]{4}-(0[1-9]|1[0-2])$"},
+    "forecast_revenue_vnd": {"type":"number","minimum":0},
+    "actual_revenue_vnd": {"type":"number","minimum":0},
+    "approver_name": {"type":"string","minLength":1},
+    "approver_role": {"type":"string","minLength":1},
+    "approval_reference": {"type":"string","minLength":1},
+    "source_system": {"type":"string","minLength":1},
+    "source_export_uri": {"type":"string","minLength":1},
+    "actuals_source_uri": {"type":"string","minLength":1},
+    "gate_a_eligible": {"enum":["YES","NO"]},
+    "exclusion_reason": {"type":"string"},
+    "mapping_note": {"type":"string","minLength":1},
+    "sha256": {"type":"string","pattern":"^[A-Fa-f0-9]{64}$"}
+  }
+}
