@@ -201,3 +201,5 @@ The paragraphs above retain historical release notes for audit trail. Use this s
 - Customer profitability now has a derived decision layer: [analysis report](../docs/CUSTOMER_PROFITABILITY_ANALYSIS.md), [summary JSON](../data/customer_profitability_summary.json) and [14/14 QA](CUSTOMER_PROFITABILITY_ANALYSIS_QA.md). The report adds top-five concentration, channel roll-ups, portfolio DSO/margins and a documented C06 review path; all evidence remains synthetic rehearsal.
 
 - Latest CI confirmation: [run #774](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33301908452) passed after adding the derived customer profitability summary and 14/14 validator; the preceding runner/workflow commits (#770–#773) also passed. The repository-local runner now covers 24 validators plus contract-shape (25 total checks).
+
+- Final CI confirmation for this update: [run #775](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33301960821) passed. Durable GitHub and Drive mirrors are synchronized; the local staging directory is empty.
