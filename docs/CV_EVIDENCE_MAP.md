@@ -19,6 +19,7 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Built a formula-driven D2C unit-economics module linking acquisition spend, repeat orders, gross margin and variable service costs to CAC, LTV/CAC, payback and scale/hold decisions; included Base/Downside/Upside sensitivities and six automated control checks (synthetic case).
 - Built a source-linked public-guidance proxy for Vinamilk FY2018–FY2025 with 16 AGM/IR guidance-versus-actual observations, explicit revenue-basis controls and aggregate Bias/WAPE (public guidance, not internal forecast).
 - Built a page-reviewed Masan Consumer FY2016–FY2025 finance trend and lender-style credit memo; FY2025 margin compression, PAT decline and cash-conversion warning are calculated from reported statements, with a 15/15 automated QA report.
+- Added a bounded Masan Consumer FY2017 indexed-evidence layer with eight statement metrics and 8/8 QA; kept it `INDEXED_ONLY` and separate from approved comparative provenance until standalone PDF bytes/hash are archived.
 - Added a financial-statement analysis layer using net margin, asset turnover, equity multiplier, DuPont ROE, ROA/ROE, CFO/revenue and debt/equity proxy; 11/11 controls pass and FY2024/FY2025 follow-ups are explicitly documented.
 - Built a QNS/KDC basis-perimeter bridge that calculates only within-window descriptive growth, retains source lineage and blocks misleading cross-break CAGR; validator and QA report pass 12/12.
 - Built a 21-row peer financial-quality scorecard for VNM/QNS/KDC with CAGR, margins, capital and cash metrics, source-record lineage, controlled blanks and rankability guardrails; validator and QA report pass 11/11.
@@ -127,6 +128,13 @@ Drive mirror for M&A extension:
 - [Corporate Financial Analyst / FP&A master plan](docs/CORPORATE_FINANCIAL_ANALYST_FPA_MASTER_PLAN.md)
 - [Drive archive](https://drive.google.com/file/d/1blpG-4CKWkjPpuwXwOFRkwI038XXMOnK/view)
 - The detailed plan is now stored remotely; no local output copy is retained.
+
+## Monthly Business Review / CFO operating-pack evidence
+
+- CV bullet: packaged a CFO-ready MBR linking Actual vs Budget/Forecast, PVM, cash triggers, scenario preconditions and owner/action tracking.
+- Direct report: [Monthly Business Review Finance Analyst Pack](../reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md)
+- KPI CSV / QA: [KPI pack](../data/monthly_business_review_kpi_pack_2026-08-30.csv) · [10/10 QA](../reports/MONTHLY_BUSINESS_REVIEW_QA.md)
+- Evidence boundary: PROXY_DERIVED / SYNTHETIC_ASSUMPTION; no internal forecast accuracy or realized company impact is claimed.
 
 ## Operational driver / unit economics evidence
 
