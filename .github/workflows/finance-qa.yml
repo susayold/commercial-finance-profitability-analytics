@@ -25,6 +25,17 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Validate committed Power BI refresh fixture
+        shell: bash
+        run: |
+          python scripts/validate_vietnova_data.py --input-dir powerbi/data/current
+          python scripts/validate_powerbi_input_contract.py \\
+            --input-dir powerbi/data/current \\
+            --report "$RUNNER_TEMP/committed_powerbi_input_contract_QA.md"
+          python scripts/generate_vietnova_data.py --output-dir "$RUNNER_TEMP/vnfinance_powerbi_committed_rebuild"
+          python -c "from pathlib import Path; from scripts.build_powerbi_refreshable_project import create_source_control; create_source_control(Path(r'$RUNNER_TEMP/vnfinance_powerbi_committed_rebuild'))"
+          diff -ru --exclude='README.md' powerbi/data/current "$RUNNER_TEMP/vnfinance_powerbi_committed_rebuild"
+
       - name: Validate refreshable Power BI package
         shell: bash
         run: |
