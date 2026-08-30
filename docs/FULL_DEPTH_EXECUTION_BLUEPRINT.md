@@ -443,6 +443,10 @@ Business-perimeter changes:
 - calculate normalized growth only when adjustment is supportable;
 - never describe reported growth as organic without evidence.
 
+### Implemented normalized peer evidence layer
+
+The schema above is now executable as a long-form export with one company × FY × metric row. The approved VNM/QNS/KDC file contains 240 rows and passes 18/18 checks; the MCH intake contains 80 explicitly blocked rows and passes 14/14 structural checks. See data/normalized_peer_panel_approved_2016_2025.csv, data/normalized_peer_panel_intake_template.csv, scripts/validate_normalized_peer_panel.mjs, docs/NORMALIZED_PEER_PANEL_METHODOLOGY.md and the two QA reports under reports/.
+
 ## 8. VietNova hidden-truth generator
 
 The generator creates a coherent operating story before dashboards are built.
