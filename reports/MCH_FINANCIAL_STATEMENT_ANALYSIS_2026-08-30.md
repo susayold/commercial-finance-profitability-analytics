@@ -25,9 +25,9 @@ The source facts are page-reviewed and the derived ratios are deterministic. FY2
 ## Findings
 
 1. **The quality of the earnings cycle changed by regime.** Net margin fell to 17.0% in FY2017, recovered to 22.0% by FY2019, reached 25.6% in FY2024 and then declined to 22.1% in FY2025. This supports a margin-regime discussion, not a straight-line growth claim.
-2. **FY2025 ROE remains high but is leverage-sensitive.** Calculated ROE is 36.25%, with an equity multiplier of 2.06x and debt/equity proxy of 0.82x. The result should be read together with cash conversion and the capital base, not as a standalone quality score.
+2. **FY2025 ROE remains high but is leverage-sensitive.** Calculated ROE is 45.11% on average equity, with an equity multiplier of 2.06x and debt/equity proxy of 0.82x. The result should be read together with cash conversion and the capital base, not as a standalone quality score.
 3. **Cash conversion is the primary FY2025 red flag.** CFO/revenue fell from 29.86% in FY2024 to 6.98% in FY2025; CFO/PAT in the companion trend layer fell to 31.5%. The correct management follow-up is an AR, inventory, payable and one-off cash-flow bridge.
-4. **FY2024 ROE is an exception requiring note-level review.** ROE rises to 69.92% while owners' equity is materially lower than FY2023; the ratio is mathematically reproducible but economically sensitive to the equity base. No causal explanation is asserted without the relevant equity/restructuring notes.
+4. **FY2024 ROE is an exception requiring note-level review.** ROE rises to 42.02% while owners' equity is materially lower than FY2023; the ratio is mathematically reproducible but economically sensitive to the equity base. No causal explanation is asserted without the relevant equity/restructuring notes.
 5. **Efficiency recovered after the FY2022 slowdown.** Asset turnover moved from 0.85x in FY2022 to 0.99x in FY2025, while net margin remained above FY2022. This is a calculated signal of improving utilization, not proof of operational causality.
 
 ## Decision-oriented follow-up
