@@ -69,7 +69,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Live site](https://vn-finance-fpa-case.sangkenny200.chatgpt.site)
 - [Site source snapshot on Drive](https://drive.google.com/file/d/1PGOVMQ-POmEey9qUQDsw1B5F9F5oKl0j/view?usp=drivesdk)
 - [Site source folder](site/)
-- Sites project: `appgprj_6a930a2f81f48191b1e015f1fa938c69`; production deployment is version 4.
+- Sites project: `appgprj_6a930a2f81f48191b1e015f1fa938c69`; production deployment is version 5.
 - Website release update: [Forecast section release](reports/SITE_FORECAST_SECTION_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1Cz5Hl0HH9YLLklKBHJ2FBlTdEyQWz6u9/view). Production site now exposes a recruiter-facing forecast-performance section with explicit Gate A exclusion.
 - Interview preparation: [Finance Analyst / FP&A talk track](docs/FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md) · [Drive copy](https://drive.google.com/file/d/1qyKG5FJW5_EdKyu10l-xWUyOU9i5tLRy/view). Includes a 90-second pitch, 15-minute walkthrough, STAR stories and pushback answers.
 
@@ -84,7 +84,7 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - [Peer comparability decision memo](reports/PEER_COMPARABILITY_DECISION_2026-08-30.md) · [Drive memo](https://docs.google.com/document/d/184FPk4ZcPaWVtWm4qqRsvsG3RO0D_Lv9tS46yKXqCGk/edit?usp=drivesdk) — VNM is the long-run trend benchmark; QNS/KDC remain bounded context until basis/perimeter controls are closed.
 
-- Normalized peer evidence layer: [approved long-form CSV](data/normalized_peer_panel_approved_2016_2025.csv), [KDC FY2024–FY2025 exact statement supplement](data/kdc_statement_metrics_2024_2025.csv), [blocked MCH intake template](data/normalized_peer_panel_intake_template.csv), [methodology](docs/NORMALIZED_PEER_PANEL_METHODOLOGY.md), [validator](scripts/validate_normalized_peer_panel.mjs), [approved QA](reports/NORMALIZED_PEER_PANEL_QA.md) and [template QA](reports/NORMALIZED_PEER_PANEL_TEMPLATE_QA.md). [Drive native Sheet](https://docs.google.com/spreadsheets/d/11v8XpRNMCkaWkhqakjxh1Ao3E0yTP4cLP3Z3Jmg7Owg/edit?usp=drivesdk) · [Drive approved CSV](https://drive.google.com/file/d/10TEXjoohSV4J75TpmTFvoWt8nVXgPnrd/view) · [Drive KDC supplement](https://drive.google.com/file/d/16TZWVvN6XgVneG_jlubnHa9jeFhXZVqR/view) · [Drive MCH template](https://drive.google.com/file/d/1oZS-UL-Z1oDPH4QJOLH1_JToTE9bUqN-/view) · [Drive methodology](https://drive.google.com/file/d/1ezRb7YYtgX13suCgF7ztwWvAoeCuaTW3/view).
+- Normalized peer evidence layer: [approved long-form CSV](data/normalized_peer_panel_approved_2016_2025.csv), [KDC FY2024–FY2025 exact statement supplement](data/kdc_statement_metrics_2024_2025.csv), [MCH core-panel intake template (intentionally separate)](data/normalized_peer_panel_intake_template.csv), [methodology](docs/NORMALIZED_PEER_PANEL_METHODOLOGY.md), [validator](scripts/validate_normalized_peer_panel.mjs), [approved QA](reports/NORMALIZED_PEER_PANEL_QA.md) and [template QA](reports/NORMALIZED_PEER_PANEL_TEMPLATE_QA.md). [Drive native Sheet](https://docs.google.com/spreadsheets/d/11v8XpRNMCkaWkhqakjxh1Ao3E0yTP4cLP3Z3Jmg7Owg/edit?usp=drivesdk) · [Drive approved CSV](https://drive.google.com/file/d/10TEXjoohSV4J75TpmTFvoWt8nVXgPnrd/view) · [Drive KDC supplement](https://drive.google.com/file/d/16TZWVvN6XgVneG_jlubnHa9jeFhXZVqR/view) · [Drive MCH template](https://drive.google.com/file/d/1oZS-UL-Z1oDPH4QJOLH1_JToTE9bUqN-/view) · [Drive methodology](https://drive.google.com/file/d/1ezRb7YYtgX13suCgF7ztwWvAoeCuaTW3/view).
 
 ## Peer and Power BI follow-through
 ## Peer and Power BI follow-through
@@ -242,7 +242,7 @@ Drive mirror for M&A extension:
 ## Website strategic-finance release
 
 - [Release note](reports/SITE_STRATEGIC_FINANCE_RELEASE_2026-08-30.md) · [Drive release note](https://drive.google.com/file/d/19mW_MT81z1CMeU9v39fBHBdiIcoLkEiQ/view)
-- Production site version 4 now includes Strategic Finance / M&A, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
+- Production site version 5 now includes Strategic Finance / M&A, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 - Local build PASS; deployment succeeded. Shared UI-library lint warnings remain pre-existing and do not include new page-level errors.
 - [Drive build archive](https://drive.google.com/file/d/1mfx-4W0cfZvGlcZv6TONO36H3rKXgqib/view) · [v3 page source](https://drive.google.com/file/d/1gJZOyXQKPoOuEHDmRLQezSn3GgULp0f-/view) · [v3 CSS source](https://drive.google.com/file/d/136FgoZ8gzarzNZAtXWmsHpMi6PYj53fb/view)
 
@@ -250,7 +250,7 @@ Drive mirror for M&A extension:
 ## Website runtime QA
 
 - [Runtime/access-boundary QA](reports/SITE_RUNTIME_QA_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1z1LGW43fG94bEkFgbPZP3QVYQvYwxZt-/view)
-- Source/build/deployment checks PASS for Sites version 4. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](reports/SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+- Source/build/deployment checks PASS for Sites version 5. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](reports/SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 
 ## Archived master plan
