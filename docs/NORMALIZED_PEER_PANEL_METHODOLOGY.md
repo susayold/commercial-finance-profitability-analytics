@@ -91,3 +91,8 @@ The validator checks headers, duplicate keys, company and metric domains, annual
 ## Next extension
 
 The next data action is not to invent missing QNS/KDC values. It is to obtain statement-level FY2021–FY2025 evidence on the same line-item basis, then create a separate normalized bridge with original and adjusted revenue/perimeter fields. MCH remains a human-review workbench task. Gate A and Gate B remain separate external controls.
+
+
+### QNS FY2021–FY2025 summary promotion (2026-08-30)
+
+The QNS FY2025 Annual Report exposes a readable five-year management summary table (report pages 27–28) with net revenue, gross profit, profit before tax, profit after tax, total assets and owners' equity for FY2021–FY2025. Gross profit and owners' equity were promoted from `not_available_in_source` to `reported_value` in the approved panel. These rows remain `reported_in_annual_report`, `partially_comparable`, and `high` confidence because the supplied PDF's standalone statement section is not accepted as a line-level extraction. Operating profit and operating cash flow remain blank. The companion evidence file is `reports/QNS_REPORTED_SUMMARY_EVIDENCE_2021_2025.md`; the long-form source extract is `data/qns_reported_summary_metrics_2021_2025.csv`.
