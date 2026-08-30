@@ -6,7 +6,7 @@ All project data, source code, QA scripts and reviewer-facing artifacts are comm
 
 ## Latest remote sync
 
-The latest GitHub `main` content includes the site gate-contract release and the refreshed release index (see the repository commit history for the current SHA). The recruiter site gate-contract release is Sites version 7. V7 release record: https://docs.google.com/document/d/1lwV1D9OxlKi0Pt-cMHjyiOvFFLtf5bPuv4hqoc59sZQ/edit?usp=drivesdk The site-gate source archive is [commercial-finance-profitability-analytics-source-2026-08-30-site-gate.zip](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view); normalized peer additions and later QA updates are mirrored individually in GitHub and Drive below. Release evidence is [SITE_GATE_CONTRACT_RELEASE_2026-08-30.md](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+The latest GitHub `main` content includes the site gate-contract release and the refreshed release index (see the repository commit history for the current SHA). The recruiter site operating-finance-system release is Sites version 8. V8 release record: [GitHub](reports/SITE_V8_RELEASE_RECORD_2026-08-30.md) · [Drive](https://drive.google.com/file/d/1p3gSEo7gkH_skLniiMFK96SgBnk1aSaO/view?usp=drivesdk). The V8 source archive is [VN_FINANCE_SITE_V8_OPERATING_FINANCE_SYSTEM_2026-08-30.tar](https://drive.google.com/file/d/1o7GqTKvV3K5uLu4rQ9R-0A8n32pqte4L/view?usp=drivesdk); normalized peer additions and later QA updates remain mirrored individually in GitHub and Drive.
 
 ## Newly closed evidence in this release
 
@@ -60,7 +60,7 @@ The commercial stretch modules are now hardened:The commercial stretch modules a
 
 ## Website release
 
-The production recruiter site is now Sites version 7. The Forecast Performance section links directly to the Gate A intake validator and the Gate B QA-01–QA-18 evidence log while keeping public-guidance metrics explicitly Gate-A-excluded. [Gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+The production recruiter site is now Sites version 8. It adds an Operating Finance System section linking MBR/KPI controls, the recommendation register, the WD-5→WD+5 close cadence and risk/planning extensions; the Forecast Performance section still keeps public-guidance metrics explicitly Gate-A-excluded. [Gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 ## PBIP Desktop execution checklist
 
@@ -117,7 +117,7 @@ Drive mirror for M&A extension:
 ## Website strategic-finance release
 
 - [Release note](reports/SITE_STRATEGIC_FINANCE_RELEASE_2026-08-30.md) · [Drive release note](https://drive.google.com/file/d/19mW_MT81z1CMeU9v39fBHBdiIcoLkEiQ/view)
-- Production site version 7 includes Strategic Finance / M&A, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
+- Production site version 8 includes Strategic Finance / M&A, the Operating Finance System, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 - Local build PASS; deployment succeeded. Shared UI-library lint warnings remain pre-existing and do not include new page-level errors.
 - [Drive build archive](https://drive.google.com/file/d/1mfx-4W0cfZvGlcZv6TONO36H3rKXgqib/view) · [v3 page source](https://drive.google.com/file/d/1gJZOyXQKPoOuEHDmRLQezSn3GgULp0f-/view) · [v3 CSS source](https://drive.google.com/file/d/136FgoZ8gzarzNZAtXWmsHpMi6PYj53fb/view)
 
@@ -125,7 +125,7 @@ Drive mirror for M&A extension:
 ## Website runtime QA
 
 - [Runtime/access-boundary QA](reports/SITE_RUNTIME_QA_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1z1LGW43fG94bEkFgbPZP3QVYQvYwxZt-/view)
-- Source/build/deployment checks PASS for Sites version 7. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+- Source/build/deployment checks PASS for Sites version 8. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [V8 release evidence](SITE_V8_RELEASE_RECORD_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1p3gSEo7gkH_skLniiMFK96SgBnk1aSaO/view?usp=drivesdk).
 
 
 ## Archived master plan
@@ -162,7 +162,7 @@ See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) for the a
 The paragraphs above retain historical release notes for audit trail. Use this section and `reports/FINAL_STATUS_OVERLAY_2026-08-30.md` for current claims.
 
 - Power BI portable contract: 5 dimensions, 9 facts, 17 relationships, 6 pages and 18 QA definitions. Native PBIX/Desktop evidence is still Gate B pending.
-- Recruiter site: Sites version 7 is the current deployment; older version 5/6 paragraphs are historical notes.
+- Recruiter site: Sites version 8 is the current deployment; older version 5/6/7 paragraphs are historical notes.
 - MCH FY2020 annual report: official HNX signed PDF archived in Drive (file `1ReM6B9SAprOJYsJd6hrLI7ycU_73rOOU`, 67 pages, 8,940,859 bytes, SHA-256 `3BB42FB2A5FC251075497885A66668C96311D8BABF32D85622C971DFE58B8366`), page-reviewed at PDF pages 30–34 / printed pages 59–67, and `APPROVED` in the source registry.
 - MCH FY2017 annual report: remains `INDEXED_ONLY`; the official PDF bytes are not yet retrievable in this runtime. The audited FY2018 comparative/corresponding evidence remains the approved basis.
 - [MCH source-verification runbook](../docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk)
