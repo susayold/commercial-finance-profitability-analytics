@@ -237,6 +237,36 @@
         "evidence_class",
         "source_system"
       ]
+    },
+    {
+      "name": "CAPEX_Projects",
+      "grain": "project x month",
+      "keys": [
+        "period",
+        "project_id"
+      ],
+      "measures": [
+        "budget_capex_vnd",
+        "actual_capex_vnd",
+        "forecast_capex_vnd",
+        "committed_capex_vnd",
+        "asset_cost_vnd",
+        "depreciation_vnd",
+        "expected_annual_contribution_vnd",
+        "payback_months",
+        "cash_payment_vnd",
+        "budget_variance_vnd",
+        "forecast_variance_vnd"
+      ],
+      "attributes": [
+        "cost_center",
+        "capex_type",
+        "approval_status",
+        "in_service_period",
+        "useful_life_months",
+        "evidence_class",
+        "source_system"
+      ]
     }
   ],
   "relationships": [
@@ -303,6 +333,10 @@
     [
       "Calendar[YearMonth]",
       "OPEX_Headcount[period]"
+    ],
+    [
+      "Calendar[YearMonth]",
+      "CAPEX_Projects[period]"
     ]
   ],
   "pages": [
@@ -317,7 +351,8 @@
         "CCC",
         "risk flag",
         "action table",
-        "OPEX variance"
+        "OPEX variance",
+        "CAPEX payback"
       ]
     },
     {
@@ -356,7 +391,8 @@
         "DSO/DIO/DPO/CCC",
         "AR ageing",
         "inventory cover",
-        "liquidity stress"
+        "liquidity stress",
+        "CAPEX cash timing"
       ]
     },
     {
@@ -378,6 +414,7 @@
     "No negative sales facts",
     "Every visual shows evidence classification and refresh timestamp",
     "Unapproved peer candidates are excluded from benchmark trend visuals and clearly flagged in Controls & Evidence",
-    "OPEX actual, budget and forecast reconcile by cost center with headcount bridge"
+    "OPEX actual, budget and forecast reconcile by cost center with headcount bridge",
+    "CAPEX actual, commitment, depreciation and payback reconcile by project"
   ]
 }
