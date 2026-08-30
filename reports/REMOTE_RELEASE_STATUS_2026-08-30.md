@@ -6,7 +6,7 @@ All project data, source code, QA scripts and reviewer-facing artifacts are comm
 
 ## Latest remote sync
 
-The latest GitHub `main` content includes the site gate-contract release and the refreshed release index (see the repository commit history for the current SHA). The recruiter site gate-contract release is Sites version 6. The site-gate source archive is [commercial-finance-profitability-analytics-source-2026-08-30-site-gate.zip](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view); normalized peer additions and later QA updates are mirrored individually in GitHub and Drive below. Release evidence is [SITE_GATE_CONTRACT_RELEASE_2026-08-30.md](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+The latest GitHub `main` content includes the site gate-contract release and the refreshed release index (see the repository commit history for the current SHA). The recruiter site gate-contract release is Sites version 7. V7 release record: https://docs.google.com/document/d/1lwV1D9OxlKi0Pt-cMHjyiOvFFLtf5bPuv4hqoc59sZQ/edit?usp=drivesdk The site-gate source archive is [commercial-finance-profitability-analytics-source-2026-08-30-site-gate.zip](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view); normalized peer additions and later QA updates are mirrored individually in GitHub and Drive below. Release evidence is [SITE_GATE_CONTRACT_RELEASE_2026-08-30.md](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 ## Newly closed evidence in this release
 
@@ -59,7 +59,7 @@ The commercial stretch modules are now hardened:The commercial stretch modules a
 
 ## Website release
 
-The production recruiter site is now Sites version 6. The Forecast Performance section links directly to the Gate A intake validator and the Gate B QA-01–QA-18 evidence log while keeping public-guidance metrics explicitly Gate-A-excluded. [Gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+The production recruiter site is now Sites version 7. The Forecast Performance section links directly to the Gate A intake validator and the Gate B QA-01–QA-18 evidence log while keeping public-guidance metrics explicitly Gate-A-excluded. [Gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 ## PBIP Desktop execution checklist
 
@@ -124,7 +124,7 @@ Drive mirror for M&A extension:
 ## Website runtime QA
 
 - [Runtime/access-boundary QA](reports/SITE_RUNTIME_QA_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1z1LGW43fG94bEkFgbPZP3QVYQvYwxZt-/view)
-- Source/build/deployment checks PASS for Sites version 6. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+- Source/build/deployment checks PASS for Sites version 7. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session. See [site gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
 
 
 ## Archived master plan
