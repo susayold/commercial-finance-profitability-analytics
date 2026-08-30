@@ -246,6 +246,7 @@ Drive mirror for M&A extension:
 ## One-page CV draft
 
 - [Finance Analyst / Junior FP&A CV draft](docs/FINANCE_ANALYST_CV_ONE_PAGE.md) · [Drive copy](https://drive.google.com/file/d/1rRpc9qNKcia0MeckGhqzrVnJ_iyed7RB/view)
+- [Finance-first one-page CV V2](docs/FINANCE_ANALYST_CV_ONE_PAGE_V2.md) · [Drive copy](https://docs.google.com/document/d/1pf5jUlWAajDPUj4Rs4GL6xnWyAKi_kXPLVLy59lIviU/edit?usp=drivesdk) · [Evidence map](docs/CV_EVIDENCE_MAP.md)
 - Bullets are restricted to validated evidence and explicitly label synthetic/public-guidance outputs; replace bracketed personal fields before use.
 
 
