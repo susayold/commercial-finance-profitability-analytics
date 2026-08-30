@@ -152,7 +152,7 @@ FY2006 is now statement-verified from the audited VAS consolidated FY2007 filing
 
 ## Reproducible build guide (2026-08-30)
 
-The step-by-step implementation guide is available at `powerbi/POWER_BI_BUILD_GUIDE_V2.md` and [Drive](https://drive.google.com/file/d/13BM9_oOwLxyMnO9IPGkaPWcyVB991q_Y/view). It specifies source mapping, import rules, one-to-many relationships, hardened scenario/evidence measures, six-page visual acceptance criteria, QA tolerances and the recruiter walkthrough. The only remaining environment-dependent artifact is the native `.pbix` created in Power BI Desktop.
+The step-by-step implementation guide is available at `powerbi/POWER_BI_BUILD_GUIDE_V2.md` and [Drive](https://drive.google.com/file/d/13BM9_oOwLxyMnO9IPGkaPWcyVB991q_Y/view). It specifies source mapping, import rules, one-to-many relationships, hardened scenario/evidence measures, six-page visual acceptance criteria, QA tolerances and the recruiter walkthrough. A native `.pbix` is now checked in and mirrored to Drive; the remaining environment-dependent gates are the full QA-01–QA-18 visual sign-off and, if required, production DirectQuery/APR provisioning.
 
 
 ## QA automation pack (2026-08-30)

@@ -32,3 +32,14 @@ The `-DesktopPath` override is intentional: Power BI Desktop is installed outsid
 ## Claim boundary
 
 The Import-mode model is refreshable by replacing the 14 contract CSVs and refreshing in Desktop. It is not second-level real-time. Automatic Page Refresh requires a supported DirectQuery/LiveConnect source, which remains gated by the DirectQuery provisioning checklist.
+
+## Subsequent native artifact update — 2026-08-31
+
+The earlier host record above is retained as a historical snapshot of the
+2026-08-30 attempt. A later Desktop run produced the native artifact
+`powerbi/releases/Commercial_Finance_Profitability_Analytics_native.pbix`.
+The exact open, refresh, Save As, close/reopen and +1 `Sales[units]` proof are
+recorded in [`reports/POWER_BI_NATIVE_PBIX_DESKTOP_QA_2026-08-31.md`](POWER_BI_NATIVE_PBIX_DESKTOP_QA_2026-08-31.md).
+This update supersedes the old “no canvas screenshot” statement for the
+observed workflow, but does not promote the full QA-01–QA-18 matrix or
+production realtime claim.

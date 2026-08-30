@@ -17,7 +17,7 @@ This report covers the Excel v2 model, synthetic operating layer, peer statement
 | QNS / KDC statement layers | PASS for their documented fiscal-year scopes; basis and perimeter caveats retained |
 | Website / deck | PASS; production site and rendered deck passed handoff QA |
 | Power BI model contract | PASS as a metadata and measure specification |
-| Native PBIX | OPEN; must be created and tested in Power BI Desktop |
+| Native PBIX | Observed native artifact opens, refreshes, saves and reopens; full QA-01–QA-18 matrix remains pending |
 
 ## Power BI release gate
 
@@ -34,7 +34,7 @@ Run QA-01 through QA-18 in [powerbi/QA_TEST_MATRIX.md](../powerbi/QA_TEST_MATRIX
 
 ## Release interpretation
 
-“PASS” here means the documented controls and evidence policy pass. It does not mean the synthetic case represents actual company performance or that a native PBIX exists.
+“PASS” here means the documented controls and evidence policy pass. It does not mean the synthetic case represents actual company performance, that the full native QA matrix is signed off, or that production realtime exists.
 
 
 ## Forecast accuracy status

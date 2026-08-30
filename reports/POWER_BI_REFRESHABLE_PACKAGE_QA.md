@@ -18,7 +18,7 @@ This is source/package QA. Native Power BI Desktop open, credential binding, vis
 - **refresh_columns:** 22
 - **refresh_delta_vnd:** 1000000
 - **refresh_referenced_csv:** 14
-- **pbit_bytes:** 11809
+- **pbit_bytes:** 11625
 
 ## Checks
 
@@ -53,9 +53,10 @@ This is source/package QA. Native Power BI Desktop open, credential binding, vis
 | Data-swap value delta detected | PASS | 1,000,000 VND |
 | Power Query files use DataRoot | PASS | 14 |
 | All referenced CSV files exist | PASS | none missing |
+| Measure/column name collision gate | PASS | `COGS Total` and `Units Total` avoid same-table `COGS`/`cogs` and `Units`/`units` collisions |
 
 ## Refresh interpretation
 
 - `REFRESH_CONTRACT_PASS`: replacing a CSV with the same filename and schema changes source values while preserving the contract. Power BI recalculates the model after **Refresh**.
-- `NATIVE_DESKTOP_REFRESH_PENDING`: this machine could not execute the final Desktop open/refresh/render gate because `PBIDesktop.exe` is missing and MSI repair requires Administrator rights.
+- `NATIVE_DESKTOP_REFRESH_OBSERVED`: the repaired package was opened, refreshed, saved as a native PBIX and reopened on Desktop; the detailed evidence is in `reports/POWER_BI_NATIVE_PBIX_DESKTOP_QA_2026-08-31.md`. The full QA-01–QA-18 matrix remains a separate sign-off gate.
 - This Import-mode package is refreshable, not true streaming real-time. True automatic page refresh requires a supported DirectQuery/LiveConnect source.

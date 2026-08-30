@@ -119,6 +119,11 @@ still need a real Power BI Desktop or cloud workspace.
     pushed commit `ca38654` to GitHub and uploaded the same bytes to the private
     Drive file `15wJmM8POBNonWIfslSAdh8ihSUZZNc3W`. The release gate now returns
     PASS across ten deterministic stages plus the 14/14 Desktop preflight.
+29. Reconciled the older Power BI status artifacts with the native run: the
+    reviewer walkthrough, historical Desktop QA snapshot, package QA report,
+    implementation status and validation report now point to the observed
+    native PBIX evidence while keeping the complete QA-01–QA-18 sign-off and
+    production DirectQuery/APR acceptance explicitly pending.
 
 ## Evidence boundaries
 

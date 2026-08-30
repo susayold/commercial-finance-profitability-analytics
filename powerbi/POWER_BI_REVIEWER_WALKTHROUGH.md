@@ -1,6 +1,6 @@
 # Power BI Native Reviewer Walkthrough — VNFinance Commercial Finance v2
 
-Status: PREPARED_FOR_DESKTOP_EXECUTION — not a native PBIX claim.
+Status: NATIVE_ARTIFACT_OBSERVED — formal QA-01–QA-18 sign-off remains open.
 
 ## Reviewer objective
 
@@ -32,4 +32,8 @@ For each QA row, save the observed value, page/visual name, reviewer initials an
 
 ## Native release boundary
 
-This walkthrough validates readiness of the source scaffold only. Gate B remains OPEN until Power BI Desktop creates and reopens the native PBIX, QA-01 through QA-17 are PASS, QA-18 is demonstrated, visual tie-outs are archived and the PBIX hash is stored.
+This walkthrough is now backed by an observed native PBIX open/refresh/save/reopen
+run and a one-value data-swap proof. Gate B remains OPEN for the formal release
+decision until QA-01 through QA-17 are evidenced, QA-18 is demonstrated, visual
+tie-outs are archived and the full matrix is signed off. See
+`reports/POWER_BI_NATIVE_PBIX_DESKTOP_QA_2026-08-31.md` for the observed run.
