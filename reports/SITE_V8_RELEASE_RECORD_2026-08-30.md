@@ -22,7 +22,7 @@ The evidence boundary remains explicit: public reported facts, calculated ratios
 - source pushed to the Sites source repository at the commit above;
 - production deployment status: succeeded;
 - Drive archive: https://drive.google.com/file/d/1o7GqTKvV3K5uLu4rQ9R-0A8n32pqte4L/view?usp=drivesdk;
-- GitHub repository: https://github.com/susayold/commercial-finance-profitability-analytics.
+- Drive release record: https://drive.google.com/file/d/1p3gSEo7gkH_skLniiMFK96SgBnk1aSaO/view?usp=drivesdk;\n- GitHub repository: https://github.com/susayold/commercial-finance-profitability-analytics.
 
 ## Recruiter reading path
 
