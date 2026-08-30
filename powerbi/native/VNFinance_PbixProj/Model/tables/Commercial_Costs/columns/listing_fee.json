@@ -1,0 +1,12 @@
+{
+  "name": "listing_fee",
+  "dataType": "double",
+  "sourceColumn": "listing_fee",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

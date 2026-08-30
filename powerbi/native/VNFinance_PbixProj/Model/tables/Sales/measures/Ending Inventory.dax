@@ -1,0 +1,1 @@
+CALCULATE ( SUM ( Inventory[inventory_value] ), LASTDATE ( Calendar[month] ) )

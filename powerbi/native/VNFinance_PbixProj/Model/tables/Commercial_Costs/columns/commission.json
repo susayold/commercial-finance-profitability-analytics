@@ -1,0 +1,12 @@
+{
+  "name": "commission",
+  "dataType": "double",
+  "sourceColumn": "commission",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

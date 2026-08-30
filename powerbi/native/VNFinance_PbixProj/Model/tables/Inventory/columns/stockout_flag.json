@@ -1,0 +1,12 @@
+{
+  "name": "stockout_flag",
+  "dataType": "boolean",
+  "sourceColumn": "stockout_flag",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

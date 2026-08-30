@@ -1,0 +1,12 @@
+{
+  "name": "start_date",
+  "dataType": "dateTime",
+  "sourceColumn": "start_date",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

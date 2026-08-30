@@ -1,0 +1,98 @@
+table Inventory
+	lineageTag: dd3fd196-8e40-4fd2-b576-0393f0cdf322
+
+	column month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: month
+		lineageTag: c80ae9ab-2af6-4c5d-8b6b-b248e2d53d23
+		annotation SummarizationSetBy = User
+
+	column warehouse_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: warehouse_id
+		lineageTag: 1b59f882-96af-43d2-8154-255e852caab9
+		annotation SummarizationSetBy = User
+
+	column sku_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: sku_id
+		lineageTag: 5bb42960-f08d-45a6-acdf-856e7c8e87e5
+		annotation SummarizationSetBy = User
+
+	column opening_units
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: opening_units
+		lineageTag: a1076383-4903-491d-b530-ae19215cb975
+		annotation SummarizationSetBy = User
+
+	column receipts_units
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: receipts_units
+		lineageTag: 7fa4d355-c34a-4a17-a666-1c2d3b747347
+		annotation SummarizationSetBy = User
+
+	column sales_units
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: sales_units
+		lineageTag: 3868e53e-f3cb-441f-98cf-d4ac0700c542
+		annotation SummarizationSetBy = User
+
+	column closing_units
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: closing_units
+		lineageTag: 84769b48-656f-4293-ad7a-e1f40a365506
+		annotation SummarizationSetBy = User
+
+	column unit_cost
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: unit_cost
+		lineageTag: 1a2367c1-51c6-4b18-93ff-a7d7cdc54916
+		annotation SummarizationSetBy = User
+
+	column inventory_value
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: inventory_value
+		lineageTag: 16a05950-d869-43b6-bc72-7fc6840d8a90
+		annotation SummarizationSetBy = User
+
+	column days_on_hand
+		dataType: double
+		summarizeBy: none
+		sourceColumn: days_on_hand
+		lineageTag: db17e572-ce2a-48a6-ae1e-292b1ff99ebb
+		annotation SummarizationSetBy = User
+
+	column stockout_flag
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: stockout_flag
+		lineageTag: 6581318b-caac-408f-88dd-cef5f0c6d3d6
+		annotation SummarizationSetBy = User
+
+	column expiry_writeoff
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: expiry_writeoff
+		lineageTag: 2aaa324c-1b08-41bb-8b4a-9d7ded9b2dee
+		annotation SummarizationSetBy = User
+
+	partition Inventory = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\inventory.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"warehouse_id", type text}, {"sku_id", type text}, {"opening_units", Int64.Type}, {"receipts_units", Int64.Type}, {"sales_units", Int64.Type}, {"closing_units", Int64.Type}, {"unit_cost", type number}, {"inventory_value", type number}, {"days_on_hand", type number}, {"stockout_flag", type logical}, {"expiry_writeoff", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

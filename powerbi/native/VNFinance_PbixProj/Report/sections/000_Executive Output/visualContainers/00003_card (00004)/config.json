@@ -1,0 +1,50 @@
+{
+  "name": "10000000000000000004",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 1000,
+        "y": 30,
+        "z": 4,
+        "width": 280,
+        "height": 110
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.CCC"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "CCC"
+          },
+          "Name": "Sales.CCC",
+          "NativeReferenceName": "CCC"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

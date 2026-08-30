@@ -1,0 +1,12 @@
+{
+  "name": "interest_expense",
+  "dataType": "double",
+  "sourceColumn": "interest_expense",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

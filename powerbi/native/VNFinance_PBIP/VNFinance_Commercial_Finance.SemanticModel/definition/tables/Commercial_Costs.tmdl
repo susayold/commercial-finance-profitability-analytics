@@ -1,0 +1,91 @@
+table Commercial_Costs
+	lineageTag: 9507d518-1bff-4e2f-b299-1ac09dc2d298
+
+	column month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: month
+		lineageTag: 21bf8bb6-bd14-4c67-b71e-a85504837966
+		annotation SummarizationSetBy = User
+
+	column sku_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: sku_id
+		lineageTag: 9b17afef-0190-46c0-817b-5fdb02b52a6c
+		annotation SummarizationSetBy = User
+
+	column channel_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel_id
+		lineageTag: 4c1900d9-1ee4-4928-9a06-8791231cb6c8
+		annotation SummarizationSetBy = User
+
+	column trade_spend
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: trade_spend
+		lineageTag: 26b2213d-b41f-4587-8f72-c5edbec33bc1
+		annotation SummarizationSetBy = User
+
+	column listing_fee
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: listing_fee
+		lineageTag: 00828592-9e76-4f10-b321-575d0b88c381
+		annotation SummarizationSetBy = User
+
+	column rebate
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: rebate
+		lineageTag: a9978718-02e5-4a1d-b7e9-170ec7990568
+		annotation SummarizationSetBy = User
+
+	column freight
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: freight
+		lineageTag: 657df332-437e-4199-89b1-8c50785afd8d
+		annotation SummarizationSetBy = User
+
+	column payment_fee
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: payment_fee
+		lineageTag: d7e177e3-6ae8-4f01-925d-7e72ca7dfaa8
+		annotation SummarizationSetBy = User
+
+	column commission
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: commission
+		lineageTag: 8213bad5-c41a-412f-8768-6183a1ed5896
+		annotation SummarizationSetBy = User
+
+	column writeoff
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: writeoff
+		lineageTag: 4cacbfe7-8713-4f93-ace0-76caf4ad0844
+		annotation SummarizationSetBy = User
+
+	column cost_version
+		dataType: string
+		summarizeBy: none
+		sourceColumn: cost_version
+		lineageTag: 01ede890-1e7e-4ca1-b725-59d2bea57d89
+		annotation SummarizationSetBy = User
+
+	partition Commercial_Costs = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\commercial_costs.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"sku_id", type text}, {"channel_id", type text}, {"trade_spend", type number}, {"listing_fee", type number}, {"rebate", type number}, {"freight", type number}, {"payment_fee", type number}, {"commission", type number}, {"writeoff", type number}, {"cost_version", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,12 @@
+{
+  "name": "budget_cogs",
+  "dataType": "double",
+  "sourceColumn": "budget_cogs",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

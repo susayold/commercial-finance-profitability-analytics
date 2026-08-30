@@ -1,0 +1,12 @@
+{
+  "name": "receipts_units",
+  "dataType": "int64",
+  "sourceColumn": "receipts_units",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

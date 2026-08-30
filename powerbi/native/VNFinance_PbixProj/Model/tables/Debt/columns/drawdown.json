@@ -1,0 +1,12 @@
+{
+  "name": "drawdown",
+  "dataType": "double",
+  "sourceColumn": "drawdown",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

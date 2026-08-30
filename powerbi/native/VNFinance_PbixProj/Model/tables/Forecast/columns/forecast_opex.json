@@ -1,0 +1,12 @@
+{
+  "name": "forecast_opex",
+  "dataType": "double",
+  "sourceColumn": "forecast_opex",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

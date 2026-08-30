@@ -1,0 +1,12 @@
+{
+  "name": "settlement_days",
+  "dataType": "int64",
+  "sourceColumn": "settlement_days",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

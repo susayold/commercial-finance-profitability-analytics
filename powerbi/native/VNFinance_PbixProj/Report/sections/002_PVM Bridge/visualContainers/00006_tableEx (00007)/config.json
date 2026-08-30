@@ -1,0 +1,145 @@
+{
+  "name": "30000000000000000007",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 450,
+        "z": 7,
+        "width": 1200,
+        "height": 220
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Product.sku_id"
+        },
+        {
+          "queryRef": "Product.category"
+        },
+        {
+          "queryRef": "Sales.Units"
+        },
+        {
+          "queryRef": "Sales.ASP"
+        },
+        {
+          "queryRef": "Sales.Price Impact"
+        },
+        {
+          "queryRef": "Sales.Volume Impact"
+        },
+        {
+          "queryRef": "Sales.Mix Other Impact"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Product",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "sku_id"
+          },
+          "Name": "Product.sku_id",
+          "NativeReferenceName": "sku_id"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "category"
+          },
+          "Name": "Product.category",
+          "NativeReferenceName": "category"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Units"
+          },
+          "Name": "Sales.Units",
+          "NativeReferenceName": "Units"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "ASP"
+          },
+          "Name": "Sales.ASP",
+          "NativeReferenceName": "ASP"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Price Impact"
+          },
+          "Name": "Sales.Price Impact",
+          "NativeReferenceName": "Price Impact"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Volume Impact"
+          },
+          "Name": "Sales.Volume Impact",
+          "NativeReferenceName": "Volume Impact"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Mix Other Impact"
+          },
+          "Name": "Sales.Mix Other Impact",
+          "NativeReferenceName": "Mix Other Impact"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

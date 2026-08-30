@@ -1,0 +1,1 @@
+CALCULATE ( SUM ( Receivables[closing_ar] ), LASTDATE ( Calendar[month] ) )

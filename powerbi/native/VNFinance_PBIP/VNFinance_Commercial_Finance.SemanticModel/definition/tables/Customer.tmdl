@@ -1,0 +1,64 @@
+table Customer
+	lineageTag: 1160632d-ff5d-46b2-adf7-14414c2a4019
+
+	column customer_id
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: customer_id
+		lineageTag: 28ad41c1-d0de-4489-8401-2bbc7b8ddac3
+		annotation SummarizationSetBy = User
+
+	column customer_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: customer_type
+		lineageTag: 038ac60c-e625-4c88-b2f6-f01923dd917f
+		annotation SummarizationSetBy = User
+
+	column segment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: segment
+		lineageTag: 9bc9531c-710f-4416-9a7e-4bd851b69357
+		annotation SummarizationSetBy = User
+
+	column region
+		dataType: string
+		summarizeBy: none
+		sourceColumn: region
+		lineageTag: d655632e-5248-48f7-8327-92afcaabc453
+		annotation SummarizationSetBy = User
+
+	column payment_terms_days
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: payment_terms_days
+		lineageTag: dc00d424-b1e2-4bc9-9c62-d42e1a581b97
+		annotation SummarizationSetBy = User
+
+	column credit_limit
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: credit_limit
+		lineageTag: 79aa323a-e25e-418c-b52b-92d195e36853
+		annotation SummarizationSetBy = User
+
+	column acquisition_month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: acquisition_month
+		lineageTag: 18f9c5a6-93c0-45f7-87c1-290a1cb10686
+		annotation SummarizationSetBy = User
+
+	partition Customer = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\customer_master.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"customer_id", type text}, {"customer_type", type text}, {"segment", type text}, {"region", type text}, {"payment_terms_days", Int64.Type}, {"credit_limit", type number}, {"acquisition_month", type date}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,12 @@
+{
+  "name": "writeoff",
+  "dataType": "double",
+  "sourceColumn": "writeoff",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

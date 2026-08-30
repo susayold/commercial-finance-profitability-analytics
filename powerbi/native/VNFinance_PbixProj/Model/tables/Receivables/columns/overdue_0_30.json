@@ -1,0 +1,12 @@
+{
+  "name": "overdue_0_30",
+  "dataType": "double",
+  "sourceColumn": "overdue_0_30",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

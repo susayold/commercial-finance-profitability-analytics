@@ -1,0 +1,70 @@
+table Payables
+	lineageTag: d7477a0a-c194-41be-8fc4-6f75cc3f6da2
+
+	column month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: month
+		lineageTag: f9d4c75c-bc6c-4982-b4f0-5b8b88d2a756
+		annotation SummarizationSetBy = User
+
+	column supplier_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: supplier_id
+		lineageTag: aeb20277-fc75-4e76-be03-c87d7b2e3c60
+		annotation SummarizationSetBy = User
+
+	column opening_ap
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: opening_ap
+		lineageTag: dfc10364-ee04-47ec-b451-b58534755fbc
+		annotation SummarizationSetBy = User
+
+	column purchases
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: purchases
+		lineageTag: 831a23db-814f-43c1-b289-9024015ec078
+		annotation SummarizationSetBy = User
+
+	column cash_paid
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: cash_paid
+		lineageTag: c5f05f84-ade8-45a9-bdc9-a23e21c3b231
+		annotation SummarizationSetBy = User
+
+	column closing_ap
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: closing_ap
+		lineageTag: 6bc92740-e8d7-47c0-a3f7-fc05d7e27cd9
+		annotation SummarizationSetBy = User
+
+	column overdue_ap
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: overdue_ap
+		lineageTag: b7f4503e-4046-40e7-998a-e2c07f624d67
+		annotation SummarizationSetBy = User
+
+	column dpo
+		dataType: double
+		summarizeBy: none
+		sourceColumn: dpo
+		lineageTag: 99d597b8-e43c-45cb-a4db-f56507155f8f
+		annotation SummarizationSetBy = User
+
+	partition Payables = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\payables.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"supplier_id", type text}, {"opening_ap", type number}, {"purchases", type number}, {"cash_paid", type number}, {"closing_ap", type number}, {"overdue_ap", type number}, {"dpo", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

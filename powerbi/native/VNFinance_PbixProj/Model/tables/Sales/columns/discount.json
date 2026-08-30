@@ -1,0 +1,12 @@
+{
+  "name": "discount",
+  "dataType": "double",
+  "sourceColumn": "discount",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+table Channel
+	lineageTag: 9e824bf9-2c69-4b12-a9a8-2c0983162371
+
+	column channel_id
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: channel_id
+		lineageTag: ac504504-bee8-42e5-8dbf-fc0122d3d174
+		annotation SummarizationSetBy = User
+
+	column channel_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel_type
+		lineageTag: 1c6058c1-268f-4f84-868f-e0aa229f313f
+		annotation SummarizationSetBy = User
+
+	column platform_fee_pct
+		dataType: double
+		summarizeBy: none
+		sourceColumn: platform_fee_pct
+		lineageTag: 67a45cd9-06f9-4ef1-9909-295932dd1c5f
+		annotation SummarizationSetBy = User
+
+	column commission_pct
+		dataType: double
+		summarizeBy: none
+		sourceColumn: commission_pct
+		lineageTag: b40b5cb1-d8ff-4ce4-a8fc-8f0df6f8df13
+		annotation SummarizationSetBy = User
+
+	column settlement_days
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: settlement_days
+		lineageTag: b72eed41-4510-433f-bd39-0bf22e27a233
+		annotation SummarizationSetBy = User
+
+	column default_discount_pct
+		dataType: double
+		summarizeBy: none
+		sourceColumn: default_discount_pct
+		lineageTag: e910ea7f-2181-4a0a-966a-0c1157ef9027
+		annotation SummarizationSetBy = User
+
+	partition Channel = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\channel_master.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"channel_id", type text}, {"channel_type", type text}, {"platform_fee_pct", type number}, {"commission_pct", type number}, {"settlement_days", Int64.Type}, {"default_discount_pct", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

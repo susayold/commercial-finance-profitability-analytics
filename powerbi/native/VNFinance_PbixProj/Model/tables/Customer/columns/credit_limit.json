@@ -1,0 +1,12 @@
+{
+  "name": "credit_limit",
+  "dataType": "double",
+  "sourceColumn": "credit_limit",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "warehouse_id",
+  "dataType": "string",
+  "sourceColumn": "warehouse_id",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

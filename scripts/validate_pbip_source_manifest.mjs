@@ -3,8 +3,17 @@ import fs from "node:fs";
 const [inputPath = "powerbi/PBIP_SOURCE_MANIFEST.json"] = process.argv.slice(2);
 const manifest = JSON.parse(fs.readFileSync(inputPath, "utf8"));
 const failures = [];
-if (manifest.artifact_type !== "PBIP_SOURCE_SCAFFOLD_NOT_NATIVE_PBIX") failures.push("artifact type must remain non-native scaffold");
+const allowedArtifacts = new Set([
+  "PBIP_SOURCE_SCAFFOLD_NOT_NATIVE_PBIX",
+  "REAL_EDITABLE_PBIP_AND_COMPILED_PBIT_NATIVE_PBIX_PENDING",
+]);
+if (!allowedArtifacts.has(manifest.artifact_type)) failures.push("artifact type must preserve the native-PBIX claim boundary");
 if (manifest.evidence_policy?.native_pbix_claimed !== false) failures.push("native PBIX claim must be false");
+if (manifest.artifact_type === "REAL_EDITABLE_PBIP_AND_COMPILED_PBIT_NATIVE_PBIX_PENDING") {
+  if (!manifest.release_artifacts?.editable_pbip?.endsWith(".pbip")) failures.push("editable PBIP release path");
+  if (!manifest.release_artifacts?.compiled_pbit?.endsWith(".pbit")) failures.push("compiled PBIT release path");
+  if (manifest.release_artifacts?.native_desktop_qa !== "PENDING") failures.push("native Desktop QA must remain pending");
+}
 if (!Array.isArray(manifest.dimensions) || manifest.dimensions.length < 5) failures.push("dimension coverage");
 if (!Array.isArray(manifest.facts) || manifest.facts.length < 9) failures.push("fact coverage");
 if (!Array.isArray(manifest.relationships) || manifest.relationships.length < 15) failures.push("relationship coverage");

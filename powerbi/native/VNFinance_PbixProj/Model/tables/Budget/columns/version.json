@@ -1,0 +1,12 @@
+{
+  "name": "version",
+  "dataType": "string",
+  "sourceColumn": "version",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

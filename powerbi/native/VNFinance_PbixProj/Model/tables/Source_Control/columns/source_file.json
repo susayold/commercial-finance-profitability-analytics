@@ -1,0 +1,12 @@
+{
+  "name": "source_file",
+  "dataType": "string",
+  "sourceColumn": "source_file",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

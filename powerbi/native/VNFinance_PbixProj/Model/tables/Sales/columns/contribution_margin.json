@@ -1,0 +1,12 @@
+{
+  "name": "contribution_margin",
+  "dataType": "double",
+  "sourceColumn": "contribution_margin",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

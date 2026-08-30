@@ -1,0 +1,78 @@
+table Product
+	lineageTag: cc9409d0-5b74-4b2c-85a8-e14338617303
+
+	column sku_id
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: sku_id
+		lineageTag: d714c6be-ec84-4faa-8205-9b2f6fb0735a
+		annotation SummarizationSetBy = User
+
+	column brand
+		dataType: string
+		summarizeBy: none
+		sourceColumn: brand
+		lineageTag: 767c1548-d593-427a-b1dc-abe5e85f01f3
+		annotation SummarizationSetBy = User
+
+	column category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: category
+		lineageTag: a89061c8-eaf9-4bd0-b056-095e770c5ef6
+		annotation SummarizationSetBy = User
+
+	column launch_month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: launch_month
+		lineageTag: ce4b2ea3-4409-4377-ab49-dd4c788e7a72
+		annotation SummarizationSetBy = User
+
+	column list_price
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: list_price
+		lineageTag: cfb1130a-f999-46db-83db-2e32dd62d72b
+		annotation SummarizationSetBy = User
+
+	column pack_size
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: pack_size
+		lineageTag: 41965079-ef94-42b6-a8f8-0c5cfb463ed4
+		annotation SummarizationSetBy = User
+
+	column standard_cogs
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: standard_cogs
+		lineageTag: fb49ef4d-14a9-4e9e-898e-f1b43666126d
+		annotation SummarizationSetBy = User
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+		lineageTag: 86d65430-ac0c-4946-bdeb-325c79b88c6d
+		annotation SummarizationSetBy = User
+
+	column supplier_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: supplier_id
+		lineageTag: 26e8c352-d3e3-4170-87d1-9ced8c30107f
+		annotation SummarizationSetBy = User
+
+	partition Product = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\product_master.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"sku_id", type text}, {"brand", type text}, {"category", type text}, {"launch_month", type date}, {"list_price", type number}, {"pack_size", Int64.Type}, {"standard_cogs", type number}, {"status", type text}, {"supplier_id", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

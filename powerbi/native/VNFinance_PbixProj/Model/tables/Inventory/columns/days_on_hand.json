@@ -1,0 +1,12 @@
+{
+  "name": "days_on_hand",
+  "dataType": "double",
+  "sourceColumn": "days_on_hand",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

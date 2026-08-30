@@ -1,7 +1,15 @@
 {
-  "artifact_type": "PBIP_SOURCE_SCAFFOLD_NOT_NATIVE_PBIX",
-  "project_name": "VNFinance_Commercial_Finance_v2",
-  "version": "1.0.0",
+  "artifact_type": "REAL_EDITABLE_PBIP_AND_COMPILED_PBIT_NATIVE_PBIX_PENDING",
+  "project_name": "VNFinance_Commercial_Finance",
+  "version": "2.0.0",
+  "release_artifacts": {
+    "editable_pbip": "powerbi/native/VNFinance_PBIP/VNFinance_Commercial_Finance.pbip",
+    "compiled_pbit": "powerbi/releases/Commercial_Finance_Profitability_Analytics.pbit",
+    "pbixproj_source": "powerbi/native/VNFinance_PbixProj",
+    "refresh_parameter": "DataRoot",
+    "refresh_mode": "Import_replace_and_refresh",
+    "native_desktop_qa": "PENDING"
+  },
   "evidence_policy": {
     "synthetic_operating_data": true,
     "reported_peer_data": true,
@@ -338,9 +346,9 @@
     "native_desktop_required": true
   },
   "external_steps_remaining": [
-    "Open Power BI Desktop and create a PBIP/PBIR project from this manifest.",
-    "Load remote workbook and approved peer CSV; paste measures.dax.",
+    "Repair or reinstall Power BI Desktop with Administrator rights on the execution host.",
+    "Open the committed PBIP or compiled PBIT, set DataRoot, and execute a native refresh.",
     "Execute QA-01 through QA-18 and record results in PBIX_RELEASE_EVIDENCE_TEMPLATE.md.",
-    "Upload native PBIX and optional PBIP folder to Drive; do not claim this manifest is a PBIX."
+    "Save and upload a native PBIX only after Desktop open, refresh, DAX, and visual-rendering QA pass."
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "channel_type",
+  "dataType": "string",
+  "sourceColumn": "channel_type",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

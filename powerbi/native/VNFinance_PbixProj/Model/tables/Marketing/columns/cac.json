@@ -1,0 +1,12 @@
+{
+  "name": "cac",
+  "dataType": "double",
+  "sourceColumn": "cac",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "year_month",
+  "dataType": "string",
+  "sourceColumn": "year_month",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "sortByColumn": "month"
+}

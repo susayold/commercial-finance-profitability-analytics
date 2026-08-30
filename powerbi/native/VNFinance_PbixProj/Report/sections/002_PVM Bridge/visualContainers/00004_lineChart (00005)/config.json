@@ -1,0 +1,87 @@
+{
+  "name": "30000000000000000005",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 170,
+        "z": 5,
+        "width": 600,
+        "height": 250
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Calendar.year_month"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Net Revenue"
+        },
+        {
+          "queryRef": "Sales.Prior Net Revenue"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Calendar",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "year_month"
+          },
+          "Name": "Calendar.year_month",
+          "NativeReferenceName": "year_month"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Net Revenue"
+          },
+          "Name": "Sales.Net Revenue",
+          "NativeReferenceName": "Net Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Prior Net Revenue"
+          },
+          "Name": "Sales.Prior Net Revenue",
+          "NativeReferenceName": "Prior Net Revenue"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

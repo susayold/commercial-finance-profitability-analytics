@@ -1,0 +1,12 @@
+{
+  "name": "commission_pct",
+  "dataType": "double",
+  "sourceColumn": "commission_pct",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

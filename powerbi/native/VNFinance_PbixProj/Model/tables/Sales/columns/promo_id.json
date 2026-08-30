@@ -1,0 +1,12 @@
+{
+  "name": "promo_id",
+  "dataType": "string",
+  "sourceColumn": "promo_id",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

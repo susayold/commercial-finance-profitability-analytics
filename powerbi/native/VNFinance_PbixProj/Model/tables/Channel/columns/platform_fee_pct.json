@@ -1,0 +1,12 @@
+{
+  "name": "platform_fee_pct",
+  "dataType": "double",
+  "sourceColumn": "platform_fee_pct",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

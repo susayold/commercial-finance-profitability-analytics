@@ -1,0 +1,12 @@
+{
+  "name": "clicks",
+  "dataType": "int64",
+  "sourceColumn": "clicks",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

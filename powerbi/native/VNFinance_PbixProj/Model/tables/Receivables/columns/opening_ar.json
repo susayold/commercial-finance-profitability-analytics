@@ -1,0 +1,12 @@
+{
+  "name": "opening_ar",
+  "dataType": "double",
+  "sourceColumn": "opening_ar",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

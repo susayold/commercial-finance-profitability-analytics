@@ -1,0 +1,12 @@
+{
+  "name": "is_stockout",
+  "dataType": "boolean",
+  "sourceColumn": "is_stockout",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

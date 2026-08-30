@@ -1,0 +1,12 @@
+{
+  "name": "promo_spend",
+  "dataType": "double",
+  "sourceColumn": "promo_spend",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

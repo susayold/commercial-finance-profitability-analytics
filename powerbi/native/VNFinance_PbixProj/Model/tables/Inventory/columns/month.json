@@ -1,0 +1,12 @@
+{
+  "name": "month",
+  "dataType": "dateTime",
+  "sourceColumn": "month",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "budget_units",
+  "dataType": "int64",
+  "sourceColumn": "budget_units",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

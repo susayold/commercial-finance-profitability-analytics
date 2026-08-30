@@ -8,7 +8,11 @@ const dax=read(process.argv[4]||"powerbi/measures.dax");
 const matrix=read(process.argv[5]||"powerbi/QA_TEST_MATRIX.md");
 const evidence=read(process.argv[6]||"powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv");
 const checks=[]; const add=(name,pass,detail)=>checks.push({name,pass:Boolean(pass),detail:String(detail)});
-add("Non-native boundary",manifest.artifact_type==="PBIP_SOURCE_SCAFFOLD_NOT_NATIVE_PBIX"&&manifest.evidence_policy?.native_pbix_claimed===false,"artifact_type="+manifest.artifact_type);
+const sourceArtifact = ["PBIP_SOURCE_SCAFFOLD_NOT_NATIVE_PBIX", "REAL_EDITABLE_PBIP_AND_COMPILED_PBIT_NATIVE_PBIX_PENDING"].includes(manifest.artifact_type);
+add("Native PBIX claim boundary",sourceArtifact&&manifest.evidence_policy?.native_pbix_claimed===false,"artifact_type="+manifest.artifact_type+"; native_pbix_claimed="+manifest.evidence_policy?.native_pbix_claimed);
+if (manifest.artifact_type === "REAL_EDITABLE_PBIP_AND_COMPILED_PBIT_NATIVE_PBIX_PENDING") {
+  add("Refreshable release paths",manifest.release_artifacts?.editable_pbip?.endsWith(".pbip")&&manifest.release_artifacts?.compiled_pbit?.endsWith(".pbit"),JSON.stringify(manifest.release_artifacts));
+}
 add("Dimension parity",manifest.dimensions?.length===contract.dimensions?.length&&manifest.dimensions.every((d,i)=>d.name===contract.dimensions[i].name),"manifest="+(manifest.dimensions?.length||0)+" contract="+(contract.dimensions?.length||0));
 add("Fact parity",manifest.facts?.length===contract.facts?.length&&manifest.facts.every((f,i)=>f.name===contract.facts[i].name),"manifest="+(manifest.facts?.length||0)+" contract="+(contract.facts?.length||0));
 add("Relationship parity",manifest.relationships?.length===contract.relationships?.length,"manifest="+(manifest.relationships?.length||0)+" contract="+(contract.relationships?.length||0));

@@ -1,0 +1,12 @@
+{
+  "name": "rebate",
+  "dataType": "double",
+  "sourceColumn": "rebate",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

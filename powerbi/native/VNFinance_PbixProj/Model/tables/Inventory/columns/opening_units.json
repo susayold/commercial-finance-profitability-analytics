@@ -1,0 +1,12 @@
+{
+  "name": "opening_units",
+  "dataType": "int64",
+  "sourceColumn": "opening_units",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

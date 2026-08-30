@@ -1,0 +1,87 @@
+{
+  "name": "10000000000000000006",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 660,
+        "y": 170,
+        "z": 6,
+        "width": 580,
+        "height": 250
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "clusteredBarChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Channel.channel_type"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Contribution Margin"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Channel",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "channel_type"
+          },
+          "Name": "Channel.channel_type",
+          "NativeReferenceName": "channel_type"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Contribution Margin"
+          },
+          "Name": "Sales.Contribution Margin",
+          "NativeReferenceName": "Contribution Margin"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Contribution Margin"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

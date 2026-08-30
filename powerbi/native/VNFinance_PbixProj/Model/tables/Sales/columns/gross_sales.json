@@ -1,0 +1,12 @@
+{
+  "name": "gross_sales",
+  "dataType": "double",
+  "sourceColumn": "gross_sales",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

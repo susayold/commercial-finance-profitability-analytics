@@ -1,0 +1,12 @@
+{
+  "name": "units",
+  "dataType": "int64",
+  "sourceColumn": "units",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

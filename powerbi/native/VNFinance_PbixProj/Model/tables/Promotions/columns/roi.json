@@ -1,0 +1,12 @@
+{
+  "name": "roi",
+  "dataType": "double",
+  "sourceColumn": "roi",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

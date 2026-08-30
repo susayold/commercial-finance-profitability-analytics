@@ -1,0 +1,12 @@
+{
+  "name": "category",
+  "dataType": "string",
+  "sourceColumn": "category",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

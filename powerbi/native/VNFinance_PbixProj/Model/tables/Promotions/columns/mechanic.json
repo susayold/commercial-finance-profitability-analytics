@@ -1,0 +1,12 @@
+{
+  "name": "mechanic",
+  "dataType": "string",
+  "sourceColumn": "mechanic",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+table Marketing
+	lineageTag: e260d85b-1397-408e-8da0-a95c81c5c206
+
+	column month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: month
+		lineageTag: 05868f0c-398e-4e3b-87bd-e1feaebecfa1
+		annotation SummarizationSetBy = User
+
+	column channel_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel_id
+		lineageTag: e2fb848f-8302-4538-9a13-6ddc946582df
+		annotation SummarizationSetBy = User
+
+	column campaign_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: campaign_id
+		lineageTag: 0c5cd59b-b67b-4add-bfa1-62b8f0f9ecf0
+		annotation SummarizationSetBy = User
+
+	column spend
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: spend
+		lineageTag: 4c76d7ad-bb70-4d7a-9c6c-a6d2440004e3
+		annotation SummarizationSetBy = User
+
+	column impressions
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: impressions
+		lineageTag: ca57112b-fc31-4f4c-a716-abc297e64122
+		annotation SummarizationSetBy = User
+
+	column clicks
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: clicks
+		lineageTag: 7ae3bc3c-06a6-4814-8f3a-b58cad3ecc00
+		annotation SummarizationSetBy = User
+
+	column orders
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: orders
+		lineageTag: 16aacbc7-7cd9-4715-9842-d7befa7fcc78
+		annotation SummarizationSetBy = User
+
+	column attributed_net_sales
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: attributed_net_sales
+		lineageTag: a0b50c41-ff1f-429e-af49-681816441d20
+		annotation SummarizationSetBy = User
+
+	column cac
+		dataType: double
+		summarizeBy: none
+		sourceColumn: cac
+		lineageTag: fb429f65-3286-41d9-ad20-ad56b8be444d
+		annotation SummarizationSetBy = User
+
+	column roas
+		dataType: double
+		summarizeBy: none
+		sourceColumn: roas
+		lineageTag: 464d81b5-492f-4e2b-b764-40d6fff5e7ad
+		annotation SummarizationSetBy = User
+
+	partition Marketing = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\marketing_spend.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"channel_id", type text}, {"campaign_id", type text}, {"spend", type number}, {"impressions", Int64.Type}, {"clicks", Int64.Type}, {"orders", Int64.Type}, {"attributed_net_sales", type number}, {"cac", type number}, {"roas", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

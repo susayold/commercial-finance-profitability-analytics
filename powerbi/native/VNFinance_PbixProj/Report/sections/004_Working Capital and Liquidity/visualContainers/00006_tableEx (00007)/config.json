@@ -1,0 +1,115 @@
+{
+  "name": "50000000000000000007",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 450,
+        "z": 7,
+        "width": 1200,
+        "height": 220
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Calendar.year_month"
+        },
+        {
+          "queryRef": "Sales.Ending AR"
+        },
+        {
+          "queryRef": "Sales.Ending Inventory"
+        },
+        {
+          "queryRef": "Sales.Ending AP"
+        },
+        {
+          "queryRef": "Sales.Debt Balance"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Calendar",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "year_month"
+          },
+          "Name": "Calendar.year_month",
+          "NativeReferenceName": "year_month"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Ending AR"
+          },
+          "Name": "Sales.Ending AR",
+          "NativeReferenceName": "Ending AR"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Ending Inventory"
+          },
+          "Name": "Sales.Ending Inventory",
+          "NativeReferenceName": "Ending Inventory"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Ending AP"
+          },
+          "Name": "Sales.Ending AP",
+          "NativeReferenceName": "Ending AP"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Debt Balance"
+          },
+          "Name": "Sales.Debt Balance",
+          "NativeReferenceName": "Debt Balance"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

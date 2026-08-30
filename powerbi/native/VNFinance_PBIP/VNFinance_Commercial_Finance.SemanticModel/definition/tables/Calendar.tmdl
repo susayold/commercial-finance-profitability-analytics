@@ -1,0 +1,59 @@
+table Calendar
+	lineageTag: 46a26107-36d0-43ab-b36a-8032806f8e6f
+	dataCategory: Time
+
+	column month
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: month
+		lineageTag: 7b2d2f4b-3a9b-4d6b-bf76-0f13f76b6176
+		annotation SummarizationSetBy = User
+
+	column year
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: year
+		lineageTag: 8ccddcee-0483-4b14-a9d6-bea0b05d9c44
+		annotation SummarizationSetBy = User
+
+	column quarter
+		dataType: string
+		summarizeBy: none
+		sourceColumn: quarter
+		lineageTag: 3f4cfea4-71b2-478c-a028-55202ce272f4
+		annotation SummarizationSetBy = User
+
+	column month_number
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: month_number
+		lineageTag: 0b3584a2-4174-4725-9b4e-fd62664e05dc
+		annotation SummarizationSetBy = User
+
+	column year_month
+		dataType: string
+		summarizeBy: none
+		sourceColumn: year_month
+		lineageTag: ae6a9c0c-579c-42e0-bd0f-14fa50fe8efe
+		sortByColumn: month
+		annotation SummarizationSetBy = User
+
+	partition Calendar = m
+		mode: import
+		source =
+			let
+			    StartDate = #date(2023, 1, 1),
+			    MonthCount = 36,
+			    MonthList = List.Transform({0..MonthCount-1}, each Date.AddMonths(StartDate, _)),
+			    Base = Table.FromList(MonthList, Splitter.SplitByNothing(), {"month"}),
+			    Typed = Table.TransformColumnTypes(Base, {{"month", type date}}),
+			    AddYear = Table.AddColumn(Typed, "year", each Date.Year([month]), Int64.Type),
+			    AddQuarter = Table.AddColumn(AddYear, "quarter", each "Q" & Text.From(Date.QuarterOfYear([month])), type text),
+			    AddMonthNumber = Table.AddColumn(AddQuarter, "month_number", each Date.Month([month]), Int64.Type),
+			    AddYearMonth = Table.AddColumn(AddMonthNumber, "year_month", each Date.ToText([month], "yyyy-MM"), type text)
+			in
+			    AddYearMonth
+
+	annotation PBI_ResultType = Table

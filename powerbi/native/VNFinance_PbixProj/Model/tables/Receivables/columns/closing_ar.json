@@ -1,0 +1,12 @@
+{
+  "name": "closing_ar",
+  "dataType": "double",
+  "sourceColumn": "closing_ar",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}
