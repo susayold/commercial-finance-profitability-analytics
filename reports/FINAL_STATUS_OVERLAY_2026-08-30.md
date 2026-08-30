@@ -136,3 +136,7 @@ Power BI preflight now checks manifest/contract parity, core DAX measures, six-p
 ## Gate A accuracy-report extension
 
 The accuracy report builder is now committed and CI-tested in fixture mode. It emits eligible/excluded populations, Bias/WAPE/MAPE diagnostics, evidence metadata and a management action; it cannot return LIVE_OBSERVED_READY without real LIVE_INTERNAL rows.
+
+## CV evidence refresh
+
+CV V2 now includes the operational driver/unit-economics evidence with controlled SIMULATED/DERIVED wording and the 13/13 Power BI preflight boundary. Drive copy: https://drive.google.com/file/d/1EpA1i3aRlXNwweWnf1v-M_PvjkkjIqrj/view?usp=drivesdk
