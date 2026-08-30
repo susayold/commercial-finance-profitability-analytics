@@ -144,3 +144,11 @@ Drive mirror for M&A extension:
 - Synthetic register: [opex_headcount_planning_synthetic.csv](../data/opex_headcount_planning_synthetic.csv)
 - QA: [OPEX/headcount QA](../reports/OPEX_HEADCOUNT_PLANNING_QA.md) — 13/13 automated checks.
 - Evidence boundary: SIMULATED / DERIVED; do not describe employees, salaries or savings as real company outcomes.
+
+## CAPEX and fixed-asset planning evidence
+
+- CV bullet: project-level bridge from approval → commitment → cash payment → in-service depreciation → benefit/payback.
+- Direct report: [CAPEX & Fixed-Asset Planning Module](CAPEX_FIXED_ASSET_PLANNING_MODULE.md)
+- Synthetic register: [capex_fixed_asset_planning_synthetic.csv](../data/capex_fixed_asset_planning_synthetic.csv)
+- QA: [CAPEX/fixed-asset QA](../reports/CAPEX_FIXED_ASSET_PLANNING_QA.md) — 15/15 automated checks.
+- Evidence boundary: SIMULATED / DERIVED; do not describe approvals, cash payments or returns as realized company outcomes.
