@@ -148,3 +148,7 @@ QNS FY2021–FY2025 gross profit and owners' equity are now populated from the F
 - MCH FY2024–FY2025 approved supplement released after visual page review and tie-outs; it remains separate from the 240-row core panel; the separate FY2016–FY2025 supplement is now approved with the FY2017 comparative caveat.
 
 - MCH approved supplement extended through FY2016–FY2025: 80 rows across ten years, all eight metrics, visual review, tie-outs and cash-flow confirmation complete. FY2017 retains the comparative/corresponding-column caveat from the audited FY2018 filing. [approved CSV](../data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
+
+## Current status overlay
+
+See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
