@@ -10,7 +10,7 @@ This audit maps the user-provided master plan to evidence that a recruiter or fi
 
 - Historical peer extraction is closed for VNM FY2006–FY2020, QNS FY2016–FY2020 and KDC FY2016–FY2020; all 25 queue rows have statement metrics, page anchors and basis notes. Long-run ranking still requires the documented QNS revenue-basis and KDC perimeter caveats.
 - The market-fit layer is complete: [role-alignment matrix](ROLE_ALIGNMENT_MATRIX.md), [machine-readable CSV](../data/role_alignment_matrix.csv) and [role-targeted CV variants](CV_ROLE_VARIANTS.md) are committed and mirrored to Drive.
-- The current remote QA run passes the evidence matrix, role matrix, PBIP manifest, M&A, D2C, public-guidance, VNM long-run and peer validators. The recruiter site is deployed as Sites version 4 and the candidate application/CV and external-gates execution packs are now linked from the README. Gate A (genuine internal snapshot) and Gate B (native PBIX/Desktop QA) remain the only external release gates.
+- The current remote QA run passes the evidence matrix, role matrix, PBIP manifest, M&A, D2C, public-guidance, VNM long-run and peer validators. The recruiter site is deployed as Sites version 5 and the candidate application/CV and external-gates execution packs are now linked from the README. Gate A (genuine internal snapshot) and Gate B (native PBIX/Desktop QA) remain the only external release gates.
 - Promotion ROI and fixed-budget allocation are now independently inspectable: spend is included in ROI, negative-CM stop-loss events are visible, and recommended channel budgets conserve the approved total. See [stretch-module QA](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md).
 
 ## 1. Definition-of-done matrix
@@ -194,7 +194,7 @@ Drive mirror for M&A extension:
 ## Website strategic-finance release
 
 - [Release note](reports/SITE_STRATEGIC_FINANCE_RELEASE_2026-08-30.md) · [Drive release note](https://drive.google.com/file/d/19mW_MT81z1CMeU9v39fBHBdiIcoLkEiQ/view)
-- Production site version 4 now includes Strategic Finance / M&A, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
+- Production site version 5 now includes Strategic Finance / M&A, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 - Local build PASS; deployment succeeded. Shared UI-library lint warnings remain pre-existing and do not include new page-level errors.
 - [Drive build archive](https://drive.google.com/file/d/1mfx-4W0cfZvGlcZv6TONO36H3rKXgqib/view) · [v3 page source](https://drive.google.com/file/d/1gJZOyXQKPoOuEHDmRLQezSn3GgULp0f-/view) · [v3 CSS source](https://drive.google.com/file/d/136FgoZ8gzarzNZAtXWmsHpMi6PYj53fb/view)
 
@@ -202,7 +202,7 @@ Drive mirror for M&A extension:
 ## Website runtime QA
 
 - [Runtime/access-boundary QA](reports/SITE_RUNTIME_QA_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1z1LGW43fG94bEkFgbPZP3QVYQvYwxZt-/view)
-- Source/build/deployment checks PASS for Sites version 4. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session.
+- Source/build/deployment checks PASS for Sites version 5. The site intentionally remains owner-only; unauthenticated requests receive the sign-in screen. Visual click-through requires the owner session.
 
 
 ## Archived master plan
@@ -218,7 +218,7 @@ The peer panel is intentionally scoped by evidence quality: VNM supports a long-
 
 ## Normalized peer evidence layer
 
-The long-form peer export now preserves one company × FY × metric row with source lineage, blank-value controls, role mapping and comparability flags. The approved VNM/QNS/KDC export passes 18/18 checks across 240 rows; the MCH intake template passes 14/14 structural checks but remains blocked until page-level review. See [methodology](NORMALIZED_PEER_PANEL_METHODOLOGY.md), [validator](../scripts/validate_normalized_peer_panel.mjs), [approved QA](../reports/NORMALIZED_PEER_PANEL_QA.md), [template QA](../reports/NORMALIZED_PEER_PANEL_TEMPLATE_QA.md) and [Drive native Sheet](https://docs.google.com/spreadsheets/d/11v8XpRNMCkaWkhqakjxh1Ao3E0yTP4cLP3Z3Jmg7Owg/edit?usp=drivesdk).
+The long-form peer export now preserves one company × FY × metric row with source lineage, blank-value controls, role mapping and comparability flags. The approved VNM/QNS/KDC export passes 18/18 checks across 240 rows; the MCH intake template passes 14/14 structural checks and remains intentionally separate from the approved 80-row MCH statement supplement. See [methodology](NORMALIZED_PEER_PANEL_METHODOLOGY.md), [validator](../scripts/validate_normalized_peer_panel.mjs), [approved QA](../reports/NORMALIZED_PEER_PANEL_QA.md), [template QA](../reports/NORMALIZED_PEER_PANEL_TEMPLATE_QA.md) and [Drive native Sheet](https://docs.google.com/spreadsheets/d/11v8XpRNMCkaWkhqakjxh1Ao3E0yTP4cLP3Z3Jmg7Owg/edit?usp=drivesdk).
 
 ## 15. Application conversion pack
 
@@ -232,7 +232,7 @@ FY2021–FY2025 gross profit and owners' equity were promoted from the readable 
 MCH remains separate from the 240-row core panel, but the 80-row FY2016–FY2025 supplement is approved after page-level review; only the FY2017 comparative/corresponding-column caveat remains.
 
 ### MCH latest-year supplement
-FY2024–FY2025 MCH statements were visually reviewed and tie-outs passed; an approved eight-metric supplement is published. The core peer panel remains 240 rows and older MCH years remain blocked.
+FY2024–FY2025 MCH statements were visually reviewed and tie-outs passed; the approved eight-metric supplement has since been extended to FY2016–FY2025. The core peer panel remains 240 rows and the MCH supplement is maintained separately for comparability control.
 
 ### MCH FY2016–FY2025 completion
 FY2016 and FY2018–FY2025 were visually reviewed (including cash-flow statements) and tie-outs passed; FY2017 was validated from the audited FY2018 comparative/corresponding columns. The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metrics) with the FY2017 caveat retained.
