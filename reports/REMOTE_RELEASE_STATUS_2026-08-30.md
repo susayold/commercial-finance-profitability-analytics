@@ -144,3 +144,5 @@ QNS FY2021–FY2025 gross profit and owners' equity are now populated from the F
 - MCH remains intentionally blocked from the approved panel after a 59-row OCR review; the promotion gate and Drive memo are published for human follow-up.
 
 - MCH FY2024–FY2025 candidate layer published: 16 rows, all eight normalized metrics, statement/balance-sheet tie-outs passing; visual sign-off remains pending. [MCH candidate reconciliation](reports/MCH_STATEMENT_CANDIDATE_RECONCILIATION_2024_2025.md) · [candidate CSV](data/mch_statement_candidates_2024_2025.csv) · [Drive candidate Sheet](https://docs.google.com/spreadsheets/d/1L8sRGR-4DI3bxE7ODqzjo9Bq18d4UjvADVUPjUDZKBE/edit) · [Drive reconciliation memo](https://docs.google.com/document/d/1HHWzjsW0I4PjyJYBsCawGx7_e141gLSESbodhpadU5s/edit)
+
+- MCH FY2024–FY2025 approved supplement released after visual page review and tie-outs; it remains separate from the 240-row core panel and does not imply FY2016–FY2023 approval.
