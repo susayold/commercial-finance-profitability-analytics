@@ -204,6 +204,12 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - Site V6 release record: [GitHub source/deployment note](site/README.md) · [Drive mirror](https://docs.google.com/document/d/1WSaAd7YVTVclTnSKYoqqXdvxpK_GACSFc0cG-XJxXlY/edit?usp=drivesdk)
 
+## Inventory quality, aging, shrinkage and wastage
+
+- [Methodology](docs/INVENTORY_QUALITY_METHODOLOGY.md) · [Synthetic schedule](data/inventory_quality_synthetic.csv) · [Validator](scripts/validate_inventory_quality.mjs) · [9/9 QA report](reports/INVENTORY_QUALITY_QA.md)
+- [Drive schedule](https://drive.google.com/file/d/1PvM1CCVqGh6kDiftBQyzfHAz0kCphRTi/view?usp=drivesdk) · [Drive methodology](https://drive.google.com/file/d/1v9mT08eADR_WtldPwKwwLGu_2UUZ0dON/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1BqPUA4HrRqft33qyIaZQZJUqs-jBGBQ1/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1CH3oTWcKdQAWY8bowHsOYfHK8Pmd7NFW/view?usp=drivesdk)
+- The layer covers 36 rows across 12 months and three categories, with explicit aging buckets, obsolete reserve, write-off rate and shrinkage rate. It is synthetic rehearsal evidence and requires physical-count/expiry/accounting records before any real-company conclusion.
+
 ## Liquidity stress and revolver policy
 
 - [Methodology](docs/LIQUIDITY_STRESS_METHODOLOGY.md) · [Synthetic schedule](data/liquidity_stress_synthetic.csv) · [Validator](scripts/validate_liquidity_stress.mjs) · [9/9 QA report](reports/LIQUIDITY_STRESS_QA.md)
