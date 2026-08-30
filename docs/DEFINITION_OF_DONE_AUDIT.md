@@ -230,3 +230,6 @@ FY2021–FY2025 gross profit and owners' equity were promoted from the readable 
 
 ### MCH OCR control
 MCH remains intentionally blocked from the approved panel. The 59-row OCR workbench and a page-level promotion gate are documented; no unresolved OCR candidate is presented as verified data.
+
+### MCH latest-year supplement
+FY2024–FY2025 MCH statements were visually reviewed and tie-outs passed; an approved eight-metric supplement is published. The core peer panel remains 240 rows and older MCH years remain blocked.
