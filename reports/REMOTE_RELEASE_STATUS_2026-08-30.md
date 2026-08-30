@@ -60,7 +60,7 @@ The commercial stretch modules are now hardened:The commercial stretch modules a
 
 ## Website release
 
-The production recruiter site is now Sites version 8. It adds an Operating Finance System section linking MBR/KPI controls, the recommendation register, the WD-5→WD+5 close cadence and risk/planning extensions; the Forecast Performance section still keeps public-guidance metrics explicitly Gate-A-excluded. [Gate-contract release evidence](SITE_GATE_CONTRACT_RELEASE_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/12dxwwLYD3CrWtajxKdciMoalt-CIzd0R/view).
+The production recruiter site is now Sites version 8. It adds an Operating Finance System section linking MBR/KPI controls, the recommendation register, the WD-5→WD+5 close cadence and risk/planning extensions; the Forecast Performance section still keeps public-guidance metrics explicitly Gate-A-excluded. [V8 release evidence](reports/SITE_V8_RELEASE_RECORD_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1p3gSEo7gkH_skLniiMFK96SgBnk1aSaO/view?usp=drivesdk).
 
 ## PBIP Desktop execution checklist
 
