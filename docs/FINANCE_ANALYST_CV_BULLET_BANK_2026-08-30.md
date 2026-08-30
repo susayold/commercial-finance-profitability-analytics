@@ -81,3 +81,7 @@ Use only when the vacancy explicitly asks for semantic modelling, Power BI, DAX,
 - [Evidence map](CV_EVIDENCE_MAP.md)
 - [Remaining-gates handoff](REMAINING_GATES_HANDOFF_2026-08-30.md)
 - [Interview walkthrough](INTERVIEW_WALKTHROUGH_FINANCE_ANALYST_2026-08-30.md)
+
+### Customer profitability concentration
+- Built a 24-customer profitability layer with gross-to-net leakage, contribution, DSO and a 10% working-capital cost proxy; top-five accounts represented 28.62% of gross sales and 30.88% of after-WC contribution in the synthetic FY2025 rehearsal. C06 was flagged for 14.58% contribution margin and 88.72-day DSO (`SYNTHETIC_REHEARSAL`).
+- Added a deterministic summary output and 14/14 QA validator; current cross-platform runner covers 43 checks (42 invocations across 40 unique validator files plus contract-shape).
