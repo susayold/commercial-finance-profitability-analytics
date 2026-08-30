@@ -16,6 +16,7 @@ The repository now includes generated native source under `powerbi/native/` and 
 - Rebuild both source formats with `scripts/build_powerbi_refreshable_project.py` and validate the package with `scripts/validate_powerbi_refreshable_project.py`.
 - Validate any replacement dataset first with `scripts/validate_powerbi_input_contract.py`; the CI workflow validates both the committed fixture and the generated package before package QA.
 - On a Windows execution host, run `scripts/powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot <folder>` to check Desktop installation, package paths and input readiness before opening PBIP/PBIT.
+- Add `-Report reports/POWER_BI_DESKTOP_PREFLIGHT_YYYY-MM-DD.json` to retain the exact host/data gate output; `PENDING` means Desktop is absent or a required input is missing, not that native PBIX QA passed.
 - `scripts/validate_powerbi_artifact_coherence.py` checks the generated PBIP/PBIT topology directly (15 tables, 37 measures, 23 relationships, 6 pages and 39 visuals) against `package_inventory` in `PBIP_SOURCE_MANIFEST.json`.
 
 Automated package QA currently passes 29/29 checks. Native Desktop open/refresh/render QA remains a separate gate and is not inferred from source validation.

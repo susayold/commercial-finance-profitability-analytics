@@ -51,6 +51,16 @@ On a Windows execution host, the one-command preflight also checks the Desktop e
 .\scripts\powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot .\powerbi\data\current
 ```
 
+To retain the host/data gate as machine-readable release evidence, add
+`-Report` (the command still exits `2` while Desktop is not installed):
+
+```powershell
+.\scripts\powerbi_desktop_preflight.ps1 `
+  -ProjectRoot . `
+  -DataRoot .\powerbi\data\current `
+  -Report .\reports\POWER_BI_DESKTOP_PREFLIGHT_YYYY-MM-DD.json
+```
+
 If Desktop is installed outside the two default Windows locations, pass the executable explicitly:
 
 ```powershell

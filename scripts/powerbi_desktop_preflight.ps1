@@ -5,7 +5,9 @@ param(
     [Parameter()]
     [string]$DataRoot = "",
     [Parameter()]
-    [string]$DesktopPath = ""
+    [string]$DesktopPath = "",
+    [Parameter()]
+    [string]$Report = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -97,5 +99,13 @@ $result = [pscustomobject]@{
     failed = $failed.Count
     details = $checks
 }
-$result | ConvertTo-Json -Depth 6
+$json = $result | ConvertTo-Json -Depth 6
+$json
+if ($Report) {
+    $reportParent = Split-Path -Parent $Report
+    if ($reportParent -and -not (Test-Path -LiteralPath $reportParent)) {
+        New-Item -ItemType Directory -Path $reportParent -Force | Out-Null
+    }
+    Set-Content -LiteralPath $Report -Value $json -Encoding UTF8
+}
 if ($failed.Count -gt 0) { exit 2 }
