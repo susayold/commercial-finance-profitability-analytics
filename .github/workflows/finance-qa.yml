@@ -168,6 +168,11 @@ jobs:
         run: |
           node scripts/validate_master_plan_evidence_matrix.mjs
 
+      - name: Validate Block A design lock
+        shell: bash
+        run: |
+          node scripts/validate_block_a_design_lock.mjs data/block_a_design_lock.csv
+
       - name: Validate role alignment matrix
         shell: bash
         run: |
