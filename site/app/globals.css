@@ -146,6 +146,25 @@ h2 { margin-top: 17px; color: var(--navy); font-size: clamp(33px, 4vw, 52px); li
 .footer-links a { display: inline-flex; align-items: center; gap: 5px; }
 .footer-bottom { display: flex; justify-content: space-between; margin-top: 55px; padding-top: 15px; border-top: 1px solid var(--line); color: #89979e; font-size: 9px; }
 
+.mch-trend-section { background: #0d3149; }
+.mch-summary-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 15px; margin-top: 47px; }
+.mch-chart-card, .mch-readout-card { min-height: 335px; }
+.mch-trend-table { display: grid; gap: 0; margin-top: 27px; border-top: 1px solid rgba(177,214,220,.18); }
+.mch-row { display: grid; grid-template-columns: .75fr 1.1fr 1fr 1fr; gap: 8px; align-items: center; padding: 13px 0; border-bottom: 1px solid rgba(177,214,220,.12); color: #c0d3d9; font-size: 11px; }
+.mch-row span:not(:first-child), .mch-row strong:not(:first-child) { text-align: right; }
+.mch-row strong { color: #fff; font-size: 11px; }
+.mch-head { padding-top: 0; color: #7fa4a8; font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.mch-head span:not(:first-child) { text-align: right; }
+.mch-highlight { margin: 0 -10px; padding-left: 10px; padding-right: 10px; border-radius: 6px; background: rgba(18,184,166,.12); }
+.mch-highlight strong, .mch-highlight span { color: #8ee8dc; }
+.mch-readout { display: grid; gap: 19px; margin-top: 25px; }
+.mch-readout > div { padding-left: 13px; border-left: 2px solid #49cfc0; }
+.mch-readout strong { display: block; color: #fff; font-size: 13px; }
+.mch-readout small { display: block; margin-top: 5px; color: #9db8bf; font-size: 10px; line-height: 1.5; }
+.mch-note { color: #c9e9e4; background: rgba(18,184,166,.12); border-color: rgba(127,215,203,.25); }
+@media (max-width: 900px) { .mch-summary-grid { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .mch-row { grid-template-columns: .7fr 1fr 1fr 1fr; font-size: 10px; } .mch-row strong { font-size: 10px; } }
+
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 45px; padding-top: 65px; }
   .hero-copy { max-width: 700px; }
