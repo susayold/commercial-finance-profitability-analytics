@@ -29,6 +29,8 @@ Replacement-data input contract: **78/78 PASS** on the deterministic fixture (he
 
 GitHub Actions Finance model QA passed in run [33314651136](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33314651136) on commit `04b5400` (including the generated-data/PBIT/PBIP package validation and the 44-check regression runner). The workflow remains available at `.github/workflows/finance-qa.yml` for every push and pull request.
 
+Latest workflow run [33314916251](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33314916251) also passed on commit `8b74198`, after adding the replacement-data input contract gate and its QA artifact upload.
+
 PBIT SHA-256: `7E7A417C7028678C44F2500B185FCA3D669193EC62B620EB7E48EA7A6EC6E095`
 
 The next line records the preliminary bundle before the DirectQuery files were added; the current checksum is repeated in the claim-boundary section below.
