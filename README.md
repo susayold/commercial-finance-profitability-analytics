@@ -105,6 +105,8 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 ## Remote release status
 
+- [Drive archive authority map](docs/DRIVE_ARCHIVE_AUTHORITY_MAP_2026-08-30.md) · [Drive copy](https://drive.google.com/file/d/1AkUbm5WN_rfyZ5l20Elvdteld2JuoToR/view?usp=drivesdk)
+
 - [Release-status record](reports/REMOTE_RELEASE_STATUS_2026-08-30.md) · [Drive current mirror](https://docs.google.com/document/d/112gXNmli0sf-qL1CrKuiWPA8Z0ekcXGRwromDQ-wdGc/edit?usp=drivesdk) · [Drive copy](https://drive.google.com/file/d/1xb_SyGeE5_vWnKEmRNtwd6u4ZZExc5RR/view?usp=drivesdk)
 - This record is the reviewer-first index for remote storage, QA evidence and the two intentionally open external gates.
 
