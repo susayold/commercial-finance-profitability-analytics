@@ -20,6 +20,7 @@ Purpose: provide evidence-backed, ATS-friendly bullets for a one-page CV. Select
 | CAPEX 15/15 QA | Linked approval, commitment, payment, depreciation and payback with 15/15 QA | CAPEX module |
 | MCH 80 rows / 8 metrics | Built an approved FY2016–FY2025 public statement supplement with 80 rows and eight metrics | MCH supplement |
 | FY2020 MCH approved | Page-reviewed official HNX FY2020 statements and tied eight metrics to the approved supplement | HNX PDF + runbook |
+| FY2017 evidence boundary | Added eight-metric web-index evidence with 8/8 QA while retaining `INDEXED_ONLY` status and comparative-column provenance | FY2017 indexed memo + QA |
 | 17 relationships / 6 pages / 18 QA definitions | Designed a Power BI-ready semantic contract with 17 relationships, six pages and 18 QA definitions | PBIP scaffold |
 | 5,000 risk draws | Built a seeded 5,000-draw scenario risk overlay with percentile bands and downside triggers | Monte Carlo module |
 | 12 recommendations | Converted model signals into 12 decision rows with value equation, owner, guardrail and review date | Recommendation register |
