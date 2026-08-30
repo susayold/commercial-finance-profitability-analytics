@@ -210,7 +210,14 @@ jobs:
         shell: bash
         run: |
           node scripts/build_monte_carlo_risk_overlay.mjs "$RUNNER_TEMP/monte_carlo_risk_overlay.csv"
-          diff -u data/monte_carlo_risk_overlay_2026-08-30.csv "$RUNNER_TEMP/monte_carlo_risk_overlay.csv"
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+          const norm = (p) => fs.readFileSync(p, "utf8").replace(/\r\n/g, "\n").trim();
+          const committed = norm("data/monte_carlo_risk_overlay_2026-08-30.csv");
+          const rebuilt = norm(process.env.RUNNER_TEMP + "/monte_carlo_risk_overlay.csv");
+          if (committed !== rebuilt) { console.error("Monte Carlo rebuild mismatch"); process.exit(1); }
+          console.log("Monte Carlo rebuild matches committed output");
+          NODE
           node scripts/validate_monte_carlo_risk_overlay.mjs \
             reports/MONTE_CARLO_RISK_OVERLAY_2026-08-30.md \
             data/monte_carlo_risk_overlay_2026-08-30.csv
