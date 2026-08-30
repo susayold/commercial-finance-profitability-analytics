@@ -205,3 +205,5 @@ The paragraphs above retain historical release notes for audit trail. Use this s
 - Final CI confirmation for this update: [run #775](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33301960821) passed. Durable GitHub and Drive mirrors are synchronized; the local staging directory is empty.
 
 - Latest runner coverage update: [CI run #778](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33302213464) passed after expanding `run_finance_qa.mjs` to all 42 validator invocations across 40 unique repository-local validator files plus Power BI contract-shape validation (43 total checks; Gate A is intentionally run in template and fixture modes). This supersedes older historical check-count notes above.
+
+- Final consistency check: [CI run #783](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33302317978) passed after correcting the documented invocation count. Current runner output is 43 checks (42 invocations across 40 unique validator files plus contract-shape).
