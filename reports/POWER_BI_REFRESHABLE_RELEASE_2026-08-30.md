@@ -7,7 +7,9 @@
 - Reproducible compiler source: `powerbi/native/VNFinance_PbixProj/`
 - Project generator: `scripts/build_powerbi_refreshable_project.py`
 - Package/refresh validator: `scripts/validate_powerbi_refreshable_project.py`
+- Replacement-data contract validator: `scripts/validate_powerbi_input_contract.py`
 - Refresh architecture: `docs/POWER_BI_REFRESH_ARCHITECTURE.md`
+- Desktop execution runbook/checklist: `powerbi/POWER_BI_DESKTOP_RUNBOOK.md`, `powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md`
 - DirectQuery readiness: `powerbi/directquery/README.md`, `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`, `powerbi/DIRECTQUERY_READINESS.json`
 - Automated evidence: `reports/POWER_BI_REFRESHABLE_PACKAGE_QA.md`
 
@@ -31,7 +33,9 @@ GitHub Actions Finance model QA passed in run [33314651136](https://github.com/s
 
 Latest workflow run [33314916251](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33314916251) also passed on commit `8b74198`, after adding the replacement-data input contract gate and its QA artifact upload.
 
-Current Drive bundle after the CI/input-contract sync: 931,445 bytes, SHA-256 `E635DE2774E9AFCEDCC98B0EC05A304BE624C9D1E6F1106E1597B8318A95860F`.
+Latest workflow run [33315439814](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33315439814) passed on commit `ff1e623`, after completing the Desktop runbook/checklist. The full workflow completed in 29 seconds with all QA steps green.
+
+Current Drive bundle after the runbook/CI sync: 969,639 bytes, SHA-256 `504341EF4F195542194CBFEBB8169F43B10F1D40F7FAC8711AA94217CCBCF1F5`.
 
 PBIT SHA-256: `7E7A417C7028678C44F2500B185FCA3D669193EC62B620EB7E48EA7A6EC6E095`
 
@@ -41,7 +45,7 @@ Drive bundle `VNFinance_PowerBI_Refreshable_Package_2026-08-30.zip`: 916,598 byt
 
 ## Claim boundary
 
-**Current Drive bundle checksum (supersedes the preliminary checksum above):** 925,159 bytes, SHA-256 `156978D43A231EA6A0419161FEE23F6389DA9BD3C79E89953187BBBFC8DD33AA`. This GitHub release record is authoritative for the latest Drive object; the copy embedded inside the ZIP is a packaging-time snapshot.
+**Current Drive bundle checksum (supersedes the preliminary checksums above):** 969,639 bytes, SHA-256 `504341EF4F195542194CBFEBB8169F43B10F1D40F7FAC8711AA94217CCBCF1F5`. Drive file ID remains `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`; the copy embedded inside the ZIP is a packaging-time snapshot of the release record.
 
 The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layout`, metadata, settings, diagram layout, content types and theme parts. The `.pbip` is editable source using TMDL and PBIR binding.
 
