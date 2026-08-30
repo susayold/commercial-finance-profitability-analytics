@@ -204,6 +204,12 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 
 - Site V6 release record: [GitHub source/deployment note](site/README.md) · [Drive mirror](https://docs.google.com/document/d/1WSaAd7YVTVclTnSKYoqqXdvxpK_GACSFc0cG-XJxXlY/edit?usp=drivesdk)
 
+## Liquidity stress and revolver policy
+
+- [Methodology](docs/LIQUIDITY_STRESS_METHODOLOGY.md) · [Synthetic schedule](data/liquidity_stress_synthetic.csv) · [Validator](scripts/validate_liquidity_stress.mjs) · [9/9 QA report](reports/LIQUIDITY_STRESS_QA.md)
+- [Drive schedule](https://drive.google.com/file/d/1WLVSFiwDsRcySK-_E3_wFxpJpvTOec8I/view?usp=drivesdk) · [Drive methodology](https://drive.google.com/file/d/1YHE1Y3x-AdblXZumk9QBztbUwwxGHcEf/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1P45NxJoee3U_nZbKwbYE_2hiCdiILTVN/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1xjKSAh22zFGbgUIT3foYe-NbjAMmJS7t/view?usp=drivesdk)
+- Synthetic rehearsal: BASE ends with VND5,280m cash and VND6,580m headroom; DOWNSIDE reaches the revolver limit in October and ends December with negative VND740m headroom. The breach is intentionally visible and is not a real-company financing conclusion.
+
 ## MCH credit-screening extension
 
 - [Finance-analyst credit memo](reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md) · [Drive mirror](https://docs.google.com/document/d/15h8U_55cR5MBZV5KewQMvyJ6bjtVahKO0V5rXn-oXZQ/edit?usp=drivesdk)
