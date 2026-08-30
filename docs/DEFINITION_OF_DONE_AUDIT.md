@@ -236,3 +236,7 @@ FY2024–FY2025 MCH statements were visually reviewed and tie-outs passed; the a
 
 ### MCH FY2016–FY2025 completion
 FY2016 and FY2018–FY2025 were visually reviewed (including cash-flow statements) and tie-outs passed; FY2017 was validated from the audited FY2018 comparative/corresponding columns. The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metrics) with the FY2017 caveat retained.
+
+## Current status overlay
+
+See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
