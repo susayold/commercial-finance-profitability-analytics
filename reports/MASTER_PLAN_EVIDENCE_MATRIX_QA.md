@@ -24,3 +24,6 @@ The matrix is an audit index, not a substitute for the underlying workbooks, scr
 - CORE-18 now links to Battle Cards v1/v2, the decision matrix and interview talk track.
 - The matrix remains 28 rows: 20 mandatory core, 3 conditional, 1 strategic stretch, 2 external gates and 2 recruiting deliverables.
 - Gate A and Gate B remain intentionally pending because their required real/internal and native-Desktop evidence is not present.
+
+
+- CORE-14 now links the 5,000-draw seeded Monte Carlo output, builder, validator and QA; production correlation evidence remains a documented caveat.
