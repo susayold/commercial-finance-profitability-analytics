@@ -70,3 +70,8 @@ The finance-first CV V2 and evidence map now include the MCH statement-analysis 
 A detailed recruiter-facing operating pack is now delivered: executive Base/Upside/Downside KPI lens, variance/PVM bridge design, commercial profitability agenda, working-capital triggers, scenario pre-conditions, eight owner/action rows and a release checklist. The KPI pack has a native Drive Sheet plus raw CSV; validator status is 10/10 PASS. Values are explicitly PROXY_DERIVED or SYNTHETIC_ASSUMPTION, and Gate A/B remain open.
 
 Drive pack: https://docs.google.com/document/d/1C7joqU6Dsyued-Zc5HrFnrMXiLW3Bkks0iaevLcVbNs/edit?usp=drivesdk. Drive KPI Sheet: https://docs.google.com/spreadsheets/d/1YWai5MSnAiRS2W9d0JXQsQ9soCZ2_odkvsR7S64-JmU/edit?usp=drivesdk.
+
+
+## Finance Analyst KPI dictionary extension
+
+Added a semantic/control contract spanning P&L, commercial profitability, working capital, forecast accuracy, evidence quality, credit and M&A. It forces definition, grain, evidence class, control and decision-use for each KPI. CSV contains 26 rows; CI validator is wired; Drive native Doc/Sheet and raw files are archived.
