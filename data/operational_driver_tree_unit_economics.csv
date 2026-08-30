@@ -1,0 +1,23 @@
+domain,node,formula,grain,owner,guardrail,decision_use,evidence_class
+Revenue,Active customers/outlets,count with invoice in period,month_channel,Sales finance,deduplicate IDs,coverage and distribution,SIMULATED
+Revenue,Units,invoice quantity,month_sku_channel,Commercial finance,quantity non-negative,volume plan,SIMULATED
+Revenue,Net ASP,net revenue / units,month_sku_channel,Revenue manager,ASP outlier review,discount and price floor,DERIVED
+Revenue,Channel mix,channel revenue / total,month,Commercial finance,sum to 100%,mix shift,DERIVED
+Gross-to-net,Invoice discount,discount amount / gross sales,month_customer,Sales finance,approval evidence,gross-to-net leakage,SIMULATED
+Gross-to-net,Returns,return value / gross sales,month_sku_customer,Quality finance,return code required,SKU/customer issue,SIMULATED
+Gross-to-net,Rebates,rebatable support / gross sales,month_customer,Commercial finance,contract and accrual,profitable volume,ASSUMPTION
+Contribution,Unit COGS,COGS / units,month_sku,Supply-chain finance,cost inflation trigger,re-source or reprice,DERIVED
+Contribution,Channel fee,fees / channel revenue,month_channel,E-commerce finance,CM% >= 25%,price floor,DERIVED
+Contribution,Promotion ROI,incremental CM / trade spend,promotion_event,Commercial finance,ROI >= 25%,stop scale,SIMULATED_DERIVED
+Contribution,Fulfilment cost,fulfilment cost / order,month_channel,Operations finance,cost per order cap,service model,DERIVED
+Inventory,Sell-through,units sold / units available,month_sku,Supply-chain finance,service >= 95%,replenishment,SIMULATED_DERIVED
+Inventory,Stock cover,on-hand / average daily units,month_sku,Supply-chain finance,slow-SKU cap,release cash,SIMULATED_DERIVED
+Working capital,DSO,average AR / credit sales * days,month,AR lead,DSO <= plan + 5d,collections,DERIVED
+Working capital,DIO,average inventory / COGS * days,month,Supply-chain finance,DIO <= downside,inventory cash,DERIVED
+Working capital,CCC,DSO + DIO - DPO,month,FP&A lead,CCC within case,cash conversion,DERIVED
+Customer,Customer contribution,net revenue - variable customer cost,month_customer,Account owner,CM% >= 25%,discount decision,DERIVED
+Customer,Top-3 concentration,top-3 revenue / total,month_quarter,Sales finance,change <= 5pp,concentration risk,DERIVED
+D2C,Contribution LTV,orders * contribution/order * active life,cohort,D2C finance,LTV/CAC >= 1.0x,acquisition scale,SIMULATED_DERIVED
+D2C,Payback orders,CAC / contribution per order,cohort,D2C finance,payback <= hurdle,retention and CAC,SIMULATED_DERIVED
+Retail,SSSG,comparable store revenue growth,store_month,Store finance,only with owned stores,conditional branch,ASSUMPTION
+Retail,Sales per m2,store revenue / selling area,store_month,Store finance,only with area data,conditional branch,ASSUMPTION
