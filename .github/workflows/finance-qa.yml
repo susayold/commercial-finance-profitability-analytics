@@ -78,6 +78,12 @@ jobs:
             "$RUNNER_TEMP/peer_evidence_QA.md"
           grep -F "**Overall status: PASS** (21/21 checks passed)" "$RUNNER_TEMP/peer_evidence_QA.md"
 
+      - name: Validate normalized peer panel
+        shell: bash
+        run: |
+          node scripts/validate_normalized_peer_panel.mjs data/normalized_peer_panel_approved_2016_2025.csv --mode=approved
+          node scripts/validate_normalized_peer_panel.mjs data/normalized_peer_panel_intake_template.csv --mode=template
+
       - name: Validate MCH OCR review workbench
         shell: bash
         run: |
