@@ -1,0 +1,27 @@
+domain,kpi,unit,grain,evidence_class,control,decision_use
+P&L,Net revenue,VND,invoice_line_month,SIMULATED,P&L tie-out,revenue plan and growth bridge
+P&L,Gross profit,VND,sku_channel_month,CALCULATED,P&L subtotal tie-out,price mix sourcing
+P&L,Gross margin %,percent,month_channel,CALCULATED,range and denominator,marginal quality
+P&L,Operating profit,VND,month,CALCULATED,P&L subtotal tie-out,cost discipline
+P&L,EBITDA proxy,VND,month_scenario,PROXY_DERIVED,proxy label required,scenario comparison
+P&L,Budget variance,VND,metric_month_version,DERIVED,version lock,close commentary
+P&L,Forecast variance,VND,metric_month_version,DERIVED,leakage check,forecast learning
+Commercial,Contribution profit,VND,sku_channel_customer_month,CALCULATED,channel sum,fund profitable growth
+Commercial,Contribution margin %,percent,sku_channel_customer,CALCULATED,25% hurdle,protect margin
+Commercial,Promotion ROI,percent,promotion_event,CALCULATED,spend included,stop scale campaign
+Commercial,Break-even price,VND,sku_channel,DERIVED,fee and cost sensitivity,price floor
+Commercial,Customer concentration,percent,month_quarter,CALCULATED,top-3 trigger,concentration risk
+Working capital,DSO,days,month,CALCULATED,AR aging tie-out,collections
+Working capital,DIO,days,month,CALCULATED,inventory tie-out,stock and cash
+Working capital,DPO,days,month,CALCULATED,AP tie-out,payment terms
+Working capital,CCC,days,month,CALCULATED,DSO+DIO-DPO,cash conversion
+Working capital,Liquidity headroom,VND,week_month,DERIVED,buffer check,escalation
+Forecast,Forecast bias,percent,metric_horizon,DERIVED,eligible frozen rows,systematic error
+Forecast,WAPE,percent,metric_horizon,DERIVED,eligible frozen rows,accuracy magnitude
+Controls,Evidence coverage,percent,dataset,DERIVED,lineage completeness,auditability
+Controls,Basis-break rate,percent,peer_panel,DERIVED,basis flags,comparability
+Credit,Equity ratio,percent,fiscal_year,OBSERVED_DERIVED,balance sheet check,solvency
+Credit,Interest coverage,x,fiscal_year,DERIVED,debt schedule required,credit capacity
+M&A,Entry EBITDA multiple,x,deal_case,SYNTHETIC_DERIVED,EV bridge,valuation screen
+M&A,EPS accretion / dilution,percent,deal_year,SYNTHETIC_DERIVED,shares and synergies,capital allocation
+M&A,Deal NPV,VND,deal_case,SYNTHETIC_DERIVED,discount and terminal logic,go no-go
