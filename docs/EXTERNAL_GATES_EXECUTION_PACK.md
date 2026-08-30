@@ -82,7 +82,7 @@ The release report must state `LIVE_OBSERVED` and include a short management act
 
 ### 2.1 Source and topology
 
-Use the latest Excel v2 workbook, the PBIP source manifest and the documented 15-relationship topology. Preserve the table names and grain. Confirm `Customer_Master[CustomerID] → AR[CustomerID]` is present and that all dimensions filter facts single-directionally unless the checklist explicitly permits otherwise.
+Use the latest Excel v2 workbook, the PBIP source manifest and the documented 17-relationship topology. Preserve the table names, grain and the 17-relationship contract in `powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md`. Confirm `Customer_Master[CustomerID] → AR[CustomerID]` is present and that all dimensions filter facts single-directionally unless the checklist explicitly permits otherwise.
 
 ### 2.2 Six-page build contract
 
