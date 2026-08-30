@@ -103,6 +103,15 @@ jobs:
             --dataset-id 00000000-0000-0000-0000-000000000000 \
             --report "$RUNNER_TEMP/powerbi_service_refresh_QA.json"
 
+      - name: Run unified Power BI release gate
+        shell: bash
+        run: |
+          python scripts/run_powerbi_release_gate.py \
+            --repo-root . \
+            --input-dir powerbi/data/current \
+            --data-root "$RUNNER_TEMP/vnfinance_powerbi_release_gate_target" \
+            --report "$RUNNER_TEMP/powerbi_release_gate.json"
+
       - name: Upload Power BI QA artifact
         uses: actions/upload-artifact@v4
         with:
@@ -115,6 +124,7 @@ jobs:
             ${{ runner.temp }}/finance_refresh_orchestrator_QA.json
             ${{ runner.temp }}/directquery_loader_QA.json
             ${{ runner.temp }}/powerbi_service_refresh_QA.json
+            ${{ runner.temp }}/powerbi_release_gate.json
             ${{ runner.temp }}/powerbi_claim_boundary_QA.json
             ${{ runner.temp }}/powerbi_artifact_coherence_QA.md
             powerbi/DIRECTQUERY_READINESS.json

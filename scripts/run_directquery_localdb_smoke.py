@@ -20,7 +20,7 @@ import subprocess
 import sys
 import tempfile
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -195,7 +195,12 @@ def main() -> int:
         ddl_batches = apply_schema(database_connection, args.schema)
 
         base_manifest, base_rows = inspect_source(args.input_dir)
-        base_watermark = "2026-08-30T16:00:00Z"
+        # Use a runtime watermark so the health query tests freshness rather
+        # than failing because a committed example timestamp aged out. The
+        # changed batch is one second newer, which preserves ordering while
+        # keeping both rows inside the configured freshness SLA.
+        watermark_anchor = datetime.now(timezone.utc).replace(microsecond=0)
+        base_watermark = watermark_anchor.strftime("%Y-%m-%dT%H:%M:%SZ")
         apply_load(database_connection, base_manifest, base_rows, base_batch, base_watermark)
         base_metrics = scalar_metrics(database_connection)
         base_health = health_row(database_connection, args.health_query)
@@ -203,7 +208,7 @@ def main() -> int:
         with tempfile.TemporaryDirectory(prefix="vnfinance_dq_two_batch_") as temp_dir:
             changed_dir = mutate_fixture(args.input_dir, Path(temp_dir) / "changed")
             changed_manifest, changed_rows = inspect_source(changed_dir)
-            changed_watermark = "2026-08-30T16:01:00Z"
+            changed_watermark = (watermark_anchor + timedelta(seconds=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
             apply_started = time.perf_counter()
             apply_load(database_connection, changed_manifest, changed_rows, changed_batch, changed_watermark)
             after_apply = time.perf_counter()

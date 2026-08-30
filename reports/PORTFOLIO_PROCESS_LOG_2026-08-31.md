@@ -30,6 +30,16 @@ still need a real Power BI Desktop or cloud workspace.
    claim-boundary and Windows Desktop preflight checks. The current fixture
    returned `PASS` across all six stages; the command never treats a missing
    cloud workspace or native UI evidence as a hidden success.
+9. Reran `scripts/run_directquery_localdb_smoke.py` and found the prior
+   hard-coded watermark had aged into `WARN_STALE`; fixed the harness to use a
+   runtime UTC watermark, reran the two-batch load, and recorded **PASS** for
+   both health controls, the +1 units delta and ephemeral-instance cleanup.
+10. Wired the unified release gate into `.github/workflows/finance-qa.yml` and
+    uploaded its JSON evidence with the existing Power BI QA artifact. Linux CI
+    reports `PASS_WITH_EXTERNAL_PENDING` for the unavailable Windows Desktop
+    stage while still failing closed on deterministic contract/package checks.
+11. Ran the cross-platform finance QA runner after the change: **49/49 PASS**,
+    including PBIP source coherence and DirectQuery readiness.
 
 ## Evidence boundaries
 
