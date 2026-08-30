@@ -168,6 +168,14 @@ jobs:
         run: |
           node scripts/validate_master_plan_evidence_matrix.mjs
 
+      - name: Validate customer profitability layer
+        shell: bash
+        run: |
+          node scripts/validate_customer_profitability.mjs \
+            data/customer_profitability_synthetic.csv \
+            "$RUNNER_TEMP/customer_profitability_QA.md"
+          grep -F "Customer profitability QA: 10/10 checks PASS" "$RUNNER_TEMP/customer_profitability_QA.md"
+
       - name: Validate inventory quality schedule
         shell: bash
         run: |
