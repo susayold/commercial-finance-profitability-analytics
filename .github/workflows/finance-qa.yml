@@ -34,7 +34,26 @@ jobs:
             --report "$RUNNER_TEMP/committed_powerbi_input_contract_QA.md"
           python scripts/generate_vietnova_data.py --output-dir "$RUNNER_TEMP/vnfinance_powerbi_committed_rebuild"
           python -c "from pathlib import Path; from scripts.build_powerbi_refreshable_project import create_source_control; create_source_control(Path(r'$RUNNER_TEMP/vnfinance_powerbi_committed_rebuild'))"
-          diff -ru --exclude='README.md' powerbi/data/current "$RUNNER_TEMP/vnfinance_powerbi_committed_rebuild"
+          python - <<'PY'
+          from pathlib import Path
+          import os
+
+          left = Path("powerbi/data/current")
+          right = Path(os.environ["RUNNER_TEMP"]) / "vnfinance_powerbi_committed_rebuild"
+          ignore = {"README.md"}
+
+          def normalized(path):
+              return path.read_bytes().replace(b"\\r\\n", b"\\n")
+
+          left_files = {p.name for p in left.iterdir() if p.is_file() and p.name not in ignore}
+          right_files = {p.name for p in right.iterdir() if p.is_file() and p.name not in ignore}
+          if left_files != right_files:
+              raise SystemExit(f"fixture file-set mismatch: {sorted(left_files ^ right_files)}")
+          mismatches = [name for name in sorted(left_files) if normalized(left / name) != normalized(right / name)]
+          if mismatches:
+              raise SystemExit(f"fixture content mismatch: {mismatches}")
+          print(f"deterministic fixture parity: PASS ({len(left_files)} files; CRLF/LF normalized)")
+          PY
 
       - name: Validate refreshable Power BI package
         shell: bash
