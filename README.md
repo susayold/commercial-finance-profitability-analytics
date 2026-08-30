@@ -314,6 +314,9 @@ The FY2024–FY2025 16-row candidate layer is retained as an audit-trail artifac
 
 The approved MCH supplement now covers FY2016–FY2025 (80 rows, all eight metrics), after visual PDF review, statement tie-outs, balance-sheet checks and cash-flow confirmation. FY2017 is explicitly flagged as a comparative/corresponding-column year from the audited FY2018 filing. [approved CSV](data/mch_statement_metrics_2024_2025_approved.csv) · [reconciliation report](reports/MCH_APPROVED_STATEMENT_SUPPLEMENT_2024_2025.md) · [Drive Sheet](https://docs.google.com/spreadsheets/d/1a3crr3Je3U1q7tnCMgYH--ZimJFfh7EdCmdhsKQNbz8/edit)
 
+- [Remaining-gates handoff](docs/REMAINING_GATES_HANDOFF_2026-08-30.md) · [Drive handoff](https://docs.google.com/document/d/1UNB4HHdVQJWOyaLo3W1szCd2v-tlYx4JWf1ItVur9cQ/edit?usp=drivesdk)
+- Gate A, Gate B, FY2017 retrieval and CV personalization remain explicitly input-gated; no unsupported evidence is promoted.
+
 ## MCH source verification runbook
 
 - [FY2017/FY2020 source verification runbook](docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk)
