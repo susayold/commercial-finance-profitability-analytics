@@ -32,7 +32,11 @@ The repository now includes a cross-platform [finance QA runner](../scripts/run_
 
 - MCH OCR optional evidence expansion: [triage report](MCH_OCR_REVIEW_TRIAGE_2026-08-30.md), [flag CSV](../data/mch_ocr_triage_flags.csv) and [review workbench template](../data/mch_ocr_review_workbench_template.csv) are archived; the Drive triage document and Workbench Sheet retain page-level reviewer/correction fields. No OCR row is approved automatically. Drive also contains the [workbench CSV](https://drive.google.com/file/d/1t2qH7YEmGxJNROT4VXRHrUTqAH-zFV1a/view), [validator](https://drive.google.com/file/d/1rXeXg9mCkgoPHim5yK7U-9pmYDJdeNp-/view) and [triage flags CSV](https://drive.google.com/file/d/1D4AZBz-IK4TrenRLtgtBcN5csnmC4m6Z/view).
 
-The commercial stretch modules are now hardened: [promotion ROI](../data/promotion_roi_synthetic.csv) subtracts promotion spend and applies a hurdle, [budget reallocation](../data/budget_reallocation_synthetic.csv) proves fixed-budget conservation, and [pricing simulator](../data/pricing_simulator_synthetic.csv) exposes elasticity, CM delta and break-even price. [Methodology](../docs/PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [QA report](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view).
+## Peer comparability decision
+
+The approved panel is now governed by a comparability decision memo: [GitHub memo](PEER_COMPARABILITY_DECISION_2026-08-30.md) · [Drive memo](https://docs.google.com/document/d/184FPk4ZcPaWVtWm4qqRsvsG3RO0D_Lv9tS46yKXqCGk/edit?usp=drivesdk). VNM is the clean long-run benchmark; QNS and KDC remain bounded context because revenue basis/perimeter changes prevent an unqualified full-period CAGR; MCH OCR remains outside the verified peer panel pending page-level review.
+
+The commercial stretch modules are now hardened:The commercial stretch modules are now hardened: [promotion ROI](../data/promotion_roi_synthetic.csv) subtracts promotion spend and applies a hurdle, [budget reallocation](../data/budget_reallocation_synthetic.csv) proves fixed-budget conservation, and [pricing simulator](../data/pricing_simulator_synthetic.csv) exposes elasticity, CM delta and break-even price. [Methodology](../docs/PROMOTION_PRICING_ALLOCATION_METHODOLOGY.md) · [QA report](../reports/COMMERCIAL_STRETCH_MODULE_QA_2026-08-30.md) · [Drive QA](https://drive.google.com/file/d/1j-n0VoDMdzEZTWgV_C5jQVeQX7mtBttO/view).
 
 ## Reviewer path
 
