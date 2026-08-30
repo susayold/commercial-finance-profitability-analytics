@@ -205,3 +205,7 @@ The full Gate A evidence contract and validator are committed and wired into CI.
 ## Gate B source-coherence handoff (2026-08-30)
 
 The PBIP source scaffold now has a machine-checked coherence layer (13/13 PASS) and a six-page reviewer walkthrough. The validator is in CI and the walkthrough is stored in powerbi/POWER_BI_REVIEWER_WALKTHROUGH.md. Native PBIX creation, visual tie-outs and QA-01–QA-18 execution remain external requirements.
+
+## Gate A accuracy-report handoff (2026-08-30)
+
+The leakage-safe accuracy report builder and archived fixture report are now available. It calculates overall and period/channel metrics and preserves explicit exclusion and evidence boundaries. CI runs the builder in fixture mode; production live mode remains pending real internal data.
