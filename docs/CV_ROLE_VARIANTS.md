@@ -67,3 +67,8 @@ This creates a visibly deeper finance-operator narrative while preserving the sa
 
 > Synthetic operating ledger; public filings and guidance used for calibration/benchmarking only. Real internal forecast accuracy and native Power BI Desktop evidence are pending external gates.
 
+
+
+### Customer concentration add-on
+- Added a 24-customer profitability summary with top-five revenue/contribution concentration, channel roll-up, DSO and after-working-capital contribution (`SYNTHETIC_REHEARSAL`).
+- Use the C06 review signal (14.58% contribution margin; 88.72-day DSO) to show that strategic accounts require trade-term and cash-quality review, not revenue-only ranking.
