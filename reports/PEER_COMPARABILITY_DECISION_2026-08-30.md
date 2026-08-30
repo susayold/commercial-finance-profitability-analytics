@@ -60,7 +60,7 @@ Use 2025 margins and the statement layer for plant economics, sugar/soy input se
 
 ### KDC — portfolio and perimeter context
 
-Use 2025 margins, asset efficiency and the statement layer for portfolio change, one-offs and perimeter risk. Present the revenue jump around Vocarimex/TAC consolidation as reported growth, not organic growth.
+Use exact audited FY2024–FY2025 statements (including page anchors 165–171), 2025 margins, asset efficiency and the statement layer for portfolio change, one-offs and perimeter risk. Present the revenue jump around Vocarimex/TAC consolidation as reported growth, not organic growth; the earlier FY2016–FY2023 perimeter break remains flagged.
 
 ### MCH — commercial anchor
 
