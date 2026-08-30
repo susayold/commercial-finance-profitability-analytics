@@ -210,3 +210,5 @@ The paragraphs above retain historical release notes for audit trail. Use this s
 
 - Recruiter-facing evidence updated: one-page CV V2, bullet bank, role variants and interview talk track now include the customer concentration decision layer (all figures labelled synthetic). CI runs #785–#788 passed.
 - Final CI confirmation for the CV evidence update: [run #788](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33302421444) passed.
+
+- Site V9 deployed successfully: [release record](SITE_V9_RELEASE_RECORD_2026-08-30.md) · [Drive record](https://drive.google.com/file/d/1vZn_kPRFlURjye_3Bbxikq62BWVUy1BK/view?usp=drivesdk). The production site now surfaces the customer-economics concentration lens; source commit `b3484880bcd02701aabbc511eb3cbcd3125ec34b` and archive hash are recorded.
