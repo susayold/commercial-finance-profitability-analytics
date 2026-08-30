@@ -144,7 +144,7 @@ Use the [Finance Analyst CV bullet bank](FINANCE_ANALYST_CV_BULLET_BANK_2026-08-
 | How do you forecast? | Freeze version before close, prevent leakage, reconcile actuals and report Bias/WAPE | Gate A pack |
 | What is unfinished? | Name Gate A/B honestly and explain the exact evidence required | External-gates pack |
 
-## 8. Application tailoring checklist
+## 9. Application tailoring checklist
 
 - Copy the role's exact title and top five requirements into a scratch table.
 - Select three project bullets and one experience bullet that map directly to those requirements.
@@ -155,7 +155,7 @@ Use the [Finance Analyst CV bullet bank](FINANCE_ANALYST_CV_BULLET_BANK_2026-08-
 - Run a one-page PDF render check for overflow, dates, links and ATS text extraction.
 - Keep a versioned application log: company, role, date, CV variant, cover-note angle and follow-up date.
 
-## 9. Gate-dependent upgrades
+## 10. Gate-dependent upgrades
 
 After Gate A closes, replace the proxy wording with the observed live Bias/WAPE, eligible observations and as-of date. After Gate B closes, replace “PBIP source handoff” with the native PBIX page count, `18/18 QA PASS`, refresh timestamp and Drive evidence link. Do not change the wording before those artifacts exist.
 
