@@ -41,6 +41,18 @@ jobs:
             "$RUNNER_TEMP/forecast_capture_archive_QA.md"
           grep -F "**Overall status: PASS** (14/14 checks passed)" "$RUNNER_TEMP/forecast_capture_archive_QA.md"
 
+      - name: Gate A intake contract QA
+        shell: bash
+        run: |
+          node scripts/validate_gate_a_intake_contract.mjs \
+            data/forecast_snapshot_gate_a_intake_template.csv \
+            "$RUNNER_TEMP/gate_a_template_QA.md" \
+            --mode=template
+          node scripts/validate_gate_a_intake_contract.mjs \
+            data/forecast_snapshot_gate_a_unit_test.csv \
+            "$RUNNER_TEMP/gate_a_fixture_QA.md" \
+            --mode=fixture
+
       - name: D2C unit economics QA
         shell: bash
         run: |
