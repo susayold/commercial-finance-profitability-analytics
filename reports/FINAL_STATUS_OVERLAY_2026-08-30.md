@@ -78,3 +78,8 @@ Added a semantic/control contract spanning P&L, commercial profitability, workin
 
 
 Validator maintenance note: KPI dictionary report length is 8,406 characters and the canonical validator now uses an 8,000-character non-triviality threshold; latest CI run is pending on the corrected commit. Latest Drive validator copy: https://drive.google.com/file/d/1HJ9BUitYgbxe2tDzHwj29JqLWD8XfapW/view?usp=drivesdk
+
+
+## Management recommendation register extension
+
+A 12-row recommendation register now completes Module P: each row contains a decision, quantified anchor, value equation, owner, guardrail, evidence class and next review. It links promotion, pricing, working capital, scenarios, CoA controls, MCH credit, D2C, M&A, Gate A and Gate B to auditable artifacts. Validator status is 10/10 PASS.
