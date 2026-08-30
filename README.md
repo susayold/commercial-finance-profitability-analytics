@@ -81,6 +81,9 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - Native tab `VNM_Longrun_Panel_2006_2025` exposes the full FY2006–FY2025 historical panel with derived ratios and basis-break flags.
 - FY2021-FY2025 summary values are source-linked; blank cells remain review flags where statement-level validation is not complete.
 
+- [Peer comparability decision memo](reports/PEER_COMPARABILITY_DECISION_2026-08-30.md) · [Drive memo](https://docs.google.com/document/d/184FPk4ZcPaWVtWm4qqRsvsG3RO0D_Lv9tS46yKXqCGk/edit?usp=drivesdk) — VNM is the long-run trend benchmark; QNS/KDC remain bounded context until basis/perimeter controls are closed.
+
+## Peer and Power BI follow-through
 ## Peer and Power BI follow-through
 
 - Calculated peer summary: data/peer_analyst_summary.csv
