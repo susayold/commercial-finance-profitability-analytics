@@ -40,7 +40,7 @@ The final documentation-sync run [33315755439](https://github.com/susayold/comme
 
 The artifact-coherence run [33316673755](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33316673755) passed on commit `6e205ec`; it adds the direct PBIP/PBIT topology gate and uploaded QA report.
 
-Current Drive bundle after adding the Desktop preflight and artifact-coherence gates: 984,155 bytes, SHA-256 `DAF2686B8B5CFA66C506949A9366028843C94523D2D258B50E3E72453B2C486B`.
+Current Drive bundle after adding the Desktop preflight, artifact-coherence gate and committed refresh fixture: 1,010,492 bytes, SHA-256 `6E4D9EC0CBEBF72E806B4B8994A9D74075C5DD75076312587F11D6EFA1DF4F14`.
 
 PBIT SHA-256: `7E7A417C7028678C44F2500B185FCA3D669193EC62B620EB7E48EA7A6EC6E095`
 
@@ -50,7 +50,7 @@ Drive bundle `VNFinance_PowerBI_Refreshable_Package_2026-08-30.zip`: 916,598 byt
 
 ## Claim boundary
 
-**Current Drive bundle checksum (supersedes the preliminary checksums above):** 984,155 bytes, SHA-256 `DAF2686B8B5CFA66C506949A9366028843C94523D2D258B50E3E72453B2C486B`. Drive file ID remains `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`; the copy embedded inside the ZIP is a packaging-time snapshot of the release record.
+**Current Drive bundle checksum (supersedes the preliminary checksums above):** 1,010,492 bytes, SHA-256 `6E4D9EC0CBEBF72E806B4B8994A9D74075C5DD75076312587F11D6EFA1DF4F14`. Drive file ID remains `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`; the copy embedded inside the ZIP is a packaging-time snapshot of the release record.
 
 The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layout`, metadata, settings, diagram layout, content types and theme parts. The `.pbip` is editable source using TMDL and PBIR binding.
 
