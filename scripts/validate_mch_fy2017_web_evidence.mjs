@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 
-const path = new URL('../mch_fy2017_web_index_evidence.csv', import.meta.url);
+const path = new URL('../data/mch_fy2017_web_index_evidence.csv', import.meta.url);
 const text = fs.readFileSync(path, 'utf8').trim();
 const lines = text.split(/\r?\n/);
 const header = lines.shift().split(',');
@@ -25,5 +25,4 @@ if (errors.length) {
   process.exit(1);
 }
 console.log('MCH FY2017 web-index evidence QA: 8/8 PASS (INDEXED_ONLY boundary retained)');
-
 
