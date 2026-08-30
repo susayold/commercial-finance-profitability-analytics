@@ -44,6 +44,20 @@ Use one base CV and swap the summary plus the first two project bullets for the 
 
 **Keywords:** finance data, semantic model, star schema, Power BI, DAX, data quality, reconciliation, SQL (only if separately demonstrated), GitHub Actions, reproducible analysis.
 
+## Evidence add-ons (use only when the vacancy rewards operating-pack depth)
+
+
+## Evidence add-ons (use only when the vacancy rewards operating-pack depth)
+
+Keep the core project bullets concise, then select one proof point when the application or interview rewards operating-finance depth:
+
+- **Monthly Business Review / CFO pack:** reference the management-pack workflow (KPI dictionary, recommendation register, close/forecast cadence and risk log) with 10/10 QA; describe it as an operating-pack design built on synthetic/public-guidance evidence, not as an employer deliverable.
+- **OPEX/CAPEX and cash discipline:** surface the OPEX/CAPEX taxonomy, budget-owner controls, cash bridge and working-capital schedule when the role stresses cost control, investment governance or liquidity.
+- **FY2017 indexed evidence:** use the eight-metric MCH FY2017 web-index layer only as a controlled public-data appendix (8/8 QA, `INDEXED_ONLY`); do not blend it into the approved provenance set or imply archived source bytes.
+- **Interview bridge:** explain how the same evidence hierarchy would be promoted to `LIVE_INTERNAL` only after receipt of a real pre-close forecast snapshot with owner, cutoff, approval, actual-availability and period fields.
+
+This creates a visibly deeper finance-operator narrative while preserving the same claim boundary across all three variants.
+
 ## Selection rules
 
 | Vacancy wording | Use first | De-emphasise |
