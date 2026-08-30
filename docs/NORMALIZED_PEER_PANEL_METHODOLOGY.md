@@ -32,6 +32,7 @@ The eight metrics are:
 
 - Currency is VND and scale is VND billion (VND_bn).
 - The source document, source URL and Drive file ID are retained for every approved row.
+- source_page is populated only when the upstream approved panel carries a page anchor. It may be blank for summary-derived rows; this is an explicit evidence limitation, not an invented page reference. Page-level anchors are required before promoting new MCH or normalized-bridge rows.
 - The panel does not silently convert VAS revenue to IFRS revenue or merge consolidated and separate statements.
 - Fiscal dates use YYYY-01-01 through YYYY-12-31 for the annual panel; this is a period boundary convention, not evidence that every company closes on a different date.
 - A blank metric is represented as a blank value plus value_status=not_available_in_source and a non-empty null_reason; it is never converted to zero.
