@@ -5,13 +5,13 @@ Purpose: close the remaining source-registry retrieval gap and record page-level
 
 ## Current evidence boundary
 
-The approved MCH supplement covers FY2016–FY2025 (80 rows, eight metrics). FY2017 is validated from the audited FY2018 comparative/corresponding columns. The standalone FY2020 annual report is archived from the official HNX-hosted signed PDF, page-reviewed and promoted to `APPROVED`; FY2017 remains `INDEXED_ONLY` because the official company PDF is discoverable in search but direct byte retrieval currently fails with a TLS/404 response in this runtime.
+The approved MCH supplement covers FY2016–FY2025 (80 rows, eight metrics). FY2017 is validated from the audited FY2018 comparative/corresponding columns. The standalone FY2020 annual report is archived from the official HNX-hosted signed PDF, page-reviewed and promoted to `APPROVED`; FY2017 remains `INDEXED_ONLY` because the official company PDF is discoverable in search but direct byte retrieval currently fails with a TLS handshake error on both known official media URLs (and a prior 404 response in this runtime).
 
 ## Official indexed sources
 
 | Fiscal year | Official source | Indexed evidence | Current status |
 |---|---|---|---|
-| FY2017 | [Masan Consumer Annual Report 2017](https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf) | Search index identifies the annual report and contents, including audited financial statements | INDEXED_ONLY — verify file bytes and archive to Drive |
+| FY2017 | [Masan Consumer Annual Report 2017](https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf); alternate official media URL: https://masanconsumer.com/wp-content/uploads/2024/12/Bao-cao-thuong-nien-nam-2017-3.pdf | Search index identifies the annual report and contents, including audited financial statements | INDEXED_ONLY — verify file bytes and archive to Drive |
 | FY2020 | [Masan Consumer Annual Report 2020](https://owa.hnx.vn/ftp/cims/2021/3_W5/000000010261769_20210329_MSC_AR2020_Full_Lan_2_signed.pdf) | Official HNX-hosted signed PDF archived in Drive (67 pages; 8,940,859 bytes; SHA-256 recorded in source registry); consolidated statements page-reviewed and tied to the approved supplement | APPROVED — PDF pages 30–34 (printed pages 59–67) |
 
 The report landing pages are also retained: [MCH annual-report index](https://masanconsumer.com/quan-he-co-dong/bao-cao-thuong-nien/) and [2020 report page](https://masanconsumer.com/document/bao-cao-thuong-nien-2020/).
@@ -31,7 +31,7 @@ The archived signed HNX PDF was reviewed at statement level. PDF pages 30–34 (
 
 ## FY2017 retrieval attempt record
 
-On 2026-08-30 the official Masan Consumer URL `https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf` was confirmed by the company site/search index and opened as an indexed PDF result. Direct download attempts from this runtime returned a TLS protocol error (PowerShell/cURL) or HTTP 404 (Node fetch), so no bytes, hash or page count were recorded. The source remains `INDEXED_ONLY`; the FY2018 audited comparative/corresponding columns remain the approved FY2017 provenance. No aggregator copy was substituted. The bounded extraction is available in [MCH_FY2017_WEB_INDEX_EVIDENCE.md](../reports/MCH_FY2017_WEB_INDEX_EVIDENCE.md), with [CSV](../data/mch_fy2017_web_index_evidence.csv) and [8/8 QA](../reports/MCH_FY2017_WEB_INDEX_EVIDENCE_QA.md).
+On 2026-08-30 the official Masan Consumer URL `https://masanconsumer.com/wp-content/uploads/2024/05/Bao-cao-thuong-nien-nam-2017.pdf` and alternate official media URL `https://masanconsumer.com/wp-content/uploads/2024/12/Bao-cao-thuong-nien-nam-2017-3.pdf` were confirmed by the company site/search index. Direct download attempts from this runtime returned TLS protocol errors (PowerShell/cURL) on both URLs or HTTP 404 (Node fetch), so no bytes or hash were recorded; indexed metadata reports 75 pages. The source remains `INDEXED_ONLY`; the FY2018 audited comparative/corresponding columns remain the approved FY2017 provenance. No aggregator copy was substituted. The bounded extraction is available in [MCH_FY2017_WEB_INDEX_EVIDENCE.md](../reports/MCH_FY2017_WEB_INDEX_EVIDENCE.md), with [CSV](../data/mch_fy2017_web_index_evidence.csv) and [8/8 QA](../reports/MCH_FY2017_WEB_INDEX_EVIDENCE_QA.md).
 
 ## Required source-log fields
 
