@@ -217,3 +217,7 @@ The one-page CV V2 and evidence map now reference the operational driver tree an
 ## OPEX and headcount planning handoff (2026-08-30)
 
 The FP&A scope now includes a detailed cost-center workforce/OPEX bridge with scenario rules, guardrails and monthly cadence. GitHub Actions validates the arithmetic and evidence boundary; the fixture is synthetic and must be replaced with HRIS/payroll/GL extracts for production use.
+
+## CAPEX and fixed-asset planning handoff (2026-08-30)
+
+The FP&A case now includes CAPEX/fixed-asset governance with approval ceilings, cash timing, depreciation, payback and benefit tracking. It is integrated into the PBIP source contract and CI; the fixture remains synthetic and requires approved capex/AP/fixed-asset/GL evidence for production use.
