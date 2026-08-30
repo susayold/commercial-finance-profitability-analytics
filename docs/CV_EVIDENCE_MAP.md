@@ -127,3 +127,12 @@ Drive mirror for M&A extension:
 - [Corporate Financial Analyst / FP&A master plan](docs/CORPORATE_FINANCIAL_ANALYST_FPA_MASTER_PLAN.md)
 - [Drive archive](https://drive.google.com/file/d/1blpG-4CKWkjPpuwXwOFRkwI038XXMOnK/view)
 - The detailed plan is now stored remotely; no local output copy is retained.
+
+## Operational driver / unit economics evidence
+
+- CV bullet: operational driver tree linking revenue → gross-to-net → contribution → inventory/AR cash → D2C unit economics.
+- Direct report: [Operational Driver Tree & Unit Economics](OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS.md)
+- Register: [22-row driver register](../data/operational_driver_tree_unit_economics.csv)
+- QA: [10/10 design controls and 15/15 automated checks](../reports/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS_QA.md)
+- Evidence boundary: SIMULATED / DERIVED; never phrase the bullet as realized company impact.
+- Gate A/B wording: [Gate A intake contract](GATE_A_B_USER_INPUT_CHECKLIST.md) and [Power BI source-coherence QA](../reports/POWER_BI_SOURCE_COHERENCE_QA.md) are preflight evidence only; native PBIX and LIVE_INTERNAL forecast accuracy remain open.
