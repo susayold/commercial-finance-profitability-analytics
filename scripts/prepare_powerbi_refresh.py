@@ -113,7 +113,10 @@ def main() -> int:
         raise SystemExit(f"validator does not exist: {validator}")
 
     validation = validate(source, validator)
-    target.mkdir(parents=True, exist_ok=True)
+    if args.apply:
+        if target.exists() and not target.is_dir():
+            raise SystemExit(f"data-root is not a folder: {target}")
+        target.mkdir(parents=True, exist_ok=True)
     files: dict[str, dict[str, object]] = {}
     for name in FILES:
         candidate = source / name
