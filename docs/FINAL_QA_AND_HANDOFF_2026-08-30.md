@@ -150,3 +150,8 @@ A detailed [forecast snapshot close calendar](FORECAST_SNAPSHOT_CLOSE_CALENDAR.m
 ## Monthly Business Review operating-pack closeout (2026-08-30)
 
 The Finance Analyst operating pack is now included in the remote QA surface. It is a synthetic management-review rehearsal with proxy KPIs, PVM/variance formulas, working-capital triggers, scenario boundaries, an owner/value-equation/guardrail/date tracker and an 8-point release checklist. GitHub validator and CI check the report and KPI CSV; Drive stores the native pack, Sheet, raw CSV, QA and validator. It does not close Gate A or Gate B.
+
+
+## KPI dictionary handoff (2026-08-30)
+
+The KPI dictionary is now part of the remote QA surface. It is designed to prevent ambiguous denominators, mixed evidence classes, basis-break ranking and unsupported forecast/credit/valuation claims. Validator and Drive mirrors are complete; Gate A/B remain external.
