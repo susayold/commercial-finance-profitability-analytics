@@ -51,7 +51,7 @@ Every output distinguishes reported fact, calculated fact, synthetic fact, assum
 
 ## Current status overlay
 
-See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1hokvGptWOnSoN8GO2SK124iEPpEHw8fXsA8Kp51FKkU/edit?usp=drivesdk) · [Equity refresh copy](https://drive.google.com/file/d/1Hxd-5_1uIrUwUdtnKxS67I2KoGnjDiUZ/view?usp=drivesdk) · [CV refresh copy](https://drive.google.com/file/d/1OiaaLgFCaAsEMM1VO6L-gAEuL2h6500d/view?usp=drivesdk) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
+See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1hokvGptWOnSoN8GO2SK124iEPpEHw8fXsA8Kp51FKkU/edit?usp=drivesdk) · [Equity refresh copy](https://drive.google.com/file/d/1Hxd-5_1uIrUwUdtnKxS67I2KoGnjDiUZ/view?usp=drivesdk) · [CV refresh copy](https://drive.google.com/file/d/1OiaaLgFCaAsEMM1VO6L-gAEuL2h6500d/view?usp=drivesdk) · [CV PDF refresh](https://drive.google.com/file/d/1y6HNrP2EmJKhMegXC5f2wy1Y95F8QQ4Y/view?usp=drivesdk) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
 
 ## Status
 
@@ -272,6 +272,7 @@ Drive mirror for M&A extension:
 - [Finance Analyst / Junior FP&A CV draft](docs/FINANCE_ANALYST_CV_ONE_PAGE.md) · [Drive copy](https://drive.google.com/file/d/1rRpc9qNKcia0MeckGhqzrVnJ_iyed7RB/view)
 - [Finance-first one-page CV V2](docs/FINANCE_ANALYST_CV_ONE_PAGE_V2.md) · [Drive copy](https://docs.google.com/document/d/1pf5jUlWAajDPUj4Rs4GL6xnWyAKi_kXPLVLy59lIviU/edit?usp=drivesdk) · [Evidence map](docs/CV_EVIDENCE_MAP.md) · [Drive evidence map](https://docs.google.com/document/d/1YjloTkCbzTMCfOO19O1BVf5M0SOXxWFzJx7i0QGHLus/edit?usp=drivesdk)
 - [Finance-first one-page CV V3](docs/FINANCE_ANALYST_CV_ONE_PAGE_V3.md) · [Drive CV V3](https://drive.google.com/file/d/1wFqp82bQWbyCqQOwwxnG1JfHSt5YTJqS/view?usp=drivesdk) · [Role variants V2](docs/CV_ROLE_VARIANTS_V2.md) · [Drive variants](https://drive.google.com/file/d/1PvVITP5jQsFlF8vsIsxg81QQ8Y8au4B7/view?usp=drivesdk) · [CV V3 QA 16/16](reports/CV_V3_QA.md) · [Drive QA](https://drive.google.com/file/d/1ZKqI-nKkagM6d0AzVoH98K5tC3o-XAvg/view?usp=drivesdk)
+- [One-page CV V3 PDF](output/pdf/FINANCE_ANALYST_CV_ONE_PAGE_V3.pdf) · [Drive PDF](https://drive.google.com/file/d/1Gm2kGAoktzWA-DDakfrzo_-sL1sL9jax/view?usp=drivesdk) · [PDF QA 6/6](reports/FINANCE_ANALYST_CV_V3_PDF_QA.md) · [Drive PDF QA](https://drive.google.com/file/d/1y8xmaKCyrGWbc1wnjZZogZA4Gy98VHI0/view?usp=drivesdk)
 - [Research evidence map](docs/CV_EVIDENCE_MAP.md) · [Drive map](https://drive.google.com/file/d/1mf27fa2TogqDywRs4DwYHs38DSUXuPuF/view?usp=drivesdk) · [Interview talk track](docs/FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md) · [Drive talk track](https://drive.google.com/file/d/1piEmwkzb__5DyTMXWErdT9YAoBBJccI9/view?usp=drivesdk)
 - Bullets are restricted to validated evidence and explicitly label synthetic/public-guidance outputs; replace bracketed personal fields before use.
 

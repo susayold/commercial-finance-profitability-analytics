@@ -148,3 +148,7 @@ The public-finance layer now includes a standalone equity-research rehearsal: a 
 ## CV V3 packaging extension
 
 The finance-first CV is now refreshed as a 45-line one-page V3 with five recruiter-first project bullets, evidence-class wording and direct GitHub/portfolio links. Role-targeted variants cover Junior FP&A, Business Finance, Finance Data Analyst and Fundamental/Equity Research Analyst. The evidence map and interview talk track include the new MCH research/valuation proof. CV package validator passes 16/16; bracketed personal fields remain the only candidate-specific input required before sending.
+
+## CV V3 PDF extension
+
+The CV V3 template is now rendered as a one-page A4 PDF with a recruiter-oriented hierarchy, finance-first skills, five concise project bullets and explicit evidence boundary. The rendered file is text-extractable, visually reviewed and passes 6/6 PDF QA checks. It remains a template until the candidate replaces bracketed personal fields.
