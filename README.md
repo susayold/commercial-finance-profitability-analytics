@@ -465,7 +465,7 @@ The module links approval, commitment, cash payment, depreciation, benefits and 
 ## Latest website release
 
 - Site V12 adds the Equity Research Rehearsal lens (thesis, earnings-quality bridge, scorecard, catalysts, risks and diligence map): [release record](reports/SITE_V12_RELEASE_RECORD_2026-08-30.md).
-- [Drive V12 release record](https://drive.google.com/file/d/1jLSEF0bNZe5Folz170yuk3DF4cLQXx54/view?usp=drivesdk) · [Drive V12 source archive](https://drive.google.com/file/d/1ihlMy6AZ5k_p3BMbWSCmYVoKH911UsB7/view?usp=drivesdk)
+- [Drive V12 release record](https://drive.google.com/file/d/1e8irlZ5wabYck4kJr2ZgJ3n5CQJxlzv2/view?usp=drivesdk) · [Drive V12 source archive](https://drive.google.com/file/d/1ihlMy6AZ5k_p3BMbWSCmYVoKH911UsB7/view?usp=drivesdk)
 - Site V11 adds the public-company valuation rehearsal lens (base EV, scenarios, sensitivity and EV-only evidence boundary): [release record](reports/SITE_V11_RELEASE_RECORD_2026-08-30.md).
 - [Drive V11 release record](https://drive.google.com/file/d/1jLSEF0bNZe5Folz170yuk3DF4cLQXx54/view?usp=drivesdk) · [Drive V11 source archive](https://drive.google.com/file/d/1SXAwrk3gT8zxdcuRo6HeWrmfaTAYlJt0/view?usp=drivesdk)
 - Site V10 previously surfaced the Next Execution Sprint with Gate A/B handoffs, CV personalization status and playbook QA: [release record](reports/SITE_V10_RELEASE_RECORD_2026-08-30.md).
