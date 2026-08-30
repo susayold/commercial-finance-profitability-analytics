@@ -25,6 +25,7 @@ def main() -> int:
     runbook_path = root / "powerbi" / "POWER_BI_DESKTOP_RUNBOOK.md"
     release_path = root / "reports" / "POWER_BI_REFRESHABLE_RELEASE_2026-08-30.md"
     boundary_path = root / "powerbi" / "POWER_BI_NATIVE_BINARY_BOUNDARY.md"
+    architecture_path = root / "docs" / "POWER_BI_REFRESH_ARCHITECTURE.md"
 
     try:
         readiness = json.loads(readiness_path.read_text(encoding="utf-8"))
@@ -78,6 +79,14 @@ def main() -> int:
     add("Release disclaims native PBIX", "No native `.pbix` is claimed" in release)
     boundary = boundary_path.read_text(encoding="utf-8") if boundary_path.exists() else ""
     add("Native binary boundary note exists", boundary_path.is_file() and "pbi-tools" in boundary and "Power BI Desktop" in boundary)
+    architecture = architecture_path.read_text(encoding="utf-8") if architecture_path.exists() else ""
+    add(
+        "Refresh architecture uses canonical marketing filename",
+        architecture_path.is_file()
+        and "`marketing_spend.csv`" in architecture
+        and "`marketing.csv`" not in architecture,
+        "marketing_spend.csv present; marketing.csv alias absent",
+    )
 
     failed = [name for name, passed, _ in checks if not passed]
     payload = {

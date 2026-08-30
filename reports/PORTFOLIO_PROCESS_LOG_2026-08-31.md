@@ -51,6 +51,9 @@ still need a real Power BI Desktop or cloud workspace.
     disposable ZIP fixtures: complete QA/metadata returns `READY_TO_CLAIM`,
     missing external evidence returns `PENDING_EXTERNAL_EVIDENCE` (exit 2),
     and a PBIT passed as PBIX is rejected (exit 1).
+16. Corrected the refresh architecture filename list to use the canonical
+    `marketing_spend.csv` partition and added a claim-boundary regression check
+    so the documentation cannot drift from the Power Query/source contract.
 
 ## Evidence boundaries
 

@@ -34,7 +34,7 @@ Required CSV files:
 - `debt.csv`
 - `budget.csv`
 - `forecast.csv`
-- `marketing.csv`
+- `marketing_spend.csv`
 - `promotions.csv`
 - `product_master.csv`
 - `customer_master.csv`
