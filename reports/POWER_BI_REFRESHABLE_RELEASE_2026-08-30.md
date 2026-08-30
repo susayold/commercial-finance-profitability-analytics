@@ -8,6 +8,7 @@
 - Project generator: `scripts/build_powerbi_refreshable_project.py`
 - Package/refresh validator: `scripts/validate_powerbi_refreshable_project.py`
 - Replacement-data contract validator: `scripts/validate_powerbi_input_contract.py`
+- Generated PBIP/PBIT coherence validator: `scripts/validate_powerbi_artifact_coherence.py`
 - Refresh architecture: `docs/POWER_BI_REFRESH_ARCHITECTURE.md`
 - Desktop execution runbook/checklist: `powerbi/POWER_BI_DESKTOP_RUNBOOK.md`, `powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md`
 - DirectQuery readiness: `powerbi/directquery/README.md`, `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`, `powerbi/DIRECTQUERY_READINESS.json`
@@ -37,7 +38,9 @@ Latest workflow run [33315439814](https://github.com/susayold/commercial-finance
 
 The final documentation-sync run [33315755439](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33315755439) also passed on commit `b36787a`.
 
-Current Drive bundle after adding the Desktop preflight gate: 979,776 bytes, SHA-256 `708EBB751C141F20EDC0A73BF7789CB8399543AEFC4DE2980EFEE2B5714382FA`.
+The artifact-coherence run [33316673755](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33316673755) passed on commit `6e205ec`; it adds the direct PBIP/PBIT topology gate and uploaded QA report.
+
+Current Drive bundle after adding the Desktop preflight and artifact-coherence gates: 984,155 bytes, SHA-256 `DAF2686B8B5CFA66C506949A9366028843C94523D2D258B50E3E72453B2C486B`.
 
 PBIT SHA-256: `7E7A417C7028678C44F2500B185FCA3D669193EC62B620EB7E48EA7A6EC6E095`
 
@@ -47,7 +50,7 @@ Drive bundle `VNFinance_PowerBI_Refreshable_Package_2026-08-30.zip`: 916,598 byt
 
 ## Claim boundary
 
-**Current Drive bundle checksum (supersedes the preliminary checksums above):** 979,776 bytes, SHA-256 `708EBB751C141F20EDC0A73BF7789CB8399543AEFC4DE2980EFEE2B5714382FA`. Drive file ID remains `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`; the copy embedded inside the ZIP is a packaging-time snapshot of the release record.
+**Current Drive bundle checksum (supersedes the preliminary checksums above):** 984,155 bytes, SHA-256 `DAF2686B8B5CFA66C506949A9366028843C94523D2D258B50E3E72453B2C486B`. Drive file ID remains `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`; the copy embedded inside the ZIP is a packaging-time snapshot of the release record.
 
 The `.pbit` is a compiled Power BI package with `DataModelSchema`, `Report/Layout`, metadata, settings, diagram layout, content types and theme parts. The `.pbip` is editable source using TMDL and PBIR binding.
 
