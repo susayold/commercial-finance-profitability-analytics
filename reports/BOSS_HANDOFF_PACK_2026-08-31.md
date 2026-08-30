@@ -10,7 +10,7 @@
 | Recruiter portfolio site | [Live site](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/) | Executive story, finance modules, Power BI scope and contact page |
 | GitHub source of truth | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) | Versioned source, synthetic data, model logic, QA scripts and reports |
 | Private Drive project root | [Google Drive project folder](https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR) | Archived public filings, workbooks, exports, binaries and handoff files |
-| Full reproducible archive | [Project tar.gz](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) | GitHub `main` snapshot at commit `647a93b620171f7ac5334c11bf737897e127b62a` |
+| Full reproducible archive | [Project tar.gz](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) | GitHub `main` snapshot at the release commit shown below |
 
 ## 2. Recommended review order
 
@@ -38,7 +38,7 @@
 
 - The operating company and transaction-level ledger are **synthetic**, designed to demonstrate finance method without exposing confidential data.
 - Public-company figures are sourced/calibrated from official filings and are kept separate from synthetic management outputs.
-- The current release is reproducible from GitHub commit `647a93b`; the Drive archive is the same snapshot (SHA-256: `D1E1F4FDBBE5D3EF86A6D807BE15F157877DEC9967A675C8653ADB77D66C6745`).
+- The current release is reproducible from the GitHub commit shown in the manifest; the Drive archive is the same snapshot.
 - **Gate A open:** a genuine internal forecast/budget snapshot is still required to claim real-company forecast accuracy.
 - **Gate B open:** formal Desktop QA-01–QA-18 and production Power BI Service/API refresh evidence are not inferred from package checks.
 - The extended native PBIX is a real Desktop-produced candidate container, but its formal QA sign-off is still pending.
@@ -53,7 +53,7 @@
 
 ```text
 github_repo=https://github.com/susayold/commercial-finance-profitability-analytics.git
-github_commit=647a93b620171f7ac5334c11bf737897e127b62a
+github_commit=37cc556c1d21cb5ee9261429a9d3c29e3d460d21
 github_tracked_file_count=1425
 drive_project_root_id=1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR
 drive_archive_id=1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX
