@@ -356,3 +356,9 @@ Validator maintenance note: the KPI dictionary validator threshold was aligned t
 - [Recommendation register](reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md) · [CSV extract](data/management_recommendation_register_2026-08-30.csv) · [Validator](scripts/validate_management_recommendation_register.mjs) · [QA](reports/MANAGEMENT_RECOMMENDATION_REGISTER_QA.md)
 - [Drive native register](https://docs.google.com/document/d/14dQcHGVRLWdVeVZ5faigCk8G15B5tbib_Q5qr87HhXU/edit?usp=drivesdk) · [Drive native Sheet](https://docs.google.com/spreadsheets/d/1moxRhlVwQyMHCXoGLymylFkDRmD3Syso5JZS1uvrI7I/edit?usp=drivesdk) · [Drive CSV](https://drive.google.com/file/d/147oDhUogp7lKNykSyxXwQqr-djhfOkK8/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1UznqGhyrtIHFJmDbdeek0PNiK3Sologs/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1ThYoCPXQqFPWjAENE1RB4qbTCz5aLbhh/view?usp=drivesdk)
 - Twelve recommendations translate model signals into decision, value equation, owner, guardrail and review date; evidence classes stay visible and no realized impact is claimed.
+
+
+## Finance Business Partnering battle cards v2
+
+- [Battle cards v2](docs/BATTLE_CARDS_V2.md) · [Decision-matrix CSV](data/battle_cards_v2.csv) · [Validator](scripts/validate_battle_cards_v2.mjs) · [QA](reports/BATTLE_CARDS_V2_QA.md)
+- [Drive native cards](https://docs.google.com/document/d/1gmyvvRhvAaxdYcuEAyXA15r1r5XKx7mNxyQLN5qGA-8/edit?usp=drivesdk) · [Drive native Sheet](https://docs.google.com/spreadsheets/d/1PYlnzqPs4vr9PFKKULBvljEaEkMrvlEuWJpI7pGnqfY/edit?usp=drivesdk) · [Drive CSV](https://drive.google.com/file/d/1OkJ9d5_h2kRqDmdVefBLdU2uBQIFCx93/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/1Oz4mEQQ-Erhu-oIfcWr8LBB3HKvKD71d/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/15yk8sBtQKubQRudZwnWv2DVzuZEuaF91/view?usp=drivesdk)
