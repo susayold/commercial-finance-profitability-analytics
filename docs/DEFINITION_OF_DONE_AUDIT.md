@@ -212,6 +212,11 @@ Drive mirror for M&A extension:
 - The detailed plan is now stored remotely; no local output copy is retained.
 
 
+## Peer comparability decision memo
+
+The peer panel is intentionally scoped by evidence quality: VNM supports a long-run FY2016–FY2025 trend claim; QNS and KDC are bounded cross-sectional/context benchmarks until revenue-basis and perimeter controls are closed; MCH OCR candidates remain human-review only. See [memo](../reports/PEER_COMPARABILITY_DECISION_2026-08-30.md) · [Drive copy](https://docs.google.com/document/d/184FPk4ZcPaWVtWm4qqRsvsG3RO0D_Lv9tS46yKXqCGk/edit?usp=drivesdk).
+
+## 15. Application conversion pack
 ## 15. Application conversion pack
 
 The candidate application and CV build pack is now linked from the repository README and mirrored to Drive. It contains the candidate-fact intake, validated evidence inventory, three role variants, ATS matrix, interview conversion matrix and Gate-dependent wording rules: [GitHub pack](CANDIDATE_APPLICATION_INTAKE_AND_CV_BUILD_PACK.md) · [Drive copy](https://drive.google.com/file/d/1vZmLitH1CI-uVAoJmLil1P_tVHZ0MvwT/view).
