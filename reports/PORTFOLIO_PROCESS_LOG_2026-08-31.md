@@ -84,7 +84,7 @@ still need a real Power BI Desktop or cloud workspace.
     data-drop automation in the same deterministic preflight rather than
     relying on documentation-only review.
 23. Reran the release gate with the installed Desktop path. All eight
-    deterministic stages passed (78/78 input checks, package/coherence/claim
+    pre-release-record deterministic stages passed (78/78 input checks, package/coherence/claim
     boundary, 17/17 DirectQuery mapping and 12/12 Service workflow checks);
     Desktop preflight was 14/14. The output still explicitly leaves native
     PBIX rendering and production APR as external evidence gates.

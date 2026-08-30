@@ -9,9 +9,9 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Item | Current value |
 |---|---|
 | GitHub repository | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) |
-| Handoff commit | [`83e95ae`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/83e95ae118455e3a5123c57d503021395bb43050) |
+| Handoff commit | [`607e329`](https://github.com/susayold/commercial-finance-profitability-analytics/commit/607e329969d5c0238f5c37740953529a4345abf7) |
 | Latest validated CI | [Finance model QA](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33327789127) — PASS |
-| Latest local release gate | `83e95ae` — PASS; eight deterministic stages and Desktop preflight 14/14 |
+| Latest local release gate | `607e329` — PASS; nine deterministic stages and Desktop preflight 14/14 |
 | Drive bundle | [VNFinance Power BI refreshable package](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) |
 | Power BI Desktop host | `D:\Po BI\bin\PBIDesktop.exe` |
 | Desktop version recorded by preflight | `2.157.879.0 (26.08)` |

@@ -23,7 +23,17 @@ def main() -> int:
 
     handoff_match = re.search(r"\|\s*Handoff commit\s*\|.*?`([0-9a-f]{7,40})`", record, flags=re.I)
     add("record has a handoff commit", bool(handoff_match), handoff_match.group(1) if handoff_match else "missing")
-    add("handoff commit matches HEAD", bool(current and handoff_match and handoff_match.group(1).lower() == current.lower()), current)
+    handoff_commit = handoff_match.group(1) if handoff_match else ""
+    # The record intentionally points to the last fully validated handoff. A
+    # later documentation-only commit may update the validator itself, so the
+    # handoff must be an ancestor of HEAD rather than an impossible self-hash.
+    ancestor_ok = False
+    if handoff_commit:
+        ancestor_ok = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", handoff_commit, "HEAD"],
+            capture_output=True,
+        ).returncode == 0
+    add("handoff commit is an ancestor of HEAD", ancestor_ok, f"handoff={handoff_commit}; head={current}")
     add("Drive bundle link is present", "drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX" in record)
     add("operating mode is explicit Import", "Import_replace_and_refresh" in record)
     add("local release gate is recorded", bool(re.search(r"Latest local release gate.*PASS", record)))
