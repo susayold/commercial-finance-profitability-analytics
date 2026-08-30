@@ -223,3 +223,7 @@ The long-form peer export now preserves one company × FY × metric row with sou
 ## 15. Application conversion pack
 
 The candidate application and CV build pack is now linked from the repository README and mirrored to Drive. It contains the candidate-fact intake, validated evidence inventory, three role variants, ATS matrix, interview conversion matrix and Gate-dependent wording rules: [GitHub pack](CANDIDATE_APPLICATION_INTAKE_AND_CV_BUILD_PACK.md) · [Drive copy](https://drive.google.com/file/d/1vZmLitH1CI-uVAoJmLil1P_tVHZ0MvwT/view).
+
+
+### QNS evidence-layer enrichment
+FY2021–FY2025 gross profit and owners' equity were promoted from the readable QNS FY2025 management summary (pages 27–28), with evidence-tier flags preserved. The evidence memo and Drive native Sheet are linked from the release artifacts; operating profit and operating cash flow remain explicitly unavailable.
