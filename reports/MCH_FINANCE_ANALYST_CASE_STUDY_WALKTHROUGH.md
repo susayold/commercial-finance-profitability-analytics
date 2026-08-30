@@ -31,6 +31,21 @@ All statement values are reported VND amounts. Margins, CAGR, YoY changes, CFO/P
 
 FY2017 is explicitly tagged as an **audited comparative / corresponding-column extraction** from the official FY2018 filing. It is not presented as an independently located standalone FY2017 PDF. MCH is maintained as a separate supplement and is not silently merged into the 240-row VNM/QNS/KDC normalized peer core.
 
+## 2A. FY2017 source-status update
+
+The official Masan Consumer FY2017 annual-report PDF is now confirmed in the company web index (75 pages) and its indexed statement text has been extracted at PDF pages 37–39. The eight reported values are consistent with the FY2018 audited comparative/corresponding columns already used in the approved supplement:
+
+- net revenue VND 13,213.6403bn;
+- gross profit VND 6,032.5814bn;
+- operating profit VND 2,624.3615bn;
+- PBT VND 2,621.9676bn;
+- PAT VND 2,245.9977bn;
+- total assets VND 17,645.0566bn;
+- equity VND 11,331.8275bn;
+- CFO VND 2,112.9503bn.
+
+A separate [web-index evidence memo](MCH_FY2017_WEB_INDEX_EVIDENCE.md), [CSV](../data/mch_fy2017_web_index_evidence.csv) and [8/8 QA report](MCH_FY2017_WEB_INDEX_EVIDENCE_QA.md) preserve the page anchors and the `INDEXED_ONLY` boundary. Direct PDF bytes/hash are still not archived, so this update strengthens the audit trail without changing the approved provenance rule.
+
 ## 3. Analytical method
 
 The review follows a finance-analyst workflow:
