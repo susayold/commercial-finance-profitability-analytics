@@ -207,3 +207,6 @@ The paragraphs above retain historical release notes for audit trail. Use this s
 - Latest runner coverage update: [CI run #778](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33302213464) passed after expanding `run_finance_qa.mjs` to all 42 validator invocations across 40 unique repository-local validator files plus Power BI contract-shape validation (43 total checks; Gate A is intentionally run in template and fixture modes). This supersedes older historical check-count notes above.
 
 - Final consistency check: [CI run #783](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33302317978) passed after correcting the documented invocation count. Current runner output is 43 checks (42 invocations across 40 unique validator files plus contract-shape).
+
+- Recruiter-facing evidence updated: one-page CV V2, bullet bank, role variants and interview talk track now include the customer concentration decision layer (all figures labelled synthetic). CI runs #785–#788 passed.
+- Final CI confirmation for the CV evidence update: [run #788](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33302421444) passed.
