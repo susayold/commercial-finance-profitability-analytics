@@ -18,7 +18,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - QNS: 2016-2025
 - KDC: 2016-2025
 - MCH: FY2016-FY2025 statement supplement approved; FY2017 comparative caveat retained
-- MCH finance-analyst case-study walkthrough: `reports/MCH_FINANCE_ANALYST_CASE_STUDY_WALKTHROUGH.md` (also mirrored as a native Drive Doc)
+- MCH finance-analyst case-study walkthrough: `reports/MCH_FINANCE_ANALYST_CASE_STUDY_WALKTHROUGH.md` · [native Drive Doc](https://docs.google.com/document/d/1viCTwj6jdwiUX8tM-6W6cJWTfOnD1z6KMhrqznP553Q/edit?usp=drivesdk)
 - MCH audited consolidated financial statements: 2016-2025
 - Missing and rejected documents are recorded explicitly; gaps are never filled with unverified copies
 - VietNova synthetic v1.0.0: 36 months, 6,480 sales lines, 36 SKUs, 5 channels, 24 customers, 13 CSV tables + manifest; QA controls PASS (10,152 checks, 0 errors)
