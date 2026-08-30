@@ -283,3 +283,6 @@ QNS FY2021–FY2025 gross profit and owners' equity are now included from the re
 
 
 - [MCH OCR review decision](reports/MCH_OCR_REVIEW_DECISION_2026-08-30.md) · [Drive memo](https://docs.google.com/document/d/1gkr2Vu6W2aagw1UKev2lTWX97FALutV0uCrk_QWCTIg/edit) · [MCH review workbench](https://docs.google.com/spreadsheets/d/1eRWrYLyiXNsGQuqsPwXAjT3rodJJMzI9dmjj6OkcJRY/edit)
+
+### MCH latest-year candidate layer
+FY2024–FY2025 now have a review-ready 16-row candidate layer covering all eight normalized metrics with statement tie-outs. The rows remain pending visual sign-off and are not in the approved panel. [MCH candidate reconciliation](reports/MCH_STATEMENT_CANDIDATE_RECONCILIATION_2024_2025.md) · [candidate CSV](data/mch_statement_candidates_2024_2025.csv) · [Drive candidate Sheet](https://docs.google.com/spreadsheets/d/1L8sRGR-4DI3bxE7ODqzjo9Bq18d4UjvADVUPjUDZKBE/edit) · [Drive reconciliation memo](https://docs.google.com/document/d/1HHWzjsW0I4PjyJYBsCawGx7_e141gLSESbodhpadU5s/edit)
