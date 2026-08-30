@@ -124,3 +124,7 @@ Module F now connects operational events to the P&L and cash bridge: revenue tre
 
 
 Operational driver tree automated QA: local validator PASS (15/15); GitHub Finance model QA run 557 PASS: https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33293756170
+
+## Gate A intake contract extension
+
+Gate A tooling is now complete: 26-field immutable evidence schema, empty redacted handoff template, fixture, and template/fixture/live validator. Local template and fixture checks pass; the real LIVE_INTERNAL snapshot remains required before releasing observed Bias/WAPE.
