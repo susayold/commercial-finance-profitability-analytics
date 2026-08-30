@@ -140,3 +140,7 @@ The accuracy report builder is now committed and CI-tested in fixture mode. It e
 ## CV evidence refresh
 
 CV V2 now includes the operational driver/unit-economics evidence with controlled SIMULATED/DERIVED wording and the 13/13 Power BI preflight boundary. Drive copy: https://drive.google.com/file/d/1EpA1i3aRlXNwweWnf1v-M_PvjkkjIqrj/view?usp=drivesdk
+
+## OPEX and headcount planning extension
+
+A cost-center OPEX/headcount module now bridges opening headcount, hires/exits, payroll, benefits, bonus and non-payroll spend to budget/forecast variance. It has 9 synthetic cost-center-month rows, 13/13 validator checks and an explicit no-real-company-impact boundary.
