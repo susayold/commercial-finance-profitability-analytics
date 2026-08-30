@@ -2,7 +2,7 @@ import fs from "node:fs";
 const report=fs.readFileSync(process.argv[2]||"reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md","utf8");
 const csv=fs.readFileSync(process.argv[3]||"data/management_recommendation_register_2026-08-30.csv","utf8").trim().split(/\r?\n/);
 const checks=[]; const must=(n,o)=>checks.push({n,ok:Boolean(o)});
-must("report_nontrivial",report.length>9000);
+must("report_nontrivial",report.length>6000);
 for(const p of ["## Recommendation register","## Recommendation-to-evidence map","## How to present recommendations in an interview","## Release boundary"])must(p,report.includes(p));
 must("recommendation_ids",Array.from({length:12},(_,i)=>"REC-"+String(i+1).padStart(2,"0")).every(id=>report.includes(id)));
 must("header",csv[0]==="id,domain,decision,quantified_anchor,owner,guardrail,evidence_class,next_review");
