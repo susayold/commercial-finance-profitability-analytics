@@ -7,7 +7,7 @@ This release contains a real, editable Power BI source project (`.pbip`) and a c
 The default mode is **replace-and-refresh**:
 
 1. Keep the 14 CSV filenames and column headers unchanged.
-2. Replace the files inside the active `data/current` folder.
+2. Replace the files inside the active `powerbi/data/current` folder.
 3. In Power BI Desktop, set the `DataRoot` parameter to that folder once.
 4. Select **Home > Refresh** after each data replacement.
 5. Measures and visuals recalculate from the refreshed semantic model; no report rebuild is required.
@@ -19,7 +19,7 @@ Before step 4, run `scripts/validate_powerbi_input_contract.py --input-dir <fold
 All Power Query partitions use one required Text parameter:
 
 ```text
-DataRoot = C:\VNFinancePowerBI\data\current
+DataRoot = C:\VNFinancePowerBI\powerbi\data\current
 ```
 
 Each query resolves a file as `File.Contents(DataRoot & "\\<filename>.csv")`. This separates the model from any one user's Downloads folder. The source package includes `source_control.csv` so the Controls & Evidence page exposes refresh mode, evidence class and unresolved gates.
