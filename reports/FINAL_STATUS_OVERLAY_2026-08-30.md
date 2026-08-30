@@ -98,3 +98,8 @@ The evidence matrix now links the MBR pack, KPI dictionary, Management Recommend
 ## Monthly close operating cadence extension
 
 A WD-5 to WD+5 calendar and RACI now connects forecast freeze, accounting close, actuals QA, PVM review, business-partner challenge and CFO sign-off. Validator status is 10/10 PASS; the process remains a synthetic operating rehearsal.
+
+
+## Recruiter deliverable index refresh
+
+The reviewer path now orders live site → FP&A model → MBR pack → recommendation register → KPI dictionary → battle cards → close calendar → public/strategic extensions. Drive refresh copy: https://drive.google.com/file/d/1s60auQyHV58bWy2mjlGSuAtI5KLVMJVt/view?usp=drivesdk
