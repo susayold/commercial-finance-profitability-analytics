@@ -197,3 +197,12 @@ FY2007 shows PAT of VND 963.448 bn versus PBT of VND 955.381 bn in the audited c
 ## KDC FY2024–FY2025 exact statement promotion (2026-08-30)
 
 The normalized peer export now promotes KDC FY2024 and FY2025 from the audited KDC FY2025 filing. The comparative/current statement pages provide net revenue, gross profit, operating profit, PBT, PAT, total assets, owners' equity and operating cash flow with page anchors 165–171. The supplemental table is [data/kdc_statement_metrics_2024_2025.csv](../data/kdc_statement_metrics_2024_2025.csv). Earlier KDC years remain perimeter-flagged because Vocarimex/TAC consolidation and later portfolio changes interrupt a clean organic trend.
+
+
+### QNS FY2021–FY2025 reported summary promotion (2026-08-30)
+
+- **Source:** QNS Annual Report 2025, management summary pages 27–28.
+- **Promoted metrics:** gross profit and owners' equity for FY2021–FY2025.
+- **Status:** `reported_in_annual_report`, `partially_comparable`, high confidence; not audited statement-level.
+- **Unchanged gaps:** operating profit and operating cash flow remain blank; statement-layer promotion is not claimed.
+- **Evidence:** `reports/QNS_REPORTED_SUMMARY_EVIDENCE_2021_2025.md`.
