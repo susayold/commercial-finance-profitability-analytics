@@ -9,4 +9,4 @@ const defs=[["revenue","VND_bn",76.9,"below"],["ebitda_proxy","VND_bn",53.1,"bel
 const lines=["metric,statistic,value,unit,threshold,threshold_direction,simulation_count,seed,evidence_class"];
 for(const [key,unit,threshold,dir] of defs){for(const q of [.05,.25,.5,.75,.95]) lines.push([key,"p"+String(q*100).padStart(2,"0"),pct(key,q).toFixed(4),unit,threshold,dir,N,20260830,"SIMULATED_DERIVED"].join(",")); const breach=rows.filter(r=>dir==="below"?r[key]<threshold:r[key]>threshold).length/N; lines.push([key,"probability_breach",breach.toFixed(4),"probability",threshold,dir,N,20260830,"SIMULATED_DERIVED"].join(","));}
 const joint=rows.filter(r=>r.revenue<76.9&&r.ebitda_proxy<53.1&&r.ccc>68.8).length/N; lines.push(["joint_downside","probability_breach",joint.toFixed(4),"probability","revenue<76.9 & EBITDA<53.1 & CCC>68.8","joint",N,20260830,"SIMULATED_DERIVED"].join(","));
-fs.writeFileSync(outPath,lines.join("\\n")+"\\n");
+fs.writeFileSync(outPath,lines.join("\n")+"\n");
