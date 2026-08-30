@@ -6,7 +6,7 @@ const text = fs.readFileSync(file, "utf8").trimEnd();
 const rows = text.split(/\r?\n/).map(line => line.split(","));
 const header = rows.shift();
 const idx = Object.fromEntries(header.map((name, i) => [name, i]));
-const required = ["company_id","fiscal_year","metric","value","value_vnd_bn","audited_status","source_page","comparability_status","review_status"];
+const required = ["company_id","fiscal_year","metric","value","value_vnd_bn","audited_status","restatement_status","source_page","comparability_status","review_status"];
 const metrics = new Set(["net_revenue_vnd_bn","gross_profit_vnd_bn","operating_profit_vnd_bn","profit_before_tax_vnd_bn","profit_after_tax_vnd_bn","total_assets_vnd_bn","owners_equity_vnd_bn","operating_cash_flow_vnd_bn"]);
 const fail = (msg) => { console.error("FAIL:", msg); process.exitCode = 1; };
 for (const col of required) if (!(col in idx)) fail("missing column " + col);
@@ -27,5 +27,5 @@ for (const row of rows) {
 const fy = new Set(rows.map(r => r[idx.fiscal_year]));
 if (fy.size !== 10) fail("not exactly 10 fiscal years");
 const fy17 = rows.filter(r => r[idx.fiscal_year] === "2017");
-if (fy17.length !== 8 || fy17.some(r => r[idx.audited_status] !== "audited_comparative" || r[idx.comparability_status] !== "partially_comparable")) fail("FY2017 comparative caveat not consistently tagged");
+if (fy17.length !== 8 || fy17.some(r => r[idx.audited_status] !== "audited_comparative" || r[idx.restatement_status] !== "corresponding_column" || r[idx.comparability_status] !== "partially_comparable")) fail("FY2017 comparative caveat not consistently tagged");
 if (!process.exitCode) console.log("PASS: 80 rows; 10 FY; 8 metrics/FY; unique keys; numeric values; approved status; FY2017 caveat tagged");
