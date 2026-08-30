@@ -18,6 +18,7 @@ This note supersedes earlier dated progress paragraphs where they conflict with 
 | Recruiter website | Sites version 6 is deployed and includes the MCH Finance Analyst Lens plus credit-memo link | https://vn-finance-fpa-case.sangkenny200.chatgpt.site; Sites v6 release record: https://docs.google.com/document/d/1WSaAd7YVTVclTnSKYoqqXdvxpK_GACSFc0cG-XJxXlY/edit?usp=drivesdk |
 | Forecast proxy | VNM public-guidance analysis is complete but explicitly not internal forecast accuracy | reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md |
 | Power BI | Portable PBIP source contract and QA definitions are complete; native PBIX/Desktop evidence remains open | powerbi/PBIP_SOURCE_MANIFEST.json, powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv |
+| External gate intake | Gate A/B fields, evidence bundle and acceptance rules are now captured in a user-facing checklist | docs/GATE_A_B_USER_INPUT_CHECKLIST.md; Drive: https://docs.google.com/document/d/13XgQTTqVLCecLTpp7uiNdu9RL6k3TYYFp40VVffoGSs/edit?usp=drivesdk |
 
 ## Finance-analyst readout
 
