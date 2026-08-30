@@ -210,6 +210,8 @@ Current state: Excel v2, management memo/deck, recruiter site, peer-panel review
 - [Drive customer P&L](https://drive.google.com/file/d/1S9zo-2x90wd3kHCQE-3HnKgzXf7EiQs4/view?usp=drivesdk) · [Drive methodology](https://drive.google.com/file/d/1-fX1ha3FRjueADxB6JKwoJVHUOySauZ9/view?usp=drivesdk) · [Drive validator](https://drive.google.com/file/d/1aVU-W46JXXZ6_ZgnPpBQxzE-QYIab3th/view?usp=drivesdk) · [Drive QA](https://drive.google.com/file/d/18F5b6jsL8MMppfDfqu7VIe7zM8owYqnX/view?usp=drivesdk)
 - The layer separates gross-to-net leakage, contribution, DSO and working-capital cost. C06 is intentionally a high-revenue / low-margin / long-DSO review account; all values are synthetic rehearsal evidence.
 
+
+The derived decision layer adds [concentration and channel analysis](docs/CUSTOMER_PROFITABILITY_ANALYSIS.md), [summary JSON](data/customer_profitability_summary.json) and [14/14 QA](reports/CUSTOMER_PROFITABILITY_ANALYSIS_QA.md).
 ## Inventory quality, aging, shrinkage and wastage
 
 - [Methodology](docs/INVENTORY_QUALITY_METHODOLOGY.md) · [Synthetic schedule](data/inventory_quality_synthetic.csv) · [Validator](scripts/validate_inventory_quality.mjs) · [9/9 QA report](reports/INVENTORY_QUALITY_QA.md)
