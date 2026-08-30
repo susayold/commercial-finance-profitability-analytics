@@ -99,3 +99,6 @@ The panel is strong enough for a finance-analyst portfolio because it demonstrat
 ## QNS evidence-layer update
 
 The QNS FY2025 Annual Report provides a readable consolidated management summary for FY2021–FY2025 (report pages 27–28). Gross profit and owners' equity are now populated in the normalized panel for these years. The values are still tagged `reported_in_annual_report` and `partially_comparable` rather than audited statement-level because the supplied report does not yield accepted line-level statement extraction. Operating profit and operating cash flow remain unavailable. Use QNS for long-run context with the evidence-tier flag visible; do not imply audited statement provenance for these promoted rows. See `reports/QNS_REPORTED_SUMMARY_EVIDENCE_2021_2025.md`.
+
+## MCH OCR decision update
+The MCH OCR workbench contains 59 candidate rows for FY2016–FY2025, but remains blocked pending page-level human review. Implausible OCR candidates (for example FY2018 cash VND 119,982 and FY2022 cash VND 13,013) demonstrate why these rows must not enter the approved panel automatically. See `reports/MCH_OCR_REVIEW_DECISION_2026-08-30.md`.
