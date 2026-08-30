@@ -48,3 +48,8 @@ All durable data, code, reports, validators, website source and Drive mirrors ar
 ## MCH source retrieval control
 
 The official FY2017 and FY2020 annual-report URLs are now accompanied by a detailed [source-verification runbook](../docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) and Drive mirror (https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk). The URLs are indexed but remain `GAP / OFFICIAL_ATTACHMENT_UNAVAILABLE` until PDF bytes, hash, page anchors and tie-outs are archived and reviewed; the approved FY2016–FY2025 supplement and FY2017 comparative provenance are unchanged.
+
+
+## MCH financial-statement analysis extension
+
+A calculated FY2016–FY2025 financial-statement analysis layer is now archived: margin, average-asset turnover, equity multiplier, DuPont ROE, ROA, average-equity ROE, CFO/revenue and debt/equity proxy. The validator passes 11/11 controls. FY2025 CFO/revenue is 6.98% and FY2024 ROE is explicitly flagged for equity-base review; no causal or valuation claim is added. Drive report: https://docs.google.com/document/d/1FgZurJC5pqdAwn9_jISfnujGavFtZAiXQl1klXsHMqQ/edit?usp=drivesdk.
