@@ -14,7 +14,7 @@ The latest GitHub `main` content includes the site gate-contract release and the
 |---|---|---|---|
 | VNM public-guidance proxy | data/vnm_public_guidance_proxy_2018_2025.csv, docs/VNM_PUBLIC_GUIDANCE_PROXY.md, scripts/validate_public_guidance_proxy.mjs, reports/VNM_PUBLIC_GUIDANCE_PROXY_QA.md | CSV, methodology, validator and QA report | PASS; 16 observations, Bias -2.63%, WAPE 3.14%; not Gate-A eligible |
 | D2C unit economics | data/d2c_unit_economics_synthetic.csv, docs/D2C_UNIT_ECONOMICS.md, scripts/validate_d2c_unit_economics.mjs | Native Sheet plus CSV, methodology, validator and QA report | PASS; six native controls |
-| Portable Power BI handoff | powerbi/PBIP_SOURCE_MANIFEST.json, powerbi/PBIP_SOURCE_HANDOFF.md, scripts/validate_pbip_source_manifest.mjs | Manifest, handoff and validator copies | PASS; 5 dimensions, 9 facts, 15 relationships, 6 pages, 18 QA definitions |
+| Portable Power BI handoff | powerbi/PBIP_SOURCE_MANIFEST.json, powerbi/PBIP_SOURCE_HANDOFF.md, scripts/validate_pbip_source_manifest.mjs | Manifest, handoff and validator copies | PASS; 5 dimensions, 9 facts, 17 relationships, 6 pages, 18 QA definitions |
 | Continuous QA | .github/workflows/finance-qa.yml | CI rehearsal report | PASS; CI now runs forecast leakage, frozen archive, peer, VNM, D2C, public-guidance, PBIP manifest and contract checks |
 | MCH credit screening | reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md, reports/MCH_CREDIT_MEMO_QA.md, scripts/validate_mch_credit_memo.mjs | Memo, QA report and validator are mirrored to Drive | PASS; lender-style WATCH / CONDITIONAL SUPPORT with explicit debt-service limitation; trend QA 15/15 |
 | QNS/KDC basis bridge | reports/PEER_BASIS_PERIMETER_BRIDGE_2026-08-30.md, data/peer_basis_perimeter_bridge_2016_2025.csv, scripts/validate_peer_basis_perimeter_bridge.mjs, reports/PEER_BASIS_PERIMETER_BRIDGE_QA.md | Report, native Sheet, validator and QA report mirrored to Drive | PASS; 12/12 controls; segmented within-basis CAGRs; full-period splice remains blocked |
@@ -98,7 +98,7 @@ Drive mirror for M&A extension:
 - [Live snapshot submission template](data/forecast_snapshot_live_submission_template.csv) · [Drive template](https://drive.google.com/file/d/1WQ_9L7JrbogUjhytealtfeJnXekRJqqu/view)
 - The handoff specifies the exact evidence bundle, acceptance sequence, hard stops and release naming for Gate A (live pre-close forecast accuracy) and Gate B (native Power BI Desktop).
 - Gate A is now executable through the [governance schema](../schemas/forecast_snapshot_live.schema.json), [unit fixture](../data/forecast_snapshot_live_unit_test.csv) and [live validator](../scripts/validate_live_forecast_submission.mjs). Gate B is now executable through the [machine-readable QA evidence log](../powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv) and [evidence validator](../scripts/validate_powerbi_qa_evidence.mjs).
-- The full repository source at commit `ac27e10` is archived as the [latest Drive ZIP snapshot](https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view); the individual Gate A/B intake files are mirrored in the project root for quick review.
+- The historical repository source at commit `ac27e10` is retained as an earlier Drive ZIP snapshot(https://drive.google.com/file/d/1zNXpV56WwOlk3A4PD-PNoQScRDsfBnjO/view); the individual Gate A/B intake files are mirrored in the project root for quick review.
 
 
 ## One-page CV draft
@@ -117,7 +117,7 @@ Drive mirror for M&A extension:
 ## Website strategic-finance release
 
 - [Release note](reports/SITE_STRATEGIC_FINANCE_RELEASE_2026-08-30.md) · [Drive release note](https://drive.google.com/file/d/19mW_MT81z1CMeU9v39fBHBdiIcoLkEiQ/view)
-- Production site version 5 now includes Strategic Finance / M&A, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
+- Production site version 7 includes Strategic Finance / M&A, CV quick-tour cards and direct Gate A/B contract links: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 - Local build PASS; deployment succeeded. Shared UI-library lint warnings remain pre-existing and do not include new page-level errors.
 - [Drive build archive](https://drive.google.com/file/d/1mfx-4W0cfZvGlcZv6TONO36H3rKXgqib/view) · [v3 page source](https://drive.google.com/file/d/1gJZOyXQKPoOuEHDmRLQezSn3GgULp0f-/view) · [v3 CSS source](https://drive.google.com/file/d/136FgoZ8gzarzNZAtXWmsHpMi6PYj53fb/view)
 
@@ -156,3 +156,16 @@ QNS FY2021–FY2025 gross profit and owners' equity are now populated from the F
 ## Current status overlay
 
 See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) for the authoritative current-state index; it supersedes stale historical progress paragraphs where needed.
+
+## Authoritative current-state corrections (2026-08-30)
+
+The paragraphs above retain historical release notes for audit trail. Use this section and `reports/FINAL_STATUS_OVERLAY_2026-08-30.md` for current claims.
+
+- Power BI portable contract: 5 dimensions, 9 facts, 17 relationships, 6 pages and 18 QA definitions. Native PBIX/Desktop evidence is still Gate B pending.
+- Recruiter site: Sites version 7 is the current deployment; older version 5/6 paragraphs are historical notes.
+- MCH FY2020 annual report: official HNX signed PDF archived in Drive (file `1ReM6B9SAprOJYsJd6hrLI7ycU_73rOOU`, 67 pages, 8,940,859 bytes, SHA-256 `3BB42FB2A5FC251075497885A66668C96311D8BABF32D85622C971DFE58B8366`), page-reviewed at PDF pages 30–34 / printed pages 59–67, and `APPROVED` in the source registry.
+- MCH FY2017 annual report: remains `INDEXED_ONLY`; the official PDF bytes are not yet retrievable in this runtime. The audited FY2018 comparative/corresponding evidence remains the approved basis.
+- [MCH source-verification runbook](../docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md) · [Drive mirror](https://docs.google.com/document/d/1dQLpARQ3nV4qkt4DbFU4yCVVHQ7zSYO7rH-8c9C-Xtk/edit?usp=drivesdk)
+- [Remaining-gates handoff](../docs/REMAINING_GATES_HANDOFF_2026-08-30.md) · [Drive](https://docs.google.com/document/d/1UNB4HHdVQJWOyaLo3W1szCd2v-tlYx4JWf1ItVur9cQ/edit?usp=drivesdk)
+- [Finance Analyst interview walkthrough](../docs/INTERVIEW_WALKTHROUGH_FINANCE_ANALYST_2026-08-30.md) · [Drive](https://drive.google.com/file/d/16JeKPtMA_0kbz6n8376xemYznp3WUQ4H/view)
+- External gates remain: Gate A real internal snapshot/observed Bias-WAPE; Gate B native PBIX and QA-01–QA-18; CV personalization.
