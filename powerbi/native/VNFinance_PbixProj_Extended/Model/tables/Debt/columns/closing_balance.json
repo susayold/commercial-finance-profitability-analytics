@@ -1,0 +1,12 @@
+{
+  "name": "closing_balance",
+  "dataType": "double",
+  "sourceColumn": "closing_balance",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

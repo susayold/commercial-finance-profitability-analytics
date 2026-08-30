@@ -1,0 +1,12 @@
+{
+  "name": "sales_units",
+  "dataType": "int64",
+  "sourceColumn": "sales_units",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

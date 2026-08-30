@@ -2,7 +2,7 @@
 
 ## Release outcome
 
-This release contains a real, editable Power BI source project (`.pbip`) and a compiled Power BI Template (`.pbit`). The model has 15 tables, 37 finance measures, 23 relationships, six pages and 39 visual containers.
+This release contains a real, editable Power BI source project (`.pbip`) and a compiled Power BI Template (`.pbit`). The compact baseline has 15 tables, 37 finance measures, 23 relationships, six pages and 39 visual containers. The extended finance-analyst package adds scenario, OPEX/headcount, CAPEX/payback, approved peer and review-control layers for 20 tables, 60 measures, 25 relationships and 42 visuals.
 
 The default mode is **replace-and-refresh**:
 
@@ -43,6 +43,14 @@ Required CSV files:
 
 The Calendar table is generated in Power Query from the minimum and maximum month in `sales_fact.csv`.
 
+The extended package keeps the same 14 operating files and adds five inputs:
+`scenario_selector.csv`, `peer_benchmark_approved_2016_2025.csv`,
+`peer_extraction_queue.csv`, `opex_headcount_planning_synthetic.csv` and
+`capex_fixed_asset_planning_synthetic.csv`. Bind the extended PBIP/PBIT to
+the same `DataRoot` and preserve all 19 files. Peer numeric blanks mean the
+approved public source did not disclose that line item; they are kept as
+Power BI blanks rather than imputed as zero.
+
 ## What “automatic update” means
 
 The current CSV design uses Power BI **Import mode**. Replacing source rows does not continuously push them onto an already-open canvas. The report changes when a refresh is executed in Desktop or by a configured refresh schedule in Power BI Service.
@@ -62,10 +70,11 @@ For automatic page refresh, migrate the fact tables to a supported DirectQuery s
 The concrete migration pack is in `powerbi/directquery/`: it includes an Azure SQL/Fabric-compatible schema, query-path indexes, a transactional SQL Server-compatible loader, a freshness/control query and machine-readable external gates in `powerbi/DIRECTQUERY_READINESS.json`. The loader is dry-run by default and records a source hash, row counts, batch status and UTC watermark in `finance.Refresh_Control` when explicitly applied.
 
 `powerbi/directquery/DIRECTQUERY_MIGRATION_CONTRACT.json` is the explicit
-15-table mapping for the migration. Run
+20-table mapping for the migration (the compact 15-table baseline plus the
+five extended planning/evidence tables). Run
 `python scripts/validate_directquery_mapping.py` before changing storage mode;
 it checks that the mapping, DDL and PBIP table files agree and that the
-37-measure/23-relationship/6-page preservation counts remain locked.
+60-measure/25-relationship/6-page preservation counts remain locked.
 
 For a published Import dataset, `scripts/trigger_powerbi_service_refresh.py` provides a separate on-demand orchestration path: it can POST a refresh request and poll the dataset's refresh history, using a caller-supplied `PBI_ACCESS_TOKEN`. It is dry-run by default and does not change the realtime boundary; replacing CSVs plus an Import refresh is still not DirectQuery Automatic Page Refresh.
 

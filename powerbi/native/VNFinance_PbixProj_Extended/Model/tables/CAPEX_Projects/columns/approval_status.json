@@ -1,0 +1,12 @@
+{
+  "name": "approval_status",
+  "dataType": "string",
+  "sourceColumn": "approval_status",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

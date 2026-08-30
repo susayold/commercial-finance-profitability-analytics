@@ -33,14 +33,45 @@ REFS = {
     "Marketing": [("channel_id", "Channel", "channel_id")],
     "Promotions": [("sku_id", "Product", "sku_id"), ("channel_id", "Channel", "channel_id")],
 }
-NULLABLE_COLUMNS = {("Sales", "promo_id")}
+# Blank values are intentionally preserved in the approved public peer panel
+# when a source layer does not disclose a line item (for example, the latest
+# annual-report summary series does not provide gross profit or CFO).  These
+# blanks are semantically ``not reported`` rather than zero and are surfaced
+# as model blanks in Power BI.  Keep the exception narrow: all dimensions,
+# controls and operating facts must remain complete.
+NULLABLE_COLUMNS = {
+    ("Sales", "promo_id"),
+    ("Peer_Benchmark", "gross_profit_vnd_bn"),
+    ("Peer_Benchmark", "operating_profit_vnd_bn"),
+    ("Peer_Benchmark", "profit_after_tax_vnd_bn"),
+    ("Peer_Benchmark", "owners_equity_vnd_bn"),
+    ("Peer_Benchmark", "operating_cash_flow_vnd_bn"),
+    ("Peer_Benchmark", "page_anchor"),
+}
+
+COMPACT_TABLE_NAMES = {
+    "Calendar", "Product", "Customer", "Channel", "Sales", "Commercial_Costs",
+    "Inventory", "Receivables", "Payables", "Debt", "Budget", "Forecast",
+    "Marketing", "Promotions", "Source_Control",
+}
+EXTENDED_ONLY_FILES = {
+    "scenario_selector.csv", "peer_benchmark_approved_2016_2025.csv",
+    "peer_extraction_queue.csv", "opex_headcount_planning_synthetic.csv",
+    "capex_fixed_asset_planning_synthetic.csv",
+}
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-dir", type=Path, required=True)
+    parser.add_argument("--scope", choices=["auto", "compact", "extended"], default="auto")
     parser.add_argument("--report", type=Path)
     args = parser.parse_args()
+
+    scope = args.scope
+    if scope == "auto":
+        scope = "extended" if any((args.input_dir / name).exists() for name in EXTENDED_ONLY_FILES) else "compact"
+    scoped_tables = TABLES if scope == "extended" else {name: spec for name, spec in TABLES.items() if name in COMPACT_TABLE_NAMES}
 
     checks: list[tuple[str, bool, str]] = []
     tables: dict[str, list[dict[str, str]]] = {}
@@ -48,7 +79,7 @@ def main() -> int:
     def add(name: str, ok: bool, detail: str = "") -> None:
         checks.append((name, bool(ok), detail))
 
-    for table, spec in TABLES.items():
+    for table, spec in scoped_tables.items():
         if not spec["file"]:
             continue
         path = args.input_dir / spec["file"]
@@ -119,7 +150,7 @@ def main() -> int:
 
     passed = sum(ok for _, ok, _ in checks)
     failed = [name for name, ok, _ in checks if not ok]
-    payload = {"status": "PASS" if not failed else "FAIL", "checks": len(checks), "passed": passed, "failed": failed, "row_counts": {name: len(rows) for name, rows in tables.items()}}
+    payload = {"status": "PASS" if not failed else "FAIL", "scope": scope, "checks": len(checks), "passed": passed, "failed": failed, "row_counts": {name: len(rows) for name, rows in tables.items()}}
     print(json.dumps(payload, indent=2))
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)

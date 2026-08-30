@@ -1,0 +1,12 @@
+{
+  "name": "forecast_cogs",
+  "dataType": "double",
+  "sourceColumn": "forecast_cogs",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

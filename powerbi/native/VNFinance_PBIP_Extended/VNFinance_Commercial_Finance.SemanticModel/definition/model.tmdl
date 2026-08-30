@@ -1,0 +1,31 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Calendar
+ref table Product
+ref table Customer
+ref table Channel
+ref table Sales
+ref table Commercial_Costs
+ref table Inventory
+ref table Receivables
+ref table Payables
+ref table Debt
+ref table Budget
+ref table Forecast
+ref table Marketing
+ref table Promotions
+ref table Source_Control
+ref table 'Scenario Selector'
+ref table Peer_Benchmark
+ref table Peer_Review_Queue
+ref table OPEX_Headcount
+ref table CAPEX_Projects

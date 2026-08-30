@@ -1,0 +1,12 @@
+{
+  "name": "planned_discount_pct",
+  "dataType": "double",
+  "sourceColumn": "planned_discount_pct",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

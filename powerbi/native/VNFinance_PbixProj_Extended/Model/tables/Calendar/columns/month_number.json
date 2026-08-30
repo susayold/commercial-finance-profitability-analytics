@@ -1,0 +1,12 @@
+{
+  "name": "month_number",
+  "dataType": "int64",
+  "sourceColumn": "month_number",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "name": "60000000000000000006",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 660,
+        "y": 170,
+        "z": 6,
+        "width": 580,
+        "height": 220
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Peer_Review_Queue.ticker"
+        },
+        {
+          "queryRef": "Peer_Review_Queue.fiscal_year"
+        },
+        {
+          "queryRef": "Peer_Review_Queue.review_status"
+        },
+        {
+          "queryRef": "Peer_Review_Queue.source_document"
+        },
+        {
+          "queryRef": "Sales.Peer Review Queue Rows"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Peer_Review_Queue",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ticker"
+          },
+          "Name": "Peer_Review_Queue.ticker",
+          "NativeReferenceName": "ticker"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "fiscal_year"
+          },
+          "Name": "Peer_Review_Queue.fiscal_year",
+          "NativeReferenceName": "fiscal_year"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "review_status"
+          },
+          "Name": "Peer_Review_Queue.review_status",
+          "NativeReferenceName": "review_status"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "source_document"
+          },
+          "Name": "Peer_Review_Queue.source_document",
+          "NativeReferenceName": "source_document"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Peer Review Queue Rows"
+          },
+          "Name": "Sales.Peer Review Queue Rows",
+          "NativeReferenceName": "Peer Review Queue Rows"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "10000000000000000008",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 420,
+        "z": 8,
+        "width": 280,
+        "height": 55
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Scenario Selector.scenario"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Scenario Selector",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "scenario"
+          },
+          "Name": "Scenario Selector.scenario",
+          "NativeReferenceName": "scenario"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

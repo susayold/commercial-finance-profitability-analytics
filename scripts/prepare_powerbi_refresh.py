@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Validate and optionally apply a replacement Power BI CSV folder.
 
-The report and model keep the same DataRoot and 14 contract filenames. This
+The report and model keep the same DataRoot and either the compact 14-file or
+extended 19-file contract. This
 utility validates a candidate folder before any target files are touched,
 records hashes/row counts, and only mutates the target with ``--apply``.
 It does not attempt to click Refresh in Power BI Desktop; the Desktop refresh
@@ -37,6 +38,13 @@ FILES = (
     "channel_master.csv",
     "source_control.csv",
 )
+EXTENDED_FILES = (
+    "scenario_selector.csv",
+    "peer_benchmark_approved_2016_2025.csv",
+    "peer_extraction_queue.csv",
+    "opex_headcount_planning_synthetic.csv",
+    "capex_fixed_asset_planning_synthetic.csv",
+)
 
 
 def sha256(path: Path) -> str:
@@ -52,8 +60,8 @@ def row_count(path: Path) -> int:
         return max(sum(1 for _ in csv.reader(handle)) - 1, 0)
 
 
-def validate(folder: Path, validator: Path) -> dict:
-    command = [sys.executable, str(validator), "--input-dir", str(folder)]
+def validate(folder: Path, validator: Path, scope: str) -> dict:
+    command = [sys.executable, str(validator), "--scope", scope, "--input-dir", str(folder)]
     result = subprocess.run(command, capture_output=True, text=True, check=False)
     payload: dict = {}
     try:
@@ -94,6 +102,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", type=Path, required=True, help="validated candidate CSV folder")
     parser.add_argument("--data-root", type=Path, required=True, help="Power BI DataRoot folder")
+    parser.add_argument("--scope", choices=["auto", "compact", "extended"], default="auto")
     parser.add_argument(
         "--validator",
         type=Path,
@@ -112,13 +121,17 @@ def main() -> int:
     if not validator.is_file():
         raise SystemExit(f"validator does not exist: {validator}")
 
-    validation = validate(source, validator)
+    scope = args.scope
+    if scope == "auto":
+        scope = "extended" if any((source / name).is_file() for name in EXTENDED_FILES) else "compact"
+    contract_files = FILES + EXTENDED_FILES if scope == "extended" else FILES
+    validation = validate(source, validator, scope)
     if args.apply:
         if target.exists() and not target.is_dir():
             raise SystemExit(f"data-root is not a folder: {target}")
         target.mkdir(parents=True, exist_ok=True)
     files: dict[str, dict[str, object]] = {}
-    for name in FILES:
+    for name in contract_files:
         candidate = source / name
         if not candidate.is_file():
             raise SystemExit(f"validated folder is missing required file: {candidate}")
@@ -133,10 +146,10 @@ def main() -> int:
     applied = False
     if args.apply:
         if source != target:
-            for name in FILES:
+            for name in contract_files:
                 copy2(source / name, target / name)
         applied = True
-        for name in FILES:
+        for name in contract_files:
             destination = target / name
             files[name]["target_sha256_after"] = sha256(destination)
             files[name]["target_rows_after"] = row_count(destination)
@@ -145,6 +158,8 @@ def main() -> int:
 
     payload = {
         "status": "PASS",
+        "scope": scope,
+        "file_count": len(contract_files),
         "applied": applied,
         "source_dir": str(source),
         "data_root": str(target),

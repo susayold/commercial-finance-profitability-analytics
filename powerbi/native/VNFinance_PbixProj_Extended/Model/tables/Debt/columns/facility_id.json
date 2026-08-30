@@ -1,0 +1,12 @@
+{
+  "name": "facility_id",
+  "dataType": "string",
+  "sourceColumn": "facility_id",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "budget_opex",
+  "dataType": "double",
+  "sourceColumn": "budget_opex",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "name": "60000000000000000005",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 170,
+        "z": 5,
+        "width": 580,
+        "height": 220
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Source_Control.control_id"
+        },
+        {
+          "queryRef": "Source_Control.control_name"
+        },
+        {
+          "queryRef": "Source_Control.status"
+        },
+        {
+          "queryRef": "Source_Control.evidence_class"
+        },
+        {
+          "queryRef": "Source_Control.source_file"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Source_Control",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "control_id"
+          },
+          "Name": "Source_Control.control_id",
+          "NativeReferenceName": "control_id"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "control_name"
+          },
+          "Name": "Source_Control.control_name",
+          "NativeReferenceName": "control_name"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "status"
+          },
+          "Name": "Source_Control.status",
+          "NativeReferenceName": "status"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "evidence_class"
+          },
+          "Name": "Source_Control.evidence_class",
+          "NativeReferenceName": "evidence_class"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "source_file"
+          },
+          "Name": "Source_Control.source_file",
+          "NativeReferenceName": "source_file"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

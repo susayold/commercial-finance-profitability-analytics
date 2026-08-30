@@ -1,0 +1,12 @@
+{
+  "name": "payment_fee",
+  "dataType": "double",
+  "sourceColumn": "payment_fee",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

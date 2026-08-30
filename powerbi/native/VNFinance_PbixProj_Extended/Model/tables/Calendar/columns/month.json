@@ -1,0 +1,14 @@
+{
+  "name": "month",
+  "dataType": "dateTime",
+  "sourceColumn": "month",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true,
+  "formatString": "Short Date"
+}

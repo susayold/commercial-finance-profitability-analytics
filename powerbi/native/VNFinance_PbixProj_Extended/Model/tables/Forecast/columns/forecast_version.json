@@ -1,0 +1,12 @@
+{
+  "name": "forecast_version",
+  "dataType": "string",
+  "sourceColumn": "forecast_version",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

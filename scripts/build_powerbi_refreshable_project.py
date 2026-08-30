@@ -258,7 +258,114 @@ TABLES = {
             ("source_file", "string", {}),
         ),
     },
+    # Planning and benchmark layers are first-class model tables. Keeping
+    # them in the same DataRoot contract means a finance user can replace the
+    # CSV drop (without rebuilding the report) and refresh every driver,
+    # variance and evidence view from one controlled folder.
+    "Scenario Selector": {
+        "file": "scenario_selector.csv",
+        "columns": cols(
+            ("scenario", "string", {"isKey": True}),
+        ),
+    },
+    "Peer_Benchmark": {
+        "file": "peer_benchmark_approved_2016_2025.csv",
+        "columns": cols(
+            ("company", "string", {}),
+            ("ticker", "string", {}),
+            ("fiscal_year", "int64", {}),
+            ("net_revenue_vnd_bn", "double", {"summarizeBy": "sum"}),
+            ("gross_profit_vnd_bn", "double", {"summarizeBy": "sum"}),
+            ("operating_profit_vnd_bn", "double", {"summarizeBy": "sum"}),
+            ("profit_before_tax_vnd_bn", "double", {"summarizeBy": "sum"}),
+            ("profit_after_tax_vnd_bn", "double", {"summarizeBy": "sum"}),
+            ("total_assets_vnd_bn", "double", {"summarizeBy": "sum"}),
+            ("owners_equity_vnd_bn", "double", {"summarizeBy": "sum"}),
+            ("operating_cash_flow_vnd_bn", "double", {"summarizeBy": "sum"}),
+            ("source_status", "string", {}),
+            ("source_layer", "string", {}),
+            ("revenue_basis", "string", {}),
+            ("source_document", "string", {}),
+            ("source_url", "string", {}),
+            ("page_anchor", "string", {}),
+            ("comparability_note", "string", {}),
+        ),
+    },
+    "Peer_Review_Queue": {
+        "file": "peer_extraction_queue.csv",
+        "columns": cols(
+            ("company", "string", {}),
+            ("ticker", "string", {}),
+            ("fiscal_year", "int64", {}),
+            ("source_document", "string", {}),
+            ("source_layer", "string", {}),
+            ("review_status", "string", {}),
+            ("required_metrics", "string", {}),
+            ("source_url", "string", {}),
+            ("page_anchor", "string", {}),
+            ("reported_basis", "string", {}),
+            ("reviewer_note", "string", {}),
+        ),
+    },
+    "OPEX_Headcount": {
+        "file": "opex_headcount_planning_synthetic.csv",
+        "columns": cols(
+            ("period", "string", {}),
+            ("cost_center", "string", {}),
+            ("function", "string", {}),
+            ("headcount_open", "int64", {"summarizeBy": "sum"}),
+            ("hires", "int64", {"summarizeBy": "sum"}),
+            ("exits", "int64", {"summarizeBy": "sum"}),
+            ("headcount_close", "int64", {"summarizeBy": "sum"}),
+            ("avg_headcount", "double", {"summarizeBy": "sum"}),
+            ("avg_salary_vnd", "double", {"summarizeBy": "sum"}),
+            ("payroll_vnd", "double", {"summarizeBy": "sum"}),
+            ("benefits_vnd", "double", {"summarizeBy": "sum"}),
+            ("bonus_vnd", "double", {"summarizeBy": "sum"}),
+            ("non_payroll_opex_vnd", "double", {"summarizeBy": "sum"}),
+            ("opex_actual_vnd", "double", {"summarizeBy": "sum"}),
+            ("opex_budget_vnd", "double", {"summarizeBy": "sum"}),
+            ("opex_forecast_vnd", "double", {"summarizeBy": "sum"}),
+            ("budget_variance_vnd", "double", {"summarizeBy": "sum"}),
+            ("forecast_variance_vnd", "double", {"summarizeBy": "sum"}),
+            ("evidence_class", "string", {}),
+            ("source_system", "string", {}),
+        ),
+    },
+    "CAPEX_Projects": {
+        "file": "capex_fixed_asset_planning_synthetic.csv",
+        "columns": cols(
+            ("period", "string", {}),
+            # Project IDs repeat across project-month rows; the row grain is
+            # period x project, so this column must not be declared a primary
+            # key in the Power BI model.
+            ("project_id", "string", {}),
+            ("cost_center", "string", {}),
+            ("capex_type", "string", {}),
+            ("approval_status", "string", {}),
+            ("budget_capex_vnd", "double", {"summarizeBy": "sum"}),
+            ("actual_capex_vnd", "double", {"summarizeBy": "sum"}),
+            ("forecast_capex_vnd", "double", {"summarizeBy": "sum"}),
+            ("committed_capex_vnd", "double", {"summarizeBy": "sum"}),
+            ("asset_cost_vnd", "double", {"summarizeBy": "sum"}),
+            ("in_service_period", "string", {}),
+            ("useful_life_months", "int64", {}),
+            ("depreciation_vnd", "double", {"summarizeBy": "sum"}),
+            ("expected_annual_contribution_vnd", "double", {"summarizeBy": "sum"}),
+            ("payback_months", "double", {}),
+            ("cash_payment_vnd", "double", {"summarizeBy": "sum"}),
+            ("budget_variance_vnd", "double", {"summarizeBy": "sum"}),
+            ("forecast_variance_vnd", "double", {"summarizeBy": "sum"}),
+            ("evidence_class", "string", {}),
+            ("source_system", "string", {}),
+        ),
+    },
 }
+
+# SQL identifiers can be normalized independently from report table captions.
+# The scenario table intentionally keeps a human-readable disconnected caption
+# in the report while the DirectQuery source uses a safe underscore identifier.
+DIRECTQUERY_SOURCE_TABLES = {"Scenario Selector": "Scenario_Selector"}
 
 
 MEASURES = [
@@ -303,6 +410,29 @@ MEASURES = [
     ("Product Rows", "COUNTROWS ( Product )", "#,0"),
     ("Customer Rows", "COUNTROWS ( Customer )", "#,0"),
     ("Refresh Timestamp", "NOW ()", "yyyy-mm-dd hh:mm:ss"),
+    ("Selected Scenario", 'SELECTEDVALUE ( \'Scenario Selector\'[scenario], "Actual" )', "@"),
+    ("Scenario Revenue", 'SWITCH ( [Selected Scenario], "Budget", [Budget Revenue], "Forecast", [Forecast Revenue], [Net Revenue] )', "#,0,,.0 M"),
+    ("EBITDA Proxy", "[Gross Profit] - [OPEX Actual]", "#,0,,.0 M"),
+    ("OPEX Actual", "SUM ( OPEX_Headcount[opex_actual_vnd] )", "#,0,,.0 M"),
+    ("OPEX Budget", "SUM ( OPEX_Headcount[opex_budget_vnd] )", "#,0,,.0 M"),
+    ("OPEX Forecast", "SUM ( OPEX_Headcount[opex_forecast_vnd] )", "#,0,,.0 M"),
+    ("OPEX vs Budget", "[OPEX Actual] - [OPEX Budget]", "#,0,,.0 M;(#,0,,.0 M)"),
+    ("OPEX vs Forecast", "[OPEX Actual] - [OPEX Forecast]", "#,0,,.0 M;(#,0,,.0 M)"),
+    ("Average Headcount", "SUM ( OPEX_Headcount[avg_headcount] )", "#,0.0"),
+    ("CAPEX Budget", "SUM ( CAPEX_Projects[budget_capex_vnd] )", "#,0,,.0 M"),
+    ("CAPEX Actual", "SUM ( CAPEX_Projects[actual_capex_vnd] )", "#,0,,.0 M"),
+    ("CAPEX Forecast", "SUM ( CAPEX_Projects[forecast_capex_vnd] )", "#,0,,.0 M"),
+    ("CAPEX Committed", "SUM ( CAPEX_Projects[committed_capex_vnd] )", "#,0,,.0 M"),
+    ("CAPEX Cash Payment", "SUM ( CAPEX_Projects[cash_payment_vnd] )", "#,0,,.0 M"),
+    ("CAPEX Depreciation", "SUM ( CAPEX_Projects[depreciation_vnd] )", "#,0,,.0 M"),
+    ("CAPEX Annual Benefit", "SUM ( CAPEX_Projects[expected_annual_contribution_vnd] )", "#,0,,.0 M"),
+    ("CAPEX Payback Months", "AVERAGE ( CAPEX_Projects[payback_months] )", "0.0"),
+    ("CAPEX vs Budget", "[CAPEX Actual] - [CAPEX Budget]", "#,0,,.0 M;(#,0,,.0 M)"),
+    ("Approved Peer Rows", "COUNTROWS ( Peer_Benchmark )", "#,0"),
+    ("Peer Revenue", "SUM ( Peer_Benchmark[net_revenue_vnd_bn] )", "#,0.0"),
+    ("Peer PAT Margin", "DIVIDE ( SUM ( Peer_Benchmark[profit_after_tax_vnd_bn] ), SUM ( Peer_Benchmark[net_revenue_vnd_bn] ) )", "0.0%"),
+    ("Peer CFO Conversion", "DIVIDE ( SUM ( Peer_Benchmark[operating_cash_flow_vnd_bn] ), SUM ( Peer_Benchmark[profit_after_tax_vnd_bn] ) )", "0.0x"),
+    ("Peer Review Queue Rows", "COUNTROWS ( Peer_Review_Queue )", "#,0"),
 ]
 
 
@@ -330,6 +460,8 @@ RELATIONSHIPS = [
     ("rel-marketing-channel", "Marketing", "channel_id", "Channel", "channel_id"),
     ("rel-promo-product", "Promotions", "sku_id", "Product", "sku_id"),
     ("rel-promo-channel", "Promotions", "channel_id", "Channel", "channel_id"),
+    ("rel-opex-calendar", "OPEX_Headcount", "period", "Calendar", "year_month"),
+    ("rel-capex-calendar", "CAPEX_Projects", "period", "Calendar", "year_month"),
 ]
 
 
@@ -385,6 +517,11 @@ def create_source_control(data_dir: Path) -> None:
         ["CTRL-03", "Budget and forecast sources separate", "PASS", "SIMULATED", "budget.csv | forecast.csv"],
         ["CTRL-04", "Refresh uses DataRoot parameter", "PASS", "CONTROL", "Power Query parameter"],
         ["CTRL-05", "True real-time requires DirectQuery", "OPEN", "ARCHITECTURE", "DirectQuery-compatible source"],
+        ["CTRL-06", "OPEX actual/budget/forecast bridge present", "PASS", "SIMULATED", "opex_headcount_planning_synthetic.csv"],
+        ["CTRL-07", "CAPEX commitment/cash/payback bridge present", "PASS", "SIMULATED", "capex_fixed_asset_planning_synthetic.csv"],
+        ["CTRL-08", "Peer benchmark rows are approved reported data", "PASS", "PUBLIC_REPORTED", "peer_benchmark_approved_2016_2025.csv"],
+        ["CTRL-09", "Unapproved peer candidates remain in review queue", "PASS", "CONTROL", "peer_extraction_queue.csv"],
+        ["CTRL-10", "Scenario selector is disconnected by design", "PASS", "CONTROL", "scenario_selector.csv"],
     ]
     path = data_dir / "source_control.csv"
     with path.open("w", newline="", encoding="utf-8") as handle:
@@ -467,6 +604,13 @@ def table_visual(name, x, y, z, columns, metrics, width=1200, height=220):
                   fields, {"Values": [{"queryRef": r} for r in refs]})
 
 
+def slicer_visual(name, x, y, z, table, column, width=280, height=55):
+    """A native slicer bound to a disconnected planning selector."""
+    ref = f"{table}.{column}"
+    return visual(name, "slicer", {"x": x, "y": y, "z": z, "width": width, "height": height},
+                  [("column", table, column)], {"Values": [{"queryRef": ref}]})
+
+
 def build_pages():
     pages = []
     page_specs = [
@@ -477,9 +621,15 @@ def build_pages():
             card("10000000000000000004", "CCC", 1000, 30, 4),
             chart("10000000000000000005", "lineChart", 40, 170, 5, ("Calendar", "year_month"), ["Net Revenue"], 600),
             chart("10000000000000000006", "clusteredBarChart", 660, 170, 6, ("Channel", "channel_type"), ["Contribution Margin"], 580),
-            table_visual("10000000000000000007", 40, 450, 7,
+            # A compact table selector is deliberately used instead of the
+            # newer slicer schema so the PBIT remains compatible with Desktop
+            # builds that do not expose the slicer visual in templates. A row
+            # click still cross-filters the disconnected scenario measure.
+            table_visual("10000000000000000008", 40, 420, 8,
+                         [("Scenario Selector", "scenario")], [], 280, 55),
+            table_visual("10000000000000000007", 40, 480, 7,
                          [("Customer", "customer_id"), ("Customer", "segment"), ("Customer", "region")],
-                         ["Net Revenue", "Contribution Margin"]),
+                         ["Net Revenue", "Contribution Margin", "Scenario Revenue", "EBITDA Proxy"]),
         ]),
         ("P&L and Variance", [
             card("20000000000000000001", "Gross Profit", 40, 30, 1),
@@ -489,7 +639,8 @@ def build_pages():
             chart("20000000000000000005", "lineChart", 40, 170, 5, ("Calendar", "year_month"),
                   ["Net Revenue", "Budget Revenue", "Forecast Revenue"], 1200),
             table_visual("20000000000000000006", 40, 450, 6, [("Calendar", "year_month")],
-                         ["Net Revenue", "Budget Revenue", "Forecast Revenue", "Revenue vs Budget"]),
+                         ["Net Revenue", "Budget Revenue", "Forecast Revenue", "Revenue vs Budget",
+                          "OPEX Actual", "OPEX Budget", "OPEX vs Budget", "Average Headcount"]),
         ]),
         ("PVM Bridge", [
             card("30000000000000000001", "Price Impact", 40, 30, 1),
@@ -527,7 +678,8 @@ def build_pages():
             chart("50000000000000000006", "lineChart", 660, 170, 6, ("Calendar", "year_month"),
                   ["Debt Balance", "Covenant Headroom"], 580),
             table_visual("50000000000000000007", 40, 450, 7, [("Calendar", "year_month")],
-                         ["Ending AR", "Ending Inventory", "Ending AP", "Debt Balance"]),
+                         ["Ending AR", "Ending Inventory", "Ending AP", "Debt Balance",
+                          "CAPEX Actual", "CAPEX Committed", "CAPEX Cash Payment", "CAPEX Payback Months"]),
         ]),
         ("Controls and Evidence", [
             card("60000000000000000001", "Sales Rows", 40, 30, 1),
@@ -537,7 +689,15 @@ def build_pages():
             table_visual("60000000000000000005", 40, 170, 5,
                          [("Source_Control", "control_id"), ("Source_Control", "control_name"),
                           ("Source_Control", "status"), ("Source_Control", "evidence_class"),
-                          ("Source_Control", "source_file")], [], 1200, 470),
+                          ("Source_Control", "source_file")], [], 580, 220),
+            table_visual("60000000000000000006", 660, 170, 6,
+                         [("Peer_Review_Queue", "ticker"), ("Peer_Review_Queue", "fiscal_year"),
+                          ("Peer_Review_Queue", "review_status"), ("Peer_Review_Queue", "source_document")],
+                         ["Peer Review Queue Rows"], 580, 220),
+            table_visual("60000000000000000007", 40, 410, 7,
+                         [("Peer_Benchmark", "company"), ("Peer_Benchmark", "ticker"),
+                          ("Peer_Benchmark", "fiscal_year"), ("Peer_Benchmark", "source_status")],
+                         ["Peer Revenue", "Peer PAT Margin", "Peer CFO Conversion"], 1200, 250),
         ]),
     ]
     for ordinal, (display_name, visuals) in enumerate(page_specs):

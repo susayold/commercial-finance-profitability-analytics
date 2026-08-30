@@ -1,0 +1,12 @@
+{
+  "name": "forecast_net_sales",
+  "dataType": "double",
+  "sourceColumn": "forecast_net_sales",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

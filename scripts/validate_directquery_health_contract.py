@@ -8,7 +8,7 @@ import json
 import re
 from pathlib import Path
 
-from build_powerbi_refreshable_project import TABLES
+from build_powerbi_refreshable_project import DIRECTQUERY_SOURCE_TABLES, TABLES
 
 
 def main() -> int:
@@ -36,7 +36,7 @@ def main() -> int:
     add("refresh control source is queried", "FROM finance.Refresh_Control" in sql)
     add("rejected count is returned", "COALESCE(rejected_row_count, 0) AS rejected_row_count" in sql)
     add("source row counts are returned", "COALESCE(source_row_count, 0) AS source_row_count" in sql)
-    add("all report table tie-outs are present", all(f"FROM finance.{table}" in sql for table in TABLES))
+    add("all report table tie-outs are present", all(f"FROM finance.{DIRECTQUERY_SOURCE_TABLES.get(table, table)}" in sql for table in TABLES))
 
     failed = [name for name, ok, _ in checks if not ok]
     result = {

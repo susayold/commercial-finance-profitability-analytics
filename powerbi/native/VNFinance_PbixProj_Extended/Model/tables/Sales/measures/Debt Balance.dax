@@ -1,0 +1,1 @@
+CALCULATE ( SUM ( Debt[closing_balance] ), LASTDATE ( Calendar[month] ) )

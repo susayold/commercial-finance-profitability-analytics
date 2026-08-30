@@ -1,0 +1,12 @@
+{
+  "name": "review_status",
+  "dataType": "string",
+  "sourceColumn": "review_status",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

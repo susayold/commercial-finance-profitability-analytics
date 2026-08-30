@@ -1,0 +1,12 @@
+{
+  "name": "budget_net_sales",
+  "dataType": "double",
+  "sourceColumn": "budget_net_sales",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "source_url",
+  "dataType": "string",
+  "sourceColumn": "source_url",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

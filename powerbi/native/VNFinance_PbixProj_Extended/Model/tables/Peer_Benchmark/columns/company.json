@@ -1,0 +1,12 @@
+{
+  "name": "company",
+  "dataType": "string",
+  "sourceColumn": "company",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

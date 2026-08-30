@@ -1,0 +1,77 @@
+table Budget
+	lineageTag: 50ca9af2-529c-47a4-af39-e1389641421e
+
+	column month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: month
+		lineageTag: 62c33854-19cc-49fd-9fb4-d931bb0d7226
+		annotation SummarizationSetBy = User
+
+	column sku_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: sku_id
+		lineageTag: 703a8cb9-ac66-4c30-9073-3619ac1092a9
+		annotation SummarizationSetBy = User
+
+	column channel_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel_id
+		lineageTag: 57a8836d-83b4-4eab-bf89-79c16a3c46b9
+		annotation SummarizationSetBy = User
+
+	column version
+		dataType: string
+		summarizeBy: none
+		sourceColumn: version
+		lineageTag: 028786cf-aa51-43e0-af41-118d960491c5
+		annotation SummarizationSetBy = User
+
+	column budget_units
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: budget_units
+		lineageTag: 9ffcb06e-76bb-49f9-b411-29b2c71e4f42
+		annotation SummarizationSetBy = User
+
+	column budget_net_sales
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: budget_net_sales
+		lineageTag: 959fd6c5-0a82-4e19-92d9-35adb536e784
+		annotation SummarizationSetBy = User
+
+	column budget_cogs
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: budget_cogs
+		lineageTag: 8ba7f461-2a33-413f-8789-317be28db849
+		annotation SummarizationSetBy = User
+
+	column budget_trade_spend
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: budget_trade_spend
+		lineageTag: 45c5a74e-8619-4452-af76-abd302cc787d
+		annotation SummarizationSetBy = User
+
+	column budget_opex
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: budget_opex
+		lineageTag: 7c2f3d85-6ffc-435a-93bc-f99188aa73dd
+		annotation SummarizationSetBy = User
+
+	partition Budget = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\budget.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"sku_id", type text}, {"channel_id", type text}, {"version", type text}, {"budget_units", Int64.Type}, {"budget_net_sales", type number}, {"budget_cogs", type number}, {"budget_trade_spend", type number}, {"budget_opex", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

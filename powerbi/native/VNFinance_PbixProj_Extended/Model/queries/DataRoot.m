@@ -1,0 +1,1 @@
+"C:\\VNFinancePowerBI\\data\\current" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]

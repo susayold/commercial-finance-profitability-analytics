@@ -1,0 +1,12 @@
+{
+  "name": "status",
+  "dataType": "string",
+  "sourceColumn": "status",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

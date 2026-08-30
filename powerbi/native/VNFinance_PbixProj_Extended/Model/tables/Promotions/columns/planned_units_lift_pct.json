@@ -1,0 +1,12 @@
+{
+  "name": "planned_units_lift_pct",
+  "dataType": "double",
+  "sourceColumn": "planned_units_lift_pct",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

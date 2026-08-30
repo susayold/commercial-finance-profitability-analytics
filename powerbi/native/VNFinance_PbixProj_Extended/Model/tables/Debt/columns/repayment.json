@@ -1,0 +1,12 @@
+{
+  "name": "repayment",
+  "dataType": "double",
+  "sourceColumn": "repayment",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

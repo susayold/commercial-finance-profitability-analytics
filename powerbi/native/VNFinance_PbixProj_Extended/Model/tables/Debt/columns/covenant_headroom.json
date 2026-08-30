@@ -1,0 +1,12 @@
+{
+  "name": "covenant_headroom",
+  "dataType": "double",
+  "sourceColumn": "covenant_headroom",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "status": "PASS",
+  "checks": 10,
+  "passed": 10,
+  "failed": [],
+  "canonical_files": [
+    "sales_fact.csv",
+    "commercial_costs.csv",
+    "inventory.csv",
+    "receivables.csv",
+    "payables.csv",
+    "debt.csv",
+    "budget.csv",
+    "forecast.csv",
+    "marketing_spend.csv",
+    "promotions.csv",
+    "product_master.csv",
+    "customer_master.csv",
+    "channel_master.csv",
+    "source_control.csv"
+  ],
+  "extended_files": [
+    "scenario_selector.csv",
+    "peer_benchmark_approved_2016_2025.csv",
+    "peer_extraction_queue.csv",
+    "opex_headcount_planning_synthetic.csv",
+    "capex_fixed_asset_planning_synthetic.csv"
+  ],
+  "architecture_files": [
+    "sales_fact.csv",
+    "commercial_costs.csv",
+    "inventory.csv",
+    "receivables.csv",
+    "payables.csv",
+    "debt.csv",
+    "budget.csv",
+    "forecast.csv",
+    "marketing_spend.csv",
+    "promotions.csv",
+    "product_master.csv",
+    "customer_master.csv",
+    "channel_master.csv",
+    "source_control.csv"
+  ],
+  "query_files": [
+    "budget.csv",
+    "channel_master.csv",
+    "commercial_costs.csv",
+    "customer_master.csv",
+    "debt.csv",
+    "forecast.csv",
+    "inventory.csv",
+    "marketing_spend.csv",
+    "payables.csv",
+    "product_master.csv",
+    "promotions.csv",
+    "receivables.csv",
+    "sales_fact.csv",
+    "source_control.csv",
+    "budget.csv",
+    "channel_master.csv",
+    "commercial_costs.csv",
+    "customer_master.csv",
+    "debt.csv",
+    "forecast.csv",
+    "inventory.csv",
+    "marketing_spend.csv",
+    "payables.csv",
+    "product_master.csv",
+    "promotions.csv",
+    "receivables.csv",
+    "sales_fact.csv",
+    "source_control.csv"
+  ],
+  "extended_query_files": [
+    "budget.csv",
+    "capex_fixed_asset_planning_synthetic.csv",
+    "channel_master.csv",
+    "commercial_costs.csv",
+    "customer_master.csv",
+    "debt.csv",
+    "forecast.csv",
+    "inventory.csv",
+    "marketing_spend.csv",
+    "opex_headcount_planning_synthetic.csv",
+    "payables.csv",
+    "peer_benchmark_approved_2016_2025.csv",
+    "peer_extraction_queue.csv",
+    "product_master.csv",
+    "promotions.csv",
+    "receivables.csv",
+    "sales_fact.csv",
+    "scenario_selector.csv",
+    "source_control.csv",
+    "budget.csv",
+    "capex_fixed_asset_planning_synthetic.csv",
+    "channel_master.csv",
+    "commercial_costs.csv",
+    "customer_master.csv",
+    "debt.csv",
+    "forecast.csv",
+    "inventory.csv",
+    "marketing_spend.csv",
+    "opex_headcount_planning_synthetic.csv",
+    "payables.csv",
+    "peer_benchmark_approved_2016_2025.csv",
+    "peer_extraction_queue.csv",
+    "product_master.csv",
+    "promotions.csv",
+    "receivables.csv",
+    "sales_fact.csv",
+    "scenario_selector.csv",
+    "source_control.csv"
+  ],
+  "fixture_csv_files": [
+    "budget.csv",
+    "capex_fixed_asset_planning_synthetic.csv",
+    "channel_master.csv",
+    "commercial_costs.csv",
+    "customer_master.csv",
+    "debt.csv",
+    "forecast.csv",
+    "inventory.csv",
+    "marketing_spend.csv",
+    "opex_headcount_planning_synthetic.csv",
+    "payables.csv",
+    "peer_benchmark_approved_2016_2025.csv",
+    "peer_extraction_queue.csv",
+    "product_master.csv",
+    "promotions.csv",
+    "receivables.csv",
+    "sales_fact.csv",
+    "scenario_selector.csv",
+    "source_control.csv"
+  ],
+  "evidence_boundary": "This validates the source/document contract only; it does not prove Desktop refresh or realtime APR.",
+  "evidence": [
+    {
+      "name": "canonical contract has 14 files",
+      "status": "PASS",
+      "detail": "14 files"
+    },
+    {
+      "name": "extended contract has five files",
+      "status": "PASS",
+      "detail": "5 files"
+    },
+    {
+      "name": "architecture runbook lists exactly the canonical files",
+      "status": "PASS",
+      "detail": "sales_fact.csv, commercial_costs.csv, inventory.csv, receivables.csv, payables.csv, debt.csv, budget.csv, forecast.csv, marketing_spend.csv, promotions.csv, product_master.csv, customer_master.csv, channel_master.csv, source_control.csv"
+    },
+    {
+      "name": "Power Query references exactly the canonical files",
+      "status": "PASS",
+      "detail": "budget.csv, channel_master.csv, commercial_costs.csv, customer_master.csv, debt.csv, forecast.csv, inventory.csv, marketing_spend.csv, payables.csv, product_master.csv, promotions.csv, receivables.csv, sales_fact.csv, source_control.csv"
+    },
+    {
+      "name": "PBIP and PbixProj query representations agree",
+      "status": "PASS",
+      "detail": "VNFinance_PBIP: 14; VNFinance_PbixProj: 14"
+    },
+    {
+      "name": "Each Power Query representation has unique DataRoot references",
+      "status": "PASS",
+      "detail": "VNFinance_PBIP: 14 refs; VNFinance_PbixProj: 14 refs"
+    },
+    {
+      "name": "committed fixture contains every canonical file",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "committed fixture contains every extended file",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "extended Power Query references all 19 files",
+      "status": "PASS",
+      "detail": "budget.csv, capex_fixed_asset_planning_synthetic.csv, channel_master.csv, commercial_costs.csv, customer_master.csv, debt.csv, forecast.csv, inventory.csv, marketing_spend.csv, opex_headcount_planning_synthetic.csv, payables.csv, peer_benchmark_approved_2016_2025.csv, peer_extraction_queue.csv, product_master.csv, promotions.csv, receivables.csv, sales_fact.csv, scenario_selector.csv, source_control.csv"
+    },
+    {
+      "name": "extended PBIP and PbixProj query representations agree",
+      "status": "PASS",
+      "detail": "VNFinance_PBIP_Extended: 19; VNFinance_PbixProj_Extended: 19"
+    }
+  ]
+}

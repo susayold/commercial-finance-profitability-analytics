@@ -1,0 +1,113 @@
+table Promotions
+	lineageTag: e4c53885-49ee-43eb-b21d-0600f20eb673
+
+	column promo_id
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: promo_id
+		lineageTag: 7df9aaf1-4f8b-4bf6-b673-44dc79883795
+		annotation SummarizationSetBy = User
+
+	column start_date
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: start_date
+		lineageTag: 52d2e5da-5962-4f46-b6fa-19e7e029e60f
+		annotation SummarizationSetBy = User
+
+	column end_date
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: end_date
+		lineageTag: d5f44899-8d09-45a0-994b-39dbb6616adf
+		annotation SummarizationSetBy = User
+
+	column channel_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel_id
+		lineageTag: 609343cb-946f-4776-87f4-936c16e40a18
+		annotation SummarizationSetBy = User
+
+	column sku_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: sku_id
+		lineageTag: 74e5d3a1-cfab-4962-8fde-dc31360eeb0b
+		annotation SummarizationSetBy = User
+
+	column mechanic
+		dataType: string
+		summarizeBy: none
+		sourceColumn: mechanic
+		lineageTag: e428c9c3-2c5e-4ce8-b8b8-488fb8923fed
+		annotation SummarizationSetBy = User
+
+	column planned_discount_pct
+		dataType: double
+		summarizeBy: none
+		sourceColumn: planned_discount_pct
+		lineageTag: ac0d980d-00e1-45df-a199-a3626ba99344
+		annotation SummarizationSetBy = User
+
+	column planned_units_lift_pct
+		dataType: double
+		summarizeBy: none
+		sourceColumn: planned_units_lift_pct
+		lineageTag: cabc259f-81a1-4538-920e-b2bf6f51c82d
+		annotation SummarizationSetBy = User
+
+	column actual_discount_pct
+		dataType: double
+		summarizeBy: none
+		sourceColumn: actual_discount_pct
+		lineageTag: 47cca70d-5cff-4bdf-8930-6a68844a9165
+		annotation SummarizationSetBy = User
+
+	column incremental_units
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: incremental_units
+		lineageTag: 25bc8714-faec-4c90-b965-3c6690d57eb1
+		annotation SummarizationSetBy = User
+
+	column baseline_units
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: baseline_units
+		lineageTag: 3f397f51-7da3-4c73-b106-ae79ee02c181
+		annotation SummarizationSetBy = User
+
+	column promo_spend
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: promo_spend
+		lineageTag: 832d214e-51c5-447c-9214-9d6250e30020
+		annotation SummarizationSetBy = User
+
+	column roi
+		dataType: double
+		summarizeBy: none
+		sourceColumn: roi
+		lineageTag: 00b8039a-bc4e-4869-bbf2-1b256211ffce
+		annotation SummarizationSetBy = User
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+		lineageTag: 98c412b6-10b2-4f5f-ac2d-abfb3f8588e9
+		annotation SummarizationSetBy = User
+
+	partition Promotions = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\promotions.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"promo_id", type text}, {"start_date", type date}, {"end_date", type date}, {"channel_id", type text}, {"sku_id", type text}, {"mechanic", type text}, {"planned_discount_pct", type number}, {"planned_units_lift_pct", type number}, {"actual_discount_pct", type number}, {"incremental_units", Int64.Type}, {"baseline_units", Int64.Type}, {"promo_spend", type number}, {"roi", type number}, {"status", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

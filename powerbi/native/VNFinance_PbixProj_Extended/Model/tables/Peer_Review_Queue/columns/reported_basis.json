@@ -1,0 +1,12 @@
+{
+  "name": "reported_basis",
+  "dataType": "string",
+  "sourceColumn": "reported_basis",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

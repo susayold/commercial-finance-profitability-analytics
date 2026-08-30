@@ -1,0 +1,12 @@
+{
+  "name": "unit_cost",
+  "dataType": "double",
+  "sourceColumn": "unit_cost",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

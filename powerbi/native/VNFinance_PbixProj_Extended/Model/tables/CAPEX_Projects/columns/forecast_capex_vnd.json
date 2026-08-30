@@ -1,0 +1,12 @@
+{
+  "name": "forecast_capex_vnd",
+  "dataType": "double",
+  "sourceColumn": "forecast_capex_vnd",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

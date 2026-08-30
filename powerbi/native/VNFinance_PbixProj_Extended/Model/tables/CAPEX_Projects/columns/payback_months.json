@@ -1,0 +1,12 @@
+{
+  "name": "payback_months",
+  "dataType": "double",
+  "sourceColumn": "payback_months",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

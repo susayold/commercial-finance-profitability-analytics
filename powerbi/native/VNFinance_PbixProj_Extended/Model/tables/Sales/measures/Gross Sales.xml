@@ -1,0 +1,3 @@
+<Measure Name="Gross Sales">
+  <FormatString>#,0,,.0 M</FormatString>
+</Measure>

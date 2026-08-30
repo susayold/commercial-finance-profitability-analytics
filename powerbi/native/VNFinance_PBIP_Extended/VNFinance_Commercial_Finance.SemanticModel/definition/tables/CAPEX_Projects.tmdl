@@ -1,0 +1,154 @@
+table CAPEX_Projects
+	lineageTag: 1eeb8d34-1fa3-4bd1-9d38-9dcf5432f640
+
+	column period
+		dataType: string
+		summarizeBy: none
+		sourceColumn: period
+		lineageTag: facec539-bb67-4922-9d44-45a50f940cee
+		annotation SummarizationSetBy = User
+
+	column project_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: project_id
+		lineageTag: 72631099-165c-4037-b68e-1b407d8b91c6
+		annotation SummarizationSetBy = User
+
+	column cost_center
+		dataType: string
+		summarizeBy: none
+		sourceColumn: cost_center
+		lineageTag: 36f6263f-6dc1-4db6-8a98-0be49afa7675
+		annotation SummarizationSetBy = User
+
+	column capex_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: capex_type
+		lineageTag: 4872883f-2cab-443c-9eef-fe422cc2ede4
+		annotation SummarizationSetBy = User
+
+	column approval_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: approval_status
+		lineageTag: c5871992-88c2-4ef9-9e7e-6748a1162050
+		annotation SummarizationSetBy = User
+
+	column budget_capex_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: budget_capex_vnd
+		lineageTag: 81db1022-f7a5-408d-85b9-d9a0c8cd4209
+		annotation SummarizationSetBy = User
+
+	column actual_capex_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: actual_capex_vnd
+		lineageTag: 6842ccdc-a261-4ace-9692-9a0058e5bdc4
+		annotation SummarizationSetBy = User
+
+	column forecast_capex_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: forecast_capex_vnd
+		lineageTag: afe5f29c-6a9d-45d6-9e1d-d701c88a3c44
+		annotation SummarizationSetBy = User
+
+	column committed_capex_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: committed_capex_vnd
+		lineageTag: 16fa90b9-5499-455d-bfd9-953e74bb3482
+		annotation SummarizationSetBy = User
+
+	column asset_cost_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: asset_cost_vnd
+		lineageTag: db1e325b-7345-4127-9ee1-aff80df817d1
+		annotation SummarizationSetBy = User
+
+	column in_service_period
+		dataType: string
+		summarizeBy: none
+		sourceColumn: in_service_period
+		lineageTag: d8ae5a6a-8530-4048-ac66-2a513a9c90c6
+		annotation SummarizationSetBy = User
+
+	column useful_life_months
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: useful_life_months
+		lineageTag: d660a39e-6924-4894-b964-adbde42d9c49
+		annotation SummarizationSetBy = User
+
+	column depreciation_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: depreciation_vnd
+		lineageTag: 282d4e32-77c1-4ad3-807e-9f6bab8780ee
+		annotation SummarizationSetBy = User
+
+	column expected_annual_contribution_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: expected_annual_contribution_vnd
+		lineageTag: 1f537833-b00a-4ed9-aa90-d42a7cc9b9d9
+		annotation SummarizationSetBy = User
+
+	column payback_months
+		dataType: double
+		summarizeBy: none
+		sourceColumn: payback_months
+		lineageTag: e35923b2-0d4b-4649-8207-060766bd58dc
+		annotation SummarizationSetBy = User
+
+	column cash_payment_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: cash_payment_vnd
+		lineageTag: 62aaf995-2257-4f3f-9b67-0126461fe146
+		annotation SummarizationSetBy = User
+
+	column budget_variance_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: budget_variance_vnd
+		lineageTag: a37fb087-f1df-46de-b56f-42c0e1cbae5d
+		annotation SummarizationSetBy = User
+
+	column forecast_variance_vnd
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: forecast_variance_vnd
+		lineageTag: ba25b8c1-2665-4295-bd9e-79586f56aee4
+		annotation SummarizationSetBy = User
+
+	column evidence_class
+		dataType: string
+		summarizeBy: none
+		sourceColumn: evidence_class
+		lineageTag: 95f6c1b6-0ad8-4482-93e5-03f23f25a5df
+		annotation SummarizationSetBy = User
+
+	column source_system
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_system
+		lineageTag: d8ee8c66-a273-4c70-8fc6-d0013b6c3a7f
+		annotation SummarizationSetBy = User
+
+	partition CAPEX_Projects = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\capex_fixed_asset_planning_synthetic.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"period", type text}, {"project_id", type text}, {"cost_center", type text}, {"capex_type", type text}, {"approval_status", type text}, {"budget_capex_vnd", type number}, {"actual_capex_vnd", type number}, {"forecast_capex_vnd", type number}, {"committed_capex_vnd", type number}, {"asset_cost_vnd", type number}, {"in_service_period", type text}, {"useful_life_months", Int64.Type}, {"depreciation_vnd", type number}, {"expected_annual_contribution_vnd", type number}, {"payback_months", type number}, {"cash_payment_vnd", type number}, {"budget_variance_vnd", type number}, {"forecast_variance_vnd", type number}, {"evidence_class", type text}, {"source_system", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

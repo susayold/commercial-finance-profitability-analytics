@@ -8,14 +8,14 @@ import json
 import re
 from pathlib import Path
 
-from build_powerbi_refreshable_project import TABLES
+from build_powerbi_refreshable_project import DIRECTQUERY_SOURCE_TABLES, TABLES
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--contract", type=Path, default=Path("powerbi/directquery/DIRECTQUERY_MIGRATION_CONTRACT.json"))
     parser.add_argument("--schema", type=Path, default=Path("powerbi/directquery/VNFinance_DirectQuery_Schema.sql"))
-    parser.add_argument("--pbip-tables", type=Path, default=Path("powerbi/native/VNFinance_PBIP/VNFinance_Commercial_Finance.SemanticModel/definition/tables"))
+    parser.add_argument("--pbip-tables", type=Path, default=Path("powerbi/native/VNFinance_PBIP_Extended/VNFinance_Commercial_Finance.SemanticModel/definition/tables"))
     args = parser.parse_args()
 
     contract = json.loads(args.contract.read_text(encoding="utf-8"))
@@ -42,7 +42,7 @@ def main() -> int:
     add("key columns are explicit", all(isinstance(item.get("key_columns"), list) and item["key_columns"] for item in mappings))
 
     declarations = set(re.findall(r"IF OBJECT_ID\(N'finance\.([^']+)', N'U'\)", ddl))
-    expected_sources = {f"finance.{name}" for name in expected}
+    expected_sources = {f"finance.{DIRECTQUERY_SOURCE_TABLES.get(name, name)}" for name in expected}
     add("all mapped sources are declared in DDL", set(sources) <= {f"finance.{name}" for name in declarations})
     add("DDL has no missing report sources", expected_sources <= {f"finance.{name}" for name in declarations})
     add("Refresh_Control is declared", "finance.Refresh_Control" in {f"finance.{name}" for name in declarations})
@@ -51,7 +51,7 @@ def main() -> int:
     add("PBIP table files match mapping", pbip_files == set(expected), f"{len(pbip_files)} PBIP table files")
 
     preserve = contract.get("preserve", {})
-    add("preservation counts are explicit", preserve.get("measure_count") == 37 and preserve.get("relationship_count") == 23 and preserve.get("report_page_count") == 6 and preserve.get("visual_container_count") == 39)
+    add("preservation counts are explicit", preserve.get("measure_count") == 60 and preserve.get("relationship_count") == 25 and preserve.get("report_page_count") == 6 and preserve.get("visual_container_count") == 42)
     control = contract.get("operational_control", {})
     required_control = {"batch_id", "status", "source_watermark_utc", "load_completed_utc", "source_row_count", "loaded_row_count", "rejected_row_count", "source_hash_sha256"}
     add("operational freshness fields are explicit", required_control <= set(control.get("required_fields", [])))

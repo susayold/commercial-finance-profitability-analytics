@@ -1,0 +1,12 @@
+{
+  "name": "source_layer",
+  "dataType": "string",
+  "sourceColumn": "source_layer",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

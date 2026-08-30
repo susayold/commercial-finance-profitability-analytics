@@ -1,0 +1,12 @@
+{
+  "name": "region",
+  "dataType": "string",
+  "sourceColumn": "region",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

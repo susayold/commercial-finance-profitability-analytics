@@ -1,0 +1,12 @@
+{
+  "name": "exits",
+  "dataType": "int64",
+  "sourceColumn": "exits",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

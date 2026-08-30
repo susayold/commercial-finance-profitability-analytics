@@ -11,6 +11,7 @@ from pathlib import Path
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", type=Path, default=Path("."))
+    parser.add_argument("--pbip-root", type=Path, default=None, help="PBIP root whose Import/DataRoot partitions should be checked")
     parser.add_argument("--report", type=Path)
     args = parser.parse_args()
     root = args.repo_root.resolve()
@@ -21,7 +22,7 @@ def main() -> int:
 
     readiness_path = root / "powerbi" / "DIRECTQUERY_READINESS.json"
     manifest_path = root / "powerbi" / "PBIP_SOURCE_MANIFEST.json"
-    semantic_root = root / "powerbi" / "native" / "VNFinance_PBIP" / "VNFinance_Commercial_Finance.SemanticModel"
+    semantic_root = (args.pbip_root or (root / "powerbi" / "native" / "VNFinance_PBIP")).resolve() / "VNFinance_Commercial_Finance.SemanticModel"
     runbook_path = root / "powerbi" / "POWER_BI_DESKTOP_RUNBOOK.md"
     release_path = root / "reports" / "POWER_BI_REFRESHABLE_RELEASE_2026-08-30.md"
     boundary_path = root / "powerbi" / "POWER_BI_NATIVE_BINARY_BOUNDARY.md"
@@ -69,8 +70,10 @@ def main() -> int:
         text = path.read_text(encoding="utf-8")
         import_count += text.count("mode: import")
         data_root_refs += text.count("File.Contents(DataRoot &")
-    add("All CSV partitions remain Import mode", import_count == 15, str(import_count))
-    add("All 14 CSV partitions use DataRoot", data_root_refs == 14, str(data_root_refs))
+    calendar_partitions = sum(1 for path in tmdl_files if path.stem == "Calendar")
+    csv_partitions = import_count - calendar_partitions
+    add("All CSV partitions remain Import mode", csv_partitions > 0 and data_root_refs == csv_partitions, f"{csv_partitions} CSV Import; {data_root_refs} DataRoot; {calendar_partitions} calculated Calendar")
+    add(f"All {csv_partitions} CSV partitions use DataRoot", data_root_refs == csv_partitions, str(data_root_refs))
 
     runbook = runbook_path.read_text(encoding="utf-8") if runbook_path.exists() else ""
     release = release_path.read_text(encoding="utf-8") if release_path.exists() else ""

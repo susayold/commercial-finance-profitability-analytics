@@ -1,0 +1,3 @@
+<Measure Name="Refresh Timestamp">
+  <FormatString>yyyy-mm-dd hh:mm:ss</FormatString>
+</Measure>

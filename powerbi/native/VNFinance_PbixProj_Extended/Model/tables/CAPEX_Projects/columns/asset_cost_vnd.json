@@ -1,0 +1,12 @@
+{
+  "name": "asset_cost_vnd",
+  "dataType": "double",
+  "sourceColumn": "asset_cost_vnd",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

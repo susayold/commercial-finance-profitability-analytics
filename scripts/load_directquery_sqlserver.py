@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Load the 14-file finance fixture into the DirectQuery source contract.
+"""Load the 19-file finance fixture into the DirectQuery source contract.
 
 The default mode is a side-effect-free dry run. ``--apply`` is deliberately
 explicit because it replaces the report-facing tables in one transaction.
@@ -20,7 +20,7 @@ from decimal import Decimal
 from pathlib import Path
 from typing import Any
 
-from build_powerbi_refreshable_project import TABLES
+from build_powerbi_refreshable_project import DIRECTQUERY_SOURCE_TABLES, TABLES
 
 
 TABLE_ORDER = [name for name, spec in TABLES.items() if spec.get("file")]
@@ -31,6 +31,10 @@ def qident(value: str) -> str:
     if not value or any(ch not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_" for ch in value):
         raise ValueError(f"unsafe SQL identifier: {value!r}")
     return f"[{value}]"
+
+
+def source_table(table: str) -> str:
+    return DIRECTQUERY_SOURCE_TABLES.get(table, table)
 
 
 def parse_value(raw: str, kind: str) -> Any:
@@ -134,11 +138,11 @@ def apply_load(connection_string: str, manifest: list[dict[str, Any]], rows_by_t
         # Delete in an explicit, deterministic order. The migration DDL has no
         # FK constraints yet; DELETE is safer than TRUNCATE if one is added.
         for table in TABLE_ORDER:
-            cursor.execute(f"DELETE FROM [finance].{qident(table)}")
+            cursor.execute(f"DELETE FROM [finance].{qident(source_table(table))}")
         for table in TABLE_ORDER:
             columns = [column for column, _, _ in TABLES[table]["columns"]]
             placeholders = ",".join("?" for _ in columns)
-            sql = f"INSERT INTO [finance].{qident(table)} ({','.join(qident(c) for c in columns)}) VALUES ({placeholders})"
+            sql = f"INSERT INTO [finance].{qident(source_table(table))} ({','.join(qident(c) for c in columns)}) VALUES ({placeholders})"
             cursor.fast_executemany = True
             cursor.executemany(sql, rows_by_table[table])
 
@@ -148,7 +152,7 @@ def apply_load(connection_string: str, manifest: list[dict[str, Any]], rows_by_t
             "SELECT DISTINCT [month], YEAR([month]), CONCAT(N'Q', DATEPART(QUARTER,[month])), MONTH([month]), CONVERT(nvarchar(20),[month],126) "
             "FROM [finance].[Sales]"
         )
-        cursor.execute("SELECT COALESCE(SUM(row_count),0) FROM (" + " UNION ALL ".join(f"SELECT COUNT_BIG(*) AS row_count FROM [finance].{qident(t)}" for t in TABLE_ORDER) + ") AS counts")
+        cursor.execute("SELECT COALESCE(SUM(row_count),0) FROM (" + " UNION ALL ".join(f"SELECT COUNT_BIG(*) AS row_count FROM [finance].{qident(source_table(t))}" for t in TABLE_ORDER) + ") AS counts")
         loaded_rows = int(cursor.fetchone()[0])
         completed = datetime.now(timezone.utc).replace(tzinfo=None)
         cursor.execute(

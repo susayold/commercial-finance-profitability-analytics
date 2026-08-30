@@ -1,0 +1,3 @@
+<Measure Name="Sales Rows">
+  <FormatString>#,0</FormatString>
+</Measure>

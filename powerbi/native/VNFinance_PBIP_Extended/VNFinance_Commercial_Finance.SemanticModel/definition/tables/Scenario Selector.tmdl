@@ -1,0 +1,22 @@
+table 'Scenario Selector'
+	lineageTag: 4bea8ac0-1c4a-4244-bef3-5aeef9a98d9f
+
+	column scenario
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: scenario
+		lineageTag: 67c6eafb-68c7-449e-a3a7-cc8d359dbed1
+		annotation SummarizationSetBy = User
+
+	partition 'Scenario Selector' = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\scenario_selector.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"scenario", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

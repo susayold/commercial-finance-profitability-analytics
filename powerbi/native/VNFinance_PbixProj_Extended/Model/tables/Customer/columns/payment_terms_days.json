@@ -1,0 +1,12 @@
+{
+  "name": "payment_terms_days",
+  "dataType": "int64",
+  "sourceColumn": "payment_terms_days",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

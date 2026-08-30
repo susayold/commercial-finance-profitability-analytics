@@ -1,0 +1,12 @@
+{
+  "name": "reviewer_note",
+  "dataType": "string",
+  "sourceColumn": "reviewer_note",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

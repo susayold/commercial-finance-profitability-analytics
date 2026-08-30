@@ -18,17 +18,17 @@ This folder is the production migration path for automatic Power BI page refresh
 - `../DIRECTQUERY_READINESS.json`: machine-readable migration gates and ownership fields.
 - `../docs/POWER_BI_REFRESH_ARCHITECTURE.md`: current Import contract and claim boundary.
 - `PRODUCTION_ACCEPTANCE_MATRIX.md`: gate-by-gate cloud, Desktop, Service and Automatic Page Refresh acceptance criteria.
-- `DIRECTQUERY_MIGRATION_CONTRACT.json`: explicit 15-table Import-to-DirectQuery mapping, runtime connection contract, freshness fields and preservation counts.
+- `DIRECTQUERY_MIGRATION_CONTRACT.json`: explicit 20-table Import-to-DirectQuery mapping (the compact 15-table baseline plus five planning/evidence tables), runtime connection contract, freshness fields and preservation counts.
 - `../../scripts/validate_directquery_mapping.py`: structural check that the mapping, DDL declarations and PBIP table files agree before a Desktop migration.
 
 ## Migration sequence
 
 1. Provision a controlled Azure SQL Database or Fabric Warehouse. Do not use a personal laptop database for a portfolio production claim.
 2. Run the DDL once in a non-production schema, review decimal precision, and grant the Power BI service account read-only access.
-3. On a controlled loader host, run `python scripts/load_directquery_sqlserver.py --input-dir powerbi/data/current` first. Review the JSON row-count/hash evidence, then rerun with `--apply --connection-string ...` (or `VNFINANCE_SQL_CONNECTION`) to replace all 14 tables in one transaction. The loader records the batch and UTC watermark in `finance.Refresh_Control`; no secret is stored in GitHub.
+3. On a controlled loader host, run `python scripts/load_directquery_sqlserver.py --input-dir powerbi/data/current` first. Review the JSON row-count/hash evidence, then rerun with `--apply --connection-string ...` (or `VNFINANCE_SQL_CONNECTION`) to replace all 19 CSV-backed tables in one transaction. The loader records the batch and UTC watermark in `finance.Refresh_Control`; no secret is stored in GitHub.
 4. For Azure SQL/Fabric, use the same table contract through ADF/Fabric Data Factory/dbt or an approved bulk-load pipeline; the local `pyodbc` loader is a SQL Server-compatible reference implementation, not a claim that a personal laptop is production.
 5. Reconcile row counts, net revenue, COGS, contribution margin and closing working-capital balances against the Import package before switching the report. Run `VNFinance_DirectQuery_Health.sql` and retain the output.
-6. In Power BI Desktop, duplicate the report, connect each table using **DirectQuery**, preserve the existing table names and relationships, and replace the Import partitions. The DAX/page layer should remain unchanged.
+6. In Power BI Desktop, duplicate the extended report (`powerbi/native/VNFinance_PBIP_Extended`), connect each of the 20 report tables using **DirectQuery**, preserve the existing table names and relationships, and replace the Import partitions. The DAX/page layer should remain unchanged.
 7. Publish to a workspace with an appropriate capacity, configure the data-source credentials and gateway/private endpoint as required, then enable Automatic Page Refresh on the Executive Output page.
 8. Measure p50/p95 visual query latency, source CPU, refresh failure rate and data freshness. Set the page interval from observed capacity—not from a portfolio assumption.
 9. Run the native QA-01–QA-18 matrix plus a two-user concurrency test. Only then change `native_desktop_qa` and `realtime_status` from `PENDING` to an evidence-backed status.

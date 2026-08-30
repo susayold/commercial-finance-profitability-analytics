@@ -8,7 +8,7 @@ import json
 import re
 from pathlib import Path
 
-from build_powerbi_refreshable_project import TABLES
+from build_powerbi_refreshable_project import DIRECTQUERY_SOURCE_TABLES, TABLES
 
 
 def main() -> int:
@@ -34,8 +34,8 @@ def main() -> int:
     add("status is gated", readiness.get("status") == "READY_FOR_DATABASE_PROVISIONING", readiness.get("status", ""))
     add("current mode is Import", readiness.get("current_report_mode") == "Import_replace_and_refresh")
     add("target mode is DirectQuery", readiness.get("target_report_mode") == "DirectQuery_with_Automatic_Page_Refresh")
-    add("physical CSV table count", readiness.get("source_contract", {}).get("physical_csv_tables") == 14)
-    add("report table count", readiness.get("source_contract", {}).get("report_tables") == 15)
+    add("physical CSV table count", readiness.get("source_contract", {}).get("physical_csv_tables") == 19)
+    add("report table count", readiness.get("source_contract", {}).get("report_tables") == 20)
     add("table-name preservation", readiness.get("source_contract", {}).get("preserve_table_names") is True)
     add("column-name preservation", readiness.get("source_contract", {}).get("preserve_column_names") is True)
     add("required gates present", len(readiness.get("required_external_gates", [])) >= 6)
@@ -50,12 +50,13 @@ def main() -> int:
     add("loader records source hash", "source_hash_sha256" in loader)
     add("health runner is credential-safe", "SQLCMDPASSWORD" in health_runner and "Password" in health_runner and "sqlcmd" in health_runner)
 
-    expected_tables = ["Calendar", *TABLES.keys()]
+    expected_tables = ["Calendar", *[DIRECTQUERY_SOURCE_TABLES.get(name, name) for name in TABLES]]
     declarations = re.findall(r"IF OBJECT_ID\(N'finance\.([^']+)', N'U'\)", ddl)
     add("all report tables declared", set(expected_tables) <= set(declarations), f"{len(set(declarations))} declarations")
     allowed_tables = set(expected_tables) | {"Refresh_Control"}
     add("no unexpected table names", set(declarations) <= allowed_tables, ", ".join(sorted(set(declarations) - allowed_tables)) or "none")
     for table, spec in TABLES.items():
+        table = DIRECTQUERY_SOURCE_TABLES.get(table, table)
         expected_columns = [name for name, _, _ in spec["columns"]]
         if table == "Calendar":
             continue

@@ -1,5 +1,5 @@
 {
-  "contract_version": "1.0",
+  "contract_version": "1.1",
   "current_report_mode": "Import_replace_and_refresh",
   "target_report_mode": "DirectQuery_with_Automatic_Page_Refresh",
   "schema": "finance",
@@ -12,10 +12,10 @@
   "preserve": {
     "table_names": true,
     "column_names": true,
-    "measure_count": 37,
-    "relationship_count": 23,
+    "measure_count": 60,
+    "relationship_count": 25,
     "report_page_count": 6,
-    "visual_container_count": 39
+    "visual_container_count": 42
   },
   "tables": [
     {"report_table": "Calendar", "source_table": "finance.Calendar", "role": "dimension", "storage_mode": "DirectQuery", "key_columns": ["month"], "materialization": "warehouse_derived_from_sales_month"},
@@ -32,7 +32,12 @@
     {"report_table": "Forecast", "source_table": "finance.Forecast", "role": "fact", "storage_mode": "DirectQuery", "key_columns": ["snapshot_month", "target_month", "sku_id", "channel_id", "forecast_version"]},
     {"report_table": "Marketing", "source_table": "finance.Marketing", "role": "fact", "storage_mode": "DirectQuery", "key_columns": ["month", "channel_id", "campaign_id"]},
     {"report_table": "Promotions", "source_table": "finance.Promotions", "role": "fact", "storage_mode": "DirectQuery", "key_columns": ["promo_id"]},
-    {"report_table": "Source_Control", "source_table": "finance.Source_Control", "role": "control_dimension", "storage_mode": "DirectQuery", "key_columns": ["control_id"]}
+    {"report_table": "Source_Control", "source_table": "finance.Source_Control", "role": "control_dimension", "storage_mode": "DirectQuery", "key_columns": ["control_id"]},
+    {"report_table": "Scenario Selector", "source_table": "finance.Scenario_Selector", "role": "disconnected_dimension", "storage_mode": "DirectQuery", "key_columns": ["scenario"]},
+    {"report_table": "Peer_Benchmark", "source_table": "finance.Peer_Benchmark", "role": "evidence_fact", "storage_mode": "DirectQuery", "key_columns": ["ticker", "fiscal_year"]},
+    {"report_table": "Peer_Review_Queue", "source_table": "finance.Peer_Review_Queue", "role": "review_control", "storage_mode": "DirectQuery", "key_columns": ["ticker", "fiscal_year"]},
+    {"report_table": "OPEX_Headcount", "source_table": "finance.OPEX_Headcount", "role": "planning_fact", "storage_mode": "DirectQuery", "key_columns": ["period", "cost_center"]},
+    {"report_table": "CAPEX_Projects", "source_table": "finance.CAPEX_Projects", "role": "planning_fact", "storage_mode": "DirectQuery", "key_columns": ["period", "project_id"]}
   ],
   "operational_control": {
     "source_table": "finance.Refresh_Control",
@@ -45,7 +50,7 @@
   },
   "migration_acceptance": [
     "Run the input-contract and finance tie-out checks against the same batch used by Import.",
-    "Replace the 14 CSV partitions with DirectQuery tables in the duplicate report; do not rename fields or measures.",
+    "Replace the 19 CSV partitions with DirectQuery tables in the duplicate report; do not rename fields or measures.",
     "Verify the Controls and Evidence page reads the latest Refresh_Control batch and watermark.",
     "Measure p50 and p95 visual query latency before selecting an Automatic Page Refresh interval.",
     "Run QA-01 through QA-18, a changed-batch test and a two-user concurrency test before promoting the realtime claim."

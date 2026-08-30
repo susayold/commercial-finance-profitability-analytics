@@ -1,0 +1,77 @@
+table Debt
+	lineageTag: fb661adf-1275-4914-9049-2e3845752d66
+
+	column month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: month
+		lineageTag: dc3f2fd0-39f6-4794-b334-8c059fd5f39a
+		annotation SummarizationSetBy = User
+
+	column facility_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: facility_id
+		lineageTag: ff0531d6-4f34-4116-ab6c-b5dac6efdfd4
+		annotation SummarizationSetBy = User
+
+	column opening_balance
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: opening_balance
+		lineageTag: 29736ec9-4d74-4f7c-9e6e-337162de31c6
+		annotation SummarizationSetBy = User
+
+	column drawdown
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: drawdown
+		lineageTag: c441aac0-7e41-4178-8cc0-50e2739b4135
+		annotation SummarizationSetBy = User
+
+	column repayment
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: repayment
+		lineageTag: 67f748a3-f1d0-43c8-8c8e-e9645217400b
+		annotation SummarizationSetBy = User
+
+	column closing_balance
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: closing_balance
+		lineageTag: ae1b631e-5b3f-415c-83ff-a44fef9c9760
+		annotation SummarizationSetBy = User
+
+	column interest_rate
+		dataType: double
+		summarizeBy: none
+		sourceColumn: interest_rate
+		lineageTag: bc030bdd-84cb-4eab-85d4-3ce7613b6d25
+		annotation SummarizationSetBy = User
+
+	column interest_expense
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: interest_expense
+		lineageTag: 0cd93ec1-1302-4cef-9ec6-4b685f3da228
+		annotation SummarizationSetBy = User
+
+	column covenant_headroom
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: covenant_headroom
+		lineageTag: f6afb1d3-c3ab-4456-acb0-23356944fe58
+		annotation SummarizationSetBy = User
+
+	partition Debt = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\debt.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"facility_id", type text}, {"opening_balance", type number}, {"drawdown", type number}, {"repayment", type number}, {"closing_balance", type number}, {"interest_rate", type number}, {"interest_expense", type number}, {"covenant_headroom", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

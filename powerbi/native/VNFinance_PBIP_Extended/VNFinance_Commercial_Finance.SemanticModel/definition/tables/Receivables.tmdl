@@ -1,0 +1,91 @@
+table Receivables
+	lineageTag: 1a5d2a1f-dd90-4671-a5c8-82f21ad2b1e7
+
+	column month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: month
+		lineageTag: 78b1a568-536f-4285-8612-df3afb85ad3e
+		annotation SummarizationSetBy = User
+
+	column customer_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: customer_id
+		lineageTag: 73f49813-4797-494a-8bcf-d2ec0b3fdb6a
+		annotation SummarizationSetBy = User
+
+	column opening_ar
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: opening_ar
+		lineageTag: 1760eb31-af67-4392-a874-3f8ff94bfdf2
+		annotation SummarizationSetBy = User
+
+	column invoiced
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: invoiced
+		lineageTag: 3a986c3b-b662-4074-a99a-c1ea7d1edff4
+		annotation SummarizationSetBy = User
+
+	column cash_collected
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: cash_collected
+		lineageTag: 18ad6512-8b92-481e-9846-905af9c75738
+		annotation SummarizationSetBy = User
+
+	column credit_note
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: credit_note
+		lineageTag: 54341aff-4ce7-4fd9-9026-d6c8af30bf02
+		annotation SummarizationSetBy = User
+
+	column closing_ar
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: closing_ar
+		lineageTag: 9ad7caee-ddfc-4925-b75e-654d925dff62
+		annotation SummarizationSetBy = User
+
+	column overdue_0_30
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: overdue_0_30
+		lineageTag: ff1be344-029f-44d4-b56a-0113f3815480
+		annotation SummarizationSetBy = User
+
+	column overdue_31_60
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: overdue_31_60
+		lineageTag: fbd60754-db42-4971-ac77-e2343b821874
+		annotation SummarizationSetBy = User
+
+	column overdue_61_plus
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: overdue_61_plus
+		lineageTag: 0fe4356e-9d41-496d-ac9a-972696a9a35e
+		annotation SummarizationSetBy = User
+
+	column dso
+		dataType: double
+		summarizeBy: none
+		sourceColumn: dso
+		lineageTag: cda7de69-72d9-485f-93fb-4aabb0f9c2c5
+		annotation SummarizationSetBy = User
+
+	partition Receivables = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\receivables.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"customer_id", type text}, {"opening_ar", type number}, {"invoiced", type number}, {"cash_collected", type number}, {"credit_note", type number}, {"closing_ar", type number}, {"overdue_0_30", type number}, {"overdue_31_60", type number}, {"overdue_61_plus", type number}, {"dso", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

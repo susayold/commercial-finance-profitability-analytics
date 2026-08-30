@@ -1,0 +1,12 @@
+{
+  "name": "avg_salary_vnd",
+  "dataType": "double",
+  "sourceColumn": "avg_salary_vnd",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

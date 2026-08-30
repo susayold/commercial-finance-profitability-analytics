@@ -1,0 +1,50 @@
+table Source_Control
+	lineageTag: 10198b1c-8a1c-4565-a7c5-5540f61a390c
+
+	column control_id
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: control_id
+		lineageTag: 67454ee0-4695-4742-b671-e0106ae73c04
+		annotation SummarizationSetBy = User
+
+	column control_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: control_name
+		lineageTag: 7743d56d-096d-4c9a-9637-e28a5b0c538c
+		annotation SummarizationSetBy = User
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+		lineageTag: 9db3406d-e89d-49b4-9530-608d3c88e3d5
+		annotation SummarizationSetBy = User
+
+	column evidence_class
+		dataType: string
+		summarizeBy: none
+		sourceColumn: evidence_class
+		lineageTag: 4d42aa09-1e56-464a-812f-edb79c9744fc
+		annotation SummarizationSetBy = User
+
+	column source_file
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_file
+		lineageTag: 023511ef-d1a1-42d1-8ec3-ea02a00202d2
+		annotation SummarizationSetBy = User
+
+	partition Source_Control = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\source_control.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"control_id", type text}, {"control_name", type text}, {"status", type text}, {"evidence_class", type text}, {"source_file", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

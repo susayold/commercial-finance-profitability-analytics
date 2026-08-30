@@ -1,0 +1,12 @@
+{
+  "name": "required_metrics",
+  "dataType": "string",
+  "sourceColumn": "required_metrics",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

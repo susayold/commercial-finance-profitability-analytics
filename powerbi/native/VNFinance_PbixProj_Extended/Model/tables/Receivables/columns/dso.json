@@ -1,0 +1,12 @@
+{
+  "name": "dso",
+  "dataType": "double",
+  "sourceColumn": "dso",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

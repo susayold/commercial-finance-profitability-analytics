@@ -22,14 +22,34 @@ The repository now includes generated native source under `powerbi/native/`, the
 - `reports/POWER_BI_NATIVE_QA_PARTIAL_EVIDENCE_2026-08-31.md` maps each QA-01–QA-18 row to observed page/source evidence or an explicit remaining gap; it is not a substitute for formal sign-off.
 - `reports/POWER_BI_WATCHER_TWO_BATCH_QA_2026-08-31.md` records a two-batch watcher test where the contract hash changed and the target DataRoot updated from 121 to 122 units.
 - See `docs/POWER_BI_REFRESH_ARCHITECTURE.md` for the exact refresh contract and the DirectQuery path for true real-time behavior.
+
+## Extended finance-analyst scope
+
+The compact baseline above remains the observed native PBIX binary. The full
+finance-analyst planning/evidence build is delivered as a separately validated,
+editable package so its wider schema cannot be confused with the baseline
+binary:
+
+- Open `powerbi/native/VNFinance_PBIP_Extended/VNFinance_Commercial_Finance.pbip`
+  or `powerbi/releases/Commercial_Finance_Profitability_Analytics_extended.pbit`.
+- Bind the same `DataRoot` parameter to a **19-file** drop. The five additions
+  are Scenario Selector, OPEX/headcount, CAPEX/fixed assets, approved peer
+  benchmark and peer review queue.
+- The extended topology is **20 tables, 60 measures, 25 relationships, 6
+  pages and 42 visuals**. Replacing any CSV with the same headers and pressing
+  **Refresh** recalculates the model; no report rebuild is required.
+- Desktop hydration of the extended PBIT and the scenario/planning/peer tables
+  is recorded in `reports/POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md`.
+  An extended native PBIX is intentionally not claimed until a reviewer saves,
+  reopens and executes the full QA-01–QA-18 matrix on that exact scope.
 - See `powerbi/directquery/README.md`, `powerbi/directquery/VNFinance_DirectQuery_Schema.sql`, `powerbi/directquery/VNFinance_DirectQuery_Health.sql`, `scripts/load_directquery_sqlserver.py` and `scripts/check_directquery_source.ps1` for the database migration package; `powerbi/DIRECTQUERY_READINESS.json` keeps the realtime claim gated until measured evidence exists.
-- `powerbi/directquery/DIRECTQUERY_MIGRATION_CONTRACT.json` and `scripts/validate_directquery_mapping.py` lock the 15-table mapping and preserve the 37-measure/23-relationship/6-page topology before switching storage mode.
+- `powerbi/directquery/DIRECTQUERY_MIGRATION_CONTRACT.json` and `scripts/validate_directquery_mapping.py` lock a 20-table migration mapping (the compact 15-table baseline plus five planning/evidence tables) and preserve the 60-measure/25-relationship/6-page extended topology before switching storage mode. The mapping is a production design contract; it does not claim a provisioned database, gateway or Automatic Page Refresh deployment.
 - `reports/POWER_BI_DIRECTQUERY_HEALTH_CONTRACT_QA_2026-08-31.md` records 5/5 LocalDB health-state cases, including stale, rejected-row and failed-load warnings.
 - Rebuild both source formats with `scripts/build_powerbi_refreshable_project.py` and validate the package with `scripts/validate_powerbi_refreshable_project.py`.
 - Validate any replacement dataset first with `scripts/validate_powerbi_input_contract.py`; the CI workflow validates both the committed fixture and the generated package before package QA.
 - On a Windows execution host, run `scripts/powerbi_desktop_preflight.ps1 -ProjectRoot . -DataRoot <folder>` to check Desktop installation, package paths and input readiness before opening PBIP/PBIT.
 - Add `-Report reports/POWER_BI_DESKTOP_PREFLIGHT_YYYY-MM-DD.json` to retain the exact host/data gate output; `PENDING` means Desktop is absent or a required input is missing, not that native PBIX QA passed.
-- `scripts/validate_powerbi_artifact_coherence.py` checks the generated PBIP/PBIT topology directly (15 tables, 37 measures, 23 relationships, 6 pages and 39 visuals) against `package_inventory` in `PBIP_SOURCE_MANIFEST.json`.
+- `scripts/validate_powerbi_artifact_coherence.py` checks the baseline generated PBIP/PBIT topology directly (15 tables, 37 measures, 23 relationships, 6 pages and 39 visuals) against `package_inventory`; the extended inventory is recorded in `PBIP_SOURCE_MANIFEST.json` and its Desktop evidence report.
 - `scripts/validate_powerbi_docs_contract.py` checks that the runbook, Power Query references and committed fixture all use the same 14 canonical CSV filenames.
 - `scripts/validate_powerbi_release_record.py` checks that the recruiter-facing release record names the current commit, links the Drive/native handoff and keeps native PBIX/realtime boundaries pending.
 

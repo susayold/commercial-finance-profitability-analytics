@@ -1,0 +1,12 @@
+{
+  "name": "opening_balance",
+  "dataType": "double",
+  "sourceColumn": "opening_balance",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

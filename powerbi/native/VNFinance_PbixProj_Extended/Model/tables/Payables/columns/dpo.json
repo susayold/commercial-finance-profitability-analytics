@@ -1,0 +1,12 @@
+{
+  "name": "dpo",
+  "dataType": "double",
+  "sourceColumn": "dpo",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "segment",
+  "dataType": "string",
+  "sourceColumn": "segment",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

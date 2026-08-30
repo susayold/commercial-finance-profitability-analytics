@@ -67,4 +67,9 @@ UNION ALL SELECT N'Forecast', COUNT_BIG(*) FROM finance.Forecast
 UNION ALL SELECT N'Marketing', COUNT_BIG(*) FROM finance.Marketing
 UNION ALL SELECT N'Promotions', COUNT_BIG(*) FROM finance.Promotions
 UNION ALL SELECT N'Source_Control', COUNT_BIG(*) FROM finance.Source_Control
+UNION ALL SELECT N'Scenario Selector', COUNT_BIG(*) FROM finance.Scenario_Selector
+UNION ALL SELECT N'Peer_Benchmark', COUNT_BIG(*) FROM finance.Peer_Benchmark
+UNION ALL SELECT N'Peer_Review_Queue', COUNT_BIG(*) FROM finance.Peer_Review_Queue
+UNION ALL SELECT N'OPEX_Headcount', COUNT_BIG(*) FROM finance.OPEX_Headcount
+UNION ALL SELECT N'CAPEX_Projects', COUNT_BIG(*) FROM finance.CAPEX_Projects
 UNION ALL SELECT N'Calendar', COUNT_BIG(*) FROM finance.Calendar;

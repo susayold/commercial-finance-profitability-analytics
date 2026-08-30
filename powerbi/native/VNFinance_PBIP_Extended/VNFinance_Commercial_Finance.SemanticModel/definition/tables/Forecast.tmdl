@@ -1,0 +1,84 @@
+table Forecast
+	lineageTag: d03df1f5-d9ba-499c-8eb5-dc116453efae
+
+	column snapshot_month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: snapshot_month
+		lineageTag: 0c849ce5-6c6c-4964-83db-b3112cd1f91c
+		annotation SummarizationSetBy = User
+
+	column target_month
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: target_month
+		lineageTag: 4d9bb37d-36fc-40ab-80d6-e0fd7787cba6
+		annotation SummarizationSetBy = User
+
+	column sku_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: sku_id
+		lineageTag: 4edeb5b4-459e-4c30-af8b-104c743148e8
+		annotation SummarizationSetBy = User
+
+	column channel_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel_id
+		lineageTag: 9404169c-dc1e-4a05-a407-75d1b0686120
+		annotation SummarizationSetBy = User
+
+	column forecast_units
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: forecast_units
+		lineageTag: aa97bd27-1ecb-4c40-a95f-91d1727f7845
+		annotation SummarizationSetBy = User
+
+	column forecast_net_sales
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: forecast_net_sales
+		lineageTag: aaf851bb-11cf-43f3-ac64-f08a746e4c4b
+		annotation SummarizationSetBy = User
+
+	column forecast_cogs
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: forecast_cogs
+		lineageTag: e894809d-6206-4ee7-b962-f5e962078116
+		annotation SummarizationSetBy = User
+
+	column forecast_trade_spend
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: forecast_trade_spend
+		lineageTag: 4efea871-42a7-43af-933a-a634baebea5a
+		annotation SummarizationSetBy = User
+
+	column forecast_opex
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: forecast_opex
+		lineageTag: 5ae1e407-10e1-45d6-a766-30490667344d
+		annotation SummarizationSetBy = User
+
+	column forecast_version
+		dataType: string
+		summarizeBy: none
+		sourceColumn: forecast_version
+		lineageTag: bf8ef76d-dbf3-4d44-a652-722710312adc
+		annotation SummarizationSetBy = User
+
+	partition Forecast = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\forecast.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"snapshot_month", type date}, {"target_month", type date}, {"sku_id", type text}, {"channel_id", type text}, {"forecast_units", Int64.Type}, {"forecast_net_sales", type number}, {"forecast_cogs", type number}, {"forecast_trade_spend", type number}, {"forecast_opex", type number}, {"forecast_version", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

@@ -5,8 +5,8 @@
   "target_report_mode": "DirectQuery_with_Automatic_Page_Refresh",
   "source_contract": {
     "schema": "finance",
-    "physical_csv_tables": 14,
-    "report_tables": 15,
+    "physical_csv_tables": 19,
+    "report_tables": 20,
     "preserve_table_names": true,
     "preserve_column_names": true,
     "ddl": "powerbi/directquery/VNFinance_DirectQuery_Schema.sql",

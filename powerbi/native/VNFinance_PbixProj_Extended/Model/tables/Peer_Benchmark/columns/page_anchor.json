@@ -1,0 +1,12 @@
+{
+  "name": "page_anchor",
+  "dataType": "string",
+  "sourceColumn": "page_anchor",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

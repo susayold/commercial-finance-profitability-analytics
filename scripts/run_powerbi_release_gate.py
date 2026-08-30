@@ -78,6 +78,7 @@ def main() -> int:
     parser.add_argument("--input-dir", type=Path, default=None)
     parser.add_argument("--data-root", type=Path, default=None)
     parser.add_argument("--desktop-path", type=Path, default=None)
+    parser.add_argument("--scope", choices=["compact", "extended"], default="compact")
     parser.add_argument("--report", type=Path, required=True, help="JSON evidence output; must end in .json")
     args = parser.parse_args()
 
@@ -90,6 +91,14 @@ def main() -> int:
     root = args.repo_root.resolve()
     input_dir = (args.input_dir or root / "powerbi" / "data" / "current").resolve()
     data_root = (args.data_root or root / "powerbi" / "data" / "current").resolve()
+    if args.scope == "extended":
+        pbit_path = root / "powerbi" / "releases" / "Commercial_Finance_Profitability_Analytics_extended.pbit"
+        pbip_path = root / "powerbi" / "native" / "VNFinance_PBIP_Extended"
+        pbixproj_path = root / "powerbi" / "native" / "VNFinance_PbixProj_Extended"
+    else:
+        pbit_path = root / "powerbi" / "releases" / "Commercial_Finance_Profitability_Analytics.pbit"
+        pbip_path = root / "powerbi" / "native" / "VNFinance_PBIP"
+        pbixproj_path = root / "powerbi" / "native" / "VNFinance_PbixProj"
     started = datetime.now(timezone.utc).isoformat()
     stages: dict[str, dict[str, Any]] = {}
 
@@ -102,7 +111,7 @@ def main() -> int:
         refresh_report = temp / "refresh.json"
 
         stages["input_contract"] = run_command(
-            python_command(root, "scripts/validate_powerbi_input_contract.py", "--input-dir", str(input_dir), "--report", str(input_report)),
+            python_command(root, "scripts/validate_powerbi_input_contract.py", "--scope", args.scope, "--input-dir", str(input_dir), "--report", str(input_report)),
             root,
         )
         stages["refresh_dry_run"] = run_command(
@@ -123,24 +132,46 @@ def main() -> int:
                 root,
                 "scripts/validate_powerbi_refreshable_project.py",
                 "--pbit",
-                str(root / "powerbi" / "releases" / "Commercial_Finance_Profitability_Analytics.pbit"),
+                str(pbit_path),
                 "--pbip",
-                str(root / "powerbi" / "native" / "VNFinance_PBIP"),
+                str(pbip_path),
                 "--pbixproj",
-                str(root / "powerbi" / "native" / "VNFinance_PbixProj"),
+                str(pbixproj_path),
                 "--data-dir",
                 str(input_dir),
+                "--scope",
+                args.scope,
                 "--report",
                 str(package_report),
             ),
             root,
         )
         stages["artifact_coherence"] = run_command(
-            python_command(root, "scripts/validate_powerbi_artifact_coherence.py", "--report", str(coherence_report)),
+            python_command(
+                root,
+                "scripts/validate_powerbi_artifact_coherence.py",
+                "--scope",
+                args.scope,
+                "--pbip",
+                str(pbip_path),
+                "--pbit",
+                str(pbit_path),
+                "--report",
+                str(coherence_report),
+            ),
             root,
         )
         stages["claim_boundary"] = run_command(
-            python_command(root, "scripts/validate_powerbi_claim_boundary.py", "--repo-root", str(root), "--report", str(claim_report)),
+            python_command(
+                root,
+                "scripts/validate_powerbi_claim_boundary.py",
+                "--repo-root",
+                str(root),
+                "--pbip-root",
+                str(pbip_path),
+                "--report",
+                str(claim_report),
+            ),
             root,
         )
         stages["directquery_mapping"] = run_command(
@@ -173,7 +204,7 @@ def main() -> int:
                 "details": {"status": "EXTERNAL_PENDING", "reason": "Windows PowerShell/Desktop preflight is unavailable on this host."},
             }
         else:
-            command = [powershell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(preflight), "-ProjectRoot", str(root), "-DataRoot", str(input_dir)]
+            command = [powershell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(preflight), "-ProjectRoot", str(root), "-DataRoot", str(input_dir), "-Scope", args.scope]
             desktop_path = args.desktop_path
             if desktop_path:
                 command.extend(["-DesktopPath", str(desktop_path)])
@@ -210,6 +241,7 @@ def main() -> int:
         "repo_root": str(root),
         "input_dir": str(input_dir),
         "data_root": str(data_root),
+        "scope": args.scope,
         "stages": stages,
         "claim_boundary": "This command validates the refreshable package; it never proves native PBIX rendering or production DirectQuery/APR realtime.",
     }

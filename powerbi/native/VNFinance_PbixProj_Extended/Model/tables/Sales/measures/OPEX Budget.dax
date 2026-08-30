@@ -1,0 +1,1 @@
+SUM ( OPEX_Headcount[opex_budget_vnd] )

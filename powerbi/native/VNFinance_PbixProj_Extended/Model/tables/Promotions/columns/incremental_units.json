@@ -1,0 +1,12 @@
+{
+  "name": "incremental_units",
+  "dataType": "int64",
+  "sourceColumn": "incremental_units",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

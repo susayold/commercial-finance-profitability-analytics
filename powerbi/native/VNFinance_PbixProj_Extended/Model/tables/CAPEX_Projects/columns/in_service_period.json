@@ -1,0 +1,12 @@
+{
+  "name": "in_service_period",
+  "dataType": "string",
+  "sourceColumn": "in_service_period",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

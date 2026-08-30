@@ -1,0 +1,12 @@
+{
+  "name": "roas",
+  "dataType": "double",
+  "sourceColumn": "roas",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

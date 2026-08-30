@@ -1,0 +1,12 @@
+{
+  "name": "standard_cogs",
+  "dataType": "double",
+  "sourceColumn": "standard_cogs",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

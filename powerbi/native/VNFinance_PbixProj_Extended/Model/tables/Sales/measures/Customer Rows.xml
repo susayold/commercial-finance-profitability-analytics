@@ -1,0 +1,3 @@
+<Measure Name="Customer Rows">
+  <FormatString>#,0</FormatString>
+</Measure>

@@ -273,7 +273,115 @@ BEGIN
 END;
 GO
 
-/* Operational metadata deliberately sits outside the 15 report-facing tables.
+/* Extended finance-analyst scope. The report caption "Scenario Selector"
+   maps to the SQL-safe underscore identifier via the migration contract. */
+IF OBJECT_ID(N'finance.Scenario_Selector', N'U') IS NULL
+BEGIN
+    CREATE TABLE finance.Scenario_Selector (
+        scenario nvarchar(40) NOT NULL,
+        CONSTRAINT PK_finance_Scenario_Selector PRIMARY KEY CLUSTERED (scenario)
+    );
+END;
+GO
+
+IF OBJECT_ID(N'finance.Peer_Benchmark', N'U') IS NULL
+BEGIN
+    CREATE TABLE finance.Peer_Benchmark (
+        company                    nvarchar(160) NOT NULL,
+        ticker                     nvarchar(40)  NOT NULL,
+        fiscal_year                int           NOT NULL,
+        net_revenue_vnd_bn         decimal(19,4) NULL,
+        gross_profit_vnd_bn        decimal(19,4) NULL,
+        operating_profit_vnd_bn    decimal(19,4) NULL,
+        profit_before_tax_vnd_bn   decimal(19,4) NULL,
+        profit_after_tax_vnd_bn    decimal(19,4) NULL,
+        total_assets_vnd_bn        decimal(19,4) NULL,
+        owners_equity_vnd_bn       decimal(19,4) NULL,
+        operating_cash_flow_vnd_bn decimal(19,4) NULL,
+        source_status              nvarchar(80)  NOT NULL,
+        source_layer               nvarchar(80)  NOT NULL,
+        revenue_basis              nvarchar(120) NOT NULL,
+        source_document            nvarchar(260) NOT NULL,
+        source_url                 nvarchar(1000) NOT NULL,
+        page_anchor                nvarchar(120) NULL,
+        comparability_note         nvarchar(2000) NOT NULL
+    );
+END;
+GO
+
+IF OBJECT_ID(N'finance.Peer_Review_Queue', N'U') IS NULL
+BEGIN
+    CREATE TABLE finance.Peer_Review_Queue (
+        company          nvarchar(160)  NOT NULL,
+        ticker           nvarchar(40)   NOT NULL,
+        fiscal_year      int            NOT NULL,
+        source_document  nvarchar(260)  NOT NULL,
+        source_layer     nvarchar(120)  NOT NULL,
+        review_status    nvarchar(80)   NOT NULL,
+        required_metrics nvarchar(1000) NOT NULL,
+        source_url       nvarchar(1000) NOT NULL,
+        page_anchor      nvarchar(120)  NOT NULL,
+        reported_basis   nvarchar(160)  NOT NULL,
+        reviewer_note    nvarchar(2000) NOT NULL
+    );
+END;
+GO
+
+IF OBJECT_ID(N'finance.OPEX_Headcount', N'U') IS NULL
+BEGIN
+    CREATE TABLE finance.OPEX_Headcount (
+        period                 nvarchar(20)  NOT NULL,
+        cost_center            nvarchar(80)  NOT NULL,
+        [function]             nvarchar(120) NOT NULL,
+        headcount_open         bigint        NOT NULL,
+        hires                  bigint        NOT NULL,
+        exits                  bigint        NOT NULL,
+        headcount_close        bigint        NOT NULL,
+        avg_headcount          decimal(19,4) NOT NULL,
+        avg_salary_vnd         decimal(19,4) NOT NULL,
+        payroll_vnd            decimal(19,4) NOT NULL,
+        benefits_vnd           decimal(19,4) NOT NULL,
+        bonus_vnd              decimal(19,4) NOT NULL,
+        non_payroll_opex_vnd   decimal(19,4) NOT NULL,
+        opex_actual_vnd        decimal(19,4) NOT NULL,
+        opex_budget_vnd        decimal(19,4) NOT NULL,
+        opex_forecast_vnd      decimal(19,4) NOT NULL,
+        budget_variance_vnd    decimal(19,4) NOT NULL,
+        forecast_variance_vnd  decimal(19,4) NOT NULL,
+        evidence_class         nvarchar(80)  NOT NULL,
+        source_system           nvarchar(120) NOT NULL
+    );
+END;
+GO
+
+IF OBJECT_ID(N'finance.CAPEX_Projects', N'U') IS NULL
+BEGIN
+    CREATE TABLE finance.CAPEX_Projects (
+        period                         nvarchar(20)  NOT NULL,
+        project_id                     nvarchar(100) NOT NULL,
+        cost_center                    nvarchar(80)  NOT NULL,
+        capex_type                     nvarchar(160) NOT NULL,
+        approval_status                nvarchar(80)  NOT NULL,
+        budget_capex_vnd               decimal(19,4) NOT NULL,
+        actual_capex_vnd               decimal(19,4) NOT NULL,
+        forecast_capex_vnd             decimal(19,4) NOT NULL,
+        committed_capex_vnd            decimal(19,4) NOT NULL,
+        asset_cost_vnd                 decimal(19,4) NOT NULL,
+        in_service_period              nvarchar(20)  NOT NULL,
+        useful_life_months             bigint        NOT NULL,
+        depreciation_vnd               decimal(19,4) NOT NULL,
+        expected_annual_contribution_vnd decimal(19,4) NOT NULL,
+        payback_months                 decimal(19,4) NOT NULL,
+        cash_payment_vnd               decimal(19,4) NOT NULL,
+        budget_variance_vnd            decimal(19,4) NOT NULL,
+        forecast_variance_vnd          decimal(19,4) NOT NULL,
+        evidence_class                 nvarchar(80)  NOT NULL,
+        source_system                  nvarchar(120) NOT NULL
+    );
+END;
+GO
+
+/* Operational metadata deliberately sits outside the 20 report-facing tables.
    Power BI can expose this through a one-row health query, while the finance
    facts remain stable for the Import-to-DirectQuery migration. */
 IF OBJECT_ID(N'finance.Refresh_Control', N'U') IS NULL

@@ -1,0 +1,140 @@
+table Peer_Benchmark
+	lineageTag: d9373ac1-0ccf-4bf4-a933-59862330e862
+
+	column company
+		dataType: string
+		summarizeBy: none
+		sourceColumn: company
+		lineageTag: 35586795-628b-4ef9-ac0d-b3dccba7c699
+		annotation SummarizationSetBy = User
+
+	column ticker
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ticker
+		lineageTag: b23c3aed-826e-4e59-acd8-76d110ed8b84
+		annotation SummarizationSetBy = User
+
+	column fiscal_year
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: fiscal_year
+		lineageTag: 3962dbb7-656d-4172-a231-9a0b9e7319ac
+		annotation SummarizationSetBy = User
+
+	column net_revenue_vnd_bn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: net_revenue_vnd_bn
+		lineageTag: bafad766-ceea-4713-864a-def3464cc212
+		annotation SummarizationSetBy = User
+
+	column gross_profit_vnd_bn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: gross_profit_vnd_bn
+		lineageTag: 834be8be-19b3-435c-93c5-31e7a6ddabfa
+		annotation SummarizationSetBy = User
+
+	column operating_profit_vnd_bn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: operating_profit_vnd_bn
+		lineageTag: f1995480-3334-4e7d-a20a-f66e579ee276
+		annotation SummarizationSetBy = User
+
+	column profit_before_tax_vnd_bn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: profit_before_tax_vnd_bn
+		lineageTag: edc41629-0152-47f0-bef1-b510b0ca05ac
+		annotation SummarizationSetBy = User
+
+	column profit_after_tax_vnd_bn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: profit_after_tax_vnd_bn
+		lineageTag: 159ff4e1-e6d5-4b54-978d-b33ac86a34db
+		annotation SummarizationSetBy = User
+
+	column total_assets_vnd_bn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: total_assets_vnd_bn
+		lineageTag: a433159e-0ca5-491e-9765-e867583fb66d
+		annotation SummarizationSetBy = User
+
+	column owners_equity_vnd_bn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: owners_equity_vnd_bn
+		lineageTag: 50988887-49ac-4c8e-8720-09497b733196
+		annotation SummarizationSetBy = User
+
+	column operating_cash_flow_vnd_bn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: operating_cash_flow_vnd_bn
+		lineageTag: 43551007-2e08-4a90-838a-ded0386c3440
+		annotation SummarizationSetBy = User
+
+	column source_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_status
+		lineageTag: 76ee63e5-d9a2-4ebb-8e6f-897ad2532985
+		annotation SummarizationSetBy = User
+
+	column source_layer
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_layer
+		lineageTag: 7183e81e-a17c-41cc-9211-d12c63a97934
+		annotation SummarizationSetBy = User
+
+	column revenue_basis
+		dataType: string
+		summarizeBy: none
+		sourceColumn: revenue_basis
+		lineageTag: 68fda3e7-3d73-491d-9b6d-73ec1a33d481
+		annotation SummarizationSetBy = User
+
+	column source_document
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_document
+		lineageTag: a54807f5-ef98-4ef4-b303-c013df058951
+		annotation SummarizationSetBy = User
+
+	column source_url
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_url
+		lineageTag: 778efc01-7d26-4935-81b9-4cc55412d17e
+		annotation SummarizationSetBy = User
+
+	column page_anchor
+		dataType: string
+		summarizeBy: none
+		sourceColumn: page_anchor
+		lineageTag: c86a27a9-6d9a-4c28-a4b8-214666cbb114
+		annotation SummarizationSetBy = User
+
+	column comparability_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: comparability_note
+		lineageTag: e08c5b9e-40cb-416e-b871-4badafbef49e
+		annotation SummarizationSetBy = User
+
+	partition Peer_Benchmark = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\peer_benchmark_approved_2016_2025.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"company", type text}, {"ticker", type text}, {"fiscal_year", Int64.Type}, {"net_revenue_vnd_bn", type number}, {"gross_profit_vnd_bn", type number}, {"operating_profit_vnd_bn", type number}, {"profit_before_tax_vnd_bn", type number}, {"profit_after_tax_vnd_bn", type number}, {"total_assets_vnd_bn", type number}, {"owners_equity_vnd_bn", type number}, {"operating_cash_flow_vnd_bn", type number}, {"source_status", type text}, {"source_layer", type text}, {"revenue_basis", type text}, {"source_document", type text}, {"source_url", type text}, {"page_anchor", type text}, {"comparability_note", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

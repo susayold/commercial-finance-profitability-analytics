@@ -23,12 +23,17 @@ REQUIRED_PARTS = {
     "[Content_Types].xml",
 }
 
+EXPECTED_SCOPES = {
+    "compact": {"tables": 15, "measures": 37, "relationships": 23, "pages": 6, "visuals": 39, "csv": 14},
+    "extended": {"tables": 20, "measures": 60, "relationships": 25, "pages": 6, "visuals": 42, "csv": 19},
+}
+
 
 def check(condition: bool, label: str, results: list[tuple[str, bool, str]], detail: str = "") -> None:
     results.append((label, bool(condition), detail))
 
 
-def validate_package(pbit: Path, results: list[tuple[str, bool, str]]) -> dict[str, int]:
+def validate_package(pbit: Path, results: list[tuple[str, bool, str]], expected: dict[str, int]) -> dict[str, int]:
     with zipfile.ZipFile(pbit) as package:
         parts = set(package.namelist())
         check(REQUIRED_PARTS <= parts, "PBIT package parts", results, ", ".join(sorted(parts)))
@@ -43,17 +48,17 @@ def validate_package(pbit: Path, results: list[tuple[str, bool, str]]) -> dict[s
     expressions = model["model"].get("expressions", [])
     partitions = [p for table in tables for p in table.get("partitions", [])]
 
-    check(len(tables) == 15, "PBIT semantic tables", results, str(len(tables)))
-    check(len(measures) == 37, "PBIT DAX measures", results, str(len(measures)))
-    check(len(relationships) == 23, "PBIT relationships", results, str(len(relationships)))
-    check(len(pages) == 6, "PBIT report pages", results, str(len(pages)))
-    check(len(visuals) == 39, "PBIT visual containers", results, str(len(visuals)))
+    check(len(tables) == expected["tables"], "PBIT semantic tables", results, str(len(tables)))
+    check(len(measures) == expected["measures"], "PBIT DAX measures", results, str(len(measures)))
+    check(len(relationships) == expected["relationships"], "PBIT relationships", results, str(len(relationships)))
+    check(len(pages) == expected["pages"], "PBIT report pages", results, str(len(pages)))
+    check(len(visuals) == expected["visuals"], "PBIT visual containers", results, str(len(visuals)))
     check(any(e.get("name") == "DataRoot" for e in expressions), "PBIT DataRoot parameter", results)
     check(all(p.get("mode") == "import" for p in partitions), "PBIT Import partitions", results, str(len(partitions)))
     return {"tables": len(tables), "measures": len(measures), "relationships": len(relationships), "pages": len(pages), "visuals": len(visuals)}
 
 
-def validate_pbip(pbip_root: Path, results: list[tuple[str, bool, str]]) -> dict[str, int]:
+def validate_pbip(pbip_root: Path, results: list[tuple[str, bool, str]], expected: dict[str, int]) -> dict[str, int]:
     json_like = [*pbip_root.rglob("*.json"), *pbip_root.rglob("*.pbip"), *pbip_root.rglob("*.pbir"), *pbip_root.rglob("*.pbism"), *pbip_root.rglob(".platform")]
     for path in json_like:
         raw = path.read_bytes()
@@ -75,15 +80,15 @@ def validate_pbip(pbip_root: Path, results: list[tuple[str, bool, str]]) -> dict
     measure_count = sum(len(re.findall(r"(?m)^\s*measure\s+", p.read_text(encoding="utf-8"))) for p in table_files)
     relationship_file = next(iter(pbip_root.rglob("relationships.tmdl")), None)
     relationship_count = len(re.findall(r"(?m)^relationship\s+", relationship_file.read_text(encoding="utf-8"))) if relationship_file else 0
-    check(len(table_files) == 15, "PBIP TMDL tables", results, str(len(table_files)))
-    check(measure_count == 37, "PBIP TMDL measures", results, str(measure_count))
-    check(relationship_count == 23, "PBIP TMDL relationships", results, str(relationship_count))
+    check(len(table_files) == expected["tables"], "PBIP TMDL tables", results, str(len(table_files)))
+    check(measure_count == expected["measures"], "PBIP TMDL measures", results, str(measure_count))
+    check(relationship_count == expected["relationships"], "PBIP TMDL relationships", results, str(relationship_count))
     check("expression DataRoot" in all_tmdl and "IsParameterQuery=true" in all_tmdl, "PBIP DataRoot parameter", results)
     check(all(len(str(path.resolve())) <= 256 for path in pbip_root.rglob("*")), "PBIP path length <= 256", results)
     return {"tables": len(table_files), "measures": measure_count, "relationships": relationship_count}
 
 
-def validate_refresh_contract(data_dir: Path, pbixproj: Path, results: list[tuple[str, bool, str]]) -> dict[str, str | int]:
+def validate_refresh_contract(data_dir: Path, pbixproj: Path, results: list[tuple[str, bool, str]], expected: dict[str, int]) -> dict[str, str | int]:
     sales = data_dir / "sales_fact.csv"
     with sales.open(newline="", encoding="utf-8-sig") as handle:
         rows = list(csv.DictReader(handle))
@@ -119,7 +124,7 @@ def validate_refresh_contract(data_dir: Path, pbixproj: Path, results: list[tupl
             if match:
                 referenced.append(match.group(1))
     missing = sorted(set(referenced) - set(expected_csv))
-    check(len(referenced) == 14, "Power Query files use DataRoot", results, str(len(referenced)))
+    check(len(referenced) == expected["csv"], "Power Query files use DataRoot", results, str(len(referenced)))
     check(not missing, "All referenced CSV files exist", results, ", ".join(missing) or "none missing")
     return {"rows": len(rows), "columns": len(headers), "delta_vnd": str(delta), "referenced_csv": len(referenced)}
 
@@ -164,14 +169,17 @@ def main() -> int:
     parser.add_argument("--pbip", type=Path, required=True)
     parser.add_argument("--pbixproj", type=Path, required=True)
     parser.add_argument("--data-dir", type=Path, required=True)
+    parser.add_argument("--scope", choices=sorted(EXPECTED_SCOPES), default="compact")
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
 
+    expected = EXPECTED_SCOPES[args.scope]
     results: list[tuple[str, bool, str]] = []
     metrics: dict[str, object] = {}
-    metrics.update({f"pbit_{k}": v for k, v in validate_package(args.pbit, results).items()})
-    metrics.update({f"pbip_{k}": v for k, v in validate_pbip(args.pbip, results).items()})
-    metrics.update({f"refresh_{k}": v for k, v in validate_refresh_contract(args.data_dir, args.pbixproj, results).items()})
+    metrics["scope"] = args.scope
+    metrics.update({f"pbit_{k}": v for k, v in validate_package(args.pbit, results, expected).items()})
+    metrics.update({f"pbip_{k}": v for k, v in validate_pbip(args.pbip, results, expected).items()})
+    metrics.update({f"refresh_{k}": v for k, v in validate_refresh_contract(args.data_dir, args.pbixproj, results, expected).items()})
     metrics["pbit_bytes"] = args.pbit.stat().st_size
     write_report(args.report, results, metrics)
     failed = [label for label, ok, _ in results if not ok]

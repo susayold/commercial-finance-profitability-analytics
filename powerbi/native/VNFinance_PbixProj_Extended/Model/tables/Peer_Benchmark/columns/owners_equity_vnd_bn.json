@@ -1,0 +1,12 @@
+{
+  "name": "owners_equity_vnd_bn",
+  "dataType": "double",
+  "sourceColumn": "owners_equity_vnd_bn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

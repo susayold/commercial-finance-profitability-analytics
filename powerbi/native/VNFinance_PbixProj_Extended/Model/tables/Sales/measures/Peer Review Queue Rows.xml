@@ -1,0 +1,3 @@
+<Measure Name="Peer Review Queue Rows">
+  <FormatString>#,0</FormatString>
+</Measure>

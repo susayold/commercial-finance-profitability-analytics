@@ -1,0 +1,91 @@
+table Peer_Review_Queue
+	lineageTag: d6c66735-917d-4c11-91ac-ba0896439005
+
+	column company
+		dataType: string
+		summarizeBy: none
+		sourceColumn: company
+		lineageTag: ab0b7281-70db-4a07-84a2-b6308192d322
+		annotation SummarizationSetBy = User
+
+	column ticker
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ticker
+		lineageTag: e6afce4f-a124-42a5-b17c-406d3ed2b0af
+		annotation SummarizationSetBy = User
+
+	column fiscal_year
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: fiscal_year
+		lineageTag: d0f97917-7bb1-4811-978c-8d5455c40c3b
+		annotation SummarizationSetBy = User
+
+	column source_document
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_document
+		lineageTag: 3c813dcc-6d89-4018-8027-c216e148b2bf
+		annotation SummarizationSetBy = User
+
+	column source_layer
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_layer
+		lineageTag: f9aa3a2d-3cae-4e3a-bcd1-d79aead4ba50
+		annotation SummarizationSetBy = User
+
+	column review_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: review_status
+		lineageTag: 0a0a19ed-20da-4641-b6f6-2480646f3abe
+		annotation SummarizationSetBy = User
+
+	column required_metrics
+		dataType: string
+		summarizeBy: none
+		sourceColumn: required_metrics
+		lineageTag: 74ea77bc-a30a-4256-a3b4-acf96a88dd8b
+		annotation SummarizationSetBy = User
+
+	column source_url
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_url
+		lineageTag: 6c6a94ec-bacb-428a-9d3b-1d58f0548082
+		annotation SummarizationSetBy = User
+
+	column page_anchor
+		dataType: string
+		summarizeBy: none
+		sourceColumn: page_anchor
+		lineageTag: 935432fb-a70c-4c4b-babf-677677a716b1
+		annotation SummarizationSetBy = User
+
+	column reported_basis
+		dataType: string
+		summarizeBy: none
+		sourceColumn: reported_basis
+		lineageTag: aee1d181-66ef-446d-8e24-5381989c8207
+		annotation SummarizationSetBy = User
+
+	column reviewer_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: reviewer_note
+		lineageTag: 88dc98fa-f603-4a08-8cfa-d729293445ec
+		annotation SummarizationSetBy = User
+
+	partition Peer_Review_Queue = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\peer_extraction_queue.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"company", type text}, {"ticker", type text}, {"fiscal_year", Int64.Type}, {"source_document", type text}, {"source_layer", type text}, {"review_status", type text}, {"required_metrics", type text}, {"source_url", type text}, {"page_anchor", type text}, {"reported_basis", type text}, {"reviewer_note", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

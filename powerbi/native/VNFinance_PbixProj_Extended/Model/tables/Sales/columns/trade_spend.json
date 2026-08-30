@@ -1,0 +1,12 @@
+{
+  "name": "trade_spend",
+  "dataType": "double",
+  "sourceColumn": "trade_spend",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

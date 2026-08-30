@@ -1,0 +1,12 @@
+{
+  "name": "benefits_vnd",
+  "dataType": "double",
+  "sourceColumn": "benefits_vnd",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

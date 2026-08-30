@@ -1,0 +1,12 @@
+{
+  "name": "period",
+  "dataType": "string",
+  "sourceColumn": "period",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

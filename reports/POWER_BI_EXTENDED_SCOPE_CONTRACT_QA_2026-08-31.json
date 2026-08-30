@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "checks": 13,
+  "passed": 13,
+  "failed": [],
+  "evidence_boundary": "Extended PBIP/PBIT topology and data-drop contract only; native PBIX and production realtime remain separate gates.",
+  "checks_detail": [
+    {
+      "name": "extended PBIP exists",
+      "status": "PASS",
+      "detail": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\native\\VNFinance_PBIP_Extended"
+    },
+    {
+      "name": "extended PBIP has 20 tables",
+      "status": "PASS",
+      "detail": "20"
+    },
+    {
+      "name": "extended PBIP contains five added tables",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "extended PBIP has 60 measures",
+      "status": "PASS",
+      "detail": "60"
+    },
+    {
+      "name": "extended tables have at most one key column",
+      "status": "PASS",
+      "detail": "{\"Budget\": 0, \"CAPEX_Projects\": 0, \"Calendar\": 1, \"Channel\": 1, \"Commercial_Costs\": 0, \"Customer\": 1, \"Debt\": 0, \"Forecast\": 0, \"Inventory\": 0, \"Marketing\": 0, \"OPEX_Headcount\": 0, \"Payables\": 0, \"Peer_Benchmark\": 0, \"Peer_Review_Queue\": 0, \"Product\": 1, \"Promotions\": 1, \"Receivables\": 0, \"Sales\": 1, \"Scenario Selector\": 1, \"Source_Control\": 1}"
+    },
+    {
+      "name": "extended PBIP has six pages",
+      "status": "PASS",
+      "detail": "6"
+    },
+    {
+      "name": "extended PBIP has 42 visuals",
+      "status": "PASS",
+      "detail": "42"
+    },
+    {
+      "name": "extended DataRoot additions are present",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "extended PBIT is a readable ZIP",
+      "status": "PASS",
+      "detail": "15866"
+    },
+    {
+      "name": "extended PBIT has 20 tables",
+      "status": "PASS",
+      "detail": "20"
+    },
+    {
+      "name": "extended PBIT includes five added tables",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "extended PBIT has 60 measures",
+      "status": "PASS",
+      "detail": "60"
+    },
+    {
+      "name": "extended PBIT has 25 relationships",
+      "status": "PASS",
+      "detail": "25"
+    }
+  ]
+}

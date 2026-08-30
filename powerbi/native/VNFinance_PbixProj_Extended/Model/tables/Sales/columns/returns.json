@@ -1,0 +1,12 @@
+{
+  "name": "returns",
+  "dataType": "double",
+  "sourceColumn": "returns",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

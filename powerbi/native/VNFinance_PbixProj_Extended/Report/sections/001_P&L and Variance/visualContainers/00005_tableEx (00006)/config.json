@@ -1,0 +1,175 @@
+{
+  "name": "20000000000000000006",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 450,
+        "z": 6,
+        "width": 1200,
+        "height": 220
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Calendar.year_month"
+        },
+        {
+          "queryRef": "Sales.Net Revenue"
+        },
+        {
+          "queryRef": "Sales.Budget Revenue"
+        },
+        {
+          "queryRef": "Sales.Forecast Revenue"
+        },
+        {
+          "queryRef": "Sales.Revenue vs Budget"
+        },
+        {
+          "queryRef": "Sales.OPEX Actual"
+        },
+        {
+          "queryRef": "Sales.OPEX Budget"
+        },
+        {
+          "queryRef": "Sales.OPEX vs Budget"
+        },
+        {
+          "queryRef": "Sales.Average Headcount"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Calendar",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "year_month"
+          },
+          "Name": "Calendar.year_month",
+          "NativeReferenceName": "year_month"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Net Revenue"
+          },
+          "Name": "Sales.Net Revenue",
+          "NativeReferenceName": "Net Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Budget Revenue"
+          },
+          "Name": "Sales.Budget Revenue",
+          "NativeReferenceName": "Budget Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Forecast Revenue"
+          },
+          "Name": "Sales.Forecast Revenue",
+          "NativeReferenceName": "Forecast Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Revenue vs Budget"
+          },
+          "Name": "Sales.Revenue vs Budget",
+          "NativeReferenceName": "Revenue vs Budget"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OPEX Actual"
+          },
+          "Name": "Sales.OPEX Actual",
+          "NativeReferenceName": "OPEX Actual"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OPEX Budget"
+          },
+          "Name": "Sales.OPEX Budget",
+          "NativeReferenceName": "OPEX Budget"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OPEX vs Budget"
+          },
+          "Name": "Sales.OPEX vs Budget",
+          "NativeReferenceName": "OPEX vs Budget"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Average Headcount"
+          },
+          "Name": "Sales.Average Headcount",
+          "NativeReferenceName": "Average Headcount"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

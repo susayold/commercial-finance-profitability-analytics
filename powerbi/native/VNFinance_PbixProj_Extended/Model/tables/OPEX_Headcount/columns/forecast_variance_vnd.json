@@ -1,0 +1,12 @@
+{
+  "name": "forecast_variance_vnd",
+  "dataType": "double",
+  "sourceColumn": "forecast_variance_vnd",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+  "status": "FAIL",
+  "started_at_utc": "2026-08-30T21:08:36.771416+00:00",
+  "completed_at_utc": "2026-08-30T21:08:41.469896+00:00",
+  "repo_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831",
+  "input_dir": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
+  "data_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
+  "stages": {
+    "input_contract": {
+      "status": "FAIL",
+      "exit_code": 1,
+      "details": {
+        "status": "FAIL",
+        "checks": 98,
+        "passed": 96,
+        "failed": [
+          "Peer_Benchmark: no blank cells",
+          "Peer_Benchmark: types parse"
+        ],
+        "row_counts": {
+          "Product": 36,
+          "Customer": 24,
+          "Channel": 5,
+          "Sales": 6480,
+          "Commercial_Costs": 6480,
+          "Inventory": 2592,
+          "Receivables": 864,
+          "Payables": 144,
+          "Debt": 72,
+          "Budget": 6480,
+          "Forecast": 6480,
+          "Marketing": 180,
+          "Promotions": 1,
+          "Source_Control": 10,
+          "Scenario Selector": 5,
+          "Peer_Benchmark": 30,
+          "Peer_Review_Queue": 25,
+          "OPEX_Headcount": 9,
+          "CAPEX_Projects": 6
+        }
+      }
+    },
+    "refresh_dry_run": {
+      "status": "FAIL",
+      "exit_code": 1,
+      "details": {
+        "status": "FAIL",
+        "mode": "finance_refresh_orchestrator",
+        "started_at_utc": "2026-08-30T21:08:37.455916+00:00",
+        "input_dir": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
+        "data_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current",
+        "stages": {
+          "import": {
+            "requested": true,
+            "apply": false,
+            "exit_code": 1,
+            "result": {
+              "status": "FAIL",
+              "error": "command did not emit a status JSON object",
+              "stderr": "{\n  \"status\": \"FAIL\",\n  \"stage\": \"input_contract\",\n  \"validator_exit_code\": 1,\n  \"validator\": {\n    \"status\": \"FAIL\",\n    \"checks\": 98,\n    \"passed\": 96,\n    \"failed\": [\n      \"Peer_Benchmark: no blank cells\",\n      \"Peer_Benchmark: types parse\"\n    ],\n    \"row_counts\": {\n      \"Product\": 36,\n      \"Customer\": 24,\n      \"Channel\": 5,\n      \"Sales\": 6480,\n      \"Commercial_Costs\": 6480,\n      \"Inventory\": 2592,\n      \"Receivables\": 864,\n      \"Payables\": 144,\n      \"Debt\": 72,\n      \"Budget\": 6480,\n      \"Forecast\": 6480,\n      \"Marketing\": 180,\n      \"Promotions\": 1,\n      \"Source_Control\": 10,\n      \"Scenario Selector\": 5,\n      \"Peer_Benchmark\": 30,\n      \"Peer_Review_Queue\": 25,\n      \"OPEX_Headcount\": 9,\n      \"CAPEX_Projects\": 6\n    }\n  },\n  \"stderr\": \"\"\n}\n"
+            }
+          }
+        },
+        "claim_boundary": "Import refresh is automated; DirectQuery/APR and native PBIX evidence remain separate gates.",
+        "error": {
+          "stage": "import",
+          "stderr": "{\n  \"status\": \"FAIL\",\n  \"stage\": \"input_contract\",\n  \"validator_exit_code\": 1,\n  \"validator\": {\n    \"status\": \"FAIL\",\n    \"checks\": 98,\n    \"passed\": 96,\n    \"failed\": [\n      \"Peer_Benchmark: no blank cells\",\n      \"Peer_Benchmark: types parse\"\n    ],\n    \"row_counts\": {\n      \"Product\": 36,\n      \"Customer\": 24,\n      \"Channel\": 5,\n      \"Sales\": 6480,\n      \"Commercial_Costs\": 6480,\n      \"Inventory\": 2592,\n      \"Receivables\": 864,\n      \"Payables\": 144,\n      \"Debt\": 72,\n      \"Budget\": 6480,\n      \"Forecast\": 6480,\n      \"Marketing\": 180,\n      \"Promotions\": 1,\n      \"Source_Control\": 10,\n      \"Scenario Selector\": 5,\n      \"Peer_Benchmark\": 30,\n      \"Peer_Review_Queue\": 25,\n      \"OPEX_Headcount\": 9,\n      \"CAPEX_Projects\": 6\n    }\n  },\n  \"stderr\": \"\"\n}\n"
+        }
+      }
+    },
+    "package": {
+      "status": "PASS",
+      "exit_code": 0,
+      "details": {
+        "status": "PASS",
+        "checks": 29,
+        "failed": [],
+        "metrics": {
+          "pbit_tables": 15,
+          "pbit_measures": 37,
+          "pbit_relationships": 23,
+          "pbit_pages": 6,
+          "pbit_visuals": 39,
+          "pbip_tables": 15,
+          "pbip_measures": 37,
+          "pbip_relationships": 23,
+          "refresh_rows": 6480,
+          "refresh_columns": 22,
+          "refresh_delta_vnd": "1000000",
+          "refresh_referenced_csv": 14,
+          "pbit_bytes": 11625
+        }
+      }
+    },
+    "artifact_coherence": {
+      "status": "FAIL",
+      "exit_code": 1,
+      "details": {
+        "status": "FAIL",
+        "checks": 15,
+        "passed": 3,
+        "failed": [
+          "scope contract declared",
+          "manifest table count",
+          "manifest table names",
+          "manifest measure count",
+          "manifest measure names",
+          "manifest relationship count",
+          "PBIP table names",
+          "PBIP measure names",
+          "PBIP relationship count",
+          "PBIT table names",
+          "PBIT measure names",
+          "PBIT relationship count"
+        ]
+      }
+    },
+    "claim_boundary": {
+      "status": "PASS",
+      "exit_code": 0,
+      "details": {
+        "status": "PASS",
+        "checks": 12,
+        "passed": 12,
+        "failed": [],
+        "evidence": [
+          {
+            "name": "DirectQuery readiness JSON parses",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "name": "PBIP source manifest parses",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "name": "Current mode is explicitly Import replace-and-refresh",
+            "pass": true,
+            "detail": "Import_replace_and_refresh"
+          },
+          {
+            "name": "Realtime claim is not promoted without external evidence",
+            "pass": true,
+            "detail": "PENDING"
+          },
+          {
+            "name": "Manifest keeps native PBIX claim pending",
+            "pass": true,
+            "detail": "native_desktop_qa=PENDING; native_pbix_claimed=False"
+          },
+          {
+            "name": "All CSV partitions remain Import mode",
+            "pass": true,
+            "detail": "15"
+          },
+          {
+            "name": "All 14 CSV partitions use DataRoot",
+            "pass": true,
+            "detail": "14"
+          },
+          {
+            "name": "Runbook disclaims CSV second-level realtime",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "name": "Runbook defines Automatic Page Refresh migration",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "name": "Release disclaims native PBIX",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "name": "Native binary boundary note exists",
+            "pass": true,
+            "detail": ""
+          },
+          {
+            "name": "Refresh architecture uses canonical marketing filename",
+            "pass": true,
+            "detail": "marketing_spend.csv present; marketing.csv alias absent"
+          }
+        ]
+      }
+    },
+    "directquery_mapping": {
+      "status": "PASS",
+      "exit_code": 0,
+      "details": {
+        "status": "PASS",
+        "checks": 18,
+        "passed": 18,
+        "failed": [],
+        "mapping_count": 20,
+        "evidence_boundary": "This contract is a migration specification and structural validator. It does not claim a provisioned database, gateway, Power BI Service capacity or measured Automatic Page Refresh interval."
+      }
+    },
+    "directquery_health_contract": {
+      "status": "PASS",
+      "exit_code": 0,
+      "details": {
+        "status": "PASS",
+        "checks": 15,
+        "passed": 15,
+        "failed": [],
+        "evidence_boundary": "Static SQL contract check; it does not prove a live database, gateway or Power BI Automatic Page Refresh deployment."
+      }
+    },
+    "service_workflow_contract": {
+      "status": "PASS",
+      "exit_code": 0,
+      "details": {
+        "status": "PASS",
+        "checks": 12,
+        "passed": 12,
+        "failed": [],
+        "workflow": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\.github\\workflows\\powerbi-service-refresh.yml",
+        "evidence_boundary": "Static workflow contract only; no GitHub or Power BI call was made.",
+        "evidence": [
+          {
+            "name": "Service refresh workflow exists",
+            "status": "PASS",
+            "detail": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\.github\\workflows\\powerbi-service-refresh.yml"
+          },
+          {
+            "name": "Manual dispatch is available",
+            "status": "PASS",
+            "detail": "workflow_dispatch"
+          },
+          {
+            "name": "Push trigger targets main",
+            "status": "PASS",
+            "detail": "main branch"
+          },
+          {
+            "name": "Data-only push path is wired",
+            "status": "PASS",
+            "detail": "powerbi/data/current/**"
+          },
+          {
+            "name": "Refresh script changes trigger workflow",
+            "status": "PASS",
+            "detail": "prepare + trigger scripts"
+          },
+          {
+            "name": "Input validation runs before refresh",
+            "status": "PASS",
+            "detail": "two validators"
+          },
+          {
+            "name": "Required GitHub secrets are declared",
+            "status": "PASS",
+            "detail": "missing="
+          },
+          {
+            "name": "Workspace and dataset IDs reach the refresh CLI",
+            "status": "PASS",
+            "detail": "ID wiring"
+          },
+          {
+            "name": "Apply flag is explicit",
+            "status": "PASS",
+            "detail": "service apply is opt-in"
+          },
+          {
+            "name": "Refresh evidence output is JSON",
+            "status": "PASS",
+            "detail": "bounded evidence artifacts"
+          },
+          {
+            "name": "Missing secrets produce SKIPPED without a service call",
+            "status": "PASS",
+            "detail": "fail-closed secret branch"
+          },
+          {
+            "name": "No credential literals are committed",
+            "status": "PASS",
+            "detail": "secret placeholders only"
+          }
+        ]
+      }
+    },
+    "measure_column_collisions": {
+      "status": "PASS",
+      "exit_code": 0,
+      "details": {
+        "status": "PASS",
+        "checks": 2,
+        "passed": 2,
+        "failed": [],
+        "pbip_collisions": {},
+        "pbixproj_collisions": {},
+        "evidence_boundary": "Static model-name check; it does not replace native Desktop open/refresh/render QA."
+      }
+    },
+    "release_record": {
+      "status": "PASS",
+      "exit_code": 0,
+      "details": {
+        "status": "PASS",
+        "checks": 12,
+        "passed": 12,
+        "failed": [],
+        "head_short": "f518e8b",
+        "evidence_boundary": "Record consistency only; it does not prove native Desktop or production Service execution."
+      }
+    },
+    "desktop_preflight": {
+      "status": "EXTERNAL_PENDING",
+      "exit_code": 2,
+      "details": {
+        "status": "PENDING",
+        "project_root": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831",
+        "desktop": "D:\\Po BI\\bin\\PBIDesktop.exe",
+        "checks": 14,
+        "passed": 12,
+        "failed": 2,
+        "details": [
+          {
+            "name": "PBIDesktop.exe",
+            "pass": true,
+            "detail": "D:\\Po BI\\bin\\PBIDesktop.exe (version 2.157.879.0 (26.08)+da30fe74eb0b8a8786ab7326b69c400a0e951831)"
+          },
+          {
+            "name": "Artifact powerbi\\native\\VNFinance_PBIP\\VNFinance_Commercial_Finance.pbip",
+            "pass": true,
+            "detail": "present"
+          },
+          {
+            "name": "Artifact powerbi\\releases\\Commercial_Finance_Profitability_Analytics.pbit",
+            "pass": true,
+            "detail": "present"
+          },
+          {
+            "name": "Artifact powerbi\\native\\VNFinance_PbixProj\\.pbixproj.json",
+            "pass": true,
+            "detail": "present"
+          },
+          {
+            "name": "Artifact powerbi\\PBIP_SOURCE_MANIFEST.json",
+            "pass": true,
+            "detail": "present"
+          },
+          {
+            "name": "Artifact powerbi\\DIRECTQUERY_READINESS.json",
+            "pass": true,
+            "detail": "present"
+          },
+          {
+            "name": "Artifact powerbi\\directquery\\VNFinance_DirectQuery_Schema.sql",
+            "pass": true,
+            "detail": "present"
+          },
+          {
+            "name": "Artifact scripts\\validate_powerbi_input_contract.py",
+            "pass": true,
+            "detail": "present"
+          },
+          {
+            "name": "Artifact scripts\\validate_powerbi_refreshable_project.py",
+            "pass": true,
+            "detail": "present"
+          },
+          {
+            "name": "DataRoot folder",
+            "pass": true,
+            "detail": "C:\\Users\\sangk\\Documents\\Codex\\2026-08-29\\toi\\_pbi_scope_extend_20260831\\powerbi\\data\\current"
+          },
+          {
+            "name": "DataRoot CSV count",
+            "pass": false,
+            "detail": "19 found; expected 14"
+          },
+          {
+            "name": "DataRoot required filenames",
+            "pass": true,
+            "detail": "all 14 present"
+          },
+          {
+            "name": "Python runtime",
+            "pass": true,
+            "detail": "C:\\Python314\\python.exe"
+          },
+          {
+            "name": "Input contract validator",
+            "pass": false,
+            "detail": "exit code 1"
+          }
+        ]
+      }
+    }
+  },
+  "claim_boundary": "This command validates the refreshable package; it never proves native PBIX rendering or production DirectQuery/APR realtime."
+}

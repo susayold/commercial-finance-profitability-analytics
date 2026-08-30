@@ -1,0 +1,210 @@
+{
+  "name": "VNFinance_Commercial_Finance",
+  "compatibilityLevel": 1550,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "relationships": [
+      {
+        "name": "rel-sales-calendar",
+        "fromTable": "Sales",
+        "fromColumn": "month",
+        "toTable": "Calendar",
+        "toColumn": "month"
+      },
+      {
+        "name": "rel-sales-product",
+        "fromTable": "Sales",
+        "fromColumn": "sku_id",
+        "toTable": "Product",
+        "toColumn": "sku_id"
+      },
+      {
+        "name": "rel-sales-customer",
+        "fromTable": "Sales",
+        "fromColumn": "customer_id",
+        "toTable": "Customer",
+        "toColumn": "customer_id"
+      },
+      {
+        "name": "rel-sales-channel",
+        "fromTable": "Sales",
+        "fromColumn": "channel_id",
+        "toTable": "Channel",
+        "toColumn": "channel_id"
+      },
+      {
+        "name": "rel-cost-calendar",
+        "fromTable": "Commercial_Costs",
+        "fromColumn": "month",
+        "toTable": "Calendar",
+        "toColumn": "month"
+      },
+      {
+        "name": "rel-cost-product",
+        "fromTable": "Commercial_Costs",
+        "fromColumn": "sku_id",
+        "toTable": "Product",
+        "toColumn": "sku_id"
+      },
+      {
+        "name": "rel-cost-channel",
+        "fromTable": "Commercial_Costs",
+        "fromColumn": "channel_id",
+        "toTable": "Channel",
+        "toColumn": "channel_id"
+      },
+      {
+        "name": "rel-inventory-calendar",
+        "fromTable": "Inventory",
+        "fromColumn": "month",
+        "toTable": "Calendar",
+        "toColumn": "month"
+      },
+      {
+        "name": "rel-inventory-product",
+        "fromTable": "Inventory",
+        "fromColumn": "sku_id",
+        "toTable": "Product",
+        "toColumn": "sku_id"
+      },
+      {
+        "name": "rel-ar-calendar",
+        "fromTable": "Receivables",
+        "fromColumn": "month",
+        "toTable": "Calendar",
+        "toColumn": "month"
+      },
+      {
+        "name": "rel-ar-customer",
+        "fromTable": "Receivables",
+        "fromColumn": "customer_id",
+        "toTable": "Customer",
+        "toColumn": "customer_id"
+      },
+      {
+        "name": "rel-ap-calendar",
+        "fromTable": "Payables",
+        "fromColumn": "month",
+        "toTable": "Calendar",
+        "toColumn": "month"
+      },
+      {
+        "name": "rel-debt-calendar",
+        "fromTable": "Debt",
+        "fromColumn": "month",
+        "toTable": "Calendar",
+        "toColumn": "month"
+      },
+      {
+        "name": "rel-budget-calendar",
+        "fromTable": "Budget",
+        "fromColumn": "month",
+        "toTable": "Calendar",
+        "toColumn": "month"
+      },
+      {
+        "name": "rel-budget-product",
+        "fromTable": "Budget",
+        "fromColumn": "sku_id",
+        "toTable": "Product",
+        "toColumn": "sku_id"
+      },
+      {
+        "name": "rel-budget-channel",
+        "fromTable": "Budget",
+        "fromColumn": "channel_id",
+        "toTable": "Channel",
+        "toColumn": "channel_id"
+      },
+      {
+        "name": "rel-forecast-calendar",
+        "fromTable": "Forecast",
+        "fromColumn": "target_month",
+        "toTable": "Calendar",
+        "toColumn": "month"
+      },
+      {
+        "name": "rel-forecast-product",
+        "fromTable": "Forecast",
+        "fromColumn": "sku_id",
+        "toTable": "Product",
+        "toColumn": "sku_id"
+      },
+      {
+        "name": "rel-forecast-channel",
+        "fromTable": "Forecast",
+        "fromColumn": "channel_id",
+        "toTable": "Channel",
+        "toColumn": "channel_id"
+      },
+      {
+        "name": "rel-marketing-calendar",
+        "fromTable": "Marketing",
+        "fromColumn": "month",
+        "toTable": "Calendar",
+        "toColumn": "month"
+      },
+      {
+        "name": "rel-marketing-channel",
+        "fromTable": "Marketing",
+        "fromColumn": "channel_id",
+        "toTable": "Channel",
+        "toColumn": "channel_id"
+      },
+      {
+        "name": "rel-promo-product",
+        "fromTable": "Promotions",
+        "fromColumn": "sku_id",
+        "toTable": "Product",
+        "toColumn": "sku_id"
+      },
+      {
+        "name": "rel-promo-channel",
+        "fromTable": "Promotions",
+        "fromColumn": "channel_id",
+        "toTable": "Channel",
+        "toColumn": "channel_id"
+      },
+      {
+        "name": "rel-opex-calendar",
+        "fromTable": "OPEX_Headcount",
+        "fromColumn": "period",
+        "toTable": "Calendar",
+        "toColumn": "year_month"
+      },
+      {
+        "name": "rel-capex-calendar",
+        "fromTable": "CAPEX_Projects",
+        "fromColumn": "period",
+        "toTable": "Calendar",
+        "toColumn": "year_month"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DataRoot",
+        "kind": "m"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.153.1206.0 (26.04)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DataRoot\",\"Calendar\",\"Product\",\"Customer\",\"Channel\",\"Sales\",\"Commercial_Costs\",\"Inventory\",\"Receivables\",\"Payables\",\"Debt\",\"Budget\",\"Forecast\",\"Marketing\",\"Promotions\",\"Source_Control\",\"Scenario Selector\",\"Peer_Benchmark\",\"Peer_Review_Queue\",\"OPEX_Headcount\",\"CAPEX_Projects\"]"
+      }
+    ]
+  }
+}

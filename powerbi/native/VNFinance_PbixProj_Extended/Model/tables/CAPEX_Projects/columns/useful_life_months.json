@@ -1,0 +1,12 @@
+{
+  "name": "useful_life_months",
+  "dataType": "int64",
+  "sourceColumn": "useful_life_months",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

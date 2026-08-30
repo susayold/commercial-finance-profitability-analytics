@@ -1,0 +1,12 @@
+{
+  "name": "hires",
+  "dataType": "int64",
+  "sourceColumn": "hires",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

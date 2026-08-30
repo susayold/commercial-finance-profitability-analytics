@@ -1,0 +1,12 @@
+{
+  "name": "closing_ap",
+  "dataType": "double",
+  "sourceColumn": "closing_ap",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "total_assets_vnd_bn",
+  "dataType": "double",
+  "sourceColumn": "total_assets_vnd_bn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

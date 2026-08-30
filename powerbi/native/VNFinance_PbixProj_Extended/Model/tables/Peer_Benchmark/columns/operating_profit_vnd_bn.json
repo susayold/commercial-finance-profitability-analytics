@@ -1,0 +1,12 @@
+{
+  "name": "operating_profit_vnd_bn",
+  "dataType": "double",
+  "sourceColumn": "operating_profit_vnd_bn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

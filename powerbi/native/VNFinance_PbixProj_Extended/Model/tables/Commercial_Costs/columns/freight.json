@@ -1,0 +1,12 @@
+{
+  "name": "freight",
+  "dataType": "double",
+  "sourceColumn": "freight",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -135,6 +135,17 @@ still need a real Power BI Desktop or cloud workspace.
     QA-09, QA-11 and QA-17 have scoped native observations; QA-07, QA-08,
     QA-10, QA-12–QA-16 and QA-18 remain pending rather than being inferred.
 
+32. Extended the editable Power BI scope to the complete finance-analyst
+    planning/evidence layer: disconnected Scenario Selector, OPEX/headcount,
+    CAPEX/fixed assets, approved Peer_Benchmark and Peer_Review_Queue. The
+    generated extended source contains 20 tables, 60 measures, 25 relationships,
+    six pages and 42 visuals over a 19-file DataRoot contract. A UTF-16LE-safe
+    PBIT packager was added; Desktop opened the extended PBIT, bound DataRoot,
+    hydrated the five new tables and rendered scenario/planning values. The
+    extended PBIP/PBIT evidence is linked in
+    `reports/POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md`; no extended
+    native PBIX claim was made, and the compact observed PBIX remains unchanged.
+
 ## Evidence boundaries
 
 | Capability | Current evidence | Claim |

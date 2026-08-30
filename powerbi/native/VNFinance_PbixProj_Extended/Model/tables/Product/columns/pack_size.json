@@ -1,0 +1,12 @@
+{
+  "name": "pack_size",
+  "dataType": "int64",
+  "sourceColumn": "pack_size",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

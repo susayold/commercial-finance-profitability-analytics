@@ -1,0 +1,50 @@
+{
+  "name": "30000000000000000003",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 680,
+        "y": 30,
+        "z": 3,
+        "width": 280,
+        "height": 110
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.Mix Other Impact"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Mix Other Impact"
+          },
+          "Name": "Sales.Mix Other Impact",
+          "NativeReferenceName": "Mix Other Impact"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

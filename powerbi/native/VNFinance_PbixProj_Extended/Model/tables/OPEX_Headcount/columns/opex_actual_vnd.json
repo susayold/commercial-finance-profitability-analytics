@@ -1,0 +1,12 @@
+{
+  "name": "opex_actual_vnd",
+  "dataType": "double",
+  "sourceColumn": "opex_actual_vnd",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "non_payroll_opex_vnd",
+  "dataType": "double",
+  "sourceColumn": "non_payroll_opex_vnd",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

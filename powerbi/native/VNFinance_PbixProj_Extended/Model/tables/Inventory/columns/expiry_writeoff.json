@@ -1,0 +1,12 @@
+{
+  "name": "expiry_writeoff",
+  "dataType": "double",
+  "sourceColumn": "expiry_writeoff",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

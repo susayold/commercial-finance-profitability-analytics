@@ -1,0 +1,12 @@
+{
+  "name": "interest_rate",
+  "dataType": "double",
+  "sourceColumn": "interest_rate",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

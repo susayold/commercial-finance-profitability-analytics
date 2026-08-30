@@ -1,0 +1,12 @@
+{
+  "name": "budget_capex_vnd",
+  "dataType": "double",
+  "sourceColumn": "budget_capex_vnd",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "VNFinance_Commercial_Finance"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "70136dd9-1469-498f-b2ab-c888c032f093"
+  }
+}

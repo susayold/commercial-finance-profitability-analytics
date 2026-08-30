@@ -17,6 +17,7 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Power BI Desktop host | `D:\Po BI\bin\PBIDesktop.exe` |
 | Desktop version recorded by preflight | `2.157.879.0 (26.08)` |
 | Current operating mode | `Import_replace_and_refresh` |
+| Extended scope package | 20 tables / 60 measures / 25 relationships / 6 pages / 42 visuals; extended PBIT + PBIP validated in Desktop |
 
 ## Delivered and verified
 
@@ -32,13 +33,14 @@ binary/source bundle is mirrored in the private Drive file linked below.
 | Native PBIX observed artifact | `powerbi/releases/Commercial_Finance_Profitability_Analytics_native.pbix`; Desktop open, refresh, Save As and reopen observed | PASS — observed workflow |
 | Native page captures | Six report pages captured from the reopened PBIX; [capture index](POWER_BI_NATIVE_PAGE_CAPTURE_INDEX_2026-08-31.md) | PASS — visual evidence |
 | Row-level native QA coverage | [Partial evidence map](POWER_BI_NATIVE_QA_PARTIAL_EVIDENCE_2026-08-31.md) separates observed/source-backed rows from pending reviewer rows | PASS — scoped evidence |
+| Extended planning/evidence scope | [Extended Desktop QA](POWER_BI_EXTENDED_SCOPE_DESKTOP_QA_2026-08-31.md); Scenario, OPEX, CAPEX, approved peers and review queue hydrated from 19-file DataRoot | PASS — extended PBIT/PBIP; native PBIX not claimed |
 | Native PBIX | Formal QA-01–QA-18 evidence sheet and full visual sign-off remain open | PENDING |
 | Production realtime | Requires cloud database, gateway/capacity and APR measurements | PENDING |
 
 ## Data replacement contract
 
 The report is decoupled from a laptop-specific folder through one `DataRoot`
-parameter. A replacement batch must preserve the 14 filenames, headers, keys,
+parameter. The compact baseline replacement batch must preserve the 14 filenames, headers, keys,
 types and finance identities. The controlled path is:
 
 ```text
@@ -49,6 +51,14 @@ candidate CSV drop
   -> Power BI Desktop Home > Refresh (or approved Service refresh)
   -> Controls & Evidence timestamp and source hashes
 ```
+
+The extended package uses the same parameter and adds five files:
+`scenario_selector.csv`, `opex_headcount_planning_synthetic.csv`,
+`capex_fixed_asset_planning_synthetic.csv`,
+`peer_benchmark_approved_2016_2025.csv` and `peer_extraction_queue.csv`.
+Keep all 19 files when binding the extended PBIT/PBIP; replacing any file with
+the same schema and selecting **Refresh** updates the dependent measures and
+visuals automatically.
 
 The watcher deliberately does not claim second-level realtime: Import mode
 still needs a Desktop/API refresh. The model design, measures, relationships
@@ -90,7 +100,9 @@ realtime.
 
 1. Execute and record the remaining QA-01–QA-18 visual matrix on a review
    workstation.
-2. If production second-level freshness is required, provision the database,
+2. If promoting the extended scope to a native PBIX, save/reopen the extended
+   PBIT after its full QA matrix and record a separate binary hash.
+3. If production second-level freshness is required, provision the database,
    gateway/capacity and DirectQuery/APR acceptance path in the matrix.
-3. Keep credentials, cache files and personal paths out of GitHub; the
+4. Keep credentials, cache files and personal paths out of GitHub; the
    checked-in PBIP/PBIT and observed PBIX are the reproducible handoff.

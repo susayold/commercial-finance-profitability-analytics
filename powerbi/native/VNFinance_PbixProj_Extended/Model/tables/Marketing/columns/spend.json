@@ -1,0 +1,12 @@
+{
+  "name": "spend",
+  "dataType": "double",
+  "sourceColumn": "spend",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

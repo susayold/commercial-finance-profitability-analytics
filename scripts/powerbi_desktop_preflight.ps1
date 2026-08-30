@@ -7,7 +7,10 @@ param(
     [Parameter()]
     [string]$DesktopPath = "",
     [Parameter()]
-    [string]$Report = ""
+    [string]$Report = "",
+    [Parameter()]
+    [ValidateSet("compact", "extended")]
+    [string]$Scope = "compact"
 )
 
 $ErrorActionPreference = "Stop"
@@ -48,10 +51,20 @@ if ($desktopPath) {
     Add-Check "PBIDesktop.exe" $false "PENDING: install/repair Power BI Desktop with Administrator rights; see https://learn.microsoft.com/power-bi/fundamentals/desktop-getting-started"
 }
 
-$requiredFiles = @(
+$requiredFiles = if ($Scope -eq "extended") {
+    @(
+    "powerbi\native\VNFinance_PBIP_Extended\VNFinance_Commercial_Finance.pbip",
+    "powerbi\releases\Commercial_Finance_Profitability_Analytics_extended.pbit",
+    "powerbi\native\VNFinance_PbixProj_Extended\.pbixproj.json"
+    )
+} else {
+    @(
     "powerbi\native\VNFinance_PBIP\VNFinance_Commercial_Finance.pbip",
     "powerbi\releases\Commercial_Finance_Profitability_Analytics.pbit",
-    "powerbi\native\VNFinance_PbixProj\.pbixproj.json",
+    "powerbi\native\VNFinance_PbixProj\.pbixproj.json"
+    )
+}
+$requiredFiles += @(
     "powerbi\PBIP_SOURCE_MANIFEST.json",
     "powerbi\DIRECTQUERY_READINESS.json",
     "powerbi\directquery\VNFinance_DirectQuery_Schema.sql",
@@ -68,15 +81,23 @@ if ($DataRoot) {
     Add-Check "DataRoot folder" ([bool]$dataPath) $(if ($dataPath) { $dataPath } else { "missing: $DataRoot" })
     if ($dataPath) {
         $csvCount = @(Get-ChildItem -LiteralPath $dataPath -Filter "*.csv" -File).Count
-        Add-Check "DataRoot CSV count" ($csvCount -eq 14) "$csvCount found; expected 14"
+        $expectedCsvCount = if ($Scope -eq "extended") { 19 } else { 14 }
+        Add-Check "DataRoot CSV count" ($csvCount -eq $expectedCsvCount) "$csvCount found; expected $expectedCsvCount"
         $requiredDataFiles = @(
             "sales_fact.csv", "commercial_costs.csv", "inventory.csv", "receivables.csv",
             "payables.csv", "debt.csv", "budget.csv", "forecast.csv", "marketing_spend.csv",
             "promotions.csv", "product_master.csv", "customer_master.csv", "channel_master.csv",
             "source_control.csv"
         )
+        if ($Scope -eq "extended") {
+            $requiredDataFiles += @(
+                "scenario_selector.csv", "peer_benchmark_approved_2016_2025.csv",
+                "peer_extraction_queue.csv", "opex_headcount_planning_synthetic.csv",
+                "capex_fixed_asset_planning_synthetic.csv"
+            )
+        }
         $missingDataFiles = @($requiredDataFiles | Where-Object { -not (Test-Path -LiteralPath (Join-Path $dataPath $_) -PathType Leaf) })
-        Add-Check "DataRoot required filenames" ($missingDataFiles.Count -eq 0) $(if ($missingDataFiles.Count -eq 0) { "all 14 present" } else { "missing: " + ($missingDataFiles -join ", ") })
+        Add-Check "DataRoot required filenames" ($missingDataFiles.Count -eq 0) $(if ($missingDataFiles.Count -eq 0) { "all $expectedCsvCount present" } else { "missing: " + ($missingDataFiles -join ", ") })
         $validator = Join-Path $root "scripts\validate_powerbi_input_contract.py"
         $python = Get-Command python -ErrorAction SilentlyContinue
         Add-Check "Python runtime" ([bool]$python) $(if ($python) { $python.Source } else { "python not found" })
@@ -86,7 +107,8 @@ if ($DataRoot) {
         }
     }
 } else {
-    Add-Check "DataRoot folder" $false "PENDING: pass -DataRoot <folder containing the 14 contract CSVs>"
+    $expectedCsvCount = if ($Scope -eq "extended") { 19 } else { 14 }
+    Add-Check "DataRoot folder" $false "PENDING: pass -DataRoot <folder containing the $expectedCsvCount contract CSVs>"
 }
 
 $failed = @($checks | Where-Object { -not $_.pass })

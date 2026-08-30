@@ -1,0 +1,13 @@
+{
+  "name": "scenario",
+  "dataType": "string",
+  "sourceColumn": "scenario",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

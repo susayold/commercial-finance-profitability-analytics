@@ -1,0 +1,12 @@
+{
+  "name": "depreciation_vnd",
+  "dataType": "double",
+  "sourceColumn": "depreciation_vnd",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

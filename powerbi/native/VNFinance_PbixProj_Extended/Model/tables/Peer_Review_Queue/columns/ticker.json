@@ -1,0 +1,12 @@
+{
+  "name": "ticker",
+  "dataType": "string",
+  "sourceColumn": "ticker",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

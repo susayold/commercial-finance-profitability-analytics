@@ -1,0 +1,12 @@
+{
+  "name": "invoiced",
+  "dataType": "double",
+  "sourceColumn": "invoiced",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

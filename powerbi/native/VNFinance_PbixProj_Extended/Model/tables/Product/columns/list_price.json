@@ -1,0 +1,12 @@
+{
+  "name": "list_price",
+  "dataType": "double",
+  "sourceColumn": "list_price",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

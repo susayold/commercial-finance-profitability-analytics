@@ -2,10 +2,10 @@
 """Verify that Power BI refresh documentation matches the live source contract.
 
 This is a small documentation regression gate. It compares the canonical
-14-file list used by ``prepare_powerbi_refresh.py`` with the architecture
-runbook, the PBIP/PbixProj Power Query references and the committed fixture.
-It prevents a stale filename in a handoff document from breaking a future
-data-only replacement.
+compact and extended file lists used by ``prepare_powerbi_refresh.py`` with
+the architecture runbook, the PBIP/PbixProj Power Query references and the
+committed fixture. It prevents a stale filename in a handoff document from
+breaking a future data-only replacement.
 """
 
 from __future__ import annotations
@@ -21,9 +21,9 @@ def add(checks: list[dict[str, Any]], name: str, passed: bool, detail: str) -> N
     checks.append({"name": name, "status": "PASS" if passed else "FAIL", "detail": detail})
 
 
-def canonical_files(refresh_script: Path) -> list[str]:
+def canonical_files(refresh_script: Path, variable: str) -> list[str]:
     text = refresh_script.read_text(encoding="utf-8")
-    match = re.search(r"^FILES\s*=\s*\((.*?)^\)\s*$", text, re.MULTILINE | re.DOTALL)
+    match = re.search(rf"^{re.escape(variable)}\s*=\s*\((.*?)^\)\s*$", text, re.MULTILINE | re.DOTALL)
     if not match:
         raise ValueError("could not locate FILES tuple in prepare_powerbi_refresh.py")
     values = re.findall(r'"([^"\r\n]+\.csv)"', match.group(1))
@@ -64,11 +64,18 @@ def main() -> int:
     root = args.repo_root.resolve()
     checks: list[dict[str, Any]] = []
     try:
-        expected = canonical_files(root / "scripts" / "prepare_powerbi_refresh.py")
+        expected = canonical_files(root / "scripts" / "prepare_powerbi_refresh.py", "FILES")
         add(checks, "canonical contract has 14 files", len(expected) == 14, f"{len(expected)} files")
     except (OSError, ValueError) as exc:
         expected = []
         add(checks, "canonical contract can be parsed", False, str(exc))
+
+    try:
+        extended = canonical_files(root / "scripts" / "prepare_powerbi_refresh.py", "EXTENDED_FILES")
+        add(checks, "extended contract has five files", len(extended) == 5, f"{len(extended)} files")
+    except (OSError, ValueError) as exc:
+        extended = []
+        add(checks, "extended contract can be parsed", False, str(exc))
 
     architecture_path = root / "docs" / "POWER_BI_REFRESH_ARCHITECTURE.md"
     try:
@@ -102,6 +109,22 @@ def main() -> int:
     data_dir = root / "powerbi" / "data" / "current"
     actual = sorted(path.name for path in data_dir.glob("*.csv")) if data_dir.is_dir() else []
     add(checks, "committed fixture contains every canonical file", set(expected) <= set(actual), ", ".join(sorted(set(expected) - set(actual))))
+    add(checks, "committed fixture contains every extended file", set(extended) <= set(actual), ", ".join(sorted(set(extended) - set(actual))))
+
+    extended_roots = [
+        root / "powerbi" / "native" / "VNFinance_PBIP_Extended",
+        root / "powerbi" / "native" / "VNFinance_PbixProj_Extended",
+    ]
+    extended_references = [query_files([path]) for path in extended_roots]
+    extended_expected = sorted(set(expected + extended))
+    extended_referenced_set = sorted(set(value for values in extended_references for value in values))
+    add(checks, "extended Power Query references all 19 files", extended_referenced_set == extended_expected, ", ".join(extended_referenced_set))
+    add(
+        checks,
+        "extended PBIP and PbixProj query representations agree",
+        all(sorted(values) == extended_expected for values in extended_references),
+        "; ".join(f"{path.name}: {len(values)}" for path, values in zip(extended_roots, extended_references)),
+    )
 
     failed = [check["name"] for check in checks if check["status"] != "PASS"]
     payload = {
@@ -110,8 +133,10 @@ def main() -> int:
         "passed": len(checks) - len(failed),
         "failed": failed,
         "canonical_files": expected,
+        "extended_files": extended,
         "architecture_files": documented,
         "query_files": referenced,
+        "extended_query_files": [value for values in extended_references for value in values],
         "fixture_csv_files": actual,
         "evidence_boundary": "This validates the source/document contract only; it does not prove Desktop refresh or realtime APR.",
         "evidence": checks,

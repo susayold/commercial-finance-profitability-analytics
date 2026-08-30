@@ -1,0 +1,12 @@
+{
+  "name": "opening_ap",
+  "dataType": "double",
+  "sourceColumn": "opening_ap",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

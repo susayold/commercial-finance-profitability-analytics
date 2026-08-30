@@ -1,0 +1,12 @@
+{
+  "name": "evidence_class",
+  "dataType": "string",
+  "sourceColumn": "evidence_class",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

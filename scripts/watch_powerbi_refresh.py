@@ -2,7 +2,7 @@
 """Watch the validated finance input contract and trigger a refresh run.
 
 This is an operator-side bridge for teams that receive CSV drops rather than
-Git commits. It hashes the complete 14-file input contract, waits for a stable
+Git commits. It hashes the complete compact 14-file or extended 19-file input contract, waits for a stable
 copy, validates the data and then delegates to ``run_finance_refresh.py``. It
 is intentionally explicit about side effects: the watcher is read-only unless
 ``--apply`` is supplied, and a Power BI Service call additionally requires
@@ -26,7 +26,7 @@ from pathlib import Path
 from typing import Any
 
 
-REQUIRED_FILES = (
+COMPACT_FILES = (
     "sales_fact.csv",
     "commercial_costs.csv",
     "inventory.csv",
@@ -42,18 +42,25 @@ REQUIRED_FILES = (
     "channel_master.csv",
     "source_control.csv",
 )
+EXTENDED_FILES = (
+    "scenario_selector.csv",
+    "peer_benchmark_approved_2016_2025.csv",
+    "peer_extraction_queue.csv",
+    "opex_headcount_planning_synthetic.csv",
+    "capex_fixed_asset_planning_synthetic.csv",
+)
 
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def contract_hash(input_dir: Path) -> tuple[str, dict[str, Any]]:
+def contract_hash(input_dir: Path, required_files: tuple[str, ...]) -> tuple[str, dict[str, Any]]:
     """Hash names and bytes in deterministic contract order."""
 
     digest = hashlib.sha256()
     files: dict[str, Any] = {}
-    for name in REQUIRED_FILES:
+    for name in required_files:
         path = input_dir / name
         if not path.is_file():
             raise FileNotFoundError(f"missing required contract file: {path}")
@@ -66,12 +73,12 @@ def contract_hash(input_dir: Path) -> tuple[str, dict[str, Any]]:
     return digest.hexdigest(), files
 
 
-def wait_until_stable(input_dir: Path, settle_seconds: float) -> tuple[str, dict[str, Any]]:
-    before, _ = contract_hash(input_dir)
+def wait_until_stable(input_dir: Path, settle_seconds: float, required_files: tuple[str, ...]) -> tuple[str, dict[str, Any]]:
+    before, _ = contract_hash(input_dir, required_files)
     if settle_seconds <= 0:
-        return before, contract_hash(input_dir)[1]
+        return before, contract_hash(input_dir, required_files)[1]
     time.sleep(settle_seconds)
-    after, files = contract_hash(input_dir)
+    after, files = contract_hash(input_dir, required_files)
     if before != after:
         raise RuntimeError("input files changed during settle window; waiting for the next poll")
     return after, files
@@ -127,6 +134,7 @@ def main() -> int:
     parser.add_argument("--input-dir", type=Path, required=True)
     parser.add_argument("--data-root", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True, help="delegated refresh evidence JSON")
+    parser.add_argument("--scope", choices=["auto", "compact", "extended"], default="auto")
     parser.add_argument("--interval-seconds", type=float, default=30.0)
     parser.add_argument("--settle-seconds", type=float, default=3.0)
     parser.add_argument("--max-events", type=int, default=0, help="stop after N changed batches; 0 means keep watching")
@@ -148,13 +156,17 @@ def main() -> int:
         parser.error("--directquery-apply requires --directquery-connection or VNFINANCE_SQL_CONNECTION")
 
     input_dir = args.input_dir.resolve()
+    scope = args.scope
+    if scope == "auto":
+        scope = "extended" if any((input_dir / name).is_file() for name in EXTENDED_FILES) else "compact"
+    required_files = COMPACT_FILES + EXTENDED_FILES if scope == "extended" else COMPACT_FILES
     previous_hash = ""
     event_count = 0
     while True:
         try:
-            current_hash, files = wait_until_stable(input_dir, args.settle_seconds)
+            current_hash, files = wait_until_stable(input_dir, args.settle_seconds, required_files)
         except (FileNotFoundError, RuntimeError) as exc:
-            event = {"status": "PENDING", "checked_at_utc": utc_now(), "input_dir": str(input_dir), "reason": str(exc)}
+            event = {"status": "PENDING", "scope": scope, "checked_at_utc": utc_now(), "input_dir": str(input_dir), "reason": str(exc)}
             print(json.dumps(event, indent=2))
             if args.once:
                 return 2
@@ -162,7 +174,7 @@ def main() -> int:
             continue
 
         if current_hash == previous_hash:
-            event = {"status": "NO_CHANGE", "checked_at_utc": utc_now(), "input_contract_hash": current_hash, "files": files}
+            event = {"status": "NO_CHANGE", "scope": scope, "checked_at_utc": utc_now(), "input_contract_hash": current_hash, "files": files}
             print(json.dumps(event, indent=2))
             if args.once:
                 return 0
@@ -174,6 +186,7 @@ def main() -> int:
         event_count += 1
         event = {
             "status": "PASS" if code == 0 else "FAIL",
+            "scope": scope,
             "checked_at_utc": started,
             "input_contract_hash": current_hash,
             "event_number": event_count,

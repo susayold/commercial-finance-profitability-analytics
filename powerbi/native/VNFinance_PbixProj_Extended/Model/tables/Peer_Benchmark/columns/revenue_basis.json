@@ -1,0 +1,12 @@
+{
+  "name": "revenue_basis",
+  "dataType": "string",
+  "sourceColumn": "revenue_basis",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

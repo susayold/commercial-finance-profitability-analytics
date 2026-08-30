@@ -1,0 +1,87 @@
+{
+  "name": "50000000000000000006",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 660,
+        "y": 170,
+        "z": 6,
+        "width": 580,
+        "height": 250
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Calendar.year_month"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Debt Balance"
+        },
+        {
+          "queryRef": "Sales.Covenant Headroom"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Calendar",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "year_month"
+          },
+          "Name": "Calendar.year_month",
+          "NativeReferenceName": "year_month"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Debt Balance"
+          },
+          "Name": "Sales.Debt Balance",
+          "NativeReferenceName": "Debt Balance"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Covenant Headroom"
+          },
+          "Name": "Sales.Covenant Headroom",
+          "NativeReferenceName": "Covenant Headroom"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

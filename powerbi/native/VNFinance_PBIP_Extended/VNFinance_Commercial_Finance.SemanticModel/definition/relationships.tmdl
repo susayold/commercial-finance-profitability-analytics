@@ -1,0 +1,99 @@
+relationship rel-sales-calendar
+	fromColumn: Sales.month
+	toColumn: Calendar.month
+
+relationship rel-sales-product
+	fromColumn: Sales.sku_id
+	toColumn: Product.sku_id
+
+relationship rel-sales-customer
+	fromColumn: Sales.customer_id
+	toColumn: Customer.customer_id
+
+relationship rel-sales-channel
+	fromColumn: Sales.channel_id
+	toColumn: Channel.channel_id
+
+relationship rel-cost-calendar
+	fromColumn: Commercial_Costs.month
+	toColumn: Calendar.month
+
+relationship rel-cost-product
+	fromColumn: Commercial_Costs.sku_id
+	toColumn: Product.sku_id
+
+relationship rel-cost-channel
+	fromColumn: Commercial_Costs.channel_id
+	toColumn: Channel.channel_id
+
+relationship rel-inventory-calendar
+	fromColumn: Inventory.month
+	toColumn: Calendar.month
+
+relationship rel-inventory-product
+	fromColumn: Inventory.sku_id
+	toColumn: Product.sku_id
+
+relationship rel-ar-calendar
+	fromColumn: Receivables.month
+	toColumn: Calendar.month
+
+relationship rel-ar-customer
+	fromColumn: Receivables.customer_id
+	toColumn: Customer.customer_id
+
+relationship rel-ap-calendar
+	fromColumn: Payables.month
+	toColumn: Calendar.month
+
+relationship rel-debt-calendar
+	fromColumn: Debt.month
+	toColumn: Calendar.month
+
+relationship rel-budget-calendar
+	fromColumn: Budget.month
+	toColumn: Calendar.month
+
+relationship rel-budget-product
+	fromColumn: Budget.sku_id
+	toColumn: Product.sku_id
+
+relationship rel-budget-channel
+	fromColumn: Budget.channel_id
+	toColumn: Channel.channel_id
+
+relationship rel-forecast-calendar
+	fromColumn: Forecast.target_month
+	toColumn: Calendar.month
+
+relationship rel-forecast-product
+	fromColumn: Forecast.sku_id
+	toColumn: Product.sku_id
+
+relationship rel-forecast-channel
+	fromColumn: Forecast.channel_id
+	toColumn: Channel.channel_id
+
+relationship rel-marketing-calendar
+	fromColumn: Marketing.month
+	toColumn: Calendar.month
+
+relationship rel-marketing-channel
+	fromColumn: Marketing.channel_id
+	toColumn: Channel.channel_id
+
+relationship rel-promo-product
+	fromColumn: Promotions.sku_id
+	toColumn: Product.sku_id
+
+relationship rel-promo-channel
+	fromColumn: Promotions.channel_id
+	toColumn: Channel.channel_id
+
+relationship rel-opex-calendar
+	fromColumn: OPEX_Headcount.period
+	toColumn: Calendar.year_month
+
+relationship rel-capex-calendar
+	fromColumn: CAPEX_Projects.period
+	toColumn: Calendar.year_month

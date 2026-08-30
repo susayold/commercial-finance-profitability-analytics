@@ -1,0 +1,12 @@
+{
+  "name": "orders",
+  "dataType": "int64",
+  "sourceColumn": "orders",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}
