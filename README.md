@@ -390,3 +390,6 @@ The [evidence matrix](data/master_plan_evidence_matrix.csv) and [QA report](repo
 
 
 Monte Carlo reproducibility note: the builder writes real newline-delimited CSV output and CI diffs the rebuilt 5,000-draw file against the committed output. Latest Drive builder copy: https://drive.google.com/file/d/1mz5iDcReO_kpMc0e-62M7LUwWTh6T2MF/view?usp=drivesdk
+
+
+Monte Carlo validator maintenance: report non-triviality threshold is aligned to the 3,788-character risk memo; latest Drive validator copy: https://drive.google.com/file/d/1yDtKh5idle6STfSpoF_M95fDPoIfypP3/view?usp=drivesdk
