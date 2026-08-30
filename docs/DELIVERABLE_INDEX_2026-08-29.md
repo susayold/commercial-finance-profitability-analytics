@@ -207,3 +207,10 @@ Use this order for a 15-minute Finance Analyst walkthrough:
 - [Leakage-safe report builder](../scripts/build_live_forecast_accuracy_report.mjs)
 - [Fixture accuracy report](../reports/FORECAST_ACCURACY_FIXTURE_REPORT.md)
 - Run live mode only after the full Gate A intake contract is populated with approved internal evidence.
+
+## OPEX and headcount planning
+
+- [OPEX & Headcount Planning Module](../docs/OPEX_HEADCOUNT_PLANNING_MODULE.md)
+- [Synthetic register](../data/opex_headcount_planning_synthetic.csv)
+- [QA report](../reports/OPEX_HEADCOUNT_PLANNING_QA.md)
+- Cost-center workforce bridge is synthetic/derived and not evidence of realized company spend or savings.
