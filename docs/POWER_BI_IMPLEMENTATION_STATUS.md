@@ -13,7 +13,7 @@ earlier execution history.
 - **One-command release gate:** `scripts/run_powerbi_release_gate.py` returns `PASS` on the current fixture and host; it intentionally reports external Desktop/cloud gates separately instead of overstating native PBIX or production realtime.
 - **CI release gate:** `.github/workflows/finance-qa.yml` now runs the same release gate on every QA run and uploads its JSON evidence; Linux CI is expected to show `PASS_WITH_EXTERNAL_PENDING` only for the unavailable Windows Desktop stage.
 - **Full repository QA:** `node scripts/run_finance_qa.mjs` passed 49/49 checks after the DirectQuery harness fix.
-- **GitHub Actions evidence:** workflow run [33325447862](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33325447862) completed successfully; its release-gate artifact records Linux `PASS_WITH_EXTERNAL_PENDING` only for the unavailable Windows Desktop stage.
+- **GitHub Actions evidence:** workflow run [33325626430](https://github.com/susayold/commercial-finance-profitability-analytics/actions/runs/33325626430) completed successfully after the current release; its release-gate artifact records Linux `PASS_WITH_EXTERNAL_PENDING` only for the unavailable Windows Desktop stage.
 - **Drive bundle:** file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX`, updated in place from this release; archive size 1,328,138 bytes, SHA-256 `0B1C5D1A4A5B82AA5249B4A484391105FEE90410161F0F54FF4CF5247963385A`.
 - **Recruiter site:** private Sites version 15 at `https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#powerbi`.
 - **Data-drop automation:** `scripts/watch_powerbi_refresh.py` passed a two-batch test; the contract hash changed and the target DataRoot reflected `Sales[units]` `121 -> 122`.
