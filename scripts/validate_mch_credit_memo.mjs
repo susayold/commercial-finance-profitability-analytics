@@ -58,10 +58,11 @@ check('unique fiscal years', new Set(years).size === years.length, `unique=${new
 const numericFields = required.filter((field) => field !== 'fiscal_year' && field !== 'data_quality_note');
 check('numeric fields finite', rows.every((row) => numericFields.every((field) => Number.isFinite(Number(row[field])))), 'all derived values parse as numbers');
 
-const fy2016 = rows.find((row) => row.fiscal_year === 'FY2016');
-const fy2017 = rows.find((row) => row.fiscal_year === 'FY2017');
-const fy2024 = rows.find((row) => row.fiscal_year === 'FY2024');
-const fy2025 = rows.find((row) => row.fiscal_year === 'FY2025');
+const byYear = (year) => rows.find((row) => Number(String(row.fiscal_year).replace('FY', '')) === year);
+const fy2016 = byYear(2016);
+const fy2017 = byYear(2017);
+const fy2024 = byYear(2024);
+const fy2025 = byYear(2025);
 
 const close = (actual, expected, tolerance) => Math.abs(Number(actual) - expected) <= tolerance;
 check('FY2025 revenue tie-out', close(fy2025?.net_revenue_vnd_bn, 30556.536605941, 0.01), String(fy2025?.net_revenue_vnd_bn));
