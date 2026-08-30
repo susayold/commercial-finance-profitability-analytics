@@ -155,3 +155,8 @@ The Finance Analyst operating pack is now included in the remote QA surface. It 
 ## KPI dictionary handoff (2026-08-30)
 
 The KPI dictionary is now part of the remote QA surface. It is designed to prevent ambiguous denominators, mixed evidence classes, basis-break ranking and unsupported forecast/credit/valuation claims. Validator and Drive mirrors are complete; Gate A/B remain external.
+
+
+## Management recommendation handoff (2026-08-30)
+
+The register is now in the remote QA surface and Drive archive. It is a decision-support rehearsal with explicit synthetic/proxy/public/governance labels; it does not claim realized savings, revenue uplift or investment returns.
