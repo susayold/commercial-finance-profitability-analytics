@@ -21,6 +21,14 @@ The latest GitHub `main` content includes the site gate-contract release and the
 | QNS/KDC adjustment feasibility | reports/PEER_BASIS_ADJUSTMENT_FEASIBILITY_2026-08-30.md, data/peer_basis_adjustment_feasibility_2026-08-30.csv, scripts/validate_peer_basis_adjustment_feasibility.mjs, reports/PEER_BASIS_ADJUSTMENT_FEASIBILITY_QA.md | Report, native ledger Sheet, validator and QA report mirrored to Drive | PASS; 10/10 controls; exact missing bridges documented; adjusted full-period CAGR remains blocked |
 | Gate A/B intake | docs/GATE_A_B_USER_INPUT_CHECKLIST.md | User-input checklist mirrored to Drive | READY; exact fields, evidence files and acceptance rules documented; gates remain external |
 
+## Current archive authority
+
+The reviewer should use the [Drive Archive Authority Map](../docs/DRIVE_ARCHIVE_AUTHORITY_MAP_2026-08-30.md) and the [current Deliverable Index](../docs/DELIVERABLE_INDEX_2026-08-29.md) as the entry points. Historical Site V6/V7 records and earlier raw handoffs remain retained for audit chronology only.
+
+## MCH FY2017 indexed evidence
+
+The official company FY2017 report is preserved as an `INDEXED_ONLY` eight-metric evidence layer with 8/8 QA; standalone bytes/hash and page-level tie-outs remain pending. [GitHub memo](MCH_FY2017_WEB_INDEX_EVIDENCE.md) · [CSV](../data/mch_fy2017_web_index_evidence.csv) · [QA](MCH_FY2017_WEB_INDEX_EVIDENCE_QA.md) · [Drive memo](https://drive.google.com/file/d/12fNf-xOHSYsnGxlmoVCQse-g-DSJse8y/view?usp=drivesdk) · [Drive CSV](https://drive.google.com/file/d/12DzqLsaAIHxWvVcaI06zjxW2j5YeoRI9/view?usp=drivesdk) · [source runbook](../docs/MCH_SOURCE_VERIFICATION_RUNBOOK_2026-08-30.md).
+
 ## Explicit remaining gates
 
 1. Gate A: add at least one approved real-company forecast snapshot created before actual close, with model version, cutoff timestamp, approver and actual-availability date. Until then, the public-guidance proxy and synthetic fixture must not be described as internal forecast accuracy.
