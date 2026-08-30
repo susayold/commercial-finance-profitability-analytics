@@ -1,0 +1,24 @@
+import fs from 'node:fs';
+
+const inputPath = process.argv[2] ?? 'data/peer_basis_perimeter_bridge_2016_2025.csv';
+const csv = fs.readFileSync(inputPath, 'utf8').trim().split(/\r?\n/);
+const parse = (line) => { const out=[]; let v='', q=false; for (let i=0;i<line.length;i+=1) { const ch=line[i]; if (ch==='"') { if(q && line[i+1]==='"'){v+='"'; i+=1;} else q=!q; } else if(ch===','&&!q){out.push(v);v='';} else v+=ch; } out.push(v); return out; };
+const headers=parse(csv.shift());
+const rows=csv.filter(Boolean).map(line=>Object.fromEntries(headers.map((h,i)=>[h,parse(line)[i]??''])));
+const checks=[];
+const check=(name,pass,detail)=>checks.push({name,pass:Boolean(pass),detail});
+check('expected segment count', rows.length===7, String(rows.length));
+check('required columns', ['ticker','segment_id','start_year','end_year','interval_years','start_revenue_vnd_bn','end_revenue_vnd_bn','revenue_basis','perimeter_status','reported_cagr_pct','naive_full_period_splice_cagr_pct','publication_status','source_document_ids','source_urls','caveat'].every(x=>headers.includes(x)), headers.join(','));
+check('company coverage', new Set(rows.map(x=>x.ticker)).size===2 && rows.every(x=>['QNS','KDC'].includes(x.ticker)), [...new Set(rows.map(x=>x.ticker))].join(','));
+check('source lineage present', rows.every(x=>x.source_document_ids && x.source_urls), 'all segments retain source IDs and URLs');
+check('intervals valid', rows.every(x=>Number(x.interval_years)===Number(x.end_year)-Number(x.start_year)), 'end-start intervals');
+const cagr=(row)=>Number(row.interval_years)===0?null:((Number(row.end_revenue_vnd_bn)/Number(row.start_revenue_vnd_bn))**(1/Number(row.interval_years))-1)*100;
+check('within-window CAGR recomputes', rows.filter(x=>Number(x.interval_years)>0).every(x=>Math.abs(cagr(x)-Number(x.reported_cagr_pct))<0.01), 'formula tie-out');
+check('single-year anchor has blank CAGR', rows.find(x=>x.segment_id==='KDC_pre_consolidation')?.reported_cagr_pct==='','KDC 2016 anchor');
+check('QNS basis break explicit', rows.find(x=>x.segment_id==='QNS_pre_basis')?.revenue_basis==='total_revenue' && rows.find(x=>x.segment_id==='QNS_net_revenue_2020_2025')?.revenue_basis==='net_revenue','total vs net');
+check('KDC perimeter break explicit', rows.find(x=>x.segment_id==='KDC_consolidation_transition')?.perimeter_status==='transition_restated','transition_restated');
+check('naive splices blocked', rows.every(x=>x.publication_status!=='FULL_PERIOD_CAGR'), 'no row is marked as a publishable full-period splice');
+check('no adjusted values claimed', rows.every(x=>x.caveat.toLowerCase().includes('do not') || x.caveat.toLowerCase().includes('not organic') || x.caveat.toLowerCase().includes('basis')), 'caveats retain non-adjusted boundary');
+const pass=checks.filter(x=>x.pass).length;
+console.log(JSON.stringify({status:pass===checks.length?'PASS':'FAIL',pass,fail:checks.length-pass,rows:rows.length}));
+if(pass!==checks.length) process.exitCode=1;
