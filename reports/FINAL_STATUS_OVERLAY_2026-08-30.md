@@ -83,3 +83,8 @@ Validator maintenance note: KPI dictionary report length is 8,406 characters and
 ## Management recommendation register extension
 
 A 12-row recommendation register now completes Module P: each row contains a decision, quantified anchor, value equation, owner, guardrail, evidence class and next review. It links promotion, pricing, working capital, scenarios, CoA controls, MCH credit, D2C, M&A, Gate A and Gate B to auditable artifacts. Validator status is 10/10 PASS.
+
+
+## Finance Business Partnering battle cards v2 extension
+
+The mandatory negotiation module now has a decision matrix and three fully structured cards for Marketing budget, Sales discount and Supply Chain inventory. Each card specifies finance value equation, approval evidence, green/amber/red guardrails, stop/scale rule, escalation and interview conversion. Validator is wired into CI; Drive native Doc/Sheet and raw files are archived.
