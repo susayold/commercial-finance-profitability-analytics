@@ -193,3 +193,7 @@ Queue status is now 25 `reported_statement_verified`; no peer-extraction rows re
 ## FY2007 PBT/PAT reconciliation note (2026-08-30)
 
 FY2007 shows PAT of VND 963.448 bn versus PBT of VND 955.381 bn in the audited comparative column. This is not a data-entry error: the filing includes a deferred-tax benefit and a minority-interest benefit. The reviewer note and native Sheet row preserve this presentation; reconciliation should use PBT minus current tax plus deferred-tax benefit plus/minus minority allocation, not a naive `PBT >= PAT` rule.
+
+## KDC FY2024–FY2025 exact statement promotion (2026-08-30)
+
+The normalized peer export now promotes KDC FY2024 and FY2025 from the audited KDC FY2025 filing. The comparative/current statement pages provide net revenue, gross profit, operating profit, PBT, PAT, total assets, owners' equity and operating cash flow with page anchors 165–171. The supplemental table is [data/kdc_statement_metrics_2024_2025.csv](../data/kdc_statement_metrics_2024_2025.csv). Earlier KDC years remain perimeter-flagged because Vocarimex/TAC consolidation and later portfolio changes interrupt a clean organic trend.
