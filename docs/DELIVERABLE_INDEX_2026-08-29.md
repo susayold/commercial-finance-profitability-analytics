@@ -214,3 +214,10 @@ Use this order for a 15-minute Finance Analyst walkthrough:
 - [Synthetic register](../data/opex_headcount_planning_synthetic.csv)
 - [QA report](../reports/OPEX_HEADCOUNT_PLANNING_QA.md)
 - Cost-center workforce bridge is synthetic/derived and not evidence of realized company spend or savings.
+
+## CAPEX and fixed-asset planning
+
+- [CAPEX & Fixed-Asset Planning Module](../docs/CAPEX_FIXED_ASSET_PLANNING_MODULE.md)
+- [Synthetic project register](../data/capex_fixed_asset_planning_synthetic.csv)
+- [QA report](../reports/CAPEX_FIXED_ASSET_PLANNING_QA.md)
+- Project cash, depreciation and payback are synthetic/derived rehearsal evidence.
