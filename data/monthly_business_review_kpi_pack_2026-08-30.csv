@@ -1,0 +1,17 @@
+section,metric,period,scenario,value,unit,evidence_class,source,decision_use
+executive,revenue,FY2025,Base,80.1,VND_bn,PROXY_DERIVED,site/app/page.tsx,planning envelope
+executive,revenue,FY2025,Upside,83.3,VND_bn,PROXY_DERIVED,site/app/page.tsx,upside boundary
+executive,revenue,FY2025,Downside,76.9,VND_bn,PROXY_DERIVED,site/app/page.tsx,downside boundary
+executive,ebitda_proxy,FY2025,Base,58.5,VND_bn,PROXY_DERIVED,site/app/page.tsx,management proxy
+executive,ebitda_proxy,FY2025,Upside,63.0,VND_bn,PROXY_DERIVED,site/app/page.tsx,management proxy
+executive,ebitda_proxy,FY2025,Downside,53.1,VND_bn,PROXY_DERIVED,site/app/page.tsx,management proxy
+executive,ebitda_proxy_margin,FY2025,Base,29.7,percent,PROXY_DERIVED,site/app/page.tsx,margin guardrail
+executive,ebitda_proxy_margin,FY2025,Upside,31.2,percent,PROXY_DERIVED,site/app/page.tsx,margin guardrail
+executive,ebitda_proxy_margin,FY2025,Downside,27.9,percent,PROXY_DERIVED,site/app/page.tsx,margin guardrail
+executive,ccc,FY2025,Base,54.8,days,PROXY_DERIVED,site/app/page.tsx,cash conversion
+executive,ccc,FY2025,Upside,48.8,days,PROXY_DERIVED,site/app/page.tsx,cash conversion
+executive,ccc,FY2025,Downside,68.8,days,PROXY_DERIVED,site/app/page.tsx,cash conversion
+guardrail,contribution_margin_hurdle,FY2025,All,25,percent,SYNTHETIC_ASSUMPTION,docs/CFO_MEMO_V1.md,promo and channel decisions
+guardrail,customer_concentration_trigger,FY2025,All,5,percentage_points,SYNTHETIC_ASSUMPTION,reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md,concentration escalation
+guardrail,dso_trigger,FY2025,All,5,days,SYNTHETIC_ASSUMPTION,reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md,collections escalation
+guardrail,dio_trigger,FY2025,All,7,days,SYNTHETIC_ASSUMPTION,reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md,inventory escalation
