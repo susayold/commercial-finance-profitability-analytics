@@ -175,3 +175,8 @@ The evidence matrix and QA report now reflect the latest MBR, KPI dictionary, re
 ## Monthly close cadence handoff (2026-08-30)
 
 The WD-5 to WD+5 close/forecast calendar is now in the remote QA surface and Drive archive. It defines handoffs, controls, escalation and release timing; it does not represent a live company close.
+
+
+## Recruiter deliverable index refresh (2026-08-30)
+
+The index now has a 15-minute review order and explicit release boundaries for synthetic, public, Gate A and Gate B evidence. Drive refresh copy is archived.
