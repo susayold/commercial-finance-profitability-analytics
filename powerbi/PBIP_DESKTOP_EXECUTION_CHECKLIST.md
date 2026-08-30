@@ -132,3 +132,7 @@ Until these conditions are met, keep the repository status as PBIP_SOURCE_SCAFFO
 ## 8. Important boundary
 
 The VNM public-guidance analysis is useful for forecast-versus-actual communication, but it is not an internal pre-close snapshot. It must remain separate from Forecast_Snapshot_Input and cannot close Gate A.
+
+## 9. Automated preflight before opening Desktop
+
+Run scripts/validate_powerbi_source_coherence.mjs against the manifest, model contract, DAX pack, QA matrix and evidence template. The preflight must return 13/13 PASS before Desktop execution. See reports/POWER_BI_SOURCE_COHERENCE_QA.md. This verifies source alignment only; it does not create a native PBIX.
