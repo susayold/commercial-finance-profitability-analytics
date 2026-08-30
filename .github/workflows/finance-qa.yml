@@ -41,6 +41,14 @@ jobs:
             "$RUNNER_TEMP/forecast_capture_archive_QA.md"
           grep -F "**Overall status: PASS** (14/14 checks passed)" "$RUNNER_TEMP/forecast_capture_archive_QA.md"
 
+      - name: OPEX and headcount planning QA
+        shell: bash
+        run: |
+          node scripts/validate_opex_headcount_planning.mjs \
+            data/opex_headcount_planning_synthetic.csv \
+            docs/OPEX_HEADCOUNT_PLANNING_MODULE.md \
+            "$RUNNER_TEMP/opex_headcount_QA.md"
+
       - name: Gate A intake contract QA
         shell: bash
         run: |
