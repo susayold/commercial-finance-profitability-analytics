@@ -14,6 +14,7 @@ This folder is the production migration path for automatic Power BI page refresh
 - `../../scripts/run_directquery_localdb_smoke.py`: reproducible Windows-only harness that provisions, loads, mutates, verifies and deletes an ephemeral LocalDB instance.
 - `../DIRECTQUERY_READINESS.json`: machine-readable migration gates and ownership fields.
 - `../docs/POWER_BI_REFRESH_ARCHITECTURE.md`: current Import contract and claim boundary.
+- `PRODUCTION_ACCEPTANCE_MATRIX.md`: gate-by-gate cloud, Desktop, Service and Automatic Page Refresh acceptance criteria.
 
 ## Migration sequence
 
