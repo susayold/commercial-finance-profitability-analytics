@@ -3,7 +3,9 @@ param(
     [Parameter()]
     [string]$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")),
     [Parameter()]
-    [string]$DataRoot = ""
+    [string]$DataRoot = "",
+    [Parameter()]
+    [string]$DesktopPath = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -30,7 +32,9 @@ if (-not $DataRoot) {
     if (Test-Path -LiteralPath $defaultDataRoot -PathType Container) { $DataRoot = $defaultDataRoot }
 }
 
-$desktopCandidates = @(
+$desktopCandidates = @()
+if ($DesktopPath) { $desktopCandidates += $DesktopPath }
+$desktopCandidates += @(
     "C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe",
     "C:\Program Files (x86)\Microsoft Power BI Desktop\bin\PBIDesktop.exe"
 )
