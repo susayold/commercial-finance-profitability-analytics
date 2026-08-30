@@ -73,6 +73,12 @@ The Power BI work was continued through the environment boundary without oversta
 
 The package source used for the latest Drive sync is GitHub commit `f921739` (native QA record and custom-path preflight support). CI run `33318478875` passed for the preflight enhancement; the documentation commit has its own Finance model QA run in progress. The Drive bundle was updated in place at file ID `1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX` after this documentation update and includes the PBIP/PBIT source, the same committed current synthetic CSVs, DirectQuery schema, validators, CI workflow, runbook/checklist and native execution-host QA record. The bundle is remote-authoritative; the temporary clone used for packaging is deleted after verification.
 
+### 9. DirectQuery provisioning continuation — 2026-08-30
+
+The realtime migration kit was made executable without pretending that a database already exists. Commit `1eca6f1` adds a deterministic `pyodbc` loader with a side-effect-free default dry-run and explicit transactional `--apply`, plus `finance.Refresh_Control` metadata, a health query and an optional dependency file. The loader validates the exact 14-file contract, parses dates/decimals/booleans, records per-file SHA-256/row counts and reports 29,843 source rows; the committed evidence is `reports/POWER_BI_DIRECTQUERY_LOADER_DRY_RUN_2026-08-30.md`.
+
+The standalone DirectQuery readiness validator now passes 34/34 checks, the full finance QA runner passes, the PBIP/PBIT package gate remains 29/29, the artifact-coherence gate remains 15/15 and the claim-boundary gate remains 11/11. GitHub Actions run `33320227118` passed on commit `1eca6f1`. The health query and loader intentionally keep the realtime claim `PENDING`: the next external step is to apply the DDL to a controlled Azure SQL/SQL Server/Fabric source, execute a real load, and then perform native Desktop/Service DirectQuery and Automatic Page Refresh QA.
+
 ## Deliberate stop point
 
 This process stops **before native Power BI Desktop execution**. The portable PBIP contract, DAX, six-page design, refreshable PBIT, runbook and QA-01–QA-18 matrix are complete, but no placeholder `.pbix` is claimed. Native PBIX creation, visual reconciliation and screenshot evidence still require Power BI Desktop on an execution host.
