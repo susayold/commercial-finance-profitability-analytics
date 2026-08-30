@@ -58,3 +58,8 @@ A calculated FY2016–FY2025 financial-statement analysis layer is now archived:
 ## Peer financial-quality scorecard extension
 
 A 21-row VNM/QNS/KDC scorecard now derives FY2020–FY2025 revenue/asset CAGR, FY2025 profitability, equity ratio and CFO/PAT where source components exist. Validator status is 11/11 PASS. VNM is the only trend candidate; QNS/KDC remain context-only with basis/perimeter flags and controlled blanks. See [scorecard](../reports/PEER_FINANCIAL_QUALITY_SCORECARD_2026-08-30.md) and [QA](../reports/PEER_FINANCIAL_QUALITY_SCORECARD_QA.md).
+
+
+## CV evidence refresh
+
+The finance-first CV V2 and evidence map now include the MCH statement-analysis layer (11/11 controls) and the 21-row peer financial-quality scorecard (11/11 controls). Candidate-specific contact, education and experience fields remain intentionally bracketed until supplied.
