@@ -62,7 +62,7 @@ Required dimensions: Calendar, Product_Master, Customer_Master, Channel_Master a
 
 Required facts: Sales_Fact, Commercial_Costs, Inventory, AR, AP, Budget, Forecast_Versions, OPEX_Headcount, CAPEX_Projects, Peer_Benchmark and Peer_Review_Queue.
 
-Required relationships: 15. Validate one-to-many direction and confirm the Scenario Selector remains disconnected.
+Required relationships: 17. Validate one-to-many direction and confirm the Scenario Selector remains disconnected.
 
 Data-type controls:
 
