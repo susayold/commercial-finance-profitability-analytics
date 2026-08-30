@@ -76,5 +76,8 @@ The companion validator checks:
 - [Comparability decision memo](PEER_COMPARABILITY_DECISION_2026-08-30.md)
 - [Machine-readable feasibility ledger](../data/peer_basis_adjustment_feasibility_2026-08-30.csv)
 - [Validator](../scripts/validate_peer_basis_adjustment_feasibility.mjs)
+- [Drive report mirror](https://docs.google.com/document/d/1j4n34qdg3L4wlCcsf2KlQfakMzw3zqNIAVCnoO21eLM/edit?usp=drivesdk)
+- [Drive feasibility ledger](https://docs.google.com/spreadsheets/d/1JYVMneApyJCtSSnTbyYma_bJhrHfScxI_tZtZlEcIPU/edit?usp=drivesdk)
+- [Drive QA mirror (10/10)](https://docs.google.com/document/d/1MEyVLEIAv3d_MgZFX2EBmC5CzuXwPDSLLffr-s-f2Bo/edit?usp=drivesdk)
 
 This artifact does not close Gate A or Gate B and does not alter the approved peer panel.
