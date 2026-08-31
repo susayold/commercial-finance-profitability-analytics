@@ -1,0 +1,76 @@
+table Fact_PVM_Bridge
+	lineageTag: 7b432085-bb9b-4df8-8320-1f0ac65b1342
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: d8d54bb2-2d3e-4519-af37-2a86306962c3
+		sortByColumn: DateKey
+		annotation SummarizationSetBy = User
+
+	column SKUKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SKUKey
+		lineageTag: 9b9efae7-9591-420f-8cf0-69e4364ab2c0
+		annotation SummarizationSetBy = User
+
+	column ChannelKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ChannelKey
+		lineageTag: ada6d25a-c920-4229-8a04-3c5df92dc66d
+		annotation SummarizationSetBy = User
+
+	column Component
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Component
+		lineageTag: 70b718f4-4df6-49c7-a866-69edea6079be
+		annotation SummarizationSetBy = User
+
+	column AmountVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: AmountVND
+		lineageTag: e4ee1180-31d6-44b4-a395-b4f1c6d6c962
+		annotation SummarizationSetBy = User
+
+	column BaseRevenueVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BaseRevenueVND
+		lineageTag: c42a3567-9239-4cb2-b8bb-16416e72f9e5
+		annotation SummarizationSetBy = User
+
+	column CurrentRevenueVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CurrentRevenueVND
+		lineageTag: da52a386-fbd5-4079-948e-8c921ed55c3f
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: b4f41313-9cdb-4323-9ad5-1e968e95e9c8
+		annotation SummarizationSetBy = User
+
+	partition Fact_PVM_Bridge = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_pvm_bridge.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"MonthStart", type date}, {"SKUKey", type text}, {"ChannelKey", type text}, {"Component", type text}, {"AmountVND", type number}, {"BaseRevenueVND", type number}, {"CurrentRevenueVND", type number}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

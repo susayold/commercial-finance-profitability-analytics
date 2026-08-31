@@ -1,0 +1,12 @@
+{
+  "name": "Component",
+  "dataType": "string",
+  "sourceColumn": "Component",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

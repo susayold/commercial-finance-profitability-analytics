@@ -1,0 +1,13 @@
+{
+  "name": "TargetRevenueVNDBn",
+  "dataType": "double",
+  "sourceColumn": "TargetRevenueVNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

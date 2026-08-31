@@ -1,0 +1,1 @@
+VAR s = [Selected Scenario] VAR delta = COALESCE ( CALCULATE ( MAX ( Fact_Forecast[WorkingCapitalDaysDelta] ), Fact_Forecast[ScenarioKey] = SWITCH ( s, "Base", "BASE", "Upside", "UPSIDE", "Downside", "DOWNSIDE", "BASE" ) ), 0 ) RETURN [CCC] + delta

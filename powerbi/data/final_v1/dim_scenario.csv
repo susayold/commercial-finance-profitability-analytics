@@ -1,0 +1,7 @@
+ScenarioKey,Scenario,ScenarioGroup,IsHistoricalActual,EvidenceClass
+ACTUAL,Actual,Historical,true,DERIVED
+BUDGET,Budget,Plan,false,SIMULATED
+LE,Latest Estimate,Plan,false,SIMULATED
+BASE,Base,Plan,false,ASSUMPTION
+UPSIDE,Upside,Plan,false,ASSUMPTION
+DOWNSIDE,Downside,Plan,false,ASSUMPTION

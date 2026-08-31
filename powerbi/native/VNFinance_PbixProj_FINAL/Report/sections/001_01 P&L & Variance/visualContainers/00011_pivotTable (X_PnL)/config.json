@@ -1,0 +1,220 @@
+{
+  "name": "01_MTX_PnL",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 255,
+        "z": 5,
+        "width": 760,
+        "height": 625
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "pivotTable",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Date.YearMonth"
+        },
+        {
+          "queryRef": "Sales.Gross Sales"
+        },
+        {
+          "queryRef": "Sales.Discounts"
+        },
+        {
+          "queryRef": "Sales.Returns"
+        },
+        {
+          "queryRef": "Sales.Net Revenue"
+        },
+        {
+          "queryRef": "Sales.COGS"
+        },
+        {
+          "queryRef": "Sales.Gross Profit"
+        },
+        {
+          "queryRef": "Sales.Gross Margin %"
+        },
+        {
+          "queryRef": "Sales.Contribution Profit"
+        },
+        {
+          "queryRef": "Sales.Contribution Margin %"
+        },
+        {
+          "queryRef": "Sales.OPEX Actual"
+        },
+        {
+          "queryRef": "Sales.Operating Profit"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Date",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "YearMonth"
+          },
+          "Name": "Dim_Date.YearMonth",
+          "NativeReferenceName": "YearMonth"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Gross Sales"
+          },
+          "Name": "Sales.Gross Sales",
+          "NativeReferenceName": "Gross Sales"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Discounts"
+          },
+          "Name": "Sales.Discounts",
+          "NativeReferenceName": "Discounts"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Returns"
+          },
+          "Name": "Sales.Returns",
+          "NativeReferenceName": "Returns"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Net Revenue"
+          },
+          "Name": "Sales.Net Revenue",
+          "NativeReferenceName": "Net Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "COGS"
+          },
+          "Name": "Sales.COGS",
+          "NativeReferenceName": "COGS"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Gross Profit"
+          },
+          "Name": "Sales.Gross Profit",
+          "NativeReferenceName": "Gross Profit"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Gross Margin %"
+          },
+          "Name": "Sales.Gross Margin %",
+          "NativeReferenceName": "Gross Margin %"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Contribution Profit"
+          },
+          "Name": "Sales.Contribution Profit",
+          "NativeReferenceName": "Contribution Profit"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Contribution Margin %"
+          },
+          "Name": "Sales.Contribution Margin %",
+          "NativeReferenceName": "Contribution Margin %"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OPEX Actual"
+          },
+          "Name": "Sales.OPEX Actual",
+          "NativeReferenceName": "OPEX Actual"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Operating Profit"
+          },
+          "Name": "Sales.Operating Profit",
+          "NativeReferenceName": "Operating Profit"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "SKUKey",
+  "dataType": "string",
+  "sourceColumn": "SKUKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

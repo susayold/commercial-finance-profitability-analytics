@@ -1,0 +1,65 @@
+table Dim_Forecast_Version
+	lineageTag: 31dcaa99-a84f-4335-a5a0-e44effda8208
+
+	column ForecastVersionKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ForecastVersionKey
+		lineageTag: a7ed00f2-d0c5-4932-a9a1-0994ef601c98
+		annotation SummarizationSetBy = User
+
+	column SnapshotDate
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: SnapshotDate
+		lineageTag: 1c26e49f-60f5-4639-bbcb-4cde85d0e619
+		annotation SummarizationSetBy = User
+
+	column TargetMonth
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: TargetMonth
+		lineageTag: 760eb091-eb09-479d-b84c-04de609dc419
+		annotation SummarizationSetBy = User
+
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+		lineageTag: fecc2c94-669c-485e-952b-94712b99bb06
+		annotation SummarizationSetBy = User
+
+	column Approver
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Approver
+		lineageTag: ba10dc7b-9409-4a8c-9dbd-ba22a3a2a9da
+		annotation SummarizationSetBy = User
+
+	column Eligibility
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Eligibility
+		lineageTag: 7bb40dfe-365b-4660-a8dd-3f0c3f374683
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: a0a65912-e991-41fe-9c83-4e81e070b997
+		annotation SummarizationSetBy = User
+
+	partition Dim_Forecast_Version = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_forecast_version.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"ForecastVersionKey", type text}, {"SnapshotDate", type date}, {"TargetMonth", type date}, {"Status", type text}, {"Approver", type text}, {"Eligibility", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

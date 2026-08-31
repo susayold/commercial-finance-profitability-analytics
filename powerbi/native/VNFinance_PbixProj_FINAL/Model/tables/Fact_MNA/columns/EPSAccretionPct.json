@@ -1,0 +1,13 @@
+{
+  "name": "EPSAccretionPct",
+  "dataType": "double",
+  "sourceColumn": "EPSAccretionPct",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "0.0%"
+}

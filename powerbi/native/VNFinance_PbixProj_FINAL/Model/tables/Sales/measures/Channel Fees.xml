@@ -1,0 +1,3 @@
+<Measure Name="Channel Fees">
+  <FormatString>#,0</FormatString>
+</Measure>

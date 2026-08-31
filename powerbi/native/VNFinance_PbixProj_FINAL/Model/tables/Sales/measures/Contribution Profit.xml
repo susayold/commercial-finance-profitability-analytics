@@ -1,0 +1,3 @@
+<Measure Name="Contribution Profit">
+  <FormatString>#,0</FormatString>
+</Measure>

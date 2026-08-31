@@ -1,0 +1,85 @@
+{
+  "name": "00_TBL_Actions",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 610,
+        "z": 5,
+        "width": 780,
+        "height": 270
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Fact_Budget_Allocation.ChannelKey"
+        },
+        {
+          "queryRef": "Fact_Budget_Allocation.Decision"
+        },
+        {
+          "queryRef": "Sales.Incremental Contribution"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Budget_Allocation",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ChannelKey"
+          },
+          "Name": "Fact_Budget_Allocation.ChannelKey",
+          "NativeReferenceName": "ChannelKey"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Decision"
+          },
+          "Name": "Fact_Budget_Allocation.Decision",
+          "NativeReferenceName": "Decision"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Incremental Contribution"
+          },
+          "Name": "Sales.Incremental Contribution",
+          "NativeReferenceName": "Incremental Contribution"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

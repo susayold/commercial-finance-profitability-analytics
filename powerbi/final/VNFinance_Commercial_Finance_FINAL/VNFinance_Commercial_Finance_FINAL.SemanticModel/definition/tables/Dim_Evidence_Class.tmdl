@@ -1,0 +1,36 @@
+table Dim_Evidence_Class
+	lineageTag: cf55c8a4-6092-414b-a790-ca586454c9ac
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 10cf9373-44b6-4097-a184-6f42f5fc1834
+		annotation SummarizationSetBy = User
+
+	column Definition
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Definition
+		lineageTag: 1e33c822-69bd-4a50-9ad3-789d42d4934e
+		annotation SummarizationSetBy = User
+
+	column AllowedHeadline
+		dataType: string
+		summarizeBy: none
+		sourceColumn: AllowedHeadline
+		lineageTag: 04acb8af-893e-419b-b500-9b3279ee92ef
+		annotation SummarizationSetBy = User
+
+	partition Dim_Evidence_Class = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_evidence_class.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"EvidenceClass", type text}, {"Definition", type text}, {"AllowedHeadline", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

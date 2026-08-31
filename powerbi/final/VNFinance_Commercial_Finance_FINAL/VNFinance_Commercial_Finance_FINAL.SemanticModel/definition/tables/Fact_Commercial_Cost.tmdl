@@ -1,0 +1,74 @@
+table Fact_Commercial_Cost
+	lineageTag: 8470ef89-76be-4968-835d-ef89e431aced
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: 74ec6dac-bcef-4765-96b5-cad80171198d
+		sortByColumn: DateKey
+		annotation SummarizationSetBy = User
+
+	column ChannelKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ChannelKey
+		lineageTag: 291aae1c-8e2d-42b6-a625-3b6cfa3b0b4f
+		annotation SummarizationSetBy = User
+
+	column CostType
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CostType
+		lineageTag: 3e1e7e11-5edd-41ac-8384-b73f9eb9aa42
+		annotation SummarizationSetBy = User
+
+	column AmountVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: AmountVND
+		lineageTag: 579deda7-9fc3-4720-b5b7-fa6ec37448a2
+		annotation SummarizationSetBy = User
+
+	column SourceCostBucket
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceCostBucket
+		lineageTag: 5bf2fd09-1a67-4042-b708-bc0950dde181
+		annotation SummarizationSetBy = User
+
+	column AllocationMethod
+		dataType: string
+		summarizeBy: none
+		sourceColumn: AllocationMethod
+		lineageTag: ec39275a-2f15-4cb9-95c0-c125333fcd1c
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 2601747f-ece5-405f-97d6-ff78991b7434
+		annotation SummarizationSetBy = User
+
+	column DatasetVersion
+		dataType: string
+		summarizeBy: none
+		sourceColumn: DatasetVersion
+		lineageTag: 829b5656-be8a-4e47-ba98-aed8279ea8c2
+		annotation SummarizationSetBy = User
+
+	partition Fact_Commercial_Cost = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_commercial_cost.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"MonthStart", type date}, {"ChannelKey", type text}, {"CostType", type text}, {"AmountVND", type number}, {"SourceCostBucket", type text}, {"AllocationMethod", type text}, {"EvidenceClass", type text}, {"DatasetVersion", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

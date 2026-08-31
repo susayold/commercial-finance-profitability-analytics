@@ -1,0 +1,13 @@
+{
+  "name": "TargetEBITDAMargin",
+  "dataType": "double",
+  "sourceColumn": "TargetEBITDAMargin",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "0.0%"
+}

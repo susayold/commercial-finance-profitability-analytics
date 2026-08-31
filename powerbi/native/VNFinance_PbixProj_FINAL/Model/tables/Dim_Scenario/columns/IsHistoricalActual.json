@@ -1,0 +1,12 @@
+{
+  "name": "IsHistoricalActual",
+  "dataType": "boolean",
+  "sourceColumn": "IsHistoricalActual",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

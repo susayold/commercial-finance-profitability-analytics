@@ -1,0 +1,120 @@
+{
+  "name": "02_TBL_ChannelSKU",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 575,
+        "z": 5,
+        "width": 792,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Channel.Channel"
+        },
+        {
+          "queryRef": "Dim_Product.SKU"
+        },
+        {
+          "queryRef": "Sales.Net Revenue"
+        },
+        {
+          "queryRef": "Sales.Contribution Profit"
+        },
+        {
+          "queryRef": "Sales.Contribution Margin %"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Channel",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Dim_Product",
+          "Type": 0
+        },
+        {
+          "Name": "t2",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Channel"
+          },
+          "Name": "Dim_Channel.Channel",
+          "NativeReferenceName": "Channel"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "SKU"
+          },
+          "Name": "Dim_Product.SKU",
+          "NativeReferenceName": "SKU"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Net Revenue"
+          },
+          "Name": "Sales.Net Revenue",
+          "NativeReferenceName": "Net Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Contribution Profit"
+          },
+          "Name": "Sales.Contribution Profit",
+          "NativeReferenceName": "Contribution Profit"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Contribution Margin %"
+          },
+          "Name": "Sales.Contribution Margin %",
+          "NativeReferenceName": "Contribution Margin %"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

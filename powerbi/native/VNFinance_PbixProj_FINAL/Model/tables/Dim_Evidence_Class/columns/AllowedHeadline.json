@@ -1,0 +1,12 @@
+{
+  "name": "AllowedHeadline",
+  "dataType": "string",
+  "sourceColumn": "AllowedHeadline",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

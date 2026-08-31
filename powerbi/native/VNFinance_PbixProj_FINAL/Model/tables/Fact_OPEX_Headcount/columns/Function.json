@@ -1,0 +1,12 @@
+{
+  "name": "Function",
+  "dataType": "string",
+  "sourceColumn": "Function",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

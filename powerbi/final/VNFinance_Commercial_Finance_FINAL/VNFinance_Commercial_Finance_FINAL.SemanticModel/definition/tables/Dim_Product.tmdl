@@ -1,0 +1,81 @@
+table Dim_Product
+	lineageTag: 4e366254-51cf-483c-bfac-99e4c49ae415
+
+	column ProductKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ProductKey
+		lineageTag: cc8611f4-f0db-472a-8e79-9ee6704113bc
+		annotation SummarizationSetBy = User
+
+	column SKU
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SKU
+		lineageTag: f6d2519f-9d01-4192-a424-432d52d8764c
+		annotation SummarizationSetBy = User
+
+	column Product
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Product
+		lineageTag: 233b4eb2-b202-4bf8-bb4f-d8e43c853294
+		annotation SummarizationSetBy = User
+
+	column Category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Category
+		lineageTag: 21cfa13b-4c0c-4e69-a3d4-8c0d24428435
+		annotation SummarizationSetBy = User
+
+	column Brand
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Brand
+		lineageTag: 50de4a4a-2705-46c8-a2e5-053cc38ebafc
+		annotation SummarizationSetBy = User
+
+	column Lifecycle
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Lifecycle
+		lineageTag: 34ecc0b4-9eb1-4a34-8c38-290c2c298f55
+		annotation SummarizationSetBy = User
+
+	column StandardGM
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: StandardGM
+		lineageTag: 1de2d664-778a-48de-aab8-818eec7151bb
+		annotation SummarizationSetBy = User
+
+	column UnitPriceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: UnitPriceVND
+		lineageTag: 682ebf16-f1e5-4ef2-9897-8cc23bb9f772
+		annotation SummarizationSetBy = User
+
+	column StandardUnitCostVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: StandardUnitCostVND
+		lineageTag: eedc2691-63e6-43fc-bb99-6862f36dbfd4
+		annotation SummarizationSetBy = User
+
+	partition Dim_Product = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_product.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"ProductKey", type text}, {"SKU", type text}, {"Product", type text}, {"Category", type text}, {"Brand", type text}, {"Lifecycle", type text}, {"StandardGM", type number}, {"UnitPriceVND", type number}, {"StandardUnitCostVND", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

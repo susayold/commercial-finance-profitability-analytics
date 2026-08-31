@@ -1,0 +1,101 @@
+table Fact_Budget
+	lineageTag: bf5ed31f-0b9e-41b8-b3ee-1aac9f5046fd
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: 4b386a6c-de43-421a-8cfe-c448aa1bc5f5
+		sortByColumn: DateKey
+		annotation SummarizationSetBy = User
+
+	column SKUKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SKUKey
+		lineageTag: 9fb649a5-a34a-4c8b-8edb-6ded5a0b7de6
+		annotation SummarizationSetBy = User
+
+	column ChannelKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ChannelKey
+		lineageTag: cd29fd0d-1175-4159-82c2-c9583eeaf53c
+		annotation SummarizationSetBy = User
+
+	column ScenarioKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ScenarioKey
+		lineageTag: 8e418f8f-fcc3-4aac-9b95-54696f7d01fa
+		annotation SummarizationSetBy = User
+
+	column ForecastVersionKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ForecastVersionKey
+		lineageTag: 66e4e19b-eeee-411a-9bd8-db76d9f76960
+		annotation SummarizationSetBy = User
+
+	column BudgetUnits
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BudgetUnits
+		lineageTag: 8f04948c-f9f8-4e5c-9ff9-b6d04ccf5d6a
+		annotation SummarizationSetBy = User
+
+	column BudgetRevenueVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BudgetRevenueVND
+		lineageTag: 605cc722-a4d2-44fc-8403-be00f1767ca8
+		annotation SummarizationSetBy = User
+
+	column BudgetCOGSVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BudgetCOGSVND
+		lineageTag: 279ca6d0-e648-403e-b0a6-5bf26979946a
+		annotation SummarizationSetBy = User
+
+	column BudgetTradeSpendVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BudgetTradeSpendVND
+		lineageTag: 2d9d7819-4341-4a69-85a1-d7dab476fe74
+		annotation SummarizationSetBy = User
+
+	column BudgetOPEXVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BudgetOPEXVND
+		lineageTag: a4715ec8-201f-44d2-98e0-ca17890fe163
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 5799a29c-11ac-4732-8d3f-5c7ffd630111
+		annotation SummarizationSetBy = User
+
+	partition Fact_Budget = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_budget.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"MonthStart", type date}, {"SKUKey", type text}, {"ChannelKey", type text}, {"ScenarioKey", type text}, {"ForecastVersionKey", type text}, {"BudgetUnits", Int64.Type}, {"BudgetRevenueVND", type number}, {"BudgetCOGSVND", type number}, {"BudgetTradeSpendVND", type number}, {"BudgetOPEXVND", type number}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

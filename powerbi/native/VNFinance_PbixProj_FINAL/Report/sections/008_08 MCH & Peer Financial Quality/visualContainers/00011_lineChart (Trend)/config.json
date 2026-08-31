@@ -1,0 +1,102 @@
+{
+  "name": "08_CH_MCHTrend",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 255,
+        "z": 10,
+        "width": 780,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Fact_Public_Financials.FiscalYear"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Public Revenue"
+        },
+        {
+          "queryRef": "Sales.Public PAT Margin"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Public_Financials",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "FiscalYear"
+          },
+          "Name": "Fact_Public_Financials.FiscalYear",
+          "NativeReferenceName": "FiscalYear"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Public Revenue"
+          },
+          "Name": "Sales.Public Revenue",
+          "NativeReferenceName": "Public Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Public PAT Margin"
+          },
+          "Name": "Sales.Public PAT Margin",
+          "NativeReferenceName": "Public PAT Margin"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Public Revenue"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

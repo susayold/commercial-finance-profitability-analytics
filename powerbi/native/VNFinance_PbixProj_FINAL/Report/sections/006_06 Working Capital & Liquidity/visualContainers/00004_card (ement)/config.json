@@ -1,0 +1,50 @@
+{
+  "name": "06_MSG_Management",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 82,
+        "z": 20,
+        "width": 1590,
+        "height": 48
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.Management Message"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Management Message"
+          },
+          "Name": "Sales.Management Message",
+          "NativeReferenceName": "Management Message"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

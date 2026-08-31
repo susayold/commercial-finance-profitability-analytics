@@ -1,0 +1,1 @@
+SUM ( Fact_Budget_Allocation[BudgetDeltaVND] )

@@ -1,0 +1,102 @@
+{
+  "name": "05_CH_Scenario",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 255,
+        "z": 10,
+        "width": 792,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "clusteredColumnChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Dim_Scenario.Scenario"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Scenario Revenue"
+        },
+        {
+          "queryRef": "Sales.Scenario Operating Profit"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Scenario",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Scenario"
+          },
+          "Name": "Dim_Scenario.Scenario",
+          "NativeReferenceName": "Scenario"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Scenario Revenue"
+          },
+          "Name": "Sales.Scenario Revenue",
+          "NativeReferenceName": "Scenario Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Scenario Operating Profit"
+          },
+          "Name": "Sales.Scenario Operating Profit",
+          "NativeReferenceName": "Scenario Operating Profit"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Scenario Revenue"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

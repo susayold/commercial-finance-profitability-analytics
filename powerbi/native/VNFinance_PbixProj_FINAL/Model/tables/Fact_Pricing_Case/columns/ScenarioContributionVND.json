@@ -1,0 +1,13 @@
+{
+  "name": "ScenarioContributionVND",
+  "dataType": "double",
+  "sourceColumn": "ScenarioContributionVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

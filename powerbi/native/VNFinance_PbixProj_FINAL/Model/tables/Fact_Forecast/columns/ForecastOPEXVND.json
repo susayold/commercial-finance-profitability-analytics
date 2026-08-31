@@ -1,0 +1,13 @@
+{
+  "name": "ForecastOPEXVND",
+  "dataType": "double",
+  "sourceColumn": "ForecastOPEXVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

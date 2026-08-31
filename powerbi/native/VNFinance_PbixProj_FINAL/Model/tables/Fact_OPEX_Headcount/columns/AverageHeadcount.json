@@ -1,0 +1,13 @@
+{
+  "name": "AverageHeadcount",
+  "dataType": "double",
+  "sourceColumn": "AverageHeadcount",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

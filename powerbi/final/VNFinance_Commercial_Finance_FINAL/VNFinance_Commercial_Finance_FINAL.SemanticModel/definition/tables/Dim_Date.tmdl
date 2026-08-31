@@ -1,0 +1,112 @@
+table Dim_Date
+	lineageTag: 27e39bad-571b-4dc8-b8ca-4d9089b2b422
+	dataCategory: Time
+
+	column DateKey
+		dataType: dateTime
+		isKey
+		summarizeBy: none
+		sourceColumn: DateKey
+		lineageTag: 906ab7af-eaa3-4b59-a1ad-80b3f4d1e185
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: Date
+		lineageTag: ff234b3f-5be0-449c-9ed5-e22823684d48
+		annotation SummarizationSetBy = User
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: 2ac43cbc-2eec-414b-9003-355acdba7414
+		sortByColumn: DateKey
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: Year
+		lineageTag: 383407aa-03d6-4f20-80d2-d111349aaa09
+		annotation SummarizationSetBy = User
+
+	column Quarter
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Quarter
+		lineageTag: d7eaefeb-7639-402c-807a-f3c29a505585
+		annotation SummarizationSetBy = User
+
+	column MonthNumber
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: MonthNumber
+		lineageTag: 3084e8a9-a293-49a6-8b06-d1646487b3c6
+		annotation SummarizationSetBy = User
+
+	column MonthName
+		dataType: string
+		summarizeBy: none
+		sourceColumn: MonthName
+		lineageTag: 3d936924-888e-4b7b-9c0d-5e5ee56dd2fa
+		annotation SummarizationSetBy = User
+
+	column YearMonth
+		dataType: string
+		summarizeBy: none
+		sourceColumn: YearMonth
+		lineageTag: 49ae4490-eff6-4147-bbec-6a53bf9537f5
+		sortByColumn: MonthStart
+		annotation SummarizationSetBy = User
+
+	column FiscalYear
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: FiscalYear
+		lineageTag: 6d050d44-6e62-44bf-8c49-9c1f97386bcb
+		annotation SummarizationSetBy = User
+
+	column FiscalQuarter
+		dataType: string
+		summarizeBy: none
+		sourceColumn: FiscalQuarter
+		lineageTag: 9daab50c-0b35-4ab2-8326-3165978df2cf
+		annotation SummarizationSetBy = User
+
+	column DaysInMonth
+		dataType: int64
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: DaysInMonth
+		lineageTag: 1c9d3e1b-c414-4628-af51-59c82174c60b
+		annotation SummarizationSetBy = User
+
+	column IsClosedMonth
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: IsClosedMonth
+		lineageTag: e5723a87-1d16-459f-a98d-c7b4771e047d
+		annotation SummarizationSetBy = User
+
+	column IsLatestClosedMonth
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: IsLatestClosedMonth
+		lineageTag: 172ea77d-3e51-4672-b078-ec0ea8212ee8
+		annotation SummarizationSetBy = User
+
+	partition Dim_Date = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_date.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"DateKey", type date}, {"Date", type date}, {"MonthStart", type date}, {"Year", Int64.Type}, {"Quarter", type text}, {"MonthNumber", Int64.Type}, {"MonthName", type text}, {"YearMonth", type text}, {"FiscalYear", Int64.Type}, {"FiscalQuarter", type text}, {"DaysInMonth", Int64.Type}, {"IsClosedMonth", type logical}, {"IsLatestClosedMonth", type logical}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

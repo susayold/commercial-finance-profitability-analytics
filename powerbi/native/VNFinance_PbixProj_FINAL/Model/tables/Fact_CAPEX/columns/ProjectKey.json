@@ -1,0 +1,12 @@
+{
+  "name": "ProjectKey",
+  "dataType": "string",
+  "sourceColumn": "ProjectKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

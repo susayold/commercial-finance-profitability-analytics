@@ -1,0 +1,13 @@
+{
+  "name": "VoucherSupportVND",
+  "dataType": "double",
+  "sourceColumn": "VoucherSupportVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "NetRevenueVND",
+  "dataType": "double",
+  "sourceColumn": "NetRevenueVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

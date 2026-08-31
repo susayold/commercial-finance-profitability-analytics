@@ -1,0 +1,141 @@
+table Fact_Pricing_Case
+	lineageTag: 6bf06353-3aab-4664-9ab6-1482e4365132
+
+	column PricingCaseKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: PricingCaseKey
+		lineageTag: adf7e976-8112-4c65-a977-cee59967e969
+		annotation SummarizationSetBy = User
+
+	column PricingCase
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PricingCase
+		lineageTag: 4d62160c-49d8-4e19-ba32-d39c532609a0
+		annotation SummarizationSetBy = User
+
+	column ChannelKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ChannelKey
+		lineageTag: 3a632f00-d91b-418b-9f1f-e2e48f4455df
+		annotation SummarizationSetBy = User
+
+	column BaselineUnits
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BaselineUnits
+		lineageTag: 4588e0f7-627b-4d65-92b1-070469e161f3
+		annotation SummarizationSetBy = User
+
+	column BaselinePriceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BaselinePriceVND
+		lineageTag: 56018304-c60c-4273-ba13-278d0f5de619
+		annotation SummarizationSetBy = User
+
+	column UnitCostVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: UnitCostVND
+		lineageTag: 26b0a465-784f-4fa7-aa9d-3237e811b57e
+		annotation SummarizationSetBy = User
+
+	column PriceChangePct
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: PriceChangePct
+		lineageTag: 6c745f6a-4d5f-4af6-8113-2f41d02906a4
+		annotation SummarizationSetBy = User
+
+	column Elasticity
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: Elasticity
+		lineageTag: 59e43baa-e0b2-45af-9ee7-2bf57e6689fc
+		annotation SummarizationSetBy = User
+
+	column NewPriceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: NewPriceVND
+		lineageTag: 1b31e2d2-0c15-49c0-ac6a-840a5e776dd2
+		annotation SummarizationSetBy = User
+
+	column VolumeChangePct
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: VolumeChangePct
+		lineageTag: 7de21fa0-20c3-4b65-afb9-a7159f81903c
+		annotation SummarizationSetBy = User
+
+	column NewUnits
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: NewUnits
+		lineageTag: 77a2a751-fed2-4900-a246-e37e841a06d2
+		annotation SummarizationSetBy = User
+
+	column BaselineContributionVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BaselineContributionVND
+		lineageTag: 4d8dc4b7-67b5-4ae4-b731-adcacb924bcd
+		annotation SummarizationSetBy = User
+
+	column ScenarioContributionVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ScenarioContributionVND
+		lineageTag: 5a8b4f92-29f5-4caf-a9fb-0e54a6070f65
+		annotation SummarizationSetBy = User
+
+	column ContributionDeltaVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ContributionDeltaVND
+		lineageTag: d52ed033-e7fd-4bf7-b4ff-04b40e18556f
+		annotation SummarizationSetBy = User
+
+	column BreakEvenPriceChangePct
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: BreakEvenPriceChangePct
+		lineageTag: 0513a9d5-d873-4c2c-b5fe-374ec36ac4c7
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 6574cc54-2e62-4407-a00f-0d4b9067fb35
+		annotation SummarizationSetBy = User
+
+	partition Fact_Pricing_Case = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_pricing_case.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"PricingCaseKey", type text}, {"PricingCase", type text}, {"ChannelKey", type text}, {"BaselineUnits", Int64.Type}, {"BaselinePriceVND", type number}, {"UnitCostVND", type number}, {"PriceChangePct", type number}, {"Elasticity", type number}, {"NewPriceVND", type number}, {"VolumeChangePct", type number}, {"NewUnits", Int64.Type}, {"BaselineContributionVND", type number}, {"ScenarioContributionVND", type number}, {"ContributionDeltaVND", type number}, {"BreakEvenPriceChangePct", type number}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

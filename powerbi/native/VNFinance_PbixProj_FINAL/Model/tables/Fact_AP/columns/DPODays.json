@@ -1,0 +1,13 @@
+{
+  "name": "DPODays",
+  "dataType": "string",
+  "sourceColumn": "DPODays",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "0.0"
+}

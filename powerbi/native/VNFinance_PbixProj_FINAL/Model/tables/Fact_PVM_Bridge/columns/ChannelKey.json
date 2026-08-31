@@ -1,0 +1,13 @@
+{
+  "name": "ChannelKey",
+  "dataType": "string",
+  "sourceColumn": "ChannelKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

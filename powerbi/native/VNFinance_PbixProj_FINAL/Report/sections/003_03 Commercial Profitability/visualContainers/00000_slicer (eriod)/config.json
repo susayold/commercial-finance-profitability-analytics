@@ -1,0 +1,50 @@
+{
+  "name": "03_F_Period",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 20,
+        "z": 30,
+        "width": 250,
+        "height": 48
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "slicer",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Date.YearMonth"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Date",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "YearMonth"
+          },
+          "Name": "Dim_Date.YearMonth",
+          "NativeReferenceName": "YearMonth"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

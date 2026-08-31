@@ -1,0 +1,117 @@
+{
+  "name": "01_CH_MonthlyTrend",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 825,
+        "y": 565,
+        "z": 10,
+        "width": 807,
+        "height": 315
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Dim_Date.YearMonth"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Net Revenue"
+        },
+        {
+          "queryRef": "Sales.Gross Profit"
+        },
+        {
+          "queryRef": "Sales.Operating Profit"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Date",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "YearMonth"
+          },
+          "Name": "Dim_Date.YearMonth",
+          "NativeReferenceName": "YearMonth"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Net Revenue"
+          },
+          "Name": "Sales.Net Revenue",
+          "NativeReferenceName": "Net Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Gross Profit"
+          },
+          "Name": "Sales.Gross Profit",
+          "NativeReferenceName": "Gross Profit"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Operating Profit"
+          },
+          "Name": "Sales.Operating Profit",
+          "NativeReferenceName": "Operating Profit"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Net Revenue"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "BaselineUnits",
+  "dataType": "int64",
+  "sourceColumn": "BaselineUnits",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

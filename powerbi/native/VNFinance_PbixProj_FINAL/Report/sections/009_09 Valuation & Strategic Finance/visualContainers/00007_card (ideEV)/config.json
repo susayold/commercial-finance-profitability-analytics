@@ -1,0 +1,50 @@
+{
+  "name": "09_KPI_UpsideEV",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 570,
+        "y": 145,
+        "z": 20,
+        "width": 250,
+        "height": 90
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.Upside EV"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Upside EV"
+          },
+          "Name": "Sales.Upside EV",
+          "NativeReferenceName": "Upside EV"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

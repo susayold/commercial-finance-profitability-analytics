@@ -1,0 +1,13 @@
+{
+  "name": "CustomerKey",
+  "dataType": "string",
+  "sourceColumn": "CustomerKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

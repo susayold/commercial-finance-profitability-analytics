@@ -1,0 +1,51 @@
+table Dim_Company
+	lineageTag: 816980a2-c4a3-484e-82ff-98d0c5fbe0df
+
+	column CompanyKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CompanyKey
+		lineageTag: 170c2978-e312-459d-93bd-b3bdf3a3d2e2
+		annotation SummarizationSetBy = User
+
+	column Company
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Company
+		lineageTag: 61376e61-0b7b-4f43-9586-afab032ea218
+		annotation SummarizationSetBy = User
+
+	column CompanyType
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CompanyType
+		lineageTag: 8ea66453-47e0-4f7c-bbc3-bbc2b07101c0
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: e2488da4-db58-40dd-a759-2cc1e9b0bbd1
+		annotation SummarizationSetBy = User
+
+	column SourceURL
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceURL
+		lineageTag: 6384dfc1-db37-454f-897f-65faa25cd071
+		annotation SummarizationSetBy = User
+
+	partition Dim_Company = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_company.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"CompanyKey", type text}, {"Company", type text}, {"CompanyType", type text}, {"EvidenceClass", type text}, {"SourceURL", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

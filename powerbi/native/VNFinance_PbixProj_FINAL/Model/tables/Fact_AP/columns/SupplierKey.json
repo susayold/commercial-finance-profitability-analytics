@@ -1,0 +1,12 @@
+{
+  "name": "SupplierKey",
+  "dataType": "string",
+  "sourceColumn": "SupplierKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

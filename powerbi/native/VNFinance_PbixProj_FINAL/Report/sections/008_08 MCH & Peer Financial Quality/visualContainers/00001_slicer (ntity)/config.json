@@ -1,0 +1,50 @@
+{
+  "name": "08_F_Entity",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 20,
+        "z": 30,
+        "width": 250,
+        "height": 48
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "slicer",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Company.Company"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Company",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Company"
+          },
+          "Name": "Dim_Company.Company",
+          "NativeReferenceName": "Company"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

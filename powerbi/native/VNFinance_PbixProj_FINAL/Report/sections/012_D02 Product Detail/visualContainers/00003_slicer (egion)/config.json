@@ -1,0 +1,50 @@
+{
+  "name": "D02_F_Region",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 835,
+        "y": 20,
+        "z": 30,
+        "width": 250,
+        "height": 48
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "slicer",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Customer.Region"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Customer",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Region"
+          },
+          "Name": "Dim_Customer.Region",
+          "NativeReferenceName": "Region"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

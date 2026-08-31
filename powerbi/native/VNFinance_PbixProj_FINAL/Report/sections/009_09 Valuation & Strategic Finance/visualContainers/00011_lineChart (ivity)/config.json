@@ -1,0 +1,117 @@
+{
+  "name": "09_CH_Sensitivity",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 255,
+        "z": 10,
+        "width": 760,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Fact_Valuation.TerminalGrowth"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Base EV"
+        },
+        {
+          "queryRef": "Sales.Upside EV"
+        },
+        {
+          "queryRef": "Sales.Downside EV"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Valuation",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "TerminalGrowth"
+          },
+          "Name": "Fact_Valuation.TerminalGrowth",
+          "NativeReferenceName": "TerminalGrowth"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Base EV"
+          },
+          "Name": "Sales.Base EV",
+          "NativeReferenceName": "Base EV"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Upside EV"
+          },
+          "Name": "Sales.Upside EV",
+          "NativeReferenceName": "Upside EV"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Downside EV"
+          },
+          "Name": "Sales.Downside EV",
+          "NativeReferenceName": "Downside EV"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Base EV"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

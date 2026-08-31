@@ -1,0 +1,3 @@
+<Measure Name="CAPEX Actual">
+  <FormatString>#,0</FormatString>
+</Measure>

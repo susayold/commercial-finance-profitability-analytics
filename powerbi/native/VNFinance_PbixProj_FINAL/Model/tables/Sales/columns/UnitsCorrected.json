@@ -1,0 +1,13 @@
+{
+  "name": "UnitsCorrected",
+  "dataType": "double",
+  "sourceColumn": "UnitsCorrected",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

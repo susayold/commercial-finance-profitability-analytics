@@ -1,0 +1,1 @@
+VAR f = CALCULATE ( SUM ( Fact_Forecast[ForecastRevenueVND] ), Fact_Forecast[ScenarioKey] = "BASE", Fact_Forecast[Eligibility] = "true" ) RETURN DIVIDE ( f - [Net Revenue], [Net Revenue] )

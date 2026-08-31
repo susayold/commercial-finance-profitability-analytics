@@ -1,0 +1,13 @@
+{
+  "name": "ProductKey",
+  "dataType": "string",
+  "sourceColumn": "ProductKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

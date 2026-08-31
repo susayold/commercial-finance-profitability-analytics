@@ -1,0 +1,13 @@
+{
+  "name": "ForecastYear",
+  "dataType": "int64",
+  "sourceColumn": "ForecastYear",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

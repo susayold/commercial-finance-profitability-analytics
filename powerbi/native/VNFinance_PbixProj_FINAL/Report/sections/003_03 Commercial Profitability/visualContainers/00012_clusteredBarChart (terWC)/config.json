@@ -1,0 +1,102 @@
+{
+  "name": "03_CH_AfterWC",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 710,
+        "y": 255,
+        "z": 10,
+        "width": 922,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "clusteredBarChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Dim_Customer.CustomerName"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Contribution Profit"
+        },
+        {
+          "queryRef": "Sales.Contribution After WC"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Customer",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "CustomerName"
+          },
+          "Name": "Dim_Customer.CustomerName",
+          "NativeReferenceName": "CustomerName"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Contribution Profit"
+          },
+          "Name": "Sales.Contribution Profit",
+          "NativeReferenceName": "Contribution Profit"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Contribution After WC"
+          },
+          "Name": "Sales.Contribution After WC",
+          "NativeReferenceName": "Contribution After WC"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Contribution Profit"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

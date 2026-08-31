@@ -1,0 +1,124 @@
+table Fact_MNA
+	lineageTag: daa31261-5870-4bd9-b099-ccb51895a444
+
+	column DealKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: DealKey
+		lineageTag: c37bbc70-9f00-4dbe-9c0b-d56e3c748a94
+		annotation SummarizationSetBy = User
+
+	column Scenario
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Scenario
+		lineageTag: 83e246c9-7eb6-4590-a750-162a6c253ca3
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: Year
+		lineageTag: 24b408dd-ac58-4085-8e71-4f872598b891
+		annotation SummarizationSetBy = User
+
+	column TargetRevenueVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: TargetRevenueVNDBn
+		lineageTag: 2b47fdba-8132-47c6-b8a2-f7cd396c2c11
+		annotation SummarizationSetBy = User
+
+	column TargetEBITDAMargin
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: TargetEBITDAMargin
+		lineageTag: 0ed05c87-5b4b-4984-a990-ed2281d77eea
+		annotation SummarizationSetBy = User
+
+	column IncrementalEBITVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: IncrementalEBITVNDBn
+		lineageTag: 946e4a55-4811-46de-a921-d297fe77fcfe
+		annotation SummarizationSetBy = User
+
+	column IncrementalInterestVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: IncrementalInterestVNDBn
+		lineageTag: fd70392f-a8de-4baa-9d40-648de5d46dba
+		annotation SummarizationSetBy = User
+
+	column IncrementalNIVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: IncrementalNIVNDBn
+		lineageTag: 46246e5a-6eb7-4358-a9f9-b953d8885f35
+		annotation SummarizationSetBy = User
+
+	column ProFormaNIVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ProFormaNIVNDBn
+		lineageTag: fabc4993-194d-456f-8365-2f48a66ee64b
+		annotation SummarizationSetBy = User
+
+	column StandaloneEPSVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: StandaloneEPSVND
+		lineageTag: 4585aba8-9841-427a-95e9-c704bf11d1c3
+		annotation SummarizationSetBy = User
+
+	column ProFormaEPSVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ProFormaEPSVND
+		lineageTag: 2e577440-cd4a-4956-a6fd-bbc32a37a67d
+		annotation SummarizationSetBy = User
+
+	column EPSAccretionPct
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: EPSAccretionPct
+		lineageTag: 4a33e5d4-9076-4027-b51c-1eb34646a47f
+		annotation SummarizationSetBy = User
+
+	column PVIncrementalFCFFVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: PVIncrementalFCFFVNDBn
+		lineageTag: 6cd990fd-dc9b-477e-8309-0bac50bcd9cd
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 06a3fab4-f35b-474e-bbfb-1dd1a37f8d37
+		annotation SummarizationSetBy = User
+
+	partition Fact_MNA = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_mna.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"DealKey", type text}, {"Scenario", type text}, {"Year", Int64.Type}, {"TargetRevenueVNDBn", type number}, {"TargetEBITDAMargin", type number}, {"IncrementalEBITVNDBn", type number}, {"IncrementalInterestVNDBn", type number}, {"IncrementalNIVNDBn", type number}, {"ProFormaNIVNDBn", type number}, {"StandaloneEPSVND", type number}, {"ProFormaEPSVND", type number}, {"EPSAccretionPct", type number}, {"PVIncrementalFCFFVNDBn", type number}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

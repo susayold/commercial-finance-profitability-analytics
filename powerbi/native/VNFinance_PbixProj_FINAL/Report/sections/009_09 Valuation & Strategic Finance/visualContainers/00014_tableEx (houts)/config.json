@@ -1,0 +1,90 @@
+{
+  "name": "09_TBL_Watchouts",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 575,
+        "z": 5,
+        "width": 792,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Evidence_Class.EvidenceClass"
+        },
+        {
+          "queryRef": "Fact_Valuation.OutputBoundary"
+        },
+        {
+          "queryRef": "Sales.Base EV"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Evidence_Class",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Fact_Valuation",
+          "Type": 0
+        },
+        {
+          "Name": "t2",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "EvidenceClass"
+          },
+          "Name": "Dim_Evidence_Class.EvidenceClass",
+          "NativeReferenceName": "EvidenceClass"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OutputBoundary"
+          },
+          "Name": "Fact_Valuation.OutputBoundary",
+          "NativeReferenceName": "OutputBoundary"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Base EV"
+          },
+          "Name": "Sales.Base EV",
+          "NativeReferenceName": "Base EV"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,1 @@
+VAR s = [Selected Scenario] RETURN SWITCH ( s, "Actual", [COGS], "Budget", SUM ( Fact_Budget[BudgetCOGSVND] ), CALCULATE ( SUM ( Fact_Forecast[ForecastCOGSVND] ), Fact_Forecast[ScenarioKey] = SWITCH ( s, "Base", "BASE", "Upside", "UPSIDE", "Downside", "DOWNSIDE", "BASE" ) ) )

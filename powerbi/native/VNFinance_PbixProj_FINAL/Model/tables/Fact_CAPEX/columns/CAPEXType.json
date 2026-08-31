@@ -1,0 +1,12 @@
+{
+  "name": "CAPEXType",
+  "dataType": "string",
+  "sourceColumn": "CAPEXType",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

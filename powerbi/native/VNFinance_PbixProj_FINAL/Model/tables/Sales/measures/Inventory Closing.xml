@@ -1,0 +1,3 @@
+<Measure Name="Inventory Closing">
+  <FormatString>#,0</FormatString>
+</Measure>

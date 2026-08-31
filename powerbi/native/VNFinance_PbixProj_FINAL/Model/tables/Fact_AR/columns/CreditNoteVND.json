@@ -1,0 +1,13 @@
+{
+  "name": "CreditNoteVND",
+  "dataType": "double",
+  "sourceColumn": "CreditNoteVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

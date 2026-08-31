@@ -1,0 +1,13 @@
+{
+  "name": "IncrementalInterestVNDBn",
+  "dataType": "double",
+  "sourceColumn": "IncrementalInterestVNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

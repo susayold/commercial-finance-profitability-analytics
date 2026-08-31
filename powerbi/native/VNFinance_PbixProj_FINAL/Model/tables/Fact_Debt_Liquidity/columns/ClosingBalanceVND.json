@@ -1,0 +1,13 @@
+{
+  "name": "ClosingBalanceVND",
+  "dataType": "double",
+  "sourceColumn": "ClosingBalanceVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

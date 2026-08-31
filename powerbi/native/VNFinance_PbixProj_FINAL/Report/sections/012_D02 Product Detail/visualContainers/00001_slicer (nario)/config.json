@@ -1,0 +1,50 @@
+{
+  "name": "D02_F_Scenario",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 305,
+        "y": 20,
+        "z": 30,
+        "width": 250,
+        "height": 48
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "slicer",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Scenario.Scenario"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Scenario",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Scenario"
+          },
+          "Name": "Dim_Scenario.Scenario",
+          "NativeReferenceName": "Scenario"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "LineID",
+  "dataType": "string",
+  "sourceColumn": "LineID",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

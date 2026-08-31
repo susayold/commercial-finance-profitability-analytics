@@ -1,0 +1,117 @@
+{
+  "name": "07_CH_OPEX",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 255,
+        "z": 10,
+        "width": 760,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Dim_Date.YearMonth"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.OPEX Actual"
+        },
+        {
+          "queryRef": "Sales.OPEX Budget"
+        },
+        {
+          "queryRef": "Sales.OPEX Forecast"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Date",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "YearMonth"
+          },
+          "Name": "Dim_Date.YearMonth",
+          "NativeReferenceName": "YearMonth"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OPEX Actual"
+          },
+          "Name": "Sales.OPEX Actual",
+          "NativeReferenceName": "OPEX Actual"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OPEX Budget"
+          },
+          "Name": "Sales.OPEX Budget",
+          "NativeReferenceName": "OPEX Budget"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OPEX Forecast"
+          },
+          "Name": "Sales.OPEX Forecast",
+          "NativeReferenceName": "OPEX Forecast"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "OPEX Actual"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

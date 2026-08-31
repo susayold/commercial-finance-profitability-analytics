@@ -1,0 +1,1 @@
+DIVIDE ( SUM ( Fact_Public_Financials[PATVNDBn] ), SUM ( Fact_Public_Financials[NetRevenueVNDBn] ) )

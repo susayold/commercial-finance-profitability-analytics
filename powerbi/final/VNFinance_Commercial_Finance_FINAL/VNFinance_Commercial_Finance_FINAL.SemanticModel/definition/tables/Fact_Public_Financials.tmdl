@@ -1,0 +1,158 @@
+table Fact_Public_Financials
+	lineageTag: f86bd036-804a-450b-9bf1-3d60a75ec1e2
+
+	column CompanyKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CompanyKey
+		lineageTag: 65b9b616-ac4f-44af-b9a2-1d4f229d0a75
+		annotation SummarizationSetBy = User
+
+	column Company
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Company
+		lineageTag: 39ca078b-ded8-424a-89b3-59705a023797
+		annotation SummarizationSetBy = User
+
+	column Ticker
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ticker
+		lineageTag: e5d25a74-a688-4f1d-ab23-a9cb58a10b98
+		annotation SummarizationSetBy = User
+
+	column FiscalYear
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: FiscalYear
+		lineageTag: 761acc21-7b0e-49ee-8edb-29b544476d44
+		annotation SummarizationSetBy = User
+
+	column NetRevenueVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: NetRevenueVNDBn
+		lineageTag: 4e187c52-411f-4f1d-a257-b6f67c2f8f6a
+		annotation SummarizationSetBy = User
+
+	column GrossProfitVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: GrossProfitVNDBn
+		lineageTag: 8ab6d5ca-ad7f-4269-834c-1bc1341bc8d4
+		annotation SummarizationSetBy = User
+
+	column OperatingProfitVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: OperatingProfitVNDBn
+		lineageTag: e7859c54-ce6c-42af-89d5-31ea85cf952e
+		annotation SummarizationSetBy = User
+
+	column 'PBT VNDBn'
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: PBT VNDBn
+		lineageTag: 90d68ff2-ba4a-406f-bf84-6b27a3c40632
+		annotation SummarizationSetBy = User
+
+	column PATVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: PATVNDBn
+		lineageTag: 292f4b16-5b51-4b1b-bb1b-132e1db69ca1
+		annotation SummarizationSetBy = User
+
+	column AssetsVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: AssetsVNDBn
+		lineageTag: c35b574e-de51-4977-9486-d45145f84aea
+		annotation SummarizationSetBy = User
+
+	column EquityVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: EquityVNDBn
+		lineageTag: 41ac2839-8ce4-408d-b906-c48c253fa236
+		annotation SummarizationSetBy = User
+
+	column 'CFO VNDBn'
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CFO VNDBn
+		lineageTag: eb976110-9ad9-4ac1-9fdd-55d6539a35e6
+		annotation SummarizationSetBy = User
+
+	column SourceStatus
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceStatus
+		lineageTag: 00771ae6-5ebf-4600-a13f-0c9c763adb02
+		annotation SummarizationSetBy = User
+
+	column RevenueBasis
+		dataType: string
+		summarizeBy: none
+		sourceColumn: RevenueBasis
+		lineageTag: a5a90c9e-9181-4e9c-a3b4-0669da87bf26
+		annotation SummarizationSetBy = User
+
+	column SourceDocument
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceDocument
+		lineageTag: 77b4043f-9249-4462-aa76-96442e806fbd
+		annotation SummarizationSetBy = User
+
+	column SourceURL
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceURL
+		lineageTag: 8b619cb6-afe7-4456-adde-267953196ca4
+		annotation SummarizationSetBy = User
+
+	column PageAnchor
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PageAnchor
+		lineageTag: 9ff69948-cbb7-4da3-9fd4-0403f46e6774
+		annotation SummarizationSetBy = User
+
+	column ComparabilityNote
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ComparabilityNote
+		lineageTag: a99b6c95-a7de-48e0-ae01-9e73d7695dba
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 2cdaf7e5-25a7-428b-9655-19c267c52d05
+		annotation SummarizationSetBy = User
+
+	partition Fact_Public_Financials = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_public_financials.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"CompanyKey", type text}, {"Company", type text}, {"Ticker", type text}, {"FiscalYear", Int64.Type}, {"NetRevenueVNDBn", type number}, {"GrossProfitVNDBn", type number}, {"OperatingProfitVNDBn", type number}, {"PBT VNDBn", type number}, {"PATVNDBn", type number}, {"AssetsVNDBn", type number}, {"EquityVNDBn", type number}, {"CFO VNDBn", type number}, {"SourceStatus", type text}, {"RevenueBasis", type text}, {"SourceDocument", type text}, {"SourceURL", type text}, {"PageAnchor", type text}, {"ComparabilityNote", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

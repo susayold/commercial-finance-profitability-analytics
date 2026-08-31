@@ -1,0 +1,1 @@
+CALCULATE ( SUM ( Fact_PVM_Bridge[AmountVND] ), Fact_PVM_Bridge[Component] = "MIX_RESIDUAL" )

@@ -1,0 +1,1 @@
+DIVIDE ( COUNTROWS ( FILTER ( Source_Control, Source_Control[Status] = "PASS" ) ), COUNTROWS ( Source_Control ) )

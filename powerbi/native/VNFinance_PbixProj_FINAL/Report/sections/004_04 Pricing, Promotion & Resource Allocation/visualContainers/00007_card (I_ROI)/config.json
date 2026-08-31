@@ -1,0 +1,50 @@
+{
+  "name": "04_KPI_ROI",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 570,
+        "y": 145,
+        "z": 20,
+        "width": 250,
+        "height": 90
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.Promotion ROI"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Promotion ROI"
+          },
+          "Name": "Sales.Promotion ROI",
+          "NativeReferenceName": "Promotion ROI"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

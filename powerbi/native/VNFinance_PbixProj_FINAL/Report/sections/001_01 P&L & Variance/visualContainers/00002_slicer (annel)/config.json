@@ -1,0 +1,50 @@
+{
+  "name": "01_F_Channel",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 570,
+        "y": 20,
+        "z": 30,
+        "width": 250,
+        "height": 48
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "slicer",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Channel.Channel"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Channel",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Channel"
+          },
+          "Name": "Dim_Channel.Channel",
+          "NativeReferenceName": "Channel"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

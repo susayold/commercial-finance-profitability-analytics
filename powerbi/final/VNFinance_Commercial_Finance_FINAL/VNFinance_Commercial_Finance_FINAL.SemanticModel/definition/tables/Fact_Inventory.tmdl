@@ -1,0 +1,92 @@
+table Fact_Inventory
+	lineageTag: d9f55fc8-842d-4f46-b925-d18ad4fddc75
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: b68e144e-9dbd-4435-a262-1ca961abab90
+		sortByColumn: DateKey
+		annotation SummarizationSetBy = User
+
+	column SKUKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SKUKey
+		lineageTag: 01d652fe-204e-4643-8546-d69dec6118fe
+		annotation SummarizationSetBy = User
+
+	column OpeningInventoryVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: OpeningInventoryVND
+		lineageTag: f343b2da-2bce-4027-a7c0-275fc4f92a44
+		annotation SummarizationSetBy = User
+
+	column ReceiptsVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ReceiptsVND
+		lineageTag: 5a2df1ff-b91c-461b-8d0a-155374a3c449
+		annotation SummarizationSetBy = User
+
+	column COGSFlowVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: COGSFlowVND
+		lineageTag: d4f32881-670e-4e28-8255-68c1f1d951f5
+		annotation SummarizationSetBy = User
+
+	column ClosingInventoryVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ClosingInventoryVND
+		lineageTag: 70fdb36d-f943-48a0-a441-cbdeb2844071
+		annotation SummarizationSetBy = User
+
+	column InventoryValueVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: InventoryValueVND
+		lineageTag: 2d062afa-e3d8-4e5f-b1b7-4183d892bae3
+		annotation SummarizationSetBy = User
+
+	column DIOProxyDays
+		dataType: string
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: DIOProxyDays
+		lineageTag: 9dc859a8-b008-4ce2-babd-b44c8eeaff4f
+		annotation SummarizationSetBy = User
+
+	column SlowMovingFlag
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: SlowMovingFlag
+		lineageTag: 9bb371aa-248c-4638-82f5-032afc67ee00
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 8165082e-f084-4ab2-b58e-72cd025ac209
+		annotation SummarizationSetBy = User
+
+	partition Fact_Inventory = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_inventory_snapshot.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"MonthStart", type date}, {"SKUKey", type text}, {"OpeningInventoryVND", type number}, {"ReceiptsVND", type number}, {"COGSFlowVND", type number}, {"ClosingInventoryVND", type number}, {"InventoryValueVND", type number}, {"DIOProxyDays", type text}, {"SlowMovingFlag", type logical}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

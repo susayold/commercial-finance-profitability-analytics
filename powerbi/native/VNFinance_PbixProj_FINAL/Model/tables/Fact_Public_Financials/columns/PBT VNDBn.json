@@ -1,0 +1,13 @@
+{
+  "name": "PBT VNDBn",
+  "dataType": "double",
+  "sourceColumn": "PBT VNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

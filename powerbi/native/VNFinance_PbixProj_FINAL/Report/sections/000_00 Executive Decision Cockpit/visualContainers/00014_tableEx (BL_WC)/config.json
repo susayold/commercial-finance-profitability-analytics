@@ -1,0 +1,130 @@
+{
+  "name": "00_TBL_WC",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 610,
+        "z": 5,
+        "width": 792,
+        "height": 270
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Date.YearMonth"
+        },
+        {
+          "queryRef": "Sales.DSO"
+        },
+        {
+          "queryRef": "Sales.DIO"
+        },
+        {
+          "queryRef": "Sales.DPO"
+        },
+        {
+          "queryRef": "Sales.CCC"
+        },
+        {
+          "queryRef": "Sales.Cash Release Opportunity"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Date",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "YearMonth"
+          },
+          "Name": "Dim_Date.YearMonth",
+          "NativeReferenceName": "YearMonth"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "DSO"
+          },
+          "Name": "Sales.DSO",
+          "NativeReferenceName": "DSO"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "DIO"
+          },
+          "Name": "Sales.DIO",
+          "NativeReferenceName": "DIO"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "DPO"
+          },
+          "Name": "Sales.DPO",
+          "NativeReferenceName": "DPO"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "CCC"
+          },
+          "Name": "Sales.CCC",
+          "NativeReferenceName": "CCC"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Cash Release Opportunity"
+          },
+          "Name": "Sales.Cash Release Opportunity",
+          "NativeReferenceName": "Cash Release Opportunity"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

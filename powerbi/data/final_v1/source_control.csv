@@ -1,0 +1,9 @@
+ControlID,ControlName,Status,EvidenceClass,SourceFile
+CTRL-D01,Invoice unit/price identity,PASS,DERIVED,fact_sales.csv
+CTRL-D02,Channel-month COGS reconciliation,PASS,DERIVED,fact_commercial_cost.csv
+CTRL-D03,Product/customer/channel revenue ties,PASS,DERIVED,fact_sales.csv
+CTRL-D04,Portfolio balance numerator convention,PASS,SIMULATED,fact_ar_snapshot.csv | fact_inventory_snapshot.csv | fact_ap_snapshot.csv
+CTRL-D05,Historical Actual isolated from scenario,PASS,ASSUMPTION,fact_forecast.csv
+CTRL-G01,Gate A genuine internal forecast snapshot,OPEN,OPEN_GATE,External evidence required
+CTRL-G02,Native Desktop QA-01 to QA-18,OPEN,OPEN_GATE,Power BI Desktop evidence required
+CTRL-G03,Production DirectQuery/APR,OPEN,OPEN_GATE,Production workspace evidence required

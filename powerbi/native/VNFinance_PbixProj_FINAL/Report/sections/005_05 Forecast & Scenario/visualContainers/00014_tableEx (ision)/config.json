@@ -1,0 +1,130 @@
+{
+  "name": "05_TBL_Decision",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 575,
+        "z": 5,
+        "width": 792,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Scenario.Scenario"
+        },
+        {
+          "queryRef": "Dim_Scenario.ScenarioGroup"
+        },
+        {
+          "queryRef": "Dim_Scenario.EvidenceClass"
+        },
+        {
+          "queryRef": "Sales.Scenario Revenue"
+        },
+        {
+          "queryRef": "Sales.Scenario Operating Profit"
+        },
+        {
+          "queryRef": "Sales.Scenario CCC"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Scenario",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Scenario"
+          },
+          "Name": "Dim_Scenario.Scenario",
+          "NativeReferenceName": "Scenario"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ScenarioGroup"
+          },
+          "Name": "Dim_Scenario.ScenarioGroup",
+          "NativeReferenceName": "ScenarioGroup"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "EvidenceClass"
+          },
+          "Name": "Dim_Scenario.EvidenceClass",
+          "NativeReferenceName": "EvidenceClass"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Scenario Revenue"
+          },
+          "Name": "Sales.Scenario Revenue",
+          "NativeReferenceName": "Scenario Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Scenario Operating Profit"
+          },
+          "Name": "Sales.Scenario Operating Profit",
+          "NativeReferenceName": "Scenario Operating Profit"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Scenario CCC"
+          },
+          "Name": "Sales.Scenario CCC",
+          "NativeReferenceName": "Scenario CCC"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

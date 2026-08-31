@@ -1,0 +1,12 @@
+{
+  "name": "ComparabilityNote",
+  "dataType": "string",
+  "sourceColumn": "ComparabilityNote",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "IsLatestClosedMonth",
+  "dataType": "boolean",
+  "sourceColumn": "IsLatestClosedMonth",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

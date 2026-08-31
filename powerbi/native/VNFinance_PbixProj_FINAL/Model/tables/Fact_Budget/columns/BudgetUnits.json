@@ -1,0 +1,13 @@
+{
+  "name": "BudgetUnits",
+  "dataType": "int64",
+  "sourceColumn": "BudgetUnits",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

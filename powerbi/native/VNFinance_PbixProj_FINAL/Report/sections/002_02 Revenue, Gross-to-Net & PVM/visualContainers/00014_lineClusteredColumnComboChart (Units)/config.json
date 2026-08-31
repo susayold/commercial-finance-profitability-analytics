@@ -1,0 +1,117 @@
+{
+  "name": "02_CH_PriceUnits",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 575,
+        "z": 10,
+        "width": 780,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "lineClusteredColumnComboChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Dim_Date.YearMonth"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.ASP"
+        },
+        {
+          "queryRef": "Sales.Units Corrected"
+        },
+        {
+          "queryRef": "Sales.Net Revenue"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Date",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "YearMonth"
+          },
+          "Name": "Dim_Date.YearMonth",
+          "NativeReferenceName": "YearMonth"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "ASP"
+          },
+          "Name": "Sales.ASP",
+          "NativeReferenceName": "ASP"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Units Corrected"
+          },
+          "Name": "Sales.Units Corrected",
+          "NativeReferenceName": "Units Corrected"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Net Revenue"
+          },
+          "Name": "Sales.Net Revenue",
+          "NativeReferenceName": "Net Revenue"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "ASP"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

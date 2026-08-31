@@ -1,0 +1,13 @@
+{
+  "name": "COGSFlowVND",
+  "dataType": "double",
+  "sourceColumn": "COGSFlowVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ValuationCaseKey",
+  "dataType": "string",
+  "sourceColumn": "ValuationCaseKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

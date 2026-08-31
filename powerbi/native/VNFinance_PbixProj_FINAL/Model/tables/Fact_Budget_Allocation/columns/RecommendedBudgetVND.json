@@ -1,0 +1,13 @@
+{
+  "name": "RecommendedBudgetVND",
+  "dataType": "double",
+  "sourceColumn": "RecommendedBudgetVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

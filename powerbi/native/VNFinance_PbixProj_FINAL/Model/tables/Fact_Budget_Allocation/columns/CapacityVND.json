@@ -1,0 +1,13 @@
+{
+  "name": "CapacityVND",
+  "dataType": "double",
+  "sourceColumn": "CapacityVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

@@ -1,0 +1,13 @@
+ProductKey,SKU,Product,Category,Brand,Lifecycle,StandardGM,UnitPriceVND,StandardUnitCostVND
+SKU001,SKU001,VietSpice Original,Seasonings,VietSpice,Core,0.6,31000,12400.0
+SKU002,SKU002,VietSpice Premium,Seasonings,VietSpice,Core,0.64,36000,12960.0
+SKU003,SKU003,VietSpice Chili,Seasonings,VietSpice,Core,0.62,32000,12160.0
+SKU004,SKU004,QuickBowl Chicken,Convenience Foods,QuickBowl,Core,0.56,28000,12320.0
+SKU005,SKU005,QuickBowl Beef,Convenience Foods,QuickBowl,Core,0.54,27000,12420.0
+SKU006,SKU006,QuickBowl Veggie,Convenience Foods,QuickBowl,Core,0.58,30000,12600.0
+SKU007,SKU007,PulseUp Original,Beverages,PulseUp,Core,0.45,23000,12650.0
+SKU008,SKU008,PulseUp Zero,Beverages,PulseUp,Core,0.48,25000,13000.0
+SKU009,SKU009,PulseUp Energy,Beverages,PulseUp,Core,0.42,21000,12180.0
+SKU010,SKU010,PulseUp Family,Beverages,PulseUp,Core,0.5,24000,12000.0
+SKU011,SKU011,VietSpice Gift,Seasonings,VietSpice,Test,0.7,35000,10500.0
+SKU012,SKU012,QuickBowl Family,Convenience Foods,QuickBowl,Test,0.61,29000,11310.0

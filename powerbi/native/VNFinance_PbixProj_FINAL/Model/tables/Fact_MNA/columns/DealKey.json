@@ -1,0 +1,12 @@
+{
+  "name": "DealKey",
+  "dataType": "string",
+  "sourceColumn": "DealKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

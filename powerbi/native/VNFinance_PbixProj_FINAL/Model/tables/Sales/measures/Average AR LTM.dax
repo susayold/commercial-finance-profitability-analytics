@@ -1,0 +1,1 @@
+AVERAGEX ( VALUES ( Dim_Date[MonthStart] ), CALCULATE ( [AR Closing] ) )

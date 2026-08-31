@@ -1,0 +1,6 @@
+let
+    Source = Csv.Document(File.Contents(DataRoot & "\\fact_capex.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    Typed = Table.TransformColumnTypes(Promoted, {{"Period", type text}, {"CompanyKey", type text}, {"ProjectKey", type text}, {"Project", type text}, {"CostCenterKey", type text}, {"CAPEXType", type text}, {"ApprovalStatus", type text}, {"BudgetCAPEXVND", type number}, {"ActualCAPEXVND", type number}, {"ForecastCAPEXVND", type number}, {"CommittedCAPEXVND", type number}, {"AssetCostVND", type number}, {"InServicePeriod", type date}, {"UsefulLifeMonths", Int64.Type}, {"DepreciationVND", type number}, {"ExpectedAnnualContributionVND", type number}, {"PaybackMonths", Int64.Type}, {"CashPaymentVND", type number}, {"BudgetVarianceVND", type number}, {"ForecastVarianceVND", type number}, {"Stage", type text}, {"Decision", type text}, {"EvidenceClass", type text}, {"SourceSystem", type text}}, "en-US")
+in
+    Typed

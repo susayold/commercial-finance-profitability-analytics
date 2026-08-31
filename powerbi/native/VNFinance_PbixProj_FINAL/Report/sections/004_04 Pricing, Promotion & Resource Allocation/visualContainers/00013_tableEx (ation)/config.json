@@ -1,0 +1,85 @@
+{
+  "name": "04_TBL_Allocation",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 1100,
+        "y": 255,
+        "z": 5,
+        "width": 532,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Channel.Channel"
+        },
+        {
+          "queryRef": "Sales.Budget Reallocated"
+        },
+        {
+          "queryRef": "Sales.Expected CM Uplift"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Channel",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Channel"
+          },
+          "Name": "Dim_Channel.Channel",
+          "NativeReferenceName": "Channel"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Budget Reallocated"
+          },
+          "Name": "Sales.Budget Reallocated",
+          "NativeReferenceName": "Budget Reallocated"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Expected CM Uplift"
+          },
+          "Name": "Sales.Expected CM Uplift",
+          "NativeReferenceName": "Expected CM Uplift"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

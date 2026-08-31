@@ -1,0 +1,132 @@
+{
+  "name": "06_CH_CCCBridge",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 255,
+        "z": 10,
+        "width": 792,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "waterfallChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Fact_Forecast.ScenarioKey"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.DSO"
+        },
+        {
+          "queryRef": "Sales.DIO"
+        },
+        {
+          "queryRef": "Sales.DPO"
+        },
+        {
+          "queryRef": "Sales.CCC"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Forecast",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ScenarioKey"
+          },
+          "Name": "Fact_Forecast.ScenarioKey",
+          "NativeReferenceName": "ScenarioKey"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "DSO"
+          },
+          "Name": "Sales.DSO",
+          "NativeReferenceName": "DSO"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "DIO"
+          },
+          "Name": "Sales.DIO",
+          "NativeReferenceName": "DIO"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "DPO"
+          },
+          "Name": "Sales.DPO",
+          "NativeReferenceName": "DPO"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "CCC"
+          },
+          "Name": "Sales.CCC",
+          "NativeReferenceName": "CCC"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "DSO"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

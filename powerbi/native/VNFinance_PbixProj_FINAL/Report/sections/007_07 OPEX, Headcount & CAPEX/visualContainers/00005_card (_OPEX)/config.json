@@ -1,0 +1,50 @@
+{
+  "name": "07_KPI_OPEX",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 145,
+        "z": 20,
+        "width": 250,
+        "height": 90
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.OPEX Actual"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "OPEX Actual"
+          },
+          "Name": "Sales.OPEX Actual",
+          "NativeReferenceName": "OPEX Actual"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

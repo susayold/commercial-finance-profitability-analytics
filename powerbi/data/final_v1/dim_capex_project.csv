@@ -1,0 +1,7 @@
+CAPEXProjectKey,Project,CostCenterKey,ProjectType,EvidenceClass
+P-001,Warehouse automation,CC-OPS,Productivity,SIMULATED
+P-002,CRM upgrade,CC-MKT,Growth,SIMULATED
+P-003,Line extension,CC-OPS,Productivity,SIMULATED
+P-004,Data platform,CC-IT,Growth,SIMULATED
+P-005,Fleet refresh,CC-SALES,Productivity,SIMULATED
+P-006,Energy retrofit,CC-OPS,Growth,SIMULATED

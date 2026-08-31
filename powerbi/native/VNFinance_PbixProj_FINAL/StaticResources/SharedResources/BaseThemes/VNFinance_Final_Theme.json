@@ -1,0 +1,32 @@
+{
+  "name": "VNFinance_Final_Theme",
+  "dataColors": ["#0B2A4A", "#0B8F87", "#1976D2", "#2E7D32", "#C62828", "#F59E0B", "#6B4EFF", "#607D8B"],
+  "foreground": "#102A43",
+  "foregroundNeutralSecondary": "#486581",
+  "foregroundNeutralTertiary": "#829AB1",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F5F7FA",
+  "backgroundNeutral": "#D9E2EC",
+  "tableAccent": "#0B8F87",
+  "good": "#2E7D32",
+  "neutral": "#F59E0B",
+  "bad": "#C62828",
+  "hyperlink": "#1976D2",
+  "textClasses": {
+    "callout": {"fontSize": 28, "fontFace": "Segoe UI Semibold", "color": "#102A43"},
+    "title": {"fontSize": 14, "fontFace": "Segoe UI Semibold", "color": "#102A43"},
+    "header": {"fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#102A43"},
+    "label": {"fontSize": 10, "fontFace": "Segoe UI", "color": "#486581"}
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "*": [{"fontFamily": "Segoe UI", "wordWrap": true}],
+        "title": [{"show": true, "fontFamily": "Segoe UI Semibold", "fontSize": 11, "titleWrap": true}],
+        "background": [{"show": true, "transparency": 0, "color": {"solid": {"color": "#FFFFFF"}}}],
+        "border": [{"show": true, "color": {"solid": {"color": "#D9E2EC"}}, "radius": 6}]
+      }
+    },
+    "page": {"*": {"background": [{"transparency": 100, "color": {"solid": {"color": "#F5F7FA"}}}]}}
+  }
+}

@@ -1,0 +1,135 @@
+relationship rel-date-sales
+	fromColumn: Dim_Date.DateKey
+	toColumn: Sales.MonthStart
+
+relationship rel-date-cost
+	fromColumn: Dim_Date.DateKey
+	toColumn: Fact_Commercial_Cost.MonthStart
+
+relationship rel-date-budget
+	fromColumn: Dim_Date.DateKey
+	toColumn: Fact_Budget.MonthStart
+
+relationship rel-date-forecast
+	fromColumn: Dim_Date.DateKey
+	toColumn: Fact_Forecast.TargetMonth
+
+relationship rel-date-pvm
+	fromColumn: Dim_Date.DateKey
+	toColumn: Fact_PVM_Bridge.MonthStart
+
+relationship rel-date-ar
+	fromColumn: Dim_Date.DateKey
+	toColumn: Fact_AR.MonthStart
+
+relationship rel-date-inventory
+	fromColumn: Dim_Date.DateKey
+	toColumn: Fact_Inventory.MonthStart
+
+relationship rel-date-ap
+	fromColumn: Dim_Date.DateKey
+	toColumn: Fact_AP.MonthStart
+
+relationship rel-date-debt
+	fromColumn: Dim_Date.DateKey
+	toColumn: Fact_Debt_Liquidity.MonthStart
+
+relationship rel-date-opex
+	fromColumn: Dim_Date.YearMonth
+	toColumn: Fact_OPEX_Headcount.Period
+
+relationship rel-date-capex
+	fromColumn: Dim_Date.YearMonth
+	toColumn: Fact_CAPEX.Period
+
+relationship rel-product-sales
+	fromColumn: Dim_Product.ProductKey
+	toColumn: Sales.SKUKey
+
+relationship rel-product-budget
+	fromColumn: Dim_Product.ProductKey
+	toColumn: Fact_Budget.SKUKey
+
+relationship rel-product-forecast
+	fromColumn: Dim_Product.ProductKey
+	toColumn: Fact_Forecast.SKUKey
+
+relationship rel-product-pvm
+	fromColumn: Dim_Product.ProductKey
+	toColumn: Fact_PVM_Bridge.SKUKey
+
+relationship rel-product-inventory
+	fromColumn: Dim_Product.ProductKey
+	toColumn: Fact_Inventory.SKUKey
+
+relationship rel-customer-sales
+	fromColumn: Dim_Customer.CustomerKey
+	toColumn: Sales.CustomerKey
+
+relationship rel-customer-ar
+	fromColumn: Dim_Customer.CustomerKey
+	toColumn: Fact_AR.CustomerKey
+
+relationship rel-channel-sales
+	fromColumn: Dim_Channel.ChannelKey
+	toColumn: Sales.ChannelKey
+
+relationship rel-channel-cost
+	fromColumn: Dim_Channel.ChannelKey
+	toColumn: Fact_Commercial_Cost.ChannelKey
+
+relationship rel-channel-budget
+	fromColumn: Dim_Channel.ChannelKey
+	toColumn: Fact_Budget.ChannelKey
+
+relationship rel-channel-forecast
+	fromColumn: Dim_Channel.ChannelKey
+	toColumn: Fact_Forecast.ChannelKey
+
+relationship rel-channel-pvm
+	fromColumn: Dim_Channel.ChannelKey
+	toColumn: Fact_PVM_Bridge.ChannelKey
+
+relationship rel-channel-promo
+	fromColumn: Dim_Channel.ChannelKey
+	toColumn: Fact_Promotion.ChannelKey
+
+relationship rel-channel-price
+	fromColumn: Dim_Channel.ChannelKey
+	toColumn: Fact_Pricing_Case.ChannelKey
+
+relationship rel-channel-allocation
+	fromColumn: Dim_Channel.ChannelKey
+	toColumn: Fact_Budget_Allocation.ChannelKey
+
+relationship rel-fv-forecast
+	fromColumn: Dim_Forecast_Version.ForecastVersionKey
+	toColumn: Fact_Forecast.ForecastVersionKey
+
+relationship rel-cc-opex
+	fromColumn: Dim_Cost_Center.CostCenterKey
+	toColumn: Fact_OPEX_Headcount.CostCenterKey
+
+relationship rel-cc-capex
+	fromColumn: Dim_Cost_Center.CostCenterKey
+	toColumn: Fact_CAPEX.CostCenterKey
+
+relationship rel-project-capex
+	fromColumn: Dim_CAPEX_Project.CAPEXProjectKey
+	toColumn: Fact_CAPEX.ProjectKey
+
+relationship rel-company-sales
+	fromColumn: Dim_Company.CompanyKey
+	toColumn: Sales.CompanyKey
+
+relationship rel-company-public
+	fromColumn: Dim_Company.CompanyKey
+	toColumn: Fact_Public_Financials.CompanyKey
+
+relationship rel-company-cashflow
+	fromColumn: Dim_Company.CompanyKey
+	toColumn: Fact_Public_Cashflow.CompanyKey
+
+relationship rel-evidence-sales
+	fromColumn: Dim_Evidence_Class.EvidenceClass
+	toColumn: Sales.EvidenceClass

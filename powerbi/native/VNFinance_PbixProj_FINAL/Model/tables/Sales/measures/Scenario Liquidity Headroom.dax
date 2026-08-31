@@ -1,0 +1,1 @@
+[Liquidity Headroom] - MAX ( 0, [Scenario CCC] - 45 ) * DIVIDE ( [Scenario Revenue], 365 )

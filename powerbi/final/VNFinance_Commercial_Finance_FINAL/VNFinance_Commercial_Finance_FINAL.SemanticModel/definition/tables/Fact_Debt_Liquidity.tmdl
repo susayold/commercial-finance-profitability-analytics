@@ -1,0 +1,93 @@
+table Fact_Debt_Liquidity
+	lineageTag: f0121d43-231a-444b-9d2a-a9c5d7bafc2b
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: 0a9e41e9-0f03-4299-9e3b-c98ff24df7d5
+		sortByColumn: DateKey
+		annotation SummarizationSetBy = User
+
+	column FacilityKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: FacilityKey
+		lineageTag: 80ec81df-2c11-4484-9816-6037665764dc
+		annotation SummarizationSetBy = User
+
+	column OpeningBalanceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: OpeningBalanceVND
+		lineageTag: a786e456-41c7-497e-9c45-ea1b5564d537
+		annotation SummarizationSetBy = User
+
+	column DrawdownVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: DrawdownVND
+		lineageTag: c7706b9d-4349-42e8-9686-f08221dacee5
+		annotation SummarizationSetBy = User
+
+	column RepaymentVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: RepaymentVND
+		lineageTag: bc6b32c2-f95e-4d46-ae10-6c251eee60e9
+		annotation SummarizationSetBy = User
+
+	column ClosingBalanceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ClosingBalanceVND
+		lineageTag: cceedc1d-ac04-44a5-b8fe-3e4bc2e4b9ff
+		annotation SummarizationSetBy = User
+
+	column InterestRate
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: InterestRate
+		lineageTag: 097b288f-cef9-46e0-bb9e-f35a4bc8d04b
+		annotation SummarizationSetBy = User
+
+	column InterestExpenseVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: InterestExpenseVND
+		lineageTag: cc98f2dd-2174-4bde-a1f4-88c0034b726c
+		annotation SummarizationSetBy = User
+
+	column CovenantHeadroomVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CovenantHeadroomVND
+		lineageTag: 34bd1225-2a45-4128-b040-356e5d13c202
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 76a9bd07-aa4b-4314-a5de-48c0f53e4907
+		annotation SummarizationSetBy = User
+
+	partition Fact_Debt_Liquidity = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_debt_liquidity.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"MonthStart", type date}, {"FacilityKey", type text}, {"OpeningBalanceVND", type number}, {"DrawdownVND", type number}, {"RepaymentVND", type number}, {"ClosingBalanceVND", type number}, {"InterestRate", type number}, {"InterestExpenseVND", type number}, {"CovenantHeadroomVND", type number}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

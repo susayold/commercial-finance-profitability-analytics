@@ -1,0 +1,13 @@
+{
+  "name": "PricingCaseKey",
+  "dataType": "string",
+  "sourceColumn": "PricingCaseKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

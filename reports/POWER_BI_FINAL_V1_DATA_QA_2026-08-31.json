@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "checks": 23,
+  "passed": 23,
+  "failed": [],
+  "dataset_version": "final_v1.0.0",
+  "results": [
+    {
+      "id": "QA-D04",
+      "name": "Gross sales = corrected units \u00d7 unit price",
+      "status": "PASS",
+      "detail": "bad_rows=0"
+    },
+    {
+      "id": "QA-D06",
+      "name": "Gross-to-net identity",
+      "status": "PASS",
+      "detail": "bad_rows=0"
+    },
+    {
+      "id": "QA-D05",
+      "name": "No negative operating economics",
+      "status": "PASS",
+      "detail": "all checked"
+    },
+    {
+      "id": "QA-D02",
+      "name": "Budget fact populated and positive",
+      "status": "PASS",
+      "detail": "rows=2160"
+    },
+    {
+      "id": "QA-D03",
+      "name": "Actual vs budget comparable at common grain",
+      "status": "PASS",
+      "detail": "month \u00d7 SKU \u00d7 channel"
+    },
+    {
+      "id": "QA-D12",
+      "name": "No orphan ProductKey",
+      "status": "PASS",
+      "detail": "sales\u2192dim_product"
+    },
+    {
+      "id": "QA-D12b",
+      "name": "No orphan CustomerKey",
+      "status": "PASS",
+      "detail": "sales\u2192dim_customer"
+    },
+    {
+      "id": "QA-D12c",
+      "name": "No orphan ChannelKey",
+      "status": "PASS",
+      "detail": "sales\u2192dim_channel"
+    },
+    {
+      "id": "QA-D07",
+      "name": "Channel-month corrected COGS ties to authority",
+      "status": "PASS",
+      "detail": "max_delta_vnd=0.00"
+    },
+    {
+      "id": "QA-D01",
+      "name": "FY2025 calendar revenue anchor populated",
+      "status": "PASS",
+      "detail": "fy2025_calendar_vnd=80110481000.00; all_period_vnd=212542361000.00"
+    },
+    {
+      "id": "QA-D08",
+      "name": "Product revenue partition ties to total",
+      "status": "PASS",
+      "detail": "delta_vnd=0.00"
+    },
+    {
+      "id": "QA-D09",
+      "name": "Customer revenue partition ties to total",
+      "status": "PASS",
+      "detail": "delta_vnd=0.00"
+    },
+    {
+      "id": "QA-D10",
+      "name": "Channel revenue partition ties to total",
+      "status": "PASS",
+      "detail": "delta_vnd=0.00"
+    },
+    {
+      "id": "QA-D11",
+      "name": "Contribution profit identity",
+      "status": "PASS",
+      "detail": "bad_rows=0"
+    },
+    {
+      "id": "QA-D13",
+      "name": "Source sales LineID unique",
+      "status": "PASS",
+      "detail": "rows=2160"
+    },
+    {
+      "id": "QA-D13b",
+      "name": "Dimension keys unique",
+      "status": "PASS",
+      "detail": "product/customer/channel"
+    },
+    {
+      "id": "QA-X03",
+      "name": "WC source grain is portfolio balance",
+      "status": "PASS",
+      "detail": "monthly AR/Inventory/AP snapshots; no average entity balance"
+    },
+    {
+      "id": "QA-X04",
+      "name": "Multi-period WC convention documented",
+      "status": "PASS",
+      "detail": "monthly balance rows available for monthly/LTM averaging"
+    },
+    {
+      "id": "QA-X05",
+      "name": "PVM residual contract",
+      "status": "PASS",
+      "detail": "fact_pvm_bridge includes explicit MIX_RESIDUAL; see PVM QA"
+    },
+    {
+      "id": "QA-X06",
+      "name": "Scenario isolation",
+      "status": "PASS",
+      "detail": "scenario facts are disconnected from historical Actual by contract"
+    },
+    {
+      "id": "QA-X07",
+      "name": "Public-company separation",
+      "status": "PASS",
+      "detail": "public facts have separate CompanyKey/evidence class"
+    },
+    {
+      "id": "QA-X08",
+      "name": "Strategic separation",
+      "status": "PASS",
+      "detail": "valuation/M&A facts are separate subject areas"
+    },
+    {
+      "id": "QA-D14",
+      "name": "Evidence class coverage",
+      "status": "PASS",
+      "detail": "facts_checked=14"
+    }
+  ]
+}

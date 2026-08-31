@@ -1,0 +1,102 @@
+{
+  "name": "04_CH_Capacity",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 575,
+        "z": 10,
+        "width": 760,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "scatterChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Dim_Channel.Channel"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Promotion ROI"
+        },
+        {
+          "queryRef": "Sales.Expected CM Uplift"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Channel",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Channel"
+          },
+          "Name": "Dim_Channel.Channel",
+          "NativeReferenceName": "Channel"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Promotion ROI"
+          },
+          "Name": "Sales.Promotion ROI",
+          "NativeReferenceName": "Promotion ROI"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Expected CM Uplift"
+          },
+          "Name": "Sales.Expected CM Uplift",
+          "NativeReferenceName": "Expected CM Uplift"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Promotion ROI"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

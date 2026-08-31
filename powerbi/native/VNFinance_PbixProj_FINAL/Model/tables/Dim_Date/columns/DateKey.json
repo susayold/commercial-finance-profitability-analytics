@@ -1,0 +1,13 @@
+{
+  "name": "DateKey",
+  "dataType": "dateTime",
+  "sourceColumn": "DateKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

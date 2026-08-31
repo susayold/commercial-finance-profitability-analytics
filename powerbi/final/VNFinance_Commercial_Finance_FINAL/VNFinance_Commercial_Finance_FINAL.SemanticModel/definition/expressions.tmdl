@@ -1,0 +1,2 @@
+expression DataRoot = "C:\\VNFinancePowerBI\\data\\final_v1" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: d19a5c32-34b7-4512-a46d-697d6c32679b

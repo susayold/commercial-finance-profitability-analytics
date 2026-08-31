@@ -1,0 +1,273 @@
+{
+  "name": "VNFinance_Commercial_Finance_FINAL",
+  "compatibilityLevel": 1550,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "relationships": [
+      {
+        "name": "rel-date-sales",
+        "fromTable": "Dim_Date",
+        "fromColumn": "DateKey",
+        "toTable": "Sales",
+        "toColumn": "MonthStart"
+      },
+      {
+        "name": "rel-date-cost",
+        "fromTable": "Dim_Date",
+        "fromColumn": "DateKey",
+        "toTable": "Fact_Commercial_Cost",
+        "toColumn": "MonthStart"
+      },
+      {
+        "name": "rel-date-budget",
+        "fromTable": "Dim_Date",
+        "fromColumn": "DateKey",
+        "toTable": "Fact_Budget",
+        "toColumn": "MonthStart"
+      },
+      {
+        "name": "rel-date-forecast",
+        "fromTable": "Dim_Date",
+        "fromColumn": "DateKey",
+        "toTable": "Fact_Forecast",
+        "toColumn": "TargetMonth"
+      },
+      {
+        "name": "rel-date-pvm",
+        "fromTable": "Dim_Date",
+        "fromColumn": "DateKey",
+        "toTable": "Fact_PVM_Bridge",
+        "toColumn": "MonthStart"
+      },
+      {
+        "name": "rel-date-ar",
+        "fromTable": "Dim_Date",
+        "fromColumn": "DateKey",
+        "toTable": "Fact_AR",
+        "toColumn": "MonthStart"
+      },
+      {
+        "name": "rel-date-inventory",
+        "fromTable": "Dim_Date",
+        "fromColumn": "DateKey",
+        "toTable": "Fact_Inventory",
+        "toColumn": "MonthStart"
+      },
+      {
+        "name": "rel-date-ap",
+        "fromTable": "Dim_Date",
+        "fromColumn": "DateKey",
+        "toTable": "Fact_AP",
+        "toColumn": "MonthStart"
+      },
+      {
+        "name": "rel-date-debt",
+        "fromTable": "Dim_Date",
+        "fromColumn": "DateKey",
+        "toTable": "Fact_Debt_Liquidity",
+        "toColumn": "MonthStart"
+      },
+      {
+        "name": "rel-date-opex",
+        "fromTable": "Dim_Date",
+        "fromColumn": "YearMonth",
+        "toTable": "Fact_OPEX_Headcount",
+        "toColumn": "Period"
+      },
+      {
+        "name": "rel-date-capex",
+        "fromTable": "Dim_Date",
+        "fromColumn": "YearMonth",
+        "toTable": "Fact_CAPEX",
+        "toColumn": "Period"
+      },
+      {
+        "name": "rel-product-sales",
+        "fromTable": "Dim_Product",
+        "fromColumn": "ProductKey",
+        "toTable": "Sales",
+        "toColumn": "SKUKey"
+      },
+      {
+        "name": "rel-product-budget",
+        "fromTable": "Dim_Product",
+        "fromColumn": "ProductKey",
+        "toTable": "Fact_Budget",
+        "toColumn": "SKUKey"
+      },
+      {
+        "name": "rel-product-forecast",
+        "fromTable": "Dim_Product",
+        "fromColumn": "ProductKey",
+        "toTable": "Fact_Forecast",
+        "toColumn": "SKUKey"
+      },
+      {
+        "name": "rel-product-pvm",
+        "fromTable": "Dim_Product",
+        "fromColumn": "ProductKey",
+        "toTable": "Fact_PVM_Bridge",
+        "toColumn": "SKUKey"
+      },
+      {
+        "name": "rel-product-inventory",
+        "fromTable": "Dim_Product",
+        "fromColumn": "ProductKey",
+        "toTable": "Fact_Inventory",
+        "toColumn": "SKUKey"
+      },
+      {
+        "name": "rel-customer-sales",
+        "fromTable": "Dim_Customer",
+        "fromColumn": "CustomerKey",
+        "toTable": "Sales",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "rel-customer-ar",
+        "fromTable": "Dim_Customer",
+        "fromColumn": "CustomerKey",
+        "toTable": "Fact_AR",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "rel-channel-sales",
+        "fromTable": "Dim_Channel",
+        "fromColumn": "ChannelKey",
+        "toTable": "Sales",
+        "toColumn": "ChannelKey"
+      },
+      {
+        "name": "rel-channel-cost",
+        "fromTable": "Dim_Channel",
+        "fromColumn": "ChannelKey",
+        "toTable": "Fact_Commercial_Cost",
+        "toColumn": "ChannelKey"
+      },
+      {
+        "name": "rel-channel-budget",
+        "fromTable": "Dim_Channel",
+        "fromColumn": "ChannelKey",
+        "toTable": "Fact_Budget",
+        "toColumn": "ChannelKey"
+      },
+      {
+        "name": "rel-channel-forecast",
+        "fromTable": "Dim_Channel",
+        "fromColumn": "ChannelKey",
+        "toTable": "Fact_Forecast",
+        "toColumn": "ChannelKey"
+      },
+      {
+        "name": "rel-channel-pvm",
+        "fromTable": "Dim_Channel",
+        "fromColumn": "ChannelKey",
+        "toTable": "Fact_PVM_Bridge",
+        "toColumn": "ChannelKey"
+      },
+      {
+        "name": "rel-channel-promo",
+        "fromTable": "Dim_Channel",
+        "fromColumn": "ChannelKey",
+        "toTable": "Fact_Promotion",
+        "toColumn": "ChannelKey"
+      },
+      {
+        "name": "rel-channel-price",
+        "fromTable": "Dim_Channel",
+        "fromColumn": "ChannelKey",
+        "toTable": "Fact_Pricing_Case",
+        "toColumn": "ChannelKey"
+      },
+      {
+        "name": "rel-channel-allocation",
+        "fromTable": "Dim_Channel",
+        "fromColumn": "ChannelKey",
+        "toTable": "Fact_Budget_Allocation",
+        "toColumn": "ChannelKey"
+      },
+      {
+        "name": "rel-fv-forecast",
+        "fromTable": "Dim_Forecast_Version",
+        "fromColumn": "ForecastVersionKey",
+        "toTable": "Fact_Forecast",
+        "toColumn": "ForecastVersionKey"
+      },
+      {
+        "name": "rel-cc-opex",
+        "fromTable": "Dim_Cost_Center",
+        "fromColumn": "CostCenterKey",
+        "toTable": "Fact_OPEX_Headcount",
+        "toColumn": "CostCenterKey"
+      },
+      {
+        "name": "rel-cc-capex",
+        "fromTable": "Dim_Cost_Center",
+        "fromColumn": "CostCenterKey",
+        "toTable": "Fact_CAPEX",
+        "toColumn": "CostCenterKey"
+      },
+      {
+        "name": "rel-project-capex",
+        "fromTable": "Dim_CAPEX_Project",
+        "fromColumn": "CAPEXProjectKey",
+        "toTable": "Fact_CAPEX",
+        "toColumn": "ProjectKey"
+      },
+      {
+        "name": "rel-company-sales",
+        "fromTable": "Dim_Company",
+        "fromColumn": "CompanyKey",
+        "toTable": "Sales",
+        "toColumn": "CompanyKey"
+      },
+      {
+        "name": "rel-company-public",
+        "fromTable": "Dim_Company",
+        "fromColumn": "CompanyKey",
+        "toTable": "Fact_Public_Financials",
+        "toColumn": "CompanyKey"
+      },
+      {
+        "name": "rel-company-cashflow",
+        "fromTable": "Dim_Company",
+        "fromColumn": "CompanyKey",
+        "toTable": "Fact_Public_Cashflow",
+        "toColumn": "CompanyKey"
+      },
+      {
+        "name": "rel-evidence-sales",
+        "fromTable": "Dim_Evidence_Class",
+        "fromColumn": "EvidenceClass",
+        "toTable": "Sales",
+        "toColumn": "EvidenceClass"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DataRoot",
+        "kind": "m"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.153.1206.0 (26.04)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DataRoot\",\"Dim_Date\",\"Dim_Product\",\"Dim_Customer\",\"Dim_Channel\",\"Dim_Scenario\",\"Dim_Forecast_Version\",\"Dim_Cost_Center\",\"Dim_CAPEX_Project\",\"Dim_Company\",\"Dim_Evidence_Class\",\"Dim_Commercial_View\",\"Sales\",\"Fact_Commercial_Cost\",\"Fact_Budget\",\"Fact_Forecast\",\"Fact_PVM_Bridge\",\"Fact_AR\",\"Fact_Inventory\",\"Fact_AP\",\"Fact_Debt_Liquidity\",\"Fact_Promotion\",\"Fact_Pricing_Case\",\"Fact_Budget_Allocation\",\"Fact_OPEX_Headcount\",\"Fact_CAPEX\",\"Fact_Public_Financials\",\"Fact_Public_Cashflow\",\"Fact_Valuation\",\"Fact_MNA\",\"Source_Control\"]"
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "name": "06_TBL_Inventory",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 570,
+        "y": 575,
+        "z": 5,
+        "width": 510,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Product.SKU"
+        },
+        {
+          "queryRef": "Fact_Inventory.MonthStart"
+        },
+        {
+          "queryRef": "Sales.Inventory Closing"
+        },
+        {
+          "queryRef": "Sales.DIO"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Product",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Fact_Inventory",
+          "Type": 0
+        },
+        {
+          "Name": "t2",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "SKU"
+          },
+          "Name": "Dim_Product.SKU",
+          "NativeReferenceName": "SKU"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "MonthStart"
+          },
+          "Name": "Fact_Inventory.MonthStart",
+          "NativeReferenceName": "MonthStart"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Inventory Closing"
+          },
+          "Name": "Sales.Inventory Closing",
+          "NativeReferenceName": "Inventory Closing"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "DIO"
+          },
+          "Name": "Sales.DIO",
+          "NativeReferenceName": "DIO"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

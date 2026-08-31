@@ -1,0 +1,3 @@
+<Measure Name="Scenario Liquidity Headroom">
+  <FormatString>#,0</FormatString>
+</Measure>

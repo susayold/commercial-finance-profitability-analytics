@@ -1,0 +1,12 @@
+{
+  "name": "ActualAvailabilityDate",
+  "dataType": "string",
+  "sourceColumn": "ActualAvailabilityDate",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

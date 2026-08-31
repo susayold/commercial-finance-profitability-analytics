@@ -1,0 +1,13 @@
+{
+  "name": "PromotionSpendVND",
+  "dataType": "double",
+  "sourceColumn": "PromotionSpendVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

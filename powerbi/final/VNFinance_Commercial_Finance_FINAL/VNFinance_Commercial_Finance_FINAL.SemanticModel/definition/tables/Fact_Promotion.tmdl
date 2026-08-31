@@ -1,0 +1,146 @@
+table Fact_Promotion
+	lineageTag: e0716b95-4097-4b5f-b911-34178d4b7979
+
+	column PromotionKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: PromotionKey
+		lineageTag: 57efa6ba-eaed-4003-9254-a447a4298acc
+		annotation SummarizationSetBy = User
+
+	column Promotion
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Promotion
+		lineageTag: 51924852-301a-4b00-aeb5-334eadc5f7fd
+		annotation SummarizationSetBy = User
+
+	column ChannelKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ChannelKey
+		lineageTag: 3c52611d-c1f8-405d-976f-d7c9dc758f5f
+		annotation SummarizationSetBy = User
+
+	column StartDate
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: StartDate
+		lineageTag: 0a91bdc1-2851-496c-8477-845169a8b93e
+		annotation SummarizationSetBy = User
+
+	column EndDate
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: EndDate
+		lineageTag: 606ccc4e-4f60-4363-b4ce-e6ae043c6e1f
+		annotation SummarizationSetBy = User
+
+	column BaselineUnits
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BaselineUnits
+		lineageTag: 029c2033-8f68-4b7d-9a82-8d2f576147d3
+		annotation SummarizationSetBy = User
+
+	column UpliftPct
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: UpliftPct
+		lineageTag: 668596f7-1afa-4bd6-8d5e-251912bd0acd
+		annotation SummarizationSetBy = User
+
+	column IncrementalUnits
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: IncrementalUnits
+		lineageTag: ad8fe3e2-6f33-414f-9f17-2a41f9ffa1e6
+		annotation SummarizationSetBy = User
+
+	column NetPriceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: NetPriceVND
+		lineageTag: ed14a12d-d66a-4440-ba56-c450741a4a7f
+		annotation SummarizationSetBy = User
+
+	column IncrementalRevenueVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: IncrementalRevenueVND
+		lineageTag: edf818fe-d2d6-4630-a130-e92f4268153c
+		annotation SummarizationSetBy = User
+
+	column IncrementalVariableCostVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: IncrementalVariableCostVND
+		lineageTag: 726ce186-b04b-4066-ad8f-766368ff8341
+		annotation SummarizationSetBy = User
+
+	column PromotionSpendVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: PromotionSpendVND
+		lineageTag: f09887cf-b469-4be5-a7e3-f8fe334c33ec
+		annotation SummarizationSetBy = User
+
+	column IncrementalContributionVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: IncrementalContributionVND
+		lineageTag: 9dacefbd-97fb-467e-872b-648738d46261
+		annotation SummarizationSetBy = User
+
+	column ROI
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: ROI
+		lineageTag: 48dfcf26-6548-4b5f-9d7a-76fdebfee664
+		annotation SummarizationSetBy = User
+
+	column CMHurdle
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: CMHurdle
+		lineageTag: 3afa33b0-c04c-42e7-9a69-1c053632d7b7
+		annotation SummarizationSetBy = User
+
+	column Decision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Decision
+		lineageTag: 3d6128e1-97c0-4d4e-8204-9105c359fb9a
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: e0e8350c-88e5-4c46-ae26-2acb18e04025
+		annotation SummarizationSetBy = User
+
+	partition Fact_Promotion = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_promotion.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"PromotionKey", type text}, {"Promotion", type text}, {"ChannelKey", type text}, {"StartDate", type date}, {"EndDate", type date}, {"BaselineUnits", Int64.Type}, {"UpliftPct", type number}, {"IncrementalUnits", Int64.Type}, {"NetPriceVND", type number}, {"IncrementalRevenueVND", type number}, {"IncrementalVariableCostVND", type number}, {"PromotionSpendVND", type number}, {"IncrementalContributionVND", type number}, {"ROI", type number}, {"CMHurdle", type number}, {"Decision", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

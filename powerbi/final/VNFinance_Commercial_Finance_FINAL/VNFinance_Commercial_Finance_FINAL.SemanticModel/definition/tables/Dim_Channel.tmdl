@@ -1,0 +1,67 @@
+table Dim_Channel
+	lineageTag: e897ccda-158a-48cc-b774-234b78945eec
+
+	column ChannelKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ChannelKey
+		lineageTag: 8429e433-a305-4800-9a5e-dc5a5dcace89
+		annotation SummarizationSetBy = User
+
+	column ChannelID
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ChannelID
+		lineageTag: ce74bcdd-fcbd-4561-b3f2-f2c7268601fa
+		annotation SummarizationSetBy = User
+
+	column Channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Channel
+		lineageTag: 2bee2444-483f-4479-84c4-0b863a50217f
+		annotation SummarizationSetBy = User
+
+	column ChannelGroup
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ChannelGroup
+		lineageTag: bb37059b-8e15-4476-92b7-7b6c5e354fd2
+		annotation SummarizationSetBy = User
+
+	column FeeRate
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: FeeRate
+		lineageTag: 6d0acc25-f56f-45cb-a38b-dc2f1784cad9
+		annotation SummarizationSetBy = User
+
+	column PaymentTermsDays
+		dataType: int64
+		formatString: 0.0
+		summarizeBy: sum
+		sourceColumn: PaymentTermsDays
+		lineageTag: b0aa71f3-2ce7-439d-8c15-781fb1c3fdbe
+		annotation SummarizationSetBy = User
+
+	column CMHurdle
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: CMHurdle
+		lineageTag: f0e32717-b1c9-4d34-8a27-75977dbe9445
+		annotation SummarizationSetBy = User
+
+	partition Dim_Channel = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_channel.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"ChannelKey", type text}, {"ChannelID", type text}, {"Channel", type text}, {"ChannelGroup", type text}, {"FeeRate", type number}, {"PaymentTermsDays", Int64.Type}, {"CMHurdle", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

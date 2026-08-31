@@ -1,0 +1,12 @@
+{
+  "name": "SourceCostBucket",
+  "dataType": "string",
+  "sourceColumn": "SourceCostBucket",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

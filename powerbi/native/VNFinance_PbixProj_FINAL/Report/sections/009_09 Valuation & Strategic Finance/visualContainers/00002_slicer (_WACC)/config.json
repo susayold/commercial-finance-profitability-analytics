@@ -1,0 +1,50 @@
+{
+  "name": "09_F_WACC",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 305,
+        "y": 20,
+        "z": 30,
+        "width": 250,
+        "height": 48
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "slicer",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Fact_Valuation.WACC"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Valuation",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "WACC"
+          },
+          "Name": "Fact_Valuation.WACC",
+          "NativeReferenceName": "WACC"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

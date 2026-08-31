@@ -1,0 +1,117 @@
+{
+  "name": "02_CH_PVM",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 580,
+        "y": 255,
+        "z": 10,
+        "width": 515,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "waterfallChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Fact_PVM_Bridge.Component"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Price Effect"
+        },
+        {
+          "queryRef": "Sales.Volume Effect"
+        },
+        {
+          "queryRef": "Sales.Mix Effect"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_PVM_Bridge",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Component"
+          },
+          "Name": "Fact_PVM_Bridge.Component",
+          "NativeReferenceName": "Component"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Price Effect"
+          },
+          "Name": "Sales.Price Effect",
+          "NativeReferenceName": "Price Effect"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Volume Effect"
+          },
+          "Name": "Sales.Volume Effect",
+          "NativeReferenceName": "Volume Effect"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Mix Effect"
+          },
+          "Name": "Sales.Mix Effect",
+          "NativeReferenceName": "Mix Effect"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Price Effect"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

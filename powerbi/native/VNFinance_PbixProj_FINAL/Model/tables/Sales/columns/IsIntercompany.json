@@ -1,0 +1,12 @@
+{
+  "name": "IsIntercompany",
+  "dataType": "boolean",
+  "sourceColumn": "IsIntercompany",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

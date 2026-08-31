@@ -1,0 +1,50 @@
+{
+  "name": "09_F_Scenario",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 20,
+        "z": 30,
+        "width": 250,
+        "height": 48
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "slicer",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Fact_Valuation.Scenario"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Valuation",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Scenario"
+          },
+          "Name": "Fact_Valuation.Scenario",
+          "NativeReferenceName": "Scenario"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

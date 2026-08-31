@@ -1,0 +1,3 @@
+<Measure Name="Average AP LTM">
+  <FormatString>#,0</FormatString>
+</Measure>

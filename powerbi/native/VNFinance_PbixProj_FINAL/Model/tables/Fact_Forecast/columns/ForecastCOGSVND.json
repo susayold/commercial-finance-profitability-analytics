@@ -1,0 +1,13 @@
+{
+  "name": "ForecastCOGSVND",
+  "dataType": "double",
+  "sourceColumn": "ForecastCOGSVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

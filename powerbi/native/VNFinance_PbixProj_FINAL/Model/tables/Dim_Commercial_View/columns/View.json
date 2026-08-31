@@ -1,0 +1,12 @@
+{
+  "name": "View",
+  "dataType": "string",
+  "sourceColumn": "View",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

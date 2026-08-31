@@ -1,0 +1,3 @@
+<Measure Name="Pricing Contribution Delta">
+  <FormatString>#,0</FormatString>
+</Measure>

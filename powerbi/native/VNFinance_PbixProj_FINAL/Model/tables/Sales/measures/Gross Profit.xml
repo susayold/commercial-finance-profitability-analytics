@@ -1,0 +1,3 @@
+<Measure Name="Gross Profit">
+  <FormatString>#,0</FormatString>
+</Measure>

@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "checks": 7,
+  "passed": 7,
+  "failed": [],
+  "results": [
+    {
+      "id": "QA-X09",
+      "name": "Every semantic table has a source file",
+      "status": "PASS",
+      "detail": "tables=30"
+    },
+    {
+      "id": "QA-X10",
+      "name": "Every visual field resolves to model metadata",
+      "status": "PASS",
+      "detail": "192 visuals resolved"
+    },
+    {
+      "id": "QA-X11",
+      "name": "Visual names are unique per page",
+      "status": "PASS",
+      "detail": "no duplicates"
+    },
+    {
+      "id": "QA-X12",
+      "name": "All visuals stay inside the declared canvas",
+      "status": "PASS",
+      "detail": "1672 \u00d7 941 geometry"
+    },
+    {
+      "id": "QA-X13",
+      "name": "Relationship endpoints resolve",
+      "status": "PASS",
+      "detail": "relationships=34"
+    },
+    {
+      "id": "QA-X14",
+      "name": "PBIP report pages use reference canvas",
+      "status": "PASS",
+      "detail": "pages=19"
+    },
+    {
+      "id": "QA-X15",
+      "name": "PBIT container model/layout topology matches PBIP",
+      "status": "PASS",
+      "detail": "UTF-16LE DataModelSchema + Report/Layout"
+    }
+  ]
+}

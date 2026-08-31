@@ -1,0 +1,3 @@
+<Measure Name="COGS">
+  <FormatString>#,0</FormatString>
+</Measure>

@@ -1,0 +1,13 @@
+{
+  "name": "PATVNDBn",
+  "dataType": "double",
+  "sourceColumn": "PATVNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

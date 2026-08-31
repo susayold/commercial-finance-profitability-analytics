@@ -1,0 +1,13 @@
+{
+  "name": "ExpectedAnnualContributionVND",
+  "dataType": "double",
+  "sourceColumn": "ExpectedAnnualContributionVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

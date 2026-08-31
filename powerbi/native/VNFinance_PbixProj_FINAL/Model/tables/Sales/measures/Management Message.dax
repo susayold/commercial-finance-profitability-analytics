@@ -1,0 +1,1 @@
+VAR gap = [Revenue vs Budget %] RETURN IF ( gap < 0, "Revenue is " & FORMAT ( gap, "0.0%" ) & " below budget; protect contribution and release cash.", "Revenue is on or above budget; keep hurdle discipline and fund growth." )

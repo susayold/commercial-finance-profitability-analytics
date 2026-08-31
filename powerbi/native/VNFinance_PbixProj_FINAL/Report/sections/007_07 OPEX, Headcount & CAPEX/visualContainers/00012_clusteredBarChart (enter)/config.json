@@ -1,0 +1,102 @@
+{
+  "name": "07_CH_CostCenter",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 255,
+        "z": 10,
+        "width": 792,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "clusteredBarChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Dim_Cost_Center.CostCenter"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.OPEX Actual"
+        },
+        {
+          "queryRef": "Sales.OPEX vs Budget"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Cost_Center",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "CostCenter"
+          },
+          "Name": "Dim_Cost_Center.CostCenter",
+          "NativeReferenceName": "CostCenter"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OPEX Actual"
+          },
+          "Name": "Sales.OPEX Actual",
+          "NativeReferenceName": "OPEX Actual"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "OPEX vs Budget"
+          },
+          "Name": "Sales.OPEX vs Budget",
+          "NativeReferenceName": "OPEX vs Budget"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "OPEX Actual"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

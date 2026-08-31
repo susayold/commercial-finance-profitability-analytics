@@ -1,0 +1,12 @@
+{
+  "name": "FiscalQuarter",
+  "dataType": "string",
+  "sourceColumn": "FiscalQuarter",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

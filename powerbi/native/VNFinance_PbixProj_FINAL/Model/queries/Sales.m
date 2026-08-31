@@ -1,0 +1,6 @@
+let
+    Source = Csv.Document(File.Contents(DataRoot & "\\fact_sales.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    Typed = Table.TransformColumnTypes(Promoted, {{"LineID", type text}, {"OrderID", type text}, {"Date", type date}, {"MonthStart", type date}, {"SKUKey", type text}, {"CustomerKey", type text}, {"ChannelKey", type text}, {"CompanyKey", type text}, {"Region", type text}, {"UnitsCorrected", type number}, {"UnitPriceVND", type number}, {"GrossSalesVND", type number}, {"DiscountVND", type number}, {"ReturnsVND", type number}, {"RebatesVND", type number}, {"VoucherSupportVND", type number}, {"NetRevenueVND", type number}, {"PreliminaryCOGSVND", type number}, {"COGSScaleFactor", type number}, {"CorrectedCOGSVND", type number}, {"AllocatedChannelFeeVND", type number}, {"AllocatedTradeSpendVND", type number}, {"AllocatedVariableFulfilmentVND", type number}, {"ContributionProfitVND", type number}, {"AllocationMethod", type text}, {"AllocationDriver", type text}, {"SourceCostBucket", type text}, {"EvidenceClass", type text}, {"IsIntercompany", type logical}, {"IsStockout", type logical}}, "en-US")
+in
+    Typed

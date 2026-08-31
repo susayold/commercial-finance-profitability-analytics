@@ -1,0 +1,12 @@
+{
+  "name": "StrategicFlag",
+  "dataType": "string",
+  "sourceColumn": "StrategicFlag",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

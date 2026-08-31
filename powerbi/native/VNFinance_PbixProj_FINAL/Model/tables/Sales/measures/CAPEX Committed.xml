@@ -1,0 +1,3 @@
+<Measure Name="CAPEX Committed">
+  <FormatString>#,0</FormatString>
+</Measure>

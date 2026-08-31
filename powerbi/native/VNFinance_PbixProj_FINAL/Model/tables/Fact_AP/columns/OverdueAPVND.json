@@ -1,0 +1,13 @@
+{
+  "name": "OverdueAPVND",
+  "dataType": "double",
+  "sourceColumn": "OverdueAPVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

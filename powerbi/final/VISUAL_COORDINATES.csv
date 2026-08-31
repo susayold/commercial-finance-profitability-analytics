@@ -1,0 +1,193 @@
+Page,Object,X,Y,Width,Height,ZIndex,VisualType,Font,Background,Border,Notes
+00 Executive Decision Cockpit,00_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_MSG_Management,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_KPI_NetRevenue,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_KPI_VarBudget,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_KPI_CM,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_KPI_OperatingProfit,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_KPI_CCC,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_KPI_CashRelease,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_CH_ActualBudgetLE,40,255,780,330,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_CH_ChannelGap,840,255,792,330,10,waterfallChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_TBL_Actions,40,610,780,270,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+00 Executive Decision Cockpit,00_TBL_WC,840,610,792,270,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_MSG_Management,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_KPI_GrossSales,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_KPI_NetRevenue,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_KPI_GrossProfit,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_KPI_GM,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_KPI_Contribution,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_KPI_OperatingProfit,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_MTX_PnL,40,255,760,625,5,pivotTable,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_CH_ProfitVariance,825,255,807,290,10,waterfallChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+01 P&L & Variance,01_CH_MonthlyTrend,825,565,807,315,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_MSG_Management,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_KPI_GrossSales,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_KPI_NetRevenue,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_KPI_GTN,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_KPI_Price,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_KPI_Volume,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_KPI_PVMResidual,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_CH_GTN,40,255,515,300,10,waterfallChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_CH_PVM,580,255,515,300,10,waterfallChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_TBL_Bridge,1120,255,512,300,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_CH_PriceUnits,40,575,780,305,10,lineClusteredColumnComboChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+"02 Revenue, Gross-to-Net & PVM",02_TBL_ChannelSKU,840,575,792,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_MSG_Management,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_KPI_NetRevenue,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_KPI_Contribution,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_KPI_CM,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_KPI_AfterWC,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_KPI_Top5,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_KPI_DSO,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_CH_Portfolio,40,255,650,300,10,scatterChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_CH_AfterWC,710,255,922,300,10,clusteredBarChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+03 Commercial Profitability,03_TBL_Economics,40,575,1592,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_MSG_Management,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_KPI_PromoSpend,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_KPI_IncCM,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_KPI_ROI,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_KPI_AboveHurdle,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_KPI_Reallocated,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_KPI_BudgetControl,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_CH_PromoROI,40,255,510,300,10,clusteredBarChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_TBL_Pricing,570,255,510,300,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_TBL_Allocation,1100,255,532,300,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_CH_Capacity,40,575,760,305,10,scatterChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+"04 Pricing, Promotion & Resource Allocation",04_TBL_DecisionQueue,825,575,807,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_MSG_Governance,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_KPI_ScenarioRevenue,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_KPI_ScenarioOP,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_KPI_ScenarioCM,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_KPI_ScenarioCCC,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_KPI_Liquidity,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_KPI_WAPE,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_CH_Outlook,40,255,780,300,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_CH_Scenario,840,255,792,300,10,clusteredColumnChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_TBL_Drivers,40,575,780,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+05 Forecast & Scenario,05_TBL_Decision,840,575,792,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_MSG_Management,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_KPI_DSO,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_KPI_DIO,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_KPI_DPO,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_KPI_CCC,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_KPI_Headroom,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_KPI_CashRelease,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_CH_Days,40,255,760,300,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_CH_CCCBridge,840,255,792,300,10,waterfallChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_TBL_AR,40,575,510,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_TBL_Inventory,570,575,510,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+06 Working Capital & Liquidity,06_TBL_Actions,1100,575,532,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_MSG_Management,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_KPI_OPEX,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_KPI_OPEXVar,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_KPI_OPEXForecast,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_KPI_HC,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_KPI_CAPEX,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_KPI_Payback,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_CH_OPEX,40,255,760,300,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_CH_CostCenter,840,255,792,300,10,clusteredBarChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_TBL_HC,40,575,760,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"07 OPEX, Headcount & CAPEX",07_TBL_CAPEX,840,575,792,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_MSG_Banner,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_F_Entity,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_F_Period,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_F_Compare,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_F_Peer,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_KPI_PublicRevenue,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_KPI_PATMargin,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_KPI_CFOConversion,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_KPI_ApprovedRows,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_KPI_Evidence,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_KPI_QA,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_CH_MCHTrend,40,255,780,300,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_CH_Peers,840,255,792,300,10,clusteredBarChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+08 MCH & Peer Financial Quality,08_TBL_Public,40,575,1592,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_MSG_Banner,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_F_Scenario,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_F_WACC,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_F_Growth,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_F_Deal,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_KPI_DownsideEV,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_KPI_BaseEV,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_KPI_UpsideEV,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_KPI_WACC,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_KPI_TerminalGrowth,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_KPI_Payback,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_CH_Sensitivity,40,255,760,300,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_CH_EVBridge,840,255,792,300,10,waterfallChart,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_TBL_MNA,40,575,760,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+09 Valuation & Strategic Finance,09_TBL_Watchouts,840,575,792,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_MSG_Banner,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_KPI_DataVersion,40,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_KPI_SourceCount,305,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_KPI_EvidenceCoverage,570,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_KPI_QAPassRate,835,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_KPI_RevenueTie,1100,145,250,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_KPI_PVMResidual,1365,145,267,90,20,card,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_TBL_Controls,40,255,760,300,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_TBL_Evidence,840,255,792,300,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_TBL_Release,40,575,760,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+"10 Controls, Evidence & Release",10_TBL_SourceTrace,840,575,792,305,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,primary
+D01 Customer Detail,D01_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D01 Customer Detail,D01_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D01 Customer Detail,D01_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D01 Customer Detail,D01_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D01 Customer Detail,D01_MSG,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D01 Customer Detail,D01_CH_Trend,40,145,780,300,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D01 Customer Detail,D01_TBL,840,145,792,300,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D02 Product Detail,D02_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D02 Product Detail,D02_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D02 Product Detail,D02_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D02 Product Detail,D02_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D02 Product Detail,D02_MSG,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D02 Product Detail,D02_CH_Trend,40,145,780,300,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D02 Product Detail,D02_TBL,840,145,792,300,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D03 Channel Detail,D03_F_Period,40,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D03 Channel Detail,D03_F_Scenario,305,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D03 Channel Detail,D03_F_Channel,570,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D03 Channel Detail,D03_F_Region,835,20,250,48,30,slicer,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D03 Channel Detail,D03_MSG,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D03 Channel Detail,D03_CH_Trend,40,145,780,300,10,lineChart,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D03 Channel Detail,D03_TBL,840,145,792,300,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D04 KPI Source Trace,D04_MSG,40,82,1590,48,20,card,Segoe UI,#FFFFFF,#D9E2EC,hidden
+D04 KPI Source Trace,D04_TBL,40,145,1592,300,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,hidden
+TT Financial Metric,TT Financial Metric_KPI,20,20,500,120,20,card,Segoe UI,#FFFFFF,#D9E2EC,hidden
+TT Financial Metric,TT Financial Metric_CTX,20,160,700,200,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,hidden
+TT PVM,TT PVM_KPI,20,20,500,120,20,card,Segoe UI,#FFFFFF,#D9E2EC,hidden
+TT PVM,TT PVM_CTX,20,160,700,200,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,hidden
+TT Commercial,TT Commercial_KPI,20,20,500,120,20,card,Segoe UI,#FFFFFF,#D9E2EC,hidden
+TT Commercial,TT Commercial_CTX,20,160,700,200,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,hidden
+TT Evidence,TT Evidence_KPI,20,20,500,120,20,card,Segoe UI,#FFFFFF,#D9E2EC,hidden
+TT Evidence,TT Evidence_CTX,20,160,700,200,5,tableEx,Segoe UI,#FFFFFF,#D9E2EC,hidden

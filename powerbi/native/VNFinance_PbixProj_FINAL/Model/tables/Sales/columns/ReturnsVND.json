@@ -1,0 +1,13 @@
+{
+  "name": "ReturnsVND",
+  "dataType": "double",
+  "sourceColumn": "ReturnsVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

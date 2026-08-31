@@ -1,0 +1,13 @@
+{
+  "name": "Year",
+  "dataType": "int64",
+  "sourceColumn": "Year",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

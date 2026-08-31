@@ -1,0 +1,102 @@
+{
+  "name": "08_CH_Peers",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 255,
+        "z": 10,
+        "width": 792,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "clusteredBarChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Fact_Public_Financials.Ticker"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Public PAT Margin"
+        },
+        {
+          "queryRef": "Sales.Public CFO Conversion"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Public_Financials",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Ticker"
+          },
+          "Name": "Fact_Public_Financials.Ticker",
+          "NativeReferenceName": "Ticker"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Public PAT Margin"
+          },
+          "Name": "Sales.Public PAT Margin",
+          "NativeReferenceName": "Public PAT Margin"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Public CFO Conversion"
+          },
+          "Name": "Sales.Public CFO Conversion",
+          "NativeReferenceName": "Public CFO Conversion"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Public PAT Margin"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

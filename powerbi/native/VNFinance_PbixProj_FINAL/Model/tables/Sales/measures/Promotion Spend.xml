@@ -1,0 +1,3 @@
+<Measure Name="Promotion Spend">
+  <FormatString>#,0</FormatString>
+</Measure>

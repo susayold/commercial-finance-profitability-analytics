@@ -1,0 +1,13 @@
+{
+  "name": "IncrementalVariableCostVND",
+  "dataType": "double",
+  "sourceColumn": "IncrementalVariableCostVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

@@ -1,0 +1,105 @@
+{
+  "name": "06_TBL_AR",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 575,
+        "z": 5,
+        "width": 510,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Customer.CustomerName"
+        },
+        {
+          "queryRef": "Fact_AR.MonthStart"
+        },
+        {
+          "queryRef": "Sales.AR Closing"
+        },
+        {
+          "queryRef": "Sales.DSO"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Customer",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Fact_AR",
+          "Type": 0
+        },
+        {
+          "Name": "t2",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "CustomerName"
+          },
+          "Name": "Dim_Customer.CustomerName",
+          "NativeReferenceName": "CustomerName"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "MonthStart"
+          },
+          "Name": "Fact_AR.MonthStart",
+          "NativeReferenceName": "MonthStart"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "AR Closing"
+          },
+          "Name": "Sales.AR Closing",
+          "NativeReferenceName": "AR Closing"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "DSO"
+          },
+          "Name": "Sales.DSO",
+          "NativeReferenceName": "DSO"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

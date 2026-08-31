@@ -1,0 +1,1 @@
+DIVIDE ( [Scenario Revenue] - [Scenario COGS] - [Trade Spend], [Scenario Revenue] )

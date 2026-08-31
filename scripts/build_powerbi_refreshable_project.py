@@ -857,7 +857,7 @@ def write_pbip(out: Path, theme: Path) -> None:
     for page in build_pages():
         sections.append({
             "name": page["name"], "displayName": page["displayName"], "displayOption": 1,
-            "width": 1280, "height": 720, "ordinal": page["ordinal"], "config": "{}", "filters": "[]",
+            "width": page.get("width", 1280), "height": page.get("height", 720), "ordinal": page["ordinal"], "config": "{}", "filters": "[]",
             "visualContainers": [{"x": cfg["layouts"][0]["position"]["x"], "y": cfg["layouts"][0]["position"]["y"], "z": cfg["layouts"][0]["position"]["z"], "width": cfg["layouts"][0]["position"]["width"], "height": cfg["layouts"][0]["position"]["height"], "config": json.dumps(cfg, separators=(",", ":")), "filters": "[]"} for cfg in page["visuals"]],
         })
     jwrite(report / "report.json", {"config": json.dumps(report_config, separators=(",", ":")), "layoutOptimization": 0, "resourcePackages": [{"resourcePackage": {"disabled": False, "name": "SharedResources", "type": 2, "items": [{"name": theme_name, "path": f"BaseThemes/{theme.name}", "type": 202}]}}], "sections": sections})

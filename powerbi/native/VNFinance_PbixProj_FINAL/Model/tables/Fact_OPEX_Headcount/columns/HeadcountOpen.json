@@ -1,0 +1,13 @@
+{
+  "name": "HeadcountOpen",
+  "dataType": "int64",
+  "sourceColumn": "HeadcountOpen",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

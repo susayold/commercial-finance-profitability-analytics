@@ -1,0 +1,160 @@
+{
+  "name": "D03_TBL",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 145,
+        "z": 5,
+        "width": 792,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Channel.Channel"
+        },
+        {
+          "queryRef": "Dim_Channel.ChannelGroup"
+        },
+        {
+          "queryRef": "Sales.Net Revenue"
+        },
+        {
+          "queryRef": "Sales.COGS"
+        },
+        {
+          "queryRef": "Sales.Channel Fees"
+        },
+        {
+          "queryRef": "Sales.Trade Spend"
+        },
+        {
+          "queryRef": "Sales.Contribution Profit"
+        },
+        {
+          "queryRef": "Sales.DSO"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Channel",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Channel"
+          },
+          "Name": "Dim_Channel.Channel",
+          "NativeReferenceName": "Channel"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ChannelGroup"
+          },
+          "Name": "Dim_Channel.ChannelGroup",
+          "NativeReferenceName": "ChannelGroup"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Net Revenue"
+          },
+          "Name": "Sales.Net Revenue",
+          "NativeReferenceName": "Net Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "COGS"
+          },
+          "Name": "Sales.COGS",
+          "NativeReferenceName": "COGS"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Channel Fees"
+          },
+          "Name": "Sales.Channel Fees",
+          "NativeReferenceName": "Channel Fees"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Trade Spend"
+          },
+          "Name": "Sales.Trade Spend",
+          "NativeReferenceName": "Trade Spend"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Contribution Profit"
+          },
+          "Name": "Sales.Contribution Profit",
+          "NativeReferenceName": "Contribution Profit"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "DSO"
+          },
+          "Name": "Sales.DSO",
+          "NativeReferenceName": "DSO"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

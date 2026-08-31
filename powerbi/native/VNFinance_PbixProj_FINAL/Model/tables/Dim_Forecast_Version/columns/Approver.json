@@ -1,0 +1,12 @@
+{
+  "name": "Approver",
+  "dataType": "string",
+  "sourceColumn": "Approver",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "PVExplicitFCFFVNDBn",
+  "dataType": "double",
+  "sourceColumn": "PVExplicitFCFFVNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

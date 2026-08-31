@@ -1,0 +1,13 @@
+{
+  "name": "AllocatedChannelFeeVND",
+  "dataType": "double",
+  "sourceColumn": "AllocatedChannelFeeVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

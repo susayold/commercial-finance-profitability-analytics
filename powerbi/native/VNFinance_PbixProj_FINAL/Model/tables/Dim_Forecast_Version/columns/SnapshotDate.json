@@ -1,0 +1,12 @@
+{
+  "name": "SnapshotDate",
+  "dataType": "dateTime",
+  "sourceColumn": "SnapshotDate",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

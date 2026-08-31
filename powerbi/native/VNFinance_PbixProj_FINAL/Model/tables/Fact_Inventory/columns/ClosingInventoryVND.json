@@ -1,0 +1,13 @@
+{
+  "name": "ClosingInventoryVND",
+  "dataType": "double",
+  "sourceColumn": "ClosingInventoryVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

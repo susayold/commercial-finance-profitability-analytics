@@ -1,0 +1,177 @@
+table Fact_OPEX_Headcount
+	lineageTag: 93215650-a186-4627-9fd5-1144bb26501a
+
+	column Period
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Period
+		lineageTag: 0a8d26fe-5da5-4743-a9ae-a47102e21614
+		annotation SummarizationSetBy = User
+
+	column CompanyKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CompanyKey
+		lineageTag: 2bc83685-0cf7-45d3-84a1-4fa76fa215d3
+		annotation SummarizationSetBy = User
+
+	column CostCenterKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CostCenterKey
+		lineageTag: 73d2a666-c47a-4a21-b268-4bf93dc93b1e
+		annotation SummarizationSetBy = User
+
+	column Function
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Function
+		lineageTag: cf6a5d20-301e-462b-b63b-8073fcffc4c8
+		annotation SummarizationSetBy = User
+
+	column HeadcountOpen
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: HeadcountOpen
+		lineageTag: 7672015b-f718-4fca-8cf9-f165dea9d92a
+		annotation SummarizationSetBy = User
+
+	column Hires
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Hires
+		lineageTag: 4ceaa3d5-1632-4d57-ac4a-c8d21a0bbade
+		annotation SummarizationSetBy = User
+
+	column Exits
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Exits
+		lineageTag: ca3ec05d-eafb-4145-be98-e18365025e62
+		annotation SummarizationSetBy = User
+
+	column HeadcountClose
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: HeadcountClose
+		lineageTag: 499164da-80cd-4779-a264-ec56de656453
+		annotation SummarizationSetBy = User
+
+	column AverageHeadcount
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: AverageHeadcount
+		lineageTag: 5bbfd009-7fb7-4d1d-b9d8-b6644222ae72
+		annotation SummarizationSetBy = User
+
+	column AverageSalaryVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: AverageSalaryVND
+		lineageTag: 00808284-fe25-447b-90c4-97924a82688d
+		annotation SummarizationSetBy = User
+
+	column PayrollVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: PayrollVND
+		lineageTag: e288f04b-2be2-4a9b-8d7b-73f039ee92e9
+		annotation SummarizationSetBy = User
+
+	column BenefitsVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BenefitsVND
+		lineageTag: 154b029f-dbba-45dd-8f69-ea6db3efb445
+		annotation SummarizationSetBy = User
+
+	column BonusVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BonusVND
+		lineageTag: 17c95650-688b-4f41-8b5b-695e914a75e3
+		annotation SummarizationSetBy = User
+
+	column NonPayrollOPEXVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: NonPayrollOPEXVND
+		lineageTag: 404ce3c8-420c-4efb-b8da-bd40ed377095
+		annotation SummarizationSetBy = User
+
+	column OPEXActualVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: OPEXActualVND
+		lineageTag: 60843968-30e7-4653-ada8-45a927666430
+		annotation SummarizationSetBy = User
+
+	column OPEXBudgetVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: OPEXBudgetVND
+		lineageTag: 76a5e191-0b8f-4dfc-bb9d-4c1b9cb8dc11
+		annotation SummarizationSetBy = User
+
+	column OPEXForecastVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: OPEXForecastVND
+		lineageTag: fc0674f7-88d5-4594-87cd-4494435e8ae1
+		annotation SummarizationSetBy = User
+
+	column BudgetVarianceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BudgetVarianceVND
+		lineageTag: 5f5cff7b-00f8-422a-941f-de7528c96527
+		annotation SummarizationSetBy = User
+
+	column ForecastVarianceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ForecastVarianceVND
+		lineageTag: 70fc7a68-892d-4518-83fb-528d71093ca2
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 5a584aa9-dc06-4f77-b654-3ce575b4d5c1
+		annotation SummarizationSetBy = User
+
+	column SourceSystem
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceSystem
+		lineageTag: b7f56a94-a41f-4596-8fad-b94dc700529e
+		annotation SummarizationSetBy = User
+
+	partition Fact_OPEX_Headcount = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_opex_headcount.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"Period", type text}, {"CompanyKey", type text}, {"CostCenterKey", type text}, {"Function", type text}, {"HeadcountOpen", Int64.Type}, {"Hires", Int64.Type}, {"Exits", Int64.Type}, {"HeadcountClose", Int64.Type}, {"AverageHeadcount", type number}, {"AverageSalaryVND", type number}, {"PayrollVND", type number}, {"BenefitsVND", type number}, {"BonusVND", type number}, {"NonPayrollOPEXVND", type number}, {"OPEXActualVND", type number}, {"OPEXBudgetVND", type number}, {"OPEXForecastVND", type number}, {"BudgetVarianceVND", type number}, {"ForecastVarianceVND", type number}, {"EvidenceClass", type text}, {"SourceSystem", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

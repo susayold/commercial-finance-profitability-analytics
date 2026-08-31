@@ -1,0 +1,12 @@
+{
+  "name": "ControlID",
+  "dataType": "string",
+  "sourceColumn": "ControlID",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

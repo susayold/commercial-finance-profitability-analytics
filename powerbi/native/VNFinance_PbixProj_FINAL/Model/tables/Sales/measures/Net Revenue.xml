@@ -1,0 +1,3 @@
+<Measure Name="Net Revenue">
+  <FormatString>#,0</FormatString>
+</Measure>

@@ -1,0 +1,110 @@
+table Fact_AR
+	lineageTag: 851512a4-cee8-4ce9-958f-dc2dcf03fae8
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: c8c620dd-2dbd-4c8d-b604-7a42c7327612
+		sortByColumn: DateKey
+		annotation SummarizationSetBy = User
+
+	column CustomerKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+		lineageTag: ba834b12-9fde-4415-858f-7d253ac2cdc1
+		annotation SummarizationSetBy = User
+
+	column OpeningARVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: OpeningARVND
+		lineageTag: 714310ea-e561-4f37-b029-7017de683f1e
+		annotation SummarizationSetBy = User
+
+	column InvoicedCreditSalesVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: InvoicedCreditSalesVND
+		lineageTag: a4bdfcd6-2454-412c-857d-b1e8265a39ce
+		annotation SummarizationSetBy = User
+
+	column CashCollectedVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CashCollectedVND
+		lineageTag: b15bee13-ba8d-4fba-b506-6541ec27970d
+		annotation SummarizationSetBy = User
+
+	column CreditNoteVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CreditNoteVND
+		lineageTag: db47d44a-4057-4264-b001-debf37f26df6
+		annotation SummarizationSetBy = User
+
+	column ClosingARVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ClosingARVND
+		lineageTag: c20188f2-459e-446c-902b-bd3cb2e487d2
+		annotation SummarizationSetBy = User
+
+	column Aging0_30VND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: Aging0_30VND
+		lineageTag: 59e28942-9757-49e5-8139-f4b0fae41741
+		annotation SummarizationSetBy = User
+
+	column Aging31_60VND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: Aging31_60VND
+		lineageTag: 92a146bd-6eea-4209-9f0d-a209d9d5068d
+		annotation SummarizationSetBy = User
+
+	column Aging61PlusVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: Aging61PlusVND
+		lineageTag: 72ea14e1-ff9b-41de-84ae-ac9b9478a201
+		annotation SummarizationSetBy = User
+
+	column DSODays
+		dataType: string
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: DSODays
+		lineageTag: 16e4f78e-d7dc-4fba-8085-57001929fe75
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 392b827a-46cd-47b4-b5de-033874a1ea1d
+		annotation SummarizationSetBy = User
+
+	partition Fact_AR = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_ar_snapshot.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"MonthStart", type date}, {"CustomerKey", type text}, {"OpeningARVND", type number}, {"InvoicedCreditSalesVND", type number}, {"CashCollectedVND", type number}, {"CreditNoteVND", type number}, {"ClosingARVND", type number}, {"Aging0_30VND", type number}, {"Aging31_60VND", type number}, {"Aging61PlusVND", type number}, {"DSODays", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

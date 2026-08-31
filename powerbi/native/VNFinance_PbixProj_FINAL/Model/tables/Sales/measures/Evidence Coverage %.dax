@@ -1,0 +1,1 @@
+DIVIDE ( COUNTROWS ( FILTER ( Sales, Sales[EvidenceClass] <> BLANK () ) ), COUNTROWS ( Sales ) )

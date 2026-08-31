@@ -1,0 +1,120 @@
+{
+  "name": "07_TBL_HC",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 575,
+        "z": 5,
+        "width": 760,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Cost_Center.CostCenter"
+        },
+        {
+          "queryRef": "Fact_OPEX_Headcount.Period"
+        },
+        {
+          "queryRef": "Sales.Average Headcount"
+        },
+        {
+          "queryRef": "Sales.OPEX Actual"
+        },
+        {
+          "queryRef": "Sales.OPEX vs Budget"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Cost_Center",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Fact_OPEX_Headcount",
+          "Type": 0
+        },
+        {
+          "Name": "t2",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "CostCenter"
+          },
+          "Name": "Dim_Cost_Center.CostCenter",
+          "NativeReferenceName": "CostCenter"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Period"
+          },
+          "Name": "Fact_OPEX_Headcount.Period",
+          "NativeReferenceName": "Period"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Average Headcount"
+          },
+          "Name": "Sales.Average Headcount",
+          "NativeReferenceName": "Average Headcount"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "OPEX Actual"
+          },
+          "Name": "Sales.OPEX Actual",
+          "NativeReferenceName": "OPEX Actual"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "OPEX vs Budget"
+          },
+          "Name": "Sales.OPEX vs Budget",
+          "NativeReferenceName": "OPEX vs Budget"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

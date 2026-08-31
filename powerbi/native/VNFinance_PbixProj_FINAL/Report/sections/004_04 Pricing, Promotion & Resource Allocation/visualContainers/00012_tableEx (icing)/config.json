@@ -1,0 +1,85 @@
+{
+  "name": "04_TBL_Pricing",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 570,
+        "y": 255,
+        "z": 5,
+        "width": 510,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Fact_Pricing_Case.PricingCase"
+        },
+        {
+          "queryRef": "Fact_Pricing_Case.ChannelKey"
+        },
+        {
+          "queryRef": "Sales.Pricing Contribution Delta"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Pricing_Case",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "PricingCase"
+          },
+          "Name": "Fact_Pricing_Case.PricingCase",
+          "NativeReferenceName": "PricingCase"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ChannelKey"
+          },
+          "Name": "Fact_Pricing_Case.ChannelKey",
+          "NativeReferenceName": "ChannelKey"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Pricing Contribution Delta"
+          },
+          "Name": "Sales.Pricing Contribution Delta",
+          "NativeReferenceName": "Pricing Contribution Delta"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

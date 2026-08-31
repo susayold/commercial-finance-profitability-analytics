@@ -1,0 +1,12 @@
+{
+  "name": "Approved",
+  "dataType": "boolean",
+  "sourceColumn": "Approved",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

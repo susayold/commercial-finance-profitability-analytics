@@ -1,0 +1,135 @@
+{
+  "name": "07_TBL_CAPEX",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 575,
+        "z": 5,
+        "width": 792,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_CAPEX_Project.Project"
+        },
+        {
+          "queryRef": "Fact_CAPEX.Stage"
+        },
+        {
+          "queryRef": "Fact_CAPEX.Decision"
+        },
+        {
+          "queryRef": "Sales.CAPEX Actual"
+        },
+        {
+          "queryRef": "Sales.CAPEX Committed"
+        },
+        {
+          "queryRef": "Sales.CAPEX Payback"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_CAPEX_Project",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Fact_CAPEX",
+          "Type": 0
+        },
+        {
+          "Name": "t2",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Project"
+          },
+          "Name": "Dim_CAPEX_Project.Project",
+          "NativeReferenceName": "Project"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Stage"
+          },
+          "Name": "Fact_CAPEX.Stage",
+          "NativeReferenceName": "Stage"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Decision"
+          },
+          "Name": "Fact_CAPEX.Decision",
+          "NativeReferenceName": "Decision"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "CAPEX Actual"
+          },
+          "Name": "Sales.CAPEX Actual",
+          "NativeReferenceName": "CAPEX Actual"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "CAPEX Committed"
+          },
+          "Name": "Sales.CAPEX Committed",
+          "NativeReferenceName": "CAPEX Committed"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "CAPEX Payback"
+          },
+          "Name": "Sales.CAPEX Payback",
+          "NativeReferenceName": "CAPEX Payback"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,195 @@
+table Fact_CAPEX
+	lineageTag: df1e72cf-b47f-40c5-9c02-ba1660f3bbca
+
+	column Period
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Period
+		lineageTag: 94fec709-f214-42dc-8777-777f031c7c44
+		annotation SummarizationSetBy = User
+
+	column CompanyKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CompanyKey
+		lineageTag: da729212-4fad-48cb-b45a-465e19892b9c
+		annotation SummarizationSetBy = User
+
+	column ProjectKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ProjectKey
+		lineageTag: 60c8f2b4-115c-41a2-8961-edbd84574574
+		annotation SummarizationSetBy = User
+
+	column Project
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Project
+		lineageTag: 887bc251-6e95-428e-8d8d-ad282f6f66d2
+		annotation SummarizationSetBy = User
+
+	column CostCenterKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CostCenterKey
+		lineageTag: 4d00cb09-b788-411e-8705-21653a972c93
+		annotation SummarizationSetBy = User
+
+	column CAPEXType
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CAPEXType
+		lineageTag: ef3a8094-7af5-44bd-ae00-da4dd6adb91f
+		annotation SummarizationSetBy = User
+
+	column ApprovalStatus
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ApprovalStatus
+		lineageTag: 46907c6f-5d07-4f54-b236-26ee5729a74e
+		annotation SummarizationSetBy = User
+
+	column BudgetCAPEXVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BudgetCAPEXVND
+		lineageTag: 974e4fde-6e4c-444e-8260-e4cf573ad5e6
+		annotation SummarizationSetBy = User
+
+	column ActualCAPEXVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ActualCAPEXVND
+		lineageTag: f29b2d3e-2cf1-4d7e-b362-af0ec571d48f
+		annotation SummarizationSetBy = User
+
+	column ForecastCAPEXVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ForecastCAPEXVND
+		lineageTag: b4f24541-8a90-406d-b1cb-0b0c51b7528a
+		annotation SummarizationSetBy = User
+
+	column CommittedCAPEXVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CommittedCAPEXVND
+		lineageTag: 321c80b0-9515-4ffa-83f6-c02d7f8154d8
+		annotation SummarizationSetBy = User
+
+	column AssetCostVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: AssetCostVND
+		lineageTag: e7fc1fa3-97c7-4d34-b95d-2055d7b448b8
+		annotation SummarizationSetBy = User
+
+	column InServicePeriod
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: InServicePeriod
+		lineageTag: 176792db-a476-49b3-8dd2-915841f091fb
+		annotation SummarizationSetBy = User
+
+	column UsefulLifeMonths
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: UsefulLifeMonths
+		lineageTag: 5f5ee566-cc08-45cd-bd1d-8776e931e76e
+		annotation SummarizationSetBy = User
+
+	column DepreciationVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: DepreciationVND
+		lineageTag: 95a0a133-41c3-4514-b628-3e7447417594
+		annotation SummarizationSetBy = User
+
+	column ExpectedAnnualContributionVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ExpectedAnnualContributionVND
+		lineageTag: a3f38b9e-9001-4b3c-a0d1-904af3666dbb
+		annotation SummarizationSetBy = User
+
+	column PaybackMonths
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: PaybackMonths
+		lineageTag: 1d1b6be5-9b54-49f2-b759-09627679eed6
+		annotation SummarizationSetBy = User
+
+	column CashPaymentVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CashPaymentVND
+		lineageTag: 579be43d-4095-4dba-aaae-1217143283b0
+		annotation SummarizationSetBy = User
+
+	column BudgetVarianceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BudgetVarianceVND
+		lineageTag: 506a4da2-49aa-4133-b1c2-400ac50c5449
+		annotation SummarizationSetBy = User
+
+	column ForecastVarianceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ForecastVarianceVND
+		lineageTag: 7457656c-1ab2-446a-bff8-63d48dd0cdd1
+		annotation SummarizationSetBy = User
+
+	column Stage
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Stage
+		lineageTag: af5102a5-9c71-43d2-831c-71e619fd3679
+		annotation SummarizationSetBy = User
+
+	column Decision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Decision
+		lineageTag: 9284f7f2-2a78-4fba-92de-8431889b688d
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 58872a19-74f9-4ad9-8ac1-bbfcf4a248f4
+		annotation SummarizationSetBy = User
+
+	column SourceSystem
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceSystem
+		lineageTag: f1682cfd-2dfd-4dca-9fc1-1acd6a6610eb
+		annotation SummarizationSetBy = User
+
+	partition Fact_CAPEX = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_capex.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"Period", type text}, {"CompanyKey", type text}, {"ProjectKey", type text}, {"Project", type text}, {"CostCenterKey", type text}, {"CAPEXType", type text}, {"ApprovalStatus", type text}, {"BudgetCAPEXVND", type number}, {"ActualCAPEXVND", type number}, {"ForecastCAPEXVND", type number}, {"CommittedCAPEXVND", type number}, {"AssetCostVND", type number}, {"InServicePeriod", type date}, {"UsefulLifeMonths", Int64.Type}, {"DepreciationVND", type number}, {"ExpectedAnnualContributionVND", type number}, {"PaybackMonths", Int64.Type}, {"CashPaymentVND", type number}, {"BudgetVarianceVND", type number}, {"ForecastVarianceVND", type number}, {"Stage", type text}, {"Decision", type text}, {"EvidenceClass", type text}, {"SourceSystem", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,90 @@
+{
+  "name": "TT PVM_CTX",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 20,
+        "y": 160,
+        "z": 5,
+        "width": 700,
+        "height": 200
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Date.YearMonth"
+        },
+        {
+          "queryRef": "Dim_Evidence_Class.EvidenceClass"
+        },
+        {
+          "queryRef": "Sales.PVM Residual"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Date",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Dim_Evidence_Class",
+          "Type": 0
+        },
+        {
+          "Name": "t2",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "YearMonth"
+          },
+          "Name": "Dim_Date.YearMonth",
+          "NativeReferenceName": "YearMonth"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "EvidenceClass"
+          },
+          "Name": "Dim_Evidence_Class.EvidenceClass",
+          "NativeReferenceName": "EvidenceClass"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "PVM Residual"
+          },
+          "Name": "Sales.PVM Residual",
+          "NativeReferenceName": "PVM Residual"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

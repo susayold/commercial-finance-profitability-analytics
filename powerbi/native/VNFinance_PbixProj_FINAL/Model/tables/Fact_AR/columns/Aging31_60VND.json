@@ -1,0 +1,13 @@
+{
+  "name": "Aging31_60VND",
+  "dataType": "double",
+  "sourceColumn": "Aging31_60VND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

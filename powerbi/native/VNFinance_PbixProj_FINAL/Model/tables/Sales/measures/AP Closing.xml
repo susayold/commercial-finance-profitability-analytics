@@ -1,0 +1,3 @@
+<Measure Name="AP Closing">
+  <FormatString>#,0</FormatString>
+</Measure>

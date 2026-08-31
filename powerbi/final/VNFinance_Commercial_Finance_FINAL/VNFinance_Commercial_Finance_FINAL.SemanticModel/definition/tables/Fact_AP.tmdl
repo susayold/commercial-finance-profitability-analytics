@@ -1,0 +1,85 @@
+table Fact_AP
+	lineageTag: dc296391-4d17-49bd-aa0b-1a69812685f2
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: a01596a1-1280-4f32-8d89-9dcebaefc7d5
+		sortByColumn: DateKey
+		annotation SummarizationSetBy = User
+
+	column SupplierKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SupplierKey
+		lineageTag: eba48154-1759-4dbe-9211-9697ca4858ca
+		annotation SummarizationSetBy = User
+
+	column OpeningAPVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: OpeningAPVND
+		lineageTag: 574c9b07-3b01-43ca-932b-f0236c7f6dd5
+		annotation SummarizationSetBy = User
+
+	column PurchasesVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: PurchasesVND
+		lineageTag: f0b24626-a95b-4532-87d6-f0f6900b541f
+		annotation SummarizationSetBy = User
+
+	column CashPaidVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CashPaidVND
+		lineageTag: 3b78c1f9-a84f-4810-be45-c711abbb9c5a
+		annotation SummarizationSetBy = User
+
+	column ClosingAPVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ClosingAPVND
+		lineageTag: 099b65ba-139c-47d7-9212-7294ccb96086
+		annotation SummarizationSetBy = User
+
+	column OverdueAPVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: OverdueAPVND
+		lineageTag: 819347c2-0f96-46e4-b8f2-6e11df90f8eb
+		annotation SummarizationSetBy = User
+
+	column DPODays
+		dataType: string
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: DPODays
+		lineageTag: 647e4cb7-851e-4348-bf1b-acd395c947a2
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: c2fbfde6-f72a-4ddf-a698-c1ea075e7faa
+		annotation SummarizationSetBy = User
+
+	partition Fact_AP = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_ap_snapshot.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"MonthStart", type date}, {"SupplierKey", type text}, {"OpeningAPVND", type number}, {"PurchasesVND", type number}, {"CashPaidVND", type number}, {"ClosingAPVND", type number}, {"OverdueAPVND", type number}, {"DPODays", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

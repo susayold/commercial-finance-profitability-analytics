@@ -1,0 +1,52 @@
+table Dim_CAPEX_Project
+	lineageTag: a938fa54-0fc6-43e1-9bb1-17385b52fe3b
+
+	column CAPEXProjectKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CAPEXProjectKey
+		lineageTag: 6e5ec08f-2b25-43bf-8d60-8eadffd8d04b
+		annotation SummarizationSetBy = User
+
+	column Project
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Project
+		lineageTag: 57c95113-2bda-49f5-898f-d753cb1747e4
+		annotation SummarizationSetBy = User
+
+	column CostCenterKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CostCenterKey
+		lineageTag: abbef40c-f1a2-47c1-8a18-0f00665ce6db
+		annotation SummarizationSetBy = User
+
+	column ProjectType
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ProjectType
+		lineageTag: 66b2d2ed-8190-4319-ac8f-b2fed355c585
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 52d6bb8c-6af0-4d4d-8e67-ec227fa8edcb
+		annotation SummarizationSetBy = User
+
+	partition Dim_CAPEX_Project = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_capex_project.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"CAPEXProjectKey", type text}, {"Project", type text}, {"CostCenterKey", type text}, {"ProjectType", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

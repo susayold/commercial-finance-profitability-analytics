@@ -1,0 +1,93 @@
+table Fact_Budget_Allocation
+	lineageTag: 1800fb33-93d0-428d-8001-3fabe1a3c592
+
+	column ChannelKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ChannelKey
+		lineageTag: 0b40c431-ce80-44a5-b047-25f2ba23199c
+		annotation SummarizationSetBy = User
+
+	column CurrentBudgetVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CurrentBudgetVND
+		lineageTag: 66425437-a996-41de-be56-48c3f7e8d0a0
+		annotation SummarizationSetBy = User
+
+	column MarginalROI
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: MarginalROI
+		lineageTag: ab4ac156-8f59-494b-a8e7-e69fa825accf
+		annotation SummarizationSetBy = User
+
+	column CapacityVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CapacityVND
+		lineageTag: f5587844-800a-4479-a732-e1f50ee37166
+		annotation SummarizationSetBy = User
+
+	column MaxIncreasePct
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: MaxIncreasePct
+		lineageTag: 599cd75b-3901-4577-88db-d7852d10287f
+		annotation SummarizationSetBy = User
+
+	column RecommendedBudgetVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: RecommendedBudgetVND
+		lineageTag: 3a060289-1dc5-4874-992c-57523f659cbd
+		annotation SummarizationSetBy = User
+
+	column BudgetDeltaVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: BudgetDeltaVND
+		lineageTag: 0230c33c-8bbb-481c-8bf5-26156f2ca1d1
+		annotation SummarizationSetBy = User
+
+	column IncrementalContributionVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: IncrementalContributionVND
+		lineageTag: 2a75c2e7-e9ed-4842-9f55-7d6f185268b1
+		annotation SummarizationSetBy = User
+
+	column Decision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Decision
+		lineageTag: f351c1a9-2f57-43a5-9d4d-595d97dbbbda
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: eda025a9-4f73-4a9e-846f-8c3483614df7
+		annotation SummarizationSetBy = User
+
+	partition Fact_Budget_Allocation = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_budget_allocation.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"ChannelKey", type text}, {"CurrentBudgetVND", type number}, {"MarginalROI", type number}, {"CapacityVND", type number}, {"MaxIncreasePct", type number}, {"RecommendedBudgetVND", type number}, {"BudgetDeltaVND", type number}, {"IncrementalContributionVND", type number}, {"Decision", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,50 @@
+{
+  "name": "08_KPI_PublicRevenue",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 145,
+        "z": 20,
+        "width": 250,
+        "height": 90
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.Public Revenue"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Public Revenue"
+          },
+          "Name": "Sales.Public Revenue",
+          "NativeReferenceName": "Public Revenue"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

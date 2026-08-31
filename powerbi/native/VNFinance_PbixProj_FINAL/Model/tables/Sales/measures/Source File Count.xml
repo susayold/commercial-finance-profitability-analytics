@@ -1,0 +1,3 @@
+<Measure Name="Source File Count">
+  <FormatString>#,0</FormatString>
+</Measure>

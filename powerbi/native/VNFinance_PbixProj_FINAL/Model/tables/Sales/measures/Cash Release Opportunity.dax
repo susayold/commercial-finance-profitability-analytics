@@ -1,0 +1,1 @@
+MAX ( 0, [CCC] - 45 ) * DIVIDE ( [Net Revenue], [Days In Selected Period] )

@@ -1,0 +1,13 @@
+{
+  "name": "FeeRate",
+  "dataType": "double",
+  "sourceColumn": "FeeRate",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "0.0%"
+}

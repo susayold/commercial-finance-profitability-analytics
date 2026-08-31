@@ -1,0 +1,13 @@
+{
+  "name": "CAPEXProjectKey",
+  "dataType": "string",
+  "sourceColumn": "CAPEXProjectKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

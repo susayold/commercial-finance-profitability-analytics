@@ -1,0 +1,13 @@
+{
+  "name": "InvoicedCreditSalesVND",
+  "dataType": "double",
+  "sourceColumn": "InvoicedCreditSalesVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

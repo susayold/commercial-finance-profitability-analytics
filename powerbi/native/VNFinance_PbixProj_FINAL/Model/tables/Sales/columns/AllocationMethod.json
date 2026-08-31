@@ -1,0 +1,12 @@
+{
+  "name": "AllocationMethod",
+  "dataType": "string",
+  "sourceColumn": "AllocationMethod",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "name": "D04_TBL",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 145,
+        "z": 5,
+        "width": 1592,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Evidence_Class.EvidenceClass"
+        },
+        {
+          "queryRef": "Dim_Company.Company"
+        },
+        {
+          "queryRef": "Source_Control.ControlName"
+        },
+        {
+          "queryRef": "Source_Control.Status"
+        },
+        {
+          "queryRef": "Sales.Evidence Coverage %"
+        },
+        {
+          "queryRef": "Sales.QA Pass Rate"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Evidence_Class",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Dim_Company",
+          "Type": 0
+        },
+        {
+          "Name": "t2",
+          "Entity": "Source_Control",
+          "Type": 0
+        },
+        {
+          "Name": "t3",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "EvidenceClass"
+          },
+          "Name": "Dim_Evidence_Class.EvidenceClass",
+          "NativeReferenceName": "EvidenceClass"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Company"
+          },
+          "Name": "Dim_Company.Company",
+          "NativeReferenceName": "Company"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "ControlName"
+          },
+          "Name": "Source_Control.ControlName",
+          "NativeReferenceName": "ControlName"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Status"
+          },
+          "Name": "Source_Control.Status",
+          "NativeReferenceName": "Status"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t3"
+              }
+            },
+            "Property": "Evidence Coverage %"
+          },
+          "Name": "Sales.Evidence Coverage %",
+          "NativeReferenceName": "Evidence Coverage %"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t3"
+              }
+            },
+            "Property": "QA Pass Rate"
+          },
+          "Name": "Sales.QA Pass Rate",
+          "NativeReferenceName": "QA Pass Rate"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

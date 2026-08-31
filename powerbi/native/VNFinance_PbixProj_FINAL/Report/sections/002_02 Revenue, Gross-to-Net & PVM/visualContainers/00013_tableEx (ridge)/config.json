@@ -1,0 +1,135 @@
+{
+  "name": "02_TBL_Bridge",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 1120,
+        "y": 255,
+        "z": 5,
+        "width": 512,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Date.YearMonth"
+        },
+        {
+          "queryRef": "Fact_PVM_Bridge.Component"
+        },
+        {
+          "queryRef": "Sales.Price Effect"
+        },
+        {
+          "queryRef": "Sales.Volume Effect"
+        },
+        {
+          "queryRef": "Sales.Mix Effect"
+        },
+        {
+          "queryRef": "Sales.PVM Residual"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Date",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Fact_PVM_Bridge",
+          "Type": 0
+        },
+        {
+          "Name": "t2",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "YearMonth"
+          },
+          "Name": "Dim_Date.YearMonth",
+          "NativeReferenceName": "YearMonth"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Component"
+          },
+          "Name": "Fact_PVM_Bridge.Component",
+          "NativeReferenceName": "Component"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Price Effect"
+          },
+          "Name": "Sales.Price Effect",
+          "NativeReferenceName": "Price Effect"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Volume Effect"
+          },
+          "Name": "Sales.Volume Effect",
+          "NativeReferenceName": "Volume Effect"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "Mix Effect"
+          },
+          "Name": "Sales.Mix Effect",
+          "NativeReferenceName": "Mix Effect"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t2"
+              }
+            },
+            "Property": "PVM Residual"
+          },
+          "Name": "Sales.PVM Residual",
+          "NativeReferenceName": "PVM Residual"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

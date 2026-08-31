@@ -1,0 +1,1 @@
+SUMX ( SUMMARIZE ( Fact_PVM_Bridge, Fact_PVM_Bridge[MonthStart], Fact_PVM_Bridge[SKUKey], Fact_PVM_Bridge[ChannelKey], "CurrentValue", MAX ( Fact_PVM_Bridge[CurrentRevenueVND] ), "BaseValue", MAX ( Fact_PVM_Bridge[BaseRevenueVND] ), "BridgeValue", SUM ( Fact_PVM_Bridge[AmountVND] ) ), [CurrentValue] - [BaseValue] - [BridgeValue] )

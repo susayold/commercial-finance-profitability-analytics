@@ -1,0 +1,12 @@
+{
+  "name": "SlowMovingFlag",
+  "dataType": "boolean",
+  "sourceColumn": "SlowMovingFlag",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

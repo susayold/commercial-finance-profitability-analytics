@@ -1,0 +1,13 @@
+{
+  "name": "BaselineContributionVND",
+  "dataType": "double",
+  "sourceColumn": "BaselineContributionVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

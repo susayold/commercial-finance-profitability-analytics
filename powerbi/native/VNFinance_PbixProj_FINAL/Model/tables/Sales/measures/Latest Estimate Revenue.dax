@@ -1,0 +1,1 @@
+CALCULATE ( SUM ( Fact_Forecast[ForecastRevenueVND] ), Fact_Forecast[ScenarioKey] = "BASE" )

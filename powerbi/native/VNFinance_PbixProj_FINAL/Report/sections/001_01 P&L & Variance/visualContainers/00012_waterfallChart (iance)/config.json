@@ -1,0 +1,87 @@
+{
+  "name": "01_CH_ProfitVariance",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 825,
+        "y": 255,
+        "z": 10,
+        "width": 807,
+        "height": 290
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "waterfallChart",
+    "projections": {
+      "Category": [
+        {
+          "queryRef": "Dim_Channel.Channel"
+        }
+      ],
+      "Y": [
+        {
+          "queryRef": "Sales.Revenue vs Budget"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Channel",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Channel"
+          },
+          "Name": "Dim_Channel.Channel",
+          "NativeReferenceName": "Channel"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Revenue vs Budget"
+          },
+          "Name": "Sales.Revenue vs Budget",
+          "NativeReferenceName": "Revenue vs Budget"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "t1"
+                }
+              },
+              "Property": "Revenue vs Budget"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

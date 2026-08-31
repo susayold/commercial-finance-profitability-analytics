@@ -1,0 +1,675 @@
+table Sales
+	lineageTag: 4f372202-ae0b-416f-b3c8-9ab9ce9e3dcc
+
+	measure 'Management Message' = VAR gap = [Revenue vs Budget %] RETURN IF ( gap < 0, "Revenue is " & FORMAT ( gap, "0.0%" ) & " below budget; protect contribution and release cash.", "Revenue is on or above budget; keep hurdle discipline and fund growth." )
+		formatString: @
+		displayFolder: 00 Financial
+		lineageTag: aa63267c-0a78-43d4-a697-bdbaab2483ee
+
+	measure 'Public Evidence Banner' = "PUBLIC REPORTED / DERIVED — NOT VIETNOVA OPERATING ACTUALS"
+		formatString: @
+		displayFolder: 09 Public Company
+		lineageTag: 202c19e3-57b9-455e-a9bf-a8471da3ca73
+
+	measure 'Strategic Evidence Banner' = "EV ONLY — NOT A PRICE TARGET | SYNTHETIC STRATEGIC REHEARSAL"
+		formatString: @
+		displayFolder: 10 Strategic Finance
+		lineageTag: 03831e84-bde1-4655-a8f9-960de52905a3
+
+	measure 'Forecast Governance Banner' = "DEMO FORECAST GOVERNANCE — GATE A OPEN"
+		formatString: @
+		displayFolder: 06 Forecast
+		lineageTag: 25c707f2-c416-407b-b207-c389c5fc802f
+
+	measure 'Gross Sales' = SUM ( Sales[GrossSalesVND] )
+		formatString: #,0
+		displayFolder: 01 Financial
+		lineageTag: d1c4316f-055f-4680-9dd7-f5f406dd94eb
+
+	measure Discounts = SUM ( Sales[DiscountVND] )
+		formatString: #,0
+		lineageTag: 0b344f31-7e90-4207-a4ab-76db070c19b0
+
+	measure Returns = SUM ( Sales[ReturnsVND] )
+		formatString: #,0
+		lineageTag: 4f63c1d8-5e27-4ece-921d-879384ef0cd7
+
+	measure 'Net Revenue' = SUM ( Sales[NetRevenueVND] )
+		formatString: #,0
+		displayFolder: 01 Financial
+		lineageTag: 06bd39e3-5e70-4cca-8757-3ce9b0e8f8ea
+
+	measure 'Units Corrected' = SUM ( Sales[UnitsCorrected] )
+		formatString: #,0
+		displayFolder: 01 Financial
+		lineageTag: 5f951855-71f1-4637-805a-4e3454c5c769
+
+	measure COGS = SUM ( Sales[CorrectedCOGSVND] )
+		formatString: #,0
+		lineageTag: 12725aec-b6c5-484c-aa62-608ebf50248e
+
+	measure 'Gross Profit' = [Net Revenue] - [COGS]
+		formatString: #,0
+		displayFolder: 01 Financial
+		lineageTag: c3b4fda6-3b87-4ab8-99c3-7b440593d080
+
+	measure 'Gross Margin %' = DIVIDE ( [Gross Profit], [Net Revenue] )
+		formatString: 0.0%
+		displayFolder: 01 Financial
+		lineageTag: 907747b0-1530-4644-a5d2-675077169d45
+
+	measure 'Channel Fees' = SUM ( Sales[AllocatedChannelFeeVND] )
+		formatString: #,0
+		displayFolder: 04 Commercial
+		lineageTag: 2ed3426c-fba4-40a8-8c0a-9996796c3567
+
+	measure 'Trade Spend' = SUM ( Sales[AllocatedTradeSpendVND] )
+		formatString: #,0
+		displayFolder: 04 Commercial
+		lineageTag: 5bc6d2dd-6f35-4a0d-9b3e-7d6af948d64a
+
+	measure 'Variable Fulfilment' = SUM ( Sales[AllocatedVariableFulfilmentVND] )
+		formatString: #,0
+		displayFolder: 04 Commercial
+		lineageTag: 8f174834-0c08-4aa9-b02c-ea624441fbdb
+
+	measure 'Contribution Profit' = [Net Revenue] - [COGS] - [Channel Fees] - [Trade Spend] - [Variable Fulfilment]
+		formatString: #,0
+		displayFolder: 04 Commercial
+		lineageTag: fcaa40bf-9b40-4598-b7bc-5c0116537bf1
+
+	measure 'Contribution Margin %' = DIVIDE ( [Contribution Profit], [Net Revenue] )
+		formatString: 0.0%
+		displayFolder: 04 Commercial
+		lineageTag: 036b0e68-4b12-4533-87fe-1d3adf8a66e6
+
+	measure ASP = DIVIDE ( [Net Revenue], [Units Corrected] )
+		formatString: #,0
+		lineageTag: 7c620079-af58-4cd5-b6ce-04579c0c5f62
+
+	measure 'Budget Revenue' = SUM ( Fact_Budget[BudgetRevenueVND] )
+		formatString: #,0
+		displayFolder: 02 Comparison
+		lineageTag: 2321bdb4-029b-4647-b3e0-d75239e7e72a
+
+	measure 'Latest Estimate Revenue' = CALCULATE ( SUM ( Fact_Forecast[ForecastRevenueVND] ), Fact_Forecast[ScenarioKey] = "BASE" )
+		formatString: #,0
+		displayFolder: 02 Comparison
+		lineageTag: 8dcd7735-2a31-4387-962f-45c6235cc097
+
+	measure 'Prior Year Revenue' = CALCULATE ( [Net Revenue], DATEADD ( Dim_Date[Date], -1, YEAR ) )
+		formatString: #,0
+		displayFolder: 02 Comparison
+		lineageTag: 29b5160d-e84b-4c37-b060-775b6cd808e2
+
+	measure 'Revenue vs Budget' = [Net Revenue] - [Budget Revenue]
+		formatString: #,0;(#,0)
+		displayFolder: 02 Comparison
+		lineageTag: 0936389d-a14b-4301-9046-b241cbeed625
+
+	measure 'Revenue vs Budget %' = DIVIDE ( [Revenue vs Budget], [Budget Revenue] )
+		formatString: 0.0%;(0.0%)
+		displayFolder: 02 Comparison
+		lineageTag: 0d7d97d6-f973-45ec-9f54-ad09936eef35
+
+	measure 'Revenue vs LE' = [Net Revenue] - [Latest Estimate Revenue]
+		formatString: #,0;(#,0)
+		displayFolder: 02 Comparison
+		lineageTag: 2aad5ed7-d3a0-4d09-900f-db481a5960b9
+
+	measure 'Revenue vs LE %' = DIVIDE ( [Revenue vs LE], [Latest Estimate Revenue] )
+		formatString: 0.0%;(0.0%)
+		displayFolder: 02 Comparison
+		lineageTag: 283b3829-42e2-4b8f-9a18-360103b5a159
+
+	measure 'Revenue Growth %' = DIVIDE ( [Net Revenue] - [Prior Year Revenue], [Prior Year Revenue] )
+		formatString: 0.0%
+		displayFolder: 02 Comparison
+		lineageTag: 8cef7b16-2573-4ec0-adba-e82c1220c29f
+
+	measure 'Gross-to-Net %' = DIVIDE ( [Gross Sales] - [Net Revenue], [Gross Sales] )
+		formatString: 0.0%
+		displayFolder: 03 Revenue Bridge
+		lineageTag: d7426047-2d39-4b92-becb-e36467351f01
+
+	measure 'Price Effect' = CALCULATE ( SUM ( Fact_PVM_Bridge[AmountVND] ), Fact_PVM_Bridge[Component] = "PRICE" )
+		formatString: #,0
+		displayFolder: 03 Revenue Bridge
+		lineageTag: 282afb52-a535-4982-8ad6-383e6b1cf929
+
+	measure 'Volume Effect' = CALCULATE ( SUM ( Fact_PVM_Bridge[AmountVND] ), Fact_PVM_Bridge[Component] = "VOLUME" )
+		formatString: #,0
+		displayFolder: 03 Revenue Bridge
+		lineageTag: b525ed77-0bd3-48d2-92f9-4cd064981643
+
+	measure 'Mix Effect' = CALCULATE ( SUM ( Fact_PVM_Bridge[AmountVND] ), Fact_PVM_Bridge[Component] = "MIX_RESIDUAL" )
+		formatString: #,0
+		displayFolder: 03 Revenue Bridge
+		lineageTag: 3b066ba2-0f45-41e6-9075-f26f236de6db
+
+	measure 'PVM Residual' = SUMX ( SUMMARIZE ( Fact_PVM_Bridge, Fact_PVM_Bridge[MonthStart], Fact_PVM_Bridge[SKUKey], Fact_PVM_Bridge[ChannelKey], "CurrentValue", MAX ( Fact_PVM_Bridge[CurrentRevenueVND] ), "BaseValue", MAX ( Fact_PVM_Bridge[BaseRevenueVND] ), "BridgeValue", SUM ( Fact_PVM_Bridge[AmountVND] ) ), [CurrentValue] - [BaseValue] - [BridgeValue] )
+		formatString: #,0
+		displayFolder: 03 Revenue Bridge
+		lineageTag: 466e83c6-5f1d-471e-9797-99587af24917
+
+	measure 'AR Closing' = SUM ( Fact_AR[ClosingARVND] )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: 7982402d-bd91-4396-9c3e-d3b9ad9cdcb5
+
+	measure 'Inventory Closing' = SUM ( Fact_Inventory[ClosingInventoryVND] )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: b680af9f-8cf9-4fec-80ef-d322e944d6b9
+
+	measure 'AP Closing' = SUM ( Fact_AP[ClosingAPVND] )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: 72e9a6e1-0f99-4213-b1fa-2fd5e15309a4
+
+	measure 'Net Credit Sales' = SUM ( Fact_AR[InvoicedCreditSalesVND] )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: efe2956d-4f7c-4845-a6ae-4b3bf3fcb4eb
+
+	measure 'COGS Flow' = SUM ( Fact_Inventory[COGSFlowVND] )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: 17084b0c-a39e-4e7f-bfa2-82a4e563fb0f
+
+	measure Purchases = SUM ( Fact_AP[PurchasesVND] )
+		formatString: #,0
+		lineageTag: 48ccbc54-2c78-4a1e-bebd-dbc64a085b75
+
+	measure 'Days In Selected Period' = SUM ( Dim_Date[DaysInMonth] )
+		formatString: 0.0
+		displayFolder: 05 Working Capital
+		lineageTag: 0ca33dfe-6aea-468b-88c8-d4c833866762
+
+	measure DSO = DIVIDE ( [AR Closing], [Net Credit Sales] ) * [Days In Selected Period]
+		formatString: 0.0
+		lineageTag: ad804bbf-1079-4ae9-a472-7d73949ae492
+
+	measure DIO = DIVIDE ( [Inventory Closing], [COGS Flow] ) * [Days In Selected Period]
+		formatString: 0.0
+		lineageTag: 8807d1e6-4896-475e-8739-64ca4e810208
+
+	measure DPO = DIVIDE ( [AP Closing], [Purchases] ) * [Days In Selected Period]
+		formatString: 0.0
+		lineageTag: 5f2356d6-a8fc-429d-b965-5ec76334a31e
+
+	measure CCC = [DSO] + [DIO] - [DPO]
+		formatString: 0.0
+		lineageTag: 7d48c2ea-fea3-4224-8c33-5fd990a3c0f1
+
+	measure 'Average AR LTM' = AVERAGEX ( VALUES ( Dim_Date[MonthStart] ), CALCULATE ( [AR Closing] ) )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: 3ffbfde3-05f7-43f3-9b85-2f48915f137b
+
+	measure 'Average Inventory LTM' = AVERAGEX ( VALUES ( Dim_Date[MonthStart] ), CALCULATE ( [Inventory Closing] ) )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: 6f544812-7d94-4dbd-815c-2736b994e299
+
+	measure 'Average AP LTM' = AVERAGEX ( VALUES ( Dim_Date[MonthStart] ), CALCULATE ( [AP Closing] ) )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: fbde1061-533b-4008-8659-e3b8bfc65da0
+
+	measure 'DSO LTM' = DIVIDE ( [Average AR LTM], CALCULATE ( [Net Credit Sales], DATESINPERIOD ( Dim_Date[Date], MAX ( Dim_Date[Date] ), -12, MONTH ) ) ) * 365
+		formatString: 0.0
+		displayFolder: 05 Working Capital
+		lineageTag: 1ae46da9-5aff-4064-9d6f-ada3fe4c5f3b
+
+	measure 'Cash Release Opportunity' = MAX ( 0, [CCC] - 45 ) * DIVIDE ( [Net Revenue], [Days In Selected Period] )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: 82967abf-8943-401e-8744-e9eb85a39146
+
+	measure 'Contribution After WC' = [Contribution Profit] - DIVIDE ( [AR Closing] * 0.08, 365 )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: 8c474fc3-7291-4ea9-b948-f49ef5982528
+
+	measure 'Debt Balance' = SUM ( Fact_Debt_Liquidity[ClosingBalanceVND] )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: 514f2c69-386e-46c9-85d9-71f73d607977
+
+	measure 'Liquidity Headroom' = SUM ( Fact_Debt_Liquidity[CovenantHeadroomVND] )
+		formatString: #,0
+		displayFolder: 05 Working Capital
+		lineageTag: bc42bd16-76e6-4a14-bf3e-4ac56e95d76a
+
+	measure 'Selected Scenario' = SELECTEDVALUE ( Dim_Scenario[Scenario], "Actual" )
+		formatString: @
+		displayFolder: 06 Forecast
+		lineageTag: 9a24c1f6-cae8-499a-813c-eb86e295be21
+
+	measure 'Scenario Revenue' = VAR s = [Selected Scenario] RETURN SWITCH ( s, "Actual", [Net Revenue], "Budget", [Budget Revenue], "Latest Estimate", [Latest Estimate Revenue], CALCULATE ( SUM ( Fact_Forecast[ForecastRevenueVND] ), Fact_Forecast[ScenarioKey] = SWITCH ( s, "Base", "BASE", "Upside", "UPSIDE", "Downside", "DOWNSIDE", "BASE" ) ) )
+		formatString: #,0
+		displayFolder: 06 Forecast
+		lineageTag: 4a3a8235-4420-4740-a7fc-67d67be94068
+
+	measure 'Scenario COGS' = VAR s = [Selected Scenario] RETURN SWITCH ( s, "Actual", [COGS], "Budget", SUM ( Fact_Budget[BudgetCOGSVND] ), CALCULATE ( SUM ( Fact_Forecast[ForecastCOGSVND] ), Fact_Forecast[ScenarioKey] = SWITCH ( s, "Base", "BASE", "Upside", "UPSIDE", "Downside", "DOWNSIDE", "BASE" ) ) )
+		formatString: #,0
+		displayFolder: 06 Forecast
+		lineageTag: 65a5a6f2-d968-4ef2-b4b0-6b91f551877b
+
+	measure 'OPEX Actual' = SUM ( Fact_OPEX_Headcount[OPEXActualVND] )
+		formatString: #,0
+		displayFolder: 08 OPEX & CAPEX
+		lineageTag: 0ec97c42-05dc-4804-8fff-4c3763bc7fac
+
+	measure 'OPEX Budget' = SUM ( Fact_OPEX_Headcount[OPEXBudgetVND] )
+		formatString: #,0
+		displayFolder: 08 OPEX & CAPEX
+		lineageTag: 8d7e6bbf-030c-436d-8a8d-41ecc55a275d
+
+	measure 'OPEX Forecast' = SUM ( Fact_OPEX_Headcount[OPEXForecastVND] )
+		formatString: #,0
+		displayFolder: 08 OPEX & CAPEX
+		lineageTag: b76a4292-a78b-4410-9634-04d39c956a20
+
+	measure 'OPEX vs Budget' = [OPEX Actual] - [OPEX Budget]
+		formatString: #,0;(#,0)
+		displayFolder: 08 OPEX & CAPEX
+		lineageTag: f988f9d5-2a40-4145-bf90-27ce3e5aecda
+
+	measure 'Operating Profit' = [Contribution Profit] - [OPEX Actual]
+		formatString: #,0
+		displayFolder: 01 Financial
+		lineageTag: 823817af-7e57-4eed-83ed-ed723b190fcf
+
+	measure 'Scenario Operating Profit' = [Scenario Revenue] - [Scenario COGS] - [OPEX Actual]
+		formatString: #,0
+		displayFolder: 06 Forecast
+		lineageTag: e451577a-d2f5-44a5-9653-84a6a59e6a7c
+
+	measure 'Scenario CM %' = DIVIDE ( [Scenario Revenue] - [Scenario COGS] - [Trade Spend], [Scenario Revenue] )
+		formatString: 0.0%
+		displayFolder: 06 Forecast
+		lineageTag: 1103d27f-1dda-4f75-9a2b-f02e2dfdf24f
+
+	measure 'Scenario CCC' = VAR s = [Selected Scenario] VAR delta = COALESCE ( CALCULATE ( MAX ( Fact_Forecast[WorkingCapitalDaysDelta] ), Fact_Forecast[ScenarioKey] = SWITCH ( s, "Base", "BASE", "Upside", "UPSIDE", "Downside", "DOWNSIDE", "BASE" ) ), 0 ) RETURN [CCC] + delta
+		formatString: 0.0
+		displayFolder: 06 Forecast
+		lineageTag: 97480455-aaf2-4f17-b41e-7721b0654047
+
+	measure 'Scenario Liquidity Headroom' = [Liquidity Headroom] - MAX ( 0, [Scenario CCC] - 45 ) * DIVIDE ( [Scenario Revenue], 365 )
+		formatString: #,0
+		displayFolder: 06 Forecast
+		lineageTag: 4871febd-a853-43ac-89fa-1c1585eef114
+
+	measure 'Forecast Bias Eligible' = VAR f = CALCULATE ( SUM ( Fact_Forecast[ForecastRevenueVND] ), Fact_Forecast[ScenarioKey] = "BASE", Fact_Forecast[Eligibility] = "true" ) RETURN DIVIDE ( f - [Net Revenue], [Net Revenue] )
+		formatString: 0.0%
+		displayFolder: 06 Forecast
+		lineageTag: f1d2ba7c-d5ff-4683-843b-d95bb690ab7d
+
+	measure 'WAPE Eligible' = VAR f = CALCULATE ( SUM ( Fact_Forecast[ForecastRevenueVND] ), Fact_Forecast[ScenarioKey] = "BASE", Fact_Forecast[Eligibility] = "true" ) RETURN DIVIDE ( ABS ( f - [Net Revenue] ), ABS ( [Net Revenue] ) )
+		formatString: 0.0%
+		displayFolder: 06 Forecast
+		lineageTag: d67f5bf8-f60f-4910-8778-4bf7b4afe769
+
+	measure 'Promotion Spend' = SUM ( Fact_Promotion[PromotionSpendVND] )
+		formatString: #,0
+		displayFolder: 07 Pricing & Promotion
+		lineageTag: 3dbbbd01-390c-4fb3-9d23-8e7d7b1d657d
+
+	measure 'Incremental Contribution' = SUM ( Fact_Promotion[IncrementalContributionVND] )
+		formatString: #,0
+		displayFolder: 07 Pricing & Promotion
+		lineageTag: 19dd3e08-b033-410e-975f-39f29a55f24d
+
+	measure 'Promotion ROI' = DIVIDE ( [Incremental Contribution], [Promotion Spend] )
+		formatString: 0.00x
+		displayFolder: 07 Pricing & Promotion
+		lineageTag: a96d280c-c8a0-48c0-814a-f1ace39e9221
+
+	measure 'Budget Reallocated' = SUM ( Fact_Budget_Allocation[BudgetDeltaVND] )
+		formatString: #,0
+		displayFolder: 07 Pricing & Promotion
+		lineageTag: c6577398-0b10-449a-8b55-3b4c9d9c9a48
+
+	measure 'Expected CM Uplift' = DIVIDE ( SUM ( Fact_Budget_Allocation[IncrementalContributionVND] ), SUM ( Fact_Budget_Allocation[CurrentBudgetVND] ) )
+		formatString: 0.0%
+		displayFolder: 07 Pricing & Promotion
+		lineageTag: a8be6908-02ab-47c5-8695-b90164a56ee8
+
+	measure 'Pricing Contribution Delta' = SUM ( Fact_Pricing_Case[ContributionDeltaVND] )
+		formatString: #,0
+		displayFolder: 07 Pricing & Promotion
+		lineageTag: b2fc8bc6-9270-438b-be44-605a5c1fa888
+
+	measure 'Average Headcount' = SUM ( Fact_OPEX_Headcount[AverageHeadcount] )
+		formatString: #,0.0
+		displayFolder: 08 OPEX & CAPEX
+		lineageTag: f18cbf6f-f03d-448c-9a16-5abfe6ef4951
+
+	measure 'CAPEX Actual' = SUM ( Fact_CAPEX[ActualCAPEXVND] )
+		formatString: #,0
+		displayFolder: 08 OPEX & CAPEX
+		lineageTag: 987c237d-c98a-47da-90d9-61de6d5c25aa
+
+	measure 'CAPEX Committed' = SUM ( Fact_CAPEX[CommittedCAPEXVND] )
+		formatString: #,0
+		displayFolder: 08 OPEX & CAPEX
+		lineageTag: dcdf6659-f8d5-414f-bcbb-ed60eb8c5e17
+
+	measure 'CAPEX Payback' = AVERAGE ( Fact_CAPEX[PaybackMonths] )
+		formatString: 0.0
+		displayFolder: 08 OPEX & CAPEX
+		lineageTag: 2477b504-78ab-487e-b548-e414161a9246
+
+	measure 'Public Revenue' = SUM ( Fact_Public_Financials[NetRevenueVNDBn] )
+		formatString: 0.0
+		displayFolder: 09 Public Company
+		lineageTag: 57803bec-2e8b-4d55-868f-14d76db98bd9
+
+	measure 'Public PAT Margin' = DIVIDE ( SUM ( Fact_Public_Financials[PATVNDBn] ), SUM ( Fact_Public_Financials[NetRevenueVNDBn] ) )
+		formatString: 0.0%
+		displayFolder: 09 Public Company
+		lineageTag: 237e5c79-33c0-48af-8c76-89133555cf97
+
+	measure 'Public CFO Conversion' = DIVIDE ( SUM ( Fact_Public_Cashflow[OperatingCashFlowVNDBn] ), SUM ( Fact_Public_Cashflow[PATVNDBn] ) )
+		formatString: 0.00x
+		displayFolder: 09 Public Company
+		lineageTag: c73c9455-8015-4d2c-aa4b-c2323c914a5b
+
+	measure 'Base EV' = CALCULATE ( AVERAGE ( Fact_Valuation[EnterpriseValueVNDBn] ), Fact_Valuation[Scenario] = "Base", Fact_Valuation[WACC] = 0.12, Fact_Valuation[TerminalGrowth] = 0.03 )
+		formatString: 0.0
+		displayFolder: 10 Strategic Finance
+		lineageTag: 11941a0b-ba67-40ff-b6bf-83aa2780078f
+
+	measure 'Upside EV' = CALCULATE ( AVERAGE ( Fact_Valuation[EnterpriseValueVNDBn] ), Fact_Valuation[Scenario] = "Base", Fact_Valuation[WACC] = 0.11, Fact_Valuation[TerminalGrowth] = 0.03 )
+		formatString: 0.0
+		displayFolder: 10 Strategic Finance
+		lineageTag: e00407a0-656b-4d3f-802c-9e158d9e8681
+
+	measure 'Downside EV' = CALCULATE ( AVERAGE ( Fact_Valuation[EnterpriseValueVNDBn] ), Fact_Valuation[Scenario] = "Base", Fact_Valuation[WACC] = 0.14, Fact_Valuation[TerminalGrowth] = 0.02 )
+		formatString: 0.0
+		displayFolder: 10 Strategic Finance
+		lineageTag: 6f3a8d1e-378e-4d8c-8507-0160d514dacb
+
+	measure WACC = AVERAGE ( Fact_Valuation[WACC] )
+		formatString: 0.0%
+		lineageTag: 7b34faf9-30a6-460b-9c5b-481ccecf7ea9
+
+	measure 'Terminal Growth' = AVERAGE ( Fact_Valuation[TerminalGrowth] )
+		formatString: 0.0%
+		displayFolder: 10 Strategic Finance
+		lineageTag: 78fd8e69-58bd-4390-b76b-baa1592d795c
+
+	measure 'Data Version' = "final_v1.0.0"
+		formatString: @
+		displayFolder: 11 QA & Metadata
+		lineageTag: a164f989-10e7-4ecf-94b5-254518a94795
+
+	measure 'Source File Count' = COUNTROWS ( Source_Control )
+		formatString: #,0
+		displayFolder: 11 QA & Metadata
+		lineageTag: 061625f0-fd6d-493d-a40a-09e9f2998f82
+
+	measure 'Evidence Coverage %' = DIVIDE ( COUNTROWS ( FILTER ( Sales, Sales[EvidenceClass] <> BLANK () ) ), COUNTROWS ( Sales ) )
+		formatString: 0.0%
+		displayFolder: 11 QA & Metadata
+		lineageTag: b4ac64dc-fcb4-40ab-8298-9af2961e39ff
+
+	measure 'QA Pass Rate' = DIVIDE ( COUNTROWS ( FILTER ( Source_Control, Source_Control[Status] = "PASS" ) ), COUNTROWS ( Source_Control ) )
+		formatString: 0.0%
+		displayFolder: 11 QA & Metadata
+		lineageTag: 7f392f02-fa16-4ae8-bf77-442381eaaa98
+
+	measure 'Revenue Tie' = [Net Revenue] - SUM ( Sales[NetRevenueVND] )
+		formatString: #,0
+		displayFolder: 11 QA & Metadata
+		lineageTag: 42ca5b81-5104-43c6-8b30-f4759deb9e77
+
+	measure 'COGS Tie' = [COGS] - SUM ( Sales[CorrectedCOGSVND] )
+		formatString: #,0
+		displayFolder: 11 QA & Metadata
+		lineageTag: ac17a84b-d477-4881-86e1-9698c3d24617
+
+	column LineID
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: LineID
+		lineageTag: e72b0279-6f10-48fb-b230-900faaa90457
+		annotation SummarizationSetBy = User
+
+	column OrderID
+		dataType: string
+		summarizeBy: none
+		sourceColumn: OrderID
+		lineageTag: 2e60111a-f17f-4f65-82d5-f3c1dbc028c3
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: Date
+		lineageTag: 4ab21e24-842e-43e7-8f81-7f8a60bd1705
+		annotation SummarizationSetBy = User
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: c7e93b51-1013-4b20-a8f9-72af0ef8ee13
+		sortByColumn: DateKey
+		annotation SummarizationSetBy = User
+
+	column SKUKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SKUKey
+		lineageTag: 66114161-4cb9-4480-b390-9b809f55e16c
+		annotation SummarizationSetBy = User
+
+	column CustomerKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+		lineageTag: 2f716b4e-eaf4-4192-9ded-445708fcfd10
+		annotation SummarizationSetBy = User
+
+	column ChannelKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ChannelKey
+		lineageTag: d022eb5b-1ca9-454e-8d35-90fce9cb5ca1
+		annotation SummarizationSetBy = User
+
+	column CompanyKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CompanyKey
+		lineageTag: 07dd0330-5aa1-4881-8f57-5ae8818147f4
+		annotation SummarizationSetBy = User
+
+	column Region
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Region
+		lineageTag: d10ee5c2-dc0b-43d4-81b2-0975398e5819
+		annotation SummarizationSetBy = User
+
+	column UnitsCorrected
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: UnitsCorrected
+		lineageTag: 1cf23a2a-6831-45fb-92f2-05ea6bfb93a1
+		annotation SummarizationSetBy = User
+
+	column UnitPriceVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: UnitPriceVND
+		lineageTag: 0e200b21-e52a-49b1-824d-24a6f039974e
+		annotation SummarizationSetBy = User
+
+	column GrossSalesVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: GrossSalesVND
+		lineageTag: bf92c076-e1f9-4e74-a5ca-d37ea75ec58e
+		annotation SummarizationSetBy = User
+
+	column DiscountVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: DiscountVND
+		lineageTag: 33cc5896-a29c-4b4b-9317-99ef58466901
+		annotation SummarizationSetBy = User
+
+	column ReturnsVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ReturnsVND
+		lineageTag: 279b22cd-4b28-4143-b03e-183df31930dc
+		annotation SummarizationSetBy = User
+
+	column RebatesVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: RebatesVND
+		lineageTag: a7ac7467-109c-4023-8040-f0f89a41b2c4
+		annotation SummarizationSetBy = User
+
+	column VoucherSupportVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: VoucherSupportVND
+		lineageTag: 1350f474-781b-43e8-8b66-f1c216228435
+		annotation SummarizationSetBy = User
+
+	column NetRevenueVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: NetRevenueVND
+		lineageTag: 8daede43-a5c8-42d5-bd1d-ce32cdc7fa26
+		annotation SummarizationSetBy = User
+
+	column PreliminaryCOGSVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: PreliminaryCOGSVND
+		lineageTag: 1525fc4f-4e25-4fdb-b894-485a2188408e
+		annotation SummarizationSetBy = User
+
+	column COGSScaleFactor
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: COGSScaleFactor
+		lineageTag: 6fb0d76a-1409-42c0-b5c8-f01e097f5b10
+		annotation SummarizationSetBy = User
+
+	column CorrectedCOGSVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: CorrectedCOGSVND
+		lineageTag: 7aa62c97-734e-4f9c-97fa-a0a629e35e08
+		annotation SummarizationSetBy = User
+
+	column AllocatedChannelFeeVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: AllocatedChannelFeeVND
+		lineageTag: 3597f58a-7668-44d3-a0e3-4bae6922df27
+		annotation SummarizationSetBy = User
+
+	column AllocatedTradeSpendVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: AllocatedTradeSpendVND
+		lineageTag: ac5edf35-b84f-4383-a275-6f8c58d3cc6d
+		annotation SummarizationSetBy = User
+
+	column AllocatedVariableFulfilmentVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: AllocatedVariableFulfilmentVND
+		lineageTag: 9fe7d17c-137f-4cef-a84a-7c68d3ebe1f2
+		annotation SummarizationSetBy = User
+
+	column ContributionProfitVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ContributionProfitVND
+		lineageTag: f20a7a75-68ad-4cee-87eb-db97205e7056
+		annotation SummarizationSetBy = User
+
+	column AllocationMethod
+		dataType: string
+		summarizeBy: none
+		sourceColumn: AllocationMethod
+		lineageTag: e8cacafb-c7b8-49d7-ba17-ecc7a672e92a
+		annotation SummarizationSetBy = User
+
+	column AllocationDriver
+		dataType: string
+		summarizeBy: none
+		sourceColumn: AllocationDriver
+		lineageTag: ea2af9c2-8cfc-4e45-8e9f-bf405228c34a
+		annotation SummarizationSetBy = User
+
+	column SourceCostBucket
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceCostBucket
+		lineageTag: 59fa7d9e-2177-4c1c-bb4a-594528b2f313
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 221960a8-7790-4c90-b6a4-497ad223ca8a
+		annotation SummarizationSetBy = User
+
+	column IsIntercompany
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: IsIntercompany
+		lineageTag: 19dd5c91-897f-4092-af7b-3b7728dee965
+		annotation SummarizationSetBy = User
+
+	column IsStockout
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: IsStockout
+		lineageTag: 303feeea-3982-47b8-95bc-76aa78bbdfe2
+		annotation SummarizationSetBy = User
+
+	partition Sales = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_sales.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"LineID", type text}, {"OrderID", type text}, {"Date", type date}, {"MonthStart", type date}, {"SKUKey", type text}, {"CustomerKey", type text}, {"ChannelKey", type text}, {"CompanyKey", type text}, {"Region", type text}, {"UnitsCorrected", type number}, {"UnitPriceVND", type number}, {"GrossSalesVND", type number}, {"DiscountVND", type number}, {"ReturnsVND", type number}, {"RebatesVND", type number}, {"VoucherSupportVND", type number}, {"NetRevenueVND", type number}, {"PreliminaryCOGSVND", type number}, {"COGSScaleFactor", type number}, {"CorrectedCOGSVND", type number}, {"AllocatedChannelFeeVND", type number}, {"AllocatedTradeSpendVND", type number}, {"AllocatedVariableFulfilmentVND", type number}, {"ContributionProfitVND", type number}, {"AllocationMethod", type text}, {"AllocationDriver", type text}, {"SourceCostBucket", type text}, {"EvidenceClass", type text}, {"IsIntercompany", type logical}, {"IsStockout", type logical}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

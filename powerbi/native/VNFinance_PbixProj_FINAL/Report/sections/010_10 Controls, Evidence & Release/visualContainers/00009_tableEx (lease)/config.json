@@ -1,0 +1,80 @@
+{
+  "name": "10_TBL_Release",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 575,
+        "z": 5,
+        "width": 760,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Forecast_Version.ForecastVersionKey"
+        },
+        {
+          "queryRef": "Dim_Forecast_Version.Status"
+        },
+        {
+          "queryRef": "Dim_Forecast_Version.Eligibility"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Forecast_Version",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ForecastVersionKey"
+          },
+          "Name": "Dim_Forecast_Version.ForecastVersionKey",
+          "NativeReferenceName": "ForecastVersionKey"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Status"
+          },
+          "Name": "Dim_Forecast_Version.Status",
+          "NativeReferenceName": "Status"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Eligibility"
+          },
+          "Name": "Dim_Forecast_Version.Eligibility",
+          "NativeReferenceName": "Eligibility"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

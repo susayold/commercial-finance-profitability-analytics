@@ -1,0 +1,13 @@
+{
+  "name": "ForecastRevenueVND",
+  "dataType": "double",
+  "sourceColumn": "ForecastRevenueVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

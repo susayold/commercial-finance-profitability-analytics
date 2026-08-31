@@ -1,0 +1,13 @@
+{
+  "name": "PromotionKey",
+  "dataType": "string",
+  "sourceColumn": "PromotionKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "isKey": true
+}

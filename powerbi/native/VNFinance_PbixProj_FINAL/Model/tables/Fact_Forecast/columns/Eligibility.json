@@ -1,0 +1,12 @@
+{
+  "name": "Eligibility",
+  "dataType": "string",
+  "sourceColumn": "Eligibility",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

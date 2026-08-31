@@ -1,0 +1,13 @@
+{
+  "name": "OperatingProfitVNDBn",
+  "dataType": "double",
+  "sourceColumn": "OperatingProfitVNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

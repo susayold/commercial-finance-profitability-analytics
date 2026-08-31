@@ -1,0 +1,143 @@
+table Fact_Forecast
+	lineageTag: 79149112-5a63-473d-84ff-264ac0fd34b8
+
+	column SnapshotDate
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: SnapshotDate
+		lineageTag: fe2c3b14-7748-4a50-9b03-97ab9795ab41
+		annotation SummarizationSetBy = User
+
+	column TargetMonth
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: TargetMonth
+		lineageTag: 660ba8fe-42ca-4553-9370-9bb5c090627b
+		annotation SummarizationSetBy = User
+
+	column SKUKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SKUKey
+		lineageTag: ab38e3d3-dfa9-4e0e-b35b-fa0f530f3868
+		annotation SummarizationSetBy = User
+
+	column ChannelKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ChannelKey
+		lineageTag: 873c506f-df75-49f3-95a7-3d57efee8c1d
+		annotation SummarizationSetBy = User
+
+	column ScenarioKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ScenarioKey
+		lineageTag: acbf9a7b-6071-41eb-9336-692b61d39cf5
+		annotation SummarizationSetBy = User
+
+	column ForecastVersionKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ForecastVersionKey
+		lineageTag: d4258ddd-503f-4bd2-844e-0cdc27c176c6
+		annotation SummarizationSetBy = User
+
+	column ForecastUnits
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ForecastUnits
+		lineageTag: 531a5b29-5244-4d47-bdbc-b5fa58c0d7a3
+		annotation SummarizationSetBy = User
+
+	column ForecastRevenueVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ForecastRevenueVND
+		lineageTag: 3272c931-e10d-4ef3-9b6c-40e6801fde64
+		annotation SummarizationSetBy = User
+
+	column ForecastCOGSVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ForecastCOGSVND
+		lineageTag: 569161ca-0cad-4a2a-b6f3-f1d4e84d8885
+		annotation SummarizationSetBy = User
+
+	column ForecastTradeSpendVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ForecastTradeSpendVND
+		lineageTag: 94321455-789d-422a-8e65-b33e599bb305
+		annotation SummarizationSetBy = User
+
+	column ForecastOPEXVND
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ForecastOPEXVND
+		lineageTag: ae761522-bae2-48ec-90c0-aee2f042dcfb
+		annotation SummarizationSetBy = User
+
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+		lineageTag: 6129162c-83a2-4155-a060-9fc1aa35a23d
+		annotation SummarizationSetBy = User
+
+	column Approved
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Approved
+		lineageTag: f6e7cc87-4c5a-4121-a5ef-efec23dbd3a0
+		annotation SummarizationSetBy = User
+
+	column ActualAvailabilityDate
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ActualAvailabilityDate
+		lineageTag: 29d30037-8403-48da-b2e6-cd0a8bc2b262
+		annotation SummarizationSetBy = User
+
+	column Eligibility
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Eligibility
+		lineageTag: 4790d7e8-201e-4c76-bd57-cbce83c5d5a8
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 7e9b50df-eba2-44bf-971d-356f3a93d775
+		annotation SummarizationSetBy = User
+
+	column WorkingCapitalDaysDelta
+		dataType: double
+		formatString: 0.0
+		summarizeBy: sum
+		sourceColumn: WorkingCapitalDaysDelta
+		lineageTag: 307a51e0-6935-439d-b83d-f03a0574d19d
+		annotation SummarizationSetBy = User
+
+	partition Fact_Forecast = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_forecast.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"SnapshotDate", type date}, {"TargetMonth", type date}, {"SKUKey", type text}, {"ChannelKey", type text}, {"ScenarioKey", type text}, {"ForecastVersionKey", type text}, {"ForecastUnits", Int64.Type}, {"ForecastRevenueVND", type number}, {"ForecastCOGSVND", type number}, {"ForecastTradeSpendVND", type number}, {"ForecastOPEXVND", type number}, {"Status", type text}, {"Approved", type logical}, {"ActualAvailabilityDate", type text}, {"Eligibility", type text}, {"EvidenceClass", type text}, {"WorkingCapitalDaysDelta", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

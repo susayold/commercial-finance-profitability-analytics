@@ -1,0 +1,12 @@
+{
+  "name": "FacilityKey",
+  "dataType": "string",
+  "sourceColumn": "FacilityKey",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

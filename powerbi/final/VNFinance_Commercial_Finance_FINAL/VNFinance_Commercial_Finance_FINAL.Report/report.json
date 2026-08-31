@@ -1,0 +1,1978 @@
+{
+  "config": "{\"version\":\"5.9\",\"themeCollection\":{\"baseTheme\":{\"name\":\"VNFinance_Final_Theme\",\"version\":\"5.10\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "name": "SharedResources",
+        "type": 2,
+        "items": [
+          {
+            "name": "VNFinance_Final_Theme",
+            "path": "BaseThemes/VNFinance_Final_Theme.json",
+            "type": 202
+          }
+        ]
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "ReportSection01",
+      "displayName": "00 Executive Decision Cockpit",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 0,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"00_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"00_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"00_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"00_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"00_MSG_Management\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"00_KPI_NetRevenue\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"00_KPI_VarBudget\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Revenue vs Budget %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Revenue vs Budget %\"},\"Name\":\"Sales.Revenue vs Budget %\",\"NativeReferenceName\":\"Revenue vs Budget %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"00_KPI_CM\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Contribution Margin %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Contribution Margin %\"},\"Name\":\"Sales.Contribution Margin %\",\"NativeReferenceName\":\"Contribution Margin %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"00_KPI_OperatingProfit\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Operating Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Operating Profit\"},\"Name\":\"Sales.Operating Profit\",\"NativeReferenceName\":\"Operating Profit\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"00_KPI_CCC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.CCC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CCC\"},\"Name\":\"Sales.CCC\",\"NativeReferenceName\":\"CCC\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"00_KPI_CashRelease\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Cash Release Opportunity\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Cash Release Opportunity\"},\"Name\":\"Sales.Cash Release Opportunity\",\"NativeReferenceName\":\"Cash Release Opportunity\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 10,
+          "width": 780,
+          "height": 330,
+          "config": "{\"name\":\"00_CH_ActualBudgetLE\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":10,\"width\":780,\"height\":330}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.Budget Revenue\"},{\"queryRef\":\"Sales.Latest Estimate Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Budget Revenue\"},\"Name\":\"Sales.Budget Revenue\",\"NativeReferenceName\":\"Budget Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Latest Estimate Revenue\"},\"Name\":\"Sales.Latest Estimate Revenue\",\"NativeReferenceName\":\"Latest Estimate Revenue\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 255,
+          "z": 10,
+          "width": 792,
+          "height": 330,
+          "config": "{\"name\":\"00_CH_ChannelGap\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":255,\"z\":10,\"width\":792,\"height\":330}}],\"singleVisual\":{\"visualType\":\"waterfallChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Channel.Channel\"}],\"Y\":[{\"queryRef\":\"Sales.Revenue vs Budget\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Revenue vs Budget\"},\"Name\":\"Sales.Revenue vs Budget\",\"NativeReferenceName\":\"Revenue vs Budget\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Revenue vs Budget\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 610,
+          "z": 5,
+          "width": 780,
+          "height": 270,
+          "config": "{\"name\":\"00_TBL_Actions\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":610,\"z\":5,\"width\":780,\"height\":270}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Budget_Allocation.ChannelKey\"},{\"queryRef\":\"Fact_Budget_Allocation.Decision\"},{\"queryRef\":\"Sales.Incremental Contribution\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Budget_Allocation\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ChannelKey\"},\"Name\":\"Fact_Budget_Allocation.ChannelKey\",\"NativeReferenceName\":\"ChannelKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Decision\"},\"Name\":\"Fact_Budget_Allocation.Decision\",\"NativeReferenceName\":\"Decision\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Incremental Contribution\"},\"Name\":\"Sales.Incremental Contribution\",\"NativeReferenceName\":\"Incremental Contribution\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 610,
+          "z": 5,
+          "width": 792,
+          "height": 270,
+          "config": "{\"name\":\"00_TBL_WC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":610,\"z\":5,\"width\":792,\"height\":270}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"},{\"queryRef\":\"Sales.DSO\"},{\"queryRef\":\"Sales.DIO\"},{\"queryRef\":\"Sales.DPO\"},{\"queryRef\":\"Sales.CCC\"},{\"queryRef\":\"Sales.Cash Release Opportunity\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DSO\"},\"Name\":\"Sales.DSO\",\"NativeReferenceName\":\"DSO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DIO\"},\"Name\":\"Sales.DIO\",\"NativeReferenceName\":\"DIO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DPO\"},\"Name\":\"Sales.DPO\",\"NativeReferenceName\":\"DPO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"CCC\"},\"Name\":\"Sales.CCC\",\"NativeReferenceName\":\"CCC\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Cash Release Opportunity\"},\"Name\":\"Sales.Cash Release Opportunity\",\"NativeReferenceName\":\"Cash Release Opportunity\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection02",
+      "displayName": "01 P&L & Variance",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 1,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"01_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"01_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"01_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"01_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"01_MSG_Management\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"01_KPI_GrossSales\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Gross Sales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Gross Sales\"},\"Name\":\"Sales.Gross Sales\",\"NativeReferenceName\":\"Gross Sales\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"01_KPI_NetRevenue\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"01_KPI_GrossProfit\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Gross Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Gross Profit\"},\"Name\":\"Sales.Gross Profit\",\"NativeReferenceName\":\"Gross Profit\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"01_KPI_GM\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Gross Margin %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Gross Margin %\"},\"Name\":\"Sales.Gross Margin %\",\"NativeReferenceName\":\"Gross Margin %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"01_KPI_Contribution\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Contribution Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"01_KPI_OperatingProfit\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Operating Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Operating Profit\"},\"Name\":\"Sales.Operating Profit\",\"NativeReferenceName\":\"Operating Profit\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 5,
+          "width": 760,
+          "height": 625,
+          "config": "{\"name\":\"01_MTX_PnL\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":5,\"width\":760,\"height\":625}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"},{\"queryRef\":\"Sales.Gross Sales\"},{\"queryRef\":\"Sales.Discounts\"},{\"queryRef\":\"Sales.Returns\"},{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.COGS\"},{\"queryRef\":\"Sales.Gross Profit\"},{\"queryRef\":\"Sales.Gross Margin %\"},{\"queryRef\":\"Sales.Contribution Profit\"},{\"queryRef\":\"Sales.Contribution Margin %\"},{\"queryRef\":\"Sales.OPEX Actual\"},{\"queryRef\":\"Sales.Operating Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Gross Sales\"},\"Name\":\"Sales.Gross Sales\",\"NativeReferenceName\":\"Gross Sales\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Discounts\"},\"Name\":\"Sales.Discounts\",\"NativeReferenceName\":\"Discounts\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Returns\"},\"Name\":\"Sales.Returns\",\"NativeReferenceName\":\"Returns\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"COGS\"},\"Name\":\"Sales.COGS\",\"NativeReferenceName\":\"COGS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Gross Profit\"},\"Name\":\"Sales.Gross Profit\",\"NativeReferenceName\":\"Gross Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Gross Margin %\"},\"Name\":\"Sales.Gross Margin %\",\"NativeReferenceName\":\"Gross Margin %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Margin %\"},\"Name\":\"Sales.Contribution Margin %\",\"NativeReferenceName\":\"Contribution Margin %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"OPEX Actual\"},\"Name\":\"Sales.OPEX Actual\",\"NativeReferenceName\":\"OPEX Actual\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Operating Profit\"},\"Name\":\"Sales.Operating Profit\",\"NativeReferenceName\":\"Operating Profit\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 825,
+          "y": 255,
+          "z": 10,
+          "width": 807,
+          "height": 290,
+          "config": "{\"name\":\"01_CH_ProfitVariance\",\"layouts\":[{\"id\":0,\"position\":{\"x\":825,\"y\":255,\"z\":10,\"width\":807,\"height\":290}}],\"singleVisual\":{\"visualType\":\"waterfallChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Channel.Channel\"}],\"Y\":[{\"queryRef\":\"Sales.Revenue vs Budget\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Revenue vs Budget\"},\"Name\":\"Sales.Revenue vs Budget\",\"NativeReferenceName\":\"Revenue vs Budget\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Revenue vs Budget\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 825,
+          "y": 565,
+          "z": 10,
+          "width": 807,
+          "height": 315,
+          "config": "{\"name\":\"01_CH_MonthlyTrend\",\"layouts\":[{\"id\":0,\"position\":{\"x\":825,\"y\":565,\"z\":10,\"width\":807,\"height\":315}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.Gross Profit\"},{\"queryRef\":\"Sales.Operating Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Gross Profit\"},\"Name\":\"Sales.Gross Profit\",\"NativeReferenceName\":\"Gross Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Operating Profit\"},\"Name\":\"Sales.Operating Profit\",\"NativeReferenceName\":\"Operating Profit\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection03",
+      "displayName": "02 Revenue, Gross-to-Net & PVM",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 2,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"02_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"02_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"02_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"02_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"02_MSG_Management\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"02_KPI_GrossSales\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Gross Sales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Gross Sales\"},\"Name\":\"Sales.Gross Sales\",\"NativeReferenceName\":\"Gross Sales\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"02_KPI_NetRevenue\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"02_KPI_GTN\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Gross-to-Net %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Gross-to-Net %\"},\"Name\":\"Sales.Gross-to-Net %\",\"NativeReferenceName\":\"Gross-to-Net %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"02_KPI_Price\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Price Effect\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Price Effect\"},\"Name\":\"Sales.Price Effect\",\"NativeReferenceName\":\"Price Effect\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"02_KPI_Volume\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Volume Effect\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Volume Effect\"},\"Name\":\"Sales.Volume Effect\",\"NativeReferenceName\":\"Volume Effect\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"02_KPI_PVMResidual\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.PVM Residual\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"PVM Residual\"},\"Name\":\"Sales.PVM Residual\",\"NativeReferenceName\":\"PVM Residual\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 10,
+          "width": 515,
+          "height": 300,
+          "config": "{\"name\":\"02_CH_GTN\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":10,\"width\":515,\"height\":300}}],\"singleVisual\":{\"visualType\":\"waterfallChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.Gross Sales\"},{\"queryRef\":\"Sales.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Gross Sales\"},\"Name\":\"Sales.Gross Sales\",\"NativeReferenceName\":\"Gross Sales\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Gross Sales\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 580,
+          "y": 255,
+          "z": 10,
+          "width": 515,
+          "height": 300,
+          "config": "{\"name\":\"02_CH_PVM\",\"layouts\":[{\"id\":0,\"position\":{\"x\":580,\"y\":255,\"z\":10,\"width\":515,\"height\":300}}],\"singleVisual\":{\"visualType\":\"waterfallChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fact_PVM_Bridge.Component\"}],\"Y\":[{\"queryRef\":\"Sales.Price Effect\"},{\"queryRef\":\"Sales.Volume Effect\"},{\"queryRef\":\"Sales.Mix Effect\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_PVM_Bridge\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Component\"},\"Name\":\"Fact_PVM_Bridge.Component\",\"NativeReferenceName\":\"Component\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Price Effect\"},\"Name\":\"Sales.Price Effect\",\"NativeReferenceName\":\"Price Effect\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Volume Effect\"},\"Name\":\"Sales.Volume Effect\",\"NativeReferenceName\":\"Volume Effect\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Mix Effect\"},\"Name\":\"Sales.Mix Effect\",\"NativeReferenceName\":\"Mix Effect\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Price Effect\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1120,
+          "y": 255,
+          "z": 5,
+          "width": 512,
+          "height": 300,
+          "config": "{\"name\":\"02_TBL_Bridge\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1120,\"y\":255,\"z\":5,\"width\":512,\"height\":300}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"},{\"queryRef\":\"Fact_PVM_Bridge.Component\"},{\"queryRef\":\"Sales.Price Effect\"},{\"queryRef\":\"Sales.Volume Effect\"},{\"queryRef\":\"Sales.Mix Effect\"},{\"queryRef\":\"Sales.PVM Residual\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Fact_PVM_Bridge\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Component\"},\"Name\":\"Fact_PVM_Bridge.Component\",\"NativeReferenceName\":\"Component\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Price Effect\"},\"Name\":\"Sales.Price Effect\",\"NativeReferenceName\":\"Price Effect\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Volume Effect\"},\"Name\":\"Sales.Volume Effect\",\"NativeReferenceName\":\"Volume Effect\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Mix Effect\"},\"Name\":\"Sales.Mix Effect\",\"NativeReferenceName\":\"Mix Effect\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"PVM Residual\"},\"Name\":\"Sales.PVM Residual\",\"NativeReferenceName\":\"PVM Residual\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 575,
+          "z": 10,
+          "width": 780,
+          "height": 305,
+          "config": "{\"name\":\"02_CH_PriceUnits\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":575,\"z\":10,\"width\":780,\"height\":305}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.ASP\"},{\"queryRef\":\"Sales.Units Corrected\"},{\"queryRef\":\"Sales.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"ASP\"},\"Name\":\"Sales.ASP\",\"NativeReferenceName\":\"ASP\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Units Corrected\"},\"Name\":\"Sales.Units Corrected\",\"NativeReferenceName\":\"Units Corrected\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"ASP\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 575,
+          "z": 5,
+          "width": 792,
+          "height": 305,
+          "config": "{\"name\":\"02_TBL_ChannelSKU\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":575,\"z\":5,\"width\":792,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"},{\"queryRef\":\"Dim_Product.SKU\"},{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.Contribution Profit\"},{\"queryRef\":\"Sales.Contribution Margin %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Dim_Product\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"SKU\"},\"Name\":\"Dim_Product.SKU\",\"NativeReferenceName\":\"SKU\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Contribution Margin %\"},\"Name\":\"Sales.Contribution Margin %\",\"NativeReferenceName\":\"Contribution Margin %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection04",
+      "displayName": "03 Commercial Profitability",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 3,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"03_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"03_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"03_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"03_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"03_MSG_Management\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"03_KPI_NetRevenue\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"03_KPI_Contribution\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Contribution Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"03_KPI_CM\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Contribution Margin %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Contribution Margin %\"},\"Name\":\"Sales.Contribution Margin %\",\"NativeReferenceName\":\"Contribution Margin %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"03_KPI_AfterWC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Contribution After WC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Contribution After WC\"},\"Name\":\"Sales.Contribution After WC\",\"NativeReferenceName\":\"Contribution After WC\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"03_KPI_Top5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Revenue Growth %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Revenue Growth %\"},\"Name\":\"Sales.Revenue Growth %\",\"NativeReferenceName\":\"Revenue Growth %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"03_KPI_DSO\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.DSO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DSO\"},\"Name\":\"Sales.DSO\",\"NativeReferenceName\":\"DSO\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 10,
+          "width": 650,
+          "height": 300,
+          "config": "{\"name\":\"03_CH_Portfolio\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":10,\"width\":650,\"height\":300}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Channel.Channel\"}],\"Y\":[{\"queryRef\":\"Sales.Contribution Margin %\"},{\"queryRef\":\"Sales.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Margin %\"},\"Name\":\"Sales.Contribution Margin %\",\"NativeReferenceName\":\"Contribution Margin %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Margin %\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 710,
+          "y": 255,
+          "z": 10,
+          "width": 922,
+          "height": 300,
+          "config": "{\"name\":\"03_CH_AfterWC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":710,\"y\":255,\"z\":10,\"width\":922,\"height\":300}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Customer.CustomerName\"}],\"Y\":[{\"queryRef\":\"Sales.Contribution Profit\"},{\"queryRef\":\"Sales.Contribution After WC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CustomerName\"},\"Name\":\"Dim_Customer.CustomerName\",\"NativeReferenceName\":\"CustomerName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution After WC\"},\"Name\":\"Sales.Contribution After WC\",\"NativeReferenceName\":\"Contribution After WC\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 575,
+          "z": 5,
+          "width": 1592,
+          "height": 305,
+          "config": "{\"name\":\"03_TBL_Economics\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":575,\"z\":5,\"width\":1592,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.CustomerName\"},{\"queryRef\":\"Dim_Customer.Segment\"},{\"queryRef\":\"Dim_Customer.StrategicFlag\"},{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.Contribution Profit\"},{\"queryRef\":\"Sales.Contribution Margin %\"},{\"queryRef\":\"Sales.DSO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CustomerName\"},\"Name\":\"Dim_Customer.CustomerName\",\"NativeReferenceName\":\"CustomerName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Segment\"},\"Name\":\"Dim_Customer.Segment\",\"NativeReferenceName\":\"Segment\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"StrategicFlag\"},\"Name\":\"Dim_Customer.StrategicFlag\",\"NativeReferenceName\":\"StrategicFlag\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Margin %\"},\"Name\":\"Sales.Contribution Margin %\",\"NativeReferenceName\":\"Contribution Margin %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DSO\"},\"Name\":\"Sales.DSO\",\"NativeReferenceName\":\"DSO\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection05",
+      "displayName": "04 Pricing, Promotion & Resource Allocation",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 4,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"04_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"04_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"04_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"04_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"04_MSG_Management\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"04_KPI_PromoSpend\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Promotion Spend\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Promotion Spend\"},\"Name\":\"Sales.Promotion Spend\",\"NativeReferenceName\":\"Promotion Spend\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"04_KPI_IncCM\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Incremental Contribution\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Incremental Contribution\"},\"Name\":\"Sales.Incremental Contribution\",\"NativeReferenceName\":\"Incremental Contribution\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"04_KPI_ROI\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Promotion ROI\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Promotion ROI\"},\"Name\":\"Sales.Promotion ROI\",\"NativeReferenceName\":\"Promotion ROI\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"04_KPI_AboveHurdle\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Expected CM Uplift\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Expected CM Uplift\"},\"Name\":\"Sales.Expected CM Uplift\",\"NativeReferenceName\":\"Expected CM Uplift\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"04_KPI_Reallocated\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Budget Reallocated\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Budget Reallocated\"},\"Name\":\"Sales.Budget Reallocated\",\"NativeReferenceName\":\"Budget Reallocated\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"04_KPI_BudgetControl\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.QA Pass Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"QA Pass Rate\"},\"Name\":\"Sales.QA Pass Rate\",\"NativeReferenceName\":\"QA Pass Rate\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 10,
+          "width": 510,
+          "height": 300,
+          "config": "{\"name\":\"04_CH_PromoROI\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":10,\"width\":510,\"height\":300}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fact_Promotion.Promotion\"}],\"Y\":[{\"queryRef\":\"Sales.Promotion ROI\"},{\"queryRef\":\"Sales.Incremental Contribution\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Promotion\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Promotion\"},\"Name\":\"Fact_Promotion.Promotion\",\"NativeReferenceName\":\"Promotion\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Promotion ROI\"},\"Name\":\"Sales.Promotion ROI\",\"NativeReferenceName\":\"Promotion ROI\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Incremental Contribution\"},\"Name\":\"Sales.Incremental Contribution\",\"NativeReferenceName\":\"Incremental Contribution\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Promotion ROI\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 255,
+          "z": 5,
+          "width": 510,
+          "height": 300,
+          "config": "{\"name\":\"04_TBL_Pricing\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":255,\"z\":5,\"width\":510,\"height\":300}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Pricing_Case.PricingCase\"},{\"queryRef\":\"Fact_Pricing_Case.ChannelKey\"},{\"queryRef\":\"Sales.Pricing Contribution Delta\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Pricing_Case\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"PricingCase\"},\"Name\":\"Fact_Pricing_Case.PricingCase\",\"NativeReferenceName\":\"PricingCase\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ChannelKey\"},\"Name\":\"Fact_Pricing_Case.ChannelKey\",\"NativeReferenceName\":\"ChannelKey\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Pricing Contribution Delta\"},\"Name\":\"Sales.Pricing Contribution Delta\",\"NativeReferenceName\":\"Pricing Contribution Delta\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 255,
+          "z": 5,
+          "width": 532,
+          "height": 300,
+          "config": "{\"name\":\"04_TBL_Allocation\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":255,\"z\":5,\"width\":532,\"height\":300}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"},{\"queryRef\":\"Sales.Budget Reallocated\"},{\"queryRef\":\"Sales.Expected CM Uplift\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Budget Reallocated\"},\"Name\":\"Sales.Budget Reallocated\",\"NativeReferenceName\":\"Budget Reallocated\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Expected CM Uplift\"},\"Name\":\"Sales.Expected CM Uplift\",\"NativeReferenceName\":\"Expected CM Uplift\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 575,
+          "z": 10,
+          "width": 760,
+          "height": 305,
+          "config": "{\"name\":\"04_CH_Capacity\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":575,\"z\":10,\"width\":760,\"height\":305}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Channel.Channel\"}],\"Y\":[{\"queryRef\":\"Sales.Promotion ROI\"},{\"queryRef\":\"Sales.Expected CM Uplift\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Promotion ROI\"},\"Name\":\"Sales.Promotion ROI\",\"NativeReferenceName\":\"Promotion ROI\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Expected CM Uplift\"},\"Name\":\"Sales.Expected CM Uplift\",\"NativeReferenceName\":\"Expected CM Uplift\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Promotion ROI\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 825,
+          "y": 575,
+          "z": 5,
+          "width": 807,
+          "height": 305,
+          "config": "{\"name\":\"04_TBL_DecisionQueue\",\"layouts\":[{\"id\":0,\"position\":{\"x\":825,\"y\":575,\"z\":5,\"width\":807,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Budget_Allocation.ChannelKey\"},{\"queryRef\":\"Fact_Budget_Allocation.Decision\"},{\"queryRef\":\"Fact_Budget_Allocation.EvidenceClass\"},{\"queryRef\":\"Sales.Incremental Contribution\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Budget_Allocation\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ChannelKey\"},\"Name\":\"Fact_Budget_Allocation.ChannelKey\",\"NativeReferenceName\":\"ChannelKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Decision\"},\"Name\":\"Fact_Budget_Allocation.Decision\",\"NativeReferenceName\":\"Decision\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Fact_Budget_Allocation.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Incremental Contribution\"},\"Name\":\"Sales.Incremental Contribution\",\"NativeReferenceName\":\"Incremental Contribution\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection06",
+      "displayName": "05 Forecast & Scenario",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 5,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"05_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"05_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"05_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"05_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"05_MSG_Governance\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Forecast Governance Banner\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Forecast Governance Banner\"},\"Name\":\"Sales.Forecast Governance Banner\",\"NativeReferenceName\":\"Forecast Governance Banner\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"05_KPI_ScenarioRevenue\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Scenario Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario Revenue\"},\"Name\":\"Sales.Scenario Revenue\",\"NativeReferenceName\":\"Scenario Revenue\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"05_KPI_ScenarioOP\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Scenario Operating Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario Operating Profit\"},\"Name\":\"Sales.Scenario Operating Profit\",\"NativeReferenceName\":\"Scenario Operating Profit\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"05_KPI_ScenarioCM\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Scenario CM %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario CM %\"},\"Name\":\"Sales.Scenario CM %\",\"NativeReferenceName\":\"Scenario CM %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"05_KPI_ScenarioCCC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Scenario CCC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario CCC\"},\"Name\":\"Sales.Scenario CCC\",\"NativeReferenceName\":\"Scenario CCC\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"05_KPI_Liquidity\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Scenario Liquidity Headroom\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario Liquidity Headroom\"},\"Name\":\"Sales.Scenario Liquidity Headroom\",\"NativeReferenceName\":\"Scenario Liquidity Headroom\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"05_KPI_WAPE\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.WAPE Eligible\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"WAPE Eligible\"},\"Name\":\"Sales.WAPE Eligible\",\"NativeReferenceName\":\"WAPE Eligible\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 10,
+          "width": 780,
+          "height": 300,
+          "config": "{\"name\":\"05_CH_Outlook\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":10,\"width\":780,\"height\":300}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.Budget Revenue\"},{\"queryRef\":\"Sales.Latest Estimate Revenue\"},{\"queryRef\":\"Sales.Scenario Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Budget Revenue\"},\"Name\":\"Sales.Budget Revenue\",\"NativeReferenceName\":\"Budget Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Latest Estimate Revenue\"},\"Name\":\"Sales.Latest Estimate Revenue\",\"NativeReferenceName\":\"Latest Estimate Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario Revenue\"},\"Name\":\"Sales.Scenario Revenue\",\"NativeReferenceName\":\"Scenario Revenue\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 255,
+          "z": 10,
+          "width": 792,
+          "height": 300,
+          "config": "{\"name\":\"05_CH_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":255,\"z\":10,\"width\":792,\"height\":300}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}],\"Y\":[{\"queryRef\":\"Sales.Scenario Revenue\"},{\"queryRef\":\"Sales.Scenario Operating Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario Revenue\"},\"Name\":\"Sales.Scenario Revenue\",\"NativeReferenceName\":\"Scenario Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario Operating Profit\"},\"Name\":\"Sales.Scenario Operating Profit\",\"NativeReferenceName\":\"Scenario Operating Profit\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario Revenue\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 575,
+          "z": 5,
+          "width": 780,
+          "height": 305,
+          "config": "{\"name\":\"05_TBL_Drivers\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":575,\"z\":5,\"width\":780,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Forecast.ScenarioKey\"},{\"queryRef\":\"Fact_Forecast.ForecastVersionKey\"},{\"queryRef\":\"Sales.Scenario Revenue\"},{\"queryRef\":\"Sales.Scenario CM %\"},{\"queryRef\":\"Sales.Scenario CCC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Forecast\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ScenarioKey\"},\"Name\":\"Fact_Forecast.ScenarioKey\",\"NativeReferenceName\":\"ScenarioKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ForecastVersionKey\"},\"Name\":\"Fact_Forecast.ForecastVersionKey\",\"NativeReferenceName\":\"ForecastVersionKey\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario Revenue\"},\"Name\":\"Sales.Scenario Revenue\",\"NativeReferenceName\":\"Scenario Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario CM %\"},\"Name\":\"Sales.Scenario CM %\",\"NativeReferenceName\":\"Scenario CM %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario CCC\"},\"Name\":\"Sales.Scenario CCC\",\"NativeReferenceName\":\"Scenario CCC\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 575,
+          "z": 5,
+          "width": 792,
+          "height": 305,
+          "config": "{\"name\":\"05_TBL_Decision\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":575,\"z\":5,\"width\":792,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"},{\"queryRef\":\"Dim_Scenario.ScenarioGroup\"},{\"queryRef\":\"Dim_Scenario.EvidenceClass\"},{\"queryRef\":\"Sales.Scenario Revenue\"},{\"queryRef\":\"Sales.Scenario Operating Profit\"},{\"queryRef\":\"Sales.Scenario CCC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ScenarioGroup\"},\"Name\":\"Dim_Scenario.ScenarioGroup\",\"NativeReferenceName\":\"ScenarioGroup\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Scenario.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario Revenue\"},\"Name\":\"Sales.Scenario Revenue\",\"NativeReferenceName\":\"Scenario Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario Operating Profit\"},\"Name\":\"Sales.Scenario Operating Profit\",\"NativeReferenceName\":\"Scenario Operating Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario CCC\"},\"Name\":\"Sales.Scenario CCC\",\"NativeReferenceName\":\"Scenario CCC\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection07",
+      "displayName": "06 Working Capital & Liquidity",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 6,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"06_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"06_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"06_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"06_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"06_MSG_Management\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"06_KPI_DSO\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.DSO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DSO\"},\"Name\":\"Sales.DSO\",\"NativeReferenceName\":\"DSO\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"06_KPI_DIO\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.DIO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DIO\"},\"Name\":\"Sales.DIO\",\"NativeReferenceName\":\"DIO\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"06_KPI_DPO\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.DPO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DPO\"},\"Name\":\"Sales.DPO\",\"NativeReferenceName\":\"DPO\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"06_KPI_CCC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.CCC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CCC\"},\"Name\":\"Sales.CCC\",\"NativeReferenceName\":\"CCC\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"06_KPI_Headroom\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Liquidity Headroom\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Liquidity Headroom\"},\"Name\":\"Sales.Liquidity Headroom\",\"NativeReferenceName\":\"Liquidity Headroom\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"06_KPI_CashRelease\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Cash Release Opportunity\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Cash Release Opportunity\"},\"Name\":\"Sales.Cash Release Opportunity\",\"NativeReferenceName\":\"Cash Release Opportunity\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 10,
+          "width": 760,
+          "height": 300,
+          "config": "{\"name\":\"06_CH_Days\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":10,\"width\":760,\"height\":300}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.DSO\"},{\"queryRef\":\"Sales.DIO\"},{\"queryRef\":\"Sales.DPO\"},{\"queryRef\":\"Sales.CCC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DSO\"},\"Name\":\"Sales.DSO\",\"NativeReferenceName\":\"DSO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DIO\"},\"Name\":\"Sales.DIO\",\"NativeReferenceName\":\"DIO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DPO\"},\"Name\":\"Sales.DPO\",\"NativeReferenceName\":\"DPO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"CCC\"},\"Name\":\"Sales.CCC\",\"NativeReferenceName\":\"CCC\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DSO\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 255,
+          "z": 10,
+          "width": 792,
+          "height": 300,
+          "config": "{\"name\":\"06_CH_CCCBridge\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":255,\"z\":10,\"width\":792,\"height\":300}}],\"singleVisual\":{\"visualType\":\"waterfallChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fact_Forecast.ScenarioKey\"}],\"Y\":[{\"queryRef\":\"Sales.DSO\"},{\"queryRef\":\"Sales.DIO\"},{\"queryRef\":\"Sales.DPO\"},{\"queryRef\":\"Sales.CCC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Forecast\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ScenarioKey\"},\"Name\":\"Fact_Forecast.ScenarioKey\",\"NativeReferenceName\":\"ScenarioKey\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DSO\"},\"Name\":\"Sales.DSO\",\"NativeReferenceName\":\"DSO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DIO\"},\"Name\":\"Sales.DIO\",\"NativeReferenceName\":\"DIO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DPO\"},\"Name\":\"Sales.DPO\",\"NativeReferenceName\":\"DPO\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"CCC\"},\"Name\":\"Sales.CCC\",\"NativeReferenceName\":\"CCC\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DSO\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 575,
+          "z": 5,
+          "width": 510,
+          "height": 305,
+          "config": "{\"name\":\"06_TBL_AR\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":575,\"z\":5,\"width\":510,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.CustomerName\"},{\"queryRef\":\"Fact_AR.MonthStart\"},{\"queryRef\":\"Sales.AR Closing\"},{\"queryRef\":\"Sales.DSO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Fact_AR\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CustomerName\"},\"Name\":\"Dim_Customer.CustomerName\",\"NativeReferenceName\":\"CustomerName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"MonthStart\"},\"Name\":\"Fact_AR.MonthStart\",\"NativeReferenceName\":\"MonthStart\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"AR Closing\"},\"Name\":\"Sales.AR Closing\",\"NativeReferenceName\":\"AR Closing\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"DSO\"},\"Name\":\"Sales.DSO\",\"NativeReferenceName\":\"DSO\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 575,
+          "z": 5,
+          "width": 510,
+          "height": 305,
+          "config": "{\"name\":\"06_TBL_Inventory\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":575,\"z\":5,\"width\":510,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Product.SKU\"},{\"queryRef\":\"Fact_Inventory.MonthStart\"},{\"queryRef\":\"Sales.Inventory Closing\"},{\"queryRef\":\"Sales.DIO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Product\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Fact_Inventory\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"SKU\"},\"Name\":\"Dim_Product.SKU\",\"NativeReferenceName\":\"SKU\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"MonthStart\"},\"Name\":\"Fact_Inventory.MonthStart\",\"NativeReferenceName\":\"MonthStart\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Inventory Closing\"},\"Name\":\"Sales.Inventory Closing\",\"NativeReferenceName\":\"Inventory Closing\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"DIO\"},\"Name\":\"Sales.DIO\",\"NativeReferenceName\":\"DIO\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 575,
+          "z": 5,
+          "width": 532,
+          "height": 305,
+          "config": "{\"name\":\"06_TBL_Actions\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":575,\"z\":5,\"width\":532,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Evidence_Class.EvidenceClass\"},{\"queryRef\":\"Sales.Cash Release Opportunity\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Evidence_Class\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Evidence_Class.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Cash Release Opportunity\"},\"Name\":\"Sales.Cash Release Opportunity\",\"NativeReferenceName\":\"Cash Release Opportunity\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection08",
+      "displayName": "07 OPEX, Headcount & CAPEX",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 7,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"07_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"07_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"07_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"07_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"07_MSG_Management\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"07_KPI_OPEX\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.OPEX Actual\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"OPEX Actual\"},\"Name\":\"Sales.OPEX Actual\",\"NativeReferenceName\":\"OPEX Actual\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"07_KPI_OPEXVar\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.OPEX vs Budget\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"OPEX vs Budget\"},\"Name\":\"Sales.OPEX vs Budget\",\"NativeReferenceName\":\"OPEX vs Budget\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"07_KPI_OPEXForecast\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.OPEX Forecast\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"OPEX Forecast\"},\"Name\":\"Sales.OPEX Forecast\",\"NativeReferenceName\":\"OPEX Forecast\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"07_KPI_HC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Average Headcount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Average Headcount\"},\"Name\":\"Sales.Average Headcount\",\"NativeReferenceName\":\"Average Headcount\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"07_KPI_CAPEX\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.CAPEX Actual\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CAPEX Actual\"},\"Name\":\"Sales.CAPEX Actual\",\"NativeReferenceName\":\"CAPEX Actual\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"07_KPI_Payback\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.CAPEX Payback\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CAPEX Payback\"},\"Name\":\"Sales.CAPEX Payback\",\"NativeReferenceName\":\"CAPEX Payback\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 10,
+          "width": 760,
+          "height": 300,
+          "config": "{\"name\":\"07_CH_OPEX\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":10,\"width\":760,\"height\":300}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.OPEX Actual\"},{\"queryRef\":\"Sales.OPEX Budget\"},{\"queryRef\":\"Sales.OPEX Forecast\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"OPEX Actual\"},\"Name\":\"Sales.OPEX Actual\",\"NativeReferenceName\":\"OPEX Actual\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"OPEX Budget\"},\"Name\":\"Sales.OPEX Budget\",\"NativeReferenceName\":\"OPEX Budget\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"OPEX Forecast\"},\"Name\":\"Sales.OPEX Forecast\",\"NativeReferenceName\":\"OPEX Forecast\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"OPEX Actual\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 255,
+          "z": 10,
+          "width": 792,
+          "height": 300,
+          "config": "{\"name\":\"07_CH_CostCenter\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":255,\"z\":10,\"width\":792,\"height\":300}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Cost_Center.CostCenter\"}],\"Y\":[{\"queryRef\":\"Sales.OPEX Actual\"},{\"queryRef\":\"Sales.OPEX vs Budget\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Cost_Center\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CostCenter\"},\"Name\":\"Dim_Cost_Center.CostCenter\",\"NativeReferenceName\":\"CostCenter\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"OPEX Actual\"},\"Name\":\"Sales.OPEX Actual\",\"NativeReferenceName\":\"OPEX Actual\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"OPEX vs Budget\"},\"Name\":\"Sales.OPEX vs Budget\",\"NativeReferenceName\":\"OPEX vs Budget\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"OPEX Actual\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 575,
+          "z": 5,
+          "width": 760,
+          "height": 305,
+          "config": "{\"name\":\"07_TBL_HC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":575,\"z\":5,\"width\":760,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Cost_Center.CostCenter\"},{\"queryRef\":\"Fact_OPEX_Headcount.Period\"},{\"queryRef\":\"Sales.Average Headcount\"},{\"queryRef\":\"Sales.OPEX Actual\"},{\"queryRef\":\"Sales.OPEX vs Budget\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Cost_Center\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Fact_OPEX_Headcount\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CostCenter\"},\"Name\":\"Dim_Cost_Center.CostCenter\",\"NativeReferenceName\":\"CostCenter\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Period\"},\"Name\":\"Fact_OPEX_Headcount.Period\",\"NativeReferenceName\":\"Period\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Average Headcount\"},\"Name\":\"Sales.Average Headcount\",\"NativeReferenceName\":\"Average Headcount\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"OPEX Actual\"},\"Name\":\"Sales.OPEX Actual\",\"NativeReferenceName\":\"OPEX Actual\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"OPEX vs Budget\"},\"Name\":\"Sales.OPEX vs Budget\",\"NativeReferenceName\":\"OPEX vs Budget\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 575,
+          "z": 5,
+          "width": 792,
+          "height": 305,
+          "config": "{\"name\":\"07_TBL_CAPEX\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":575,\"z\":5,\"width\":792,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_CAPEX_Project.Project\"},{\"queryRef\":\"Fact_CAPEX.Stage\"},{\"queryRef\":\"Fact_CAPEX.Decision\"},{\"queryRef\":\"Sales.CAPEX Actual\"},{\"queryRef\":\"Sales.CAPEX Committed\"},{\"queryRef\":\"Sales.CAPEX Payback\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_CAPEX_Project\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Fact_CAPEX\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Project\"},\"Name\":\"Dim_CAPEX_Project.Project\",\"NativeReferenceName\":\"Project\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Stage\"},\"Name\":\"Fact_CAPEX.Stage\",\"NativeReferenceName\":\"Stage\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Decision\"},\"Name\":\"Fact_CAPEX.Decision\",\"NativeReferenceName\":\"Decision\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"CAPEX Actual\"},\"Name\":\"Sales.CAPEX Actual\",\"NativeReferenceName\":\"CAPEX Actual\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"CAPEX Committed\"},\"Name\":\"Sales.CAPEX Committed\",\"NativeReferenceName\":\"CAPEX Committed\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"CAPEX Payback\"},\"Name\":\"Sales.CAPEX Payback\",\"NativeReferenceName\":\"CAPEX Payback\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection09",
+      "displayName": "08 MCH & Peer Financial Quality",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 8,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"08_MSG_Banner\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Public Evidence Banner\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Public Evidence Banner\"},\"Name\":\"Sales.Public Evidence Banner\",\"NativeReferenceName\":\"Public Evidence Banner\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"08_F_Entity\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Company.Company\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Company\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Company\"},\"Name\":\"Dim_Company.Company\",\"NativeReferenceName\":\"Company\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"08_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Public_Financials.FiscalYear\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Public_Financials\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"FiscalYear\"},\"Name\":\"Fact_Public_Financials.FiscalYear\",\"NativeReferenceName\":\"FiscalYear\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"08_F_Compare\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Public_Financials.RevenueBasis\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Public_Financials\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"RevenueBasis\"},\"Name\":\"Fact_Public_Financials.RevenueBasis\",\"NativeReferenceName\":\"RevenueBasis\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"08_F_Peer\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Public_Financials.Ticker\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Public_Financials\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Ticker\"},\"Name\":\"Fact_Public_Financials.Ticker\",\"NativeReferenceName\":\"Ticker\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"08_KPI_PublicRevenue\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Public Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Public Revenue\"},\"Name\":\"Sales.Public Revenue\",\"NativeReferenceName\":\"Public Revenue\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"08_KPI_PATMargin\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Public PAT Margin\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Public PAT Margin\"},\"Name\":\"Sales.Public PAT Margin\",\"NativeReferenceName\":\"Public PAT Margin\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"08_KPI_CFOConversion\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Public CFO Conversion\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Public CFO Conversion\"},\"Name\":\"Sales.Public CFO Conversion\",\"NativeReferenceName\":\"Public CFO Conversion\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"08_KPI_ApprovedRows\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Source File Count\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Source File Count\"},\"Name\":\"Sales.Source File Count\",\"NativeReferenceName\":\"Source File Count\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"08_KPI_Evidence\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Evidence Coverage %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Evidence Coverage %\"},\"Name\":\"Sales.Evidence Coverage %\",\"NativeReferenceName\":\"Evidence Coverage %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"08_KPI_QA\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.QA Pass Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"QA Pass Rate\"},\"Name\":\"Sales.QA Pass Rate\",\"NativeReferenceName\":\"QA Pass Rate\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 10,
+          "width": 780,
+          "height": 300,
+          "config": "{\"name\":\"08_CH_MCHTrend\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":10,\"width\":780,\"height\":300}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fact_Public_Financials.FiscalYear\"}],\"Y\":[{\"queryRef\":\"Sales.Public Revenue\"},{\"queryRef\":\"Sales.Public PAT Margin\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Public_Financials\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"FiscalYear\"},\"Name\":\"Fact_Public_Financials.FiscalYear\",\"NativeReferenceName\":\"FiscalYear\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Public Revenue\"},\"Name\":\"Sales.Public Revenue\",\"NativeReferenceName\":\"Public Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Public PAT Margin\"},\"Name\":\"Sales.Public PAT Margin\",\"NativeReferenceName\":\"Public PAT Margin\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Public Revenue\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 255,
+          "z": 10,
+          "width": 792,
+          "height": 300,
+          "config": "{\"name\":\"08_CH_Peers\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":255,\"z\":10,\"width\":792,\"height\":300}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fact_Public_Financials.Ticker\"}],\"Y\":[{\"queryRef\":\"Sales.Public PAT Margin\"},{\"queryRef\":\"Sales.Public CFO Conversion\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Public_Financials\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Ticker\"},\"Name\":\"Fact_Public_Financials.Ticker\",\"NativeReferenceName\":\"Ticker\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Public PAT Margin\"},\"Name\":\"Sales.Public PAT Margin\",\"NativeReferenceName\":\"Public PAT Margin\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Public CFO Conversion\"},\"Name\":\"Sales.Public CFO Conversion\",\"NativeReferenceName\":\"Public CFO Conversion\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Public PAT Margin\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 575,
+          "z": 5,
+          "width": 1592,
+          "height": 305,
+          "config": "{\"name\":\"08_TBL_Public\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":575,\"z\":5,\"width\":1592,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Public_Financials.Company\"},{\"queryRef\":\"Fact_Public_Financials.Ticker\"},{\"queryRef\":\"Fact_Public_Financials.FiscalYear\"},{\"queryRef\":\"Fact_Public_Financials.SourceStatus\"},{\"queryRef\":\"Sales.Public Revenue\"},{\"queryRef\":\"Sales.Public PAT Margin\"},{\"queryRef\":\"Sales.Public CFO Conversion\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Public_Financials\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Company\"},\"Name\":\"Fact_Public_Financials.Company\",\"NativeReferenceName\":\"Company\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Ticker\"},\"Name\":\"Fact_Public_Financials.Ticker\",\"NativeReferenceName\":\"Ticker\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"FiscalYear\"},\"Name\":\"Fact_Public_Financials.FiscalYear\",\"NativeReferenceName\":\"FiscalYear\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"SourceStatus\"},\"Name\":\"Fact_Public_Financials.SourceStatus\",\"NativeReferenceName\":\"SourceStatus\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Public Revenue\"},\"Name\":\"Sales.Public Revenue\",\"NativeReferenceName\":\"Public Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Public PAT Margin\"},\"Name\":\"Sales.Public PAT Margin\",\"NativeReferenceName\":\"Public PAT Margin\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Public CFO Conversion\"},\"Name\":\"Sales.Public CFO Conversion\",\"NativeReferenceName\":\"Public CFO Conversion\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection10",
+      "displayName": "09 Valuation & Strategic Finance",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 9,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"09_MSG_Banner\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Strategic Evidence Banner\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Strategic Evidence Banner\"},\"Name\":\"Sales.Strategic Evidence Banner\",\"NativeReferenceName\":\"Strategic Evidence Banner\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"09_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Valuation.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Valuation\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Fact_Valuation.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"09_F_WACC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Valuation.WACC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Valuation\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"WACC\"},\"Name\":\"Fact_Valuation.WACC\",\"NativeReferenceName\":\"WACC\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"09_F_Growth\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_Valuation.TerminalGrowth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Valuation\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"TerminalGrowth\"},\"Name\":\"Fact_Valuation.TerminalGrowth\",\"NativeReferenceName\":\"TerminalGrowth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"09_F_Deal\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_MNA.DealKey\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_MNA\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DealKey\"},\"Name\":\"Fact_MNA.DealKey\",\"NativeReferenceName\":\"DealKey\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"09_KPI_DownsideEV\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Downside EV\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Downside EV\"},\"Name\":\"Sales.Downside EV\",\"NativeReferenceName\":\"Downside EV\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"09_KPI_BaseEV\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Base EV\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Base EV\"},\"Name\":\"Sales.Base EV\",\"NativeReferenceName\":\"Base EV\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"09_KPI_UpsideEV\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Upside EV\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Upside EV\"},\"Name\":\"Sales.Upside EV\",\"NativeReferenceName\":\"Upside EV\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"09_KPI_WACC\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.WACC\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"WACC\"},\"Name\":\"Sales.WACC\",\"NativeReferenceName\":\"WACC\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"09_KPI_TerminalGrowth\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Terminal Growth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Terminal Growth\"},\"Name\":\"Sales.Terminal Growth\",\"NativeReferenceName\":\"Terminal Growth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"09_KPI_Payback\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.CAPEX Payback\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CAPEX Payback\"},\"Name\":\"Sales.CAPEX Payback\",\"NativeReferenceName\":\"CAPEX Payback\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 10,
+          "width": 760,
+          "height": 300,
+          "config": "{\"name\":\"09_CH_Sensitivity\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":10,\"width\":760,\"height\":300}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fact_Valuation.TerminalGrowth\"}],\"Y\":[{\"queryRef\":\"Sales.Base EV\"},{\"queryRef\":\"Sales.Upside EV\"},{\"queryRef\":\"Sales.Downside EV\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Valuation\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"TerminalGrowth\"},\"Name\":\"Fact_Valuation.TerminalGrowth\",\"NativeReferenceName\":\"TerminalGrowth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Base EV\"},\"Name\":\"Sales.Base EV\",\"NativeReferenceName\":\"Base EV\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Upside EV\"},\"Name\":\"Sales.Upside EV\",\"NativeReferenceName\":\"Upside EV\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Downside EV\"},\"Name\":\"Sales.Downside EV\",\"NativeReferenceName\":\"Downside EV\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Base EV\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 255,
+          "z": 10,
+          "width": 792,
+          "height": 300,
+          "config": "{\"name\":\"09_CH_EVBridge\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":255,\"z\":10,\"width\":792,\"height\":300}}],\"singleVisual\":{\"visualType\":\"waterfallChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fact_Valuation.Scenario\"}],\"Y\":[{\"queryRef\":\"Sales.Base EV\"},{\"queryRef\":\"Sales.Upside EV\"},{\"queryRef\":\"Sales.Downside EV\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_Valuation\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Fact_Valuation.Scenario\",\"NativeReferenceName\":\"Scenario\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Base EV\"},\"Name\":\"Sales.Base EV\",\"NativeReferenceName\":\"Base EV\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Upside EV\"},\"Name\":\"Sales.Upside EV\",\"NativeReferenceName\":\"Upside EV\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Downside EV\"},\"Name\":\"Sales.Downside EV\",\"NativeReferenceName\":\"Downside EV\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Base EV\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 575,
+          "z": 5,
+          "width": 760,
+          "height": 305,
+          "config": "{\"name\":\"09_TBL_MNA\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":575,\"z\":5,\"width\":760,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Fact_MNA.Year\"},{\"queryRef\":\"Fact_MNA.DealKey\"},{\"queryRef\":\"Sales.Scenario Operating Profit\"},{\"queryRef\":\"Sales.CAPEX Payback\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Fact_MNA\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Year\"},\"Name\":\"Fact_MNA.Year\",\"NativeReferenceName\":\"Year\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DealKey\"},\"Name\":\"Fact_MNA.DealKey\",\"NativeReferenceName\":\"DealKey\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Scenario Operating Profit\"},\"Name\":\"Sales.Scenario Operating Profit\",\"NativeReferenceName\":\"Scenario Operating Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"CAPEX Payback\"},\"Name\":\"Sales.CAPEX Payback\",\"NativeReferenceName\":\"CAPEX Payback\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 575,
+          "z": 5,
+          "width": 792,
+          "height": 305,
+          "config": "{\"name\":\"09_TBL_Watchouts\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":575,\"z\":5,\"width\":792,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Evidence_Class.EvidenceClass\"},{\"queryRef\":\"Fact_Valuation.OutputBoundary\"},{\"queryRef\":\"Sales.Base EV\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Evidence_Class\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Fact_Valuation\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Evidence_Class.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"OutputBoundary\"},\"Name\":\"Fact_Valuation.OutputBoundary\",\"NativeReferenceName\":\"OutputBoundary\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Base EV\"},\"Name\":\"Sales.Base EV\",\"NativeReferenceName\":\"Base EV\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection11",
+      "displayName": "10 Controls, Evidence & Release",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 10,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"10_MSG_Banner\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Public Evidence Banner\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Public Evidence Banner\"},\"Name\":\"Sales.Public Evidence Banner\",\"NativeReferenceName\":\"Public Evidence Banner\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"10_KPI_DataVersion\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Data Version\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Data Version\"},\"Name\":\"Sales.Data Version\",\"NativeReferenceName\":\"Data Version\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"10_KPI_SourceCount\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Source File Count\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Source File Count\"},\"Name\":\"Sales.Source File Count\",\"NativeReferenceName\":\"Source File Count\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"10_KPI_EvidenceCoverage\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Evidence Coverage %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Evidence Coverage %\"},\"Name\":\"Sales.Evidence Coverage %\",\"NativeReferenceName\":\"Evidence Coverage %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"10_KPI_QAPassRate\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.QA Pass Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"QA Pass Rate\"},\"Name\":\"Sales.QA Pass Rate\",\"NativeReferenceName\":\"QA Pass Rate\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1100,
+          "y": 145,
+          "z": 20,
+          "width": 250,
+          "height": 90,
+          "config": "{\"name\":\"10_KPI_RevenueTie\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1100,\"y\":145,\"z\":20,\"width\":250,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Revenue Tie\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Revenue Tie\"},\"Name\":\"Sales.Revenue Tie\",\"NativeReferenceName\":\"Revenue Tie\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1365,
+          "y": 145,
+          "z": 20,
+          "width": 267,
+          "height": 90,
+          "config": "{\"name\":\"10_KPI_PVMResidual\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":145,\"z\":20,\"width\":267,\"height\":90}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.PVM Residual\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"PVM Residual\"},\"Name\":\"Sales.PVM Residual\",\"NativeReferenceName\":\"PVM Residual\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 255,
+          "z": 5,
+          "width": 760,
+          "height": 300,
+          "config": "{\"name\":\"10_TBL_Controls\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":255,\"z\":5,\"width\":760,\"height\":300}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Source_Control.ControlID\"},{\"queryRef\":\"Source_Control.ControlName\"},{\"queryRef\":\"Source_Control.Status\"},{\"queryRef\":\"Source_Control.EvidenceClass\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Source_Control\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ControlID\"},\"Name\":\"Source_Control.ControlID\",\"NativeReferenceName\":\"ControlID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ControlName\"},\"Name\":\"Source_Control.ControlName\",\"NativeReferenceName\":\"ControlName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Status\"},\"Name\":\"Source_Control.Status\",\"NativeReferenceName\":\"Status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Source_Control.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 255,
+          "z": 5,
+          "width": 792,
+          "height": 300,
+          "config": "{\"name\":\"10_TBL_Evidence\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":255,\"z\":5,\"width\":792,\"height\":300}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Evidence_Class.EvidenceClass\"},{\"queryRef\":\"Dim_Evidence_Class.Definition\"},{\"queryRef\":\"Dim_Evidence_Class.AllowedHeadline\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Evidence_Class\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Evidence_Class.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Definition\"},\"Name\":\"Dim_Evidence_Class.Definition\",\"NativeReferenceName\":\"Definition\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"AllowedHeadline\"},\"Name\":\"Dim_Evidence_Class.AllowedHeadline\",\"NativeReferenceName\":\"AllowedHeadline\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 575,
+          "z": 5,
+          "width": 760,
+          "height": 305,
+          "config": "{\"name\":\"10_TBL_Release\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":575,\"z\":5,\"width\":760,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Forecast_Version.ForecastVersionKey\"},{\"queryRef\":\"Dim_Forecast_Version.Status\"},{\"queryRef\":\"Dim_Forecast_Version.Eligibility\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Forecast_Version\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ForecastVersionKey\"},\"Name\":\"Dim_Forecast_Version.ForecastVersionKey\",\"NativeReferenceName\":\"ForecastVersionKey\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Status\"},\"Name\":\"Dim_Forecast_Version.Status\",\"NativeReferenceName\":\"Status\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Eligibility\"},\"Name\":\"Dim_Forecast_Version.Eligibility\",\"NativeReferenceName\":\"Eligibility\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 575,
+          "z": 5,
+          "width": 792,
+          "height": 305,
+          "config": "{\"name\":\"10_TBL_SourceTrace\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":575,\"z\":5,\"width\":792,\"height\":305}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Company.Company\"},{\"queryRef\":\"Dim_Company.EvidenceClass\"},{\"queryRef\":\"Dim_Company.SourceURL\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Company\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Company\"},\"Name\":\"Dim_Company.Company\",\"NativeReferenceName\":\"Company\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Company.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"SourceURL\"},\"Name\":\"Dim_Company.SourceURL\",\"NativeReferenceName\":\"SourceURL\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection12",
+      "displayName": "D01 Customer Detail",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 11,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D01_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D01_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D01_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D01_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"D01_MSG\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 10,
+          "width": 780,
+          "height": 300,
+          "config": "{\"name\":\"D01_CH_Trend\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":10,\"width\":780,\"height\":300}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.Contribution Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 145,
+          "z": 5,
+          "width": 792,
+          "height": 300,
+          "config": "{\"name\":\"D01_TBL\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":145,\"z\":5,\"width\":792,\"height\":300}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.CustomerName\"},{\"queryRef\":\"Dim_Customer.StrategicFlag\"},{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.Contribution Profit\"},{\"queryRef\":\"Sales.Contribution Margin %\"},{\"queryRef\":\"Sales.DSO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CustomerName\"},\"Name\":\"Dim_Customer.CustomerName\",\"NativeReferenceName\":\"CustomerName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"StrategicFlag\"},\"Name\":\"Dim_Customer.StrategicFlag\",\"NativeReferenceName\":\"StrategicFlag\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Margin %\"},\"Name\":\"Sales.Contribution Margin %\",\"NativeReferenceName\":\"Contribution Margin %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DSO\"},\"Name\":\"Sales.DSO\",\"NativeReferenceName\":\"DSO\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection13",
+      "displayName": "D02 Product Detail",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 12,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D02_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D02_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D02_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D02_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"D02_MSG\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 10,
+          "width": 780,
+          "height": 300,
+          "config": "{\"name\":\"D02_CH_Trend\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":10,\"width\":780,\"height\":300}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.Contribution Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 145,
+          "z": 5,
+          "width": 792,
+          "height": 300,
+          "config": "{\"name\":\"D02_TBL\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":145,\"z\":5,\"width\":792,\"height\":300}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Product.SKU\"},{\"queryRef\":\"Dim_Product.Product\"},{\"queryRef\":\"Dim_Product.Lifecycle\"},{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.Contribution Profit\"},{\"queryRef\":\"Sales.ASP\"},{\"queryRef\":\"Sales.Inventory Closing\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Product\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"SKU\"},\"Name\":\"Dim_Product.SKU\",\"NativeReferenceName\":\"SKU\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Product\"},\"Name\":\"Dim_Product.Product\",\"NativeReferenceName\":\"Product\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Lifecycle\"},\"Name\":\"Dim_Product.Lifecycle\",\"NativeReferenceName\":\"Lifecycle\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"ASP\"},\"Name\":\"Sales.ASP\",\"NativeReferenceName\":\"ASP\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Inventory Closing\"},\"Name\":\"Sales.Inventory Closing\",\"NativeReferenceName\":\"Inventory Closing\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection14",
+      "displayName": "D03 Channel Detail",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 13,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D03_F_Period\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 305,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D03_F_Scenario\",\"layouts\":[{\"id\":0,\"position\":{\"x\":305,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Scenario.Scenario\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Scenario\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Scenario\"},\"Name\":\"Dim_Scenario.Scenario\",\"NativeReferenceName\":\"Scenario\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 570,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D03_F_Channel\",\"layouts\":[{\"id\":0,\"position\":{\"x\":570,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 835,
+          "y": 20,
+          "z": 30,
+          "width": 250,
+          "height": 48,
+          "config": "{\"name\":\"D03_F_Region\",\"layouts\":[{\"id\":0,\"position\":{\"x\":835,\"y\":20,\"z\":30,\"width\":250,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Customer.Region\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Customer\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Dim_Customer.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"D03_MSG\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Management Message\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Management Message\"},\"Name\":\"Sales.Management Message\",\"NativeReferenceName\":\"Management Message\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 10,
+          "width": 780,
+          "height": 300,
+          "config": "{\"name\":\"D03_CH_Trend\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":10,\"width\":780,\"height\":300}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Date.YearMonth\"}],\"Y\":[{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.COGS\"},{\"queryRef\":\"Sales.Contribution Profit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"COGS\"},\"Name\":\"Sales.COGS\",\"NativeReferenceName\":\"COGS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 145,
+          "z": 5,
+          "width": 792,
+          "height": 300,
+          "config": "{\"name\":\"D03_TBL\",\"layouts\":[{\"id\":0,\"position\":{\"x\":840,\"y\":145,\"z\":5,\"width\":792,\"height\":300}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Channel.Channel\"},{\"queryRef\":\"Dim_Channel.ChannelGroup\"},{\"queryRef\":\"Sales.Net Revenue\"},{\"queryRef\":\"Sales.COGS\"},{\"queryRef\":\"Sales.Channel Fees\"},{\"queryRef\":\"Sales.Trade Spend\"},{\"queryRef\":\"Sales.Contribution Profit\"},{\"queryRef\":\"Sales.DSO\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Channel\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Channel\"},\"Name\":\"Dim_Channel.Channel\",\"NativeReferenceName\":\"Channel\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"ChannelGroup\"},\"Name\":\"Dim_Channel.ChannelGroup\",\"NativeReferenceName\":\"ChannelGroup\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"COGS\"},\"Name\":\"Sales.COGS\",\"NativeReferenceName\":\"COGS\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Channel Fees\"},\"Name\":\"Sales.Channel Fees\",\"NativeReferenceName\":\"Channel Fees\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Trade Spend\"},\"Name\":\"Sales.Trade Spend\",\"NativeReferenceName\":\"Trade Spend\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Contribution Profit\"},\"Name\":\"Sales.Contribution Profit\",\"NativeReferenceName\":\"Contribution Profit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"DSO\"},\"Name\":\"Sales.DSO\",\"NativeReferenceName\":\"DSO\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection15",
+      "displayName": "D04 KPI Source Trace",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 14,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 40,
+          "y": 82,
+          "z": 20,
+          "width": 1590,
+          "height": 48,
+          "config": "{\"name\":\"D04_MSG\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":82,\"z\":20,\"width\":1590,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Public Evidence Banner\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Public Evidence Banner\"},\"Name\":\"Sales.Public Evidence Banner\",\"NativeReferenceName\":\"Public Evidence Banner\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 40,
+          "y": 145,
+          "z": 5,
+          "width": 1592,
+          "height": 300,
+          "config": "{\"name\":\"D04_TBL\",\"layouts\":[{\"id\":0,\"position\":{\"x\":40,\"y\":145,\"z\":5,\"width\":1592,\"height\":300}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Evidence_Class.EvidenceClass\"},{\"queryRef\":\"Dim_Company.Company\"},{\"queryRef\":\"Source_Control.ControlName\"},{\"queryRef\":\"Source_Control.Status\"},{\"queryRef\":\"Sales.Evidence Coverage %\"},{\"queryRef\":\"Sales.QA Pass Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Evidence_Class\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Dim_Company\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Source_Control\",\"Type\":0},{\"Name\":\"t3\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Evidence_Class.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Company\"},\"Name\":\"Dim_Company.Company\",\"NativeReferenceName\":\"Company\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"ControlName\"},\"Name\":\"Source_Control.ControlName\",\"NativeReferenceName\":\"ControlName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Status\"},\"Name\":\"Source_Control.Status\",\"NativeReferenceName\":\"Status\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t3\"}},\"Property\":\"Evidence Coverage %\"},\"Name\":\"Sales.Evidence Coverage %\",\"NativeReferenceName\":\"Evidence Coverage %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t3\"}},\"Property\":\"QA Pass Rate\"},\"Name\":\"Sales.QA Pass Rate\",\"NativeReferenceName\":\"QA Pass Rate\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection16",
+      "displayName": "TT Financial Metric",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 15,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 20,
+          "width": 500,
+          "height": 120,
+          "config": "{\"name\":\"TT Financial Metric_KPI\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":20,\"z\":20,\"width\":500,\"height\":120}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 160,
+          "z": 5,
+          "width": 700,
+          "height": 200,
+          "config": "{\"name\":\"TT Financial Metric_CTX\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":160,\"z\":5,\"width\":700,\"height\":200}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"},{\"queryRef\":\"Dim_Evidence_Class.EvidenceClass\"},{\"queryRef\":\"Sales.Net Revenue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Dim_Evidence_Class\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Evidence_Class.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Net Revenue\"},\"Name\":\"Sales.Net Revenue\",\"NativeReferenceName\":\"Net Revenue\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection17",
+      "displayName": "TT PVM",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 16,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 20,
+          "width": 500,
+          "height": 120,
+          "config": "{\"name\":\"TT PVM_KPI\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":20,\"z\":20,\"width\":500,\"height\":120}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.PVM Residual\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"PVM Residual\"},\"Name\":\"Sales.PVM Residual\",\"NativeReferenceName\":\"PVM Residual\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 160,
+          "z": 5,
+          "width": 700,
+          "height": 200,
+          "config": "{\"name\":\"TT PVM_CTX\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":160,\"z\":5,\"width\":700,\"height\":200}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"},{\"queryRef\":\"Dim_Evidence_Class.EvidenceClass\"},{\"queryRef\":\"Sales.PVM Residual\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Dim_Evidence_Class\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Evidence_Class.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"PVM Residual\"},\"Name\":\"Sales.PVM Residual\",\"NativeReferenceName\":\"PVM Residual\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection18",
+      "displayName": "TT Commercial",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 17,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 20,
+          "width": 500,
+          "height": 120,
+          "config": "{\"name\":\"TT Commercial_KPI\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":20,\"z\":20,\"width\":500,\"height\":120}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Contribution Margin %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Contribution Margin %\"},\"Name\":\"Sales.Contribution Margin %\",\"NativeReferenceName\":\"Contribution Margin %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 160,
+          "z": 5,
+          "width": 700,
+          "height": 200,
+          "config": "{\"name\":\"TT Commercial_CTX\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":160,\"z\":5,\"width\":700,\"height\":200}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"},{\"queryRef\":\"Dim_Evidence_Class.EvidenceClass\"},{\"queryRef\":\"Sales.Contribution Margin %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Dim_Evidence_Class\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Evidence_Class.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Contribution Margin %\"},\"Name\":\"Sales.Contribution Margin %\",\"NativeReferenceName\":\"Contribution Margin %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection19",
+      "displayName": "TT Evidence",
+      "displayOption": 1,
+      "width": 1672,
+      "height": 941,
+      "ordinal": 18,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 20,
+          "width": 500,
+          "height": 120,
+          "config": "{\"name\":\"TT Evidence_KPI\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":20,\"z\":20,\"width\":500,\"height\":120}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Evidence Coverage %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Evidence Coverage %\"},\"Name\":\"Sales.Evidence Coverage %\",\"NativeReferenceName\":\"Evidence Coverage %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 160,
+          "z": 5,
+          "width": 700,
+          "height": 200,
+          "config": "{\"name\":\"TT Evidence_CTX\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":160,\"z\":5,\"width\":700,\"height\":200}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim_Date.YearMonth\"},{\"queryRef\":\"Dim_Evidence_Class.EvidenceClass\"},{\"queryRef\":\"Sales.Evidence Coverage %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Dim_Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Dim_Evidence_Class\",\"Type\":0},{\"Name\":\"t2\",\"Entity\":\"Sales\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"YearMonth\"},\"Name\":\"Dim_Date.YearMonth\",\"NativeReferenceName\":\"YearMonth\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"EvidenceClass\"},\"Name\":\"Dim_Evidence_Class.EvidenceClass\",\"NativeReferenceName\":\"EvidenceClass\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t2\"}},\"Property\":\"Evidence Coverage %\"},\"Name\":\"Sales.Evidence Coverage %\",\"NativeReferenceName\":\"Evidence Coverage %\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]"
+        }
+      ]
+    }
+  ]
+}

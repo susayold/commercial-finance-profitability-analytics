@@ -1,0 +1,3 @@
+<Measure Name="Average Inventory LTM">
+  <FormatString>#,0</FormatString>
+</Measure>

@@ -1,0 +1,100 @@
+table Fact_Valuation
+	lineageTag: be8e852f-d560-4ef6-bd62-78375ed8c2c0
+
+	column ValuationCaseKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ValuationCaseKey
+		lineageTag: fc608d06-9c9b-4c35-bb25-0a697bd5dc3e
+		annotation SummarizationSetBy = User
+
+	column CompanyKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CompanyKey
+		lineageTag: d8f829ec-36f3-4025-b444-56026d84ccf2
+		annotation SummarizationSetBy = User
+
+	column Scenario
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Scenario
+		lineageTag: bc7228c6-155a-4e13-a6f1-d83142543c04
+		annotation SummarizationSetBy = User
+
+	column ForecastYear
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: ForecastYear
+		lineageTag: 49592e8b-6fbb-40d9-a2aa-4e90b57b19f0
+		annotation SummarizationSetBy = User
+
+	column WACC
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: WACC
+		lineageTag: 913fd0d7-b275-47e0-b658-682e235c368d
+		annotation SummarizationSetBy = User
+
+	column TerminalGrowth
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: TerminalGrowth
+		lineageTag: 790fc3ec-2587-4895-90ef-7e4655f65d47
+		annotation SummarizationSetBy = User
+
+	column PVExplicitFCFFVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: PVExplicitFCFFVNDBn
+		lineageTag: d40bf35c-4ff5-4259-8fe7-67344c1e16a6
+		annotation SummarizationSetBy = User
+
+	column PVTerminalVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: PVTerminalVNDBn
+		lineageTag: de316f2d-7bbd-4e86-bb88-0435541b8581
+		annotation SummarizationSetBy = User
+
+	column EnterpriseValueVNDBn
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: EnterpriseValueVNDBn
+		lineageTag: cfdd5fc8-617e-4eb7-89c1-1d75504d395d
+		annotation SummarizationSetBy = User
+
+	column OutputBoundary
+		dataType: string
+		summarizeBy: none
+		sourceColumn: OutputBoundary
+		lineageTag: 4859ca47-1ecd-489e-ab8b-2957ac1f7691
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 1efee2b2-14f5-4bab-9d34-042001d67e41
+		annotation SummarizationSetBy = User
+
+	partition Fact_Valuation = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\fact_valuation.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"ValuationCaseKey", type text}, {"CompanyKey", type text}, {"Scenario", type text}, {"ForecastYear", Int64.Type}, {"WACC", type number}, {"TerminalGrowth", type number}, {"PVExplicitFCFFVNDBn", type number}, {"PVTerminalVNDBn", type number}, {"EnterpriseValueVNDBn", type number}, {"OutputBoundary", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

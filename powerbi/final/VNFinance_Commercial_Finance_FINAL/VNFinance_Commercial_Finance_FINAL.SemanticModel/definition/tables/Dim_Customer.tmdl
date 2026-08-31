@@ -1,0 +1,73 @@
+table Dim_Customer
+	lineageTag: 63fa4048-d6e0-4abe-8c49-b78fcc228c20
+
+	column CustomerKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+		lineageTag: 5c36f323-25fb-48f4-b150-95c907fd12fd
+		annotation SummarizationSetBy = User
+
+	column CustomerID
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CustomerID
+		lineageTag: af915e0a-ad35-4c6f-bf7a-fc7ffe9f5e11
+		annotation SummarizationSetBy = User
+
+	column CustomerName
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CustomerName
+		lineageTag: 3c3de199-d51b-46fa-a6d4-2c0242f0ce02
+		annotation SummarizationSetBy = User
+
+	column Segment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Segment
+		lineageTag: 2d8b0d25-cbe7-4cb0-86cc-2d33088f1185
+		annotation SummarizationSetBy = User
+
+	column Region
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Region
+		lineageTag: 157d4a19-af5e-47a6-9611-e984a5a600c2
+		annotation SummarizationSetBy = User
+
+	column StrategicFlag
+		dataType: string
+		summarizeBy: none
+		sourceColumn: StrategicFlag
+		lineageTag: a58ae46d-3463-4981-964b-ea3c7806b173
+		annotation SummarizationSetBy = User
+
+	column PaymentTermsDays
+		dataType: int64
+		formatString: 0.0
+		summarizeBy: sum
+		sourceColumn: PaymentTermsDays
+		lineageTag: e25be2c9-6284-4063-9c55-d88354698883
+		annotation SummarizationSetBy = User
+
+	column MarginHurdle
+		dataType: double
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: MarginHurdle
+		lineageTag: 5edebb49-4def-4890-bbd5-fe8e0f57c7a7
+		annotation SummarizationSetBy = User
+
+	partition Dim_Customer = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_customer.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"CustomerKey", type text}, {"CustomerID", type text}, {"CustomerName", type text}, {"Segment", type text}, {"Region", type text}, {"StrategicFlag", type text}, {"PaymentTermsDays", Int64.Type}, {"MarginHurdle", type number}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

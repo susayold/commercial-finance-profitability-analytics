@@ -1,0 +1,13 @@
+{
+  "name": "Elasticity",
+  "dataType": "double",
+  "sourceColumn": "Elasticity",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "0.0%"
+}

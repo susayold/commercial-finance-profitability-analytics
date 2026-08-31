@@ -1,0 +1,13 @@
+{
+  "name": "OpeningAPVND",
+  "dataType": "double",
+  "sourceColumn": "OpeningAPVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

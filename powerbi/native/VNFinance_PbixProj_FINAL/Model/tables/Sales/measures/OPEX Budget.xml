@@ -1,0 +1,3 @@
+<Measure Name="OPEX Budget">
+  <FormatString>#,0</FormatString>
+</Measure>

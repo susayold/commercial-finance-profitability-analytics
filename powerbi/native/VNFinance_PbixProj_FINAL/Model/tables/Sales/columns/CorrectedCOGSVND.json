@@ -1,0 +1,13 @@
+{
+  "name": "CorrectedCOGSVND",
+  "dataType": "double",
+  "sourceColumn": "CorrectedCOGSVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

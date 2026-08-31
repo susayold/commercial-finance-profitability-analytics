@@ -1,0 +1,3 @@
+<Measure Name="Discounts">
+  <FormatString>#,0</FormatString>
+</Measure>

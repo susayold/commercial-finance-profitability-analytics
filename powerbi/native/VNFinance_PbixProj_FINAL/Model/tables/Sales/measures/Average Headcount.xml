@@ -1,0 +1,3 @@
+<Measure Name="Average Headcount">
+  <FormatString>#,0.0</FormatString>
+</Measure>

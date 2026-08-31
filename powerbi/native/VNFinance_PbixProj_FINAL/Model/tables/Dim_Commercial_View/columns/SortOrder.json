@@ -1,0 +1,12 @@
+{
+  "name": "SortOrder",
+  "dataType": "string",
+  "sourceColumn": "SortOrder",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

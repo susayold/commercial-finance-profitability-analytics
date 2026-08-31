@@ -1,0 +1,20 @@
+{
+  "id": 0,
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "name": "SharedResources",
+        "type": 2,
+        "items": [
+          {
+            "name": "VNFinance_Final_Theme",
+            "path": "BaseThemes/VNFinance_Final_Theme.json",
+            "type": 202
+          }
+        ]
+      }
+    }
+  ]
+}

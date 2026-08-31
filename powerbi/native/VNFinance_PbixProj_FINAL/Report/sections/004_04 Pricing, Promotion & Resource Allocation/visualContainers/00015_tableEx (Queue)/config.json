@@ -1,0 +1,100 @@
+{
+  "name": "04_TBL_DecisionQueue",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 825,
+        "y": 575,
+        "z": 5,
+        "width": 807,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Fact_Budget_Allocation.ChannelKey"
+        },
+        {
+          "queryRef": "Fact_Budget_Allocation.Decision"
+        },
+        {
+          "queryRef": "Fact_Budget_Allocation.EvidenceClass"
+        },
+        {
+          "queryRef": "Sales.Incremental Contribution"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Budget_Allocation",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ChannelKey"
+          },
+          "Name": "Fact_Budget_Allocation.ChannelKey",
+          "NativeReferenceName": "ChannelKey"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Decision"
+          },
+          "Name": "Fact_Budget_Allocation.Decision",
+          "NativeReferenceName": "Decision"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "EvidenceClass"
+          },
+          "Name": "Fact_Budget_Allocation.EvidenceClass",
+          "NativeReferenceName": "EvidenceClass"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Incremental Contribution"
+          },
+          "Name": "Sales.Incremental Contribution",
+          "NativeReferenceName": "Incremental Contribution"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

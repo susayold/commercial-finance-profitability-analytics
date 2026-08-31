@@ -1,0 +1,52 @@
+table Dim_Cost_Center
+	lineageTag: 797cefc3-6c0e-4861-a763-9ecb4555ab4a
+
+	column CostCenterKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CostCenterKey
+		lineageTag: 2360efc5-98c0-49e2-8797-85e9cf9c9fb3
+		annotation SummarizationSetBy = User
+
+	column CostCenter
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CostCenter
+		lineageTag: 3e6de073-36d4-4f51-a625-90e827b07559
+		annotation SummarizationSetBy = User
+
+	column Function
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Function
+		lineageTag: 466bca7f-9efc-40dd-bef7-462f76056b08
+		annotation SummarizationSetBy = User
+
+	column CompanyKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: CompanyKey
+		lineageTag: 68bfeb70-782c-4441-9694-7a9d3f942b11
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: ae308821-f5af-4f0a-9329-bcf7ab07b034
+		annotation SummarizationSetBy = User
+
+	partition Dim_Cost_Center = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_cost_center.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"CostCenterKey", type text}, {"CostCenter", type text}, {"Function", type text}, {"CompanyKey", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

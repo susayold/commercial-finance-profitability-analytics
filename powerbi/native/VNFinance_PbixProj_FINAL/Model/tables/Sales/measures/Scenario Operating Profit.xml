@@ -1,0 +1,3 @@
+<Measure Name="Scenario Operating Profit">
+  <FormatString>#,0</FormatString>
+</Measure>

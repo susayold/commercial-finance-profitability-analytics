@@ -1,0 +1,115 @@
+{
+  "name": "05_TBL_Drivers",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 575,
+        "z": 5,
+        "width": 780,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Fact_Forecast.ScenarioKey"
+        },
+        {
+          "queryRef": "Fact_Forecast.ForecastVersionKey"
+        },
+        {
+          "queryRef": "Sales.Scenario Revenue"
+        },
+        {
+          "queryRef": "Sales.Scenario CM %"
+        },
+        {
+          "queryRef": "Sales.Scenario CCC"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Fact_Forecast",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ScenarioKey"
+          },
+          "Name": "Fact_Forecast.ScenarioKey",
+          "NativeReferenceName": "ScenarioKey"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "ForecastVersionKey"
+          },
+          "Name": "Fact_Forecast.ForecastVersionKey",
+          "NativeReferenceName": "ForecastVersionKey"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Scenario Revenue"
+          },
+          "Name": "Sales.Scenario Revenue",
+          "NativeReferenceName": "Scenario Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Scenario CM %"
+          },
+          "Name": "Sales.Scenario CM %",
+          "NativeReferenceName": "Scenario CM %"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Scenario CCC"
+          },
+          "Name": "Sales.Scenario CCC",
+          "NativeReferenceName": "Scenario CCC"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

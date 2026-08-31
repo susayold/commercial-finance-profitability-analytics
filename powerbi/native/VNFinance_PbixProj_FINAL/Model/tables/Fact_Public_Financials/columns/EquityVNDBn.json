@@ -1,0 +1,13 @@
+{
+  "name": "EquityVNDBn",
+  "dataType": "double",
+  "sourceColumn": "EquityVNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

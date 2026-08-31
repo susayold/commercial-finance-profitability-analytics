@@ -1,0 +1,13 @@
+{
+  "name": "MonthStart",
+  "dataType": "dateTime",
+  "sourceColumn": "MonthStart",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "sortByColumn": "DateKey"
+}

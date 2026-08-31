@@ -1,0 +1,50 @@
+{
+  "name": "07_KPI_CAPEX",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 1100,
+        "y": 145,
+        "z": 20,
+        "width": 250,
+        "height": 90
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.CAPEX Actual"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "CAPEX Actual"
+          },
+          "Name": "Sales.CAPEX Actual",
+          "NativeReferenceName": "CAPEX Actual"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

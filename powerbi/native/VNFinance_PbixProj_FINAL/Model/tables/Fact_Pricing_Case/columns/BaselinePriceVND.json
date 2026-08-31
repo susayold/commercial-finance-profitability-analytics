@@ -1,0 +1,13 @@
+{
+  "name": "BaselinePriceVND",
+  "dataType": "double",
+  "sourceColumn": "BaselinePriceVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

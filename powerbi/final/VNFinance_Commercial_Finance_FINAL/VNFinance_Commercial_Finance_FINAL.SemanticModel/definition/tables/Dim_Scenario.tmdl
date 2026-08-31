@@ -1,0 +1,51 @@
+table Dim_Scenario
+	lineageTag: 8d1c5cb3-6157-4f09-a8ce-e4f97dfc894d
+
+	column ScenarioKey
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: ScenarioKey
+		lineageTag: a0f7efda-81a4-4042-a3ae-e0603c04ae14
+		annotation SummarizationSetBy = User
+
+	column Scenario
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Scenario
+		lineageTag: c1f68f84-8165-44f8-9257-6efc6ab11f59
+		annotation SummarizationSetBy = User
+
+	column ScenarioGroup
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ScenarioGroup
+		lineageTag: 51465587-aaa4-48be-99aa-01cbfb355b74
+		annotation SummarizationSetBy = User
+
+	column IsHistoricalActual
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: IsHistoricalActual
+		lineageTag: 419a5771-e742-4fa1-8e51-35f49eaba86c
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: cfc29295-72e6-421d-a2c0-0b3c1b03efae
+		annotation SummarizationSetBy = User
+
+	partition Dim_Scenario = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_scenario.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"ScenarioKey", type text}, {"Scenario", type text}, {"ScenarioGroup", type text}, {"IsHistoricalActual", type logical}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

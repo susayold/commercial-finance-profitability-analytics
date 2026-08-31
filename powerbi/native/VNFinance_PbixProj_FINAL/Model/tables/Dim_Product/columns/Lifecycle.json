@@ -1,0 +1,12 @@
+{
+  "name": "Lifecycle",
+  "dataType": "string",
+  "sourceColumn": "Lifecycle",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

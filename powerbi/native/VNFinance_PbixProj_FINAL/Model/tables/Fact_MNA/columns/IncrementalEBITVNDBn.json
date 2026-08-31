@@ -1,0 +1,13 @@
+{
+  "name": "IncrementalEBITVNDBn",
+  "dataType": "double",
+  "sourceColumn": "IncrementalEBITVNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

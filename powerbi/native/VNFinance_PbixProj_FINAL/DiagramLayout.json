@@ -1,0 +1,381 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 40,
+            "y": 40
+          },
+          "nodeIndex": "Dim_Date",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 300,
+            "y": 40
+          },
+          "nodeIndex": "Dim_Product",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 560,
+            "y": 40
+          },
+          "nodeIndex": "Dim_Customer",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 820,
+            "y": 40
+          },
+          "nodeIndex": "Dim_Channel",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 40,
+            "y": 280
+          },
+          "nodeIndex": "Dim_Scenario",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 300,
+            "y": 280
+          },
+          "nodeIndex": "Dim_Forecast_Version",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 560,
+            "y": 280
+          },
+          "nodeIndex": "Dim_Cost_Center",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 820,
+            "y": 280
+          },
+          "nodeIndex": "Dim_CAPEX_Project",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 40,
+            "y": 520
+          },
+          "nodeIndex": "Dim_Company",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 300,
+            "y": 520
+          },
+          "nodeIndex": "Dim_Evidence_Class",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 560,
+            "y": 520
+          },
+          "nodeIndex": "Dim_Commercial_View",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 820,
+            "y": 520
+          },
+          "nodeIndex": "Sales",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 40,
+            "y": 760
+          },
+          "nodeIndex": "Fact_Commercial_Cost",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 300,
+            "y": 760
+          },
+          "nodeIndex": "Fact_Budget",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 560,
+            "y": 760
+          },
+          "nodeIndex": "Fact_Forecast",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 820,
+            "y": 760
+          },
+          "nodeIndex": "Fact_PVM_Bridge",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 40,
+            "y": 1000
+          },
+          "nodeIndex": "Fact_AR",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 300,
+            "y": 1000
+          },
+          "nodeIndex": "Fact_Inventory",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 560,
+            "y": 1000
+          },
+          "nodeIndex": "Fact_AP",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 19
+        },
+        {
+          "location": {
+            "x": 820,
+            "y": 1000
+          },
+          "nodeIndex": "Fact_Debt_Liquidity",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 40,
+            "y": 1240
+          },
+          "nodeIndex": "Fact_Promotion",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 300,
+            "y": 1240
+          },
+          "nodeIndex": "Fact_Pricing_Case",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 560,
+            "y": 1240
+          },
+          "nodeIndex": "Fact_Budget_Allocation",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 820,
+            "y": 1240
+          },
+          "nodeIndex": "Fact_OPEX_Headcount",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 24
+        },
+        {
+          "location": {
+            "x": 40,
+            "y": 1480
+          },
+          "nodeIndex": "Fact_CAPEX",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 25
+        },
+        {
+          "location": {
+            "x": 300,
+            "y": 1480
+          },
+          "nodeIndex": "Fact_Public_Financials",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 26
+        },
+        {
+          "location": {
+            "x": 560,
+            "y": 1480
+          },
+          "nodeIndex": "Fact_Public_Cashflow",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 27
+        },
+        {
+          "location": {
+            "x": 820,
+            "y": 1480
+          },
+          "nodeIndex": "Fact_Valuation",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 28
+        },
+        {
+          "location": {
+            "x": 40,
+            "y": 1720
+          },
+          "nodeIndex": "Fact_MNA",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 29
+        },
+        {
+          "location": {
+            "x": 300,
+            "y": 1720
+          },
+          "nodeIndex": "Source_Control",
+          "size": {
+            "height": 200,
+            "width": 220
+          },
+          "zIndex": 30
+        }
+      ],
+      "name": "Finance Model",
+      "zoomValue": 75,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false
+    }
+  ],
+  "selectedDiagram": "Finance Model",
+  "defaultDiagram": "Finance Model"
+}

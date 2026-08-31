@@ -1,0 +1,50 @@
+table Dim_Commercial_View
+	lineageTag: ab293675-0922-4bd7-bd9a-bac8eb992430
+
+	column ViewKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ViewKey
+		lineageTag: 6032132c-68c8-4f38-88ec-b3c13117e3be
+		annotation SummarizationSetBy = User
+
+	column View
+		dataType: string
+		summarizeBy: none
+		sourceColumn: View
+		lineageTag: b63f34d3-c6be-4cfe-9b3c-079d27e0ca0e
+		annotation SummarizationSetBy = User
+
+	column FieldName
+		dataType: string
+		summarizeBy: none
+		sourceColumn: FieldName
+		lineageTag: 9e3a6643-1ed3-48c8-914b-013e1c5b2f0e
+		annotation SummarizationSetBy = User
+
+	column SortOrder
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SortOrder
+		lineageTag: 8bfaa958-9a12-447b-8ed4-486721ee5666
+		annotation SummarizationSetBy = User
+
+	column EvidenceClass
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: EvidenceClass
+		lineageTag: 61b0aa2d-5f88-4120-ab72-38216ba3dc71
+		annotation SummarizationSetBy = User
+
+	partition Dim_Commercial_View = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(DataRoot & "\\dim_commercial_view.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"ViewKey", type text}, {"View", type text}, {"FieldName", type text}, {"SortOrder", type text}, {"EvidenceClass", type text}}, "en-US")
+			in
+			    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,145 @@
+{
+  "name": "D02_TBL",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 145,
+        "z": 5,
+        "width": 792,
+        "height": 300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Product.SKU"
+        },
+        {
+          "queryRef": "Dim_Product.Product"
+        },
+        {
+          "queryRef": "Dim_Product.Lifecycle"
+        },
+        {
+          "queryRef": "Sales.Net Revenue"
+        },
+        {
+          "queryRef": "Sales.Contribution Profit"
+        },
+        {
+          "queryRef": "Sales.ASP"
+        },
+        {
+          "queryRef": "Sales.Inventory Closing"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Product",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "SKU"
+          },
+          "Name": "Dim_Product.SKU",
+          "NativeReferenceName": "SKU"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Product"
+          },
+          "Name": "Dim_Product.Product",
+          "NativeReferenceName": "Product"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Lifecycle"
+          },
+          "Name": "Dim_Product.Lifecycle",
+          "NativeReferenceName": "Lifecycle"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Net Revenue"
+          },
+          "Name": "Sales.Net Revenue",
+          "NativeReferenceName": "Net Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Contribution Profit"
+          },
+          "Name": "Sales.Contribution Profit",
+          "NativeReferenceName": "Contribution Profit"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "ASP"
+          },
+          "Name": "Sales.ASP",
+          "NativeReferenceName": "ASP"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Inventory Closing"
+          },
+          "Name": "Sales.Inventory Closing",
+          "NativeReferenceName": "Inventory Closing"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

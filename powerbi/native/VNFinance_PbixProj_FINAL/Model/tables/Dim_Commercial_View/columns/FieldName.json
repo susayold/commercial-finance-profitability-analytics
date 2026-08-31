@@ -1,0 +1,12 @@
+{
+  "name": "FieldName",
+  "dataType": "string",
+  "sourceColumn": "FieldName",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

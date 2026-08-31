@@ -1,0 +1,50 @@
+{
+  "name": "TT Evidence_KPI",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 20,
+        "y": 20,
+        "z": 20,
+        "width": 500,
+        "height": 120
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.Evidence Coverage %"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Evidence Coverage %"
+          },
+          "Name": "Sales.Evidence Coverage %",
+          "NativeReferenceName": "Evidence Coverage %"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

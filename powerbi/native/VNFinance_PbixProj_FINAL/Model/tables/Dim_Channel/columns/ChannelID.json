@@ -1,0 +1,12 @@
+{
+  "name": "ChannelID",
+  "dataType": "string",
+  "sourceColumn": "ChannelID",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ]
+}

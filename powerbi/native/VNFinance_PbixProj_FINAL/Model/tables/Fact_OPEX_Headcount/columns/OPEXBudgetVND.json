@@ -1,0 +1,13 @@
+{
+  "name": "OPEXBudgetVND",
+  "dataType": "double",
+  "sourceColumn": "OPEXBudgetVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

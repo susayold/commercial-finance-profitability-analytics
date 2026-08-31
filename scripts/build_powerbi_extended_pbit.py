@@ -63,9 +63,11 @@ def table_obj(builder, name: str, spec: dict) -> dict:
 
 
 def measure_objs(builder) -> list[dict]:
+    # Final builders may attach a display-folder as a fourth tuple element;
+    # the PBIT container only needs the first three fields.
     return [
-        {"name": name, "formatString": fmt, "expression": dax + "\n"}
-        for name, dax, fmt in builder.MEASURES
+        {"name": item[0], "formatString": item[2], "expression": item[1] + "\n", **({"displayFolder": item[3]} if len(item) > 3 else {})}
+        for item in builder.MEASURES
     ]
 
 
@@ -122,14 +124,12 @@ def main() -> int:
     with zipfile.ZipFile(args.base, "r") as source:
         model = json.loads(source.read("DataModelSchema"))
         model_root = model["model"]
-        existing_tables = {table["name"]: table for table in model_root.get("tables", [])}
-
-        # Keep the existing 15-table objects as the tested baseline, then add
-        # the five first-class planning/evidence tables from the generator.
-        for table_name, spec in builder.TABLES.items():
-            if table_name not in existing_tables:
-                existing_tables[table_name] = table_obj(builder, table_name, spec)
-        model_root["tables"] = [existing_tables[name] for name in builder.TABLES]
+        # Replace the template's legacy fixture schema wholesale.  Keeping an
+        # old ``Sales`` table and merely adding new tables would leave stale
+        # columns (and make the explicit final_v1 measures invalid).  The
+        # template is used only as a known-good Desktop container/header;
+        # final_v1 owns the complete semantic model.
+        model_root["tables"] = [table_obj(builder, table_name, spec) for table_name, spec in builder.TABLES.items()]
         sales = next(table for table in model_root["tables"] if table["name"] == "Sales")
         sales["measures"] = measure_objs(builder)
         model_root["relationships"] = [

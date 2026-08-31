@@ -1,0 +1,3 @@
+<Measure Name="OPEX Forecast">
+  <FormatString>#,0</FormatString>
+</Measure>

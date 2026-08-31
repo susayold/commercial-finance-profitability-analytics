@@ -1,0 +1,145 @@
+{
+  "name": "03_TBL_Economics",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 40,
+        "y": 575,
+        "z": 5,
+        "width": 1592,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Customer.CustomerName"
+        },
+        {
+          "queryRef": "Dim_Customer.Segment"
+        },
+        {
+          "queryRef": "Dim_Customer.StrategicFlag"
+        },
+        {
+          "queryRef": "Sales.Net Revenue"
+        },
+        {
+          "queryRef": "Sales.Contribution Profit"
+        },
+        {
+          "queryRef": "Sales.Contribution Margin %"
+        },
+        {
+          "queryRef": "Sales.DSO"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Customer",
+          "Type": 0
+        },
+        {
+          "Name": "t1",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "CustomerName"
+          },
+          "Name": "Dim_Customer.CustomerName",
+          "NativeReferenceName": "CustomerName"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Segment"
+          },
+          "Name": "Dim_Customer.Segment",
+          "NativeReferenceName": "Segment"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "StrategicFlag"
+          },
+          "Name": "Dim_Customer.StrategicFlag",
+          "NativeReferenceName": "StrategicFlag"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Net Revenue"
+          },
+          "Name": "Sales.Net Revenue",
+          "NativeReferenceName": "Net Revenue"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Contribution Profit"
+          },
+          "Name": "Sales.Contribution Profit",
+          "NativeReferenceName": "Contribution Profit"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "Contribution Margin %"
+          },
+          "Name": "Sales.Contribution Margin %",
+          "NativeReferenceName": "Contribution Margin %"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t1"
+              }
+            },
+            "Property": "DSO"
+          },
+          "Name": "Sales.DSO",
+          "NativeReferenceName": "DSO"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

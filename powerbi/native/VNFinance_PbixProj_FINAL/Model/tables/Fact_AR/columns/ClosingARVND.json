@@ -1,0 +1,13 @@
+{
+  "name": "ClosingARVND",
+  "dataType": "double",
+  "sourceColumn": "ClosingARVND",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "CFO VNDBn",
+  "dataType": "double",
+  "sourceColumn": "CFO VNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

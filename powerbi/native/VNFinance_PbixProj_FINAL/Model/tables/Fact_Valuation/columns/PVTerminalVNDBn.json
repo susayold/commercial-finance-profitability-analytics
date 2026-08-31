@@ -1,0 +1,13 @@
+{
+  "name": "PVTerminalVNDBn",
+  "dataType": "double",
+  "sourceColumn": "PVTerminalVNDBn",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    }
+  ],
+  "formatString": "#,0"
+}

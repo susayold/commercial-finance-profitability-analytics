@@ -1,0 +1,1 @@
+CALCULATE ( AVERAGE ( Fact_Valuation[EnterpriseValueVNDBn] ), Fact_Valuation[Scenario] = "Base", Fact_Valuation[WACC] = 0.14, Fact_Valuation[TerminalGrowth] = 0.02 )

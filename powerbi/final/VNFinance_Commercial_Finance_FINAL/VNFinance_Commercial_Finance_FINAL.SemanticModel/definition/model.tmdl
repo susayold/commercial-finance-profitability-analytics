@@ -1,0 +1,41 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Dim_Date
+ref table Dim_Product
+ref table Dim_Customer
+ref table Dim_Channel
+ref table Dim_Scenario
+ref table Dim_Forecast_Version
+ref table Dim_Cost_Center
+ref table Dim_CAPEX_Project
+ref table Dim_Company
+ref table Dim_Evidence_Class
+ref table Dim_Commercial_View
+ref table Sales
+ref table Fact_Commercial_Cost
+ref table Fact_Budget
+ref table Fact_Forecast
+ref table Fact_PVM_Bridge
+ref table Fact_AR
+ref table Fact_Inventory
+ref table Fact_AP
+ref table Fact_Debt_Liquidity
+ref table Fact_Promotion
+ref table Fact_Pricing_Case
+ref table Fact_Budget_Allocation
+ref table Fact_OPEX_Headcount
+ref table Fact_CAPEX
+ref table Fact_Public_Financials
+ref table Fact_Public_Cashflow
+ref table Fact_Valuation
+ref table Fact_MNA
+ref table Source_Control

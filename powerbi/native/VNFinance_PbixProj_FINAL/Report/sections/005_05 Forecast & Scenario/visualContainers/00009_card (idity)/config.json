@@ -1,0 +1,50 @@
+{
+  "name": "05_KPI_Liquidity",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 1100,
+        "y": 145,
+        "z": 20,
+        "width": 250,
+        "height": 90
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Sales.Scenario Liquidity Headroom"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Sales",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Scenario Liquidity Headroom"
+          },
+          "Name": "Sales.Scenario Liquidity Headroom",
+          "NativeReferenceName": "Scenario Liquidity Headroom"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "name": "10_TBL_SourceTrace",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 840,
+        "y": 575,
+        "z": 5,
+        "width": 792,
+        "height": 305
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "Dim_Company.Company"
+        },
+        {
+          "queryRef": "Dim_Company.EvidenceClass"
+        },
+        {
+          "queryRef": "Dim_Company.SourceURL"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "t0",
+          "Entity": "Dim_Company",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Company"
+          },
+          "Name": "Dim_Company.Company",
+          "NativeReferenceName": "Company"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "EvidenceClass"
+          },
+          "Name": "Dim_Company.EvidenceClass",
+          "NativeReferenceName": "EvidenceClass"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "SourceURL"
+          },
+          "Name": "Dim_Company.SourceURL",
+          "NativeReferenceName": "SourceURL"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
