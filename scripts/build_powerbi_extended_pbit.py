@@ -147,10 +147,15 @@ def main() -> int:
         # PBIT JSON parts are UTF-16LE (without a BOM) in the Desktop-created
         # container.  Keeping that encoding is required; a valid UTF-8 JSON
         # document is still rejected by Desktop as an invalid report file.
+        theme_path = getattr(builder, "THEME_PATH", args.builder.resolve().parents[1] / "powerbi" / "theme" / "VNFinance_Final_Theme.json")
         replacements = {
             "DataModelSchema": json.dumps(model, indent=2, ensure_ascii=False).encode("utf-16le"),
             "Report/Layout": json.dumps(layout, separators=(",", ":"), ensure_ascii=False).encode("utf-16le"),
             "DiagramLayout": json.dumps(diagram, separators=(",", ":"), ensure_ascii=False).encode("utf-16le"),
+            # Keep the native container's known-good resource name, but replace
+            # its contents with the final navy/teal design system. This avoids
+            # a PBIT opening with Desktop's generic CY19SU12 palette.
+            "Report/StaticResources/SharedResources/BaseThemes/CY19SU12.json": theme_path.read_bytes(),
         }
         # Preserve the original entry order and compression metadata. Desktop
         # is tolerant of ordinary ZIP order, but keeping the native container
