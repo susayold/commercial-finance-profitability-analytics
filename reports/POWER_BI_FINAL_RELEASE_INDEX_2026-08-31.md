@@ -2,7 +2,7 @@
 
 ## One-click review
 
-- GitHub commit: https://github.com/susayold/commercial-finance-profitability-analytics/commit/2895f925aeccf64084107bada85dce9cf6e9353b
+- GitHub main: https://github.com/susayold/commercial-finance-profitability-analytics/tree/main
 - PBIP source: https://github.com/susayold/commercial-finance-profitability-analytics/tree/main/powerbi/final/VNFinance_Commercial_Finance_FINAL
 - PBIT template: https://drive.google.com/file/d/1qCGpBNX65h82LhnQlAvjfH94bVT2dUJH/view?usp=drivesdk
 - Full source/data/code archive: https://drive.google.com/file/d/1hr7u-S_BiGf0mRFdF_IXMIZ9WnDHk_cc/view?usp=drivesdk
