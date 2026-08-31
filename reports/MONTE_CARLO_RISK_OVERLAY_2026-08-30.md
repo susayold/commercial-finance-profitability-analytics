@@ -11,15 +11,15 @@ The risk overlay quantifies uncertainty around the Base planning case. It is a d
 
 | Driver | Distribution | Center | Dispersion / floor |
 |---|---|---:|---:|
-| Revenue | Normal | VND 80.1bn | σ VND 3.0bn |
-| EBITDA proxy | Normal | VND 58.5bn | σ VND 3.8bn |
-| EBITDA proxy margin | Normal | 29.7% | σ 1.8pp |
-| CCC | Normal, floored | 54.8 days | σ 7.0 days; floor 20 days |
+| Revenue | Normal | VND 82.5bn | σ VND 3.0bn |
+| EBITDA proxy | Normal | VND 12.9bn | σ VND 1.8bn |
+| EBITDA proxy margin | Normal | 15.6% | σ 1.8pp |
+| CCC | Normal, floored | 54.0 days | σ 7.0 days; floor 20 days |
 
 - 5,000 draws are generated with a deterministic xorshift seed of 20260830.
 - The variables are simulated independently for a transparent portfolio demonstration; a production model should estimate correlations from approved history.
-- Downside thresholds are taken from the existing scenario lens: revenue below VND 76.9bn, EBITDA proxy below VND 53.1bn and CCC above 68.8 days.
-- The 25% contribution-margin hurdle is used as the margin risk threshold.
+- Downside thresholds are taken from the approved scenario lens: revenue below VND 76.9bn, EBITDA proxy below VND 3.5bn and CCC above 68.0 days.
+- The EBITDA-proxy-margin risk threshold is 5.0%; the separate 25% contribution-margin hurdle remains a channel decision guardrail.
 - Percentiles use the sorted empirical sample; probabilities are breached-draw count divided by 5,000.
 
 ## Percentile output
@@ -31,7 +31,7 @@ The risk overlay quantifies uncertainty around the Base planning case. It is a d
 | EBITDA proxy margin | 26.8035% | 28.5405% | 29.6902% | 30.8998% | 32.6302% | 0.44% below 25% |
 | CCC (days) | 43.3615 | 50.2968 | 55.0043 | 59.7676 | 66.5158 | 2.32% above 68.8 |
 
-Joint downside probability — revenue < 76.9bn, EBITDA proxy < 53.1bn and CCC > 68.8 days — is 0.04% under the independent synthetic assumptions.
+Joint downside probability — revenue < 76.9bn, EBITDA proxy < 3.5bn and CCC > 68.0 days — is shown under the independent synthetic assumptions.
 
 ## Finance interpretation
 
@@ -46,7 +46,7 @@ Joint downside probability — revenue < 76.9bn, EBITDA proxy < 53.1bn and CCC >
 |---|---|
 | Revenue breach probability > 15% | Freeze discretionary growth spend; refresh demand drivers |
 | EBITDA breach probability > 10% | Rebuild price/volume/mix and cost bridge |
-| Margin breach probability > 5% | Stop sub-hurdle promotions and require CFO exception |
+| EBITDA proxy margin breach probability > 5% | Stop sub-hurdle promotions and require CFO exception |
 | CCC breach probability > 5% | Launch weekly AR/inventory/AP cash call |
 | Any joint downside breach | Use Downside playbook and protect liquidity headroom |
 

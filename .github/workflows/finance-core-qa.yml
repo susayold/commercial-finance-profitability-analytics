@@ -1,0 +1,29 @@
+name: Finance core QA
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  finance-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Rebuild governance snapshot
+        run: python scripts/build_non_powerbi_governance.py
+      - name: Run non-Power-BI release gate
+        run: python scripts/run_non_powerbi_release_gate.py
+      - name: Upload finance core QA
+        uses: actions/upload-artifact@v4
+        with:
+          name: finance-core-qa
+          path: reports/NON_POWERBI_*_2026-08-31.*

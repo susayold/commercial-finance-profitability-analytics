@@ -44,10 +44,12 @@ const cvEvidenceMap = 'https://github.com/susayold/commercial-finance-profitabil
 const mchValuationReport = 'https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_VALUATION_REHEARSAL.md';
 const mchValuationData = 'https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/mch_valuation_rehearsal_summary.json';
 
+// Generated from data/scenarios/scenario_summary.csv. These are proxy-derived
+// planning outputs, not statutory EBITDA or realized business impact.
 const scenarios = {
-  Base: { revenue: '80.1', ebitda: '58.5', ccc: '54.8', margin: '29.7', note: 'Planning case: balanced growth and cash discipline.' },
-  Upside: { revenue: '83.3', ebitda: '63.0', ccc: '48.8', margin: '31.2', note: 'Stretch case: stronger growth, lower COGS and faster cash conversion.' },
-  Downside: { revenue: '76.9', ebitda: '53.1', ccc: '68.8', margin: '27.9', note: 'Risk case: demand pressure, cost inflation and slower collections.' },
+  Base: { revenue: '82.5', ebitda: '12.9', ccc: '54.0', margin: '15.6', note: 'Planning case: balanced growth and cash discipline.' },
+  Upside: { revenue: '85.7', ebitda: '17.4', ccc: '48.0', margin: '20.4', note: 'Stretch case: stronger growth, lower COGS and faster cash conversion.' },
+  Downside: { revenue: '76.9', ebitda: '3.5', ccc: '68.0', margin: '4.5', note: 'Risk case: demand pressure, cost inflation and slower collections.' },
 } as const;
 
 const bars = [
@@ -97,7 +99,7 @@ export default function Home() {
        <div className="decision-grid">
           <article className="decision-card decision-teal"><div className="card-number">01</div><div className="card-icon"><CircleDollarSign size={20} /></div><h3>Fund growth<br />that pays back.</h3><p>Promotion and pricing simulator separates incremental revenue from variable cost, platform fee and trade spend.</p><div className="card-footer"><span className="tag">PROMOTION ROI</span><a href={driveModel} target="_blank" rel="noreferrer">Inspect simulator <ArrowUpRight size={14} /></a></div></article>
           <article className="decision-card decision-blue"><div className="card-number">02</div><div className="card-icon"><Gauge size={20} /></div><h3>Protect margin<br />by channel.</h3><p>Channel and customer contribution exposes where discount, fee and cost-to-serve dilute a revenue win.</p><div className="card-footer"><span className="tag">CM HURDLE 25%</span><a href={driveDashboard} target="_blank" rel="noreferrer">View output <ArrowUpRight size={14} /></a></div></article>
-          <article className="decision-card decision-amber"><div className="card-number">03</div><div className="card-icon"><WalletCards size={20} /></div><h3>Release cash<br />before it hurts.</h3><p>DSO, DIO, DPO and liquidity stress turn working capital into a weekly operating agenda.</p><div className="card-footer"><span className="tag">CCC 54.8 DAYS</span><a href={cfoMemo} target="_blank" rel="noreferrer">Read action <ArrowUpRight size={14} /></a></div></article>
+          <article className="decision-card decision-amber"><div className="card-number">03</div><div className="card-icon"><WalletCards size={20} /></div><h3>Release cash<br />before it hurts.</h3><p>DSO, DIO, DPO and liquidity stress turn working capital into a weekly operating agenda.</p><div className="card-footer"><span className="tag">CCC 54.0 DAYS</span><a href={cfoMemo} target="_blank" rel="noreferrer">Read action <ArrowUpRight size={14} /></a></div></article>
          </div>
          <div className="integrity-note"><ShieldCheck size={18} /><p><strong>Customer economics lens:</strong> 24 synthetic customer-year rows rank accounts by contribution after cash cost, not revenue alone. Top-five accounts represent 28.62% of gross sales and 30.88% of after-WC contribution; C06 is the deliberate high-revenue / low-margin / long-DSO review case. <a href={customerAnalysis} target="_blank" rel="noreferrer">Read analysis <ArrowUpRight size={13} /></a> · <a href={customerSummary} target="_blank" rel="noreferrer">Open summary JSON <ArrowUpRight size={13} /></a></p></div>
        </section>

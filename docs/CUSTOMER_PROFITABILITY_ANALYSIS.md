@@ -1,5 +1,7 @@
 # Customer Profitability Analysis — FY2025 synthetic rehearsal
 
+> **Scope boundary:** `SYNTHETIC_REHEARSAL` only. Customer IDs, invoices, payment terms and working-capital costs are generated for method demonstration; this is not evidence of real-company account performance or realized impact.
+
 **Evidence class:** `SYNTHETIC_REHEARSAL`  
 **Source:** [customer profitability schedule](../data/customer_profitability_synthetic.csv)  
 **Derived output:** [machine-readable summary](../data/customer_profitability_summary.json)  

@@ -1,0 +1,8 @@
+metric_id,metric_name,source_lines,accounting_perimeter,denominator_convention,averaging_convention,unit,formula,comparability_policy
+REV_NET,Revenue,Income statement net revenue,Consolidated,n/a,n/a,VND bn,reported line,Reported basis only
+PAT,PAT,Profit after tax attributable to owners,Consolidated,n/a,n/a,VND bn,reported line,Reported basis only
+CFO,CFO,Net cash from operating activities,Consolidated,n/a,n/a,VND bn,reported line,Reported basis only
+ROE,ROE,PAT attributable to owners / average equity attributable to owners,Consolidated,average equity attributable to owners,(opening + closing)/2,percent,PAT / average equity,One canonical definition
+ROA,ROA,PAT / average total assets,Consolidated,average total assets,(opening + closing)/2,percent,PAT / average assets,One canonical definition
+FCFF,FCFF,Rehearsal DCF cash flow,Synthetic valuation case,n/a,n/a,VND bn,NOPAT + D&A - capex - delta NWC,Rehearsal only
+EV,EV,Enterprise value from DCF,Synthetic valuation case,n/a,n/a,VND bn,PV explicit FCFF + PV terminal,EV only; not a price target

@@ -1,0 +1,8 @@
+claim_id,claim_text_pattern,evidence_required,approved_value_source,allowed_artifacts,forbidden_until_gate,status
+CLM-001,forecast accuracy,REAL_FROZEN plus actuals after availability,data/forecast_snapshot_gate_a_intake_template.csv,CFO memo;website;CV,Gate A,OPEN
+CLM-002,realized savings,REAL_FROZEN realization evidence,data/management_recommendation_register_2026-08-30.csv,website;CV,Gate A,OPEN
+CLM-003,production Power BI,observed native Desktop evidence,powerbi/PBIP_DESKTOP_EXECUTION_CHECKLIST.md,CV;website,Gate B,OPEN
+CLM-004,SAP production experience,personal employment evidence,docs/CANDIDATE_APPLICATION_INTAKE_AND_CV_BUILD_PACK.md,CV,never without evidence,OPEN
+CLM-005,statutory EBITDA,audited statement line or explicit reconciliation,data/public_company/public_metric_dictionary.csv,CFO memo;website;CV,never for EBITDA proxy,OPEN
+CLM-006,full M&A model,full diligence and purchase-accounting scope,docs/MNA_ACCRETION_DILUTION.md,CV;website,never for screening rehearsal,OPEN
+CLM-007,public peer rank,APPROVED_COMPARABLE rows with compatible basis,data/public_company/public_metric_dictionary.csv,peer reports;website,never from INDEXED_ONLY,OPEN

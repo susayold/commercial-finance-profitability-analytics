@@ -1,0 +1,14 @@
+table,field,semantic_type,expected_unit,scale_factor,allowed_min,allowed_max,nullable,notes
+fact_sales,UnitsCorrected,quantity,physical units,1,1,100000000,false,Integer sale quantity after unit correction
+fact_sales,UnitPriceVND,unit_price,VND per physical unit,1,1,1000000,false,SKU master price
+fact_sales,GrossSalesVND,money,VND,1,0,1000000000000000.0,false,No hidden million/billion scale
+fact_sales,NetRevenueVND,money,VND,1,0,1000000000000000.0,false,Gross-to-net output
+fact_sales,CorrectedCOGSVND,money,VND,1,0,1000000000000000.0,false,Allocated authority COGS
+fact_sales,ContributionProfitVND,money,VND,1,-1000000000000000.0,1000000000000000.0,false,May be negative for loss-making row
+fact_opex_headcount,OPEXActualVND,money,VND,1,0,1000000000000000.0,false,Synthetic planning OPEX
+fact_public_financials,NetRevenueVNDBn,money,VND bn,1e9,-1000000.0,1000000000.0,true,Public filing normalized display unit
+fact_public_financials,PATVNDBn,money,VND bn,1e9,-1000000.0,1000000000.0,true,Public filing normalized display unit
+fact_public_financials,EquityVNDBn,money,VND bn,1e9,-1000000.0,1000000000.0,true,Public filing normalized display unit
+fact_ar_snapshot,DSODays,ratio,days,1,0,3650,false,Ending AR convention
+fact_inventory_snapshot,DIOProxyDays,ratio,days,1,0,3650,false,Ending inventory convention
+fact_ap_snapshot,DPODays,ratio,days,1,0,3650,false,Ending AP convention

@@ -243,7 +243,11 @@ def build_contract(output: Path) -> dict:
             for scenario, mult, cogs_mult, opex_mult, wc_delta in [("BASE", 1.03, 1.04, 1.00, 0), ("UPSIDE", 1.07, 1.02, 0.98, -6), ("DOWNSIDE", 0.96, 1.09, 1.08, 14)]:
                 target = month_add(month, 0)
                 snapshot = month_add(target, -1)
-                fact_forecast.append({"SnapshotDate": snapshot.isoformat(), "TargetMonth": target.isoformat(), "SKUKey": row["SKUKey"], "ChannelKey": row["ChannelKey"], "ScenarioKey": scenario, "ForecastVersionKey": f"FV_{scenario}_{target.strftime('%Y%m')}", "ForecastUnits": int(round(row["UnitsCorrected"] * mult)), "ForecastRevenueVND": r2(row["NetRevenueVND"] * mult), "ForecastCOGSVND": r2(row["CorrectedCOGSVND"] * cogs_mult), "ForecastTradeSpendVND": r2(row["AllocatedTradeSpendVND"] * (1.02 if scenario == "DOWNSIDE" else 1.0)), "ForecastOPEXVND": r2(row["NetRevenueVND"] * 0.175 / 60 * opex_mult), "Status": "FROZEN", "Approved": "true", "ActualAvailabilityDate": month_add(target, 1).isoformat(), "Eligibility": "true", "EvidenceClass": EVIDENCE_ASSUMPTION, "WorkingCapitalDaysDelta": wc_delta})
+                # OPEX is already allocated at the sales-line grain.  Dividing
+                # by 60 here understated scenario OPEX by 60x and broke the
+                # EBITDA-proxy identity downstream.  The scenario row carries
+                # its proportional share of revenue-linked OPEX directly.
+                fact_forecast.append({"SnapshotDate": snapshot.isoformat(), "TargetMonth": target.isoformat(), "SKUKey": row["SKUKey"], "ChannelKey": row["ChannelKey"], "ScenarioKey": scenario, "ForecastVersionKey": f"FV_{scenario}_{target.strftime('%Y%m')}", "ForecastUnits": int(round(row["UnitsCorrected"] * mult)), "ForecastRevenueVND": r2(row["NetRevenueVND"] * mult), "ForecastCOGSVND": r2(row["CorrectedCOGSVND"] * cogs_mult), "ForecastTradeSpendVND": r2(row["AllocatedTradeSpendVND"] * (1.02 if scenario == "DOWNSIDE" else 1.0)), "ForecastOPEXVND": r2(row["NetRevenueVND"] * 0.175 * opex_mult), "Status": "FROZEN", "Approved": "true", "ActualAvailabilityDate": month_add(target, 1).isoformat(), "Eligibility": "true", "EvidenceClass": EVIDENCE_ASSUMPTION, "WorkingCapitalDaysDelta": wc_delta})
 
     # Portfolio balances at the required monthly grain.
     fact_ar = []; fact_inventory = []; fact_ap = []; fact_debt = []
@@ -283,7 +287,15 @@ def build_contract(output: Path) -> dict:
     for i, month in enumerate(months):
         mk = month.strftime("%Y-%m"); rev = sum(v["NetRevenueVND"] for (m, _), v in customer_month.items() if m == month.isoformat()); target = rev * (0.175 + (0.005 if i >= 24 else 0))
         for center, function, share, hc_base in centers:
-            hc_open = hc_base + (i % 4); hires = 1 if i % 7 == 0 else 0; exits = 1 if i % 11 == 0 else 0; hc_close = hc_open + hires - exits; avg_hc = (hc_open + hc_close) / 2; salary = 26_000_000 + (len(function) % 5) * 1_500_000; payroll = avg_hc * salary; benefits = payroll * 0.15; bonus = payroll * (0.03 if i % 12 in (10, 11) else 0.01); nonpayroll = max(0, target * share - payroll - benefits - bonus); actual = payroll + benefits + bonus + nonpayroll; budget = actual * 1.03; forecast = actual * (1.01 if i < 24 else 1.05)
+            hc_open = hc_base + (i % 4); hires = 1 if i % 7 == 0 else 0; exits = 1 if i % 11 == 0 else 0; hc_close = hc_open + hires - exits; avg_hc = (hc_open + hc_close) / 2
+            # The prior fixture used a VND26m salary for every synthetic FTE,
+            # which made payroll exceed the approved 17.5%-18.0% OPEX envelope
+            # and caused the EBITDA-proxy scenario to drift.  Keep the fixture
+            # realistic and internally coherent: VND9.5m base salary plus a
+            # small function-specific premium, with benefits/bonus documented
+            # below.  This is still synthetic planning data, not a payroll claim.
+            salary = 9_500_000 + (len(function) % 5) * 500_000
+            payroll = avg_hc * salary; benefits = payroll * 0.15; bonus = payroll * (0.03 if i % 12 in (10, 11) else 0.01); nonpayroll = max(0, target * share - payroll - benefits - bonus); actual = payroll + benefits + bonus + nonpayroll; budget = actual * 1.03; forecast = actual * (1.01 if i < 24 else 1.05)
             fact_opex.append({"Period": mk, "CompanyKey": "VN", "CostCenterKey": center, "Function": function, "HeadcountOpen": hc_open, "Hires": hires, "Exits": exits, "HeadcountClose": hc_close, "AverageHeadcount": r2(avg_hc), "AverageSalaryVND": salary, "PayrollVND": r2(payroll), "BenefitsVND": r2(benefits), "BonusVND": r2(bonus), "NonPayrollOPEXVND": r2(nonpayroll), "OPEXActualVND": r2(actual), "OPEXBudgetVND": r2(budget), "OPEXForecastVND": r2(forecast), "BudgetVarianceVND": r2(actual - budget), "ForecastVarianceVND": r2(actual - forecast), "EvidenceClass": EVIDENCE_SIM, "SourceSystem": "synthetic_planning"})
 
     # Commercial decision facts.

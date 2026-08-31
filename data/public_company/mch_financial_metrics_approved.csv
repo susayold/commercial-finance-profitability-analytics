@@ -1,0 +1,51 @@
+fiscal_year,metric_id,value,unit,source_status,source_ref,calculation_status,caveat
+2016,REV_NET,13789759442477,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2016,PAT,2791112247395,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2016,CFO,2967742045801,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2016,ROE,23.3988,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2016,ROA,16.0613,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,
+2017,REV_NET,13213640273416,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2017,PAT,2245997676081,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2017,CFO,2112950267691,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2017,ROE,19.3119,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2017,ROA,12.8259,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,
+2018,REV_NET,17006475612957,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2018,PAT,3397479417622,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2018,CFO,3899584329845,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2018,ROE,30.5900,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2018,ROA,19.5832,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,
+2019,REV_NET,18487541836508,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2019,PAT,4061678096011,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2019,CFO,3968297183142,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2019,ROE,34.8819,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2019,ROA,21.6493,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,
+2020,REV_NET,23342734481397,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2020,PAT,4597571255342,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2020,CFO,4678338462250,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2020,ROE,34.4517,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2020,ROA,19.9881,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,
+2021,REV_NET,27773635217733,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2021,PAT,5526176998515,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2021,CFO,5816347040287,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2021,ROE,35.3238,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2021,ROA,19.8293,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,
+2022,REV_NET,26977273170028,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2022,PAT,5532807109081,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2022,CFO,2484192864010,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2022,ROE,28.0488,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2022,ROA,17.3658,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,
+2023,REV_NET,28240992632837,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2023,PAT,7194170245145,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2023,CFO,6255585564207,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2023,ROE,29.4715,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2023,ROA,19.4255,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,
+2024,REV_NET,30897225625237,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2024,PAT,7920537530999,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2024,CFO,9227283460294,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2024,ROE,42.0150,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2024,ROA,23.1417,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,
+2025,REV_NET,30556536605941,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2025,PAT,6764148714587,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2025,CFO,2132330611639,VND bn,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,OBSERVED,
+2025,ROE,45.1094,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,ROE = PAT attributable to owners / average equity attributable to owners
+2025,ROA,21.8670,percent,APPROVED_COMPARABLE,data/mch_financial_statement_analysis_2016_2025.csv; page-reviewed audited statement source,CALCULATED_PUBLIC,

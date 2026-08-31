@@ -36,10 +36,10 @@ Show the flow: public annual reports and peer registry -> synthetic operating le
 
 Use only labelled synthetic outputs:
 
-- FY2025 revenue: VND 80.1bn.
-- FY2025 EBITDA proxy: VND 58.5bn.
-- FY2025 average CCC: 54.8 days.
-- Best channel contribution margin: 29.7%.
+- FY2025 Base planning revenue: VND 82.5bn.
+- FY2025 Base EBITDA proxy: VND 12.9bn, defined as gross profit less controllable OPEX.
+- FY2025 Base CCC: 54.0 days.
+- Base EBITDA proxy margin: 15.6%, derived from the approved scenario source.
 - Model status: PASS.
 
 ### 5. Decisions and actions

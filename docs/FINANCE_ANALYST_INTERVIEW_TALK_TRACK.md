@@ -12,7 +12,7 @@ One-line positioning:
 
 > This is a fictional Vietnam FMCG company, so I separate public evidence from simulated operating data. I built a 28-tab formula-driven FP&A model over 36 months and 2,160 invoice-line records. The model links actuals, budget, forecast versions, PVM, product/customer/channel profitability, promotion economics, working capital, liquidity and scenarios.  
 >
-> The business question is not simply whether revenue grew. It is whether growth converted into contribution profit and cash. The base case shows VND 80.1bn revenue, a VND 58.5bn EBITDA proxy and a 54.8-day cash-conversion cycle; these are synthetic management outputs. I then use visible checks, source labels and a VND 100m disclosed rounding tolerance so a reviewer can trace the answer.  
+> The business question is not simply whether revenue grew. It is whether growth converted into contribution profit and cash. The Base case shows VND 82.5bn revenue, a VND 12.9bn EBITDA proxy (gross profit less controllable OPEX) and a 54.0-day cash-conversion cycle; these are synthetic management outputs from one scenario source. I then use visible checks, source labels and disclosed rounding tolerances so a reviewer can trace the answer.  
 >
 > As an external evidence extension, I analysed Vinamilk public AGM/IR guidance from FY2018–FY2025. Revenue WAPE was 2.79% and PBT WAPE was 4.89%, which demonstrates why a finance analyst should forecast margin drivers separately from top line. This proxy is explicitly not internal forecast accuracy.
 

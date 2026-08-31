@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "generated_on": "2026-08-31",
+  "scope": "non_powerbi_finance_analyst_closure",
+  "checks": [
+    {
+      "id": "SF",
+      "status": "PASS"
+    },
+    {
+      "id": "SC",
+      "status": "PASS"
+    },
+    {
+      "id": "PUB",
+      "status": "PASS"
+    },
+    {
+      "id": "XART",
+      "status": "PASS"
+    },
+    {
+      "id": "MC",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/governance/finance_metric_registry.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/governance/exported_metric_snapshot.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/governance/claim_registry.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:schemas/unit_contract.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:docs/ARCHITECTURE_NON_POWERBI.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:RECRUITER_START_HERE.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:.gitattributes",
+      "status": "PASS"
+    }
+  ],
+  "open_external_gates": [
+    {
+      "gate": "Gate A",
+      "description": "Genuine internal pre-close forecast snapshot and post-close actuals are required before claiming live forecast accuracy."
+    },
+    {
+      "gate": "Gate B",
+      "description": "Native Power BI Desktop QA and production Service refresh evidence remain external to this non-Power-BI release."
+    }
+  ]
+}

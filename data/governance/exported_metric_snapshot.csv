@@ -1,0 +1,19 @@
+metric_id,period,scenario,segment,value,unit,evidence_class,source_artifact
+REV_NET,FY2025,BASE,ALL,82.5138,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+GROSS_PROFIT,FY2025,BASE,ALL,26.915,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+EBITDA_PROXY,FY2025,BASE,ALL,12.8956,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+EBITDA_PROXY_MARGIN,FY2025,BASE,ALL,15.6284,%,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+CONTRIBUTION,FY2025,BASE,ALL,24.2074,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+CCC,FY2025,BASE,ALL,54.0,days,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+REV_NET,FY2025,UPSIDE,ALL,85.7182,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+GROSS_PROFIT,FY2025,UPSIDE,ALL,31.1886,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+EBITDA_PROXY,FY2025,UPSIDE,ALL,17.4496,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+EBITDA_PROXY_MARGIN,FY2025,UPSIDE,ALL,20.357,%,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+CONTRIBUTION,FY2025,UPSIDE,ALL,28.481,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+CCC,FY2025,UPSIDE,ALL,48.0,days,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+REV_NET,FY2025,DOWNSIDE,ALL,76.9061,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+GROSS_PROFIT,FY2025,DOWNSIDE,ALL,18.6342,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+EBITDA_PROXY,FY2025,DOWNSIDE,ALL,3.4933,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+EBITDA_PROXY_MARGIN,FY2025,DOWNSIDE,ALL,4.5423,%,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+CONTRIBUTION,FY2025,DOWNSIDE,ALL,15.8724,VND bn,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+CCC,FY2025,DOWNSIDE,ALL,68.0,days,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv

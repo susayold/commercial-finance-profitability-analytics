@@ -1,0 +1,32 @@
+name: Power BI package QA
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'powerbi/**'
+      - 'scripts/*powerbi*'
+      - 'scripts/validate_*pbix*'
+
+permissions:
+  contents: read
+
+jobs:
+  powerbi-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Validate Power BI input contract
+        run: python scripts/validate_powerbi_input_contract.py --input-dir powerbi/data/current --report "$RUNNER_TEMP/powerbi_input_contract_QA.md"
+      - name: Validate Power BI claim boundary
+        run: python scripts/validate_powerbi_claim_boundary.py --repo-root . --report "$RUNNER_TEMP/powerbi_claim_boundary_QA.json"
+      - name: Upload package QA
+        uses: actions/upload-artifact@v4
+        with:
+          name: powerbi-package-qa
+          path: |
+            ${{ runner.temp }}/powerbi_input_contract_QA.md
+            ${{ runner.temp }}/powerbi_claim_boundary_QA.json

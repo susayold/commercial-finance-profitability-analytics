@@ -17,6 +17,8 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - Latest GitHub main: https://github.com/susayold/commercial-finance-profitability-analytics/tree/main
 - [Boss handoff pack](reports/BOSS_HANDOFF_PACK_2026-08-31.md) — one-click review order, remote export manifest and evidence boundaries
 - Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-31.md)
+- Non-Power-BI closure QA: [final QA](reports/NON_POWERBI_FINAL_QA_2026-08-31.md) · [release gate JSON](reports/NON_POWERBI_RELEASE_GATE_2026-08-31.json) · [plan closure matrix](reports/NON_POWERBI_PLAN_CLOSURE_MATRIX_2026-08-31.md)
+- Recruiter entry point: [RECRUITER_START_HERE.md](RECRUITER_START_HERE.md)
 - Current boundary: the finance, public-company, valuation, equity-research, CV and editable Power BI workstreams are delivered; Gate A genuine internal evidence, formal full QA-01–QA-18 sign-off and production DirectQuery/APR evidence remain open.
 - A compact native `.pbix` has been opened, refreshed, saved, reopened and data-swap tested in Desktop. The extended 20-table PBIP/PBIT is validated separately and is not silently promoted as an extended native PBIX.
 

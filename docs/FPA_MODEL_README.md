@@ -84,7 +84,7 @@ Version 2 expands the v1 management model to 28 tabs. New modules include:
 - P&L revenue populated: PASS (36/36).
 - Sales revenue tie: PASS.
 - Channel revenue tie: PASS within an explicitly disclosed VND 100m tolerance for deterministic unit rounding.
-- Working-capital rows: PASS (36/36); FY2025 average CCC = 54.8 days.
+- Working-capital rows: PASS (36/36); FY2025 Base CCC = 54.0 days using ending AR, inventory and AP balances.
 - PVM bridge rows: PASS (36/36).
 - No negative sales: PASS (0 rows).
 - Scenario rows: PASS (4/4).

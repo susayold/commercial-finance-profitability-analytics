@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "generated_at": "2026-08-31T17:57:04.476Z",
+  "checks": [
+    {
+      "name": "Website base scenario",
+      "status": "PASS",
+      "missing": []
+    },
+    {
+      "name": "Website upside/downside scenarios",
+      "status": "PASS",
+      "missing": []
+    },
+    {
+      "name": "MBR scenario table",
+      "status": "PASS",
+      "missing": []
+    },
+    {
+      "name": "CFO memo canonical headline",
+      "status": "PASS",
+      "missing": []
+    },
+    {
+      "name": "CV evidence values",
+      "status": "PASS",
+      "missing": []
+    },
+    {
+      "name": "CV claim boundary",
+      "status": "PASS",
+      "missing": []
+    }
+  ],
+  "canonical_source": "data/governance/exported_metric_snapshot.csv"
+}

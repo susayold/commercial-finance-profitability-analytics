@@ -1,5 +1,7 @@
 # M&A Accretion / Dilution Case — NovaBite Foods (Synthetic)
 
+> **Strategic Finance / M&A screening rehearsal:** all target, synergy, financing and integration inputs are synthetic assumptions. This file demonstrates transaction mechanics and decision gates; it is not a live deal recommendation, valuation opinion or evidence of realized synergies.
+
 ## Purpose
 
 This case is the optional strategic-stretch module for the commercial-finance portfolio. It tests whether a fictional acquisition creates value and whether the transaction is EPS-accretive after financing, synergy ramp and integration costs. It is deliberately labelled SYNTHETIC and is not presented as a live investment recommendation.

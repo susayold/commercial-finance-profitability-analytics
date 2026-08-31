@@ -5,7 +5,7 @@ const checks=[]; const must=(n,o)=>checks.push({n,ok:Boolean(o)});
 must("report_nontrivial",report.length>3500);
 for(const p of ["## Model assumptions","## Percentile output","## Finance interpretation","## Decision rules","## Limitations and handoff"])must(p,report.includes(p));
 must("simulation_count",report.includes("5,000")&&report.includes("20260830"));
-must("thresholds",["76.9","53.1","68.8","25%"].every(v=>report.includes(v)));
+must("thresholds",["76.9","3.5","68.0","5%"].every(v=>report.includes(v)));
 must("header",csv[0]==="metric,statistic,value,unit,threshold,threshold_direction,simulation_count,seed,evidence_class");
 const rows=csv.slice(1).map(x=>x.split(","));
 must("row_count",rows.length===25);

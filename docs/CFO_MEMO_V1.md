@@ -2,7 +2,7 @@
 
 ## Executive readout
 
-The v1 model is a controlled synthetic case for a consumer business. FY2025 revenue is VND 69.2bn, EBITDA proxy is VND 17.3bn and the dashboard shows a 24.9% EBITDA proxy margin. The model status is PASS after six automated controls.
+The v1 model is a controlled synthetic case for a consumer business. The approved FY2025 Base planning case is VND 82.5bn revenue, VND 12.9bn EBITDA proxy and a 15.6% EBITDA proxy margin. EBITDA proxy is defined as gross profit less controllable OPEX; it is not statutory EBITDA. The model status is PASS after automated controls.
 
 These figures are synthetic management outputs, not company-reported facts. They are designed to demonstrate the analyst workflow and should be labelled accordingly in any portfolio presentation.
 

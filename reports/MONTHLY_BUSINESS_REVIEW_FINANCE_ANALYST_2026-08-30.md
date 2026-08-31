@@ -14,10 +14,10 @@ Purpose: recruiter-facing demonstration of how a Finance Analyst turns a monthly
 
 | KPI | Base | Upside | Downside | Unit | Decision meaning |
 |---|---:|---:|---:|---|---|
-| Revenue | 80.1 | 83.3 | 76.9 | VND bn | Growth envelope for the FY2025 planning case |
-| EBITDA proxy | 58.5 | 63.0 | 53.1 | VND bn | Management proxy; not reported EBITDA |
-| EBITDA proxy margin | 29.7% | 31.2% | 27.9% | % | Margin guardrail for scenario selection |
-| Cash conversion cycle | 54.8 | 48.8 | 68.8 | days | Liquidity risk lens; lower is better |
+| Revenue | 82.5 | 85.7 | 76.9 | VND bn | FY2025 scenario source of truth |
+| EBITDA proxy | 12.9 | 17.4 | 3.5 | VND bn | Gross profit less controllable OPEX; not reported EBITDA |
+| EBITDA proxy margin | 15.6% | 20.4% | 4.5% | % | Derived as EBITDA proxy / scenario revenue |
+| Cash conversion cycle | 54.0 | 48.0 | 68.0 | days | Liquidity risk lens; lower is better |
 
 **Management call:** stay in Base until promotion ROI, channel contribution and cash-release owners are confirmed. Move toward Upside only when the 25% contribution-margin hurdle and the working-capital guardrails are both met. Trigger Downside playbook if demand, margin or collections breach the stop-loss rules below.
 
@@ -66,7 +66,7 @@ The monthly cash agenda uses:
 - **DPO** = average trade payables / purchases (or COGS proxy) × days.
 - **CCC** = DSO + DIO − DPO.
 
-Base CCC is 54.8 days; the Downside scenario is 68.8 days. The analyst should translate each one-day improvement into a cash-release estimate using the approved annualized sales/COGS denominator—not a generic percentage.
+Base CCC is 54.0 days; the Downside scenario is 68.0 days. The analyst should translate each one-day improvement into a cash-release estimate using the approved annualized sales/COGS denominator—not a generic percentage. Values are sourced from `data/scenarios/scenario_summary.csv`.
 
 | Trigger | Owner | Immediate containment | Review cadence |
 |---|---|---|---|
@@ -79,9 +79,9 @@ Base CCC is 54.8 days; the Downside scenario is 68.8 days. The analyst should tr
 
 | Scenario | Operating interpretation | Pre-condition to use |
 |---|---|---|
-| Base | Balanced growth, stable cost-to-serve and 54.8-day CCC | Default planning case |
-| Upside | Higher demand, lower COGS and 48.8-day CCC | Two consecutive closes above CM hurdle; no service-level breach |
-| Downside | Demand pressure, cost inflation and 68.8-day CCC | Revenue or CM miss plus collections/inventory deterioration |
+| Base | Balanced growth, stable cost-to-serve and 54.0-day CCC | Default planning case |
+| Upside | Higher demand, lower COGS and 48.0-day CCC | Two consecutive closes above CM hurdle; no service-level breach |
+| Downside | Demand pressure, cost inflation and 68.0-day CCC | Revenue or CM miss plus collections/inventory deterioration |
 
 Do not average scenarios into a fake “most likely” number. Present the Base as the planning case and keep Upside/Downside as explicit decision boundaries.
 
