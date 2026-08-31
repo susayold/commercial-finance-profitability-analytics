@@ -14,7 +14,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 ## Current release index — 2026-08-31
 
 - Production site: [V16 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
-- Latest GitHub main commit: `647a93b620171f7ac5334c11bf737897e127b62a`
+- Latest GitHub main commit: `337ab39dedb1700a532670fbd85296dec3546208`
 - [Boss handoff pack](reports/BOSS_HANDOFF_PACK_2026-08-31.md) — one-click review order, remote export manifest and evidence boundaries
 - Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-31.md)
 - Current boundary: the finance, public-company, valuation, equity-research, CV and editable Power BI workstreams are delivered; Gate A genuine internal evidence, formal full QA-01–QA-18 sign-off and production DirectQuery/APR evidence remain open.
