@@ -6,4 +6,6 @@
 - Added Sales_Fact, scenario, public-metric and cross-artifact executable validators.
 - Added architecture diagram, recruiter start page and line-ending governance.
 - Added recruiter-site external-link QA with explicit private GitHub/Drive access-boundary handling.
+- Repaired the GL management mapping serialization and added 14/14 mapping-aware statement controls.
+- Added correlated Monte Carlo v2, SAP-like mapping rehearsal and human-gated commentary draft appendices.
 - Clarified synthetic/rehearsal boundaries for customer profitability and M&A modules.

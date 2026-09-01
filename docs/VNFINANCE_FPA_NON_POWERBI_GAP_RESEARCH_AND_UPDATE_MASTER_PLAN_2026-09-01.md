@@ -27,7 +27,7 @@ Bản cập nhật này đã chuyển dự án sang **non-Power-BI FP&A release*
 - forecast versioning/backtest v2 (Budget, RF1, RF2, RF3, Latest Estimate, Actual) với Bias/WAPE/MAE, bridge và override log;
 - MBR, CFO memo, close calendar, KPI dictionary, recommendation register, editable 10-slide board pack và narration script;
 - website recruiter-facing, CV/interview package và GitHub/Drive handoff;
-- non-BI QA **PASS 51/51** và release gate **PASS 40/40** ở lần chạy gần nhất; link QA 38/38 được tích hợp vào release evidence.
+- non-BI QA **PASS 51/51** và release gate **PASS 40/40** ở lần chạy gần nhất; recruiter-link QA **41/41** được tích hợp vào release evidence.
 
 ### Trạng thái release hiện tại
 
@@ -1039,8 +1039,8 @@ Các appendix P2 đã được đóng ở dạng mô phỏng có kiểm soát (c
 | Three-year operating plan | `scripts/build_three_year_operating_plan.mjs` + `scripts/validate_three_year_operating_plan.mjs` | PASS 17/17; 60 monthly/quarterly rows, 3 scenarios, no terminal growth |
 | Forecast v2 | `scripts/build_forecast_versioning_backtest_v2.mjs` + validator | PASS 20/20; 360 snapshots, 240 bridge rows, override governance |
 | Executive/board pack | `scripts/build_nonbi_management_pack.mjs` + `scripts/validate_management_pack.mjs` | PASS; editable 10-slide deck, index and 5-minute narration script |
-| Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v21; management pack, forecast v2 and three-year plan visible; Power BI removed from active UX; valuation appendix precedes footer |
-| Recruiter link QA | `scripts/validate_recruiter_site_links.mjs` | PASS 38/38; private GitHub/Drive authentication boundaries documented |
+| Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v22; management pack, forecast v2, three-year plan and appendix evidence visible; Power BI removed from active UX; valuation appendix precedes footer |
+| Recruiter link QA | `scripts/validate_recruiter_site_links.mjs` | PASS 41/41; private GitHub/Drive authentication boundaries documented |
 | Correlated Monte Carlo v2 | `scripts/build_correlated_monte_carlo_v2.mjs` + validator | PASS 16/16; 5,000 draws, PSD correlation matrix, expected shortfall and directional attribution |
 | SAP-like mapping rehearsal | `scripts/build_sap_like_mapping_rehearsal.mjs` + validator | PASS 9/9; 720 FI/CO-style rows, 36 period ties, 20 mapped accounts; simulated only |
 | Automated commentary draft | `scripts/build_monthly_commentary_draft.mjs` + validator | PASS 9/9; generated draft and approval log remain NEEDS_REVIEW |

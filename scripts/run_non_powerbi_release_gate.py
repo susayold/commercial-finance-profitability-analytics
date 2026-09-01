@@ -98,7 +98,7 @@ def main() -> int:
         "- The 3-year driver-based operating plan and versioned forecast/backtest rehearsal are validator-checked and evidence-labelled.\n"
         "- MCH ROE uses the approved average-equity denominator across FY2016–FY2025.\n"
         "- Website, MBR, CFO memo and CV values are checked against the exported snapshot.\n"
-        "- Recruiter website external-link snapshot is 38/38 PASS; private GitHub/Drive access boundaries are documented.\n"
+        "- Recruiter website external-link snapshot is 41/41 PASS; private GitHub/Drive access boundaries are documented.\n"
         "- Correlated Monte Carlo v2, SAP-like mapping and automated commentary are appendix rehearsals with explicit evidence boundaries.\n"
         "- Synthetic customer profitability, Monte Carlo and M&A modules retain explicit evidence boundaries.\n\n"
         "## External gates (not inferred as closed)\n\n"

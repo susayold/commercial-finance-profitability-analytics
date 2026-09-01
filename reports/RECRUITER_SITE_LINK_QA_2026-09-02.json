@@ -2,8 +2,8 @@
   "generated_on": "2026-09-02",
   "source": "site/app/page.tsx",
   "scope": "recruiter_external_links",
-  "checked_links": 38,
-  "passed_links": 38,
+  "checked_links": 41,
+  "passed_links": 41,
   "failed_links": 0,
   "status": "PASS",
   "access_note": "Private GitHub and Drive files are treated as valid when the source path exists and the URL resolves to an authentication boundary.",
@@ -219,6 +219,33 @@
       "status": 404,
       "ok": true,
       "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTE_CARLO_RISK_OVERLAY_V2_2026-09-02.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTE_CARLO_RISK_OVERLAY_V2_2026-09-02.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/SAP_LIKE_MAPPING_REHEARSAL_2026-09-02.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/SAP_LIKE_MAPPING_REHEARSAL_2026-09-02.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTHLY_COMMENTARY_DRAFT_2026-09-02.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTHLY_COMMENTARY_DRAFT_2026-09-02.md",
       "method": "HEAD/GET",
       "access": "private_repository",
       "evidence": "path exists in local Git HEAD; web view is authentication-gated"
