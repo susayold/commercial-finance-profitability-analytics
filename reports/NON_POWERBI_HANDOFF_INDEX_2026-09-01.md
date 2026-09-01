@@ -28,6 +28,22 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 | Executive board-pack index | https://drive.google.com/file/d/1NBKH3xuXL_8PzzzzUaMWkM3Qrz2Xb-jn/view?usp=drivesdk |
 | Full release archive (GitHub HEAD) | https://drive.google.com/file/d/1tPKphroOXjgCcRHF1MC1fiOfQ87Lff0c/view?usp=drivesdk |
 
+### Appendix direct Drive links
+
+| Appendix artifact | Drive link |
+|---|---|
+| Correlated Monte Carlo v2 report | https://drive.google.com/file/d/1KD6LIVpWj3glTfhc_C6wmo4VRxnzqNdT/view?usp=drivesdk |
+| Correlated Monte Carlo v2 summary CSV | https://drive.google.com/file/d/1RwNItazMzRqNa1t6RYBtZPx7q1GscuIu/view?usp=drivesdk |
+| Correlation matrix CSV | https://drive.google.com/file/d/1Wl1ee9l96MUEAIltD5PlvnJ9h88aPYds/view?usp=drivesdk |
+| Monte Carlo v2 draw-level CSV | https://drive.google.com/file/d/1uo8lezFt1vLWpDYldYcDGu2ni3KJ9WRW/view?usp=drivesdk |
+| SAP-like mapping report | https://drive.google.com/file/d/1rO4ko2r1r0Mo4_vFAswTyoc5CF2tciAB/view?usp=drivesdk |
+| SAP-like mapping CSV | https://drive.google.com/file/d/1-tTSuxRj2z_P4riQg2wtMN_OxIwyOMjI/view?usp=drivesdk |
+| SAP-like QA JSON | https://drive.google.com/file/d/1uR7erB-E3m3l3Gw5xk5CfqxYULZpojv1/view?usp=drivesdk |
+| Commentary draft report | https://drive.google.com/file/d/19KvrPbXLXE3Ou9i28oZ_6HUxXYbAdgkw/view?usp=drivesdk |
+| Commentary draft CSV | https://drive.google.com/file/d/1-ByW-8D819E0heZ_HeNq2NGbqyS8XrIS/view?usp=drivesdk |
+| Commentary approval log | https://drive.google.com/file/d/1TgMcJLFCG9xSnUc5nxBDEd4dOuKkIoD-/view?usp=drivesdk |
+| GL management mapping CSV | https://drive.google.com/file/d/1kemPECFcXN8fdxHlOHZ2ZNi9C3Gvr2ub/view?usp=drivesdk |
+
 ## New release artifacts (GitHub)
 
 - Editable management pack: `output/pptx/VNFINANCE_NONBI_FPA_MBR_2026-09-01.pptx`
