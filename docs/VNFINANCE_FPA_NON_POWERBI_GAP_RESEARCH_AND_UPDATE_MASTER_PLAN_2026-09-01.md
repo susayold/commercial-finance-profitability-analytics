@@ -212,7 +212,7 @@ Các phần P0/P1 bên dưới được giữ lại như **specification và aud
 
 ## P0-01 — ✅ CLOSED — Sửa MBR validator và canonical scenario contract
 
-### Vấn đề
+### Vấn đề ban đầu (đã đóng trong release này)
 
 `validate_monthly_business_review.mjs` đang hard-code scenario cũ trong khi `data/scenarios/scenario_summary.csv` đã là nguồn chuẩn mới.
 
@@ -235,7 +235,7 @@ Các phần P0/P1 bên dưới được giữ lại như **specification và aud
 
 ## P0-02 — ✅ CLOSED — Sửa release gate để không cho false-green
 
-### Vấn đề
+### Vấn đề ban đầu (đã đóng trong release này)
 
 Non-BI release gate PASS 12/12 trong khi full finance QA đang FAIL.
 
