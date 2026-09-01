@@ -16,7 +16,7 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 |---|---|
 | Full committed non-BI source archive | https://drive.google.com/file/d/1p_9-3RHe8Et2WalJRuYFM1vsC286D4Ir/view?usp=drivesdk |
 | Updated gap-research and execution plan | https://drive.google.com/file/d/1pNFlBzhbD_ncA0ApV0nSSY50h7AWdpef/view?usp=drivesdk |
-| Final non-BI QA (45/45) | https://drive.google.com/file/d/1RQBU1j-Y2_tDvGEKQ0c13TCgWc7ZsoAq/view?usp=drivesdk |
+| Final non-BI QA (48/48) | https://drive.google.com/file/d/1RQBU1j-Y2_tDvGEKQ0c13TCgWc7ZsoAq/view?usp=drivesdk |
 | Release gate JSON | https://drive.google.com/file/d/1kS9SDbIi6XeCJWsdHTt_MXXDgDqk7_JF/view?usp=drivesdk |
 | Three-statement reconciliation | https://drive.google.com/file/d/1vLh81lUnZSnY8f2mfdHPWLmEsslbYmOK/view?usp=drivesdk |
 | FMCG standard-cost reconciliation | https://drive.google.com/file/d/1uXOezPturyR9BX6-wiC8aACxOlXi9SCd/view?usp=drivesdk |
