@@ -80,6 +80,10 @@
       "status": "PASS"
     },
     {
+      "id": "FILE:reports/RECRUITER_SITE_LINK_QA_2026-09-02.json",
+      "status": "PASS"
+    },
+    {
       "id": "FILE:RECRUITER_START_HERE.md",
       "status": "PASS"
     },
