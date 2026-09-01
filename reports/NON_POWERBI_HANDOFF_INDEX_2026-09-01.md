@@ -7,7 +7,7 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 ## GitHub source
 
 - Repository: https://github.com/susayold/commercial-finance-profitability-analytics
-- Release commit: `9f8543819de9d039c5571d9efefee68889261bc8`
+- Release commit: `bf08fa0479ba9ccd1bf1d803a6f6a7dbfaca8873`
 - Canonical status: `data/governance/project_status_nonbi.json`
 
 ## Drive handoff files
@@ -40,7 +40,7 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 
 https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 
-The deployed recruiter site is owner-only and reflects the non-BI path. The current production version is Sites version 18; the source mirror commit is `5dcf308e3615b3e776b47249a3ef8fbda03dafc2`.
+The deployed recruiter site is owner-only and reflects the non-BI path. The current production version is Sites version 20; the source mirror commit is `52bb41eaa50488741a6c4877faf92bf7aa7b697d`. The active site path exposes the editable management pack, forecast v2 and three-year plan; Power BI remains archived and excluded.
 
 ## Open external input
 
