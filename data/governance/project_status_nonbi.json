@@ -1,0 +1,22 @@
+{
+  "project": "VietNova Consumer JSC \u2014 non-Power-BI FP&A release",
+  "generated_on": "2026-09-01",
+  "active_scope": [
+    "Excel financial model",
+    "integrated three statements",
+    "standard costing",
+    "management reporting",
+    "controls",
+    "website",
+    "CV/recruiter package"
+  ],
+  "core_status": "PASS",
+  "appendix_status": "AVAILABLE_WITH_CAVEATS",
+  "external_status": "PENDING_EXTERNAL_INPUT",
+  "external_gates": [
+    "Gate A \u2014 approved internal pre-close forecast snapshot plus post-close actuals"
+  ],
+  "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
+  "claims_policy": "Synthetic and derived finance outputs are labelled; no employer impact, live ERP experience or live forecast accuracy is claimed.",
+  "release_gate": "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json"
+}

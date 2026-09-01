@@ -287,8 +287,15 @@ h1 { max-width: 780px; }
 
 .dark-section { background: linear-gradient(135deg, #102b46 0%, #123a56 100%); }
 .mch-trend-section { background: linear-gradient(135deg, #0d3149 0%, #10435e 100%); }
-.powerbi-section { background: linear-gradient(180deg, #f1f8f6 0%, var(--paper) 72%); border-top: 1px solid #e0ecea; border-bottom: 1px solid #e0ecea; }
+.powerbi-section { display: none; }
 .powerbi-section .evidence-card { background: rgba(255, 255, 255, .92); }
+
+/* Non-BI release path: keep historical BI artefacts out of the recruiter-facing surface. */
+section#statements + section#statements { display: none; }
+.forecast-links a:nth-child(4),
+.sprint-section .sprint-card:nth-child(2),
+.sprint-section .sprint-track-row:nth-child(2),
+.sprint-section > .integrity-note { display: none; }
 .strategic-card { min-height: 350px; }
 .strategic-card p { min-height: 106px; }
 .sprint-track { background: rgba(255, 255, 255, .92); }

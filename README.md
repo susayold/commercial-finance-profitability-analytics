@@ -9,7 +9,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - Peer benchmarks: Vinamilk (VNM), Quang Ngai Sugar (QNS), KIDO (KDC)
 - Public evidence: official annual reports, audited statements, filings and primary macro sources
 - Operating model: deterministic synthetic SKU-channel-customer ledger calibrated to public economics
-- Outputs: Excel, Power BI, CFO memo, management deck, battle cards and recruiter-first website
+- Outputs: Excel financial model, CFO memo, management deck, controls, costing, battle cards and recruiter-first website (Power BI is archived/out of active scope)
 
 ## Current release index — 2026-08-31
 
@@ -19,8 +19,9 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - [Boss handoff pack](reports/BOSS_HANDOFF_PACK_2026-08-31.md) — one-click review order, remote export manifest and evidence boundaries
 - Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-31.md)
 - Non-Power-BI closure QA: [final QA](reports/NON_POWERBI_FINAL_QA_2026-08-31.md) · [release gate JSON](reports/NON_POWERBI_RELEASE_GATE_2026-08-31.json) · [plan closure matrix](reports/NON_POWERBI_PLAN_CLOSURE_MATRIX_2026-08-31.md)
+- Current canonical scope/status: [project_status_nonbi.json](data/governance/project_status_nonbi.json)
 - Recruiter entry point: [RECRUITER_START_HERE.md](RECRUITER_START_HERE.md)
-- Current boundary: the finance, public-company, valuation, equity-research, CV and editable Power BI workstreams are delivered; Gate A genuine internal evidence, formal full QA-01–QA-18 sign-off and production DirectQuery/APR evidence remain open.
+- Current boundary: the active recruiter release is the non-BI finance core (Excel, statements, costing, controls, reporting and website); only Gate A genuine internal evidence remains input-gated. Historical Power BI artifacts are archived and excluded from the active plan.
 - A compact native `.pbix` has been opened, refreshed, saved, reopened and data-swap tested in Desktop. The extended 20-table PBIP/PBIT is validated separately and is not silently promoted as an extended native PBIX.
 
 ## Current data foundation
@@ -39,6 +40,8 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 - Power BI claim-boundary validator: `scripts/validate_powerbi_claim_boundary.py` keeps Import-mode, native-PBIX and DirectQuery/Automatic Page Refresh claims evidence-gated.
 - Native binary boundary: `powerbi/POWER_BI_NATIVE_BINARY_BOUNDARY.md` explains why model-containing projects require Desktop to produce a native `.pbix`.
 - Synthetic generator, ledger schema, hidden-truth event specification and QA validator are versioned in `scripts/` and `schemas/`
+- Non-BI FP&A closure layer: [three-statement methodology](docs/THREE_STATEMENT_FPA_MODEL_METHODOLOGY.md), [GL-to-management P&L bridge](docs/GL_TO_MANAGEMENT_PNL_BRIDGE.md), [FMCG standard costing](docs/FMCG_STANDARD_COSTING_AND_VARIANCE.md), [macro cutoff policy](docs/MACRO_DRIVER_AND_FORECAST_CUTOFF_POLICY.md) and [UAT/change control](docs/UAT_AND_MODEL_CHANGE_CONTROL.md).
+- Generated controls: [three-statement reconciliation](reports/THREE_STATEMENT_RECONCILIATION_2026-09-01.md), [costing reconciliation](reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md), [accounting data](data/accounting/) and [costing data](data/costing/).
 - MCH OCR extraction pipeline: 125 machine candidates across FY2016-FY2025, 59 canonical review candidates and an explicit 120-row review queue; no OCR row is approved automatically
 
 Raw reports are stored in the private [Google Drive project folder](https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR). They are intentionally excluded from Git history.
@@ -73,7 +76,7 @@ See [Final Status Overlay](reports/FINAL_STATUS_OVERLAY_2026-08-30.md) · [Drive
 
 Phase 1A complete: remote infrastructure, source archive, registry, synthetic operating ledger, MCH OCR review layer and executable Excel FP&A model v1.
 
-Current state: Excel v2, management memo/deck, recruiter site, peer-panel review layer, full VNM FY2006–FY2025 panel, observed compact native PBIX and extended editable Power BI scope are delivered; only the genuine internal forecast snapshot (Gate A), formal full native QA matrix and production realtime acceptance remain external next actions.
+Current state: Excel v2, integrated statements, standard costing, management memo/deck, recruiter site, peer-panel review layer and full VNM FY2006–FY2025 panel are delivered; only the genuine internal forecast snapshot (Gate A) remains an external next action for the active non-BI release.
 
 ## FP&A model v2 — full 28-tab finance analyst model
 

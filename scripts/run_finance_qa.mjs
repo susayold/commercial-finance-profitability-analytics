@@ -14,6 +14,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 
 const root = process.cwd();
+const nonBiOnly = process.argv.includes('--nonbi');
 const transient = fs.mkdtempSync(path.join(os.tmpdir(), 'vietnova-finance-qa-'));
 const tasks = [
   ['evidence_matrix', ['scripts/validate_master_plan_evidence_matrix.mjs']],
@@ -40,6 +41,9 @@ const tasks = [
   ['powerbi_source_coherence', ['scripts/validate_powerbi_source_coherence.mjs', 'powerbi/PBIP_SOURCE_MANIFEST.json', 'powerbi/model_contract.json', 'powerbi/measures.dax', 'powerbi/QA_TEST_MATRIX.md', 'powerbi/QA_EVIDENCE_LOG_TEMPLATE.csv']],
   ['inventory_quality', ['scripts/validate_inventory_quality.mjs', 'data/inventory_quality_synthetic.csv']],
   ['liquidity_stress', ['scripts/validate_liquidity_stress.mjs', 'data/liquidity_stress_synthetic.csv']],
+  ['three_statement_model', ['scripts/validate_three_statement_model.mjs']],
+  ['fmcg_cost_variance', ['scripts/validate_fmcg_cost_variance.mjs']],
+  ['macro_cutoff', ['scripts/validate_macro_cutoff.mjs', 'data/macros/macro_driver_book.csv']],
   ['block_a_design_lock', ['scripts/validate_block_a_design_lock.mjs', 'data/block_a_design_lock.csv']],
   ['role_alignment', ['scripts/validate_role_alignment_matrix.mjs']],
   ['promotion_roi', ['scripts/validate_promotion_roi.mjs', 'data/promotion_roi_synthetic.csv']],
@@ -70,7 +74,19 @@ const tasks = [
 
 const result = { status: 'PASS', runner: 'run_finance_qa.mjs', checks: [] };
 try {
-  for (const [name, args] of tasks) {
+  const excludedNonBi = new Set([
+    'evidence_matrix',
+    'external_gate_readiness',
+    'powerbi_source_coherence',
+    'powerbi_qa_evidence_template',
+    'pbip_manifest',
+    'powerbi_measure_column_collisions',
+    'powerbi_extended_scope',
+    'powerbi_scenario_drivers',
+  ]);
+  const selectedTasks = nonBiOnly ? tasks.filter(([name]) => !excludedNonBi.has(name)) : tasks;
+  result.scope = nonBiOnly ? 'non_powerbi_core' : 'full_repository';
+  for (const [name, args] of selectedTasks) {
     // Most validators are Node scripts, but a few repository gates are
     // intentionally Python so they can share the same implementation with
     // the release gate. Dispatch by script suffix instead of asking Node to
@@ -86,46 +102,35 @@ try {
     if (run.status !== 0) result.status = 'FAIL';
   }
 
-  const contract = JSON.parse(fs.readFileSync(path.join(root, 'powerbi', 'model_contract.json'), 'utf8'));
-  const contractOk = [contract.dimensions, contract.facts, contract.pages, contract.relationships].every(Array.isArray);
-  result.checks.push({
-    name: 'powerbi_contract_shape',
-    status: contractOk ? 'PASS' : 'FAIL',
-    dimensions: contract.dimensions?.length ?? 0,
-    facts: contract.facts?.length ?? 0,
-    pages: contract.pages?.length ?? 0,
-    relationships: contract.relationships?.length ?? 0,
-  });
-  if (!contractOk) result.status = 'FAIL';
+  if (!nonBiOnly) {
+    const contract = JSON.parse(fs.readFileSync(path.join(root, 'powerbi', 'model_contract.json'), 'utf8'));
+    const contractOk = [contract.dimensions, contract.facts, contract.pages, contract.relationships].every(Array.isArray);
+    result.checks.push({
+      name: 'powerbi_contract_shape',
+      status: contractOk ? 'PASS' : 'FAIL',
+      dimensions: contract.dimensions?.length ?? 0,
+      facts: contract.facts?.length ?? 0,
+      pages: contract.pages?.length ?? 0,
+      relationships: contract.relationships?.length ?? 0,
+    });
+    if (!contractOk) result.status = 'FAIL';
 
-  const python = process.platform === 'win32' ? 'python' : 'python3';
-  const directQuery = spawnSync(python, ['scripts/validate_directquery_readiness.py'], { cwd: root, encoding: 'utf8' });
-  const directQueryOutput = `${directQuery.stdout ?? ''}${directQuery.stderr ?? ''}`.trim();
-  const directQueryCheck = { name: 'directquery_readiness', status: directQuery.status === 0 ? 'PASS' : 'FAIL' };
-  if (directQueryOutput) directQueryCheck.output_tail = directQueryOutput.split(/\r?\n/).slice(-6).join('\n');
-  result.checks.push(directQueryCheck);
-  if (directQuery.status !== 0) result.status = 'FAIL';
-
-  const directQueryMapping = spawnSync(python, ['scripts/validate_directquery_mapping.py'], { cwd: root, encoding: 'utf8' });
-  const directQueryMappingOutput = `${directQueryMapping.stdout ?? ''}${directQueryMapping.stderr ?? ''}`.trim();
-  const directQueryMappingCheck = { name: 'directquery_mapping', status: directQueryMapping.status === 0 ? 'PASS' : 'FAIL' };
-  if (directQueryMappingOutput) directQueryMappingCheck.output_tail = directQueryMappingOutput.split(/\r?\n/).slice(-6).join('\n');
-  result.checks.push(directQueryMappingCheck);
-  if (directQueryMapping.status !== 0) result.status = 'FAIL';
-
-  const directQueryHealthContract = spawnSync(python, ['scripts/validate_directquery_health_contract.py'], { cwd: root, encoding: 'utf8' });
-  const directQueryHealthOutput = `${directQueryHealthContract.stdout ?? ''}${directQueryHealthContract.stderr ?? ''}`.trim();
-  const directQueryHealthCheck = { name: 'directquery_health_contract', status: directQueryHealthContract.status === 0 ? 'PASS' : 'FAIL' };
-  if (directQueryHealthOutput) directQueryHealthCheck.output_tail = directQueryHealthOutput.split(/\r?\n/).slice(-6).join('\n');
-  result.checks.push(directQueryHealthCheck);
-  if (directQueryHealthContract.status !== 0) result.status = 'FAIL';
-
-  const releaseRecord = spawnSync(python, ['scripts/validate_powerbi_release_record.py'], { cwd: root, encoding: 'utf8' });
-  const releaseRecordOutput = `${releaseRecord.stdout ?? ''}${releaseRecord.stderr ?? ''}`.trim();
-  const releaseRecordCheck = { name: 'powerbi_release_record', status: releaseRecord.status === 0 ? 'PASS' : 'FAIL' };
-  if (releaseRecordOutput) releaseRecordCheck.output_tail = releaseRecordOutput.split(/\r?\n/).slice(-6).join('\n');
-  result.checks.push(releaseRecordCheck);
-  if (releaseRecord.status !== 0) result.status = 'FAIL';
+    const python = process.platform === 'win32' ? 'python' : 'python3';
+    const serviceChecks = [
+      ['directquery_readiness', ['scripts/validate_directquery_readiness.py']],
+      ['directquery_mapping', ['scripts/validate_directquery_mapping.py']],
+      ['directquery_health_contract', ['scripts/validate_directquery_health_contract.py']],
+      ['powerbi_release_record', ['scripts/validate_powerbi_release_record.py']],
+    ];
+    for (const [name, args] of serviceChecks) {
+      const checkRun = spawnSync(python, args, { cwd: root, encoding: 'utf8' });
+      const output = `${checkRun.stdout ?? ''}${checkRun.stderr ?? ''}`.trim();
+      const check = { name, status: checkRun.status === 0 ? 'PASS' : 'FAIL' };
+      if (output) check.output_tail = output.split(/\r?\n/).slice(-6).join('\n');
+      result.checks.push(check);
+      if (checkRun.status !== 0) result.status = 'FAIL';
+    }
+  }
 } finally {
   fs.rmSync(transient, { recursive: true, force: true });
 }

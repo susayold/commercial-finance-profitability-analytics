@@ -24,5 +24,6 @@ Source extracts / controlled synthetic generator
 Operating data is synthetic and marked `SIMULATED`/`DERIVED`; public-company
 figures are a separate observed subject area. Valuation, M&A and Monte Carlo
 remain `SYNTHETIC_REHEARSAL` appendices. Gate A (genuine internal forecast
-accuracy) and Gate B (native Power BI Desktop evidence) stay open until real
-evidence is supplied.
+accuracy) remains open until an approved internal forecast snapshot and
+post-close actuals are supplied. Power BI is deliberately outside the active
+recruiter release scope; historical BI files remain archived for traceability.

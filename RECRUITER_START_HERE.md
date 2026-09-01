@@ -14,12 +14,15 @@ management act on next month?
 - [MBR finance analyst pack](reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md)
 - [CFO memo](docs/CFO_MEMO_V1.md)
 - [Sales economic audit](reports/SALES_FACT_DIMENSIONAL_AUDIT_2026-08-31.md)
+- [Integrated three-statement reconciliation](reports/THREE_STATEMENT_RECONCILIATION_2026-09-01.md)
+- [FMCG standard-cost reconciliation](reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md)
+- [Canonical non-BI project status](data/governance/project_status_nonbi.json)
 
 **Evidence boundary.** The operating ledger is synthetic/rehearsal data; public
 company metrics are filing-based and basis-controlled. EBITDA is a proxy, DCF
-and M&A are screening rehearsals, and Forecast Gate A/native Power BI Gate B
-remain open. See [claim registry](data/governance/claim_registry.csv).
+and M&A are screening rehearsals, and Forecast Gate A remains input-gated.
+Power BI is outside this active recruiter path. See [claim registry](data/governance/claim_registry.csv).
 
 **Technical appendix.** [Metric registry](data/governance/finance_metric_registry.csv),
 [unit contract](schemas/unit_contract.csv), [scenario source](data/scenarios/scenario_summary.csv),
-[architecture](docs/ARCHITECTURE_NON_POWERBI.md), and [final QA](reports/NON_POWERBI_FINAL_QA_2026-08-31.md).
+[architecture](docs/ARCHITECTURE_NON_POWERBI.md), [UAT/change control](docs/UAT_AND_MODEL_CHANGE_CONTROL.md), and [final QA](reports/NON_POWERBI_FINAL_QA_2026-08-31.md).

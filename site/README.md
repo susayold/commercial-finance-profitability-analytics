@@ -13,16 +13,16 @@ This folder documents the recruiter-facing Sites implementation for the Commerci
 - Evidence policy separating reported, calculated and synthetic content
 - Ten-year MCH Finance Analyst trend lens (FY2016–FY2025) with growth, margins, CFO/PAT and provenance caveats
 - MCH lender-style credit memo with conditional-support view, cash-conversion triggers and stress screen
-- Forecast Gate A intake contract and Power BI Gate B QA-01–QA-18 evidence links
+- Forecast Gate A intake contract and non-BI evidence links
 - Direct links to the v2 workbook, dashboard render, CFO memo, MCH trend report, credit memo QA, finance-first CV V2 and GitHub repository
-- Power BI delivery panel with editable PBIP/PBIT links, one-command refresh automation, GitHub-triggered Service refresh and two-batch DirectQuery freshness evidence
-- DirectQuery acceptance matrix link for cloud provisioning, Desktop migration, APR measurement, security and rollback gates
-- Next Execution Sprint panel with Gate A/B evidence handoffs, CV personalization path and a 12/12 structural playbook QA link
+- Integrated three-statement model, GL/TB/subledger controls and FMCG standard-costing reconciliation
+- Model governance with source/evidence labels, controls, known limitations, release gate and a recruiter-facing start-here path
+- Next Execution Sprint panel with external-data handoff, CV personalization path and a 12/12 structural playbook QA link
 - MCH public-company valuation rehearsal with FCFF/DCF scenario range, WACC/terminal-growth sensitivity and an explicit EV-only boundary
 - MCH equity-research rehearsal with ten-year thesis, earnings-quality bridge, scorecard, catalysts/risks and diligence actions
 - One-page Finance Analyst CV V3 PDF download link routed to the canonical Drive artifact
 
-The page is intentionally recruiter-first: open the model, trace the checks, then read the finance recommendation. The forecast section keeps the public-guidance proxy separate from the pending internal snapshot gate. The MCH section demonstrates how a finance analyst turns audited filing history into a decision-relevant trend layer without silently mixing it into the 240-row normalized peer core. The credit memo extends the same evidence into a lender-style decision.
+The page is intentionally recruiter-first: open the model, trace the checks, then read the finance recommendation. The active release is the non-Power-BI FP&A path; historical Power BI artefacts remain archived for traceability and are not part of the active gate. The forecast section keeps the public-guidance proxy separate from the pending internal snapshot gate. The MCH section demonstrates how a finance analyst turns audited filing history into a decision-relevant trend layer without silently mixing it into the 240-row normalized peer core. The credit memo extends the same evidence into a lender-style decision.
 
 ## Local build
 

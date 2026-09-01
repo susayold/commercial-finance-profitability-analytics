@@ -994,3 +994,38 @@ Không nên thêm một module phân tích mới chỉ để tăng số lượng
 7. giữ public research và strategic finance ở appendix.
 
 Khi hoàn tất theo thứ tự này, project sẽ thể hiện đúng năng lực **Financial Analyst / FP&A / Business Finance**: hiểu số, hiểu kế toán quản trị, kiểm soát được mô hình, giải thích được performance, quản lý cash và chuyển analysis thành quyết định.
+
+---
+
+# 12. Implementation log — 2026-09-01
+
+## Đã thực hiện trong release này
+
+| Hạng mục | Artifact / command | Kết quả |
+|---|---|---|
+| MBR scenario contract | `scripts/validate_monthly_business_review.mjs` | PASS 16/16; đọc canonical scenario source, không còn expected value stale |
+| Non-BI release gate | `scripts/run_non_powerbi_release_gate.py` | Gọi `run_finance_qa.mjs --nonbi`; chỉ còn Gate A input-gated |
+| Integrated statements | `scripts/build_three_statement_model.mjs` | PASS; current operating fixture 36 tháng × 36 SKU, planning OPEX/CAPEX 36 tháng |
+| Statement controls | `scripts/validate_three_statement_model.mjs` | PASS 13/13; 396 control rows, TB/cash/BS/subledger/journal ties |
+| GL / TB / journal layer | `data/accounting/*.csv` | Chart of accounts, management mapping, 36 monthly TB, journal approvals, 180 subledger controls |
+| FMCG standard costing | `scripts/build_fmcg_cost_variance.mjs` | PASS; 1,296 month × SKU variance rows và 1,296 reserve rows |
+| Costing controls | `scripts/validate_fmcg_cost_variance.mjs` | PASS 9/9; standard-to-actual bridge và reserve policy |
+| Macro governance | `data/macros/macro_driver_book.csv` + `scripts/validate_macro_cutoff.mjs` | PASS; source metadata, scenario assumptions, no public look-ahead |
+| UAT/change control | `docs/UAT_AND_MODEL_CHANGE_CONTROL.md` | Đã thêm 7 UAT cases, approval path và rollback/evidence rules |
+
+## Độ bao phủ sau release
+
+- Core finance không Power BI đã có thêm integrated statements, accounting bridge, standard costing, macro cutoff và UAT governance.
+- Power BI không nằm trong acceptance criteria, non-BI QA runner hoặc recruiter path.
+- External forecast accuracy vẫn **PENDING_EXTERNAL_INPUT**; không được đổi thành PASS bằng fixture demo.
+
+## Câu lệnh tái tạo
+
+```text
+node scripts/build_three_statement_model.mjs
+node scripts/validate_three_statement_model.mjs
+node scripts/build_fmcg_cost_variance.mjs
+node scripts/validate_fmcg_cost_variance.mjs
+node scripts/validate_macro_cutoff.mjs
+python scripts/run_non_powerbi_release_gate.py
+```

@@ -1,0 +1,37 @@
+sku,product,category,brand,lifecycle,standard_unit_cost_vnd,standard_gross_margin,source,evidence_class
+SKU001,SKU001,Dairy,VN1,active,7740,0.5700000000000001,powerbi/data/current/product_master.csv,SIMULATED
+SKU002,SKU002,Beverages,VN2,active,9782,0.5450232558139535,powerbi/data/current/product_master.csv,SIMULATED
+SKU003,SKU003,Condiments,VN3,active,12000,0.52,powerbi/data/current/product_master.csv,SIMULATED
+SKU004,SKU004,Convenience Foods,VN4,active,14392,0.49501754385964913,powerbi/data/current/product_master.csv,SIMULATED
+SKU005,SKU005,Dairy,VN5,active,16960,0.47,powerbi/data/current/product_master.csv,SIMULATED
+SKU006,SKU006,Beverages,VN6,active,15265,0.5700000000000001,powerbi/data/current/product_master.csv,SIMULATED
+SKU007,SKU007,Condiments,VN1,active,17745,0.5449999999999999,powerbi/data/current/product_master.csv,SIMULATED
+SKU008,SKU008,Convenience Foods,VN2,active,20400,0.52,powerbi/data/current/product_master.csv,SIMULATED
+SKU009,SKU009,Dairy,VN3,active,23230,0.495,powerbi/data/current/product_master.csv,SIMULATED
+SKU010,SKU010,Beverages,VN4,active,9540,0.47,powerbi/data/current/product_master.csv,SIMULATED
+SKU011,SKU011,Condiments,VN5,active,9245,0.5700000000000001,powerbi/data/current/product_master.csv,SIMULATED
+SKU012,SKU012,Convenience Foods,VN6,active,11375,0.5449999999999999,powerbi/data/current/product_master.csv,SIMULATED
+SKU013,SKU013,Dairy,VN1,active,13680,0.52,powerbi/data/current/product_master.csv,SIMULATED
+SKU014,SKU014,Beverages,VN2,active,16160,0.495,powerbi/data/current/product_master.csv,SIMULATED
+SKU015,SKU015,Condiments,VN3,active,18815,0.47,powerbi/data/current/product_master.csv,SIMULATED
+SKU016,SKU016,Convenience Foods,VN4,active,16770,0.5700000000000001,powerbi/data/current/product_master.csv,SIMULATED
+SKU017,SKU017,Dairy,VN5,active,19338,0.5449882352941177,powerbi/data/current/product_master.csv,SIMULATED
+SKU018,SKU018,Beverages,VN6,active,22080,0.52,powerbi/data/current/product_master.csv,SIMULATED
+SKU019,SKU019,Condiments,VN1,active,9090,0.495,powerbi/data/current/product_master.csv,SIMULATED
+SKU020,SKU020,Convenience Foods,VN2,active,11395,0.47,powerbi/data/current/product_master.csv,SIMULATED
+SKU021,SKU021,Dairy,VN3,active,10750,0.5700000000000001,powerbi/data/current/product_master.csv,SIMULATED
+SKU022,SKU022,Beverages,VN4,active,12968,0.5449824561403509,powerbi/data/current/product_master.csv,SIMULATED
+SKU023,SKU023,Condiments,VN5,active,15360,0.52,powerbi/data/current/product_master.csv,SIMULATED
+SKU024,SKU024,Convenience Foods,VN6,active,17928,0.4949859154929578,powerbi/data/current/product_master.csv,SIMULATED
+SKU025,SKU025,Dairy,VN1,active,20670,0.47,powerbi/data/current/product_master.csv,SIMULATED
+SKU026,SKU026,Beverages,VN2,active,18275,0.5700000000000001,powerbi/data/current/product_master.csv,SIMULATED
+SKU027,SKU027,Condiments,VN3,active,20930,0.5449999999999999,powerbi/data/current/product_master.csv,SIMULATED
+SKU028,SKU028,Convenience Foods,VN4,active,8640,0.52,powerbi/data/current/product_master.csv,SIMULATED
+SKU029,SKU029,Dairy,VN5,active,10858,0.49497674418604654,powerbi/data/current/product_master.csv,SIMULATED
+SKU030,SKU030,Beverages,VN6,active,13250,0.47,powerbi/data/current/product_master.csv,SIMULATED
+SKU031,SKU031,Condiments,VN1,active,12255,0.5700000000000001,powerbi/data/current/product_master.csv,SIMULATED
+SKU032,SKU032,Convenience Foods,VN2,active,14560,0.5449999999999999,powerbi/data/current/product_master.csv,SIMULATED
+SKU033,SKU033,Dairy,VN3,active,17040,0.52,powerbi/data/current/product_master.csv,SIMULATED
+SKU034,SKU034,Beverages,VN4,active,19695,0.495,powerbi/data/current/product_master.csv,SIMULATED
+SKU035,SKU035,Condiments,VN5,active,22525,0.47,powerbi/data/current/product_master.csv,SIMULATED
+SKU036,SKU036,Convenience Foods,VN6,active,19780,0.5700000000000001,powerbi/data/current/product_master.csv,SIMULATED

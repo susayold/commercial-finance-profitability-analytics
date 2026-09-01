@@ -30,7 +30,7 @@ The pack is designed to be refreshed from locked snapshots, even though this rel
 | Revenue variance | Actual − Budget | period, version, revenue | **OPEN** — live internal snapshot required |
 | Gross-profit variance | Actual GP − Budget GP | net revenue, COGS | **OPEN** — live internal snapshot required |
 | EBITDA-proxy variance | Actual proxy − Budget proxy | proxy P&L lines | **OPEN** — replace proxy Opex/OCF with CoA mapping |
-| Forecast bias | (Forecast − Actual) / Actual | FROZEN forecast snapshot | **OPEN / Gate A; Gate B remains open** |
+| Forecast bias | (Forecast − Actual) / Actual | FROZEN forecast snapshot | **OPEN / external internal-data input** |
 | WAPE | sum(abs(Forecast−Actual)) / sum(abs(Actual)) | eligible frozen history | **OPEN / Gate A** |
 
 The evidence contract intentionally refuses to call a DRAFT snapshot “forecast accuracy”. See docs/FORECAST_ACCURACY_BACKTEST.md and the Gate A intake schema.
@@ -96,7 +96,7 @@ Do not average scenarios into a fake “most likely” number. Present the Base 
 | MBR-05 | FP&A | Freeze Base budget version | Plan integrity = locked assumptions + sign-off | No post-close overwrite | Before forecast cycle |
 | MBR-06 | Finance systems | Map proxy Opex/OCF to CoA | Traceability = mapped lines / total lines | Coverage ≥ 98% | Month-end close |
 | MBR-07 | FP&A lead | Capture FROZEN forecast snapshot | Accuracy = Bias and WAPE on eligible rows | Gate A schema + approval | Before next close |
-| MBR-08 | CFO / reviewer | Execute Power BI QA-01–18 | Release confidence = passed tests / 18 | Evidence, reviewer, timestamp | Before public release |
+| MBR-08 | CFO / reviewer | Review model controls and sign-off | Release confidence = passed core controls / core controls | Evidence, reviewer, timestamp | Before public release |
 
 ## 8. Review script (15 minutes)
 
@@ -105,7 +105,7 @@ Do not average scenarios into a fake “most likely” number. Present the Base 
 3. Drill to channel/customer/SKU and test the 25% CM hurdle.
 4. Translate DSO/DIO/DPO movement into cash actions and owners.
 5. Show scenario boundary; state what evidence would move the plan to Upside or Downside.
-6. Finish on Controls & Evidence; call out open Gate A and Gate B rather than hiding them.
+6. Finish on Controls & Evidence; call out the external forecast-data dependency rather than hiding it.
 
 ## Release checklist
 
@@ -116,12 +116,11 @@ Do not average scenarios into a fake “most likely” number. Present the Base 
 - [ ] DSO/DIO/DPO and liquidity buffer refreshed.
 - [ ] Every action has owner, value equation, guardrail and next review date.
 - [ ] Evidence class is visible on every headline KPI.
-- [ ] Gate A/B status remains open until external evidence is supplied.
+- [ ] External forecast-data dependency remains open until an approved snapshot and post-close actuals are supplied.
 
 ## Linked evidence
 
 - v2 model: https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit
 - Executive output reconciliation: reports/EXECUTIVE_OUTPUT_RECONCILIATION.md
 - Forecast capture / Gate A contract: docs/FORECAST_ACCURACY_BACKTEST.md
-- Power BI QA matrix: powerbi/QA_TEST_MATRIX.md
 - MCH financial-statement analysis: reports/MCH_FINANCIAL_STATEMENT_ANALYSIS_2026-08-30.md

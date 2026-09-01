@@ -1,0 +1,181 @@
+period,control_id,formula,residual_vnd,status,evidence_class
+2023-01,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-01,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-01,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-01,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-01,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-02,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-02,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-02,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-02,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-02,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-03,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-03,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-03,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-03,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-03,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-04,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-04,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-04,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-04,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-04,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-05,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-05,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-05,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-05,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-05,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-06,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-06,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-06,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-06,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-06,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-07,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-07,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-07,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-07,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-07,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-08,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-08,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-08,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-08,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-08,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-09,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-09,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-09,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-09,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-09,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-10,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-10,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-10,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-10,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-10,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-11,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-11,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-11,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-11,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-11,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2023-12,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2023-12,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2023-12,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2023-12,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2023-12,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-01,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-01,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-01,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-01,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-01,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-02,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-02,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-02,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-02,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-02,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-03,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-03,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-03,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-03,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-03,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-04,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-04,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-04,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-04,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-04,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-05,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-05,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-05,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-05,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-05,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-06,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-06,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-06,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-06,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-06,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-07,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-07,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-07,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-07,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-07,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-08,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-08,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-08,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-08,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-08,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-09,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-09,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-09,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-09,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-09,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-10,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-10,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-10,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-10,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-10,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-11,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-11,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-11,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-11,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-11,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2024-12,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2024-12,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2024-12,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2024-12,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2024-12,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-01,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-01,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-01,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-01,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-01,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-02,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-02,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-02,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-02,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-02,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-03,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-03,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-03,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-03,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-03,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-04,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-04,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-04,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-04,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-04,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-05,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-05,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-05,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-05,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-05,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-06,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-06,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-06,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-06,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-06,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-07,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-07,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-07,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-07,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-07,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-08,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-08,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-08,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-08,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-08,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-09,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-09,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-09,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-09,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-09,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-10,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-10,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-10,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-10,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-10,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-11,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-11,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-11,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-11,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-11,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED
+2025-12,BS_BALANCE,Total Assets − Total Liabilities − Equity,0,PASS,DERIVED
+2025-12,CASH_TIE,Cash Flow closing cash − Balance Sheet cash,0,PASS,DERIVED
+2025-12,PAT_RETAINED_EARNINGS,Equity closing − Equity opening − PAT,0,PASS,DERIVED
+2025-12,DEBT_TIE,Debt schedule closing − Balance Sheet debt,0,PASS,DERIVED
+2025-12,DA_TIE,PPE closing − PPE opening − CAPEX + D&A,0,PASS,DERIVED

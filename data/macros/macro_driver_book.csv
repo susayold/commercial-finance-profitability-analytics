@@ -1,0 +1,9 @@
+driver,reference_period,publication_date,forecast_cutoff,source_url,evidence_class,base_value,upside_value,downside_value,unit,impacted_line,owner,rationale
+CPI_all_items,2025-FY,2024-12-20,2024-12-31,https://www.nso.gov.vn/en/cpi/,PUBLIC_REFERENCE,3.5,2.5,5.0,pct,COGS_and_payroll,FP&A,Public reference available before FY2025 planning cutoff
+CPI_food,2025-FY,2024-12-20,2024-12-31,https://www.nso.gov.vn/en/cpi/,PUBLIC_REFERENCE,4.0,3.0,6.0,pct,food_COGS,FP&A,Food-input sensitivity around CPI base
+USDVND,2025-FY,2024-12-20,2024-12-31,https://www.sbv.gov.vn/,PUBLIC_REFERENCE,25000,24500,26500,VND_per_USD,imported_COGS,FP&A,FX planning band; not a live quote
+Retail_sales_growth,2025-FY,2024-12-20,2024-12-31,https://www.nso.gov.vn/en/,PUBLIC_REFERENCE,8.0,12.0,3.0,pct,revenue_volume,Commercial_Finance,Volume scenario driver
+Fuel_index,2025-FY,2024-12-20,2024-12-31,https://www.nso.gov.vn/en/cpi/,PUBLIC_REFERENCE,100,95,115,index,freight,Supply_Chain_Finance,Freight sensitivity proxy
+Wage_index,2025-FY,2024-12-20,2024-12-31,https://www.nso.gov.vn/en/,PUBLIC_REFERENCE,105,103,110,index,payroll_OPEX,HR_Finance,Payroll planning proxy
+Policy_rate,2025-FY,2024-12-20,2024-12-31,https://www.sbv.gov.vn/,PUBLIC_REFERENCE,4.5,3.5,6.5,pct,finance_cost,Treasury,Interest-rate scenario driver
+Freight_surcharge,2025-FY,2024-12-20,2024-12-31,https://www.nso.gov.vn/en/cpi/,SIMULATED_ASSUMPTION,0,0,15,pct,logistics_cost,Supply_Chain_Finance,Stress assumption; not presented as observed data
