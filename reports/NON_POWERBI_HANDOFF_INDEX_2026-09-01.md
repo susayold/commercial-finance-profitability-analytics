@@ -21,6 +21,12 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 | Three-statement reconciliation | https://drive.google.com/file/d/1vLh81lUnZSnY8f2mfdHPWLmEsslbYmOK/view?usp=drivesdk |
 | FMCG standard-cost reconciliation | https://drive.google.com/file/d/1uXOezPturyR9BX6-wiC8aACxOlXi9SCd/view?usp=drivesdk |
 | Canonical non-BI project status | https://drive.google.com/file/d/1sUGUk6dy8UhQ5_EhNozXmfjdNe7m686w/view?usp=drivesdk |
+| Editable management pack (PPTX) | https://docs.google.com/presentation/d/1oroRz0IJAnY__YbFbCkxZa4VLuSVyXDO/edit?usp=drivesdk |
+| Three-year driver plan | https://drive.google.com/file/d/1MrIgrmMiGH8wLpKsE3WvjuYXkfQ9kbS9/view?usp=drivesdk |
+| Forecast versioning/backtest v2 | https://drive.google.com/file/d/12Rs_cFNzt9yrR2nUu66dEmX8oG9TijU0/view?usp=drivesdk |
+| Finance analyst narration script | https://drive.google.com/file/d/1J10PKKs8W_unfkTsx8oUzdY24hQH-_cl/view?usp=drivesdk |
+| Executive board-pack index | https://drive.google.com/file/d/1NBKH3xuXL_8PzzzzUaMWkM3Qrz2Xb-jn/view?usp=drivesdk |
+| Full release archive (GitHub HEAD) | https://drive.google.com/file/d/1tPKphroOXjgCcRHF1MC1fiOfQ87Lff0c/view?usp=drivesdk |
 
 ## New release artifacts (GitHub)
 
