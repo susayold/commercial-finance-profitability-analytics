@@ -1,0 +1,261 @@
+{
+  "status": "PASS",
+  "rows": 720,
+  "periods": 36,
+  "mapped_accounts": 20,
+  "exceptions": 0,
+  "period_checks": [
+    {
+      "period": "2023-01",
+      "debit": 8115669469,
+      "credit": 8115669469,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-02",
+      "debit": 8240174689,
+      "credit": 8240174689,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-03",
+      "debit": 8279819941,
+      "credit": 8279819941,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-04",
+      "debit": 8360535018,
+      "credit": 8360535018,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-05",
+      "debit": 8324772019,
+      "credit": 8324772019,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-06",
+      "debit": 8400405265,
+      "credit": 8400405265,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-07",
+      "debit": 8487855833,
+      "credit": 8487855833,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-08",
+      "debit": 8565380322,
+      "credit": 8565380322,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-09",
+      "debit": 8672754125,
+      "credit": 8672754125,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-10",
+      "debit": 8598173523,
+      "credit": 8598173523,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-11",
+      "debit": 8800157556,
+      "credit": 8800157556,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2023-12",
+      "debit": 8883746743,
+      "credit": 8883746743,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-01",
+      "debit": 8783714202,
+      "credit": 8783714202,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-02",
+      "debit": 8886543653,
+      "credit": 8886543653,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-03",
+      "debit": 8969918686,
+      "credit": 8969918686,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-04",
+      "debit": 9058017004,
+      "credit": 9058017004,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-05",
+      "debit": 9987418570,
+      "credit": 9987418570,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-06",
+      "debit": 10080039580,
+      "credit": 10080039580,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-07",
+      "debit": 10153032261,
+      "credit": 10153032261,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-08",
+      "debit": 10248002240,
+      "credit": 10248002240,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-09",
+      "debit": 10320239010,
+      "credit": 10320239010,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-10",
+      "debit": 10249892562,
+      "credit": 10249892562,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-11",
+      "debit": 10474448196,
+      "credit": 10474448196,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2024-12",
+      "debit": 10568784416,
+      "credit": 10568784416,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-01",
+      "debit": 10450198950,
+      "credit": 10450198950,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-02",
+      "debit": 10531320460,
+      "credit": 10531320460,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-03",
+      "debit": 10621868672,
+      "credit": 10621868672,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-04",
+      "debit": 10642891333,
+      "credit": 10642891333,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-05",
+      "debit": 10663763280,
+      "credit": 10663763280,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-06",
+      "debit": 10751684809,
+      "credit": 10751684809,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-07",
+      "debit": 10820521410,
+      "credit": 10820521410,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-08",
+      "debit": 10908273903,
+      "credit": 10908273903,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-09",
+      "debit": 11015230602,
+      "credit": 11015230602,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-10",
+      "debit": 10739360147,
+      "credit": 10739360147,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-11",
+      "debit": 10944199597,
+      "credit": 10944199597,
+      "residual": 0,
+      "status": "PASS"
+    },
+    {
+      "period": "2025-12",
+      "debit": 11017210077,
+      "credit": 11017210077,
+      "residual": 0,
+      "status": "PASS"
+    }
+  ]
+}

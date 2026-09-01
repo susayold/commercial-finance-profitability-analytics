@@ -27,7 +27,7 @@ Bản cập nhật này đã chuyển dự án sang **non-Power-BI FP&A release*
 - forecast versioning/backtest v2 (Budget, RF1, RF2, RF3, Latest Estimate, Actual) với Bias/WAPE/MAE, bridge và override log;
 - MBR, CFO memo, close calendar, KPI dictionary, recommendation register, editable 10-slide board pack và narration script;
 - website recruiter-facing, CV/interview package và GitHub/Drive handoff;
-- non-BI QA **PASS 48/48** và release gate **PASS 23/23** ở lần chạy gần nhất; link QA 38/38 được tích hợp vào release evidence.
+- non-BI QA **PASS 51/51** và release gate **PASS 40/40** ở lần chạy gần nhất; link QA 38/38 được tích hợp vào release evidence.
 
 ### Trạng thái release hiện tại
 
@@ -655,8 +655,8 @@ What happened -> Why -> Financial impact -> Decision -> Owner -> Deadline -> Gua
 | Closure item | Evidence | Status |
 |---|---|---|
 | MBR / scenario contract | `node scripts/validate_monthly_business_review.mjs` | PASS 16/16 |
-| Non-BI release gate | `python scripts/run_non_powerbi_release_gate.py` | PASS 23/23; Gate A explicitly open |
-| Integrated statements | `scripts/validate_three_statement_model.mjs` | PASS 13/13; monthly BS/cash/TB ties |
+| Non-BI release gate | `python scripts/run_non_powerbi_release_gate.py` | PASS 40/40; Gate A explicitly open |
+| Integrated statements | `scripts/validate_three_statement_model.mjs` | PASS 14/14; monthly BS/cash/TB ties and 20-account mapping |
 | Standard costing | `scripts/validate_fmcg_cost_variance.mjs` | PASS 9/9; 1,296 variance + reserve rows |
 | Macro cutoff | `scripts/validate_macro_cutoff.mjs` | PASS 8/8; no public look-ahead |
 | Three-year plan | `scripts/validate_three_year_operating_plan.mjs` | PASS 17/17; 60 rows, 3 scenarios |
@@ -670,7 +670,7 @@ The single source for release status is `data/governance/project_status_nonbi.js
 
 # P2 — optional differentiators, chỉ làm sau P0/P1
 
-## P2-01 — Correlated Monte Carlo v2
+## P2-01 — ✅ CLOSED AS SIMULATED APPENDIX — Correlated Monte Carlo v2
 
 - keep current independent version as archived v1;
 - use documented correlation matrix;
@@ -679,7 +679,9 @@ The single source for release status is `data/governance/project_status_nonbi.js
 - add expected shortfall and downside-driver attribution;
 - keep in appendix, not top CV bullet.
 
-## P2-02 — SAP-like finance extraction rehearsal
+Implemented: `data/monte_carlo_risk_overlay_v2_2026-09-02.csv`, draw-level output, correlation matrix, report and deterministic builder/validator. QA is **PASS 16/16**. The matrix is positive definite but judgmental; Gate A remains open.
+
+## P2-02 — ✅ CLOSED AS SIMULATED REHEARSAL — SAP-like finance extraction rehearsal
 
 - simulated FI/CO-style fields only;
 - document type, company code, cost center, profit center, GL account;
@@ -687,7 +689,9 @@ The single source for release status is `data/governance/project_status_nonbi.js
 - reconciliation and exception queue;
 - wording: `SAP-like mapping rehearsal`, never `SAP production experience`.
 
-## P2-03 — Tech/services industry variant
+Implemented: `data/accounting/sap_like_mapping_rehearsal.csv` with **720 rows / 36 periods / 20 mapped accounts**, plus period tie-outs, QA JSON and evidence-boundary report. QA is **PASS 9/9**.
+
+## P2-03 — ⏸ DEFERRED BY DESIGN — Tech/services industry variant
 
 Only when applying to SaaS/technology FP&A:
 
@@ -697,12 +701,14 @@ Only when applying to SaaS/technology FP&A:
 - Funnel-to-Cash cadence;
 - separate dataset and narrative from FMCG core.
 
-## P2-04 — Automated commentary draft
+## P2-04 — ✅ CLOSED AS HUMAN-GATED DRAFT — Automated commentary draft
 
 - generate first-draft variance commentary from approved metric snapshot;
 - require human reviewer/approval;
 - prohibit unsupported causal claims;
 - archive generated vs approved commentary.
+
+Implemented: `data/governance/commentary_draft_2026-09-02.csv`, draft report and approval log. QA is **PASS 9/9**; status remains **NEEDS_REVIEW** until a human reviewer supplies approval evidence. P2-03 is intentionally deferred because the core case is FMCG, not SaaS/technology.
 
 ---
 
@@ -1011,7 +1017,7 @@ Không nên thêm một module phân tích mới chỉ để tăng số lượng
 3. quay và link narrated walkthrough;
 4. giữ public research và strategic finance ở appendix.
 
-Khi hoàn tất theo thứ tự này, project sẽ thể hiện đúng năng lực **Financial Analyst / FP&A / Business Finance**: hiểu số, hiểu kế toán quản trị, kiểm soát được mô hình, giải thích được performance, quản lý cash và chuyển analysis thành quyết định.
+Các appendix P2 đã được đóng ở dạng mô phỏng có kiểm soát (correlated Monte Carlo v2, SAP-like mapping rehearsal và commentary draft human-gated). Project vì vậy thể hiện đúng năng lực **Financial Analyst / FP&A / Business Finance**: hiểu số, hiểu kế toán quản trị, kiểm soát được mô hình, giải thích được performance, quản lý cash và chuyển analysis thành quyết định. Phần còn lại vẫn là evidence thật và thao tác handoff ngoài repository.
 
 ---
 
@@ -1035,6 +1041,9 @@ Khi hoàn tất theo thứ tự này, project sẽ thể hiện đúng năng l�
 | Executive/board pack | `scripts/build_nonbi_management_pack.mjs` + `scripts/validate_management_pack.mjs` | PASS; editable 10-slide deck, index and 5-minute narration script |
 | Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v21; management pack, forecast v2 and three-year plan visible; Power BI removed from active UX; valuation appendix precedes footer |
 | Recruiter link QA | `scripts/validate_recruiter_site_links.mjs` | PASS 38/38; private GitHub/Drive authentication boundaries documented |
+| Correlated Monte Carlo v2 | `scripts/build_correlated_monte_carlo_v2.mjs` + validator | PASS 16/16; 5,000 draws, PSD correlation matrix, expected shortfall and directional attribution |
+| SAP-like mapping rehearsal | `scripts/build_sap_like_mapping_rehearsal.mjs` + validator | PASS 9/9; 720 FI/CO-style rows, 36 period ties, 20 mapped accounts; simulated only |
+| Automated commentary draft | `scripts/build_monthly_commentary_draft.mjs` + validator | PASS 9/9; generated draft and approval log remain NEEDS_REVIEW |
 
 ## Độ bao phủ sau release
 
@@ -1055,5 +1064,11 @@ node scripts/validate_three_year_operating_plan.mjs
 node scripts/build_forecast_versioning_backtest_v2.mjs
 node scripts/validate_forecast_versioning_backtest_v2.mjs
 node scripts/validate_management_pack.mjs
+node scripts/build_correlated_monte_carlo_v2.mjs
+node scripts/validate_correlated_monte_carlo_v2.mjs
+node scripts/build_sap_like_mapping_rehearsal.mjs
+node scripts/validate_sap_like_mapping_rehearsal.mjs
+node scripts/build_monthly_commentary_draft.mjs
+node scripts/validate_monthly_commentary_draft.mjs
 python scripts/run_non_powerbi_release_gate.py
 ```

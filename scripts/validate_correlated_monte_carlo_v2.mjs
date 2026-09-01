@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+import fs from 'node:fs';
+import path from 'node:path';
+
+const ROOT = process.cwd();
+const summaryPath = process.argv[2] || 'data/monte_carlo_risk_overlay_v2_2026-09-02.csv';
+const drawsPath = process.argv[3] || 'data/monte_carlo_risk_overlay_v2_draws_2026-09-02.csv';
+const matrixPath = process.argv[4] || 'data/monte_carlo_correlation_matrix_v2.csv';
+const reportPath = process.argv[5] || 'reports/MONTE_CARLO_RISK_OVERLAY_V2_2026-09-02.md';
+const parse = file => { const rows = fs.readFileSync(path.join(ROOT, file), 'utf8').trim().split(/\r?\n/); const headers = rows.shift().split(','); return { headers, rows: rows.map(line => Object.fromEntries(line.split(',').map((value, i) => [headers[i], value]))) }; };
+const checks = []; const add = (name, ok, detail = '') => checks.push({ name, ok: Boolean(ok), detail });
+const summary = parse(summaryPath); const draws = parse(drawsPath); const matrix = parse(matrixPath); const report = fs.readFileSync(path.join(ROOT, reportPath), 'utf8');
+add('report_sections', ['## Purpose', '## Model assumptions', '## Watch thresholds and output', '## Finance interpretation', '## Decision rules', '## Limitations and handoff'].every(section => report.includes(section)));
+add('report_boundary', report.includes('not a probability-calibrated production risk model') && report.includes('Gate A'));
+add('summary_header', summary.headers.join(',') === 'metric,statistic,value,unit,threshold,threshold_direction,simulation_count,seed,evidence_class,method,notes');
+add('summary_rows', summary.rows.length === 34, `rows=${summary.rows.length}`);
+add('draw_header', draws.headers.join(',') === 'draw_id,revenue_vnd_bn,ebitda_proxy_vnd_bn,ebitda_margin_pct,ccc_days,revenue_shock,margin_shock,ccc_shock,cost_inflation_shock');
+add('draw_count', draws.rows.length === 5000, `draws=${draws.rows.length}`);
+add('seed_and_n', summary.rows.every(row => row.seed === '20260902' && row.simulation_count === '5000'));
+add('metrics', ['revenue_vnd_bn', 'ebitda_proxy_vnd_bn', 'ebitda_margin_pct', 'ccc_days', 'joint_downside', 'revenue_shortfall', 'ebitda_shortfall', 'ccc_stretch', 'cost_inflation_shock'].every(metric => summary.rows.some(row => row.metric === metric)));
+add('percentiles', ['revenue_vnd_bn', 'ebitda_proxy_vnd_bn', 'ebitda_margin_pct', 'ccc_days'].every(metric => summary.rows.filter(row => row.metric === metric && /^p(05|25|50|75|95)$/.test(row.statistic)).length === 5));
+add('expected_shortfall', summary.rows.filter(row => row.statistic === 'expected_shortfall_05').length === 5);
+add('evidence_boundary', summary.rows.every(row => row.evidence_class === 'SIMULATED_DERIVED'));
+add('matrix_header', matrix.headers.join(',') === 'driver,revenue_shock,margin_shock,ccc_shock,cost_inflation_shock');
+add('matrix_shape', matrix.rows.length === 4 && matrix.rows.every(row => Number(row[row.driver]) === 1 && Object.keys(row).length === 5));
+const matrixValues = matrix.rows.map(row => matrix.headers.slice(1).map(column => Number(row[column])));
+add('matrix_symmetric', matrixValues.every((row, i) => row.every((value, j) => Math.abs(value - matrixValues[j][i]) < 1e-9)));
+add('matrix_bounds', matrixValues.flat().every(value => value >= -1 && value <= 1));
+const attribution = summary.rows.filter(row => row.statistic === 'driver_attribution_share').reduce((sum, row) => sum + Number(row.value), 0);
+add('attribution_sums_to_one', Math.abs(attribution - 1) < 0.001 || summary.rows.find(row => row.metric === 'joint_downside' && row.statistic === 'probability_breach')?.value === '0');
+const failed = checks.filter(check => !check.ok);
+for (const check of checks) console.log(`${check.ok ? 'PASS' : 'FAIL'} ${check.name}${check.detail ? ` (${check.detail})` : ''}`);
+console.log(`Overall status: ${failed.length ? 'FAIL' : 'PASS'} (${checks.length - failed.length}/${checks.length} checks passed)`);
+if (failed.length) process.exit(1);

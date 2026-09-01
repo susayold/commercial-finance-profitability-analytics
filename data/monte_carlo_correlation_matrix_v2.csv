@@ -1,0 +1,5 @@
+driver,revenue_shock,margin_shock,ccc_shock,cost_inflation_shock
+revenue_shock,1,0.35,-0.3,-0.2
+margin_shock,0.35,1,-0.2,-0.45
+ccc_shock,-0.3,-0.2,1,0.3
+cost_inflation_shock,-0.2,-0.45,0.3,1

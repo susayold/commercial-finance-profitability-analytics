@@ -1,0 +1,35 @@
+metric,statistic,value,unit,threshold,threshold_direction,simulation_count,seed,evidence_class,method,notes
+revenue_vnd_bn,p05,77.4637,VND_bn,76.9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+revenue_vnd_bn,p25,80.5221,VND_bn,76.9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+revenue_vnd_bn,p50,82.5595,VND_bn,76.9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+revenue_vnd_bn,p75,84.493,VND_bn,76.9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+revenue_vnd_bn,p95,87.3244,VND_bn,76.9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+revenue_vnd_bn,probability_breach,0.032,probability,76.9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Watch-threshold breach probability
+revenue_vnd_bn,expected_shortfall_05,0.6277,VND_bn,76.9,below,5000,20260902,SIMULATED_DERIVED,Mean adverse gap in worst 5% tail,Positive adverse gap versus watch threshold
+ebitda_proxy_vnd_bn,p05,9.582,VND_bn,9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_proxy_vnd_bn,p25,11.4506,VND_bn,9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_proxy_vnd_bn,p50,12.8491,VND_bn,9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_proxy_vnd_bn,p75,14.2188,VND_bn,9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_proxy_vnd_bn,p95,16.3602,VND_bn,9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_proxy_vnd_bn,probability_breach,0.025,probability,9,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Watch-threshold breach probability
+ebitda_proxy_vnd_bn,expected_shortfall_05,0.2128,VND_bn,9,below,5000,20260902,SIMULATED_DERIVED,Mean adverse gap in worst 5% tail,Positive adverse gap versus watch threshold
+ebitda_margin_pct,p05,11.9262,percent,12,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_margin_pct,p25,14.0387,percent,12,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_margin_pct,p50,15.5797,percent,12,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_margin_pct,p75,17.0966,percent,12,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_margin_pct,p95,19.2177,percent,12,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ebitda_margin_pct,probability_breach,0.0544,probability,12,below,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Watch-threshold breach probability
+ebitda_margin_pct,expected_shortfall_05,1.0099,percent,12,below,5000,20260902,SIMULATED_DERIVED,Mean adverse gap in worst 5% tail,Positive adverse gap versus watch threshold
+ccc_days,p05,41.0445,days,68,above,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ccc_days,p25,48.8612,days,68,above,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ccc_days,p50,54.0528,days,68,above,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ccc_days,p75,59.5056,days,68,above,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ccc_days,p95,66.7831,days,68,above,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Percentile of simulated outcome
+ccc_days,probability_breach,0.0352,probability,68,above,5000,20260902,SIMULATED_DERIVED,Correlated normal shocks + deterministic transforms,Watch-threshold breach probability
+ccc_days,expected_shortfall_05,2.0086,days,68,above,5000,20260902,SIMULATED_DERIVED,Mean adverse gap in worst 5% tail,Positive adverse gap versus watch threshold
+joint_downside,probability_breach,0.0008,probability,revenue<76.9 & EBITDA<9.0 & CCC>68.0,joint,5000,20260902,SIMULATED_DERIVED,Joint watch-threshold test,4 joint draws
+joint_downside,expected_shortfall_05,3.0501,severity_index,joint_downside,joint,5000,20260902,SIMULATED_DERIVED,Mean joint severity in worst 5% joint tail,Dimensionless index; not a valuation
+revenue_shortfall,driver_attribution_share,0.2874,probability,joint_downside,joint,5000,20260902,SIMULATED_DERIVED,Share of normalized adverse severity in joint draws,"Attribution is directional, not causal proof"
+ebitda_shortfall,driver_attribution_share,0.1384,probability,joint_downside,joint,5000,20260902,SIMULATED_DERIVED,Share of normalized adverse severity in joint draws,"Attribution is directional, not causal proof"
+ccc_stretch,driver_attribution_share,0.1523,probability,joint_downside,joint,5000,20260902,SIMULATED_DERIVED,Share of normalized adverse severity in joint draws,"Attribution is directional, not causal proof"
+cost_inflation_shock,driver_attribution_share,0.4219,probability,joint_downside,joint,5000,20260902,SIMULATED_DERIVED,Share of normalized adverse severity in joint draws,"Attribution is directional, not causal proof"

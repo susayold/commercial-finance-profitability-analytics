@@ -1,10 +1,21 @@
-[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,
+account,account_name,account_type,statement,normal_balance,evidence_class,management_line,cost_center_rule,mapping_status
+1000,Cash,Asset,Balance Sheet,debit,SIMULATED,Cash,Company,APPROVED_SIMULATED
+1100,Trade Receivables,Asset,Balance Sheet,debit,SIMULATED,Trade Receivables,Company,APPROVED_SIMULATED
+1200,Inventory,Asset,Balance Sheet,debit,SIMULATED,Inventory,Company,APPROVED_SIMULATED
+1500,Net PP&E,Asset,Balance Sheet,debit,SIMULATED,Net PP&E,Company,APPROVED_SIMULATED
+2000,Trade Payables,Liability,Balance Sheet,credit,SIMULATED,Trade Payables,Company,APPROVED_SIMULATED
+2500,Debt,Liability,Balance Sheet,credit,SIMULATED,Debt,Company,APPROVED_SIMULATED
+3000,Opening Retained Earnings,Equity,Balance Sheet,credit,SIMULATED,Opening Retained Earnings,Company,APPROVED_SIMULATED
+4000,Gross Sales,Revenue,Income Statement,credit,SIMULATED,Gross Sales,Company,APPROVED_SIMULATED
+4010,Invoice Discounts,Contra Revenue,Income Statement,debit,SIMULATED,Invoice Discounts,Company,APPROVED_SIMULATED
+4020,Returns,Contra Revenue,Income Statement,debit,SIMULATED,Returns,Company,APPROVED_SIMULATED
+4030,Rebates,Contra Revenue,Income Statement,debit,SIMULATED,Rebates,Company,APPROVED_SIMULATED
+4040,Voucher Support,Contra Revenue,Income Statement,debit,SIMULATED,Voucher Support,Company,APPROVED_SIMULATED
+5000,COGS,Expense,Income Statement,debit,SIMULATED,COGS,Function/CostCenter from source ledger,APPROVED_SIMULATED
+5100,Channel Fees,Expense,Income Statement,debit,SIMULATED,Channel Fees,Function/CostCenter from source ledger,APPROVED_SIMULATED
+5200,Trade Spend,Expense,Income Statement,debit,SIMULATED,Trade Spend,Function/CostCenter from source ledger,APPROVED_SIMULATED
+5300,Variable Fulfilment,Expense,Income Statement,debit,SIMULATED,Variable Fulfilment,Function/CostCenter from source ledger,APPROVED_SIMULATED
+6000,Controllable OPEX,Expense,Income Statement,debit,SIMULATED,Controllable OPEX,Function/CostCenter from source ledger,APPROVED_SIMULATED
+6100,Depreciation,Expense,Income Statement,debit,SIMULATED,Depreciation,Function/CostCenter from source ledger,APPROVED_SIMULATED
+6200,Finance Cost,Expense,Income Statement,debit,SIMULATED,Finance Cost,Function/CostCenter from source ledger,APPROVED_SIMULATED
+6300,Tax Proxy,Expense,Income Statement,debit,SIMULATED,Tax Proxy,Function/CostCenter from source ledger,APPROVED_SIMULATED

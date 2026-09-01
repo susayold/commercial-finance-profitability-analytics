@@ -32,6 +32,10 @@
       "status": "PASS"
     },
     {
+      "id": "FILE:data/accounting/gl_management_mapping.csv",
+      "status": "PASS"
+    },
+    {
       "id": "FILE:docs/THREE_YEAR_DRIVER_BASED_OPERATING_PLAN.md",
       "status": "PASS"
     },
@@ -93,6 +97,70 @@
     },
     {
       "id": "FILE:reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/build_correlated_monte_carlo_v2.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/validate_correlated_monte_carlo_v2.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/monte_carlo_risk_overlay_v2_2026-09-02.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/monte_carlo_risk_overlay_v2_draws_2026-09-02.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/monte_carlo_correlation_matrix_v2.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:reports/MONTE_CARLO_RISK_OVERLAY_V2_2026-09-02.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/build_sap_like_mapping_rehearsal.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/validate_sap_like_mapping_rehearsal.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/accounting/sap_like_mapping_rehearsal.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:reports/SAP_LIKE_MAPPING_REHEARSAL_2026-09-02.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:reports/SAP_LIKE_MAPPING_REHEARSAL_QA_2026-09-02.json",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/build_monthly_commentary_draft.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/validate_monthly_commentary_draft.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/governance/commentary_draft_2026-09-02.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:reports/MONTHLY_COMMENTARY_DRAFT_2026-09-02.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:reports/MONTHLY_COMMENTARY_APPROVAL_LOG_2026-09-02.csv",
       "status": "PASS"
     }
   ],

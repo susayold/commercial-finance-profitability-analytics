@@ -19,6 +19,7 @@ const tb = readCsv(path.join(acct, 'trial_balance_monthly.csv'));
 const tbChecks = readCsv(path.join(acct, 'trial_balance_checks.csv'));
 const journals = readCsv(path.join(acct, 'journal_adjustments.csv'));
 const subledger = readCsv(path.join(acct, 'subledger_reconciliation.csv'));
+const mapping = readCsv(path.join(acct, 'gl_management_mapping.csv'));
 const periods = income.map(row => row.period);
 add('statement_files_present', income.length > 0 && income.length === balance.length && income.length === cashflow.length, `income=${income.length}; balance=${balance.length}; cashflow=${cashflow.length}`);
 add('36_months', income.length === 36, `periods=${income.length}`);
@@ -28,6 +29,7 @@ add('cash_tie_controls', recon.filter(row => row.control_id === 'CASH_TIE').ever
 add('retained_earnings_controls', recon.filter(row => row.control_id === 'PAT_RETAINED_EARNINGS').every(row => row.status === 'PASS' && absOk(row.residual_vnd)), 'PAT movement');
 add('trial_balance_balances', tbChecks.length === 36 && tbChecks.every(row => row.status === 'PASS' && absOk(row.residual_vnd)), `rows=${tbChecks.length}`);
 add('subledger_controls', subledger.length === 180 && subledger.every(row => row.status === 'PASS' && absOk(row.residual_vnd)), `rows=${subledger.length}`);
+add('gl_management_mapping', mapping.length === 20 && mapping.every(row => row.account && row.management_line && row.cost_center_rule && row.mapping_status === 'APPROVED_SIMULATED'), `rows=${mapping.length}`);
 const journalGroups = new Map();
 for (const row of journals) { if (!journalGroups.has(row.entry_id)) journalGroups.set(row.entry_id, []); journalGroups.get(row.entry_id).push(row); }
 add('journal_double_entry', journalGroups.size === 36 && [...journalGroups.values()].every(rows => absOk(rows.reduce((a, row) => a + n(row.debit_vnd) - n(row.credit_vnd), 0))), `entries=${journalGroups.size}`);
