@@ -32,6 +32,54 @@
       "status": "PASS"
     },
     {
+      "id": "FILE:docs/THREE_YEAR_DRIVER_BASED_OPERATING_PLAN.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/planning/three_year_operating_plan.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/planning/operating_plan_reconciliation.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/planning/operating_plan_initiatives.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:docs/FORECAST_VERSIONING_BACKTEST_V2.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/forecast/forecast_versioned_snapshots_v2.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/forecast/forecast_backtest_metrics_v2.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/forecast/forecast_version_bridge_v2.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/forecast/forecast_override_log_v2.csv",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:output/pptx/VNFINANCE_NONBI_FPA_MBR_2026-09-01.pptx",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:reports/EXECUTIVE_BOARD_PACK_INDEX_2026-09-01.md",
+      "status": "PASS"
+    },
+    {
       "id": "FILE:RECRUITER_START_HERE.md",
       "status": "PASS"
     },

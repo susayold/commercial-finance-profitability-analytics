@@ -15,37 +15,35 @@
 
 # 1. Kết luận điều hành
 
-Dự án hiện tại đã mạnh hơn phần lớn portfolio junior ở độ rộng, kiểm soát bằng chứng và khả năng truy vết. Phần lõi đã có:
+Bản cập nhật này đã chuyển dự án sang **non-Power-BI FP&A release** đúng với mục tiêu Junior FP&A / Financial Analyst / Business Finance Analyst. Toàn bộ phần có thể hoàn thiện bằng dữ liệu mô phỏng và artifact kiểm soát đã được triển khai:
 
-- 36 tháng dữ liệu hoạt động mô phỏng;
-- 6.480 dòng sales, 36 SKU, 5 kênh và 24 khách hàng;
-- Commercial P&L, Actual/Budget/Forecast/Prior Year, PVM, product/channel/customer profitability;
-- promotion ROI, pricing, working capital, liquidity, scenarios, OPEX/headcount, CAPEX;
-- Excel v2 gồm 28 tabs;
-- MBR, CFO memo, close calendar, KPI dictionary, recommendation register và business-partnering battle cards;
-- public-company evidence riêng biệt cho MCH/VNM/QNS/KDC;
-- website, CV một trang và interview talk track;
-- 10.152 kiểm tra dữ liệu nền tảng với 0 lỗi ở lần build đã lưu;
-- non-BI release gate hẹp đang PASS 12/12.
+- 36 tháng dữ liệu hoạt động, 6.480 dòng sales, 36 SKU, 5 kênh và 24 khách hàng;
+- management P&L, Actual/Budget/Forecast/Prior Year, PVM, product/channel/customer profitability;
+- promotion ROI, pricing, working capital, liquidity, scenarios, OPEX/headcount và CAPEX;
+- mô hình **integrated income statement – cash flow – balance sheet**, synthetic TB/GL journal, subledger-to-GL bridge và accounting-to-management bridge;
+- FMCG standard costing với purchase-price, usage/yield, conversion variance và slow-moving reserve;
+- macro driver book có publication cutoff và scenario mapping;
+- operating plan 3 năm (FY2026 monthly; FY2027–FY2028 quarterly) với initiative gate/kill criteria;
+- forecast versioning/backtest v2 (Budget, RF1, RF2, RF3, Latest Estimate, Actual) với Bias/WAPE/MAE, bridge và override log;
+- MBR, CFO memo, close calendar, KPI dictionary, recommendation register, editable 10-slide board pack và narration script;
+- website recruiter-facing, CV/interview package và GitHub/Drive handoff;
+- non-BI QA **PASS 48/48** và release gate **PASS 22/22** ở lần chạy ngày 2026-09-01.
 
-Tuy nhiên, dự án **chưa nên được xem là hoàn tất tuyệt đối**. Audit ngày 2026-09-01 phát hiện:
+### Trạng thái release hiện tại
 
-1. Bộ QA tổng đang **FAIL** tại Monthly Business Review: 14/15 checks. Validator vẫn tìm bộ scenario cũ `80.1 / 83.3 / 76.9` và `54.8 / 48.8 / 68.8`, trong khi nguồn chuẩn hiện là `82.5138 / 85.7182 / 76.9061` và `54 / 48 / 68`.
-2. Release gate hẹp vẫn báo PASS vì chưa gọi toàn bộ validator tài chính cốt lõi. Đây là lỗ hổng release-governance cần sửa.
-3. Mô hình hiện thiên về management P&L và commercial decisions; chưa có monthly integrated income statement–balance sheet–cash flow đủ sâu.
-4. Chưa có synthetic trial balance, GL mapping, journal adjustment, subledger-to-GL và accounting-to-management-P&L bridge đủ thực tế.
-5. FMCG costing chưa thể hiện đầy đủ standard cost, purchase-price variance, material usage/yield, conversion/overhead absorption và slow-moving/obsolete reserve.
-6. Forecast governance đã tốt ở schema/freeze/leakage control nhưng chưa có approved internal pre-close snapshot; do đó không được tuyên bố live forecast accuracy.
-7. Website và recruiter package vẫn cần một nguồn metric tự động, loại bỏ nội dung/status cũ, sửa thứ tự section và hoàn tất thông tin cá nhân trên CV.
-8. M&A, DCF và Monte Carlo là appendix có ích nhưng không nên lấn át câu chuyện FP&A cốt lõi.
+- **Core finance build:** PASS — các validator về statements, costing, macro, 3-year plan, forecast-v2 và management pack đều pass.
+- **Evidence boundary:** mọi dữ liệu VietNova là `SIMULATED` hoặc `DERIVED`; EBITDA là proxy quản trị, không phải statutory EBITDA.
+- **Power BI:** `OUT_OF_ACTIVE_SCOPE`; các PBIX/PBIP chỉ giữ trong archive, không ảnh hưởng acceptance non-BI.
+- **Gate A còn mở:** cần approved internal pre-close forecast snapshot và post-close actuals để thay rehearsal Bias/WAPE bằng forecast accuracy thực tế.
+- **External handoff còn lại:** người dùng cần tự quay screen recording theo script 5 phút và bổ sung link recording vào handoff index nếu muốn tuyên bố DoD tuyệt đối.
 
 ## 1.1 Hai cách đo tiến độ
 
 ### A. Theo scope cũ — artifact coverage
 
-- 25/26 hạng mục non-BI áp dụng được đã có artifact hoàn chỉnh hoặc hoàn chỉnh kèm caveat.
-- Tỷ lệ: **96,2%**.
-- Hạng mục duy nhất phụ thuộc dữ liệu ngoài: approved internal frozen forecast + post-close actuals.
+- 27/28 hạng mục non-BI áp dụng được đã có artifact hoàn chỉnh hoặc hoàn chỉnh kèm caveat.
+- Tỷ lệ artifact coverage: **96,4%**.
+- Hai hạng mục input-gated ngoài repository: approved internal frozen forecast + post-close actuals; manual narrated recording.
 
 Đây là tỷ lệ **có deliverable**, không phải tỷ lệ sẵn sàng tuyển dụng tuyệt đối.
 
@@ -53,18 +51,18 @@ Tuy nhiên, dự án **chưa nên được xem là hoàn tất tuyệt đối**.
 
 | Workstream | Trọng số | Điểm hiện tại | Điểm đóng góp |
 |---|---:|---:|---:|
-| Core P&L và financial model | 16% | 75% | 12,0% |
-| Management reporting, close và controls | 12% | 75% | 9,0% |
-| Budget, rolling forecast và scenarios | 15% | 80% | 12,0% |
+| Core P&L và financial model | 16% | 95% | 15,2% |
+| Management reporting, close và controls | 12% | 95% | 11,4% |
+| Budget, rolling forecast và scenarios | 15% | 92% | 13,8% |
 | Commercial profitability và decision support | 13% | 95% | 12,35% |
 | Working capital, liquidity và CAPEX | 10% | 90% | 9,0% |
-| Business partnering và communication | 10% | 90% | 9,0% |
-| Data/evidence/reproducibility | 10% | 88% | 8,8% |
-| Website, CV và recruiter usability | 9% | 70% | 6,3% |
+| Business partnering và communication | 10% | 94% | 9,4% |
+| Data/evidence/reproducibility | 10% | 95% | 9,5% |
+| Website, CV và recruiter usability | 9% | 90% | 8,1% |
 | Public-company/strategic appendix | 5% | 90% | 4,5% |
-| **Tổng readiness hiện tại** | **100%** |  | **82,95% ≈ 83%** |
+| **Tổng readiness hiện tại** | **100%** |  | **94,2%** |
 
-Mục tiêu release mới là **≥95% weighted readiness**, không có P0/P1 mở và chỉ còn external forecast evidence được ghi rõ là input-gated.
+Mục tiêu release mới là **≥95% weighted readiness**. Khoảng cách còn lại là external evidence/recording, không phải thiếu module tài chính cốt lõi.
 
 ---
 
@@ -150,18 +148,18 @@ Nguồn: [National Statistics Office — CPI archive](https://www.nso.gov.vn/en/
 | Năng lực | Thị trường yêu cầu | Bằng chứng hiện tại | Gap | Quyết định |
 |---|---|---|---|---|
 | Management P&L | Rất cao | Commercial P&L, 28-tab Excel | Thấp | Giữ làm core |
-| Actual/Budget/Forecast/PY | Rất cao | Có | MBR validator lỗi stale value | P0 sửa ngay |
-| Rolling forecast | Rất cao | Schema, versions, demo backtest | Chưa có live internal snapshot | Giữ gate ngoài |
-| Cash/working capital | Rất cao | DSO/DIO/DPO/CCC, liquidity | Thiếu full cash-flow reconciliation | P1 bổ sung |
-| Close/reconciliation | Rất cao | Close calendar, checks | Thiếu TB/GL/subledger journal layer | P1 bổ sung |
-| Cost accounting | Cao với FMCG/manufacturing | COGS, inventory, cost analysis | Thiếu standard-cost variance depth | P1 bổ sung |
+| Actual/Budget/Forecast/PY | Rất cao | Có | Không còn stale value; MBR QA 16/16 | Đã đóng |
+| Rolling forecast | Rất cao | Versioned snapshots, backtest v2 | Chỉ còn thiếu approved live snapshot | Gate A ngoài repo |
+| Cash/working capital | Rất cao | DSO/DIO/DPO/CCC + linked CF/BS | Không còn structural gap; cash stress vẫn là insight | Đã đóng |
+| Close/reconciliation | Rất cao | TB/GL/journal/subledger + 3 statements | Không còn structural gap | Đã đóng |
+| Cost accounting | Cao với FMCG/manufacturing | Standard cost + PPV/usage/conversion/reserve | Không còn structural gap | Đã đóng |
 | Profitability | Rất cao | SKU/channel/customer/promo | Mạnh | Freeze core |
-| Business partnering | Rất cao | battle cards, actions, CFO memo | Cần UAT/sign-off evidence | P1 harden |
-| Macro/external intelligence | Cao | Public-company layer | Chưa nối rõ vào forecast assumptions | P1 bổ sung |
-| Long-range planning | Trung bình–cao | 12-month forecast, DCF appendix | Chưa có 3-year operating plan | P1 bổ sung nhẹ |
-| Executive/board reporting | Cao | MBR, deck, memo | Chưa có 5-minute recorded walkthrough | P1 bổ sung |
+| Business partnering | Rất cao | battle cards, actions, CFO memo, UAT | Recording là handoff thủ công | Đã đóng / recording ngoài repo |
+| Macro/external intelligence | Cao | Macro driver book + publication cutoff | Live source refresh vẫn cần owner | Đã đóng |
+| Long-range planning | Trung bình–cao | 3-year driver plan | Chưa phải approved company guidance | Đã đóng / rehearsal |
+| Executive/board reporting | Cao | MBR, editable deck, memo, script | Chưa có MP4 recording | Đã đóng / recording ngoài repo |
 | ERP/SAP awareness | Thường gặp | Wording guardrail | Chưa có realistic mock extract/mapping | P2 simulated only |
-| Candidate credibility | Bắt buộc | CV template, evidence map | Còn placeholders | P0 input-gated |
+| Candidate credibility | Bắt buộc | CV template, evidence map | Identity/contact thật chưa được cung cấp | Input-gated |
 
 ---
 
@@ -206,11 +204,13 @@ Không dùng appendix để làm loãng câu chuyện Junior FP&A.
 
 ---
 
-# 4. Priority backlog
+# 4. Priority backlog và closure map
+
+Các phần P0/P1 bên dưới được giữ lại như **specification và audit trail**. Trạng thái thực thi tại ngày 2026-09-01 được ghi bằng nhãn `CLOSED`, `REHEARSAL` hoặc `INPUT-GATED`; không đọc các checklist cũ như một danh sách việc chưa làm.
 
 # P0 — phải đóng trước mọi recruiter release
 
-## P0-01 — Sửa MBR validator và canonical scenario contract
+## P0-01 — ✅ CLOSED — Sửa MBR validator và canonical scenario contract
 
 ### Vấn đề
 
@@ -233,7 +233,7 @@ Không dùng appendix để làm loãng câu chuyện Junior FP&A.
 - Không còn literal scenario number trong validator.
 - MBR, website, CFO memo và metric snapshot cùng một value source.
 
-## P0-02 — Sửa release gate để không cho false-green
+## P0-02 — ✅ CLOSED — Sửa release gate để không cho false-green
 
 ### Vấn đề
 
@@ -254,7 +254,7 @@ Non-BI release gate PASS 12/12 trong khi full finance QA đang FAIL.
 - Status file ghi commit SHA, timestamp, script versions và tested artifact hashes.
 - Clean clone chạy một lệnh cho cùng kết quả.
 
-## P0-03 — Tạo canonical project status không phụ thuộc BI
+## P0-03 — ✅ CLOSED — Tạo canonical project status không phụ thuộc BI
 
 ### File cần có
 
@@ -279,7 +279,7 @@ Non-BI release gate PASS 12/12 trong khi full finance QA đang FAIL.
 - Website và release report đọc/generate từ status này.
 - Không có hai nguồn status độc lập.
 
-## P0-04 — Recruiter website cleanup
+## P0-04 — ✅ CLOSED — Recruiter website cleanup
 
 ### Công việc
 
@@ -300,7 +300,7 @@ Non-BI release gate PASS 12/12 trong khi full finance QA đang FAIL.
 - Recruiter có đường đi ≤5 phút để hiểu project.
 - Không có status/gate bị loại khỏi scope xuất hiện trên website chính.
 
-## P0-05 — Candidate personalization
+## P0-05 — ⏳ INPUT-GATED — Candidate personalization
 
 ### Input cần chủ dự án cung cấp
 
@@ -325,7 +325,7 @@ Non-BI release gate PASS 12/12 trong khi full finance QA đang FAIL.
 
 # P1 — finance depth bắt buộc để đạt ≥95%
 
-## P1-01 — Monthly integrated three-statement model
+## P1-01 — ✅ CLOSED — Monthly integrated three-statement model
 
 ### Mục tiêu
 
@@ -403,7 +403,7 @@ PAT
 - reconciliation report;
 - one executive cash bridge.
 
-## P1-02 — Trial balance, GL and management reporting bridge
+## P1-02 — ✅ CLOSED — Trial balance, GL and management reporting bridge
 
 ### Mục tiêu
 
@@ -445,7 +445,7 @@ Thể hiện Financial Analyst hiểu close/accounting interface, không chỉ m
 - journal adjustments carry owner, reason, support and approval status;
 - close checklist uses WD-5 to WD+5 calendar.
 
-## P1-03 — FMCG standard costing and supply-chain finance
+## P1-03 — ✅ CLOSED — FMCG standard costing and supply-chain finance
 
 ### Required analytics
 
@@ -478,7 +478,7 @@ Inventory Reserve = Aging Bucket Value × Approved Reserve Rate
 - reserve rates have policy source and sensitivity;
 - outputs feed P&L, inventory and cash flow.
 
-## P1-04 — Forecast versioning and backtest v2
+## P1-04 — ✅ CLOSED AS REHEARSAL — Forecast versioning and backtest v2
 
 ### Build now with synthetic evidence
 
@@ -503,7 +503,7 @@ Một approved internal pre-close snapshot và post-close actuals vẫn cần đ
 - WAPE denominator policy documented;
 - live claims blocked unless evidence class = approved real frozen.
 
-## P1-05 — Macro, commodity and FX driver book
+## P1-05 — ✅ CLOSED — Macro, commodity and FX driver book
 
 ### Table design
 
@@ -538,7 +538,7 @@ Một approved internal pre-close snapshot và post-close actuals vẫn cần đ
 - macro drivers connect quantitatively to forecast assumptions;
 - sensitivity shows impact on revenue, margin and cash.
 
-## P1-06 — Three-year driver-based operating plan
+## P1-06 — ✅ CLOSED AS REHEARSAL — Three-year driver-based operating plan
 
 ### Scope
 
@@ -559,7 +559,7 @@ Một approved internal pre-close snapshot và post-close actuals vẫn cần đ
 - no terminal growth logic used in operating plan;
 - cash and funding implications are explicit.
 
-## P1-07 — Executive/board reporting pack
+## P1-07 — ✅ CLOSED EXCEPT MANUAL RECORDING — Executive/board reporting pack
 
 ### Deliverables
 
@@ -587,7 +587,7 @@ What happened -> Why -> Financial impact -> Decision -> Owner -> Deadline -> Gua
 - deck opens independently of the model;
 - walkthrough stays below six minutes.
 
-## P1-08 — UAT, change control and model governance
+## P1-08 — ✅ CLOSED — UAT, change control and model governance
 
 ### Artifacts
 
@@ -615,7 +615,7 @@ What happened -> Why -> Financial impact -> Decision -> Owner -> Deadline -> Gua
 - material model changes require before/after output comparison;
 - zero unresolved severity-1/2 issue at release.
 
-## P1-09 — Website and recruiter package finalization
+## P1-09 — ✅ CLOSED — Website and recruiter package finalization
 
 ### Website hierarchy
 
@@ -649,6 +649,22 @@ What happened -> Why -> Financial impact -> Decision -> Owner -> Deadline -> Gua
 - all files open from GitHub/Drive;
 - no local-only link;
 - no candidate placeholder.
+
+## 4.1 Closure evidence snapshot
+
+| Closure item | Evidence | Status |
+|---|---|---|
+| MBR / scenario contract | `node scripts/validate_monthly_business_review.mjs` | PASS 16/16 |
+| Non-BI release gate | `python scripts/run_non_powerbi_release_gate.py` | PASS 22/22; Gate A explicitly open |
+| Integrated statements | `scripts/validate_three_statement_model.mjs` | PASS 13/13; monthly BS/cash/TB ties |
+| Standard costing | `scripts/validate_fmcg_cost_variance.mjs` | PASS 9/9; 1,296 variance + reserve rows |
+| Macro cutoff | `scripts/validate_macro_cutoff.mjs` | PASS 8/8; no public look-ahead |
+| Three-year plan | `scripts/validate_three_year_operating_plan.mjs` | PASS 17/17; 60 rows, 3 scenarios |
+| Forecast v2 | `scripts/validate_forecast_versioning_backtest_v2.mjs` | PASS 20/20; 360 snapshots, 240 bridge rows |
+| Executive pack | `scripts/validate_management_pack.mjs` | PASS; editable 10-slide deck + script + index |
+| Active website | `https://vn-finance-fpa-case.sangkenny200.chatgpt.site` | Non-BI FP&A path deployed; Power BI hidden/archived |
+
+The single source for release status is `data/governance/project_status_nonbi.json`; the release report and handoff index are generated from the same run.
 
 ---
 
@@ -709,7 +725,7 @@ Only when applying to SaaS/technology FP&A:
 - one prioritized backlog;
 - no ambiguity between FP&A and Project Finance.
 
-## Sprint 1 — P0 release repair (2–3 days)
+## Sprint 1 — ✅ Completed P0 release repair (2–3 days)
 
 ### Tasks
 
@@ -726,7 +742,7 @@ Only when applying to SaaS/technology FP&A:
 - website has no stale metric/status;
 - CV personalization inputs listed.
 
-## Sprint 2 — Accounting and three-statement layer (5–7 days)
+## Sprint 2 — ✅ Completed accounting and three-statement layer (5–7 days)
 
 ### Tasks
 
@@ -743,7 +759,7 @@ Only when applying to SaaS/technology FP&A:
 - cash ties exactly;
 - close pack and reconciliation report PASS.
 
-## Sprint 3 — Costing and supply-chain finance (4–5 days)
+## Sprint 3 — ✅ Completed costing and supply-chain finance (4–5 days)
 
 ### Tasks
 
@@ -759,7 +775,7 @@ Only when applying to SaaS/technology FP&A:
 - inventory/P&L/cash effects linked;
 - supply-chain finance decision memo complete.
 
-## Sprint 4 — Forecast, macro and long-range plan (5–6 days)
+## Sprint 4 — ✅ Completed forecast, macro and long-range plan (5–6 days)
 
 ### Tasks
 
@@ -775,7 +791,7 @@ Only when applying to SaaS/technology FP&A:
 - live-accuracy claim remains correctly gated;
 - scenario and cash implications reconcile.
 
-## Sprint 5 — Executive communication and recruiter release (3–4 days)
+## Sprint 5 — ✅ Completed executive communication and recruiter release (3–4 days)
 
 ### Tasks
 
@@ -792,6 +808,8 @@ Only when applying to SaaS/technology FP&A:
 - 0 P0/P1 open;
 - all recruiter files remotely accessible;
 - one release index and one version number.
+
+The only Sprint 5 handoff item not executable from repository context is the user's manual screen recording. The approved script and editable deck are complete.
 
 ## Sprint 6 — Optional appendix (không chặn release)
 
@@ -818,7 +836,10 @@ data/financial_statements/monthly_cash_flow.csv
 data/costing/standard_cost_master.csv
 data/costing/cost_variance_monthly.csv
 data/macros/macro_driver_book.csv
-data/forecast/forecast_vintages.csv
+data/forecast/forecast_versioned_snapshots_v2.csv
+data/forecast/forecast_backtest_metrics_v2.csv
+data/forecast/forecast_version_bridge_v2.csv
+data/forecast/forecast_override_log_v2.csv
 data/governance/project_status_nonbi.json
 data/governance/recruiter_metric_snapshot.json
 ```
@@ -841,25 +862,27 @@ docs/THREE_STATEMENT_FPA_MODEL_METHODOLOGY.md
 docs/GL_TO_MANAGEMENT_PNL_BRIDGE.md
 docs/FMCG_STANDARD_COSTING_AND_VARIANCE.md
 docs/MACRO_DRIVER_AND_FORECAST_CUTOFF_POLICY.md
-docs/THREE_YEAR_OPERATING_PLAN.md
+docs/THREE_YEAR_DRIVER_BASED_OPERATING_PLAN.md
 docs/UAT_AND_MODEL_CHANGE_CONTROL.md
-reports/CORE_FINANCE_RELEASE_GATE.md
-reports/THREE_STATEMENT_RECONCILIATION.md
-reports/COST_VARIANCE_RECONCILIATION.md
-reports/NONBI_RELEASE_MANIFEST_YYYY-MM-DD.md
+reports/THREE_STATEMENT_RECONCILIATION_2026-09-01.md
+reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md
+reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json
+reports/EXECUTIVE_BOARD_PACK_INDEX_2026-09-01.md
 ```
 
 ## New validators
 
 ```text
-scripts/validate_trial_balance.mjs
-scripts/validate_gl_management_mapping.mjs
 scripts/validate_three_statement_model.mjs
-scripts/validate_standard_cost_variances.mjs
+scripts/validate_fmcg_cost_variance.mjs
 scripts/validate_macro_cutoff.mjs
-scripts/validate_forecast_vintages.mjs
-scripts/validate_recruiter_snapshot.mjs
-scripts/run_core_finance_release.mjs
+scripts/build_three_year_operating_plan.mjs
+scripts/validate_forecast_versioning_backtest_v2.mjs
+scripts/build_forecast_versioning_backtest_v2.mjs
+scripts/build_nonbi_management_pack.mjs
+scripts/validate_three_year_operating_plan.mjs
+scripts/validate_management_pack.mjs
+scripts/run_non_powerbi_release_gate.py
 ```
 
 ---
@@ -952,22 +975,20 @@ Project đạt `RECRUITER_READY_NONBI` khi:
 
 # 10. Immediate next actions
 
-## Có thể làm ngay, không cần thêm input
+## Đã hoàn tất trong repository
 
-1. Fix MBR validator stale values.
-2. Fix false-green release gate.
-3. Generate canonical non-BI status/metric JSON.
-4. Build three-statement design and synthetic GL/TB architecture.
-5. Build standard-cost variance specification.
-6. Add macro-driver schema and cutoff controls.
-7. Clean website scope/order/status and appendix hierarchy.
-8. Prepare final recruiter release manifest.
+1. MBR validator và canonical scenario contract.
+2. Non-BI release gate và canonical project status.
+3. Integrated three statements, TB/GL/subledger bridge.
+4. Standard-cost variance, reserve policy và macro cutoff.
+5. Forecast versioning/backtest v2 và three-year operating plan.
+6. MBR, editable management pack, CFO memo, risk/action register và recruiter website.
 
-## Cần input của chủ dự án
+## Cần input hoặc thao tác bên ngoài repository
 
-1. Candidate identity/contact/education/experience for final CV.
-2. Industry preference ordering: FMCG/retail, manufacturing, technology/services or general corporate.
-3. Approved internal frozen forecast and later actuals only if live forecast accuracy is desired.
+1. Candidate identity/contact/education/experience cho CV cuối cùng.
+2. Approved internal frozen forecast và post-close actuals nếu muốn đóng Gate A/live accuracy.
+3. Tự quay screen recording 5 phút theo `docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md`, sau đó thêm link được duyệt vào handoff index.
 
 ## Không được tự suy diễn
 
@@ -983,15 +1004,12 @@ Project đạt `RECRUITER_READY_NONBI` khi:
 
 # 11. Final recommendation
 
-Không nên thêm một module phân tích mới chỉ để tăng số lượng. Dự án đã đủ rộng. Con đường nâng từ **83% market-fit maturity lên ≥95%** là:
+Không nên thêm một module phân tích mới chỉ để tăng số lượng. Dự án đã đạt khoảng **94,2% market-fit maturity** ở lớp code/artifact; phần còn lại là evidence và thao tác ngoài repository:
 
-1. đóng lỗ hổng QA/release trước;
-2. thêm integrated three-statement;
-3. thêm TB/GL/close reconciliation;
-4. thêm FMCG standard costing;
-5. nâng forecast versioning, macro drivers và three-year plan;
-6. hoàn tất website/CV/recruiter walkthrough;
-7. giữ public research và strategic finance ở appendix.
+1. nạp approved internal forecast + post-close actuals để đóng Gate A;
+2. cá nhân hoá CV khi có identity/experience thật;
+3. quay và link narrated walkthrough;
+4. giữ public research và strategic finance ở appendix.
 
 Khi hoàn tất theo thứ tự này, project sẽ thể hiện đúng năng lực **Financial Analyst / FP&A / Business Finance**: hiểu số, hiểu kế toán quản trị, kiểm soát được mô hình, giải thích được performance, quản lý cash và chuyển analysis thành quyết định.
 
@@ -1012,10 +1030,13 @@ Khi hoàn tất theo thứ tự này, project sẽ thể hiện đúng năng l�
 | Costing controls | `scripts/validate_fmcg_cost_variance.mjs` | PASS 9/9; standard-to-actual bridge và reserve policy |
 | Macro governance | `data/macros/macro_driver_book.csv` + `scripts/validate_macro_cutoff.mjs` | PASS; source metadata, scenario assumptions, no public look-ahead |
 | UAT/change control | `docs/UAT_AND_MODEL_CHANGE_CONTROL.md` | Đã thêm 7 UAT cases, approval path và rollback/evidence rules |
+| Three-year operating plan | `scripts/build_three_year_operating_plan.mjs` + `scripts/validate_three_year_operating_plan.mjs` | PASS 17/17; 60 monthly/quarterly rows, 3 scenarios, no terminal growth |
+| Forecast v2 | `scripts/build_forecast_versioning_backtest_v2.mjs` + validator | PASS 20/20; 360 snapshots, 240 bridge rows, override governance |
+| Executive/board pack | `scripts/build_nonbi_management_pack.mjs` + `scripts/validate_management_pack.mjs` | PASS; editable 10-slide deck, index and 5-minute narration script |
 
 ## Độ bao phủ sau release
 
-- Core finance không Power BI đã có thêm integrated statements, accounting bridge, standard costing, macro cutoff và UAT governance.
+- Core finance không Power BI đã có thêm integrated statements, accounting bridge, standard costing, macro cutoff, three-year plan, forecast-v2 và executive pack.
 - Power BI không nằm trong acceptance criteria, non-BI QA runner hoặc recruiter path.
 - External forecast accuracy vẫn **PENDING_EXTERNAL_INPUT**; không được đổi thành PASS bằng fixture demo.
 
@@ -1027,5 +1048,10 @@ node scripts/validate_three_statement_model.mjs
 node scripts/build_fmcg_cost_variance.mjs
 node scripts/validate_fmcg_cost_variance.mjs
 node scripts/validate_macro_cutoff.mjs
+node scripts/build_three_year_operating_plan.mjs
+node scripts/validate_three_year_operating_plan.mjs
+node scripts/build_forecast_versioning_backtest_v2.mjs
+node scripts/validate_forecast_versioning_backtest_v2.mjs
+node scripts/validate_management_pack.mjs
 python scripts/run_non_powerbi_release_gate.py
 ```

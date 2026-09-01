@@ -5,8 +5,9 @@
  * It runs only repository-local validators and writes transient reports under
  * the operating-system temp directory. The temp directory is removed in the
  * finally block, so no generated QA output becomes an authoritative artifact.
- * External gates (real internal forecast snapshots and native PBIX/Desktop QA)
- * are intentionally not fabricated by this runner.
+ * External gates (real internal forecast snapshots) are intentionally not
+ * fabricated by the non-BI runner. Native PBIX/Desktop QA belongs to the
+ * archived Power BI path and is not part of --nonbi acceptance.
  */
 import fs from 'node:fs';
 import os from 'node:os';
@@ -44,6 +45,9 @@ const tasks = [
   ['three_statement_model', ['scripts/validate_three_statement_model.mjs']],
   ['fmcg_cost_variance', ['scripts/validate_fmcg_cost_variance.mjs']],
   ['macro_cutoff', ['scripts/validate_macro_cutoff.mjs', 'data/macros/macro_driver_book.csv']],
+  ['three_year_operating_plan', ['scripts/validate_three_year_operating_plan.mjs']],
+  ['forecast_versioning_backtest_v2', ['scripts/validate_forecast_versioning_backtest_v2.mjs']],
+  ['management_pack', ['scripts/validate_management_pack.mjs']],
   ['block_a_design_lock', ['scripts/validate_block_a_design_lock.mjs', 'data/block_a_design_lock.csv']],
   ['role_alignment', ['scripts/validate_role_alignment_matrix.mjs']],
   ['promotion_roi', ['scripts/validate_promotion_roi.mjs', 'data/promotion_roi_synthetic.csv']],

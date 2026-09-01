@@ -1,0 +1,23 @@
+{
+  "generated_on": "2026-09-01",
+  "target_periods": 12,
+  "metric_count": 5,
+  "frozen_versions": [
+    "BUDGET",
+    "RF1",
+    "RF2",
+    "RF3",
+    "LATEST_ESTIMATE"
+  ],
+  "actual_rows": 60,
+  "horizon_set": [
+    1,
+    2,
+    3,
+    6
+  ],
+  "snapshot_rows": 360,
+  "bridge_rows": 240,
+  "override_rows": 5,
+  "evidence_boundary": "SIMULATED_BACKTEST; live claims require approved real frozen snapshots and post-close actuals."
+}

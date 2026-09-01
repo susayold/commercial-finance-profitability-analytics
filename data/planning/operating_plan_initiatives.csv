@@ -1,0 +1,5 @@
+initiative_id,initiative,owner,investment_vnd,start_period,benefit_metric,risk,kill_criteria,stage_gate
+OP-001,Marketplace mix optimization,Commercial Finance,1500000000,FY2026-Q1,+2.0% net revenue / protect CM hurdle,Discount leakage,Incremental CM < 25% for 2 consecutive reviews,Q2 FY2026
+OP-002,Warehouse automation,Supply Chain,4000000000,FY2026-Q2,DIO -5 days / service level ≥ 96%,Implementation delay,Payback > 24 months or service level < 94%,Q4 FY2026
+OP-003,Working-capital collection sprint,Treasury,500000000,FY2026-Q1,DSO -6 days / cash release,Customer churn,DSO not improving after 2 monthly reviews,Q2 FY2026
+OP-004,Sales-force coverage expansion,Sales,2000000000,FY2027-Q1,+3% volume in priority channels,OPEX outpaces contribution,Incremental contribution < 1.5× run-rate OPEX,Q3 FY2027

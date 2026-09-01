@@ -1,0 +1,4 @@
+scenario,fiscal_year,rolling_forecast_source,plan_revenue_vnd,rolling_forecast_revenue_vnd,delta_vnd,status,evidence_class
+BASE,FY2026,three_year_operating_plan.csv / driver bridge,13326192186.26,13326192186.26,0,PASS,SIMULATED/DERIVED
+UPSIDE,FY2026,three_year_operating_plan.csv / driver bridge,13829067363.1,13829067363.1,0,PASS,SIMULATED/DERIVED
+DOWNSIDE,FY2026,three_year_operating_plan.csv / driver bridge,12320441832.58,12320441832.58,0,PASS,SIMULATED/DERIVED

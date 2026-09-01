@@ -1,0 +1,28 @@
+{
+  "generated_on": "2026-09-01",
+  "baseline": {
+    "fiscal_year": "FY2025",
+    "revenue_vnd": 12571879421,
+    "gross_margin_pct": 47.44,
+    "cfo_vnd": -14360266459,
+    "cash_vnd": -30756981747,
+    "debt_vnd": 6200000000,
+    "dso_days": 176.59,
+    "dio_days": 180.43,
+    "dpo_days": 199.56,
+    "equity_vnd": -27437405539
+  },
+  "plan": {
+    "periods": 60,
+    "monthly_periods": 36,
+    "quarterly_periods": 24,
+    "scenarios": [
+      "BASE",
+      "UPSIDE",
+      "DOWNSIDE"
+    ],
+    "initiative_count": 4,
+    "terminal_growth_used": false
+  },
+  "evidence_boundary": "SIMULATED/DERIVED; FY2026 monthly bridge is a planning rehearsal, not approved company guidance."
+}

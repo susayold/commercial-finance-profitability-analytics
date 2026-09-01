@@ -26,6 +26,18 @@ def main() -> int:
         "schemas/unit_contract.csv",
         "docs/ARCHITECTURE_NON_POWERBI.md",
         "docs/VNFINANCE_FPA_NON_POWERBI_GAP_RESEARCH_AND_UPDATE_MASTER_PLAN_2026-09-01.md",
+        "docs/THREE_YEAR_DRIVER_BASED_OPERATING_PLAN.md",
+        "data/planning/three_year_operating_plan.csv",
+        "data/planning/operating_plan_reconciliation.csv",
+        "data/planning/operating_plan_initiatives.csv",
+        "docs/FORECAST_VERSIONING_BACKTEST_V2.md",
+        "data/forecast/forecast_versioned_snapshots_v2.csv",
+        "data/forecast/forecast_backtest_metrics_v2.csv",
+        "data/forecast/forecast_version_bridge_v2.csv",
+        "data/forecast/forecast_override_log_v2.csv",
+        "output/pptx/VNFINANCE_NONBI_FPA_MBR_2026-09-01.pptx",
+        "docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md",
+        "reports/EXECUTIVE_BOARD_PACK_INDEX_2026-09-01.md",
         "RECRUITER_START_HERE.md",
         ".gitattributes",
         "reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md",
@@ -45,7 +57,7 @@ def main() -> int:
     canonical_status = {
         "project": "VietNova Consumer JSC — non-Power-BI FP&A release",
         "generated_on": TODAY,
-        "active_scope": ["Excel financial model", "integrated three statements", "standard costing", "management reporting", "controls", "website", "CV/recruiter package"],
+        "active_scope": ["Excel financial model", "integrated three statements", "standard costing", "three-year operating plan", "forecast versioning/backtest", "management reporting", "editable management pack", "controls", "website", "CV/recruiter package"],
         "core_status": "PASS" if not failures else "FAIL",
         "appendix_status": "AVAILABLE_WITH_CAVEATS",
         "external_status": "PENDING_EXTERNAL_INPUT",
@@ -65,6 +77,7 @@ def main() -> int:
         "## What is closed\n\n"
         "- Sales_Fact economic integrity and dimensional keys are validator-checked.\n"
         "- Scenario revenue, gross profit, controllable OPEX, EBITDA proxy, margin and CCC reconcile to one canonical snapshot.\n"
+        "- The 3-year driver-based operating plan and versioned forecast/backtest rehearsal are validator-checked and evidence-labelled.\n"
         "- MCH ROE uses the approved average-equity denominator across FY2016–FY2025.\n"
         "- Website, MBR, CFO memo and CV values are checked against the exported snapshot.\n"
         "- Synthetic customer profitability, Monte Carlo and M&A modules retain explicit evidence boundaries.\n\n"
@@ -76,6 +89,7 @@ def main() -> int:
         f"# Non-Power-BI Closure Changelog — {TODAY}\n\n"
         "- Rebuilt final_v1 forecast/OPEX calculations so the EBITDA proxy is mathematically consistent.\n"
         "- Added metric registry, unit contract, artifact map, claim registry and exported metric snapshot.\n"
+        "- Added the editable 10-slide management pack and five-minute finance-analyst narration script.\n"
         "- Added Sales_Fact, scenario, public-metric and cross-artifact executable validators.\n"
         "- Added architecture diagram, recruiter start page and line-ending governance.\n"
         "- Clarified synthetic/rehearsal boundaries for customer profitability and M&A modules.\n",
