@@ -1033,7 +1033,7 @@ Khi hoàn tất theo thứ tự này, project sẽ thể hiện đúng năng l�
 | Three-year operating plan | `scripts/build_three_year_operating_plan.mjs` + `scripts/validate_three_year_operating_plan.mjs` | PASS 17/17; 60 monthly/quarterly rows, 3 scenarios, no terminal growth |
 | Forecast v2 | `scripts/build_forecast_versioning_backtest_v2.mjs` + validator | PASS 20/20; 360 snapshots, 240 bridge rows, override governance |
 | Executive/board pack | `scripts/build_nonbi_management_pack.mjs` + `scripts/validate_management_pack.mjs` | PASS; editable 10-slide deck, index and 5-minute narration script |
-| Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v20; management pack, forecast v2 and three-year plan visible; Power BI removed from active UX |
+| Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v21; management pack, forecast v2 and three-year plan visible; Power BI removed from active UX; valuation appendix precedes footer |
 
 ## Độ bao phủ sau release
 

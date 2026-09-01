@@ -40,7 +40,7 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 
 https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 
-The deployed recruiter site is owner-only and reflects the non-BI path. The current production version is Sites version 20; the source mirror commit is `52bb41eaa50488741a6c4877faf92bf7aa7b697d`. The active site path exposes the editable management pack, forecast v2 and three-year plan; Power BI remains archived and excluded.
+The deployed recruiter site is owner-only and reflects the non-BI path. The current production version is Sites version 21; the source mirror commit is `9751bc251e39b9e941d81fe05c727f91539555a6`. The active site path exposes the editable management pack, forecast v2 and three-year plan; Power BI remains archived and excluded. DOM order is now core FP&A → evidence → appendix valuation → recruiter tour → footer.
 
 ## Open external input
 
