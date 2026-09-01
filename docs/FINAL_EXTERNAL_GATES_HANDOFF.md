@@ -1,6 +1,12 @@
-# Final External Gates Handoff
+# Final External Gates Handoff (FP&A scope)
 
-Status: design complete; two evidence gates remain external.
+Status: design complete; one active evidence gate remains external.
+
+> **Scope note (2026-09-02):** Power BI is intentionally excluded from the
+> active FP&A release. The historical Gate B section below is retained only as
+> an archive reference and must not block recruiter release or be described as
+> an outstanding FP&A deliverable. Gate A is the only active external finance
+> gate.
 
 This handoff converts the remaining requirements into executable steps. Do not relabel synthetic fixtures as live evidence. The repository and Drive archive already contain the model logic, validators and evidence taxonomy; this pack defines the exact inputs needed to close the final gates.
 

@@ -7,10 +7,10 @@
 
 | Review item | Link | What the reviewer sees |
 |---|---|---|
-| Recruiter portfolio site | [Live site](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/) | Executive story, finance modules, Power BI scope and contact page |
+| Recruiter portfolio site | [Live site](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/) | Executive story, non-Power-BI finance modules and contact page |
 | GitHub source of truth | [commercial-finance-profitability-analytics](https://github.com/susayold/commercial-finance-profitability-analytics) | Versioned source, synthetic data, model logic, QA scripts and reports |
 | Private Drive project root | [Google Drive project folder](https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR) | Archived public filings, workbooks, exports, binaries and handoff files |
-| Full reproducible archive | [Project tar.gz](https://drive.google.com/file/d/1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX/view?usp=drivesdk) | GitHub `main` snapshot at the release commit shown below |
+| Full reproducible archive | [Project zip](https://drive.google.com/file/d/1tPKphroOXjgCcRHF1MC1fiOfQ87Lff0c/view?usp=drivesdk) | GitHub `main` snapshot at the release commit shown below |
 | Boss handoff file | [Drive copy](https://drive.google.com/file/d/1dr0DVS0paVtUsij0M7zctm9nul5587gn/view?usp=drivesdk) · [GitHub copy](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/BOSS_HANDOFF_PACK_2026-08-31.md) | This navigation index |
 
 ## 2. Recommended review order
@@ -18,10 +18,9 @@
 1. **Website:** understand the business question and executive outputs.
 2. **FP&A model:** open the [editable Google Sheet](https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit) and the [CFO memo](https://drive.google.com/file/d/1_n7SF2fNpWlAi2EZJLJ_pwdoc-mqsXzI/view).
 3. **Operating rhythm:** read the [Monthly Business Review pack](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md), [recommendation register](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md), [KPI dictionary](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_KPI_DICTIONARY.md) and [close/forecast calendar](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR.md).
-4. **Evidence and reproducibility:** inspect the GitHub `data/`, `schemas/`, `scripts/`, `powerbi/` and `reports/` folders; every major output has a validator or evidence record.
-5. **Power BI:** use the [editable PBIP source](https://github.com/susayold/commercial-finance-profitability-analytics/tree/main/powerbi/native/VNFinance_PBIP_Extended), [extended PBIT](https://drive.google.com/file/d/1MhuMrznyyJcqXroyQ0nZeuZs8zjo9M8t/view), [scenario-driver QA](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/POWER_BI_SCENARIO_DRIVER_QA_2026-08-31.md) and [native PBIX candidate](https://drive.google.com/file/d/1mqZ_ZkMqCXu7qnpO3L6gZ5L0U1TybmGE/view).
-6. **Public-company finance lens:** review the [MCH equity research rehearsal](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_EQUITY_RESEARCH_REHEARSAL.md), [credit memo](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md), [valuation rehearsal](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_VALUATION_REHEARSAL.md) and [MCH trend sheet](https://docs.google.com/spreadsheets/d/1AH5nMI6W4N6YGPjf3sLYxtNZSFBzehg7STkkKNPtAPM/edit?usp=drivesdk).
-7. **Candidate profile:** open the [one-page CV PDF](https://drive.google.com/file/d/1Gm2kGAoktzWA-DDakfrzo_-sL1sL9jax/view?usp=drivesdk).
+4. **Evidence and reproducibility:** inspect the GitHub `data/`, `schemas/`, `scripts/` and `reports/` folders; every major non-BI output has a validator or evidence record.
+5. **Public-company finance lens:** review the [MCH equity research rehearsal](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_EQUITY_RESEARCH_REHEARSAL.md), [credit memo](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md), [valuation rehearsal](https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_VALUATION_REHEARSAL.md) and [MCH trend sheet](https://docs.google.com/spreadsheets/d/1AH5nMI6W4N6YGPjf3sLYxtNZSFBzehg7STkkKNPtAPM/edit?usp=drivesdk).
+6. **Candidate profile:** open the [one-page CV PDF](https://drive.google.com/file/d/1Gm2kGAoktzWA-DDakfrzo_-sL1sL9jax/view?usp=drivesdk) and [one-page FP&A case summary](https://drive.google.com/file/d/19rzyxjeIWWDus1LzPiYzcvtM3yK3yxkO/view?usp=drivesdk).
 
 ## 3. Deliverables included
 
@@ -32,7 +31,7 @@
 | Working capital and risk | AR/AP, inventory, CCC, cash and downside/upside scenarios | **Complete** — assumptions and guardrails disclosed |
 | Finance operating system | KPI dictionary, close/forecast calendar, MBR pack, recommendation register, battle cards and interview talk track | **Complete** |
 | Public-company analyst lens | MCH FY2016–FY2025 evidence layer, peer panel (VNM/QNS/KDC), equity/credit/valuation rehearsals | **Complete with caveat** — FY2017 MCH comparative remains `INDEXED_ONLY` until primary-source review |
-| Power BI | 20-table PBIP/PBIT contract, 19-file CSV refresh contract, scenario selector, DirectQuery/local rehearsal and native Desktop artifacts | **Source/package complete**; formal native QA and production refresh remain gated |
+| Power BI | Historical PBIP/PBIT and Desktop rehearsal | **Archived / out of active FP&A scope** |
 | Portfolio and CV | Recruiter site, finance-first CV PDF and interview narrative | **Complete** — personal facts should be personalised before submission |
 
 ## 4. Evidence boundary (important for an executive review)
@@ -41,8 +40,7 @@
 - Public-company figures are sourced/calibrated from official filings and are kept separate from synthetic management outputs.
 - The current release is reproducible from the GitHub commit shown in the manifest; the Drive archive is the same snapshot.
 - **Gate A open:** a genuine internal forecast/budget snapshot is still required to claim real-company forecast accuracy.
-- **Gate B open:** formal Desktop QA-01–QA-18 and production Power BI Service/API refresh evidence are not inferred from package checks.
-- The extended native PBIX is a real Desktop-produced candidate container, but its formal QA sign-off is still pending.
+- **Power BI boundary:** historical PBIP/PBIT material is not part of this active recruiter release and is not used for the readiness score.
 
 ## 5. Storage and sharing boundary
 
@@ -54,10 +52,10 @@
 
 ```text
 github_repo=https://github.com/susayold/commercial-finance-profitability-analytics.git
-github_commit=HEAD (resolve from main)
+github_commit=61a37ac0442f5dc64d59ddd61ad5cd2fe84a1cc7
 github_tracked_file_count=1425
 drive_project_root_id=1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR
-drive_archive_id=1PAOAS0D60Ueh20b26i9MqBaZB9st3tiX
+drive_archive_id=1tPKphroOXjgCcRHF1MC1fiOfQ87Lff0c
 drive_extended_pbit_id=1MhuMrznyyJcqXroyQ0nZeuZs8zjo9M8t
 drive_extended_native_pbix_candidate_id=1mqZ_ZkMqCXu7qnpO3L6gZ5L0U1TybmGE
 live_site=https://vn-finance-fpa-case.sangkenny200.chatgpt.site/
@@ -65,4 +63,4 @@ live_site=https://vn-finance-fpa-case.sangkenny200.chatgpt.site/
 
 ## Suggested message to send with the pack
 
-> Em gửi anh/chị portfolio Finance Analyst end-to-end. Website là điểm vào nhanh; GitHub chứa source, data synthetic/public-safe và QA; Drive chứa workbook, filing archive và Power BI binaries. Các giới hạn bằng chứng (synthetic ledger, Gate A/B) được ghi rõ để review minh bạch.
+> Em gửi anh/chị portfolio Finance Analyst / FP&A end-to-end. Website là điểm vào nhanh; GitHub chứa source, synthetic/public-safe data và QA; Drive chứa workbook, filing archive và handoff PDF. Các giới hạn bằng chứng (synthetic ledger và Gate A) được ghi rõ để review minh bạch; Power BI được giữ ở archive và không thuộc scope phát hành này.

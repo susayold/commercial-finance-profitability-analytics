@@ -21,7 +21,9 @@ management act on next month?
 **Evidence boundary.** The operating ledger is synthetic/rehearsal data; public
 company metrics are filing-based and basis-controlled. EBITDA is a proxy, DCF
 and M&A are screening rehearsals, and Forecast Gate A remains input-gated.
-Power BI is outside this active recruiter path. See [claim registry](data/governance/claim_registry.csv).
+Power BI is archived and outside this active recruiter path. The one-page case
+summary is available in [PDF form](output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf).
+See [claim registry](data/governance/claim_registry.csv).
 
 **Technical appendix.** [Metric registry](data/governance/finance_metric_registry.csv),
 [unit contract](schemas/unit_contract.csv), [scenario source](data/scenarios/scenario_summary.csv),

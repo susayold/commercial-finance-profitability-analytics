@@ -1,8 +1,8 @@
-# Gate A / Gate B User Input Checklist
+# Gate A User Input Checklist (Power BI archived)
 
 Date: 2026-08-30
 
-This checklist is the smallest evidence bundle needed to close the two remaining external gates. It is an intake guide, not a substitute for the evidence itself.
+This checklist is the smallest evidence bundle needed to close the remaining active external gate. Power BI/Gate B is archived and intentionally excluded from the current FP&A release. This is an intake guide, not a substitute for evidence itself.
 
 ## Current remote state
 

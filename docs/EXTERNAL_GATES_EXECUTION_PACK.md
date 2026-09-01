@@ -1,6 +1,6 @@
-# External Gates Execution Pack
+# External Gates Execution Pack (FP&A scope)
 
-This pack is the final operating checklist for the two items that cannot be honestly closed from public or synthetic data. It is deliberately executable: a reviewer should be able to take the inputs, run the controls, and reproduce the release decision.
+This pack is the final operating checklist for the active item that cannot be honestly closed from public or synthetic data. Power BI is out of the active scope; its historical Gate B material is retained below only for audit traceability. The Gate A instructions remain executable: a reviewer should be able to take approved inputs, run the controls, and reproduce the release decision.
 
 ## 0. Evidence classes and release rule
 
