@@ -16,7 +16,8 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 |---|---|
 | Full committed non-BI source archive | https://drive.google.com/file/d/1p_9-3RHe8Et2WalJRuYFM1vsC286D4Ir/view?usp=drivesdk |
 | Updated gap-research and execution plan | https://drive.google.com/file/d/1pNFlBzhbD_ncA0ApV0nSSY50h7AWdpef/view?usp=drivesdk |
-| Final non-BI QA (51/51 core; 40/40 release gate; recruiter links 41/41) | https://drive.google.com/file/d/1RQBU1j-Y2_tDvGEKQ0c13TCgWc7ZsoAq/view?usp=drivesdk |
+| Final non-BI QA (52/52 core; 43/43 release gate; recruiter links 42/42) | https://drive.google.com/file/d/1RQBU1j-Y2_tDvGEKQ0c13TCgWc7ZsoAq/view?usp=drivesdk |
+| One-page recruiter case summary PDF | https://drive.google.com/file/d/19rzyxjeIWWDus1LzPiYzcvtM3yK3yxkO/view?usp=drivesdk |
 | Release gate JSON | https://drive.google.com/file/d/1kS9SDbIi6XeCJWsdHTt_MXXDgDqk7_JF/view?usp=drivesdk |
 | Three-statement reconciliation | https://drive.google.com/file/d/1vLh81lUnZSnY8f2mfdHPWLmEsslbYmOK/view?usp=drivesdk |
 | FMCG standard-cost reconciliation | https://drive.google.com/file/d/1uXOezPturyR9BX6-wiC8aACxOlXi9SCd/view?usp=drivesdk |
@@ -51,16 +52,17 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 - Forecast versioning/backtest v2: `docs/FORECAST_VERSIONING_BACKTEST_V2.md` and `data/forecast/`
 - Finance analyst walkthrough: `docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md`
 - Board-pack index: `reports/EXECUTIVE_BOARD_PACK_INDEX_2026-09-01.md`
-- Recruiter link QA: `reports/RECRUITER_SITE_LINK_QA_2026-09-02.json` (41/41 PASS)
+- Recruiter link QA: `reports/RECRUITER_SITE_LINK_QA_2026-09-02.json` (42/42 PASS)
 - Correlated Monte Carlo v2: `data/monte_carlo_risk_overlay_v2_2026-09-02.csv`, draw-level output, matrix, report and validator (16/16 PASS)
 - SAP-like mapping rehearsal: `data/accounting/sap_like_mapping_rehearsal.csv` and QA report (9/9 PASS; simulated only)
 - Automated commentary draft: `data/governance/commentary_draft_2026-09-02.csv`, draft report and approval log (9/9 PASS; NEEDS_REVIEW)
+- One-page recruiter case summary: `output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf` (one page; 6/6 PDF checks PASS)
 
 ## Production website
 
 https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 
-The deployed recruiter site is owner-only and reflects the non-BI path. The current production version is Sites version 22; the source mirror commit is `6ed310f8c84b4d1a93189f8df6d5db4e14dff114`. The active site path exposes the editable management pack, forecast v2, three-year plan and the new appendix evidence links; Power BI remains archived and excluded. DOM order is now core FP&A → evidence → appendix valuation → recruiter tour → footer.
+The deployed recruiter site is owner-only and reflects the non-BI path. The current production version is Sites version 23; the source mirror commit is `ec2e404e4f81f7e411abffe17fde63ed41f73704`. The active site path exposes the editable management pack, case summary PDF, forecast v2, three-year plan and the new appendix evidence links; Power BI remains archived and excluded. DOM order is now core FP&A → evidence → appendix valuation → recruiter tour → footer.
 
 ## Open external input
 

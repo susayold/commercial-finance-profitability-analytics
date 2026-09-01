@@ -59,6 +59,9 @@ def main() -> int:
         "data/governance/commentary_draft_2026-09-02.csv",
         "reports/MONTHLY_COMMENTARY_DRAFT_2026-09-02.md",
         "reports/MONTHLY_COMMENTARY_APPROVAL_LOG_2026-09-02.csv",
+        "scripts/build_fpa_case_summary_pdf.py",
+        "scripts/validate_fpa_case_summary_pdf.py",
+        "output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf",
     ]
     for item in required:
         checks.append({"id": f"FILE:{item}", "status": "PASS" if (ROOT / item).exists() else "FAIL", "stdout": "", "stderr": ""})
@@ -98,7 +101,9 @@ def main() -> int:
         "- The 3-year driver-based operating plan and versioned forecast/backtest rehearsal are validator-checked and evidence-labelled.\n"
         "- MCH ROE uses the approved average-equity denominator across FY2016–FY2025.\n"
         "- Website, MBR, CFO memo and CV values are checked against the exported snapshot.\n"
-        "- Recruiter website external-link snapshot is 41/41 PASS; private GitHub/Drive access boundaries are documented.\n"
+        "- Core finance QA is 52/52 PASS; the release file gate is 43/43 PASS.\n"
+        "- Recruiter website external-link snapshot is 42/42 PASS; private GitHub/Drive access boundaries are documented.\n"
+        "- One-page recruiter case summary PDF is rendered, text-extractable and validator-checked.\n"
         "- Correlated Monte Carlo v2, SAP-like mapping and automated commentary are appendix rehearsals with explicit evidence boundaries.\n"
         "- Synthetic customer profitability, Monte Carlo and M&A modules retain explicit evidence boundaries.\n\n"
         "## External gates (not inferred as closed)\n\n"
@@ -115,6 +120,7 @@ def main() -> int:
         "- Added recruiter-site external-link QA with explicit private GitHub/Drive access-boundary handling.\n"
         "- Repaired the GL management mapping serialization and added 14/14 mapping-aware statement controls.\n"
         "- Added correlated Monte Carlo v2, SAP-like mapping rehearsal and human-gated commentary draft appendices.\n"
+        "- Added a one-page recruiter case summary PDF generated from the canonical metric snapshot.\n"
         "- Clarified synthetic/rehearsal boundaries for customer profitability and M&A modules.\n",
         encoding="utf-8",
     )

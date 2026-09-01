@@ -27,7 +27,7 @@ Bản cập nhật này đã chuyển dự án sang **non-Power-BI FP&A release*
 - forecast versioning/backtest v2 (Budget, RF1, RF2, RF3, Latest Estimate, Actual) với Bias/WAPE/MAE, bridge và override log;
 - MBR, CFO memo, close calendar, KPI dictionary, recommendation register, editable 10-slide board pack và narration script;
 - website recruiter-facing, CV/interview package và GitHub/Drive handoff;
-- non-BI QA **PASS 51/51** và release gate **PASS 40/40** ở lần chạy gần nhất; recruiter-link QA **41/41** được tích hợp vào release evidence.
+- non-BI QA **PASS 52/52** và release gate **PASS 43/43** ở lần chạy gần nhất; recruiter-link QA **42/42** được tích hợp vào release evidence.
 
 ### Trạng thái release hiện tại
 
@@ -41,8 +41,8 @@ Bản cập nhật này đã chuyển dự án sang **non-Power-BI FP&A release*
 
 ### A. Theo scope cũ — artifact coverage
 
-- 27/28 hạng mục non-BI áp dụng được đã có artifact hoàn chỉnh hoặc hoàn chỉnh kèm caveat.
-- Tỷ lệ artifact coverage: **96,4%**.
+- 28/28 hạng mục non-BI áp dụng được đã có artifact hoàn chỉnh hoặc hoàn chỉnh kèm caveat.
+- Tỷ lệ artifact coverage: **100%**.
 - Hai hạng mục input-gated ngoài repository: approved internal frozen forecast + post-close actuals; manual narrated recording.
 
 Đây là tỷ lệ **có deliverable**, không phải tỷ lệ sẵn sàng tuyển dụng tuyệt đối.
@@ -632,7 +632,7 @@ What happened -> Why -> Financial impact -> Decision -> Owner -> Deadline -> Gua
 
 ### Download package
 
-- one-page case summary PDF;
+- one-page case summary PDF (`output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf`), rendered and validator-checked;
 - Excel model;
 - CFO memo;
 - management deck;
@@ -655,7 +655,7 @@ What happened -> Why -> Financial impact -> Decision -> Owner -> Deadline -> Gua
 | Closure item | Evidence | Status |
 |---|---|---|
 | MBR / scenario contract | `node scripts/validate_monthly_business_review.mjs` | PASS 16/16 |
-| Non-BI release gate | `python scripts/run_non_powerbi_release_gate.py` | PASS 40/40; Gate A explicitly open |
+| Non-BI release gate | `python scripts/run_non_powerbi_release_gate.py` | PASS 43/43; Gate A explicitly open |
 | Integrated statements | `scripts/validate_three_statement_model.mjs` | PASS 14/14; monthly BS/cash/TB ties and 20-account mapping |
 | Standard costing | `scripts/validate_fmcg_cost_variance.mjs` | PASS 9/9; 1,296 variance + reserve rows |
 | Macro cutoff | `scripts/validate_macro_cutoff.mjs` | PASS 8/8; no public look-ahead |
@@ -1030,7 +1030,7 @@ Các appendix P2 đã được đóng ở dạng mô phỏng có kiểm soát (c
 | MBR scenario contract | `scripts/validate_monthly_business_review.mjs` | PASS 16/16; đọc canonical scenario source, không còn expected value stale |
 | Non-BI release gate | `scripts/run_non_powerbi_release_gate.py` | Gọi `run_finance_qa.mjs --nonbi`; chỉ còn Gate A input-gated |
 | Integrated statements | `scripts/build_three_statement_model.mjs` | PASS; current operating fixture 36 tháng × 36 SKU, planning OPEX/CAPEX 36 tháng |
-| Statement controls | `scripts/validate_three_statement_model.mjs` | PASS 13/13; 396 control rows, TB/cash/BS/subledger/journal ties |
+| Statement controls | `scripts/validate_three_statement_model.mjs` | PASS 14/14; 396 control rows, TB/cash/BS/subledger/journal ties and GL mapping |
 | GL / TB / journal layer | `data/accounting/*.csv` | Chart of accounts, management mapping, 36 monthly TB, journal approvals, 180 subledger controls |
 | FMCG standard costing | `scripts/build_fmcg_cost_variance.mjs` | PASS; 1,296 month × SKU variance rows và 1,296 reserve rows |
 | Costing controls | `scripts/validate_fmcg_cost_variance.mjs` | PASS 9/9; standard-to-actual bridge và reserve policy |
@@ -1039,11 +1039,12 @@ Các appendix P2 đã được đóng ở dạng mô phỏng có kiểm soát (c
 | Three-year operating plan | `scripts/build_three_year_operating_plan.mjs` + `scripts/validate_three_year_operating_plan.mjs` | PASS 17/17; 60 monthly/quarterly rows, 3 scenarios, no terminal growth |
 | Forecast v2 | `scripts/build_forecast_versioning_backtest_v2.mjs` + validator | PASS 20/20; 360 snapshots, 240 bridge rows, override governance |
 | Executive/board pack | `scripts/build_nonbi_management_pack.mjs` + `scripts/validate_management_pack.mjs` | PASS; editable 10-slide deck, index and 5-minute narration script |
-| Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v22; management pack, forecast v2, three-year plan and appendix evidence visible; Power BI removed from active UX; valuation appendix precedes footer |
-| Recruiter link QA | `scripts/validate_recruiter_site_links.mjs` | PASS 41/41; private GitHub/Drive authentication boundaries documented |
+| Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v23; management pack, case summary PDF, forecast v2, three-year plan and appendix evidence visible; Power BI removed from active UX; valuation appendix precedes footer |
+| Recruiter link QA | `scripts/validate_recruiter_site_links.mjs` | PASS 42/42; private GitHub/Drive authentication boundaries documented |
 | Correlated Monte Carlo v2 | `scripts/build_correlated_monte_carlo_v2.mjs` + validator | PASS 16/16; 5,000 draws, PSD correlation matrix, expected shortfall and directional attribution |
 | SAP-like mapping rehearsal | `scripts/build_sap_like_mapping_rehearsal.mjs` + validator | PASS 9/9; 720 FI/CO-style rows, 36 period ties, 20 mapped accounts; simulated only |
 | Automated commentary draft | `scripts/build_monthly_commentary_draft.mjs` + validator | PASS 9/9; generated draft and approval log remain NEEDS_REVIEW |
+| One-page recruiter case summary | `scripts/build_fpa_case_summary_pdf.py` + `scripts/validate_fpa_case_summary_pdf.py` | PASS 6/6; one-page text-extractable PDF generated from canonical snapshot |
 
 ## Độ bao phủ sau release
 

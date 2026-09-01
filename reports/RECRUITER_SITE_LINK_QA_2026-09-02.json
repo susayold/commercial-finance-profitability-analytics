@@ -2,8 +2,8 @@
   "generated_on": "2026-09-02",
   "source": "site/app/page.tsx",
   "scope": "recruiter_external_links",
-  "checked_links": 41,
-  "passed_links": 41,
+  "checked_links": 42,
+  "passed_links": 42,
   "failed_links": 0,
   "status": "PASS",
   "access_note": "Private GitHub and Drive files are treated as valid when the source path exists and the URL resolves to an authentication boundary.",
@@ -303,6 +303,15 @@
       "method": "HEAD/GET",
       "access": "private_repository",
       "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://drive.google.com/file/d/19rzyxjeIWWDus1LzPiYzcvtM3yK3yxkO/view?usp=drivesdk",
+      "status": 200,
+      "ok": true,
+      "final_url": "https://accounts.google.com/v3/signin/identifier",
+      "method": "HEAD/GET",
+      "access": "drive_account_required",
+      "evidence": "Drive URL resolves to the signed-in Google access boundary"
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FORECAST_VERSIONING_BACKTEST_V2.md",

@@ -162,6 +162,18 @@
     {
       "id": "FILE:reports/MONTHLY_COMMENTARY_APPROVAL_LOG_2026-09-02.csv",
       "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/build_fpa_case_summary_pdf.py",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/validate_fpa_case_summary_pdf.py",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf",
+      "status": "PASS"
     }
   ],
   "open_external_gates": [

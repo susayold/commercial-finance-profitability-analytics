@@ -8,4 +8,5 @@
 - Added recruiter-site external-link QA with explicit private GitHub/Drive access-boundary handling.
 - Repaired the GL management mapping serialization and added 14/14 mapping-aware statement controls.
 - Added correlated Monte Carlo v2, SAP-like mapping rehearsal and human-gated commentary draft appendices.
+- Added a one-page recruiter case summary PDF generated from the canonical metric snapshot.
 - Clarified synthetic/rehearsal boundaries for customer profitability and M&A modules.
