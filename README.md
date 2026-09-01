@@ -13,6 +13,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 
 ## Current release index — 2026-08-31
 
+- [FP&A non-BI gap research & update master plan — 2026-09-01](docs/VNFINANCE_FPA_NON_POWERBI_GAP_RESEARCH_AND_UPDATE_MASTER_PLAN_2026-09-01.md) — current market-fit audit, P0/P1/P2 backlog, three-statement/GL/costing upgrades and recruiter release criteria; BI work is intentionally excluded.
 - Production site: [V16 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
 - Latest GitHub main: https://github.com/susayold/commercial-finance-profitability-analytics/tree/main
 - [Boss handoff pack](reports/BOSS_HANDOFF_PACK_2026-08-31.md) — one-click review order, remote export manifest and evidence boundaries
