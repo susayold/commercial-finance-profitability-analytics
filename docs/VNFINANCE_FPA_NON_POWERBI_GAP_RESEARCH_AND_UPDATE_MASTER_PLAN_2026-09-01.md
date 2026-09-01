@@ -655,7 +655,7 @@ What happened -> Why -> Financial impact -> Decision -> Owner -> Deadline -> Gua
 | Closure item | Evidence | Status |
 |---|---|---|
 | MBR / scenario contract | `node scripts/validate_monthly_business_review.mjs` | PASS 16/16 |
-| Non-BI release gate | `python scripts/run_non_powerbi_release_gate.py` | PASS 22/22; Gate A explicitly open |
+| Non-BI release gate | `python scripts/run_non_powerbi_release_gate.py` | PASS 23/23; Gate A explicitly open |
 | Integrated statements | `scripts/validate_three_statement_model.mjs` | PASS 13/13; monthly BS/cash/TB ties |
 | Standard costing | `scripts/validate_fmcg_cost_variance.mjs` | PASS 9/9; 1,296 variance + reserve rows |
 | Macro cutoff | `scripts/validate_macro_cutoff.mjs` | PASS 8/8; no public look-ahead |
@@ -1034,6 +1034,7 @@ Khi hoàn tất theo thứ tự này, project sẽ thể hiện đúng năng l�
 | Forecast v2 | `scripts/build_forecast_versioning_backtest_v2.mjs` + validator | PASS 20/20; 360 snapshots, 240 bridge rows, override governance |
 | Executive/board pack | `scripts/build_nonbi_management_pack.mjs` + `scripts/validate_management_pack.mjs` | PASS; editable 10-slide deck, index and 5-minute narration script |
 | Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v21; management pack, forecast v2 and three-year plan visible; Power BI removed from active UX; valuation appendix precedes footer |
+| Recruiter link QA | `scripts/validate_recruiter_site_links.mjs` | PASS 38/38; private GitHub/Drive authentication boundaries documented |
 
 ## Độ bao phủ sau release
 

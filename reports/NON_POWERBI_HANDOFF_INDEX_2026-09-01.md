@@ -16,7 +16,7 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 |---|---|
 | Full committed non-BI source archive | https://drive.google.com/file/d/1p_9-3RHe8Et2WalJRuYFM1vsC286D4Ir/view?usp=drivesdk |
 | Updated gap-research and execution plan | https://drive.google.com/file/d/1pNFlBzhbD_ncA0ApV0nSSY50h7AWdpef/view?usp=drivesdk |
-| Final non-BI QA (48/48) | https://drive.google.com/file/d/1RQBU1j-Y2_tDvGEKQ0c13TCgWc7ZsoAq/view?usp=drivesdk |
+| Final non-BI QA (48/48 core; 23/23 release gate) | https://drive.google.com/file/d/1RQBU1j-Y2_tDvGEKQ0c13TCgWc7ZsoAq/view?usp=drivesdk |
 | Release gate JSON | https://drive.google.com/file/d/1kS9SDbIi6XeCJWsdHTt_MXXDgDqk7_JF/view?usp=drivesdk |
 | Three-statement reconciliation | https://drive.google.com/file/d/1vLh81lUnZSnY8f2mfdHPWLmEsslbYmOK/view?usp=drivesdk |
 | FMCG standard-cost reconciliation | https://drive.google.com/file/d/1uXOezPturyR9BX6-wiC8aACxOlXi9SCd/view?usp=drivesdk |
@@ -35,6 +35,7 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 - Forecast versioning/backtest v2: `docs/FORECAST_VERSIONING_BACKTEST_V2.md` and `data/forecast/`
 - Finance analyst walkthrough: `docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md`
 - Board-pack index: `reports/EXECUTIVE_BOARD_PACK_INDEX_2026-09-01.md`
+- Recruiter link QA: `reports/RECRUITER_SITE_LINK_QA_2026-09-02.json` (38/38 PASS)
 
 ## Production website
 

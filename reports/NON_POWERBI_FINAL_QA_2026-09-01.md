@@ -1,6 +1,6 @@
 # Non-Power-BI Final QA — 2026-09-01
 
-**Overall status: PASS** (22/22 checks passed)
+**Overall status: PASS** (23/23 checks passed)
 
 ## What is closed
 
@@ -9,6 +9,7 @@
 - The 3-year driver-based operating plan and versioned forecast/backtest rehearsal are validator-checked and evidence-labelled.
 - MCH ROE uses the approved average-equity denominator across FY2016–FY2025.
 - Website, MBR, CFO memo and CV values are checked against the exported snapshot.
+- Recruiter website external-link snapshot is 38/38 PASS; private GitHub/Drive access boundaries are documented.
 - Synthetic customer profitability, Monte Carlo and M&A modules retain explicit evidence boundaries.
 
 ## External gates (not inferred as closed)

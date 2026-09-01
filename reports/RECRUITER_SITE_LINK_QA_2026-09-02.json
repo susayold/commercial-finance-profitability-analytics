@@ -1,0 +1,353 @@
+{
+  "generated_on": "2026-09-02",
+  "source": "site/app/page.tsx",
+  "scope": "recruiter_external_links",
+  "checked_links": 38,
+  "passed_links": 38,
+  "failed_links": 0,
+  "status": "PASS",
+  "access_note": "Private GitHub and Drive files are treated as valid when the source path exists and the URL resolves to an authentication boundary.",
+  "results": [
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit",
+      "status": 200,
+      "ok": true,
+      "final_url": "https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit",
+      "method": "HEAD",
+      "access": "web_visible"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1_n7SF2fNpWlAi2EZJLJ_pwdoc-mqsXzI/view",
+      "status": 200,
+      "ok": true,
+      "final_url": "https://accounts.google.com/v3/signin/identifier",
+      "method": "HEAD/GET",
+      "access": "drive_account_required",
+      "evidence": "Drive URL resolves to the signed-in Google access boundary"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1ItKSxASsxKx3nmJDIm76rOYVGwVWH2pb/view",
+      "status": 200,
+      "ok": true,
+      "final_url": "https://accounts.google.com/v3/signin/identifier",
+      "method": "HEAD/GET",
+      "access": "drive_account_required",
+      "evidence": "Drive URL resolves to the signed-in Google access boundary"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/CUSTOMER_PROFITABILITY_ANALYSIS.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/CUSTOMER_PROFITABILITY_ANALYSIS.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/customer_profitability_summary.json",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/customer_profitability_summary.json",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/THREE_STATEMENT_RECONCILIATION_2026-09-01.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/THREE_STATEMENT_RECONCILIATION_2026-09-01.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/THREE_STATEMENT_FPA_MODEL_METHODOLOGY.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/THREE_STATEMENT_FPA_MODEL_METHODOLOGY.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FMCG_STANDARD_COSTING_AND_VARIANCE.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FMCG_STANDARD_COSTING_AND_VARIANCE.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/governance/project_status_nonbi.json",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/governance/project_status_nonbi.json",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/mch_finance_analyst_trend_2016_2025.csv",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/mch_finance_analyst_trend_2016_2025.csv",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_FINANCE_ANALYST_TREND_2016_2025.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_FINANCE_ANALYST_TREND_2016_2025.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1AH5nMI6W4N6YGPjf3sLYxtNZSFBzehg7STkkKNPtAPM/edit?usp=drivesdk",
+      "status": 200,
+      "ok": true,
+      "final_url": "https://accounts.google.com/v3/signin/identifier",
+      "method": "HEAD/GET",
+      "access": "drive_account_required",
+      "evidence": "Drive URL resolves to the signed-in Google access boundary"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_CREDIT_MEMO_FINANCE_ANALYST.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/VNM_PUBLIC_GUIDANCE_ANALYSIS_QA.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/VNM_PUBLIC_GUIDANCE_ANALYSIS_QA.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/scripts/validate_live_forecast_submission.mjs",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/scripts/validate_live_forecast_submission.mjs",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1GKGSKu1QpXJau_zCub5Sg7oi-VEugclP8Roor1GET5k/edit?usp=drivesdk",
+      "status": 200,
+      "ok": true,
+      "final_url": "https://accounts.google.com/v3/signin/identifier",
+      "method": "HEAD/GET",
+      "access": "drive_account_required",
+      "evidence": "Drive URL resolves to the signed-in Google access boundary"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/MNA_ACCRETION_DILUTION.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/MNA_ACCRETION_DILUTION.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_CV_ONE_PAGE_V3.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_CV_ONE_PAGE_V3.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_KPI_DICTIONARY.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_KPI_DICTIONARY.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MANAGEMENT_RECOMMENDATION_REGISTER_2026-08-30.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/MONTHLY_CLOSE_FORECAST_BUSINESS_PARTNERING_CALENDAR.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTE_CARLO_RISK_OVERLAY_2026-08-30.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTE_CARLO_RISK_OVERLAY_2026-08-30.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/OPEX_HEADCOUNT_PLANNING_MODULE.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/OPEX_HEADCOUNT_PLANNING_MODULE.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/GATE_A_INTERNAL_DATA_REQUEST_TEMPLATE_2026-08-30.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/GATE_A_INTERNAL_DATA_REQUEST_TEMPLATE_2026-08-30.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/EXECUTIVE_BOARD_PACK_INDEX_2026-09-01.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/EXECUTIVE_BOARD_PACK_INDEX_2026-09-01.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FORECAST_VERSIONING_BACKTEST_V2.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FORECAST_VERSIONING_BACKTEST_V2.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/THREE_YEAR_DRIVER_BASED_OPERATING_PLAN.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/THREE_YEAR_DRIVER_BASED_OPERATING_PLAN.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/CV_EVIDENCE_MAP.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/CV_EVIDENCE_MAP.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/NEXT_EXECUTION_SPRINT_QA.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/NEXT_EXECUTION_SPRINT_QA.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_VALUATION_REHEARSAL.md",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_VALUATION_REHEARSAL.md",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/mch_valuation_rehearsal_summary.json",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/mch_valuation_rehearsal_summary.json",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
+    },
+    {
+      "url": "https://github.com/susayold/commercial-finance-profitability-analytics",
+      "status": 404,
+      "ok": true,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics",
+      "method": "HEAD/GET",
+      "access": "private_repository",
+      "evidence": "git remote is readable; web view is authentication-gated"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1Gm2kGAoktzWA-DDakfrzo_-sL1sL9jax/view?usp=drivesdk",
+      "status": 200,
+      "ok": true,
+      "final_url": "https://accounts.google.com/v3/signin/identifier",
+      "method": "HEAD/GET",
+      "access": "drive_account_required",
+      "evidence": "Drive URL resolves to the signed-in Google access boundary"
+    }
+  ]
+}

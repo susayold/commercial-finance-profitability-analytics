@@ -5,4 +5,5 @@
 - Added the editable 10-slide management pack and five-minute finance-analyst narration script.
 - Added Sales_Fact, scenario, public-metric and cross-artifact executable validators.
 - Added architecture diagram, recruiter start page and line-ending governance.
+- Added recruiter-site external-link QA with explicit private GitHub/Drive access-boundary handling.
 - Clarified synthetic/rehearsal boundaries for customer profitability and M&A modules.

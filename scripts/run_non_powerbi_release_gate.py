@@ -38,6 +38,7 @@ def main() -> int:
         "output/pptx/VNFINANCE_NONBI_FPA_MBR_2026-09-01.pptx",
         "docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md",
         "reports/EXECUTIVE_BOARD_PACK_INDEX_2026-09-01.md",
+        "reports/RECRUITER_SITE_LINK_QA_2026-09-02.json",
         "RECRUITER_START_HERE.md",
         ".gitattributes",
         "reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md",
@@ -80,6 +81,7 @@ def main() -> int:
         "- The 3-year driver-based operating plan and versioned forecast/backtest rehearsal are validator-checked and evidence-labelled.\n"
         "- MCH ROE uses the approved average-equity denominator across FY2016–FY2025.\n"
         "- Website, MBR, CFO memo and CV values are checked against the exported snapshot.\n"
+        "- Recruiter website external-link snapshot is 38/38 PASS; private GitHub/Drive access boundaries are documented.\n"
         "- Synthetic customer profitability, Monte Carlo and M&A modules retain explicit evidence boundaries.\n\n"
         "## External gates (not inferred as closed)\n\n"
         "- Gate A: provide an approved internal pre-close forecast snapshot plus post-close actuals to calculate live Bias/WAPE.\n",
@@ -92,6 +94,7 @@ def main() -> int:
         "- Added the editable 10-slide management pack and five-minute finance-analyst narration script.\n"
         "- Added Sales_Fact, scenario, public-metric and cross-artifact executable validators.\n"
         "- Added architecture diagram, recruiter start page and line-ending governance.\n"
+        "- Added recruiter-site external-link QA with explicit private GitHub/Drive access-boundary handling.\n"
         "- Clarified synthetic/rehearsal boundaries for customer profitability and M&A modules.\n",
         encoding="utf-8",
     )
