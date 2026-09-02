@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "scope": "non_powerbi_release_identity",
+  "checked_files": [
+    "data/governance/release_identity_nonbi.json",
+    "data/governance/project_status_nonbi.json",
+    "reports/NONBI_RELEASE_MANIFEST_2026-09-02.md",
+    "reports/NON_POWERBI_HANDOFF_INDEX_2026-09-01.md",
+    "docs/VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md"
+  ],
+  "release_name": "VNFINANCE-FPA-2026-09-02-FINAL",
+  "release_status": "CLOSURE_CANDIDATE_INPUT_GATED",
+  "release_tag": null,
+  "release_sha": null,
+  "checks": [
+    {
+      "id": "RI-01",
+      "name": "Identity file parses",
+      "status": "PASS",
+      "detail": "data/governance/release_identity_nonbi.json"
+    },
+    {
+      "id": "RI-02",
+      "name": "Canonical release name",
+      "status": "PASS",
+      "detail": "VNFINANCE-FPA-2026-09-02-FINAL"
+    },
+    {
+      "id": "RI-03",
+      "name": "Status mirrors project status",
+      "status": "PASS",
+      "detail": "CLOSURE_CANDIDATE_INPUT_GATED=CLOSURE_CANDIDATE_INPUT_GATED"
+    },
+    {
+      "id": "RI-04",
+      "name": "Release tag/SHA are safely gated",
+      "status": "PASS",
+      "detail": "tag=null; sha=null"
+    },
+    {
+      "id": "RI-05",
+      "name": "Project status points to identity",
+      "status": "PASS",
+      "detail": "data/governance/release_identity_nonbi.json"
+    },
+    {
+      "id": "RI-06",
+      "name": "GitHub visibility policy is consistent",
+      "status": "PASS",
+      "detail": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY"
+    },
+    {
+      "id": "RI-07",
+      "name": "Power BI remains out of active scope",
+      "status": "PASS",
+      "detail": "OUT_OF_ACTIVE_SCOPE/OUT_OF_ACTIVE_SCOPE"
+    },
+    {
+      "id": "RI-08",
+      "name": "Manifest carries release identity",
+      "status": "PASS",
+      "detail": "release name and gated tag present"
+    },
+    {
+      "id": "RI-09",
+      "name": "Handoff carries release identity",
+      "status": "PASS",
+      "detail": "release name and pending boundary present"
+    },
+    {
+      "id": "RI-10",
+      "name": "Finalization blockers are explicit",
+      "status": "PASS",
+      "detail": "blockers=3"
+    }
+  ]
+}

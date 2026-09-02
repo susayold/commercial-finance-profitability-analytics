@@ -8,7 +8,7 @@
 - Release name: **VNFINANCE-FPA-2026-09-02-FINAL**
 - Release tag: **PENDING_INPUT_GATED_CLOSURE**
 - Release status: **CLOSURE_CANDIDATE_INPUT_GATED**
-- Payload commit at manifest generation: `e3411d802cb7cc2e5443303d28b45e8831c9a6f9`
+- Payload commit at manifest generation: `291d90b22353cb2c8e14d7a02aa8280cfc23e940`
 - Current period: **FY2025**
 - Operating input: `data/operating_inputs/manifest.json` (seed `20260829`, 36 months)
 - Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.
@@ -53,6 +53,8 @@
 |---|---:|---|
 | `data/governance/release_identity_nonbi.json` | 1,166 | `6E43EBD01C9B412B5F71CC75AFF97AD4A8C4FB9474899B3C6962311C4B0A67C1` |
 | `reports/GITHUB_PUBLIC_SAFE_SCAN_2026-09-02.md` | 2,359 | `92DEB48C864DFD99882DD8A0D73FE67277E84CC509EBCCAD345FD0CAD15BFBDA` |
+| `scripts/validate_release_identity_nonbi.mjs` | 3,893 | `FF8AD6053854CAD706DDC10F4A57387419AF0C12D2BC3B48CA790E15A045B8DF` |
+| `reports/RELEASE_IDENTITY_NONBI_QA_2026-09-03.json` | 2,148 | `19E1868F6C4602855A740A87EABE64B3599B13E81254DDDE9AF8D2677C66C0B7` |
 | `data/operating_inputs/manifest.json` | 312 | `153C9FFD6793A811F6542F51B9217E9468A6508623B1A8C5919C45CFB39A06E3` |
 | `data/finance_model/final_v1/source_manifest.csv` | 6,806 | `DAFE1B0D0249B39742A89996BF0A4C14C5EBCB8D421E105F343E74232E915EFB` |
 | `data/governance/finance_metric_registry.csv` | 6,404 | `6835BE030C44723EFA675A958C9310FF8E05EC83A8D1D56BB5A2596336206FAE` |

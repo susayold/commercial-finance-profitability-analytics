@@ -31,6 +31,8 @@ def main() -> None:
     files = [
         "data/governance/release_identity_nonbi.json",
         "reports/GITHUB_PUBLIC_SAFE_SCAN_2026-09-02.md",
+        "scripts/validate_release_identity_nonbi.mjs",
+        "reports/RELEASE_IDENTITY_NONBI_QA_2026-09-03.json",
         "data/operating_inputs/manifest.json",
         "data/finance_model/final_v1/source_manifest.csv",
         "data/governance/finance_metric_registry.csv",

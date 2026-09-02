@@ -17,6 +17,8 @@ The active release is **non-Power-BI FP&A**. Power BI files and instructions rem
 
 **Release identity:** `VNFINANCE-FPA-2026-09-02-FINAL` · tag pending input-gated closure items · current pushed closure state is recorded in [release_identity_nonbi.json](data/governance/release_identity_nonbi.json). GitHub policy is `PUBLIC_SAFE_PORTFOLIO_REPOSITORY`; the repository contains synthetic/public-safe evidence only.
 
+Release identity QA: `node scripts/validate_release_identity_nonbi.mjs` → **10/10 PASS** ([report](reports/RELEASE_IDENTITY_NONBI_QA_2026-09-03.json)).
+
 - [FP&A non-BI gap research & update master plan — 2026-09-01](docs/VNFINANCE_FPA_NON_POWERBI_GAP_RESEARCH_AND_UPDATE_MASTER_PLAN_2026-09-01.md) — current market-fit audit, P0/P1/P2 backlog, three-statement/GL/costing upgrades and recruiter release criteria; BI work is intentionally excluded.
 - [Active execution plan — No Power BI — 2026-09-02](docs/VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md) — the only plan to use for new work; covers FP&A model, planning, forecasting, profitability, cash, controls, management pack, CV and handoff.
 - [Candidate-facts intake contract](data/governance/candidate_profile_intake.json) · [10/10 QA](reports/CANDIDATE_PROFILE_INTAKE_QA_2026-09-02.md) — fill only with verified personal facts; no portfolio claim is promoted into Employment.
