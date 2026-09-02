@@ -306,6 +306,8 @@ Non-BI release gate PASS 12/12 trong khi full finance QA đang FAIL.
 
 ## P0-05 — ⏳ INPUT-GATED — Candidate personalization
 
+**Current implementation (2026-09-02):** the finance-first CV V3 Markdown and one-page PDF were regenerated without BI-tooling claims; CV structure/claim QA passes 16/16 and the PDF validator passes 6/6. Bracketed identity, education and work-history fields remain intentionally input-gated.
+
 ### Input cần chủ dự án cung cấp
 
 - tên đầy đủ;

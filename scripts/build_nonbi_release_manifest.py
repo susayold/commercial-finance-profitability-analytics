@@ -55,6 +55,10 @@ def main() -> None:
         "docs/INTERVIEW_WALKTHROUGH_FINANCE_ANALYST_2026-08-30.md",
         "reports/CV_V3_QA.md",
         "scripts/validate_cv_v3.mjs",
+        "output/pdf/FINANCE_ANALYST_CV_ONE_PAGE_V3.pdf",
+        "scripts/render_cv_v3_pdf.py",
+        "scripts/validate_cv_v3_pdf.py",
+        "reports/FINANCE_ANALYST_CV_V3_PDF_QA.md",
         "scripts/validate_nonbi_scope_boundary.mjs",
         "reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json",
     ]
@@ -98,6 +102,7 @@ def main() -> None:
         "| `output/pptx/VNFINANCE_NONBI_FPA_MBR_2026-09-01.pptx` | Editable management pack | Derived case output |",
         "| `output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf` | One-page recruiter summary | Derived case output |",
         "| `docs/*CV*` + interview scripts | Recruiter positioning and walkthrough package | Evidence-labelled; candidate facts remain input-gated |",
+        "| `output/pdf/FINANCE_ANALYST_CV_ONE_PAGE_V3.pdf` | One-page finance-first CV PDF | Template; candidate facts remain input-gated |",
         "| `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | Active non-BI source/path boundary control | PASS evidence |",
         "| `site/` | Recruiter website and evidence navigation | No unsupported live-impact claim |",
         "",

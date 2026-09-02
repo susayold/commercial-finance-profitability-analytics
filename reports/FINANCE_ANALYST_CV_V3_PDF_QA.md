@@ -9,9 +9,9 @@
 |---|---|---|
 | PDF exists | PASS | `output/pdf/FINANCE_ANALYST_CV_ONE_PAGE_V3.pdf` |
 | One-page constraint | PASS | `pypdf` reports 1 page |
-| Text extractable | PASS | 3,393 extracted characters |
+| Text extractable | PASS | 3,345 extracted characters |
 | Required sections / evidence | PASS | profile, skills, project, 28-tab model, 2,160 lines, CAGR metrics and QA claim present |
 | Dash policy | PASS | no non-ASCII dash glyphs in extracted text |
 | Claim boundary | PASS | internal forecast accuracy / price-target caveat visible |
 
-The PDF is a derivative of the Markdown CV V3 template. Bracketed candidate fields remain intentionally unresolved; replace them before sending applications.
+The PDF is a derivative of the Markdown CV V3 template and follows the non-BI finance-first recruiter scope. Bracketed candidate fields remain intentionally unresolved; replace them before sending applications.

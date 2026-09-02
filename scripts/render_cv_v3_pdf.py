@@ -107,7 +107,7 @@ skills = (
     "FP&A  |  Annual budgeting  |  Rolling forecast  |  Management reporting  |  Variance / PVM  |  "
     "Gross-to-net  |  Product/channel/customer profitability  |  Promotion and pricing ROI  |  "
     "OPEX/headcount  |  CAPEX  |  DSO/DIO/DPO/CCC  |  Liquidity stress testing  |  Financial statement analysis  |  "
-    "DCF / EV framing  |  Excel financial modelling  |  Power BI-ready semantic modelling  |  Finance business partnering"
+    "DCF / EV framing  |  Excel financial modelling  |  Finance data controls  |  Finance business partnering"
 )
 story.append(p(skills, "Skill"))
 
@@ -124,7 +124,7 @@ bullets = [
     "Converted commercial drivers into decisions by mapping discounts, rebates, platform fees, trade spend and cost-to-serve; tested promotion/pricing cases against a <b>25% contribution hurdle</b> and documented owner, guardrail, timing and stop/scale actions (<b>SIMULATED / DERIVED</b>).",
     "Built the operating-finance layer beyond the P&amp;L: MBR/KPI dictionary, recommendation register, battle cards, WD-5 to WD+5 close/forecast cadence, OPEX/headcount and CAPEX/fixed-asset bridges; validators cover design controls without claiming realised company impact (<b>SIMULATED / DERIVED</b>).",
     "Analysed <b>Masan Consumer FY2016-FY2025 public statements</b>: revenue CAGR <b>9.24%</b>, PAT CAGR <b>10.34%</b>, FY2025 operating margin <b>25.41%</b> and CFO/PAT <b>31.52%</b>; produced a credit memo and equity-research rehearsal with <b>22/22 QA</b>, thesis/scorecard and FY2017 provenance caveat (<b>PUBLIC / CALCULATED</b>).",
-    "Built an EV-only FCFF/DCF rehearsal across Base/Upside/Downside cases (<b>VND 40,673.8bn-101,614.9bn EV</b>) and a synthetic M&amp;A accretion/dilution screen; kept net debt, diluted shares, approved forecasts and native PBIX as explicit evidence gates rather than publishing a price target (<b>ANALYST_ASSUMPTION_REHEARSAL / SYNTHETIC</b>).",
+    "Built an EV-only FCFF/DCF rehearsal across Base/Upside/Downside cases (<b>VND 40,673.8bn-101,614.9bn EV</b>) and a synthetic M&amp;A accretion/dilution screen; kept net debt, diluted shares and approved forecasts as explicit evidence gates rather than publishing a price target (<b>ANALYST_ASSUMPTION_REHEARSAL / SYNTHETIC</b>).",
 ]
 for item in bullets:
     story.append(bullet(item))
@@ -144,7 +144,7 @@ story.append(table)
 
 story.extend(section("EVIDENCE DISCIPLINE"))
 story.append(p(
-    "VietNova operating detail is synthetic; MCH/VNM figures are source-linked public evidence; valuation forecasts are analyst-assumption rehearsals. Do not claim internal forecast accuracy, native Power BI completion or realised business impact until Gate A/B evidence is supplied.",
+    "VietNova operating detail is synthetic; MCH/VNM figures are source-linked public evidence; valuation forecasts are analyst-assumption rehearsals. Do not claim internal forecast accuracy or realised business impact until approved live evidence is supplied.",
     "Footer",
 ))
 story.append(Spacer(1, 2))
