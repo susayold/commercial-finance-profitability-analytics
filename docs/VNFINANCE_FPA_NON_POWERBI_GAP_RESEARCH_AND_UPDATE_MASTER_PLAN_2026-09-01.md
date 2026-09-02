@@ -11,6 +11,8 @@
 
 **Phạm vi tài liệu:** Mô hình tài chính, Excel, dữ liệu, kiểm soát, báo cáo quản trị, website, CV và recruiter package. Các hạng mục BI được loại khỏi phạm vi theo yêu cầu của chủ dự án.
 
+> **Điều hướng:** Đây là research/change log lịch sử. Kế hoạch thực thi duy nhất cho các cập nhật mới là [Active Execution Plan — No Power BI](VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md). Power BI không nằm trong backlog hoặc acceptance của active release.
+
 ---
 
 # 1. Kết luận điều hành
