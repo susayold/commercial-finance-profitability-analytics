@@ -1,4 +1,4 @@
-# Non-Power-BI FP&A Handoff Index — 2026-09-01
+# Non-Power-BI FP&A Handoff Index — 2026-09-02
 
 ## Scope
 
@@ -7,21 +7,28 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 ## GitHub source
 
 - Repository: https://github.com/susayold/commercial-finance-profitability-analytics
-- Release commit: `d6a692e` (final non-Power-BI QA, recruiter links and case-summary PDF)
+- Release commit: `774b20489d1b099f88a34d1da775dcef99b17d04` (latest non-Power-BI QA and handoff contracts)
 - Canonical status: `data/governance/project_status_nonbi.json`
+- Active execution plan: [VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md](../docs/VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md)
 
 ## Drive handoff files
 
 | Artifact | Drive link |
 |---|---|
 | Full committed non-BI source archive | https://drive.google.com/file/d/1p_9-3RHe8Et2WalJRuYFM1vsC286D4Ir/view?usp=drivesdk |
+| Active no-Power-BI execution plan | https://drive.google.com/file/d/1jAQi6s4DJ8hTCnbJYRavu5kJWeHqmvf3/view?usp=drivesdk |
 | Updated gap-research and execution plan | https://drive.google.com/file/d/1pNFlBzhbD_ncA0ApV0nSSY50h7AWdpef/view?usp=drivesdk |
-| Final non-BI QA (52/52 core; 43/43 release gate; recruiter links 42/42) | https://drive.google.com/file/d/1RQBU1j-Y2_tDvGEKQ0c13TCgWc7ZsoAq/view?usp=drivesdk |
+| Final non-BI QA (55/55 core; 52/52 release gate; recruiter links 42/42) | https://drive.google.com/file/d/1RQBU1j-Y2_tDvGEKQ0c13TCgWc7ZsoAq/view?usp=drivesdk |
 | One-page recruiter case summary PDF | https://drive.google.com/file/d/19rzyxjeIWWDus1LzPiYzcvtM3yK3yxkO/view?usp=drivesdk |
 | Release gate JSON | https://drive.google.com/file/d/1kS9SDbIi6XeCJWsdHTt_MXXDgDqk7_JF/view?usp=drivesdk |
 | Three-statement reconciliation | https://drive.google.com/file/d/1vLh81lUnZSnY8f2mfdHPWLmEsslbYmOK/view?usp=drivesdk |
 | FMCG standard-cost reconciliation | https://drive.google.com/file/d/1uXOezPturyR9BX6-wiC8aACxOlXi9SCd/view?usp=drivesdk |
 | Canonical non-BI project status | https://drive.google.com/file/d/1sUGUk6dy8UhQ5_EhNozXmfjdNe7m686w/view?usp=drivesdk |
+| Release manifest (39 hashed files) | https://drive.google.com/file/d/1qgIHKNAhP7RS--p7IsFCHNFVFEBM0qZg/view?usp=drivesdk |
+| Candidate-facts intake contract | https://drive.google.com/file/d/1Vw2cdUYwIaBS4Sj0z5F1eVNnzFLHbj5T/view?usp=drivesdk |
+| Walkthrough recording handoff contract | https://drive.google.com/file/d/151KI6ypmqYqnahpxMFAuzg3I4OgztsZb/view?usp=drivesdk |
+| Walkthrough recording QA | https://drive.google.com/file/d/1y98L2GVSjLUfd_yZ3SP5UbaEBJMmVNY4/view?usp=drivesdk |
+| Cross-artifact finance consistency QA | https://drive.google.com/file/d/1WgSwko-9g6Lyt7dDqcRUWvx5Q98PlSf1/view?usp=drivesdk |
 | Editable management pack (PPTX) | https://docs.google.com/presentation/d/1oroRz0IJAnY__YbFbCkxZa4VLuSVyXDO/edit?usp=drivesdk |
 | Three-year driver plan | https://drive.google.com/file/d/1MrIgrmMiGH8wLpKsE3WvjuYXkfQ9kbS9/view?usp=drivesdk |
 | Forecast versioning/backtest v2 | https://drive.google.com/file/d/12Rs_cFNzt9yrR2nUu66dEmX8oG9TijU0/view?usp=drivesdk |
@@ -53,6 +60,8 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 - Finance analyst walkthrough: `docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md`
 - Board-pack index: `reports/EXECUTIVE_BOARD_PACK_INDEX_2026-09-01.md`
 - Recruiter link QA: `reports/RECRUITER_SITE_LINK_QA_2026-09-02.json` (42/42 PASS)
+- Candidate-facts intake: `data/governance/candidate_profile_intake.json` + validator (10/10 PASS; INPUT-GATED)
+- Walkthrough recording handoff: `data/governance/recording_handoff.json` + validator (10/10 PASS; INPUT-GATED until a user recording exists)
 - Correlated Monte Carlo v2: `data/monte_carlo_risk_overlay_v2_2026-09-02.csv`, draw-level output, matrix, report and validator (16/16 PASS)
 - SAP-like mapping rehearsal: `data/accounting/sap_like_mapping_rehearsal.csv` and QA report (9/9 PASS; simulated only)
 - Automated commentary draft: `data/governance/commentary_draft_2026-09-02.csv`, draft report and approval log (9/9 PASS; NEEDS_REVIEW)
@@ -62,7 +71,7 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 
 https://vn-finance-fpa-case.sangkenny200.chatgpt.site
 
-The deployed recruiter site is owner-only and reflects the non-BI path. The current production version is Sites version 23; the source mirror commit is `ec2e404e4f81f7e411abffe17fde63ed41f73704`. The active site path exposes the editable management pack, case summary PDF, forecast v2, three-year plan and the new appendix evidence links; Power BI remains archived and excluded. DOM order is now core FP&A → evidence → appendix valuation → recruiter tour → footer.
+The deployed recruiter site is owner-only and reflects the non-BI path. The current production version is Sites version 26; its saved source commit is `f1d0c6fcc180bcc5a033062b0a49b1d7816202bb`. The active site path exposes the editable management pack, case summary PDF, forecast v2, three-year plan and the new appendix evidence links; Power BI remains archived and excluded. DOM order is now core FP&A → evidence → appendix valuation → recruiter tour → footer.
 
 ## Open external input
 

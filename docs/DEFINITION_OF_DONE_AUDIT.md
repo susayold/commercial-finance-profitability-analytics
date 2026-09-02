@@ -1,5 +1,7 @@
 # Definition-of-Done Audit — Commercial Finance & Profitability Analytics
 
+> **Scope notice (2026-09-02):** This document is a historical audit retained for provenance. The active release is governed by the [Non-Power-BI handoff index](../reports/NON_POWERBI_HANDOFF_INDEX_2026-09-01.md) and [active execution plan](VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md). References below to native Power BI / Gate B describe historical work only and do not block the current FP&A release.
+
 Audit date: 2026-08-30  
 Repository: `susayold/commercial-finance-profitability-analytics`  
 Primary archive: [Google Drive project root](https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR)
