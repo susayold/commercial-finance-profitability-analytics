@@ -27,7 +27,7 @@ Bản cập nhật này đã chuyển dự án sang **non-Power-BI FP&A release*
 - forecast versioning/backtest v2 (Budget, RF1, RF2, RF3, Latest Estimate, Actual) với Bias/WAPE/MAE, bridge và override log;
 - MBR, CFO memo, close calendar, KPI dictionary, recommendation register, editable 10-slide board pack và narration script;
 - website recruiter-facing, CV/interview package và GitHub/Drive handoff;
-- non-BI QA **PASS 53/53** và release gate **PASS 50/50** ở lần chạy gần nhất; recruiter-link QA **42/42** được tích hợp vào release evidence.
+- non-BI QA **PASS 54/54** và release gate **PASS 50/50** ở lần chạy gần nhất; recruiter-link QA **42/42** được tích hợp vào release evidence.
 
 ### Trạng thái release hiện tại
 
