@@ -37,7 +37,7 @@ jobs:
           cache-dependency-path: site/package-lock.json
       - name: Build static CV site
         run: |
-          npm ci --prefix site
+          npm install --prefix site --ignore-scripts --no-audit --no-fund
           npm run build:github-pages --prefix site
       - name: Configure Pages
         uses: actions/configure-pages@v5
