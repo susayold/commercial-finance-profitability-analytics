@@ -50,6 +50,27 @@ for (const relative of activeBuilders) {
     forbidden ? 'found powerbi/ path reference' : 'no powerbi/ path reference');
 }
 
+const activeRecruiterDocs = [
+  'docs/CANDIDATE_APPLICATION_INTAKE_AND_CV_BUILD_PACK.md',
+  'docs/CV_EVIDENCE_MAP.md',
+  'docs/CV_ROLE_VARIANTS_V2.md',
+  'docs/FINANCE_ANALYST_CV_BULLET_BANK_2026-08-30.md',
+  'docs/FINANCE_ANALYST_CV_ONE_PAGE_V3.md',
+  'docs/FINANCE_ANALYST_INTERVIEW_TALK_TRACK.md',
+  'docs/INTERVIEW_WALKTHROUGH_FINANCE_ANALYST_2026-08-30.md',
+];
+const recruiterDocHits = [];
+for (const relative of activeRecruiterDocs) {
+  if (!exists(relative)) {
+    recruiterDocHits.push(`${relative} (missing)`);
+    continue;
+  }
+  const text = read(relative);
+  if (/(?:power\s*bi|\bpbix\b|\bpbip\b|\bpbit\b|\bgate\s+b\b)/i.test(text)) recruiterDocHits.push(relative);
+}
+add('SCOPE-RECRUITER-DOCS', 'Active recruiter documents contain no BI tooling claim or Gate B dependency', recruiterDocHits.length === 0,
+  recruiterDocHits.length ? recruiterDocHits.join(', ') : `${activeRecruiterDocs.length} documents scanned`);
+
 const activeDirs = ['data/governance', 'data/financial_statements', 'data/accounting', 'data/costing', 'data/macros', 'data/planning', 'data/forecast', 'data/operating_inputs', 'data/finance_model'];
 const pathHits = [];
 for (const relativeDir of activeDirs) {

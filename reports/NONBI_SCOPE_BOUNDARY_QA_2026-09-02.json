@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generated_at": "2026-09-02T06:33:02.465Z",
+  "generated_at": "2026-09-02T08:39:59.160Z",
   "scope": "non_powerbi_active_release_boundary",
   "checks": [
     {
@@ -92,6 +92,12 @@
       "name": "Active builder has no archived Power BI path: site/app/page.tsx",
       "status": "PASS",
       "detail": "no powerbi/ path reference"
+    },
+    {
+      "id": "SCOPE-RECRUITER-DOCS",
+      "name": "Active recruiter documents contain no BI tooling claim or Gate B dependency",
+      "status": "PASS",
+      "detail": "7 documents scanned"
     },
     {
       "id": "SCOPE-ACTIVE-DATA",

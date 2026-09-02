@@ -264,7 +264,7 @@ Non-BI release gate PASS 12/12 trong khi full finance QA đang FAIL.
 
 **Current implementation (2026-09-02):** `data/governance/recruiter_metric_snapshot.json` is generated from the exported metric snapshot and contains the three scenario headline metrics, QA totals, evidence boundary, recruiter links and CV-personalization gate. `reports/NONBI_RELEASE_MANIFEST_2026-09-02.md` hashes the active non-BI model, statements, planning, management pack, PDF and QA evidence. The active builders read `data/operating_inputs/` and `data/finance_model/final_v1/`; no active governance or statement source points to the archived Power BI directory.
 
-**Scope control extension (2026-09-02):** `scripts/validate_nonbi_scope_boundary.mjs` scans required active paths, builders, data/governance contracts and the recruiter page. It passes **17/17** and explicitly permits only historical `powerbi/` material outside the active release.
+**Scope control extension (2026-09-02):** `scripts/validate_nonbi_scope_boundary.mjs` scans required active paths, builders, data/governance contracts, recruiter documents and the recruiter page. It passes **18/18** and explicitly permits only historical `powerbi/` material outside the active release. The active CV, role variants, evidence map, bullet bank and interview walkthrough contain no BI-tooling claim or Gate B dependency.
 
 ### Nội dung
 

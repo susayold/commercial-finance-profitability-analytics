@@ -30,16 +30,16 @@ Use the one-page CV V3 as the base. Swap only the headline, profile and first tw
 
 ## Variant C — Finance Data Analyst (secondary)
 
-**Headline:** Finance Data Analyst | FP&A Analytics | Reconciliation & Semantic Modelling
+**Headline:** Finance Data Analyst | FP&A Analytics | Reconciliation & Finance Controls
 
-**Profile:** Finance-first analyst who designs traceable data structures for planning and performance reporting. Builds semantic contracts, calculations and QA so dashboards support decisions on revenue, margin, cash and forecast risk.
+**Profile:** Finance-first analyst who designs traceable data structures for planning and performance reporting. Builds finance data contracts, calculations and QA so management reporting supports decisions on revenue, margin, cash and forecast risk.
 
 **Lead bullets:**
 
-- Authored a Power BI-ready contract covering 5 dimensions, 11 fact tables, 17 relationships, six report pages and QA definitions; native `.pbix` remains a documented Desktop gate.
+- Authored a finance data contract covering 5 dimensions, 11 fact tables, 17 relationships, six report-ready views and QA definitions; source lineage and evidence classes remain explicit (**CALCULATED / SIMULATED**).
 - Wired deterministic validators for completeness, tie-outs, leakage, scorecards and public-finance reports into a repeatable GitHub Actions QA workflow (**CALCULATED / SIMULATED**).
 
-**Keywords:** finance data, semantic model, reconciliation, Power BI, DAX, data quality, automation, GitHub Actions, finance metrics.
+**Keywords:** finance data, semantic model, reconciliation, SQL, Python, data quality, automation, GitHub Actions, finance metrics.
 
 ## Variant D — Fundamental / Equity Research Analyst (supporting)
 
@@ -60,9 +60,9 @@ Use the one-page CV V3 as the base. Swap only the headline, profile and first tw
 |---|---|---|
 | Budget, forecast, month-end, variance, CFO | Variant A | M&A and market-language detail |
 | Sales, marketing, trade spend, pricing, ROI | Variant B | Long data-model explanation |
-| Power BI, data model, dashboard, automation | Variant C | Unsupported SQL or live-accuracy claims |
+| Data model, reconciliation, automation | Variant C | Unsupported production-system or live-accuracy claims |
 | Equity, research, earnings, valuation, thesis | Variant D | Synthetic operating details before public evidence |
 
 ## Integrity line
 
-> Synthetic operating ledger; public filings and public guidance used for calibration/benchmarking; valuation forecasts are analyst assumptions. Real internal forecast accuracy, native PBIX evidence and realised company impact remain pending external gates.
+> Synthetic operating ledger; public filings and public guidance used for calibration/benchmarking; valuation forecasts are analyst assumptions. Real internal forecast accuracy and realised company impact remain pending external evidence.

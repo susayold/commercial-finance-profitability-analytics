@@ -6,7 +6,7 @@ Purpose: present the portfolio as an operating-finance case in 15 minutes, with 
 
 - `SYNTHETIC/DERIVED`: VietNova retail/e-commerce planning model, MBR pack, OPEX, CAPEX, pricing and promotion scenarios. These demonstrate method and controls, not company results.
 - `PUBLIC_REPORTED/CALCULATED_PUBLIC`: MCH FY2016–FY2025 statement supplement and VNM/QNS/KDC peer context. These support historical analysis and benchmark context, not internal forecast accuracy.
-- `PBIP_SCAFFOLD`: Power BI schema, DAX, 17-relationship topology, six-page contract and QA-01..QA-18 evidence template. Native PBIX is not yet available.
+- `FINANCE_DATA_CONTROLS`: finance data contract, 17-relationship topology, six report-ready views and QA-01..QA-18 evidence controls.
 - `LIVE_INTERNAL`: not claimed until Gate A receives an approved real pre-close snapshot plus post-close actuals.
 
 ## 15-minute reviewer flow
@@ -18,8 +18,8 @@ Purpose: present the portfolio as an operating-finance case in 15 minutes, with 
 | 5–7 | MBR pack + recommendation register | Translate a variance into owner, action, guardrail and review date. |
 | 7–9 | Working capital / OPEX / CAPEX | Connect P&L to cash, people cost and investment timing. |
 | 9–11 | MCH public finance lens | Demonstrate source discipline, long-run trend analysis and caveats. |
-| 11–13 | PBIP scaffold | Explain how the model becomes a controlled six-page Power BI report with 17 relationships. |
-| 13–15 | External-gates pack | State exactly what remains: real internal forecast evidence and native PBIX QA. |
+| 11–13 | Finance data controls | Explain how source lineage, reconciliations and 17 relationships support controlled management reporting. |
+| 13–15 | External-gates pack | State exactly what remains: real internal forecast evidence for live accuracy. |
 
 ## Core answers
 
@@ -27,7 +27,7 @@ Purpose: present the portfolio as an operating-finance case in 15 minutes, with 
 
 “The business question is how management can explain revenue and margin movement, decide where to allocate commercial spend, and protect cash. I built a driver-based model with dimensions, sales/inventory/working-capital facts, budget and forecast versions, PVM logic, profitability, OPEX, CAPEX and risk overlays. The output is an executive pack plus an action register. Every headline is reconciled to a controlled source table, and synthetic/public evidence is labelled so I do not imply access to company-internal data.”
 
-Open: recruiter site → Excel CFO Output → [model contract](../powerbi/PBIP_MODEL_CONTRACT.json) → QA report.
+Open: recruiter site → Excel CFO Output → finance data contract → QA report.
 
 ### 2. Why did margin move?
 
@@ -65,15 +65,9 @@ Open: working-capital, liquidity, CAPEX and MBR modules.
 
 Open: OPEX/headcount and CAPEX QA reports.
 
-### 8. Why Power BI if the PBIX is not finished?
+### 8. What is the strongest limitation?
 
-“I completed the portable semantic contract first: table grain, dimensions, facts, 17 relationships, DAX measures, six pages, source coherence and QA evidence rules. The native PBIX remains an external execution gate because a scaffold or screenshot is not the same as a Desktop-validated binary. I would not write ‘18/18 QA PASS’ until the PBIX and visual evidence exist.”
-
-Open: PBIP checklist, source manifest, QA evidence template.
-
-### 9. What is the strongest limitation?
-
-“The strongest limitation is evidence class, not a hidden modelling error. Forecast accuracy is fixture-only until a real approved pre-close snapshot and post-close actuals arrive. Power BI is a source scaffold until Desktop execution. FY2017 MCH is comparative/corresponding-column evidence, not a standalone archived annual report. I make those boundaries visible rather than overclaiming.”
+“The strongest limitation is evidence class, not a hidden modelling error. Forecast accuracy is fixture-only until a real approved pre-close snapshot and post-close actuals arrive. FY2017 MCH is comparative/corresponding-column evidence, not a standalone archived annual report. I make those boundaries visible rather than overclaiming.”
 
 Open: master-plan evidence matrix and remaining-gates handoff.
 
@@ -84,7 +78,6 @@ Open: master-plan evidence matrix and remaining-gates handoff.
 ## Claims to avoid until gates close
 
 - Do not say “I achieved X% forecast accuracy” without `LIVE_INTERNAL`, eligible count, actual-availability date and as-of date.
-- Do not say “built a Power BI dashboard” when the native PBIX and QA evidence are not archived; say “designed and validated the PBIP source scaffold.”
 - Do not turn MCH FY2017 comparative evidence into a standalone annual-report claim.
 - Do not describe synthetic promotion, pricing, CAC/LTV, OPEX or CAPEX outputs as realized company impact.
 

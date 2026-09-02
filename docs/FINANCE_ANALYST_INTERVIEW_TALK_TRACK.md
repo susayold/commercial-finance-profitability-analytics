@@ -88,12 +88,12 @@ Expected answer: never publish internal forecast accuracy without a pre-close sn
 
 ### Minute 14–15: Close with controls and next step
 
-Open the Power BI source handoff and Controls & Evidence design:
+Open the finance data contract, Controls & Evidence design and release manifest:
 
-- The semantic contract has 5 dimensions, 9 facts, 15 relationships, 6 pages and 18 QA tests.
-- The PBIP checklist is ready for Desktop execution.
-- Native PBIX is intentionally still an external gate.
-- In a real company, the next step is to load approved ERP/CRM/forecast extracts and obtain finance-owner sign-off.
+- The finance data contract has 5 dimensions, 9 facts, 15 relationships, 6 report-ready views and 18 QA tests.
+- The release manifest records source lineage, evidence class, tested artifact hashes and the non-BI scope boundary.
+- The model is designed to accept approved ERP/CRM/forecast extracts without changing the control contract.
+- In a real company, the next step is to load approved extracts and obtain finance-owner sign-off.
 
 ## Evidence map for common questions
 
@@ -105,7 +105,7 @@ Open the Power BI source handoff and Controls & Evidence design:
 | Which channel would you fund? | Compare incremental contribution after all channel costs to hurdle | Channel/customer and promotion tabs |
 | How would you improve cash? | Quantify DSO/DIO/DPO levers and liquidity headroom | Working Capital, Debt/Liquidity |
 | What is the strongest insight? | Revenue growth is not enough; margin and cash conversion decide quality | CFO memo, website |
-| What remains incomplete? | Real pre-close snapshot and native PBIX visual QA | Definition-of-Done audit |
+| What remains incomplete? | Real pre-close snapshot and post-close actuals for live forecast accuracy | Definition-of-Done audit |
 | How would you work with non-finance teams? | Translate driver to owner, guardrail, action and review date | Battle cards, CFO memo |
 
 ## Three STAR stories
@@ -137,9 +137,9 @@ Open the Power BI source handoff and Controls & Evidence design:
 
 Public filings provide annual totals and selected ratios, but not SKU, customer, promotion or internal forecast detail. I use official filings for calibration and benchmarking, then label the granular operating ledger as simulated.
 
-### “Why is Power BI not complete?”
+### “Why is the forecast accuracy claim not live?”
 
-The portable contract, DAX, QA matrix and Desktop checklist are complete. A native PBIX must be created in Power BI Desktop because the visual model and binary cache cannot be honestly fabricated as text. I prefer an explicit open gate over claiming a placeholder.
+The model currently contains a controlled synthetic backtest and a public-guidance proxy. A live accuracy claim requires an approved pre-close snapshot, immutable cutoff, model version, approver and post-close actuals. I keep that evidence gate visible instead of presenting a fixture as company performance.
 
 ### “Are the VNM guidance metrics forecast accuracy?”
 

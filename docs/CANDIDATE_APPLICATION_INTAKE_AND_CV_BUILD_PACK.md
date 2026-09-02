@@ -13,7 +13,7 @@ Replace every bracketed field before sending an application.
 | Email / phone / LinkedIn | `[CONTACT]` | Candidate-confirmed |
 | Education | `[DEGREE, UNIVERSITY, GRADUATION]` | Transcript or CV |
 | Experience | `[EMPLOYER, ROLE, DATES]` | Employment record |
-| Tools | `[Excel, Power BI, SQL, Python, ERP]` | Only tools actually used |
+| Tools | `[Excel, SQL, Python, ERP]` | Only tools actually used |
 | Languages | `[LANGUAGE + LEVEL]` | Candidate-confirmed |
 | Availability | `[NOTICE PERIOD]` | Candidate-confirmed |
 
@@ -28,10 +28,10 @@ Do not place a portfolio result in the Experience section unless the candidate a
 | Public peer panel | VNM FY2006–FY2025; QNS/KDC/MCH context | “Normalized long-run public financial history with source and comparability flags” | Peer panel + source registry |
 | Forecast proxy | Public-guidance Bias/WAPE only | “Analyzed a public-guidance forecast proxy; explicitly excluded from internal accuracy claims” | Public-guidance report |
 | D2C unit economics | CAC, LTV contribution, payback, guardrails | “Built a unit-economics decision case with CAC/LTV and payback controls” | D2C methodology + QA |
-| PBIP handoff | 6-page source scaffold, 18 QA definitions | “Prepared a portable Power BI source handoff and QA contract” | PBIP manifest + execution pack |
+| Finance controls | GL/TB bridge, three-statement reconciliation, close calendar and QA registry | “Built auditable finance controls linking source data to management reporting and cash” | Control reports + QA manifest |
 | M&A stretch | Accretion/dilution and sensitivity screen | “Built a synthetic accretion/dilution screen with integration-cost and synergy sensitivities” | M&A memo + QA |
 
-Use the exact evidence class (`SYNTHETIC`, `PUBLIC_GUIDANCE_PROXY`, `PBIP_SCAFFOLD`) whenever a recruiter could otherwise infer company-internal data.
+Use the exact evidence class (`SYNTHETIC`, `PUBLIC_GUIDANCE_PROXY`, `ANALYST_ASSUMPTION_REHEARSAL`) whenever a recruiter could otherwise infer company-internal data.
 
 ## 3. One-page CV architecture
 
@@ -89,7 +89,7 @@ Lead with:
 
 - data contracts, dimensional model and lineage;
 - repeatable QA and exception handling;
-- Power BI/PBIP source handoff;
+- finance data controls and evidence lineage;
 - finance interpretation rather than chart production.
 
 Suggested bullets:
@@ -125,13 +125,13 @@ Mirror the job description's wording only when the artifact supports it.
 | Commercial ROI | `promotion ROI after spend; hurdle decision` | Promotion QA |
 | Working capital | `DSO, DIO, DPO, CCC, liquidity stress` | WC/liquidity tabs |
 | Data quality | `reconciliation, lineage, evidence class, controls` | QA runner + schemas |
-| Power BI | `PBIP source handoff; native PBIX pending` | PBIP manifest |
+| Data controls | `reconciliation, lineage, evidence class, repeatable QA` | Finance QA runner, release manifest |
 
-Never claim `native Power BI` or `internal forecast accuracy` until Gate B or Gate A is actually closed.
+Never claim `internal forecast accuracy` until Gate A is actually closed.
 
 ## 7. Evidence-backed bullet selection
 
-Use the [Finance Analyst CV bullet bank](FINANCE_ANALYST_CV_BULLET_BANK_2026-08-30.md) to select one scale bullet, one decision/driver bullet and one control/evidence bullet for the target role. The bullet bank keeps SIMULATED/DERIVED, PUBLIC_REPORTED/CALCULATED_PUBLIC and PBIP_SCAFFOLD wording explicit; do not copy live forecast accuracy or native PBIX claims before Gate A/B close.
+Use the [Finance Analyst CV bullet bank](FINANCE_ANALYST_CV_BULLET_BANK_2026-08-30.md) to select one scale bullet, one decision/driver bullet and one control/evidence bullet for the target role. The bullet bank keeps SIMULATED/DERIVED, PUBLIC_REPORTED/CALCULATED_PUBLIC and ANALYST_ASSUMPTION_REHEARSAL wording explicit; do not copy live forecast accuracy before Gate A closes.
 
 ## 8. Interview conversion matrix
 
@@ -142,7 +142,7 @@ Use the [Finance Analyst CV bullet bank](FINANCE_ANALYST_CV_BULLET_BANK_2026-08-
 | How did you handle bad data? | Preserve source, classify evidence, reject unverified rows, log exception and tie-out | Source registry + QA |
 | What did you recommend? | State threshold, downside, owner, timing and expected benefit | Promotion/pricing/allocation |
 | How do you forecast? | Freeze version before close, prevent leakage, reconcile actuals and report Bias/WAPE | Gate A pack |
-| What is unfinished? | Name Gate A/B honestly and explain the exact evidence required | External-gates pack |
+| What is unfinished? | Name Gate A honestly and explain the exact evidence required | External-gates pack |
 
 ## 9. Application tailoring checklist
 
@@ -157,5 +157,5 @@ Use the [Finance Analyst CV bullet bank](FINANCE_ANALYST_CV_BULLET_BANK_2026-08-
 
 ## 10. Gate-dependent upgrades
 
-After Gate A closes, replace the proxy wording with the observed live Bias/WAPE, eligible observations and as-of date. After Gate B closes, replace “PBIP source handoff” with the native PBIX page count, `18/18 QA PASS`, refresh timestamp and Drive evidence link. Do not change the wording before those artifacts exist.
+After Gate A closes, replace the proxy wording with the observed live Bias/WAPE, eligible observations and as-of date. Do not change the wording before those artifacts exist.
 

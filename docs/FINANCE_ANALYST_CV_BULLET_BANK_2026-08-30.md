@@ -6,7 +6,7 @@ Purpose: provide evidence-backed, ATS-friendly bullets for a one-page CV. Select
 
 - `SIMULATED/DERIVED`: VietNova operating model, MBR, OPEX, CAPEX, pricing/promotion, risk and M&A scenarios.
 - `PUBLIC_REPORTED/CALCULATED_PUBLIC`: MCH/VNM/QNS/KDC filings and derived ratios.
-- `PBIP_SCAFFOLD`: Power BI source contract, DAX and QA design; native PBIX is not closed.
+- `FINANCE_DATA_CONTROLS`: finance data contract, reconciliation and repeatable QA design.
 - `LIVE_OBSERVED`: not available until Gate A receives an approved internal snapshot and post-close actuals.
 
 ## Quantified anchor bank
@@ -21,7 +21,7 @@ Purpose: provide evidence-backed, ATS-friendly bullets for a one-page CV. Select
 | MCH 80 rows / 8 metrics | Built an approved FY2016–FY2025 public statement supplement with 80 rows and eight metrics | MCH supplement |
 | FY2020 MCH approved | Page-reviewed official HNX FY2020 statements and tied eight metrics to the approved supplement | HNX PDF + runbook |
 | FY2017 evidence boundary | Added eight-metric web-index evidence with 8/8 QA while retaining `INDEXED_ONLY` status and comparative-column provenance | FY2017 indexed memo + QA |
-| 17 relationships / 6 pages / 18 QA definitions | Designed a Power BI-ready semantic contract with 17 relationships, six pages and 18 QA definitions | PBIP scaffold |
+| 17 relationships / 6 report-ready views / 18 QA definitions | Designed a finance data contract with 17 relationships, six report-ready views and 18 QA definitions | Finance data controls |
 | 5,000 risk draws | Built a seeded 5,000-draw scenario risk overlay with percentile bands and downside triggers | Monte Carlo module |
 | 12 recommendations | Converted model signals into 12 decision rows with value equation, owner, guardrail and review date | Recommendation register |
 
@@ -30,7 +30,7 @@ Purpose: provide evidence-backed, ATS-friendly bullets for a one-page CV. Select
 Use when the vacancy emphasizes budgeting, forecasting, month-end, P&L and management reporting.
 
 - Built a 36-month, 2,160-line driver-based FP&A model across 28 tabs, linking budget/forecast versions to P&L, PVM, profitability, working capital, liquidity and scenarios; nine controls passed and formula-error scan returned zero matches (`SIMULATED/DERIVED`).
-- Designed a pre-close forecast-freeze protocol that preserves immutable forecast values, records model version/cutoff/approver and blocks leakage; Bias/WAPE release remains gated on real internal evidence (`PBIP_SCAFFOLD` / `DEMO_FIXTURE_ONLY`).
+- Designed a pre-close forecast-freeze protocol that preserves immutable forecast values, records model version/cutoff/approver and blocks leakage; Bias/WAPE release remains gated on real internal evidence (`FINANCE_DATA_CONTROLS` / `DEMO_FIXTURE_ONLY`).
 - Added OPEX/headcount planning for hires, exits, payroll, benefits, bonus and non-payroll spend, with budget-versus-forecast variance and 13/13 automated QA (`SIMULATED/DERIVED`).
 - Added CAPEX/fixed-asset planning for approval, commitment, cash payment, depreciation, benefits and payback, with 15/15 automated QA (`SIMULATED/DERIVED`).
 - Packaged an executive MBR with PVM, cash/CCC triggers, owner/action tracker and scenario preconditions; every recommendation carries a guardrail and review date (`SIMULATED/DERIVED`).
@@ -47,19 +47,19 @@ Use when the vacancy emphasizes commercial partnering, trade spend, pricing, pro
 
 ## Variant C — Finance Data Analyst (secondary)
 
-Use only when the vacancy explicitly asks for semantic modelling, Power BI, DAX, controls or reproducibility.
+Use when the vacancy explicitly asks for finance data controls, semantic modelling, reconciliation or reproducibility.
 
-- Designed a Power BI-ready semantic contract with 5 dimensions, 9 facts, 17 relationships, six report pages and 18 QA definitions; source-coherence preflight passed (`PBIP_SCAFFOLD`).
-- Added machine-readable validators for schema, reconciliation, leakage, evidence class, source identity and visual QA, wired into a repeatable GitHub Actions finance QA workflow (`PBIP_SCAFFOLD`).
+- Designed a finance data contract with 5 dimensions, 9 facts, 17 relationships, six report-ready views and 18 QA definitions; source-coherence preflight passed (`FINANCE_DATA_CONTROLS`).
+- Added machine-readable validators for schema, reconciliation, leakage, evidence class and source identity, wired into a repeatable GitHub Actions finance QA workflow (`FINANCE_DATA_CONTROLS`).
 - Preserved source lineage and comparability flags across a 240-row peer panel plus a separate 80-row MCH statement supplement; missing bridges remain blank instead of being imputed (`PUBLIC_REPORTED/CALCULATED_PUBLIC`).
 - Built a seeded 5,000-draw risk overlay with percentile bands, downside breach probabilities and joint-downside trigger logic; independence limitations are explicitly documented (`SIMULATED/DERIVED`).
-- Documented the six-page Power BI build, refresh ownership, QA-01–QA-18 evidence requirements and PBIX release hard stops; native PBIX is intentionally not claimed (`PBIP_SCAFFOLD`).
+- Documented the six-view finance reporting contract, refresh ownership and QA-01–QA-18 evidence requirements; model outputs remain traceable to controlled source tables (`FINANCE_DATA_CONTROLS`).
 
 ## Safe versus unsafe wording
 
 | Safe | Avoid until gate closes |
 |---|---|
-| “Designed a PBIP source/QA contract” | “Built and deployed a Power BI dashboard” |
+| “Designed a finance data/control contract” | “Owned a production finance system” without evidence |
 | “Built a synthetic forecast-control rehearsal” | “Achieved X% forecast accuracy” |
 | “Analyzed public MCH statements” | “Improved MCH company EBITDA by X%” |
 | “Modelled promotion ROI and allocation guardrails” | “Delivered X revenue uplift” |
@@ -70,7 +70,7 @@ Use only when the vacancy explicitly asks for semantic modelling, Power BI, DAX,
 1. Choose one summary line and three project bullets for the target role.
 2. Use one operating scale bullet, one decision/driver bullet and one control/evidence bullet.
 3. Keep evidence-class wording when the number comes from synthetic or public data.
-4. Put tools after outcomes; do not lead with Power BI if the role is corporate finance.
+4. Put tools after outcomes; do not lead with software names if the role is corporate finance.
 5. Replace all bracketed candidate fields and add only real employment/education facts.
 6. Run the PDF/ATS check after final selection; never exceed four project bullets in a one-page CV.
 

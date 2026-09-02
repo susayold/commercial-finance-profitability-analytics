@@ -23,9 +23,9 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 - Added a financial-statement analysis layer using net margin, asset turnover, equity multiplier, DuPont ROE, ROA/ROE, CFO/revenue and debt/equity proxy; 11/11 controls pass and FY2024/FY2025 follow-ups are explicitly documented.
 - Built a QNS/KDC basis-perimeter bridge that calculates only within-window descriptive growth, retains source lineage and blocks misleading cross-break CAGR; validator and QA report pass 12/12.
 - Built a 21-row peer financial-quality scorecard for VNM/QNS/KDC with CAGR, margins, capital and cash metrics, source-record lineage, controlled blanks and rankability guardrails; validator and QA report pass 11/11.
-- Authored a portable Power BI source handoff with a machine-readable semantic manifest covering 5 dimensions, 9 facts, 15 relationships, 6 report pages and 18 QA tests; wired manifest validation into GitHub Actions (native PBIX remains Desktop-dependent).
+- Authored a finance data contract with a machine-readable semantic manifest covering 5 dimensions, 9 facts, 15 relationships, 6 report-ready views and 18 QA tests; wired manifest validation into GitHub Actions.
 - Extended the public-guidance proxy into a reproducible forecast-performance analysis with metric/regime splits, Bias/WAPE/MAPE, within-2% accuracy bands and ranked misses; kept the evidence explicitly outside the internal forecast gate.
-- Prepared a finance-analyst interview talk track that traces one KPI from source to P&L to decision, including a 90-second pitch, 15-minute reviewer tour, STAR stories and honest responses to data/PBIX limitations.
+- Prepared a finance-analyst interview talk track that traces one KPI from source to P&L to decision, including a 90-second pitch, 15-minute reviewer tour, STAR stories and honest responses to data limitations.
 
 ## Skills mapped to artifacts
 
@@ -43,7 +43,7 @@ Junior FP&A / Finance Analyst / Business Finance Analyst with a commercial-finan
 | Public guidance / forecast-vs-actual | VNM public guidance proxy FY2018–FY2025 | 16 rows; Bias -2.63%; WAPE 3.14%; Gate A excluded |
 | MCH financial-statement analysis | MCH FY2016–FY2025 statement analysis dataset/report | DuPont, ROA/ROE, CFO/revenue and leverage proxy; 11/11 controls PASS |
 | Peer financial-quality scorecard | VNM/QNS/KDC scorecard/report | 21 rows; source lineage; VNM trend candidate; QNS/KDC context-only; 11/11 controls PASS |
-| Power BI source handoff | powerbi/PBIP_SOURCE_MANIFEST.json, PBIP_SOURCE_HANDOFF.md, PBIP_DESKTOP_EXECUTION_CHECKLIST.md | 5 dimensions; 9 facts; 15 relationships; 18 QA definitions; Desktop runbook and CI validator PASS |
+| Finance data contract | data/governance/finance_metric_registry.csv, schemas/unit_contract.csv, scripts/validate_nonbi_scope_boundary.mjs | 5 dimensions; 9 facts; 15 relationships; 18 QA definitions; repeatable QA and release boundary |
 | Public guidance performance analysis | data/vnm_public_guidance_proxy_analysis.json, VNM_PUBLIC_GUIDANCE_ANALYSIS.md | Metric/regime Bias-WAPE-MAPE splits, descriptive bands, ranked misses; CI validator |
 | Data governance | Source_Register, peer review queue | OCR not auto-approved |
 | Communication | CFO memo, battle cards, website spec | Decision/action structure |
@@ -92,7 +92,7 @@ Drive mirror for M&A extension:
 
 - [Execution handoff](docs/FINAL_EXTERNAL_GATES_HANDOFF.md) · [Drive copy](https://drive.google.com/file/d/1QGZOL27pumhK1z0UFE1WQ_cN0IjZ5bg7/view)
 - [Live snapshot submission template](data/forecast_snapshot_live_submission_template.csv) · [Drive template](https://drive.google.com/file/d/1WQ_9L7JrbogUjhytealtfeJnXekRJqqu/view)
-- The handoff specifies the exact evidence bundle, acceptance sequence, hard stops and release naming for Gate A (live pre-close forecast accuracy) and Gate B (native Power BI Desktop).
+- The handoff specifies the exact evidence bundle, acceptance sequence, hard stops and release naming for Gate A (live pre-close forecast accuracy); BI tooling is outside the active release scope.
 
 
 ## One-page CV draft
@@ -150,7 +150,7 @@ Drive mirror for M&A extension:
 - Register: [22-row driver register](../data/operational_driver_tree_unit_economics.csv)
 - QA: [10/10 design controls and 15/15 automated checks](../reports/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS_QA.md)
 - Evidence boundary: SIMULATED / DERIVED; never phrase the bullet as realized company impact.
-- Gate A/B wording: [Gate A intake contract](GATE_A_B_USER_INPUT_CHECKLIST.md) and [Power BI source-coherence QA](../reports/POWER_BI_SOURCE_COHERENCE_QA.md) are preflight evidence only; native PBIX and LIVE_INTERNAL forecast accuracy remain open.
+- Gate A wording: [Gate A intake contract](GATE_A_B_USER_INPUT_CHECKLIST.md) is preflight evidence only; LIVE_INTERNAL forecast accuracy remains open until approved internal data is supplied.
 
 ## OPEX and headcount planning evidence
 
