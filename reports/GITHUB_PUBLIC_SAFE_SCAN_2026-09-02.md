@@ -6,7 +6,7 @@
 
 The repository is reachable through an anonymous `git ls-remote` check. It is therefore treated as a public source repository containing synthetic and public-safe evidence. Private raw reports remain in Google Drive and are not committed to Git history.
 
-Repository visibility is now **public**, and GitHub Pages is configured from `main:/docs`. CV-ready entrypoint: <https://susayold.github.io/commercial-finance-profitability-analytics/>. The Pages entrypoint redirects to the interactive portfolio at <https://vn-finance-fpa-case.sangkenny200.chatgpt.site/>.
+Repository visibility is now **public**, and GitHub Pages is configured from `main:/docs`. CV-ready entrypoint: <https://susayold.github.io/commercial-finance-profitability-analytics/>. Pages serves a static Vite build of the same recruiter portfolio component; external model/Drive links remain available from the page.
 
 ## Scope of scan
 
@@ -34,7 +34,7 @@ Repository visibility is now **public**, and GitHub Pages is configured from `ma
 |---|---|---|
 | Repository visibility | PASS | GitHub API reports `visibility=public` |
 | Pages source | PASS | `main` branch, `/docs` path |
-| CV entrypoint | PASS | `susayold.github.io/commercial-finance-profitability-analytics` |
+| CV entrypoint | PASS | `susayold.github.io/commercial-finance-profitability-analytics` serves the static portfolio build |
 
 ## Wording to use
 

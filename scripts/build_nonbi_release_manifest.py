@@ -29,6 +29,15 @@ def main() -> None:
     snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
     identity = json.loads((ROOT / "data" / "governance" / "release_identity_nonbi.json").read_text(encoding="utf-8"))
     files = [
+        ".github/workflows/deploy-github-pages.yml",
+        "docs/index.html",
+        "docs/.nojekyll",
+        "docs/assets/index-CVXkxgmt.js",
+        "docs/assets/index-DoOme-Br.css",
+        "site/index.html",
+        "site/github-pages.main.tsx",
+        "site/github-pages.vite.config.ts",
+        "site/package.json",
         "data/governance/release_identity_nonbi.json",
         "reports/GITHUB_PUBLIC_SAFE_SCAN_2026-09-02.md",
         "scripts/validate_release_identity_nonbi.mjs",
@@ -100,6 +109,7 @@ def main() -> None:
         "- Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.",
         "- Recruiter website: Sites **v26**, source commit `f1d0c6fcc180bcc5a033062b0a49b1d7816202bb`, private production deployment.",
         "- GitHub policy: **PUBLIC_SAFE_PORTFOLIO_REPOSITORY**; private raw filings remain in Drive.",
+        f"- GitHub Pages: **{identity['github_pages_url']}** via `{identity['github_pages_source']['branch']}:{identity['github_pages_source']['path']}` ({identity['github_pages_mode']}).",
         "",
         "## Quality gates",
         "",

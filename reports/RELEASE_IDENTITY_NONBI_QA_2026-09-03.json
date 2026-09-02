@@ -84,6 +84,12 @@
       "name": "GitHub Pages source is declared",
       "status": "PASS",
       "detail": "main:/docs"
+    },
+    {
+      "id": "RI-13",
+      "name": "GitHub Pages build mode is declared",
+      "status": "PASS",
+      "detail": "static_vite_build_from_site_component"
     }
   ]
 }

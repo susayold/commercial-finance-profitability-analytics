@@ -13,6 +13,7 @@
     "branch": "main",
     "path": "/docs"
   },
+  "github_pages_mode": "static_vite_build_from_site_component",
   "website_version": 26,
   "website_source_sha": "f1d0c6fcc180bcc5a033062b0a49b1d7816202bb",
   "drive_project_folder_id": "1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR",

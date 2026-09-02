@@ -31,6 +31,7 @@ add('RI-09', 'Handoff carries release identity', handoff.includes(identity.relea
 add('RI-10', 'Finalization blockers are explicit', Array.isArray(identity.finalization_blockers) && identity.finalization_blockers.length === 3, `blockers=${identity.finalization_blockers?.length ?? 0}`);
 add('RI-11', 'Repository is explicitly public', identity.github_repo_visibility === 'public', identity.github_repo_visibility);
 add('RI-12', 'GitHub Pages source is declared', identity.github_pages_url === 'https://susayold.github.io/commercial-finance-profitability-analytics/' && identity.github_pages_source?.branch === 'main' && identity.github_pages_source?.path === '/docs', `${identity.github_pages_source?.branch ?? 'missing'}:${identity.github_pages_source?.path ?? 'missing'}`);
+add('RI-13', 'GitHub Pages build mode is declared', identity.github_pages_mode === 'static_vite_build_from_site_component', identity.github_pages_mode);
 
 const passed = checks.filter((check) => check.status === 'PASS').length;
 const report = {

@@ -24,7 +24,7 @@ Release identity QA: `node scripts/validate_release_identity_nonbi.mjs` → **10
 - [Candidate-facts intake contract](data/governance/candidate_profile_intake.json) · [10/10 QA](reports/CANDIDATE_PROFILE_INTAKE_QA_2026-09-02.md) — fill only with verified personal facts; no portfolio claim is promoted into Employment.
 - [Walkthrough recording handoff](data/governance/recording_handoff.json) · [10/10 QA](reports/RECORDING_HANDOFF_QA_2026-09-02.md) — recording URL/hash/reviewer remain blank until the 5-minute finance walkthrough is actually recorded.
 - Production site: [Sites v26 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
-- CV-friendly GitHub Pages entrypoint: [susayold.github.io/commercial-finance-profitability-analytics](https://susayold.github.io/commercial-finance-profitability-analytics/) (live redirect to the interactive portfolio)
+- CV-friendly GitHub Pages entrypoint: [susayold.github.io/commercial-finance-profitability-analytics](https://susayold.github.io/commercial-finance-profitability-analytics/) (live static portfolio build)
 - Latest GitHub main: https://github.com/susayold/commercial-finance-profitability-analytics/tree/main
 - [Boss handoff pack](reports/BOSS_HANDOFF_PACK_2026-08-31.md) — one-click review order, remote export manifest and evidence boundaries
 - Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-31.md)
