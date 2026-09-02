@@ -7,7 +7,7 @@ This handoff covers the active Finance Analyst / FP&A release: integrated statem
 ## GitHub source
 
 - Repository: https://github.com/susayold/commercial-finance-profitability-analytics
-- Release commit: `774b20489d1b099f88a34d1da775dcef99b17d04` (latest non-Power-BI QA and handoff contracts)
+- Release commit: `003ae2a654842375dc145dbc428b6c893d9af837` (latest non-Power-BI QA and boss handoff)
 - Canonical status: `data/governance/project_status_nonbi.json`
 - Active execution plan: [VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md](../docs/VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md)
 
