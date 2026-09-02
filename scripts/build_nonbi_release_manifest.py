@@ -62,6 +62,9 @@ def main() -> None:
         "data/governance/candidate_profile_intake.json",
         "scripts/validate_candidate_profile.mjs",
         "reports/CANDIDATE_PROFILE_INTAKE_QA_2026-09-02.md",
+        "data/governance/recording_handoff.json",
+        "scripts/validate_recording_handoff.mjs",
+        "reports/RECORDING_HANDOFF_QA_2026-09-02.md",
         "scripts/validate_nonbi_scope_boundary.mjs",
         "reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json",
     ]
@@ -107,6 +110,7 @@ def main() -> None:
         "| `docs/*CV*` + interview scripts | Recruiter positioning and walkthrough package | Evidence-labelled; candidate facts remain input-gated |",
         "| `output/pdf/FINANCE_ANALYST_CV_ONE_PAGE_V3.pdf` | One-page finance-first CV PDF | Template; candidate facts remain input-gated |",
         "| `data/governance/candidate_profile_intake.json` + validator | Safe candidate-facts intake contract | INPUT-GATED by design |",
+        "| `data/governance/recording_handoff.json` + validator | Safe manual walkthrough handoff contract | INPUT-GATED by design |",
         "| `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | Active non-BI source/path boundary control | PASS evidence |",
         "| `site/` | Recruiter website and evidence navigation | No unsupported live-impact claim |",
         "",

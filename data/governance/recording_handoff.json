@@ -1,0 +1,37 @@
+{
+  "recording_id": "FINANCE_ANALYST_WALKTHROUGH_5MIN_V1",
+  "status": "INPUT_GATED",
+  "version": "1.0.0",
+  "updated_on": "2026-09-02",
+  "purpose": "Handoff contract for a short finance-analyst screen recording; the repository never fabricates a recording URL or reviewer sign-off.",
+  "script_path": "docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md",
+  "deck_path": "output/pptx/VNFINANCE_NONBI_FPA_MBR_2026-09-01.pptx",
+  "expected_duration_seconds": 300,
+  "recording_url": null,
+  "recording_sha256": null,
+  "recorded_at": null,
+  "review": {
+    "reviewer": null,
+    "reviewed_at": null,
+    "status": "NOT_REVIEWED",
+    "notes": null
+  },
+  "required_segments": [
+    "Decision headline and evidence boundary",
+    "Base/upside/downside scorecard",
+    "P&L and PVM bridge",
+    "Profitability and working-capital action",
+    "Integrated cash / three-statement control",
+    "Forecast versioning and Gate A caveat",
+    "Three-year plan and costing",
+    "Owner, date, guardrail and next action"
+  ],
+  "rendering_rules": {
+    "duration_min_seconds": 240,
+    "duration_max_seconds": 360,
+    "must_open_editable_deck": true,
+    "must_state_synthetic_boundary": true,
+    "must_not_claim_live_forecast_accuracy": true,
+    "power_bi_claims_allowed": false
+  }
+}

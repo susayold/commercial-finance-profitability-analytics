@@ -364,6 +364,7 @@ PAT
 
 - One-page English finance-first CV.
 - Machine-readable candidate-facts intake contract and validator; blank fields remain explicitly input-gated until verified facts are supplied.
+- Machine-readable walkthrough-recording handoff contract; URL, hash and reviewer fields stay blank until the user records and reviews the file.
 - Role variants for Junior FP&A, Business Finance và Finance Data Analyst (finance-controls emphasis).
 - Evidence map: mỗi CV bullet → artifact → metric → evidence class.
 - Interview talk track using Context → Analysis → Decision → Control → Result.
@@ -392,6 +393,7 @@ PAT
 | Website | ✅ DEPLOYED | Sites v26, finance-first path |
 | CV/recruiter package | ✅ STRUCTURALLY PASS | CV 16/16, PDF 6/6 |
 | Candidate-facts intake contract | ✅ TEMPLATE PASS | `candidate_profile_intake` QA 10/10; personal facts intentionally blank |
+| Walkthrough recording handoff | ✅ TEMPLATE PASS | `recording_handoff` QA 10/10; recording/reviewer still input-gated |
 | Non-BI core QA | ✅ PASS | 55/55 |
 | Release file gate | ✅ PASS | 52/52 |
 | Recruiter links | ✅ PASS | 42/42 |
