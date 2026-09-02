@@ -1,0 +1,765 @@
+{
+  "period": "FY2025",
+  "currency": "VND bn unless stated",
+  "evidence": "SIMULATED / DERIVED \u2014 governed project case data",
+  "monthly": [
+    {
+      "month": "2025-01",
+      "label": "01",
+      "revenue": 6.04,
+      "cogs": 4.0,
+      "grossProfit": 2.04,
+      "contribution": 1.43,
+      "opex": 1.09,
+      "ebitdaProxy": 0.95
+    },
+    {
+      "month": "2025-02",
+      "label": "02",
+      "revenue": 6.01,
+      "cogs": 3.96,
+      "grossProfit": 2.05,
+      "contribution": 1.45,
+      "opex": 1.1,
+      "ebitdaProxy": 0.96
+    },
+    {
+      "month": "2025-03",
+      "label": "03",
+      "revenue": 6.17,
+      "cogs": 4.16,
+      "grossProfit": 2.0,
+      "contribution": 1.37,
+      "opex": 1.13,
+      "ebitdaProxy": 0.87
+    },
+    {
+      "month": "2025-04",
+      "label": "04",
+      "revenue": 6.36,
+      "cogs": 4.25,
+      "grossProfit": 2.12,
+      "contribution": 1.43,
+      "opex": 1.17,
+      "ebitdaProxy": 0.94
+    },
+    {
+      "month": "2025-05",
+      "label": "05",
+      "revenue": 6.34,
+      "cogs": 4.21,
+      "grossProfit": 2.13,
+      "contribution": 1.49,
+      "opex": 1.14,
+      "ebitdaProxy": 0.99
+    },
+    {
+      "month": "2025-06",
+      "label": "06",
+      "revenue": 6.31,
+      "cogs": 4.21,
+      "grossProfit": 2.1,
+      "contribution": 1.46,
+      "opex": 1.14,
+      "ebitdaProxy": 0.97
+    },
+    {
+      "month": "2025-07",
+      "label": "07",
+      "revenue": 6.31,
+      "cogs": 4.21,
+      "grossProfit": 2.1,
+      "contribution": 1.46,
+      "opex": 1.15,
+      "ebitdaProxy": 0.95
+    },
+    {
+      "month": "2025-08",
+      "label": "08",
+      "revenue": 6.54,
+      "cogs": 4.33,
+      "grossProfit": 2.21,
+      "contribution": 1.54,
+      "opex": 1.19,
+      "ebitdaProxy": 1.02
+    },
+    {
+      "month": "2025-09",
+      "label": "09",
+      "revenue": 6.74,
+      "cogs": 4.51,
+      "grossProfit": 2.23,
+      "contribution": 1.54,
+      "opex": 1.21,
+      "ebitdaProxy": 1.02
+    },
+    {
+      "month": "2025-10",
+      "label": "10",
+      "revenue": 7.13,
+      "cogs": 4.72,
+      "grossProfit": 2.41,
+      "contribution": 1.68,
+      "opex": 1.28,
+      "ebitdaProxy": 1.12
+    },
+    {
+      "month": "2025-11",
+      "label": "11",
+      "revenue": 7.65,
+      "cogs": 5.21,
+      "grossProfit": 2.44,
+      "contribution": 1.31,
+      "opex": 1.38,
+      "ebitdaProxy": 1.06
+    },
+    {
+      "month": "2025-12",
+      "label": "12",
+      "revenue": 8.52,
+      "cogs": 5.71,
+      "grossProfit": 2.81,
+      "contribution": 1.93,
+      "opex": 1.53,
+      "ebitdaProxy": 1.28
+    }
+  ],
+  "channels": [
+    {
+      "channel": "General Trade",
+      "netSales": 26.63,
+      "grossSales": 28.0,
+      "contribution": 7.19,
+      "contributionMargin": 27.01
+    },
+    {
+      "channel": "Modern Trade",
+      "netSales": 20.37,
+      "grossSales": 21.41,
+      "contribution": 5.03,
+      "contributionMargin": 24.71
+    },
+    {
+      "channel": "Marketplace",
+      "netSales": 16.0,
+      "grossSales": 17.27,
+      "contribution": 1.52,
+      "contributionMargin": 9.48
+    },
+    {
+      "channel": "Wholesale",
+      "netSales": 9.21,
+      "grossSales": 9.68,
+      "contribution": 2.5,
+      "contributionMargin": 27.13
+    },
+    {
+      "channel": "D2C",
+      "netSales": 7.9,
+      "grossSales": 8.41,
+      "contribution": 1.82,
+      "contributionMargin": 22.97
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "Base",
+      "revenue": 82.51,
+      "grossProfit": 26.91,
+      "opex": 14.02,
+      "ebitdaProxy": 12.9,
+      "ebitdaMargin": 15.63,
+      "contribution": 24.21,
+      "ccc": 54.0
+    },
+    {
+      "scenario": "Upside",
+      "revenue": 85.72,
+      "grossProfit": 31.19,
+      "opex": 13.74,
+      "ebitdaProxy": 17.45,
+      "ebitdaMargin": 20.36,
+      "contribution": 28.48,
+      "ccc": 48.0
+    },
+    {
+      "scenario": "Downside",
+      "revenue": 76.91,
+      "grossProfit": 18.63,
+      "opex": 15.14,
+      "ebitdaProxy": 3.49,
+      "ebitdaMargin": 4.54,
+      "contribution": 15.87,
+      "ccc": 68.0
+    }
+  ],
+  "customers": [
+    {
+      "id": "C01",
+      "name": "Customer 01",
+      "channel": "General Trade",
+      "netSales": 5.92,
+      "contributionMargin": 40.97,
+      "dso": 45.0,
+      "workingCapitalCost": 0.07,
+      "afterWcContribution": 2.35,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C02",
+      "name": "Customer 02",
+      "channel": "Modern Trade",
+      "netSales": 5.78,
+      "contributionMargin": 37.56,
+      "dso": 74.99,
+      "workingCapitalCost": 0.12,
+      "afterWcContribution": 2.05,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C03",
+      "name": "Customer 03",
+      "channel": "Marketplace",
+      "netSales": 6.58,
+      "contributionMargin": 39.76,
+      "dso": 30.02,
+      "workingCapitalCost": 0.05,
+      "afterWcContribution": 2.56,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C04",
+      "name": "Customer 04",
+      "channel": "D2C",
+      "netSales": 7.24,
+      "contributionMargin": 48.55,
+      "dso": 7.01,
+      "workingCapitalCost": 0.01,
+      "afterWcContribution": 3.5,
+      "strategicFlag": "Y"
+    },
+    {
+      "id": "C05",
+      "name": "Customer 05",
+      "channel": "Wholesale",
+      "netSales": 7.41,
+      "contributionMargin": 40.89,
+      "dso": 60.01,
+      "workingCapitalCost": 0.12,
+      "afterWcContribution": 2.91,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C06",
+      "name": "MT National Account",
+      "channel": "Modern Trade",
+      "netSales": 14.4,
+      "contributionMargin": 14.58,
+      "dso": 88.72,
+      "workingCapitalCost": 0.35,
+      "afterWcContribution": 1.75,
+      "strategicFlag": "Y"
+    },
+    {
+      "id": "C07",
+      "name": "Customer 07",
+      "channel": "Modern Trade",
+      "netSales": 7.67,
+      "contributionMargin": 37.58,
+      "dso": 74.98,
+      "workingCapitalCost": 0.16,
+      "afterWcContribution": 2.72,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C08",
+      "name": "Customer 08",
+      "channel": "Marketplace",
+      "netSales": 8.59,
+      "contributionMargin": 39.75,
+      "dso": 29.99,
+      "workingCapitalCost": 0.07,
+      "afterWcContribution": 3.34,
+      "strategicFlag": "Y"
+    },
+    {
+      "id": "C09",
+      "name": "Customer 09",
+      "channel": "D2C",
+      "netSales": 9.32,
+      "contributionMargin": 48.55,
+      "dso": 7.01,
+      "workingCapitalCost": 0.02,
+      "afterWcContribution": 4.51,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C10",
+      "name": "Customer 10",
+      "channel": "Wholesale",
+      "netSales": 9.43,
+      "contributionMargin": 40.87,
+      "dso": 60.0,
+      "workingCapitalCost": 0.15,
+      "afterWcContribution": 3.7,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C11",
+      "name": "Customer 11",
+      "channel": "General Trade",
+      "netSales": 10.05,
+      "contributionMargin": 40.97,
+      "dso": 44.99,
+      "workingCapitalCost": 0.12,
+      "afterWcContribution": 3.99,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C12",
+      "name": "Customer 12",
+      "channel": "Modern Trade",
+      "netSales": 9.55,
+      "contributionMargin": 37.58,
+      "dso": 75.0,
+      "workingCapitalCost": 0.2,
+      "afterWcContribution": 3.39,
+      "strategicFlag": "Y"
+    },
+    {
+      "id": "C13",
+      "name": "Customer 13",
+      "channel": "Marketplace",
+      "netSales": 10.61,
+      "contributionMargin": 39.75,
+      "dso": 30.01,
+      "workingCapitalCost": 0.09,
+      "afterWcContribution": 4.13,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C14",
+      "name": "Customer 14",
+      "channel": "D2C",
+      "netSales": 11.41,
+      "contributionMargin": 48.55,
+      "dso": 7.0,
+      "workingCapitalCost": 0.02,
+      "afterWcContribution": 5.52,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C15",
+      "name": "Customer 15",
+      "channel": "Wholesale",
+      "netSales": 11.45,
+      "contributionMargin": 40.88,
+      "dso": 60.0,
+      "workingCapitalCost": 0.19,
+      "afterWcContribution": 4.49,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C16",
+      "name": "Customer 16",
+      "channel": "General Trade",
+      "netSales": 12.12,
+      "contributionMargin": 40.97,
+      "dso": 45.0,
+      "workingCapitalCost": 0.15,
+      "afterWcContribution": 4.82,
+      "strategicFlag": "Y"
+    },
+    {
+      "id": "C17",
+      "name": "Customer 17",
+      "channel": "Modern Trade",
+      "netSales": 11.44,
+      "contributionMargin": 37.59,
+      "dso": 74.99,
+      "workingCapitalCost": 0.23,
+      "afterWcContribution": 4.06,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C18",
+      "name": "Customer 18",
+      "channel": "Marketplace",
+      "netSales": 12.62,
+      "contributionMargin": 39.75,
+      "dso": 29.99,
+      "workingCapitalCost": 0.1,
+      "afterWcContribution": 4.91,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C19",
+      "name": "Customer 19",
+      "channel": "D2C",
+      "netSales": 13.5,
+      "contributionMargin": 48.55,
+      "dso": 7.0,
+      "workingCapitalCost": 0.03,
+      "afterWcContribution": 6.53,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C20",
+      "name": "Customer 20",
+      "channel": "Wholesale",
+      "netSales": 13.47,
+      "contributionMargin": 40.88,
+      "dso": 59.99,
+      "workingCapitalCost": 0.22,
+      "afterWcContribution": 5.29,
+      "strategicFlag": "Y"
+    },
+    {
+      "id": "C21",
+      "name": "Customer 21",
+      "channel": "General Trade",
+      "netSales": 14.18,
+      "contributionMargin": 40.97,
+      "dso": 45.01,
+      "workingCapitalCost": 0.17,
+      "afterWcContribution": 5.64,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C22",
+      "name": "Customer 22",
+      "channel": "Modern Trade",
+      "netSales": 13.32,
+      "contributionMargin": 37.58,
+      "dso": 75.01,
+      "workingCapitalCost": 0.27,
+      "afterWcContribution": 4.73,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C23",
+      "name": "Customer 23",
+      "channel": "Marketplace",
+      "netSales": 14.63,
+      "contributionMargin": 39.75,
+      "dso": 30.01,
+      "workingCapitalCost": 0.12,
+      "afterWcContribution": 5.7,
+      "strategicFlag": "N"
+    },
+    {
+      "id": "C24",
+      "name": "Customer 24",
+      "channel": "D2C",
+      "netSales": 15.59,
+      "contributionMargin": 48.55,
+      "dso": 7.0,
+      "workingCapitalCost": 0.03,
+      "afterWcContribution": 7.54,
+      "strategicFlag": "Y"
+    }
+  ],
+  "liquidity": [
+    {
+      "scenario": "Base",
+      "month": "2026-01",
+      "headroom": 3075.0,
+      "endingCash": 1775.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-02",
+      "headroom": 3350.0,
+      "endingCash": 2050.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-03",
+      "headroom": 3625.0,
+      "endingCash": 2325.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-04",
+      "headroom": 3960.0,
+      "endingCash": 2660.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-05",
+      "headroom": 4295.0,
+      "endingCash": 2995.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-06",
+      "headroom": 4630.0,
+      "endingCash": 3330.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-07",
+      "headroom": 5025.0,
+      "endingCash": 3725.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-08",
+      "headroom": 5380.0,
+      "endingCash": 4080.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-09",
+      "headroom": 5695.0,
+      "endingCash": 4395.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-10",
+      "headroom": 6030.0,
+      "endingCash": 4730.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-11",
+      "headroom": 6325.0,
+      "endingCash": 5025.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Base",
+      "month": "2026-12",
+      "headroom": 6580.0,
+      "endingCash": 5280.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-01",
+      "headroom": 2495.0,
+      "endingCash": 1200.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-02",
+      "headroom": 2180.0,
+      "endingCash": 1200.0,
+      "revolverDraw": 315.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-03",
+      "headroom": 1855.0,
+      "endingCash": 1200.0,
+      "revolverDraw": 325.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-04",
+      "headroom": 1580.0,
+      "endingCash": 1200.0,
+      "revolverDraw": 275.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-05",
+      "headroom": 1295.0,
+      "endingCash": 1200.0,
+      "revolverDraw": 285.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-06",
+      "headroom": 1000.0,
+      "endingCash": 1200.0,
+      "revolverDraw": 295.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-07",
+      "headroom": 755.0,
+      "endingCash": 1200.0,
+      "revolverDraw": 245.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-08",
+      "headroom": 480.0,
+      "endingCash": 1200.0,
+      "revolverDraw": 275.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-09",
+      "headroom": 175.0,
+      "endingCash": 1200.0,
+      "revolverDraw": 305.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-10",
+      "headroom": -100.0,
+      "endingCash": 1100.0,
+      "revolverDraw": 175.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-11",
+      "headroom": -405.0,
+      "endingCash": 795.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    },
+    {
+      "scenario": "Downside",
+      "month": "2026-12",
+      "headroom": -740.0,
+      "endingCash": 460.0,
+      "revolverDraw": 0.0,
+      "minCashPolicy": 1200.0
+    }
+  ],
+  "promotions": [
+    {
+      "id": "E01",
+      "name": "ear-end bundle",
+      "roi": 1.86,
+      "incrementalContribution": 0.33,
+      "decision": "Approve With Guardrail"
+    },
+    {
+      "id": "E02",
+      "name": "arketplace flash",
+      "roi": -0.26,
+      "incrementalContribution": -0.09,
+      "decision": "Reject"
+    },
+    {
+      "id": "E03",
+      "name": "2C acquisition",
+      "roi": -0.57,
+      "incrementalContribution": -0.09,
+      "decision": "Reject"
+    },
+    {
+      "id": "E04",
+      "name": "trategic discount",
+      "roi": 0.64,
+      "incrementalContribution": 0.06,
+      "decision": "Approve With Guardrail"
+    },
+    {
+      "id": "E05",
+      "name": "remium launch",
+      "roi": 0.84,
+      "incrementalContribution": 0.18,
+      "decision": "Approve With Guardrail"
+    },
+    {
+      "id": "E06",
+      "name": "holesale rebate",
+      "roi": -0.65,
+      "incrementalContribution": -0.05,
+      "decision": "Reject"
+    },
+    {
+      "id": "E07",
+      "name": "everage reset",
+      "roi": 0.23,
+      "incrementalContribution": 0.01,
+      "decision": "Reject"
+    },
+    {
+      "id": "E08",
+      "name": "est event",
+      "roi": -0.83,
+      "incrementalContribution": -0.01,
+      "decision": "Reject"
+    }
+  ],
+  "budget": [
+    {
+      "channel": "General Trade",
+      "current": 1200.0,
+      "recommended": 1350.0,
+      "delta": 150.0,
+      "marginalRoi": 0.42,
+      "decision": "SCALE"
+    },
+    {
+      "channel": "Modern Trade",
+      "current": 1100.0,
+      "recommended": 1200.0,
+      "delta": 100.0,
+      "marginalRoi": 0.36,
+      "decision": "SCALE"
+    },
+    {
+      "channel": "Marketplace",
+      "current": 900.0,
+      "recommended": 850.0,
+      "delta": -50.0,
+      "marginalRoi": 0.22,
+      "decision": "REDUCE SELECTIVELY"
+    },
+    {
+      "channel": "D2C",
+      "current": 650.0,
+      "recommended": 550.0,
+      "delta": -100.0,
+      "marginalRoi": 0.18,
+      "decision": "REDUCE CAC CAP"
+    },
+    {
+      "channel": "Wholesale",
+      "current": 500.0,
+      "recommended": 400.0,
+      "delta": -100.0,
+      "marginalRoi": 0.15,
+      "decision": "PROTECT ONLY"
+    }
+  ],
+  "sources": [
+    "data/finance_model/final_v1/fact_sales.csv",
+    "data/finance_model/final_v1/fact_opex_headcount.csv",
+    "data/scenarios/scenario_summary.csv",
+    "data/customer_profitability_synthetic.csv",
+    "data/liquidity_stress_synthetic.csv",
+    "data/promotion_roi_synthetic.csv",
+    "data/budget_reallocation_synthetic.csv"
+  ]
+}
