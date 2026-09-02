@@ -6,6 +6,8 @@
 
 The repository is reachable through an anonymous `git ls-remote` check. It is therefore treated as a public source repository containing synthetic and public-safe evidence. Private raw reports remain in Google Drive and are not committed to Git history.
 
+Repository visibility is now **public**, and GitHub Pages is configured from `main:/docs`. CV-ready entrypoint: <https://susayold.github.io/commercial-finance-profitability-analytics/>. The Pages entrypoint redirects to the interactive portfolio at <https://vn-finance-fpa-case.sangkenny200.chatgpt.site/>.
+
 ## Scope of scan
 
 - Tracked repository content was checked with the current working tree excluded from the result.
@@ -25,6 +27,14 @@ The repository is reachable through an anonymous `git ls-remote` check. It is th
 | Absolute local user path in active files | PASS | 0 matches after validator reports were changed to relative paths |
 | Restricted raw filings in Git | PASS | Raw filing archive is maintained in Drive, not Git history |
 | Candidate personal facts | PASS | Intake contract is blank and explicitly input-gated |
+
+## Public deployment
+
+| Check | Result | Interpretation |
+|---|---|---|
+| Repository visibility | PASS | GitHub API reports `visibility=public` |
+| Pages source | PASS | `main` branch, `/docs` path |
+| CV entrypoint | PASS | `susayold.github.io/commercial-finance-profitability-analytics` |
 
 ## Wording to use
 

@@ -7,6 +7,12 @@
   "current_source_sha": "e3411d802cb7cc2e5443303d28b45e8831c9a6f9",
   "current_source_sha_role": "closure baseline before this identity patch; not promoted to final tag while required external inputs remain",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
+  "github_repo_visibility": "public",
+  "github_pages_url": "https://susayold.github.io/commercial-finance-profitability-analytics/",
+  "github_pages_source": {
+    "branch": "main",
+    "path": "/docs"
+  },
   "website_version": 26,
   "website_source_sha": "f1d0c6fcc180bcc5a033062b0a49b1d7816202bb",
   "drive_project_folder_id": "1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR",

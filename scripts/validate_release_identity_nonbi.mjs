@@ -29,6 +29,8 @@ add('RI-07', 'Power BI remains out of active scope', identity.power_bi_status ==
 add('RI-08', 'Manifest carries release identity', manifest.includes(identity.release_name) && manifest.includes('PENDING_INPUT_GATED_CLOSURE'), 'release name and gated tag present');
 add('RI-09', 'Handoff carries release identity', handoff.includes(identity.release_name) && handoff.includes('final tag/SHA pending'), 'release name and pending boundary present');
 add('RI-10', 'Finalization blockers are explicit', Array.isArray(identity.finalization_blockers) && identity.finalization_blockers.length === 3, `blockers=${identity.finalization_blockers?.length ?? 0}`);
+add('RI-11', 'Repository is explicitly public', identity.github_repo_visibility === 'public', identity.github_repo_visibility);
+add('RI-12', 'GitHub Pages source is declared', identity.github_pages_url === 'https://susayold.github.io/commercial-finance-profitability-analytics/' && identity.github_pages_source?.branch === 'main' && identity.github_pages_source?.path === '/docs', `${identity.github_pages_source?.branch ?? 'missing'}:${identity.github_pages_source?.path ?? 'missing'}`);
 
 const passed = checks.filter((check) => check.status === 'PASS').length;
 const report = {

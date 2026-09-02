@@ -72,6 +72,18 @@
       "name": "Finalization blockers are explicit",
       "status": "PASS",
       "detail": "blockers=3"
+    },
+    {
+      "id": "RI-11",
+      "name": "Repository is explicitly public",
+      "status": "PASS",
+      "detail": "public"
+    },
+    {
+      "id": "RI-12",
+      "name": "GitHub Pages source is declared",
+      "status": "PASS",
+      "detail": "main:/docs"
     }
   ]
 }
