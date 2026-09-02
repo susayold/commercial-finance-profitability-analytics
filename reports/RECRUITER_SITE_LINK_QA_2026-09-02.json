@@ -72,12 +72,12 @@
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md",
-      "status": null,
+      "status": 404,
       "ok": true,
-      "final_url": null,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md",
       "method": "HEAD/GET",
       "access": "private_repository",
-      "evidence": "path exists in local Git HEAD; unauthenticated web probe was transiently unavailable"
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/FMCG_STANDARD_COSTING_AND_VARIANCE.md",
@@ -90,21 +90,21 @@
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/governance/project_status_nonbi.json",
-      "status": null,
+      "status": 404,
       "ok": true,
-      "final_url": null,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/governance/project_status_nonbi.json",
       "method": "HEAD/GET",
       "access": "private_repository",
-      "evidence": "path exists in local Git HEAD; unauthenticated web probe was transiently unavailable"
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/mch_finance_analyst_trend_2016_2025.csv",
-      "status": null,
+      "status": 404,
       "ok": true,
-      "final_url": null,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/mch_finance_analyst_trend_2016_2025.csv",
       "method": "HEAD/GET",
       "access": "private_repository",
-      "evidence": "path exists in local Git HEAD; unauthenticated web probe was transiently unavailable"
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_FINANCE_ANALYST_TREND_2016_2025.md",
@@ -135,12 +135,12 @@
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md",
-      "status": null,
+      "status": 404,
       "ok": true,
-      "final_url": null,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/VNM_PUBLIC_GUIDANCE_ANALYSIS.md",
       "method": "HEAD/GET",
       "access": "private_repository",
-      "evidence": "path exists in local Git HEAD; unauthenticated web probe was transiently unavailable"
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/VNM_PUBLIC_GUIDANCE_ANALYSIS_QA.md",
@@ -225,12 +225,12 @@
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTE_CARLO_RISK_OVERLAY_V2_2026-09-02.md",
-      "status": null,
+      "status": 404,
       "ok": true,
-      "final_url": null,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTE_CARLO_RISK_OVERLAY_V2_2026-09-02.md",
       "method": "HEAD/GET",
       "access": "private_repository",
-      "evidence": "path exists in local Git HEAD; unauthenticated web probe was transiently unavailable"
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/SAP_LIKE_MAPPING_REHEARSAL_2026-09-02.md",
@@ -252,12 +252,12 @@
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTE_CARLO_RISK_OVERLAY_2026-08-30.md",
-      "status": null,
+      "status": 404,
       "ok": true,
-      "final_url": null,
+      "final_url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MONTE_CARLO_RISK_OVERLAY_2026-08-30.md",
       "method": "HEAD/GET",
       "access": "private_repository",
-      "evidence": "path exists in local Git HEAD; unauthenticated web probe was transiently unavailable"
+      "evidence": "path exists in local Git HEAD; web view is authentication-gated"
     },
     {
       "url": "https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/docs/OPERATIONAL_DRIVER_TREE_UNIT_ECONOMICS.md",
