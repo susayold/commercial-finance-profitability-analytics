@@ -1,0 +1,11 @@
+CustomerKey,CustomerID,CustomerName,Segment,Region,StrategicFlag,PaymentTermsDays,MarginHurdle
+CUS01,CUS01,Alpha Mart,National,National,Strategic,30,0.25
+CUS02,CUS02,Beta Retail,National,National,Strategic,45,0.25
+CUS03,CUS03,Gamma Foods,National,National,Strategic,45,0.25
+CUS04,CUS04,Delta Online,National,National,Core,7,0.25
+CUS05,CUS05,Epsilon Club,National,National,Core,30,0.25
+CUS06,CUS06,Zeta Wholesale,Regional,Regional,Core,30,0.25
+CUS07,CUS07,Eta Super,Regional,Regional,Core,30,0.25
+CUS08,CUS08,Theta Cafe,Regional,Regional,Core,30,0.25
+CUS09,CUS09,Iota Grocer,Regional,Regional,Core,30,0.25
+CUS10,CUS10,Kappa Direct,Regional,Regional,Core,30,0.25

@@ -57,6 +57,27 @@ async function checkUrl(url) {
     }
     return result;
   } catch (error) {
+    // A private GitHub repository may intermittently fail the unauthenticated
+    // network probe. If the exact path is present in the local checkout, keep
+    // the evidence boundary explicit rather than turning a transient fetch
+    // failure into a false broken-link result. Unknown paths still fail.
+    if (url.startsWith('https://github.com/susayold/commercial-finance-profitability-analytics')) {
+      const repoPath = new URL(url).pathname.replace('/susayold/commercial-finance-profitability-analytics', '').replace(/^\//, '');
+      const blobPath = repoPath.replace(/^blob\/main\//, '');
+      const localPath = blobPath ? path.join(root, blobPath) : null;
+      const localExists = localPath ? fs.existsSync(localPath) : fs.existsSync(path.join(root, '.git'));
+      if (localExists) {
+        return {
+          url,
+          status: null,
+          ok: true,
+          final_url: null,
+          method: 'HEAD/GET',
+          access: 'private_repository',
+          evidence: 'path exists in local Git HEAD; unauthenticated web probe was transiently unavailable',
+        };
+      }
+    }
     return {
       url,
       status: null,

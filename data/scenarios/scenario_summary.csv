@@ -1,4 +1,4 @@
 period,scenario,revenue_vnd_bn,gross_profit_vnd_bn,opex_vnd_bn,ebitda_proxy_vnd_bn,ebitda_proxy_margin_pct,contribution_vnd_bn,ccc_days,evidence_class,approved_source
-FY2025,BASE,82.5138,26.915,14.0193,12.8956,15.6284,24.2074,54.0,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
-FY2025,UPSIDE,85.7182,31.1886,13.7389,17.4496,20.357,28.481,48.0,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
-FY2025,DOWNSIDE,76.9061,18.6342,15.1409,3.4933,4.5423,15.8724,68.0,PROXY_DERIVED,powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+FY2025,BASE,82.5138,26.915,14.0193,12.8956,15.6284,24.2074,54.0,PROXY_DERIVED,data/finance_model/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+FY2025,UPSIDE,85.7182,31.1886,13.7389,17.4496,20.357,28.481,48.0,PROXY_DERIVED,data/finance_model/final_v1/fact_forecast.csv + fact_opex_headcount.csv
+FY2025,DOWNSIDE,76.9061,18.6342,15.1409,3.4933,4.5423,15.8724,68.0,PROXY_DERIVED,data/finance_model/final_v1/fact_forecast.csv + fact_opex_headcount.csv

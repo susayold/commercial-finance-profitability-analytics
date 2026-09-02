@@ -17,6 +17,8 @@ management act on next month?
 - [Integrated three-statement reconciliation](reports/THREE_STATEMENT_RECONCILIATION_2026-09-01.md)
 - [FMCG standard-cost reconciliation](reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md)
 - [Canonical non-BI project status](data/governance/project_status_nonbi.json)
+- [Recruiter metric snapshot](data/governance/recruiter_metric_snapshot.json)
+- [Non-BI release manifest](reports/NONBI_RELEASE_MANIFEST_2026-09-02.md)
 
 **Evidence boundary.** The operating ledger is synthetic/rehearsal data; public
 company metrics are filing-based and basis-controlled. EBITDA is a proxy, DCF
@@ -27,4 +29,4 @@ See [claim registry](data/governance/claim_registry.csv).
 
 **Technical appendix.** [Metric registry](data/governance/finance_metric_registry.csv),
 [unit contract](schemas/unit_contract.csv), [scenario source](data/scenarios/scenario_summary.csv),
-[architecture](docs/ARCHITECTURE_NON_POWERBI.md), [UAT/change control](docs/UAT_AND_MODEL_CHANGE_CONTROL.md), and [final QA](reports/NON_POWERBI_FINAL_QA_2026-08-31.md).
+[architecture](docs/ARCHITECTURE_NON_POWERBI.md), [UAT/change control](docs/UAT_AND_MODEL_CHANGE_CONTROL.md), and [final QA](reports/NON_POWERBI_FINAL_QA_2026-09-01.md).

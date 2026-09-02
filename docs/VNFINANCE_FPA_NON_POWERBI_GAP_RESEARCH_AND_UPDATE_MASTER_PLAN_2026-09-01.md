@@ -27,7 +27,7 @@ Bản cập nhật này đã chuyển dự án sang **non-Power-BI FP&A release*
 - forecast versioning/backtest v2 (Budget, RF1, RF2, RF3, Latest Estimate, Actual) với Bias/WAPE/MAE, bridge và override log;
 - MBR, CFO memo, close calendar, KPI dictionary, recommendation register, editable 10-slide board pack và narration script;
 - website recruiter-facing, CV/interview package và GitHub/Drive handoff;
-- non-BI QA **PASS 52/52** và release gate **PASS 43/43** ở lần chạy gần nhất; recruiter-link QA **42/42** được tích hợp vào release evidence.
+- non-BI QA **PASS 53/53** và release gate **PASS 50/50** ở lần chạy gần nhất; recruiter-link QA **42/42** được tích hợp vào release evidence.
 
 ### Trạng thái release hiện tại
 
@@ -261,6 +261,8 @@ Non-BI release gate PASS 12/12 trong khi full finance QA đang FAIL.
 - `data/governance/project_status_nonbi.json`
 - `data/governance/recruiter_metric_snapshot.json`
 - `reports/NONBI_RELEASE_MANIFEST_YYYY-MM-DD.md`
+
+**Current implementation (2026-09-02):** `data/governance/recruiter_metric_snapshot.json` is generated from the exported metric snapshot and contains the three scenario headline metrics, QA totals, evidence boundary, recruiter links and CV-personalization gate. `reports/NONBI_RELEASE_MANIFEST_2026-09-02.md` hashes the active non-BI model, statements, planning, management pack, PDF and QA evidence. The active builders read `data/operating_inputs/` and `data/finance_model/final_v1/`; no active governance or statement source points to the archived Power BI directory.
 
 ### Nội dung
 
@@ -655,7 +657,7 @@ What happened -> Why -> Financial impact -> Decision -> Owner -> Deadline -> Gua
 | Closure item | Evidence | Status |
 |---|---|---|
 | MBR / scenario contract | `node scripts/validate_monthly_business_review.mjs` | PASS 16/16 |
-| Non-BI release gate | `python scripts/run_non_powerbi_release_gate.py` | PASS 43/43; Gate A explicitly open |
+| Non-BI release gate | `python scripts/run_non_powerbi_release_gate.py` | PASS 50/50; Gate A explicitly open |
 | Integrated statements | `scripts/validate_three_statement_model.mjs` | PASS 14/14; monthly BS/cash/TB ties and 20-account mapping |
 | Standard costing | `scripts/validate_fmcg_cost_variance.mjs` | PASS 9/9; 1,296 variance + reserve rows |
 | Macro cutoff | `scripts/validate_macro_cutoff.mjs` | PASS 8/8; no public look-ahead |
@@ -1039,16 +1041,18 @@ Các appendix P2 đã được đóng ở dạng mô phỏng có kiểm soát (c
 | Three-year operating plan | `scripts/build_three_year_operating_plan.mjs` + `scripts/validate_three_year_operating_plan.mjs` | PASS 17/17; 60 monthly/quarterly rows, 3 scenarios, no terminal growth |
 | Forecast v2 | `scripts/build_forecast_versioning_backtest_v2.mjs` + validator | PASS 20/20; 360 snapshots, 240 bridge rows, override governance |
 | Executive/board pack | `scripts/build_nonbi_management_pack.mjs` + `scripts/validate_management_pack.mjs` | PASS; editable 10-slide deck, index and 5-minute narration script |
-| Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v23; management pack, case summary PDF, forecast v2, three-year plan and appendix evidence visible; Power BI removed from active UX; valuation appendix precedes footer |
+| Recruiter site refresh | `site/app/page.tsx` + `site/app/globals.css` | PASS; non-BI handoff deployed to Sites v25; recruiter metrics now import the canonical snapshot; management pack, case summary PDF, forecast v2, three-year plan and appendix evidence visible; Power BI removed from active UX; valuation appendix precedes footer |
 | Recruiter link QA | `scripts/validate_recruiter_site_links.mjs` | PASS 42/42; private GitHub/Drive authentication boundaries documented |
 | Correlated Monte Carlo v2 | `scripts/build_correlated_monte_carlo_v2.mjs` + validator | PASS 16/16; 5,000 draws, PSD correlation matrix, expected shortfall and directional attribution |
 | SAP-like mapping rehearsal | `scripts/build_sap_like_mapping_rehearsal.mjs` + validator | PASS 9/9; 720 FI/CO-style rows, 36 period ties, 20 mapped accounts; simulated only |
 | Automated commentary draft | `scripts/build_monthly_commentary_draft.mjs` + validator | PASS 9/9; generated draft and approval log remain NEEDS_REVIEW |
 | One-page recruiter case summary | `scripts/build_fpa_case_summary_pdf.py` + `scripts/validate_fpa_case_summary_pdf.py` | PASS 6/6; one-page text-extractable PDF generated from canonical snapshot |
+| Non-BI recruiter snapshot | `scripts/build_recruiter_metric_snapshot.py` + `scripts/validate_recruiter_metric_snapshot.mjs` | PASS 8/8; three scenarios, six metrics each, QA totals and scope boundary |
+| Non-BI release manifest | `scripts/build_nonbi_release_manifest.py` | PASS; 18 active artifacts hashed with reproducible payload commit |
 
 ## Độ bao phủ sau release
 
-- Core finance không Power BI đã có thêm integrated statements, accounting bridge, standard costing, macro cutoff, three-year plan, forecast-v2 và executive pack.
+- Core finance không Power BI đã có thêm integrated statements, accounting bridge, standard costing, macro cutoff, three-year plan, forecast-v2, executive pack, self-contained operating-input contract và recruiter snapshot/manifest.
 - Power BI không nằm trong acceptance criteria, non-BI QA runner hoặc recruiter path.
 - External forecast accuracy vẫn **PENDING_EXTERNAL_INPUT**; không được đổi thành PASS bằng fixture demo.
 

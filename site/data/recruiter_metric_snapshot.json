@@ -1,0 +1,143 @@
+{
+  "project": "VietNova Consumer JSC — non-Power-BI FP&A release",
+  "generated_on": "2026-09-02",
+  "scope": "recruiter_metric_snapshot_non_powerbi",
+  "active_scope": [
+    "FP&A / management reporting",
+    "integrated three statements and accounting controls",
+    "standard costing and working-capital analysis",
+    "three-year operating plan",
+    "forecast versioning and backtest rehearsal",
+    "editable management pack and case-summary PDF"
+  ],
+  "current_period": "FY2025",
+  "source_snapshot": "data/governance/exported_metric_snapshot.csv",
+  "scenarios": {
+    "BASE": {
+      "REV_NET": {
+        "value": 82.5138,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "GROSS_PROFIT": {
+        "value": 26.915,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "EBITDA_PROXY": {
+        "value": 12.8956,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "EBITDA_PROXY_MARGIN": {
+        "value": 15.6284,
+        "unit": "%",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "CONTRIBUTION": {
+        "value": 24.2074,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "CCC": {
+        "value": 54.0,
+        "unit": "days",
+        "evidence_class": "PROXY_DERIVED"
+      }
+    },
+    "UPSIDE": {
+      "REV_NET": {
+        "value": 85.7182,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "GROSS_PROFIT": {
+        "value": 31.1886,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "EBITDA_PROXY": {
+        "value": 17.4496,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "EBITDA_PROXY_MARGIN": {
+        "value": 20.357,
+        "unit": "%",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "CONTRIBUTION": {
+        "value": 28.481,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "CCC": {
+        "value": 48.0,
+        "unit": "days",
+        "evidence_class": "PROXY_DERIVED"
+      }
+    },
+    "DOWNSIDE": {
+      "REV_NET": {
+        "value": 76.9061,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "GROSS_PROFIT": {
+        "value": 18.6342,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "EBITDA_PROXY": {
+        "value": 3.4933,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "EBITDA_PROXY_MARGIN": {
+        "value": 4.5423,
+        "unit": "%",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "CONTRIBUTION": {
+        "value": 15.8724,
+        "unit": "VND bn",
+        "evidence_class": "PROXY_DERIVED"
+      },
+      "CCC": {
+        "value": 68.0,
+        "unit": "days",
+        "evidence_class": "PROXY_DERIVED"
+      }
+    }
+  },
+  "qa": {
+    "core_runner": "node scripts/run_finance_qa.mjs --nonbi",
+    "release_gate": "python scripts/run_non_powerbi_release_gate.py",
+    "expected_core_checks": {
+      "passed": 54,
+      "total": 54
+    },
+    "expected_release_checks": {
+      "passed": 50,
+      "total": 50
+    },
+    "recruiter_link_checks": {
+      "passed": 42,
+      "total": 42
+    }
+  },
+  "evidence_boundary": {
+    "operating_finance": "SIMULATED/DERIVED controlled case data",
+    "public_company": "OBSERVED/CALCULATED_PUBLIC separate subject area",
+    "valuation_mna_monte_carlo": "SYNTHETIC_REHEARSAL appendices",
+    "forecast_accuracy": "PENDING_EXTERNAL_INPUT — no live employer claim",
+    "power_bi": "OUT_OF_ACTIVE_SCOPE — historical archive only"
+  },
+  "recruiter_links": {
+    "website": "https://vn-finance-fpa-case.sangkenny200.chatgpt.site",
+    "github": "https://github.com/susayold/commercial-finance-profitability-analytics",
+    "case_summary_pdf": "https://drive.google.com/file/d/19rzyxjeIWWDus1LzPiYzcvtM3yK3yxkO/view?usp=drivesdk",
+    "drive_folder": "https://drive.google.com/drive/folders/1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR"
+  },
+  "cv_personalization": "INPUT-GATED — replace placeholders with candidate identity and genuine experience before submission"
+}

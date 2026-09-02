@@ -1,0 +1,6 @@
+CostCenterKey,CostCenter,Function,CompanyKey,EvidenceClass
+CC-SALES,Sales,Sales,VN,SIMULATED
+CC-MKT,Marketing,Marketing,VN,SIMULATED
+CC-FIN,Finance,Finance,VN,SIMULATED
+CC-OPS,Operations,Operations,VN,SIMULATED
+CC-IT,Technology,Technology,VN,SIMULATED

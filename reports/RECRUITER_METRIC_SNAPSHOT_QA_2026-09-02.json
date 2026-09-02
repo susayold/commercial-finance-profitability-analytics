@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "RMS-01",
+      "name": "Snapshot parses",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "RMS-02",
+      "name": "Non-Power-BI scope declared",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "RMS-03",
+      "name": "Base/upside/downside scenarios present",
+      "status": "PASS",
+      "detail": "BASE,UPSIDE,DOWNSIDE"
+    },
+    {
+      "id": "RMS-04",
+      "name": "Six headline metrics per scenario",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "RMS-05",
+      "name": "Quality totals declared",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "RMS-06",
+      "name": "External gate remains input-gated",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "RMS-07",
+      "name": "Source boundary has no Power BI path",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "RMS-08",
+      "name": "Headline values tie to exported snapshot",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "checked_file": "data/governance/recruiter_metric_snapshot.json"
+}

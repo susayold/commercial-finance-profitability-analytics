@@ -1,5 +1,5 @@
 artifact,section_or_cell,metric_id,expected_source,expected_value_rule,tolerance,evidence_class
-FP&A workbook,P&L summary,REV_NET,powerbi/data/final_v1/fact_sales.csv,sum NetRevenueVND by FY2025,VND 1,DERIVED
+FP&A workbook,P&L summary,REV_NET,data/finance_model/final_v1/fact_sales.csv,sum NetRevenueVND by FY2025,VND 1,DERIVED
 MBR,scenario table,EBITDA_PROXY,data/scenarios/scenario_summary.csv,match scenario and period,0.01 VND bn,PROXY_DERIVED
 CFO memo,executive KPI,EBITDA_PROXY,data/scenarios/scenario_summary.csv,match BASE/FY2025,0.01 VND bn,PROXY_DERIVED
 website,scenario selector,REV_NET,data/scenarios/scenario_summary.csv,match selected scenario,0.01 VND bn,PROXY_DERIVED

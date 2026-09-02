@@ -4,8 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const SOURCE = path.join(ROOT, 'powerbi', 'data', 'current');
-const PLANNING = path.join(ROOT, 'powerbi', 'data', 'final_v1');
+const SOURCE = path.join(ROOT, 'data', 'operating_inputs');
+const PLANNING = path.join(ROOT, 'data', 'finance_model', 'final_v1');
 const STMT = path.join(ROOT, 'data', 'financial_statements');
 const ACCT = path.join(ROOT, 'data', 'accounting');
 const readCsv = file => { const lines = fs.readFileSync(file, 'utf8').trim().split(/\r?\n/); const headers = lines.shift().split(','); return lines.filter(Boolean).map(line => { const values = line.split(','); return Object.fromEntries(headers.map((h, i) => [h, values[i] ?? ''])); }); };
@@ -65,7 +65,7 @@ for (const period of periods) {
   const cfo = pat + da - (arClose - arOpen) - (invClose - invOpen) + (apClose - apOpen), preFinFcf = cfo - capex, cashClose = cashOpening + cfo - capex + debtDraw - debtRepay, ppeClose = ppeOpening + capex - da;
   if (initialEquity === null) initialEquity = cashOpening + arOpen + invOpen + ppeOpening - apOpen - debtOpen;
   const equityOpen = initialEquity + priorPat, equityClose = equityOpen + pat, assets = cashClose + arClose + invClose + ppeClose, liabEquity = apClose + debtClose + equityClose, balanceCheck = assets - liabEquity;
-  const base = { period, evidence_class: 'SIMULATED/DERIVED', source_ledger: 'powerbi/data/current (operating) + powerbi/data/final_v1 (planning schedules)' };
+  const base = { period, evidence_class: 'SIMULATED/DERIVED', source_ledger: 'data/operating_inputs (controlled synthetic operating extracts) + data/finance_model/final_v1 (planning schedules)' };
   income.push({ ...base, gross_sales_vnd: money(gross), invoice_discounts_vnd: money(discounts), returns_vnd: money(returns), rebates_vnd: money(rebates), voucher_support_vnd: money(vouchers), net_revenue_vnd: money(net), cogs_vnd: money(cogs), gross_profit_vnd: money(gp), channel_fee_vnd: money(fee), trade_spend_vnd: money(trade), variable_fulfilment_vnd: money(fulfilment), commercial_variable_costs_vnd: money(variableCosts), contribution_profit_vnd: money(contribution), controllable_opex_vnd: money(controllableOpex), ebitda_project_proxy_vnd: money(projectEbitdaProxy), ebitda_statement_proxy_vnd: money(statementEbitdaProxy), depreciation_vnd: money(da), ebit_proxy_vnd: money(ebit), finance_cost_vnd: money(interest), pbt_proxy_vnd: money(pbt), tax_proxy_vnd: money(tax), pat_proxy_vnd: money(pat) });
   balance.push({ ...base, cash_opening_vnd: money(cashOpening), cash_closing_vnd: money(cashClose), ar_closing_vnd: money(arClose), inventory_closing_vnd: money(invClose), ppe_net_closing_vnd: money(ppeClose), ap_closing_vnd: money(apClose), debt_closing_vnd: money(debtClose), equity_opening_vnd: money(equityOpen), equity_closing_vnd: money(equityClose), total_assets_vnd: money(assets), total_liabilities_equity_vnd: money(liabEquity), balance_check_vnd: money(balanceCheck) });
   cashflow.push({ ...base, pat_proxy_vnd: money(pat), depreciation_vnd: money(da), change_ar_vnd: money(arClose - arOpen), change_inventory_vnd: money(invClose - invOpen), change_ap_vnd: money(apClose - apOpen), cfo_vnd: money(cfo), capex_vnd: money(capex), pre_financing_fcf_vnd: money(preFinFcf), debt_drawdown_vnd: money(debtDraw), debt_repayment_vnd: money(debtRepay), net_cash_change_vnd: money(cfo - capex + debtDraw - debtRepay), cash_opening_vnd: money(cashOpening), cash_closing_vnd: money(cashClose) });

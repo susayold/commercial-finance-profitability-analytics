@@ -1,0 +1,6 @@
+ChannelKey,ChannelID,Channel,ChannelGroup,FeeRate,PaymentTermsDays,CMHurdle
+CH01,CH01,General Trade,Offline,0.035,30,0.25
+CH02,CH02,Modern Trade,Offline,0.045,45,0.25
+CH03,CH03,Marketplace,Digital,0.12,15,0.25
+CH04,CH04,D2C,Digital,0.08,7,0.25
+CH05,CH05,Wholesale,Offline,0.02,60,0.25

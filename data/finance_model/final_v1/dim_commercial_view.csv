@@ -1,0 +1,5 @@
+ViewKey,View,FieldName,SortOrder,EvidenceClass
+CHANNEL,Channel,Dim_Channel[Channel],1,SIMULATED
+PRODUCT,Product,Dim_Product[Product],2,SIMULATED
+CUSTOMER,Customer,Dim_Customer[CustomerName],3,SIMULATED
+CATEGORY,Category,Dim_Product[Category],4,SIMULATED

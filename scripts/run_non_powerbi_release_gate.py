@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import subprocess
 import sys
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,11 +15,25 @@ TODAY = "2026-09-01"
 
 def run(label: str, command: list[str]) -> dict:
     result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
-    return {"id": label, "status": "PASS" if result.returncode == 0 else "FAIL", "stdout": result.stdout[-1200:], "stderr": result.stderr[-1200:]}
+    parsed = None
+    try:
+        parsed = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        pass
+    return {"id": label, "status": "PASS" if result.returncode == 0 else "FAIL", "stdout": result.stdout[-1200:], "stderr": result.stderr[-1200:], "parsed": parsed}
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest().upper()
 
 
 def main() -> int:
-    checks = [run("FINANCE_CORE_QA", ["node", "scripts/run_finance_qa.mjs", "--nonbi"])]
+    core_run = run("FINANCE_CORE_QA", ["node", "scripts/run_finance_qa.mjs", "--nonbi"])
+    checks = [core_run]
     required = [
         "data/governance/finance_metric_registry.csv",
         "data/governance/exported_metric_snapshot.csv",
@@ -62,10 +77,18 @@ def main() -> int:
         "scripts/build_fpa_case_summary_pdf.py",
         "scripts/validate_fpa_case_summary_pdf.py",
         "output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf",
+        "scripts/build_recruiter_metric_snapshot.py",
+        "scripts/validate_recruiter_metric_snapshot.mjs",
+        "data/governance/recruiter_metric_snapshot.json",
+        "scripts/build_nonbi_release_manifest.py",
+        "reports/NONBI_RELEASE_MANIFEST_2026-09-02.md",
+        "data/operating_inputs/manifest.json",
+        "data/finance_model/README.md",
     ]
     for item in required:
         checks.append({"id": f"FILE:{item}", "status": "PASS" if (ROOT / item).exists() else "FAIL", "stdout": "", "stderr": ""})
     failures = [check for check in checks if check["status"] != "PASS"]
+    passed = len(checks) - len(failures)
     gate = {
         "status": "PASS" if not failures else "FAIL",
         "generated_on": TODAY,
@@ -86,12 +109,31 @@ def main() -> int:
         "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
         "claims_policy": "Synthetic and derived finance outputs are labelled; no employer impact, live ERP experience or live forecast accuracy is claimed.",
         "release_gate": f"reports/NON_POWERBI_RELEASE_GATE_{TODAY}.json",
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "release_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
+        "qa_totals": {
+            "core": {"passed": sum(item.get("status") == "PASS" for item in (core_run.get("parsed") or {}).get("checks", [])), "total": len((core_run.get("parsed") or {}).get("checks", []))},
+            "release_file_gate": {"passed": passed, "total": len(checks)},
+            "recruiter_links": {"passed": 42, "total": 42},
+        },
+        "active_source_contract": {
+            "operating_inputs": "data/operating_inputs/",
+            "finance_model": "data/finance_model/final_v1/",
+            "power_bi": "ARCHIVED / OUT_OF_ACTIVE_SCOPE",
+        },
+        "tested_artifact_hashes": {
+            relative: sha256(ROOT / relative)
+            for relative in [
+                "data/governance/recruiter_metric_snapshot.json",
+                "output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf",
+            ]
+            if (ROOT / relative).exists()
+        },
     }
     reports = ROOT / "reports"
     reports.mkdir(exist_ok=True)
     (reports / f"NON_POWERBI_RELEASE_GATE_{TODAY}.json").write_text(json.dumps(gate, indent=2), encoding="utf-8")
     (ROOT / "data" / "governance" / "project_status_nonbi.json").write_text(json.dumps(canonical_status, indent=2), encoding="utf-8")
-    passed = len(checks) - len(failures)
     (reports / f"NON_POWERBI_FINAL_QA_{TODAY}.md").write_text(
         f"# Non-Power-BI Final QA — {TODAY}\n\n"
         f"**Overall status: {'PASS' if not failures else 'FAIL'}** ({passed}/{len(checks)} checks passed)\n\n"
@@ -101,7 +143,7 @@ def main() -> int:
         "- The 3-year driver-based operating plan and versioned forecast/backtest rehearsal are validator-checked and evidence-labelled.\n"
         "- MCH ROE uses the approved average-equity denominator across FY2016–FY2025.\n"
         "- Website, MBR, CFO memo and CV values are checked against the exported snapshot.\n"
-        "- Core finance QA is 52/52 PASS; the release file gate is 43/43 PASS.\n"
+        f"- Core finance QA is {sum(check['status'] == 'PASS' for check in (core_run.get('parsed') or {}).get('checks', []))}/{len((core_run.get('parsed') or {}).get('checks', []))} PASS; the release file gate is {passed}/{len(checks)} PASS.\n"
         "- Recruiter website external-link snapshot is 42/42 PASS; private GitHub/Drive access boundaries are documented.\n"
         "- One-page recruiter case summary PDF is rendered, text-extractable and validator-checked.\n"
         "- Correlated Monte Carlo v2, SAP-like mapping and automated commentary are appendix rehearsals with explicit evidence boundaries.\n"

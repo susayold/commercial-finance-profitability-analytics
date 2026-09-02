@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Build the non-Power-BI governance and cross-artifact release layer.
 
-The script is deterministic and reads only the approved ``final_v1`` operating
-contract plus public-company evidence already present in the repository.  It
-does not manufacture Gate A/B evidence; those remain explicitly open.
+The script is deterministic and reads the controlled synthetic operating
+inputs and the checked-in finance-model contract plus public-company evidence
+already present in the repository. It does not manufacture Gate A evidence;
+that remains explicitly open. Power BI is an archived historical artefact and
+is not an active source for this release.
 """
 from __future__ import annotations
 
@@ -13,7 +15,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "powerbi" / "data" / "final_v1"
+DATA = ROOT / "data" / "finance_model" / "final_v1"
 OUT = ROOT / "data"
 TODAY = "2026-08-31"
 
@@ -37,25 +39,25 @@ def money(value): return round(float(value), 6)
 
 def build_registry():
     rows = [
-      ("REV_GROSS","Gross Sales","Invoice-level gross sales before discounts/returns","SUM(GrossSalesVND)","","","line","VND","calendar month","none","SIMULATED","powerbi/data/final_v1/fact_sales.csv","FP&A","APPROVED","Synthetic operating ledger"),
-      ("REV_NET","Net Revenue","Gross sales less discounts, returns, rebates and voucher support","REV_GROSS - DISCOUNTS - RETURNS - REBATES - VOUCHERS","REV_GROSS","","line","VND","calendar month","none","DERIVED","powerbi/data/final_v1/fact_sales.csv","FP&A","APPROVED","Must not exceed gross sales"),
-      ("COGS","Corrected COGS","Authoritative COGS allocated to sales lines using documented pro-rata method","SUM(CorrectedCOGSVND)","","","line","VND","calendar month","none","DERIVED","powerbi/data/final_v1/fact_sales.csv + fact_commercial_cost.csv","FP&A","APPROVED","Authority tie at month x channel"),
-      ("GROSS_PROFIT","Gross Profit","Net revenue less corrected COGS","REV_NET - COGS","REV_NET","COGS","company/month","VND","calendar month","none","DERIVED","fact_sales.csv","FP&A","APPROVED",""),
-      ("GROSS_MARGIN","Gross Margin %","Gross profit divided by net revenue","GROSS_PROFIT / REV_NET","GROSS_PROFIT","REV_NET","company/month","percent","calendar month","none","DERIVED","fact_sales.csv","FP&A","APPROVED","Ratio tolerance 1 bp"),
-      ("CONTRIBUTION","Contribution Profit","Net revenue less COGS, channel fees, trade spend and variable fulfilment","REV_NET - COGS - FEES - TRADE_SPEND - FULFILMENT","REV_NET","","line","VND","calendar month","none","DERIVED","fact_sales.csv","Commercial Finance","APPROVED",""),
-      ("CONTRIBUTION_MARGIN","Contribution Margin %","Contribution profit divided by net revenue","CONTRIBUTION / REV_NET","CONTRIBUTION","REV_NET","company/month","percent","calendar month","none","DERIVED","fact_sales.csv","Commercial Finance","APPROVED",""),
-      ("EBITDA_PROXY","EBITDA Proxy","Gross profit less controllable OPEX; explicitly non-statutory","GROSS_PROFIT - OPEX_ACTUAL","GROSS_PROFIT","OPEX_ACTUAL","company/month/scenario","VND","calendar month","none","PROXY_DERIVED","fact_sales.csv + fact_opex_headcount.csv","FP&A","APPROVED","Proxy label required"),
-      ("EBITDA_PROXY_MARGIN","EBITDA Proxy Margin %","EBITDA proxy divided by scenario revenue","EBITDA_PROXY / REV_NET","EBITDA_PROXY","REV_NET","company/month/scenario","percent","calendar month","none","PROXY_DERIVED","scenario_summary.csv","FP&A","APPROVED","Derived; never independently hard-coded"),
-      ("AR_END","Ending AR","Closing trade receivables at period end","SUM(ClosingARVND)","","","customer/month","VND","ending balance","none","SIMULATED","fact_ar_snapshot.csv","Treasury","APPROVED","Ending balance"),
-      ("INVENTORY_END","Ending Inventory","Closing inventory value at period end","SUM(ClosingInventoryVND)","","","SKU/month","VND","ending balance","none","SIMULATED","fact_inventory_snapshot.csv","Supply Chain Finance","APPROVED","Ending balance"),
-      ("AP_END","Ending AP","Closing trade payables at period end","SUM(ClosingAPVND)","","","supplier/month","VND","ending balance","none","SIMULATED","fact_ap_snapshot.csv","Treasury","APPROVED","Ending balance"),
-      ("DSO","Days Sales Outstanding","Ending AR divided by daily net revenue","AR_END / (REV_NET / 30)","AR_END","REV_NET","company/month","days","calendar month","30-day month","DERIVED","fact_ar_snapshot.csv + fact_sales.csv","Treasury","APPROVED","Ending AR convention"),
-      ("DIO","Days Inventory Outstanding","Ending inventory divided by daily COGS","INVENTORY_END / (COGS / 30)","INVENTORY_END","COGS","company/month","days","calendar month","30-day month","DERIVED","fact_inventory_snapshot.csv + fact_sales.csv","Treasury","APPROVED","Ending inventory convention"),
-      ("DPO","Days Payables Outstanding","Ending AP divided by daily purchases/COGS proxy","AP_END / (PURCHASES / 30)","AP_END","PURCHASES","company/month","days","calendar month","30-day month","DERIVED","fact_ap_snapshot.csv","Treasury","APPROVED","Ending AP convention"),
-      ("CCC","Cash Conversion Cycle","DSO plus DIO less DPO","DSO + DIO - DPO","DSO","DIO","company/month","days","calendar month","none","DERIVED","fact_ar_snapshot.csv + inventory + ap","Treasury","APPROVED","Lower is better"),
+      ("REV_GROSS","Gross Sales","Invoice-level gross sales before discounts/returns","SUM(GrossSalesVND)","","","line","VND","calendar month","none","SIMULATED","data/operating_inputs/sales_fact.csv","FP&A","APPROVED","Synthetic operating ledger"),
+      ("REV_NET","Net Revenue","Gross sales less discounts, returns, rebates and voucher support","REV_GROSS - DISCOUNTS - RETURNS - REBATES - VOUCHERS","REV_GROSS","","line","VND","calendar month","none","DERIVED","data/operating_inputs/sales_fact.csv","FP&A","APPROVED","Must not exceed gross sales"),
+      ("COGS","Corrected COGS","Authoritative COGS allocated to sales lines using documented pro-rata method","SUM(CorrectedCOGSVND)","","","line","VND","calendar month","none","DERIVED","data/finance_model/final_v1/fact_sales.csv + fact_commercial_cost.csv","FP&A","APPROVED","Authority tie at month x channel"),
+      ("GROSS_PROFIT","Gross Profit","Net revenue less corrected COGS","REV_NET - COGS","REV_NET","COGS","company/month","VND","calendar month","none","DERIVED","data/finance_model/final_v1/fact_sales.csv","FP&A","APPROVED",""),
+      ("GROSS_MARGIN","Gross Margin %","Gross profit divided by net revenue","GROSS_PROFIT / REV_NET","GROSS_PROFIT","REV_NET","company/month","percent","calendar month","none","DERIVED","data/finance_model/final_v1/fact_sales.csv","FP&A","APPROVED","Ratio tolerance 1 bp"),
+      ("CONTRIBUTION","Contribution Profit","Net revenue less COGS, channel fees, trade spend and variable fulfilment","REV_NET - COGS - FEES - TRADE_SPEND - FULFILMENT","REV_NET","","line","VND","calendar month","none","DERIVED","data/finance_model/final_v1/fact_sales.csv + fact_commercial_cost.csv","Commercial Finance","APPROVED",""),
+      ("CONTRIBUTION_MARGIN","Contribution Margin %","Contribution profit divided by net revenue","CONTRIBUTION / REV_NET","CONTRIBUTION","REV_NET","company/month","percent","calendar month","none","DERIVED","data/finance_model/final_v1/fact_sales.csv","Commercial Finance","APPROVED",""),
+      ("EBITDA_PROXY","EBITDA Proxy","Gross profit less controllable OPEX; explicitly non-statutory","GROSS_PROFIT - OPEX_ACTUAL","GROSS_PROFIT","OPEX_ACTUAL","company/month/scenario","VND","calendar month","none","PROXY_DERIVED","data/finance_model/final_v1/fact_sales.csv + fact_opex_headcount.csv","FP&A","APPROVED","Proxy label required"),
+      ("EBITDA_PROXY_MARGIN","EBITDA Proxy Margin %","EBITDA proxy divided by scenario revenue","EBITDA_PROXY / REV_NET","EBITDA_PROXY","REV_NET","company/month/scenario","percent","calendar month","none","PROXY_DERIVED","data/scenarios/scenario_summary.csv","FP&A","APPROVED","Derived; never independently hard-coded"),
+      ("AR_END","Ending AR","Closing trade receivables at period end","SUM(ClosingARVND)","","","customer/month","VND","ending balance","none","SIMULATED","data/finance_model/final_v1/fact_ar_snapshot.csv","Treasury","APPROVED","Ending balance"),
+      ("INVENTORY_END","Ending Inventory","Closing inventory value at period end","SUM(ClosingInventoryVND)","","","SKU/month","VND","ending balance","none","SIMULATED","data/finance_model/final_v1/fact_inventory_snapshot.csv","Supply Chain Finance","APPROVED","Ending balance"),
+      ("AP_END","Ending AP","Closing trade payables at period end","SUM(ClosingAPVND)","","","supplier/month","VND","ending balance","none","SIMULATED","data/finance_model/final_v1/fact_ap_snapshot.csv","Treasury","APPROVED","Ending balance"),
+      ("DSO","Days Sales Outstanding","Ending AR divided by daily net revenue","AR_END / (REV_NET / 30)","AR_END","REV_NET","company/month","days","calendar month","30-day month","DERIVED","data/finance_model/final_v1/fact_ar_snapshot.csv + fact_sales.csv","Treasury","APPROVED","Ending AR convention"),
+      ("DIO","Days Inventory Outstanding","Ending inventory divided by daily COGS","INVENTORY_END / (COGS / 30)","INVENTORY_END","COGS","company/month","days","calendar month","30-day month","DERIVED","data/finance_model/final_v1/fact_inventory_snapshot.csv + fact_sales.csv","Treasury","APPROVED","Ending inventory convention"),
+      ("DPO","Days Payables Outstanding","Ending AP divided by daily purchases/COGS proxy","AP_END / (PURCHASES / 30)","AP_END","PURCHASES","company/month","days","calendar month","30-day month","DERIVED","data/finance_model/final_v1/fact_ap_snapshot.csv","Treasury","APPROVED","Ending AP convention"),
+      ("CCC","Cash Conversion Cycle","DSO plus DIO less DPO","DSO + DIO - DPO","DSO","DIO","company/month","days","calendar month","none","DERIVED","data/finance_model/final_v1/fact_ar_snapshot.csv + fact_inventory_snapshot.csv + fact_ap_snapshot.csv","Treasury","APPROVED","Lower is better"),
       ("CFO","Operating Cash Flow","Cash flow from operating activities in public filing","reported statement line","","","company/fiscal year","VND bn","fiscal year","none","OBSERVED","data/public_company/mch_financial_metrics_approved.csv","Public Markets","APPROVED","Public subject area only"),
       ("PAT","Profit After Tax","PAT attributable to owners where available","reported statement line","","","company/fiscal year","VND bn","fiscal year","none","OBSERVED","data/public_company/mch_financial_metrics_approved.csv","Public Markets","APPROVED","Public subject area only"),
-      ("AVG_EQUITY","Average Equity","Average of opening and closing equity attributable to owners","(EQUITY_t-1 + EQUITY_t) / 2","","","company/fiscal year","VND bn","fiscal year","none","CALCULATED_PUBLIC","mch_financial_metrics_approved.csv","Public Markets","APPROVED","Denominator is average equity"),
+      ("AVG_EQUITY","Average Equity","Average of opening and closing equity attributable to owners","(EQUITY_t-1 + EQUITY_t) / 2","","","company/fiscal year","VND bn","fiscal year","none","CALCULATED_PUBLIC","data/public_company/mch_financial_metrics_approved.csv","Public Markets","APPROVED","Denominator is average equity"),
       ("ROE","Return on Equity","PAT attributable to owners divided by average equity attributable to owners","PAT / AVG_EQUITY","PAT","AVG_EQUITY","company/fiscal year","percent","fiscal year","none","CALCULATED_PUBLIC","mch_financial_metrics_approved.csv","Public Markets","APPROVED","Single approved FY2016-FY2025 definition"),
       ("FCFF","Free Cash Flow to Firm","NOPAT plus D&A less capex and change in NWC","NOPAT + D&A - CAPEX - DELTA_NWC","","","company/fiscal year","VND bn","fiscal year","none","SYNTHETIC_REHEARSAL","valuation rehearsal","Strategy","APPROVED","Rehearsal only"),
       ("EV","Enterprise Value","DCF enterprise value from explicit FCFF and terminal value","PV_EXPLICIT_FCFF + PV_TERMINAL - NET_DEBT_ADJ","","","valuation case","VND bn","forecast period","none","SYNTHETIC_REHEARSAL","valuation rehearsal","Strategy","APPROVED","EV only; not a price target"),
@@ -97,7 +99,7 @@ def build_scenarios():
         rr=[r for r in fc if r['ScenarioKey']==sc and r['TargetMonth'].startswith('2025-')]
         rev=sum(float(r['ForecastRevenueVND']) for r in rr); cogs=sum(float(r['ForecastCOGSVND']) for r in rr); ox=sum(float(r['ForecastOPEXVND']) for r in rr); trade=sum(float(r['ForecastTradeSpendVND']) for r in rr)
         ebitda=rev-cogs-ox; margin=100*ebitda/rev; contribution=rev-cogs-trade; days=ccc+({'BASE':0,'UPSIDE':-6,'DOWNSIDE':14}[sc])
-        rows.append(dict(zip(fields,['FY2025',sc,round(rev/1e9,4),round((rev-cogs)/1e9,4),round(ox/1e9,4),round(ebitda/1e9,4),round(margin,4),round(contribution/1e9,4),round(days,2),'PROXY_DERIVED','powerbi/data/final_v1/fact_forecast.csv + fact_opex_headcount.csv'])))
+        rows.append(dict(zip(fields,['FY2025',sc,round(rev/1e9,4),round((rev-cogs)/1e9,4),round(ox/1e9,4),round(ebitda/1e9,4),round(margin,4),round(contribution/1e9,4),round(days,2),'PROXY_DERIVED','data/finance_model/final_v1/fact_forecast.csv + fact_opex_headcount.csv'])))
     write_csv(OUT/'scenarios'/'scenario_summary.csv',fields,rows)
 
 def build_public_metrics():
@@ -125,7 +127,7 @@ def build_maps():
     fields=['artifact','section_or_cell','metric_id','expected_source','expected_value_rule','tolerance','evidence_class']
     rows=[]
     for artifact,section,metric,source,rule,tol,ev in [
-      ('FP&A workbook','P&L summary','REV_NET','powerbi/data/final_v1/fact_sales.csv','sum NetRevenueVND by FY2025','VND 1','DERIVED'),
+      ('FP&A workbook','P&L summary','REV_NET','data/finance_model/final_v1/fact_sales.csv','sum NetRevenueVND by FY2025','VND 1','DERIVED'),
       ('MBR','scenario table','EBITDA_PROXY','data/scenarios/scenario_summary.csv','match scenario and period','0.01 VND bn','PROXY_DERIVED'),
       ('CFO memo','executive KPI','EBITDA_PROXY','data/scenarios/scenario_summary.csv','match BASE/FY2025','0.01 VND bn','PROXY_DERIVED'),
       ('website','scenario selector','REV_NET','data/scenarios/scenario_summary.csv','match selected scenario','0.01 VND bn','PROXY_DERIVED'),
@@ -144,7 +146,7 @@ def main():
     archive=OUT/'archive'/'sales_fact_pre_unit_fix_2026-08-31.csv'
     source=DATA/'fact_sales.csv'
     if not archive.exists(): shutil.copy2(source,archive)
-    manifest={'archived_at':TODAY,'source_file':'powerbi/data/final_v1/fact_sales.csv','archive_file':'data/archive/sales_fact_pre_unit_fix_2026-08-31.csv','row_count':len(read_csv(archive)),'sha256':sha256(archive),'fields':list(read_csv(archive)[0])}
+    manifest={'archived_at':TODAY,'source_file':'data/finance_model/final_v1/fact_sales.csv','archive_file':'data/archive/sales_fact_pre_unit_fix_2026-08-31.csv','row_count':len(read_csv(archive)),'sha256':sha256(archive),'fields':list(read_csv(archive)[0])}
     (OUT/'archive'/'sales_fact_pre_unit_fix_2026-08-31.manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
     print(json.dumps({'status':'PASS','outputs':['data/governance/finance_metric_registry.csv','schemas/unit_contract.csv','data/governance/artifact_metric_map.csv','data/scenarios/scenario_summary.csv','data/public_company/public_metric_dictionary.csv','data/public_company/mch_financial_metrics_approved.csv'], 'archive_rows':manifest['row_count']},indent=2))
 

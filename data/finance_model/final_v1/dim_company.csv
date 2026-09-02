@@ -1,0 +1,6 @@
+CompanyKey,Company,CompanyType,EvidenceClass,SourceURL
+VN,VietNova Consumer JSC,Operating case,SIMULATED,SRC001
+MCH,Masan Consumer,Public company,OBSERVED,https://masanconsumer.com/en/annual-report/
+VNM,Vinamilk,Public peer,OBSERVED,https://www.vinamilk.com.vn/investor/reports/annual/
+QNS,Quang Ngai Sugar,Public peer,OBSERVED,https://www.qns.com.vn/bao-cao-thuong-nien
+KDC,KIDO,Public peer,OBSERVED,https://kdc.vn/bai-viet/categories/bao-cao-thuong-nien

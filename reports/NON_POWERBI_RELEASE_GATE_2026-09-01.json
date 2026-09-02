@@ -174,6 +174,34 @@
     {
       "id": "FILE:output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf",
       "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/build_recruiter_metric_snapshot.py",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/validate_recruiter_metric_snapshot.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/governance/recruiter_metric_snapshot.json",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:scripts/build_nonbi_release_manifest.py",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:reports/NONBI_RELEASE_MANIFEST_2026-09-02.md",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/operating_inputs/manifest.json",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:data/finance_model/README.md",
+      "status": "PASS"
     }
   ],
   "open_external_gates": [

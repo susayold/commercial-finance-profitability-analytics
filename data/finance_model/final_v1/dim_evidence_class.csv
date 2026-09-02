@@ -1,0 +1,8 @@
+EvidenceClass,Definition,AllowedHeadline
+SIMULATED,Synthetic operating fact,Yes with visible synthetic banner
+DERIVED,Calculated from approved inputs,Yes with lineage
+OBSERVED,Reported public filing observation,Yes in public subject area only
+ASSUMPTION,Planning assumption,Yes with assumption badge
+PROXY,Explicit proxy,Yes with proxy label
+SYNTHETIC_REHEARSAL,Strategic rehearsal,No price-target claim
+OPEN_GATE,Evidence not yet available,Never silently suppress

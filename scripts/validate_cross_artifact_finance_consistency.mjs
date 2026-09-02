@@ -20,15 +20,17 @@ const expectText = (name, relative, needles) => {
   checks.push({ name, status: missing.length ? 'FAIL' : 'PASS', missing });
 };
 
-expectText('Website base scenario', 'site/app/page.tsx', [
-  `revenue: '${one(get('REV_NET'))}'`,
-  `ebitda: '${one(get('EBITDA_PROXY'))}'`,
-  `ccc: '${one(get('CCC'))}'`,
-  `margin: '${one(get('EBITDA_PROXY_MARGIN'))}'`,
+expectText('Website reads canonical recruiter snapshot', 'site/app/page.tsx', [
+  "import recruiterSnapshot from '../data/recruiter_metric_snapshot.json';",
+  "recruiterSnapshot.scenarios[scenario][id].value",
+  "revenue: metric('BASE', 'REV_NET')",
+  "ebitda: metric('BASE', 'EBITDA_PROXY')",
+  "ccc: metric('BASE', 'CCC')",
+  "margin: metric('BASE', 'EBITDA_PROXY_MARGIN')",
 ]);
 expectText('Website upside/downside scenarios', 'site/app/page.tsx', [
-  `revenue: '${one(get('REV_NET', 'UPSIDE'))}'`,
-  `revenue: '${one(get('REV_NET', 'DOWNSIDE'))}'`,
+  "revenue: metric('UPSIDE', 'REV_NET')",
+  "revenue: metric('DOWNSIDE', 'REV_NET')",
 ]);
 expectText('MBR scenario table', 'reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md', [
   `| Revenue | ${one(get('REV_NET'))} | ${one(get('REV_NET', 'UPSIDE'))} | ${one(get('REV_NET', 'DOWNSIDE'))}`,

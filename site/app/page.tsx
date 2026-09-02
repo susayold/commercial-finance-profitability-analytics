@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ArrowUpRight, BarChart3, BookOpen, CheckCircle2, ChevronDown, CircleDollarSign, Database, Download, ExternalLink, Gauge, GitBranch, Layers3, ShieldCheck, Sparkles, WalletCards } from 'lucide-react';
+import recruiterSnapshot from '../data/recruiter_metric_snapshot.json';
 
 const driveModel = 'https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit';
 const driveDashboard = 'https://drive.google.com/file/d/1ItKSxASsxKx3nmJDIm76rOYVGwVWH2pb/view';
@@ -46,12 +47,13 @@ const projectStatus = 'https://github.com/susayold/commercial-finance-profitabil
 const mchValuationReport = 'https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/reports/MCH_VALUATION_REHEARSAL.md';
 const mchValuationData = 'https://github.com/susayold/commercial-finance-profitability-analytics/blob/main/data/mch_valuation_rehearsal_summary.json';
 
-// Generated from data/scenarios/scenario_summary.csv. These are proxy-derived
-// planning outputs, not statutory EBITDA or realized business impact.
+// Generated from data/governance/recruiter_metric_snapshot.json. These are
+// proxy-derived planning outputs, not statutory EBITDA or realized impact.
+const metric = (scenario: 'BASE' | 'UPSIDE' | 'DOWNSIDE', id: 'REV_NET' | 'EBITDA_PROXY' | 'CCC' | 'EBITDA_PROXY_MARGIN') => Number(recruiterSnapshot.scenarios[scenario][id].value).toFixed(1);
 const scenarios = {
-  Base: { revenue: '82.5', ebitda: '12.9', ccc: '54.0', margin: '15.6', note: 'Planning case: balanced growth and cash discipline.' },
-  Upside: { revenue: '85.7', ebitda: '17.4', ccc: '48.0', margin: '20.4', note: 'Stretch case: stronger growth, lower COGS and faster cash conversion.' },
-  Downside: { revenue: '76.9', ebitda: '3.5', ccc: '68.0', margin: '4.5', note: 'Risk case: demand pressure, cost inflation and slower collections.' },
+  Base: { revenue: metric('BASE', 'REV_NET'), ebitda: metric('BASE', 'EBITDA_PROXY'), ccc: metric('BASE', 'CCC'), margin: metric('BASE', 'EBITDA_PROXY_MARGIN'), note: 'Planning case: balanced growth and cash discipline.' },
+  Upside: { revenue: metric('UPSIDE', 'REV_NET'), ebitda: metric('UPSIDE', 'EBITDA_PROXY'), ccc: metric('UPSIDE', 'CCC'), margin: metric('UPSIDE', 'EBITDA_PROXY_MARGIN'), note: 'Stretch case: stronger growth, lower COGS and faster cash conversion.' },
+  Downside: { revenue: metric('DOWNSIDE', 'REV_NET'), ebitda: metric('DOWNSIDE', 'EBITDA_PROXY'), ccc: metric('DOWNSIDE', 'CCC'), margin: metric('DOWNSIDE', 'EBITDA_PROXY_MARGIN'), note: 'Risk case: demand pressure, cost inflation and slower collections.' },
 } as const;
 
 const bars = [
@@ -101,7 +103,7 @@ export default function Home() {
        <div className="decision-grid">
           <article className="decision-card decision-teal"><div className="card-number">01</div><div className="card-icon"><CircleDollarSign size={20} /></div><h3>Fund growth<br />that pays back.</h3><p>Promotion and pricing simulator separates incremental revenue from variable cost, platform fee and trade spend.</p><div className="card-footer"><span className="tag">PROMOTION ROI</span><a href={driveModel} target="_blank" rel="noreferrer">Inspect simulator <ArrowUpRight size={14} /></a></div></article>
           <article className="decision-card decision-blue"><div className="card-number">02</div><div className="card-icon"><Gauge size={20} /></div><h3>Protect margin<br />by channel.</h3><p>Channel and customer contribution exposes where discount, fee and cost-to-serve dilute a revenue win.</p><div className="card-footer"><span className="tag">CM HURDLE 25%</span><a href={driveDashboard} target="_blank" rel="noreferrer">View output <ArrowUpRight size={14} /></a></div></article>
-          <article className="decision-card decision-amber"><div className="card-number">03</div><div className="card-icon"><WalletCards size={20} /></div><h3>Release cash<br />before it hurts.</h3><p>DSO, DIO, DPO and liquidity stress turn working capital into a weekly operating agenda.</p><div className="card-footer"><span className="tag">CCC 54.0 DAYS</span><a href={cfoMemo} target="_blank" rel="noreferrer">Read action <ArrowUpRight size={14} /></a></div></article>
+          <article className="decision-card decision-amber"><div className="card-number">03</div><div className="card-icon"><WalletCards size={20} /></div><h3>Release cash<br />before it hurts.</h3><p>DSO, DIO, DPO and liquidity stress turn working capital into a weekly operating agenda.</p><div className="card-footer"><span className="tag">CCC {scenarios.Base.ccc} DAYS</span><a href={cfoMemo} target="_blank" rel="noreferrer">Read action <ArrowUpRight size={14} /></a></div></article>
          </div>
          <div className="integrity-note"><ShieldCheck size={18} /><p><strong>Customer economics lens:</strong> 24 synthetic customer-year rows rank accounts by contribution after cash cost, not revenue alone. Top-five accounts represent 28.62% of gross sales and 30.88% of after-WC contribution; C06 is the deliberate high-revenue / low-margin / long-DSO review case. <a href={customerAnalysis} target="_blank" rel="noreferrer">Read analysis <ArrowUpRight size={13} /></a> · <a href={customerSummary} target="_blank" rel="noreferrer">Open summary JSON <ArrowUpRight size={13} /></a></p></div>
        </section>
