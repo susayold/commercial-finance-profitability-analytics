@@ -5,7 +5,7 @@
 ## Release identity
 
 - Release date: **2026-09-02**
-- Payload commit at manifest generation: `7d10ab5cce79bb55c8868d69e774f61e979a4ac4`
+- Payload commit at manifest generation: `4d900f3694acc628eb10b449f4b7e84d667dffc8`
 - Current period: **FY2025**
 - Operating input: `data/operating_inputs/manifest.json` (seed `20260829`, 36 months)
 - Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.
@@ -30,6 +30,7 @@
 | `output/pptx/VNFINANCE_NONBI_FPA_MBR_2026-09-01.pptx` | Editable management pack | Derived case output |
 | `output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf` | One-page recruiter summary | Derived case output |
 | `docs/*CV*` + interview scripts | Recruiter positioning and walkthrough package | Evidence-labelled; candidate facts remain input-gated |
+| `output/pdf/FINANCE_ANALYST_CV_ONE_PAGE_V3.pdf` | One-page finance-first CV PDF | Template; candidate facts remain input-gated |
 | `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | Active non-BI source/path boundary control | PASS evidence |
 | `site/` | Recruiter website and evidence navigation | No unsupported live-impact claim |
 
@@ -71,6 +72,10 @@
 | `docs/INTERVIEW_WALKTHROUGH_FINANCE_ANALYST_2026-08-30.md` | 7,125 | `BAD35A615184E0C71B9E74E4402153F38834E54D17BCC18CC6CEE31A718C4589` |
 | `reports/CV_V3_QA.md` | 1,584 | `94FE0D470DD21A340E9F41365637725680611B1F36231599687C8EC9FC516E04` |
 | `scripts/validate_cv_v3.mjs` | 4,758 | `A86B39EC939A4247D7F36AC9522789F30E610B67B053A8694437A243D6CE9930` |
+| `output/pdf/FINANCE_ANALYST_CV_ONE_PAGE_V3.pdf` | 4,639 | `1960081768DAB14DF03A35772263332CACFF68BA95F1D3014F7DF905A960E178` |
+| `scripts/render_cv_v3_pdf.py` | 7,912 | `8CCBEB12DE5ED2C8A0812F6B62AC5D77942D2430C28694486DF17DC0BFCBBD19` |
+| `scripts/validate_cv_v3_pdf.py` | 1,555 | `4012B397B92399F71AB9419D7A0042B1F57AA6A9A752F6B0C6385A023600F0C6` |
+| `reports/FINANCE_ANALYST_CV_V3_PDF_QA.md` | 963 | `13F40E398024D6CCCD998F7D4301A8EF992E001137FA95096E4EE579508EDD1F` |
 | `scripts/validate_nonbi_scope_boundary.mjs` | 5,023 | `1842E00CD52FFEF5F9B3368A79AFA6A2A34B42D4C95F1080760080A6C22A84DA` |
 | `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | 3,613 | `234BF38AEDF6A9327B36EEB29720CF45ECE3C2C5A2E3AD7E9468D00C8CBC6830` |
 
