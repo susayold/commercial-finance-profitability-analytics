@@ -82,6 +82,8 @@ def main() -> int:
         "data/governance/recruiter_metric_snapshot.json",
         "scripts/build_nonbi_release_manifest.py",
         "reports/NONBI_RELEASE_MANIFEST_2026-09-02.md",
+        "scripts/validate_nonbi_scope_boundary.mjs",
+        "reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json",
         "data/operating_inputs/manifest.json",
         "data/finance_model/README.md",
     ]
@@ -163,6 +165,7 @@ def main() -> int:
         "- Repaired the GL management mapping serialization and added 14/14 mapping-aware statement controls.\n"
         "- Added correlated Monte Carlo v2, SAP-like mapping rehearsal and human-gated commentary draft appendices.\n"
         "- Added a one-page recruiter case summary PDF generated from the canonical metric snapshot.\n"
+        "- Added a non-BI scope-boundary validator that scans active builders, data contracts and recruiter UX for archived Power BI path dependencies.\n"
         "- Clarified synthetic/rehearsal boundaries for customer profitability and M&A modules.\n",
         encoding="utf-8",
     )

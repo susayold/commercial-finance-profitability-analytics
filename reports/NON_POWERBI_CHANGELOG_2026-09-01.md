@@ -9,4 +9,5 @@
 - Repaired the GL management mapping serialization and added 14/14 mapping-aware statement controls.
 - Added correlated Monte Carlo v2, SAP-like mapping rehearsal and human-gated commentary draft appendices.
 - Added a one-page recruiter case summary PDF generated from the canonical metric snapshot.
+- Added a non-BI scope-boundary validator that scans active builders, data contracts and recruiter UX for archived Power BI path dependencies.
 - Clarified synthetic/rehearsal boundaries for customer profitability and M&A modules.

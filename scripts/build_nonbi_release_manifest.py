@@ -46,6 +46,8 @@ def main() -> None:
         "reports/NON_POWERBI_FINAL_QA_2026-09-01.md",
         "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json",
         "reports/RECRUITER_SITE_LINK_QA_2026-09-02.json",
+        "scripts/validate_nonbi_scope_boundary.mjs",
+        "reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json",
     ]
     inventory = []
     for relative in files:
@@ -66,7 +68,7 @@ def main() -> None:
         f"- Current period: **{snapshot['current_period']}**",
         f"- Operating input: `data/operating_inputs/manifest.json` (seed `{json.loads((ROOT / 'data' / 'operating_inputs' / 'manifest.json').read_text())['seed']}`, 36 months)",
         "- Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.",
-        "- Recruiter website: Sites **v25**, source commit `5fa389b6c42ffba182d0e0f32376d87de70650f3`, private production deployment.",
+        "- Recruiter website: Sites **v26**, source commit `f1d0c6fcc180bcc5a033062b0a49b1d7816202bb`, private production deployment.",
         "",
         "## Quality gates",
         "",
@@ -86,6 +88,7 @@ def main() -> None:
         "| `data/planning/` + `data/forecast/` | Three-year plan and forecast v2/backtest rehearsal | SIMULATED / DERIVED |",
         "| `output/pptx/VNFINANCE_NONBI_FPA_MBR_2026-09-01.pptx` | Editable management pack | Derived case output |",
         "| `output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf` | One-page recruiter summary | Derived case output |",
+        "| `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | Active non-BI source/path boundary control | PASS evidence |",
         "| `site/` | Recruiter website and evidence navigation | No unsupported live-impact claim |",
         "",
         "## Recruiter handoff links",

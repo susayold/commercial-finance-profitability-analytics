@@ -19,7 +19,9 @@ if (payload) {
   const scenarios = Object.keys(payload.scenarios ?? {});
   add('RMS-03', 'Base/upside/downside scenarios present', ['BASE', 'UPSIDE', 'DOWNSIDE'].every((name) => scenarios.includes(name)), scenarios.join(','));
   add('RMS-04', 'Six headline metrics per scenario', scenarios.every((name) => Object.keys(payload.scenarios[name] ?? {}).length === 6));
-  add('RMS-05', 'Quality totals declared', payload.qa?.expected_core_checks?.passed === 54 && payload.qa?.expected_core_checks?.total === 54 && payload.qa?.expected_release_checks?.passed === 50 && payload.qa?.expected_release_checks?.total === 50);
+  const core = payload.qa?.expected_core_checks;
+  const release = payload.qa?.expected_release_checks;
+  add('RMS-05', 'Quality totals declared', core?.passed === core?.total && core?.total === 55 && release?.passed === release?.total && release?.total === 52);
   add('RMS-06', 'External gate remains input-gated', String(payload.evidence_boundary?.forecast_accuracy ?? '').includes('PENDING_EXTERNAL_INPUT'));
   add('RMS-07', 'Source boundary has no Power BI path', !JSON.stringify(payload).toLowerCase().includes('powerbi/'));
 

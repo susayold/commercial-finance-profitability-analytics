@@ -80,6 +80,7 @@ const tasks = [
   ['fpa_case_summary_pdf', ['scripts/validate_fpa_case_summary_pdf.py']],
   ['recruiter_metric_snapshot', ['scripts/validate_recruiter_metric_snapshot.mjs']],
   ['cross_artifact_finance_consistency', ['scripts/validate_cross_artifact_finance_consistency.mjs']],
+  ['nonbi_scope_boundary', ['scripts/validate_nonbi_scope_boundary.mjs']],
 ];
 
 const result = { status: 'PASS', runner: 'run_finance_qa.mjs', checks: [] };

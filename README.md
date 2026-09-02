@@ -16,11 +16,11 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 The active release is **non-Power-BI FP&A**. Power BI files and instructions remain archived for historical traceability only and are not part of the current acceptance path. The current source of truth is the [non-Power-BI handoff index](reports/NON_POWERBI_HANDOFF_INDEX_2026-09-01.md).
 
 - [FP&A non-BI gap research & update master plan — 2026-09-01](docs/VNFINANCE_FPA_NON_POWERBI_GAP_RESEARCH_AND_UPDATE_MASTER_PLAN_2026-09-01.md) — current market-fit audit, P0/P1/P2 backlog, three-statement/GL/costing upgrades and recruiter release criteria; BI work is intentionally excluded.
-- Production site: [Sites v25 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
+- Production site: [Sites v26 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
 - Latest GitHub main: https://github.com/susayold/commercial-finance-profitability-analytics/tree/main
 - [Boss handoff pack](reports/BOSS_HANDOFF_PACK_2026-08-31.md) — one-click review order, remote export manifest and evidence boundaries
 - Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-31.md)
-- Non-Power-BI closure QA: [final QA](reports/NON_POWERBI_FINAL_QA_2026-09-01.md) (**54/54 core; 50/50 release gate**) · [release gate JSON](reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json) · [release manifest](reports/NONBI_RELEASE_MANIFEST_2026-09-02.md) · [plan closure matrix](reports/NON_POWERBI_PLAN_CLOSURE_MATRIX_2026-08-31.md)
+- Non-Power-BI closure QA: [final QA](reports/NON_POWERBI_FINAL_QA_2026-09-01.md) (**55/55 core; 52/52 release gate**) · [release gate JSON](reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json) · [release manifest](reports/NONBI_RELEASE_MANIFEST_2026-09-02.md) · [plan closure matrix](reports/NON_POWERBI_PLAN_CLOSURE_MATRIX_2026-08-31.md)
 - Recruiter deliverable: [one-page FP&A case summary PDF](output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf)
 - Current canonical scope/status: [project_status_nonbi.json](data/governance/project_status_nonbi.json)
 - Recruiter entry point: [RECRUITER_START_HERE.md](RECRUITER_START_HERE.md)

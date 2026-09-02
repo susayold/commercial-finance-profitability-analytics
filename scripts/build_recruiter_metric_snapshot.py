@@ -46,8 +46,8 @@ def main() -> None:
         "qa": {
             "core_runner": "node scripts/run_finance_qa.mjs --nonbi",
             "release_gate": "python scripts/run_non_powerbi_release_gate.py",
-            "expected_core_checks": {"passed": 54, "total": 54},
-            "expected_release_checks": {"passed": 50, "total": 50},
+            "expected_core_checks": {"passed": 55, "total": 55},
+            "expected_release_checks": {"passed": 52, "total": 52},
             "recruiter_link_checks": {"passed": 42, "total": 42},
         },
         "evidence_boundary": {

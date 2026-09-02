@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "generated_at": "2026-09-02T05:50:38.354Z",
+  "scope": "non_powerbi_active_release_boundary",
+  "checks": [
+    {
+      "id": "SCOPE-1",
+      "name": "Required active path exists: data/operating_inputs/manifest.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SCOPE-2",
+      "name": "Required active path exists: data/operating_inputs/sales_fact.csv",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SCOPE-3",
+      "name": "Required active path exists: data/finance_model/README.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SCOPE-4",
+      "name": "Required active path exists: data/finance_model/final_v1/source_manifest.csv",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SCOPE-5",
+      "name": "Required active path exists: data/governance/project_status_nonbi.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SCOPE-6",
+      "name": "Required active path exists: data/governance/recruiter_metric_snapshot.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SCOPE-7",
+      "name": "Required active path exists: reports/NONBI_RELEASE_MANIFEST_2026-09-02.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SCOPE-8",
+      "name": "Required active path exists: site/app/page.tsx",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "SCOPE-STATUS",
+      "name": "Canonical status declares non-Power-BI active scope",
+      "status": "PASS",
+      "detail": "power_bi_status=OUT_OF_ACTIVE_SCOPE"
+    },
+    {
+      "id": "SCOPE-MANIFEST",
+      "name": "Release manifest locks Power BI as archived/excluded",
+      "status": "PASS",
+      "detail": "manifest boundary text present"
+    },
+    {
+      "id": "SCOPE-BUILDER-1",
+      "name": "Active builder has no archived Power BI path: scripts/build_non_powerbi_governance.py",
+      "status": "PASS",
+      "detail": "no powerbi/ path reference"
+    },
+    {
+      "id": "SCOPE-BUILDER-2",
+      "name": "Active builder has no archived Power BI path: scripts/build_three_statement_model.mjs",
+      "status": "PASS",
+      "detail": "no powerbi/ path reference"
+    },
+    {
+      "id": "SCOPE-BUILDER-3",
+      "name": "Active builder has no archived Power BI path: scripts/build_recruiter_metric_snapshot.py",
+      "status": "PASS",
+      "detail": "no powerbi/ path reference"
+    },
+    {
+      "id": "SCOPE-BUILDER-4",
+      "name": "Active builder has no archived Power BI path: scripts/build_nonbi_release_manifest.py",
+      "status": "PASS",
+      "detail": "no powerbi/ path reference"
+    },
+    {
+      "id": "SCOPE-BUILDER-5",
+      "name": "Active builder has no archived Power BI path: site/app/page.tsx",
+      "status": "PASS",
+      "detail": "no powerbi/ path reference"
+    },
+    {
+      "id": "SCOPE-ACTIVE-DATA",
+      "name": "Active data/governance contracts have no Power BI path dependency",
+      "status": "PASS",
+      "detail": "0 path references"
+    },
+    {
+      "id": "SCOPE-SITE",
+      "name": "Recruiter website active page contains no Power BI navigation/content dependency",
+      "status": "PASS",
+      "detail": "active page scan complete"
+    }
+  ],
+  "historical_note": "Historical Power BI files may remain under powerbi/ for traceability; this validator only audits active non-BI paths."
+}

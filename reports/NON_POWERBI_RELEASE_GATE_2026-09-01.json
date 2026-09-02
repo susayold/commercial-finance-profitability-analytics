@@ -196,6 +196,14 @@
       "status": "PASS"
     },
     {
+      "id": "FILE:scripts/validate_nonbi_scope_boundary.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "FILE:reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json",
+      "status": "PASS"
+    },
+    {
       "id": "FILE:data/operating_inputs/manifest.json",
       "status": "PASS"
     },

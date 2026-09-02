@@ -22,16 +22,16 @@
   "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
   "claims_policy": "Synthetic and derived finance outputs are labelled; no employer impact, live ERP experience or live forecast accuracy is claimed.",
   "release_gate": "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json",
-  "generated_at_utc": "2026-09-02T03:05:43.398007+00:00",
-  "release_commit": "4b4de1e6e26d9684299b0149924d83ccf606cdab",
+  "generated_at_utc": "2026-09-02T05:50:38.379240+00:00",
+  "release_commit": "80ba7f3c83ac8d7c619c9e7bf8947e1aaa6d693e",
   "qa_totals": {
     "core": {
-      "passed": 54,
-      "total": 54
+      "passed": 55,
+      "total": 55
     },
     "release_file_gate": {
-      "passed": 50,
-      "total": 50
+      "passed": 52,
+      "total": 52
     },
     "recruiter_links": {
       "passed": 42,
@@ -44,7 +44,7 @@
     "power_bi": "ARCHIVED / OUT_OF_ACTIVE_SCOPE"
   },
   "tested_artifact_hashes": {
-    "data/governance/recruiter_metric_snapshot.json": "F70FD20DD9B103FA1C255D2732617109A16F34FD4A2C075F1F37BA933C627710",
+    "data/governance/recruiter_metric_snapshot.json": "4F353BEC882B6A8E998F05E9DA5A77787BDBB24FB6A644FA3066D3111CD568A6",
     "output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf": "837024C9E4809A8ACFCA897AF3D8B3B2DE7803484ADC979DF0C931858BA9D52D"
   }
 }
