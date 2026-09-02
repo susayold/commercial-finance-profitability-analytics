@@ -52,7 +52,7 @@
 
 ```text
 github_repo=https://github.com/susayold/commercial-finance-profitability-analytics.git
-github_commit=da878e9b24b5ee9223412e69679910fa9008b728
+github_commit=fdec0d4442cc265e674b1326c953f35ed88e5314
 github_tracked_file_count=1425
 drive_project_root_id=1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR
 drive_archive_id=1tPKphroOXjgCcRHF1MC1fiOfQ87Lff0c
