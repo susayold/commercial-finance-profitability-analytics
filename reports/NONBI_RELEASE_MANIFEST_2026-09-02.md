@@ -5,7 +5,7 @@
 ## Release identity
 
 - Release date: **2026-09-02**
-- Payload commit at manifest generation: `00978e34458ae6447f893c0787184e218a80c747`
+- Payload commit at manifest generation: `fbd6071c54a4e6dba95afe27152169f91f28499c`
 - Current period: **FY2025**
 - Operating input: `data/operating_inputs/manifest.json` (seed `20260829`, 36 months)
 - Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.
@@ -31,6 +31,7 @@
 | `output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf` | One-page recruiter summary | Derived case output |
 | `docs/*CV*` + interview scripts | Recruiter positioning and walkthrough package | Evidence-labelled; candidate facts remain input-gated |
 | `output/pdf/FINANCE_ANALYST_CV_ONE_PAGE_V3.pdf` | One-page finance-first CV PDF | Template; candidate facts remain input-gated |
+| `data/governance/candidate_profile_intake.json` + validator | Safe candidate-facts intake contract | INPUT-GATED by design |
 | `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | Active non-BI source/path boundary control | PASS evidence |
 | `site/` | Recruiter website and evidence navigation | No unsupported live-impact claim |
 
@@ -76,8 +77,11 @@
 | `scripts/render_cv_v3_pdf.py` | 7,912 | `8CCBEB12DE5ED2C8A0812F6B62AC5D77942D2430C28694486DF17DC0BFCBBD19` |
 | `scripts/validate_cv_v3_pdf.py` | 1,555 | `4012B397B92399F71AB9419D7A0042B1F57AA6A9A752F6B0C6385A023600F0C6` |
 | `reports/FINANCE_ANALYST_CV_V3_PDF_QA.md` | 963 | `13F40E398024D6CCCD998F7D4301A8EF992E001137FA95096E4EE579508EDD1F` |
+| `data/governance/candidate_profile_intake.json` | 1,938 | `124B8CCD60CD6BA757BEB7E127D856506195C1B5FF8669F9806D5E5928192E63` |
+| `scripts/validate_candidate_profile.mjs` | 4,802 | `C04B8B717C30583795DFD568F28160803E8AE13EF33AB73316140F050F61EF69` |
+| `reports/CANDIDATE_PROFILE_INTAKE_QA_2026-09-02.md` | 1,078 | `99093D32860CEFF8D1E2C3714AE7DFD022AC1C703528404EA28A897E7B41DDFA` |
 | `scripts/validate_nonbi_scope_boundary.mjs` | 5,023 | `1842E00CD52FFEF5F9B3368A79AFA6A2A34B42D4C95F1080760080A6C22A84DA` |
-| `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | 3,613 | `3F65387B3D892872DB09AC313034C3B2DBD667AD601457A7C40E1071E5702336` |
+| `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | 3,613 | `5C8F213321D8CF6F1EC4CC6E0F7ED448C78CC8719E9F6CE41E905FA7FE479DF5` |
 
 ## Reproduction
 

@@ -1,0 +1,73 @@
+{
+  "profile_id": "CANDIDATE_PROFILE_INPUT_V1",
+  "status": "INPUT_GATED",
+  "version": "1.0.0",
+  "updated_on": "2026-09-02",
+  "purpose": "Safe intake contract for personal CV facts; no candidate facts are inferred from the synthetic FP&A case.",
+  "do_not_invent": true,
+  "required_fields": {
+    "full_name": null,
+    "city_country": null,
+    "work_authorization": null,
+    "email": null,
+    "phone": null,
+    "linkedin_url": null,
+    "github_url": null,
+    "education": [],
+    "experience": [],
+    "tools_used_in_real_work": [],
+    "languages": [],
+    "availability": null
+  },
+  "optional_fields": {
+    "target_locations": [],
+    "target_industries": [],
+    "certifications": [],
+    "professional_summary": null,
+    "portfolio_recording_url": null
+  },
+  "education_item_schema": {
+    "degree": "",
+    "major": "",
+    "institution": "",
+    "city_country": "",
+    "start_year": null,
+    "end_year": null,
+    "evidence_reference": ""
+  },
+  "experience_item_schema": {
+    "employer": "",
+    "title": "",
+    "city_country": "",
+    "start_date": "YYYY-MM",
+    "end_date": "YYYY-MM or Present",
+    "bullets": [],
+    "quantified_result": "",
+    "evidence_reference": ""
+  },
+  "tool_item_schema": {
+    "name": "",
+    "proficiency": "",
+    "evidence_reference": ""
+  },
+  "language_item_schema": {
+    "language": "",
+    "level": "",
+    "evidence_reference": ""
+  },
+  "rendering_rules": {
+    "cv_one_page": true,
+    "remove_all_bracket_placeholders_before_submission": true,
+    "portfolio_claims_belong_under_projects": true,
+    "experience_claims_require_candidate_evidence": true,
+    "live_forecast_accuracy_requires_gate_a": true,
+    "power_bi_claims_allowed": false
+  },
+  "blocked_claims_without_external_evidence": [
+    "internal forecast accuracy",
+    "realized savings",
+    "employer impact",
+    "production ERP/SAP experience",
+    "statutory EBITDA when only a proxy exists"
+  ]
+}
