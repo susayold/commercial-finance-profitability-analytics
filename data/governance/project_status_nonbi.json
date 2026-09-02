@@ -22,8 +22,8 @@
   "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
   "claims_policy": "Synthetic and derived finance outputs are labelled; no employer impact, live ERP experience or live forecast accuracy is claimed.",
   "release_gate": "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json",
-  "generated_at_utc": "2026-09-02T11:21:33.814735+00:00",
-  "release_commit": "fbd6071c54a4e6dba95afe27152169f91f28499c",
+  "generated_at_utc": "2026-09-02T11:31:31.667778+00:00",
+  "release_commit": "b234816a286345e4de2523a97e84d0093e3b96f3",
   "qa_totals": {
     "core": {
       "passed": 55,
