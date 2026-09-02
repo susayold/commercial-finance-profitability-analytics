@@ -6,7 +6,7 @@
 
 | Check | Status | Detail |
 |---|---|---|
-| input_file_exists | PASS | C:\Users\sangk\Documents\Codex\2026-08-29\toi\_pbi_scope_extend_20260831\data\governance\recording_handoff.json |
+| input_file_exists | PASS | data/governance/recording_handoff.json |
 | status_allowed | PASS | status=INPUT_GATED |
 | script_exists | PASS | docs/FINANCE_ANALYST_WALKTHROUGH_SCRIPT_5_MIN.md |
 | editable_deck_exists | PASS | output/pptx/VNFINANCE_NONBI_FPA_MBR_2026-09-01.pptx |

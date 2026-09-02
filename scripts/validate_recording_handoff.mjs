@@ -14,7 +14,7 @@ const hasHttp = (value) => typeof value === 'string' && /^https?:\/\//i.test(val
 const hasSha = (value) => typeof value === 'string' && /^[A-Fa-f0-9]{64}$/.test(value);
 const statusAllowed = ['INPUT_GATED', 'READY_FOR_REVIEW', 'APPROVED'];
 
-add('input_file_exists', fs.existsSync(inputPath), inputPath);
+add('input_file_exists', fs.existsSync(inputPath), 'data/governance/recording_handoff.json');
 add('status_allowed', statusAllowed.includes(payload.status), `status=${payload.status}`);
 add('script_exists', exists(payload.script_path), payload.script_path);
 add('editable_deck_exists', exists(payload.deck_path), payload.deck_path);

@@ -1,0 +1,20 @@
+{
+  "release_name": "VNFINANCE-FPA-2026-09-02-FINAL",
+  "release_tag": null,
+  "release_sha": null,
+  "release_status": "CLOSURE_CANDIDATE_INPUT_GATED",
+  "release_date": "2026-09-02",
+  "current_source_sha": "e3411d802cb7cc2e5443303d28b45e8831c9a6f9",
+  "current_source_sha_role": "closure baseline before this identity patch; not promoted to final tag while required external inputs remain",
+  "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
+  "website_version": 26,
+  "website_source_sha": "f1d0c6fcc180bcc5a033062b0a49b1d7816202bb",
+  "drive_project_folder_id": "1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR",
+  "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
+  "finalization_blockers": [
+    "verified candidate facts",
+    "five-minute walkthrough recording and review",
+    "approved internal pre-close forecast plus post-close actuals for Gate A if a live accuracy claim is desired"
+  ],
+  "sha_policy_note": "The final tag and SHA will be written after the input-gated closure items are supplied. Until then, null release_tag/release_sha prevents a false final-release claim; current_source_sha identifies the closure baseline before this identity patch."
+}

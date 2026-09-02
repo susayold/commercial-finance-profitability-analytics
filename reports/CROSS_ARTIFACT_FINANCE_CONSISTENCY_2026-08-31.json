@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "generated_at": "2026-09-02T12:18:42.350Z",
+  "generated_at": "2026-09-02T17:34:56.667Z",
   "checks": [
     {
       "name": "Website reads canonical recruiter snapshot",

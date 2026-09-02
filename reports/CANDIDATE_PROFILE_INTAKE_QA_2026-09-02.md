@@ -6,7 +6,7 @@
 
 | Check | Status | Detail |
 |---|---|---|
-| input_file_exists | PASS | C:\Users\sangk\Documents\Codex\2026-08-29\toi\_pbi_scope_extend_20260831\data\governance\candidate_profile_intake.json |
+| input_file_exists | PASS | data/governance/candidate_profile_intake.json |
 | schema_keys_present | PASS | missing=none |
 | status_allowed | PASS | status=INPUT_GATED |
 | do_not_invent_policy | PASS | do_not_invent=true |

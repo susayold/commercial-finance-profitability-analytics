@@ -27,7 +27,10 @@ def git_head() -> str:
 def main() -> None:
     snapshot_path = ROOT / "data" / "governance" / "recruiter_metric_snapshot.json"
     snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+    identity = json.loads((ROOT / "data" / "governance" / "release_identity_nonbi.json").read_text(encoding="utf-8"))
     files = [
+        "data/governance/release_identity_nonbi.json",
+        "reports/GITHUB_PUBLIC_SAFE_SCAN_2026-09-02.md",
         "data/operating_inputs/manifest.json",
         "data/finance_model/final_v1/source_manifest.csv",
         "data/governance/finance_metric_registry.csv",
@@ -65,6 +68,9 @@ def main() -> None:
         "data/governance/recording_handoff.json",
         "scripts/validate_recording_handoff.mjs",
         "reports/RECORDING_HANDOFF_QA_2026-09-02.md",
+        "reports/NON_POWERBI_HANDOFF_INDEX_2026-09-01.md",
+        "reports/BOSS_HANDOFF_PACK_2026-08-31.md",
+        "docs/DEFINITION_OF_DONE_AUDIT.md",
         "scripts/validate_nonbi_scope_boundary.mjs",
         "reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json",
     ]
@@ -83,11 +89,15 @@ def main() -> None:
         "## Release identity",
         "",
         f"- Release date: **{TODAY}**",
+        f"- Release name: **{identity['release_name']}**",
+        f"- Release tag: **{identity['release_tag'] or 'PENDING_INPUT_GATED_CLOSURE'}**",
+        f"- Release status: **{identity['release_status']}**",
         f"- Payload commit at manifest generation: `{git_head()}`",
         f"- Current period: **{snapshot['current_period']}**",
         f"- Operating input: `data/operating_inputs/manifest.json` (seed `{json.loads((ROOT / 'data' / 'operating_inputs' / 'manifest.json').read_text())['seed']}`, 36 months)",
         "- Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.",
         "- Recruiter website: Sites **v26**, source commit `f1d0c6fcc180bcc5a033062b0a49b1d7816202bb`, private production deployment.",
+        "- GitHub policy: **PUBLIC_SAFE_PORTFOLIO_REPOSITORY**; private raw filings remain in Drive.",
         "",
         "## Quality gates",
         "",

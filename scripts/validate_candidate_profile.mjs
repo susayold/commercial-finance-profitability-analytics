@@ -28,7 +28,7 @@ const stringValues = (value) => {
   return [];
 };
 
-add('input_file_exists', fs.existsSync(inputPath), inputPath);
+add('input_file_exists', fs.existsSync(inputPath), 'data/governance/candidate_profile_intake.json');
 add('schema_keys_present', requiredKeys.every((key) => Object.prototype.hasOwnProperty.call(required, key)),
   `missing=${requiredKeys.filter((key) => !Object.prototype.hasOwnProperty.call(required, key)).join('|') || 'none'}`);
 add('status_allowed', ['INPUT_GATED', 'READY_FOR_RENDER'].includes(profile.status), `status=${profile.status}`);

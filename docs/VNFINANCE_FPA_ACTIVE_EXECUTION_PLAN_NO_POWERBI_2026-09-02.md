@@ -7,6 +7,8 @@
 
 > **Scope lock:** Power BI không phải deliverable của dự án này. Không có backlog, acceptance criterion, KPI hay recruiter claim nào phụ thuộc Power BI. Các file Power BI cũ chỉ được giữ ở khu vực archive để traceability và không nằm trong đường dẫn release.
 
+> **Release hygiene:** Release identity is tracked in `data/governance/release_identity_nonbi.json`. The final tag/SHA is intentionally pending until candidate facts and the walkthrough recording are supplied; no final-release claim is fabricated.
+
 ---
 
 ## 1. Mục tiêu cuối cùng

@@ -3,6 +3,8 @@
 **Prepared:** 2 September 2026  
 **Purpose:** one-page navigation index for the complete Finance Analyst / FP&A portfolio case.
 
+**Release identity:** `VNFINANCE-FPA-2026-09-02-FINAL`. The final tag/SHA is intentionally pending candidate personalization and recording; the current pushed closure state is tracked in the release identity contract.
+
 ## 1. Start here
 
 | Review item | Link | What the reviewer sees |

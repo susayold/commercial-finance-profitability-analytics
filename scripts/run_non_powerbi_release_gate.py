@@ -102,6 +102,12 @@ def main() -> int:
     }
     canonical_status = {
         "project": "VietNova Consumer JSC — non-Power-BI FP&A release",
+        "release_name": "VNFINANCE-FPA-2026-09-02-FINAL",
+        "release_tag": None,
+        "release_sha": None,
+        "release_status": "CLOSURE_CANDIDATE_INPUT_GATED",
+        "release_identity": "data/governance/release_identity_nonbi.json",
+        "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
         "generated_on": TODAY,
         "active_scope": ["Excel financial model", "integrated three statements", "standard costing", "three-year operating plan", "forecast versioning/backtest", "management reporting", "editable management pack", "controls", "website", "CV/recruiter package"],
         "core_status": "PASS" if not failures else "FAIL",
@@ -113,6 +119,7 @@ def main() -> int:
         "release_gate": f"reports/NON_POWERBI_RELEASE_GATE_{TODAY}.json",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "release_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
+        "release_commit_role": "gate_input_commit; final tag/SHA remains input-gated",
         "qa_totals": {
             "core": {"passed": sum(item.get("status") == "PASS" for item in (core_run.get("parsed") or {}).get("checks", [])), "total": len((core_run.get("parsed") or {}).get("checks", []))},
             "release_file_gate": {"passed": passed, "total": len(checks)},
@@ -146,7 +153,7 @@ def main() -> int:
         "- MCH ROE uses the approved average-equity denominator across FY2016–FY2025.\n"
         "- Website, MBR, CFO memo and CV values are checked against the exported snapshot.\n"
         f"- Core finance QA is {sum(check['status'] == 'PASS' for check in (core_run.get('parsed') or {}).get('checks', []))}/{len((core_run.get('parsed') or {}).get('checks', []))} PASS; the release file gate is {passed}/{len(checks)} PASS.\n"
-        "- Recruiter website external-link snapshot is 42/42 PASS; private GitHub/Drive access boundaries are documented.\n"
+        "- Recruiter website external-link snapshot is 42/42 PASS; public-safe GitHub and permission-controlled Drive boundaries are documented.\n"
         "- One-page recruiter case summary PDF is rendered, text-extractable and validator-checked.\n"
         "- Correlated Monte Carlo v2, SAP-like mapping and automated commentary are appendix rehearsals with explicit evidence boundaries.\n"
         "- Synthetic customer profitability, Monte Carlo and M&A modules retain explicit evidence boundaries.\n\n"
@@ -161,7 +168,7 @@ def main() -> int:
         "- Added the editable 10-slide management pack and five-minute finance-analyst narration script.\n"
         "- Added Sales_Fact, scenario, public-metric and cross-artifact executable validators.\n"
         "- Added architecture diagram, recruiter start page and line-ending governance.\n"
-        "- Added recruiter-site external-link QA with explicit private GitHub/Drive access-boundary handling.\n"
+        "- Added recruiter-site external-link QA with explicit public-safe GitHub and permission-controlled Drive boundary handling.\n"
         "- Repaired the GL management mapping serialization and added 14/14 mapping-aware statement controls.\n"
         "- Added correlated Monte Carlo v2, SAP-like mapping rehearsal and human-gated commentary draft appendices.\n"
         "- Added a one-page recruiter case summary PDF generated from the canonical metric snapshot.\n"

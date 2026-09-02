@@ -10,7 +10,7 @@
 - MCH ROE uses the approved average-equity denominator across FY2016–FY2025.
 - Website, MBR, CFO memo and CV values are checked against the exported snapshot.
 - Core finance QA is 55/55 PASS; the release file gate is 52/52 PASS.
-- Recruiter website external-link snapshot is 42/42 PASS; private GitHub/Drive access boundaries are documented.
+- Recruiter website external-link snapshot is 42/42 PASS; public-safe GitHub and permission-controlled Drive boundaries are documented.
 - One-page recruiter case summary PDF is rendered, text-extractable and validator-checked.
 - Correlated Monte Carlo v2, SAP-like mapping and automated commentary are appendix rehearsals with explicit evidence boundaries.
 - Synthetic customer profitability, Monte Carlo and M&A modules retain explicit evidence boundaries.
