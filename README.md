@@ -16,6 +16,7 @@ End-to-end Vietnam FMCG Corporate Financial Analyst / FP&A / Commercial Finance 
 The active release is **non-Power-BI FP&A**. Power BI files and instructions remain archived for historical traceability only and are not part of the current acceptance path. The current source of truth is the [non-Power-BI handoff index](reports/NON_POWERBI_HANDOFF_INDEX_2026-09-01.md).
 
 - [FP&A non-BI gap research & update master plan — 2026-09-01](docs/VNFINANCE_FPA_NON_POWERBI_GAP_RESEARCH_AND_UPDATE_MASTER_PLAN_2026-09-01.md) — current market-fit audit, P0/P1/P2 backlog, three-statement/GL/costing upgrades and recruiter release criteria; BI work is intentionally excluded.
+- [Active execution plan — No Power BI — 2026-09-02](docs/VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md) — the only plan to use for new work; covers FP&A model, planning, forecasting, profitability, cash, controls, management pack, CV and handoff.
 - Production site: [Sites v26 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
 - Latest GitHub main: https://github.com/susayold/commercial-finance-profitability-analytics/tree/main
 - [Boss handoff pack](reports/BOSS_HANDOFF_PACK_2026-08-31.md) — one-click review order, remote export manifest and evidence boundaries
