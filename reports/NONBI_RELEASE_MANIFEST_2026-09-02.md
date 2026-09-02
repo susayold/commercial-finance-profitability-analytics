@@ -5,7 +5,7 @@
 ## Release identity
 
 - Release date: **2026-09-02**
-- Payload commit at manifest generation: `4d900f3694acc628eb10b449f4b7e84d667dffc8`
+- Payload commit at manifest generation: `00978e34458ae6447f893c0787184e218a80c747`
 - Current period: **FY2025**
 - Operating input: `data/operating_inputs/manifest.json` (seed `20260829`, 36 months)
 - Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.
@@ -77,7 +77,7 @@
 | `scripts/validate_cv_v3_pdf.py` | 1,555 | `4012B397B92399F71AB9419D7A0042B1F57AA6A9A752F6B0C6385A023600F0C6` |
 | `reports/FINANCE_ANALYST_CV_V3_PDF_QA.md` | 963 | `13F40E398024D6CCCD998F7D4301A8EF992E001137FA95096E4EE579508EDD1F` |
 | `scripts/validate_nonbi_scope_boundary.mjs` | 5,023 | `1842E00CD52FFEF5F9B3368A79AFA6A2A34B42D4C95F1080760080A6C22A84DA` |
-| `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | 3,613 | `234BF38AEDF6A9327B36EEB29720CF45ECE3C2C5A2E3AD7E9468D00C8CBC6830` |
+| `reports/NONBI_SCOPE_BOUNDARY_QA_2026-09-02.json` | 3,613 | `3F65387B3D892872DB09AC313034C3B2DBD667AD601457A7C40E1071E5702336` |
 
 ## Reproduction
 
