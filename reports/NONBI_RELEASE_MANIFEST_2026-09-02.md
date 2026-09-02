@@ -5,7 +5,7 @@
 ## Release identity
 
 - Release date: **2026-09-02**
-- Payload commit at manifest generation: `80ba7f3c83ac8d7c619c9e7bf8947e1aaa6d693e`
+- Payload commit at manifest generation: `da878e9b24b5ee9223412e69679910fa9008b728`
 - Current period: **FY2025**
 - Operating input: `data/operating_inputs/manifest.json` (seed `20260829`, 36 months)
 - Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.
