@@ -17,7 +17,7 @@ The active release is **non-Power-BI FP&A**. Power BI files and instructions rem
 
 **Release identity:** `VNFINANCE-FPA-2026-09-02-FINAL` · tag pending input-gated closure items · current pushed closure state is recorded in [release_identity_nonbi.json](data/governance/release_identity_nonbi.json). GitHub policy is `PUBLIC_SAFE_PORTFOLIO_REPOSITORY`; the repository contains synthetic/public-safe evidence only.
 
-Release identity QA: `node scripts/validate_release_identity_nonbi.mjs` → **10/10 PASS** ([report](reports/RELEASE_IDENTITY_NONBI_QA_2026-09-03.json)).
+Release identity QA: `node scripts/validate_release_identity_nonbi.mjs` → **13/13 PASS** ([report](reports/RELEASE_IDENTITY_NONBI_QA_2026-09-03.json)).
 
 - [FP&A non-BI gap research & update master plan — 2026-09-01](docs/VNFINANCE_FPA_NON_POWERBI_GAP_RESEARCH_AND_UPDATE_MASTER_PLAN_2026-09-01.md) — current market-fit audit, P0/P1/P2 backlog, three-statement/GL/costing upgrades and recruiter release criteria; BI work is intentionally excluded.
 - [Active execution plan — No Power BI — 2026-09-02](docs/VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md) — the only plan to use for new work; covers FP&A model, planning, forecasting, profitability, cash, controls, management pack, CV and handoff.
@@ -25,6 +25,7 @@ Release identity QA: `node scripts/validate_release_identity_nonbi.mjs` → **10
 - [Walkthrough recording handoff](data/governance/recording_handoff.json) · [10/10 QA](reports/RECORDING_HANDOFF_QA_2026-09-02.md) — recording URL/hash/reviewer remain blank until the 5-minute finance walkthrough is actually recorded.
 - Production site: [Sites v26 recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/#contact)
 - CV-friendly GitHub Pages entrypoint: [susayold.github.io/commercial-finance-profitability-analytics](https://susayold.github.io/commercial-finance-profitability-analytics/) (live static portfolio build)
+- New single-page FP&A dashboard: [GitHub Pages Dashboard](https://susayold.github.io/commercial-finance-profitability-analytics/dashboard/)
 - Latest GitHub main: https://github.com/susayold/commercial-finance-profitability-analytics/tree/main
 - [Boss handoff pack](reports/BOSS_HANDOFF_PACK_2026-08-31.md) — one-click review order, remote export manifest and evidence boundaries
 - Detailed build and handoff process: [Portfolio Process Log](reports/PORTFOLIO_PROCESS_LOG_2026-08-31.md)

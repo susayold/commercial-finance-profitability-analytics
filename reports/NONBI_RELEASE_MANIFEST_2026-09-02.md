@@ -8,11 +8,11 @@
 - Release name: **VNFINANCE-FPA-2026-09-02-FINAL**
 - Release tag: **PENDING_INPUT_GATED_CLOSURE**
 - Release status: **CLOSURE_CANDIDATE_INPUT_GATED**
-- Payload commit at manifest generation: `1a4a6c7af0783197ed272b68e54f8a8c3a1c5b6c`
+- Payload commit at manifest generation: `599132e6157e95c3fd976ba1faac01e28cd7eb70`
 - Current period: **FY2025**
 - Operating input: `data/operating_inputs/manifest.json` (seed `20260829`, 36 months)
 - Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.
-- Recruiter website: Sites **v26**, source commit `f1d0c6fcc180bcc5a033062b0a49b1d7816202bb`, private production deployment.
+- Recruiter website: Sites **v27**, source commit `e7a8472e0fd35305c68421ef4f66b3e9f0f1a3f6`, private production deployment.
 - GitHub policy: **PUBLIC_SAFE_PORTFOLIO_REPOSITORY**; private raw filings remain in Drive.
 - GitHub Pages: **https://susayold.github.io/commercial-finance-profitability-analytics/** via `main:/docs` (static_vite_build_from_site_component).
 
@@ -69,7 +69,7 @@
 | `site/app/globals.css` | 48,603 | `87C2090A4110B239D13533C30D5A8F944450A974FFCD5CBFC8C34C01397DA1A4` |
 | `site/data/dashboard_snapshot.json` | 18,083 | `547338A913474736B588225FE05E47565EDD470B009D8031A09BC6CD6C1D3F70` |
 | `scripts/build_dashboard_snapshot.py` | 6,442 | `FC58E5DBF07284AE9A636CC9D029EED4BE064928117955E18427F22C28695F4D` |
-| `data/governance/release_identity_nonbi.json` | 1,438 | `3F5DB797317F4048DFD93074CAEDBD2D25FAA013872A73915FBF9354671B51BC` |
+| `data/governance/release_identity_nonbi.json` | 1,435 | `7D983B23CB37140D7465E7707CD36AF4A7E7E0A3B8543D551822E3BEF5942BB0` |
 | `reports/GITHUB_PUBLIC_SAFE_SCAN_2026-09-02.md` | 3,007 | `D59014E0C7146F65DE673E5D84C5F3E9D3E22BE7387003562480AA20ADB5C034` |
 | `scripts/validate_release_identity_nonbi.mjs` | 4,535 | `A30CEC5007FA93BF47CF2192705D469396DB7498CF2121C3FADF1441F42531C9` |
 | `reports/RELEASE_IDENTITY_NONBI_QA_2026-09-03.json` | 2,583 | `5908827B19BA8706A796DD967D1741086E0C97CE3418E209D30CE5C1F2B74B67` |

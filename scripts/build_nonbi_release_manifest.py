@@ -115,7 +115,7 @@ def main() -> None:
         f"- Current period: **{snapshot['current_period']}**",
         f"- Operating input: `data/operating_inputs/manifest.json` (seed `{json.loads((ROOT / 'data' / 'operating_inputs' / 'manifest.json').read_text())['seed']}`, 36 months)",
         "- Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.",
-        "- Recruiter website: Sites **v26**, source commit `f1d0c6fcc180bcc5a033062b0a49b1d7816202bb`, private production deployment.",
+        "- Recruiter website: Sites **v27**, source commit `e7a8472e0fd35305c68421ef4f66b3e9f0f1a3f6`, private production deployment.",
         "- GitHub policy: **PUBLIC_SAFE_PORTFOLIO_REPOSITORY**; private raw filings remain in Drive.",
         f"- GitHub Pages: **{identity['github_pages_url']}** via `{identity['github_pages_source']['branch']}:{identity['github_pages_source']['path']}` ({identity['github_pages_mode']}).",
         "",
