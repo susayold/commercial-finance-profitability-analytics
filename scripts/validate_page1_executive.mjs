@@ -1,0 +1,43 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const snapshot = JSON.parse(fs.readFileSync(path.join(root, 'site/data/recruiter_metric_snapshot.json'), 'utf8'));
+const page = fs.readFileSync(path.join(root, 'site/app/executive-page1.tsx'), 'utf8');
+const adapter = fs.readFileSync(path.join(root, 'site/lib/page1-data.ts'), 'utf8');
+const sourceText = `${page}\n${adapter}`;
+const source = snapshot.scenarios;
+const v = (s, key) => source[s][key].value;
+const approx = (a, b, eps = 1e-6) => Math.abs(a - b) <= eps;
+const checks = [];
+const check = (label, ok) => checks.push({ label, ok: Boolean(ok) });
+check('Base revenue exact', approx(v('BASE', 'REV_NET'), 82.5138));
+check('Base gross profit exact', approx(v('BASE', 'GROSS_PROFIT'), 26.9150));
+check('Base EBITDA proxy exact', approx(v('BASE', 'EBITDA_PROXY'), 12.8956));
+check('Base EBITDA proxy margin exact', approx(v('BASE', 'EBITDA_PROXY_MARGIN'), 15.6284));
+check('Base contribution exact', approx(v('BASE', 'CONTRIBUTION'), 24.2074));
+check('Base CCC exact', approx(v('BASE', 'CCC'), 54));
+check('Upside scenario exact', approx(v('UPSIDE', 'REV_NET'), 85.7182) && approx(v('UPSIDE', 'EBITDA_PROXY'), 17.4496));
+check('Downside scenario exact', approx(v('DOWNSIDE', 'REV_NET'), 76.9061) && approx(v('DOWNSIDE', 'EBITDA_PROXY'), 3.4933));
+check('Gross margin derived', approx(v('BASE', 'GROSS_PROFIT') / v('BASE', 'REV_NET') * 100, 32.6188, 1e-4));
+check('Contribution margin derived', approx(v('BASE', 'CONTRIBUTION') / v('BASE', 'REV_NET') * 100, 29.3375, 1e-3));
+check('Upside revenue delta', sourceText.includes('upsideRevenueDelta'));
+check('Downside revenue delta', sourceText.includes('downsideRevenueDelta'));
+check('Upside EBITDA delta', sourceText.includes('upsideEbitdaDelta'));
+check('Downside EBITDA delta', sourceText.includes('downsideEbitdaDelta'));
+check('Stale Best CM absent', !sourceText.includes('Best CM'));
+check('Stale 80.1 absent', !sourceText.includes('80.1'));
+check('Stale 58.5 absent', !sourceText.includes('58.5'));
+check('Unsupported YoY absent', !/\bYoY\b|year.over.year/i.test(sourceText));
+check('Non-statutory EBITDA wording', sourceText.includes('Not statutory EBITDA'));
+check('Gate A wording', sourceText.includes('Gate A') && sourceText.includes('PENDING_EXTERNAL_INPUT'));
+check('REC-01 register', sourceText.includes('REC-01') && sourceText.includes('Reallocate promotion budget'));
+check('REC-02 register', sourceText.includes('REC-02') && sourceText.includes('Stop negative promotions'));
+check('REC-04 register', sourceText.includes('REC-04') && sourceText.includes('Collect overdue accounts'));
+check('REC-05 register', sourceText.includes('REC-05') && sourceText.includes('Reduce slow-SKU inventory'));
+check('Power BI active refs absent', !/power\s*bi|\.pbix/i.test(sourceText));
+
+const failed = checks.filter((item) => !item.ok);
+console.log(`PAGE_1_EXECUTIVE_QA = ${failed.length ? 'FAIL' : 'PASS'} (${checks.length - failed.length}/${checks.length})`);
+if (failed.length) { failed.forEach((item) => console.error(`- ${item.label}`)); process.exit(1); }

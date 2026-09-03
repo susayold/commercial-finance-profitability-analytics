@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Activity, ArrowDownRight, ArrowUpRight, BarChart3, CheckCircle2, CircleDollarSign, Clock3, Database, ExternalLink, FileCheck2, Gauge, GitBranch, Layers3, ShieldCheck, Target, Users, WalletCards, XCircle } from 'lucide-react';
 import recruiterSnapshot from '../data/recruiter_metric_snapshot.json';
 import dashboardSnapshot from '../data/dashboard_snapshot.json';
+import ExecutivePageOne from './executive-page1';
 
 const githubRepo = 'https://github.com/susayold/commercial-finance-profitability-analytics';
 const driveModel = 'https://docs.google.com/spreadsheets/d/1-DAMs7zqQr8a6Otimm3WgkAIsX3kazpm/edit';
@@ -20,7 +21,7 @@ type PageId = 'executive' | 'performance' | 'commercial' | 'customers' | 'cash' 
 type ScenarioName = 'Base' | 'Upside' | 'Downside';
 type IconType = typeof BarChart3;
 const pages: Array<{ id: PageId; label: string }> = [
-  { id: 'executive', label: 'Executive Report' }, { id: 'performance', label: 'Performance' }, { id: 'commercial', label: 'Commercial' },
+  { id: 'executive', label: 'Executive' }, { id: 'performance', label: 'Performance' }, { id: 'commercial', label: 'Commercial' },
   { id: 'customers', label: 'Customers' }, { id: 'cash', label: 'Cash & WC' }, { id: 'forecast', label: 'Forecast' }, { id: 'evidence', label: 'Evidence' },
 ];
 const fmt = (value: number, digits = 1) => Number(value).toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits });
@@ -87,5 +88,5 @@ export default function ReportPage() {
   const [activePage, setActivePage] = useState<PageId>(initial); const [scenarioName, setScenarioName] = useState<ScenarioName>('Base'); const [trendIndex, setTrendIndex] = useState(monthly.length - 1); const [cashIndex, setCashIndex] = useState(monthly.length - 1); const [selectedChannel, setSelectedChannel] = useState(dashboardSnapshot.channels[0].channel); const [selectedCustomerId, setSelectedCustomerId] = useState('C06');
   useEffect(() => { const onHash = () => { const hash = window.location.hash.replace('#', '') as PageId; if (pages.some((page) => page.id === hash)) setActivePage(hash); }; window.addEventListener('hashchange', onHash); return () => window.removeEventListener('hashchange', onHash); }, []);
   const setPage = (page: PageId) => { setActivePage(page); if (typeof window !== 'undefined' && window.location.hash !== `#${page}`) window.history.pushState({}, '', `#${page}`); window.scrollTo({ top: 0, behavior: 'smooth' }); };
-  return <div className="report-shell"><ReportNav active={activePage} onChange={setPage} />{activePage === 'executive' && <ExecutivePage scenarioName={scenarioName} setScenarioName={setScenarioName} trendIndex={trendIndex} setTrendIndex={setTrendIndex} />}{activePage === 'performance' && <PerformancePage trendIndex={trendIndex} setTrendIndex={setTrendIndex} />}{activePage === 'commercial' && <CommercialPage selectedChannel={selectedChannel} setSelectedChannel={setSelectedChannel} />}{activePage === 'customers' && <CustomersPage selectedCustomerId={selectedCustomerId} setSelectedCustomerId={setSelectedCustomerId} />}{activePage === 'cash' && <CashPage cashIndex={cashIndex} setCashIndex={setCashIndex} />}{activePage === 'forecast' && <ForecastPage />}{activePage === 'evidence' && <EvidencePage />}<footer className="report-footer"><span>VN/FINANCE · Commercial Finance &amp; FP&amp;A</span><span>VietNova Consumer JSC · FY2025 · recruiter review release</span><span>Source: governed project data · all values labelled</span></footer></div>;
+  return <div className="report-shell"><ReportNav active={activePage} onChange={setPage} />{activePage === 'executive' && <ExecutivePageOne />}{activePage === 'performance' && <PerformancePage trendIndex={trendIndex} setTrendIndex={setTrendIndex} />}{activePage === 'commercial' && <CommercialPage selectedChannel={selectedChannel} setSelectedChannel={setSelectedChannel} />}{activePage === 'customers' && <CustomersPage selectedCustomerId={selectedCustomerId} setSelectedCustomerId={setSelectedCustomerId} />}{activePage === 'cash' && <CashPage cashIndex={cashIndex} setCashIndex={setCashIndex} />}{activePage === 'forecast' && <ForecastPage />}{activePage === 'evidence' && <EvidencePage />}<footer className="report-footer"><span>VN/FINANCE · Commercial Finance &amp; FP&amp;A</span><span>VietNova Consumer JSC · FY2025 · recruiter review release</span><span>Source: governed project data · all values labelled</span></footer></div>;
 }
