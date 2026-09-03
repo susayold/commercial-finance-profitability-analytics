@@ -219,6 +219,22 @@ h2 { margin-top: 17px; color: var(--navy); font-size: clamp(33px, 4vw, 52px); li
   .valuation-panel { grid-template-columns: 1fr; }
 }
 
+/* Dashboard interactions: scoped to the new /dashboard page only. */
+.dash-chart-mark { cursor: crosshair; outline: none; transition: opacity .16s ease, filter .16s ease; }
+.dash-chart-mark:hover, .dash-chart-mark:focus, .dash-chart-mark.selected { filter: drop-shadow(0 2px 5px rgba(17,104,61,.3)); }
+.dash-chart-mark:focus-visible { outline: 2px solid #c7a247; outline-offset: 3px; }
+.dash-chart-selection { color: #11683d; font-weight: 800; }
+.dash-dark-card .dash-chart-selection { color: #b8e4c3; }
+.dash-channel-row { width: 100%; border: 0; text-align: left; cursor: pointer; padding: 10px 8px; background: transparent; border-radius: 10px; font: inherit; transition: background .16s ease, transform .16s ease; }
+.dash-channel-row:hover, .dash-channel-row.selected { background: #f1f8f2; transform: translateX(2px); }
+.dash-channel-row.selected .dash-row-label strong { color: #11683d; }
+.dash-channel-detail { margin-top: 15px; padding: 12px 14px; border: 1px solid #cfe1d2; border-radius: 10px; background: #f6fbf6; }
+.dash-channel-detail span { display: block; color: #7c8e82; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; }
+.dash-channel-detail strong { display: block; margin-top: 4px; color: #113c2a; font-size: 16px; }
+.dash-channel-detail b { display: block; margin-top: 4px; color: #11683d; font-size: 11px; }
+.dash-point { cursor: pointer; padding: 0; font: inherit; transition: transform .16s ease, box-shadow .16s ease; }
+.dash-point:hover, .dash-point:focus-visible, .dash-point.active { z-index: 3; border-color: #11683d; box-shadow: 0 0 0 4px rgba(17,104,61,.16), 0 2px 7px rgba(32,92,50,.2); transform: scale(1.12); outline: none; }
+
 /* Dashboard page: a separate finance cockpit surface. Existing portfolio sections above are unchanged. */
 .dash-shell { --dash-ink: #11251d; --dash-green: #0b6b3a; --dash-deep: #002b1d; --dash-line: #dfe8e2; --dash-soft: #f4f8f4; color: var(--dash-ink); background: #eef3ef; min-height: 100vh; overflow: hidden; }
 .dash-shell * { box-sizing: border-box; }
