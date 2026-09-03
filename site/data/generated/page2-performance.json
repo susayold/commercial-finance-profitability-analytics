@@ -1,0 +1,828 @@
+{
+  "period": "FY2025",
+  "currency": "VND bn",
+  "evidence": "SIMULATED / DERIVED / PROXY_DERIVED",
+  "canonical": {
+    "revenue": 82.5138,
+    "grossProfit": 26.915,
+    "cogs": 55.5988,
+    "opex": 14.0193,
+    "ebitdaProxy": 12.8956,
+    "contribution": 24.2074
+  },
+  "totals": {
+    "actualRevenue": 80.110481,
+    "actualGrossProfit": 26.650054,
+    "actualContribution": 18.056517,
+    "budgetRevenue": 84.601069,
+    "forecastRevenue": 82.513795,
+    "priorRevenue": 71.14989,
+    "opexActual": 14.515514,
+    "opexBudget": 14.950979
+  },
+  "monthly": [
+    {
+      "month": "2025-01",
+      "label": "Jan",
+      "actual": {
+        "revenue": 6.038228,
+        "cogs": 3.996096,
+        "grossProfit": 2.042132,
+        "grossMargin": 33.820060597910526,
+        "contribution": 1.428847,
+        "contributionMargin": 23.663352435019025,
+        "opex": 1.091114,
+        "ebitdaProxy": 0.951018,
+        "headcount": 80
+      },
+      "budget": {
+        "revenue": 6.340139,
+        "cogs": 4.1959,
+        "grossProfit": 2.144239
+      },
+      "forecast": {
+        "revenue": 6.219375,
+        "cogs": 4.155939,
+        "grossProfit": 2.063435
+      },
+      "priorYear": {
+        "revenue": 5.327329,
+        "cogs": 3.485752,
+        "grossProfit": 1.841577,
+        "grossMargin": 34.56848153061318
+      }
+    },
+    {
+      "month": "2025-02",
+      "label": "Feb",
+      "actual": {
+        "revenue": 6.011516,
+        "cogs": 3.957085,
+        "grossProfit": 2.054431,
+        "grossMargin": 34.174927455902974,
+        "contribution": 1.446387,
+        "contributionMargin": 24.06027843958163,
+        "opex": 1.098672,
+        "ebitdaProxy": 0.955759,
+        "headcount": 85
+      },
+      "budget": {
+        "revenue": 6.312092,
+        "cogs": 4.154939,
+        "grossProfit": 2.157153
+      },
+      "forecast": {
+        "revenue": 6.191861,
+        "cogs": 4.115368,
+        "grossProfit": 2.076493
+      },
+      "priorYear": {
+        "revenue": 5.224297,
+        "cogs": 3.455716,
+        "grossProfit": 1.768581,
+        "grossMargin": 33.85298561184407
+      }
+    },
+    {
+      "month": "2025-03",
+      "label": "Mar",
+      "actual": {
+        "revenue": 6.16544,
+        "cogs": 4.161264,
+        "grossProfit": 2.004176,
+        "grossMargin": 32.506611922101285,
+        "contribution": 1.366256,
+        "contributionMargin": 22.15991829180075,
+        "opex": 1.129641,
+        "ebitdaProxy": 0.874535,
+        "headcount": 90
+      },
+      "budget": {
+        "revenue": 6.473712,
+        "cogs": 4.369328,
+        "grossProfit": 2.104384
+      },
+      "forecast": {
+        "revenue": 6.350403,
+        "cogs": 4.327715,
+        "grossProfit": 2.022688
+      },
+      "priorYear": {
+        "revenue": 5.562546,
+        "cogs": 3.638148,
+        "grossProfit": 1.924398,
+        "grossMargin": 34.59563120376892
+      }
+    },
+    {
+      "month": "2025-04",
+      "label": "Apr",
+      "actual": {
+        "revenue": 6.362186,
+        "cogs": 4.245231,
+        "grossProfit": 2.116955,
+        "grossMargin": 33.274017423571095,
+        "contribution": 1.426739,
+        "contributionMargin": 22.425299693061472,
+        "opex": 1.171996,
+        "ebitdaProxy": 0.944959,
+        "headcount": 95
+      },
+      "budget": {
+        "revenue": 6.680295,
+        "cogs": 4.457493,
+        "grossProfit": 2.222803
+      },
+      "forecast": {
+        "revenue": 6.553052,
+        "cogs": 4.41504,
+        "grossProfit": 2.138011
+      },
+      "priorYear": {
+        "revenue": 5.672256,
+        "cogs": 3.715688,
+        "grossProfit": 1.956568,
+        "grossMargin": 34.49365083099212
+      }
+    },
+    {
+      "month": "2025-05",
+      "label": "May",
+      "actual": {
+        "revenue": 6.338336,
+        "cogs": 4.205215,
+        "grossProfit": 2.133121,
+        "grossMargin": 33.65426738468899,
+        "contribution": 1.486412,
+        "contributionMargin": 23.45114028539983,
+        "opex": 1.1409,
+        "ebitdaProxy": 0.99222,
+        "headcount": 82.5
+      },
+      "budget": {
+        "revenue": 6.655253,
+        "cogs": 4.415476,
+        "grossProfit": 2.239777
+      },
+      "forecast": {
+        "revenue": 6.528486,
+        "cogs": 4.373424,
+        "grossProfit": 2.155062
+      },
+      "priorYear": {
+        "revenue": 5.591166,
+        "cogs": 3.684679,
+        "grossProfit": 1.906487,
+        "grossMargin": 34.09819326040399
+      }
+    },
+    {
+      "month": "2025-06",
+      "label": "Jun",
+      "actual": {
+        "revenue": 6.307808,
+        "cogs": 4.205659,
+        "grossProfit": 2.102149,
+        "grossMargin": 33.32614020972101,
+        "contribution": 1.455369,
+        "contributionMargin": 23.07249491043482,
+        "opex": 1.137072,
+        "ebitdaProxy": 0.965077,
+        "headcount": 85
+      },
+      "budget": {
+        "revenue": 6.623198,
+        "cogs": 4.415942,
+        "grossProfit": 2.207256
+      },
+      "forecast": {
+        "revenue": 6.497042,
+        "cogs": 4.373885,
+        "grossProfit": 2.123157
+      },
+      "priorYear": {
+        "revenue": 5.591166,
+        "cogs": 3.689012,
+        "grossProfit": 1.902154,
+        "grossMargin": 34.02069508649894
+      }
+    },
+    {
+      "month": "2025-07",
+      "label": "Jul",
+      "actual": {
+        "revenue": 6.307808,
+        "cogs": 4.205344,
+        "grossProfit": 2.102464,
+        "grossMargin": 33.33114124970194,
+        "contribution": 1.45535,
+        "contributionMargin": 23.0721975248771,
+        "opex": 1.148092,
+        "ebitdaProxy": 0.954372,
+        "headcount": 90
+      },
+      "budget": {
+        "revenue": 6.623198,
+        "cogs": 4.415611,
+        "grossProfit": 2.207588
+      },
+      "forecast": {
+        "revenue": 6.497042,
+        "cogs": 4.373557,
+        "grossProfit": 2.123485
+      },
+      "priorYear": {
+        "revenue": 5.612533,
+        "cogs": 3.709897,
+        "grossProfit": 1.902636,
+        "grossMargin": 33.89978020423223
+      }
+    },
+    {
+      "month": "2025-08",
+      "label": "Aug",
+      "actual": {
+        "revenue": 6.543102,
+        "cogs": 4.332969,
+        "grossProfit": 2.210133,
+        "grossMargin": 33.77806697175131,
+        "contribution": 1.542466,
+        "contributionMargin": 23.57392712187582,
+        "opex": 1.191535,
+        "ebitdaProxy": 1.018598,
+        "headcount": 95
+      },
+      "budget": {
+        "revenue": 6.870257,
+        "cogs": 4.549617,
+        "grossProfit": 2.32064
+      },
+      "forecast": {
+        "revenue": 6.739395,
+        "cogs": 4.506287,
+        "grossProfit": 2.233108
+      },
+      "priorYear": {
+        "revenue": 5.84238,
+        "cogs": 3.826502,
+        "grossProfit": 2.015878,
+        "grossMargin": 34.50439152109242
+      }
+    },
+    {
+      "month": "2025-09",
+      "label": "Sep",
+      "actual": {
+        "revenue": 6.736726,
+        "cogs": 4.505693,
+        "grossProfit": 2.231033,
+        "grossMargin": 33.11746207831521,
+        "contribution": 1.537154,
+        "contributionMargin": 22.817530268412295,
+        "opex": 1.212611,
+        "ebitdaProxy": 1.018422,
+        "headcount": 80
+      },
+      "budget": {
+        "revenue": 7.073562,
+        "cogs": 4.730978,
+        "grossProfit": 2.342584
+      },
+      "forecast": {
+        "revenue": 6.938828,
+        "cogs": 4.685921,
+        "grossProfit": 2.252907
+      },
+      "priorYear": {
+        "revenue": 5.978772,
+        "cogs": 3.983143,
+        "grossProfit": 1.995629,
+        "grossMargin": 33.378574099162826
+      }
+    },
+    {
+      "month": "2025-10",
+      "label": "Oct",
+      "actual": {
+        "revenue": 7.130529,
+        "cogs": 4.724795,
+        "grossProfit": 2.405734,
+        "grossMargin": 33.73850545899187,
+        "contribution": 1.676899,
+        "contributionMargin": 23.517170298585143,
+        "opex": 1.283495,
+        "ebitdaProxy": 1.122239,
+        "headcount": 82.5
+      },
+      "budget": {
+        "revenue": 7.487055,
+        "cogs": 4.961035,
+        "grossProfit": 2.526021
+      },
+      "forecast": {
+        "revenue": 7.344445,
+        "cogs": 4.913787,
+        "grossProfit": 2.430658
+      },
+      "priorYear": {
+        "revenue": 6.338336,
+        "cogs": 4.181067,
+        "grossProfit": 2.157269,
+        "grossMargin": 34.03526559683802
+      }
+    },
+    {
+      "month": "2025-11",
+      "label": "Nov",
+      "actual": {
+        "revenue": 7.651337,
+        "cogs": 5.212422,
+        "grossProfit": 2.438915,
+        "grossMargin": 31.87567580685573,
+        "contribution": 1.306268,
+        "contributionMargin": 17.072415555085342,
+        "opex": 1.377241,
+        "ebitdaProxy": 1.061675,
+        "headcount": 90
+      },
+      "budget": {
+        "revenue": 8.263444,
+        "cogs": 5.629415,
+        "grossProfit": 2.634029
+      },
+      "forecast": {
+        "revenue": 7.880877,
+        "cogs": 5.420918,
+        "grossProfit": 2.459959
+      },
+      "priorYear": {
+        "revenue": 6.751318,
+        "cogs": 4.617167,
+        "grossProfit": 2.134151,
+        "grossMargin": 31.610872886153512
+      }
+    },
+    {
+      "month": "2025-12",
+      "label": "Dec",
+      "actual": {
+        "revenue": 8.517465,
+        "cogs": 5.708654,
+        "grossProfit": 2.808811,
+        "grossMargin": 32.977075920124115,
+        "contribution": 1.928369,
+        "contributionMargin": 22.640174970017483,
+        "opex": 1.533144,
+        "ebitdaProxy": 1.275667,
+        "headcount": 97.5
+      },
+      "budget": {
+        "revenue": 9.198862,
+        "cogs": 6.165346,
+        "grossProfit": 3.033516
+      },
+      "forecast": {
+        "revenue": 8.772989,
+        "cogs": 5.937,
+        "grossProfit": 2.835989
+      },
+      "priorYear": {
+        "revenue": 7.657791,
+        "cogs": 5.061674,
+        "grossProfit": 2.596117,
+        "grossMargin": 33.90163994499195
+      }
+    }
+  ],
+  "pvm": [
+    {
+      "month": "2025-01",
+      "baseRevenue": 7.657791,
+      "currentRevenue": 6.038228,
+      "delta": -1.619563,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": -1.619563
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-02",
+      "baseRevenue": 6.038228,
+      "currentRevenue": 6.011516,
+      "delta": -0.026712,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": -0.026712
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-03",
+      "baseRevenue": 6.011516,
+      "currentRevenue": 6.16544,
+      "delta": 0.153924,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": 0.153924
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-04",
+      "baseRevenue": 6.16544,
+      "currentRevenue": 6.362186,
+      "delta": 0.196746,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": 0.196746
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-05",
+      "baseRevenue": 6.362186,
+      "currentRevenue": 6.338336,
+      "delta": -0.02385,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": -0.02385
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-06",
+      "baseRevenue": 6.338336,
+      "currentRevenue": 6.307808,
+      "delta": -0.030528,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": -0.030528
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-07",
+      "baseRevenue": 6.307808,
+      "currentRevenue": 6.307808,
+      "delta": 0,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": 0
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-08",
+      "baseRevenue": 6.307808,
+      "currentRevenue": 6.543102,
+      "delta": 0.235294,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": 0.235294
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-09",
+      "baseRevenue": 6.543102,
+      "currentRevenue": 6.736726,
+      "delta": 0.193624,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": 0.193624
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-10",
+      "baseRevenue": 6.736726,
+      "currentRevenue": 7.130529,
+      "delta": 0.393803,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0
+        },
+        {
+          "component": "VOLUME",
+          "amount": 0.393803
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-11",
+      "baseRevenue": 7.130529,
+      "currentRevenue": 7.651337,
+      "delta": 0.520808,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": -0.22578
+        },
+        {
+          "component": "VOLUME",
+          "amount": 0.770948
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": -0.02436
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "month": "2025-12",
+      "baseRevenue": 7.651337,
+      "currentRevenue": 8.517465,
+      "delta": 0.866128,
+      "components": [
+        {
+          "component": "PRICE",
+          "amount": 0.25014
+        },
+        {
+          "component": "VOLUME",
+          "amount": 0.596488
+        },
+        {
+          "component": "MIX_RESIDUAL",
+          "amount": 0.0195
+        },
+        {
+          "component": "NEW_DISCONTINUED",
+          "amount": 0
+        },
+        {
+          "component": "GTN_LEAKAGE",
+          "amount": 0
+        }
+      ]
+    }
+  ],
+  "opexByFunction": [
+    {
+      "name": "Operations",
+      "actual": 4.125429,
+      "headcount": 354.5
+    },
+    {
+      "name": "Sales",
+      "actual": 4.037568,
+      "headcount": 258.5
+    },
+    {
+      "name": "Marketing",
+      "actual": 2.883977,
+      "headcount": 186.5
+    },
+    {
+      "name": "Technology",
+      "actual": 1.738152,
+      "headcount": 138.5
+    },
+    {
+      "name": "Finance",
+      "actual": 1.730386,
+      "headcount": 114.5
+    }
+  ],
+  "opexByCostCenter": [
+    {
+      "name": "CC-OPS",
+      "actual": 4.125429,
+      "headcount": 354.5
+    },
+    {
+      "name": "CC-SALES",
+      "actual": 4.037568,
+      "headcount": 258.5
+    },
+    {
+      "name": "CC-MKT",
+      "actual": 2.883977,
+      "headcount": 186.5
+    },
+    {
+      "name": "CC-IT",
+      "actual": 1.738152,
+      "headcount": 138.5
+    },
+    {
+      "name": "CC-FIN",
+      "actual": 1.730386,
+      "headcount": 114.5
+    }
+  ],
+  "opexByCategory": [
+    {
+      "name": "Salary",
+      "actual": 10.48625
+    },
+    {
+      "name": "Bonus",
+      "actual": 0.142258
+    },
+    {
+      "name": "Benefits",
+      "actual": 1.572938
+    },
+    {
+      "name": "Non-People OPEX",
+      "actual": 2.314069
+    }
+  ],
+  "opexControls": {
+    "detailTotal": 14.515514,
+    "canonicalTotal": 14.0193,
+    "reconciliationDelta": 0.496214,
+    "status": "OPEN"
+  },
+  "sourceRows": {
+    "fact_sales": 720,
+    "fact_budget": 720,
+    "fact_forecast": 720,
+    "fact_pvm_bridge": 3600,
+    "fact_opex_headcount": 60
+  },
+  "sourceFiles": [
+    "fact_sales.csv",
+    "fact_commercial_cost.csv",
+    "fact_budget.csv",
+    "fact_forecast.csv",
+    "fact_pvm_bridge.csv",
+    "fact_opex_headcount.csv"
+  ]
+}
