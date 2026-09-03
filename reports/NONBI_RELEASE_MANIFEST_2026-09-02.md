@@ -8,7 +8,7 @@
 - Release name: **VNFINANCE-FPA-2026-09-02-FINAL**
 - Release tag: **PENDING_INPUT_GATED_CLOSURE**
 - Release status: **CLOSURE_CANDIDATE_INPUT_GATED**
-- Payload commit at manifest generation: `599132e6157e95c3fd976ba1faac01e28cd7eb70`
+- Payload commit at manifest generation: `9db294734c3bb4a6a3d812145a0c5e4e80ef2017`
 - Current period: **FY2025**
 - Operating input: `data/operating_inputs/manifest.json` (seed `20260829`, 36 months)
 - Evidence: operating data is SIMULATED/DERIVED; public-company data is separate OBSERVED/CALCULATED_PUBLIC; valuation/M&A/Monte Carlo are SYNTHETIC_REHEARSAL.
