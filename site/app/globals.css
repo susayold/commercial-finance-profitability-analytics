@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import './forecast-page8.css';
 @import './evidence-page9.css';
+@import './dashboard-page10.css';
 
 :root {
   --ink: #112033;

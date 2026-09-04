@@ -1,0 +1,14 @@
+{
+  "period": "FY2025", "currency": "VND bn", "evidence": "SIMULATED / DERIVED / PROXY_DERIVED",
+  "base": { "revenue": 82.5138, "grossProfit": 26.915, "grossMargin": 32.6188, "ebitdaProxy": 12.8956, "ebitdaMargin": 15.6284, "contribution": 24.2074, "ccc": 54 },
+  "scenarios": [
+    { "name": "Downside", "revenue": 76.9061, "ebitda": 3.4933, "margin": 4.5423, "ccc": 68, "tag": "CONTINGENCY" },
+    { "name": "Base", "revenue": 82.5138, "ebitda": 12.8956, "margin": 15.6284, "ccc": 54, "tag": "OPERATING ANCHOR" },
+    { "name": "Upside", "revenue": 85.7182, "ebitda": 17.4496, "margin": 20.357, "ccc": 48, "tag": "GATED" }
+  ],
+  "commercial": { "cases": 8, "approve": 3, "reject": 5, "negative": 4, "belowHurdle": 1, "hurdle": 25, "portfolioRoi": 30.108, "budget": 4.35, "incrementalContribution": 55 },
+  "cash": { "operatingWc": 13.337, "ar61Plus": 2.158, "slowInventory": 1.773, "waterfall": [{ "label": "AR", "value": 10.789 }, { "label": "Inventory", "value": 8.753 }, { "label": "AP", "value": -6.205 }], "stressFirstNegative": "Oct-2026", "stressDecHeadroom": -0.740, "stressDecRevolver": 2.5 },
+  "costResource": { "costVariance": 249.4, "materialShare": 82, "opexQ4Q1": 26.3, "nonPayrollShare": 75.6, "opexBridge": 496.1, "capexProject": "P-006 Energy Retrofit", "capexStatus": "PENDING / REVIEW", "capexEnvelope": 1.3, "capexPayback": 22 },
+  "plan": [{ "year": "2026", "revenue": 86.9, "ebitda": 14.1, "cash": 9.8 }, { "year": "2027", "revenue": 92.1, "ebitda": 15.7, "cash": 12.6 }, { "year": "2028", "revenue": 97.5, "ebitda": 17.6, "cash": 16.2 }],
+  "controls": [{ "label": "Core QA", "value": "55 / 55", "status": "PASS" }, { "label": "Release Gate", "value": "52 / 52", "status": "PASS" }, { "label": "Scope", "value": "18 / 18", "status": "PASS" }, { "label": "Links", "value": "42 / 42", "status": "HISTORICAL" }, { "label": "Gate A", "value": "OPEN", "status": "OPEN" }, { "label": "Power BI", "value": "OUT OF SCOPE", "status": "OUT" }]
+}
