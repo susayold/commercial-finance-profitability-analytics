@@ -6,26 +6,11 @@ import page8Data from '../data/generated/page8-forecast.json';
 const scenarioRows = page8Data.scenarioRange.map((r) => ({ ...r, tone: r.name === 'Base' ? 'base' : r.name === 'Upside' ? 'up' : 'down' }));
 const fmt = (n: number, d = 1) => n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
 const current = page8Data.currentLanding;
-const sensitivity = [
-  ['Revenue −10%', -9.0], ['Revenue +10%', 6.8], ['Gross Margin −1pp', -4.1], ['Gross Margin +1pp', 4.3],
-  ['OPEX +10%', -3.6], ['OPEX −10%', 3.6], ['DIO +10 days', -0.8], ['DSO +10 days', -0.6], ['DPO +10 days', 0.4],
-];
-const vintages = [
-  ['ACT-2024', 'Actual', '2024', 'Final', 'Historical actuals'], ['BUD-2025', 'Budget', '2025', 'Final', 'Synthetic planning baseline'],
-  ['LE-2025-09', 'Latest Est.', '2025', 'Current', 'Updated Sep-25'], ['FC-2025-01', 'Forecast', '2025', 'Archive', 'Q1 refresh'],
-  ['FC-2025-04', 'Forecast', '2025', 'Archive', 'Q1 refresh'], ['FC-2025-07', 'Forecast', '2025', 'Archive', 'Q2 refresh'],
-  ['FC-2025-10', 'Forecast', '2025', 'Current', 'Q3 refresh'], ['PLAN-3Y', '3Y Plan', '2026–2028', 'Draft', 'Driver-based plan'],
-];
-const accuracy = [['FE-2025-01', '12', '16,065', '15,300', '+5%', '5%'], ['FE-2025-04', '9', '11,907', '12,150', '−2%', '2%'], ['FE-2025-07', '6', '9,405', '8,550', '+10%', '10%']];
-const drivers = [
-  ['Revenue Growth', '6.0%', '10.0%', '−2.0%'], ['Gross Margin Δ (pp/year)', '+0.5pp', '+1.2pp', '−1.0pp'], ['OPEX Growth', '5.0%', '4.5%', '7.0%'],
-  ['DSO (days)', '38', '32', '52'], ['DIO (days)', '45', '38', '60'], ['DPO (days)', '35', '40', '28'], ['Implied CCC (days)', '48', '30', '84'], ['Annual CAPEX (avg)', '2.2bn', '2.5bn', '1.8bn'], ['Headcount Growth', '5.0%', '5.0%', '2.0%'],
-];
-const decisions = [
-  ['Revenue Growth', '> 6.0%', '> 10.0%', '< −2.0%', 'Review pricing, new channels'], ['Gross Margin', '+0.5pp', '+1.2pp', '−1.0pp', 'Optimize sourcing, product mix'],
-  ['OPEX Growth', '5.0%', '4.5%', '7.0%', 'Cost control, prioritize ROI'], ['DSO', '> 43d', '> 37d', '> 47d', 'Accelerate collections'],
-  ['DIO', '> 55d', '> 45d', '> 70d', 'Reduce slow-moving inventory'], ['DPO', '< 30d', '< 35d', '< 25d', 'Negotiate supplier terms'], ['Cash Balance', '> 8.0bn', '> 8.0bn', '< 8.0bn', 'Draw revolver, defer CAPEX'],
-];
+const sensitivity = page8Data.sensitivity.map((r) => [r.label, r.value] as [string, number]);
+const vintages = page8Data.forecastVersions.map((r) => [r.id, r.type, r.period, r.status, r.notes] as [string, string, string, string, string]);
+const accuracy = page8Data.accuracyRehearsal.map((r) => [r.id, String(r.eligible), r.forecast.toLocaleString('en-US'), r.actual.toLocaleString('en-US'), r.bias, `${r.wape}%`] as [string, string, string, string, string, string]);
+const drivers = page8Data.longRangeDrivers.map((r) => [r.metric, r.base, r.upside, r.downside] as [string, string, string, string]);
+const decisions = page8Data.decisionThresholds.map((r) => [r.metric, r.base, r.upside, r.downside, r.action] as [string, string, string, string, string]);
 
 function S({ n, title, aside, children }: { n: number; title: string; aside?: React.ReactNode; children: React.ReactNode }) { return <section className="fc8-section"><div className="fc8-title"><h2><span>{n}</span>{title}</h2>{aside && <em>{aside}</em>}</div>{children}</section>; }
 function K({ icon: Icon, label, value, detail, tone = '' }: { icon: React.ComponentType<{ size?: number }>; label: string; value: string; detail: string; tone?: string }) { return <div className={`fc8-kpi ${tone}`}><Icon size={20} /><small>{label}</small><strong>{value}</strong><em>{detail}</em></div>; }

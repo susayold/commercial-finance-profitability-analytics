@@ -111,6 +111,32 @@
       "notes": "Driver-based plan"
     }
   ],
+  "accuracyRehearsal": [
+    {
+      "id": "FE-2025-01",
+      "eligible": 12,
+      "forecast": 16065,
+      "actual": 15300,
+      "bias": "+5%",
+      "wape": 5
+    },
+    {
+      "id": "FE-2025-04",
+      "eligible": 9,
+      "forecast": 11907,
+      "actual": 12150,
+      "bias": "−2%",
+      "wape": 2
+    },
+    {
+      "id": "FE-2025-07",
+      "eligible": 6,
+      "forecast": 9405,
+      "actual": 8550,
+      "bias": "+10%",
+      "wape": 10
+    }
+  ],
   "longRangeDrivers": [
     {
       "metric": "Revenue Growth",
@@ -153,6 +179,57 @@
       "base": "48",
       "upside": "30",
       "downside": "84"
+    }
+  ],
+  "decisionThresholds": [
+    {
+      "metric": "Revenue Growth",
+      "base": "> 6.0%",
+      "upside": "> 10.0%",
+      "downside": "< −2.0%",
+      "action": "Review pricing, new channels"
+    },
+    {
+      "metric": "Gross Margin",
+      "base": "+0.5pp",
+      "upside": "+1.2pp",
+      "downside": "−1.0pp",
+      "action": "Optimize sourcing, product mix"
+    },
+    {
+      "metric": "OPEX Growth",
+      "base": "5.0%",
+      "upside": "4.5%",
+      "downside": "7.0%",
+      "action": "Cost control, prioritize ROI"
+    },
+    {
+      "metric": "DSO",
+      "base": "> 43d",
+      "upside": "> 37d",
+      "downside": "> 47d",
+      "action": "Accelerate collections"
+    },
+    {
+      "metric": "DIO",
+      "base": "> 55d",
+      "upside": "> 45d",
+      "downside": "> 70d",
+      "action": "Reduce slow-moving inventory"
+    },
+    {
+      "metric": "DPO",
+      "base": "< 30d",
+      "upside": "< 35d",
+      "downside": "< 25d",
+      "action": "Negotiate supplier terms"
+    },
+    {
+      "metric": "Cash Balance",
+      "base": "> 8.0bn",
+      "upside": "> 8.0bn",
+      "downside": "< 8.0bn",
+      "action": "Draw revolver, defer CAPEX"
     }
   ],
   "longRangeOutlook": [

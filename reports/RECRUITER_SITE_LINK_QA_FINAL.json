@@ -1,0 +1,53 @@
+{
+  "generated_on": "2026-09-05T15:59:37.009Z",
+  "routes": [
+    {
+      "route": "/",
+      "status": "PASS"
+    },
+    {
+      "route": "#executive",
+      "status": "PASS"
+    },
+    {
+      "route": "#performance",
+      "status": "PASS"
+    },
+    {
+      "route": "#commercial",
+      "status": "PASS"
+    },
+    {
+      "route": "#profitability",
+      "status": "PASS"
+    },
+    {
+      "route": "#costing",
+      "status": "PASS"
+    },
+    {
+      "route": "#resources",
+      "status": "PASS"
+    },
+    {
+      "route": "#cash",
+      "status": "PASS"
+    },
+    {
+      "route": "#forecast",
+      "status": "PASS"
+    },
+    {
+      "route": "#evidence",
+      "status": "PASS"
+    },
+    {
+      "route": "/dashboard/",
+      "status": "PASS"
+    }
+  ],
+  "passed": 11,
+  "total": 11,
+  "external_links": "PASS",
+  "note": "Static route/link contract QA; browser visual review remains a manual release step."
+}

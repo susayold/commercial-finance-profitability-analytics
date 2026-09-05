@@ -18,12 +18,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Rebuild governance snapshot
-        run: python scripts/build_non_powerbi_governance.py
-      - name: Run non-Power-BI release gate
-        run: python scripts/run_non_powerbi_release_gate.py
+      - name: Run final recruiter release QA
+        run: node scripts/run_final_recruiter_release_qa.mjs
       - name: Upload finance core QA
         uses: actions/upload-artifact@v4
         with:
           name: finance-core-qa
-          path: reports/NON_POWERBI_*_2026-08-31.*
+          path: reports/RECRUITER_SITE_LINK_QA_FINAL.*
