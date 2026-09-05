@@ -1,0 +1,16 @@
+{
+  "baseline_period": "FY2025",
+  "baseline_scenario": "BASE",
+  "baseline_source": "data/governance/recruiter_metric_snapshot.json",
+  "scenario_dimension": "data/finance_model/final_v1/dim_scenario.csv",
+  "forecast_version_dimension": "data/finance_model/final_v1/dim_forecast_version.csv",
+  "working_capital_sources": {
+    "ar": "data/finance_model/final_v1/fact_ar_snapshot.csv",
+    "inventory": "data/finance_model/final_v1/fact_inventory_snapshot.csv",
+    "ap": "data/finance_model/final_v1/fact_ap_snapshot.csv"
+  },
+  "evidence_class": "SIMULATED/DERIVED",
+  "liquidity_policy": "WITHHOLD_LONG_RANGE_CASH_UNTIL_OPENING_STATE_RECONCILED",
+  "builder_version": "2026-09-05-canonical-baseline-v1",
+  "notes": "Canonical recruiter-facing FY2025 FP&A Base is the plan baseline. Legacy monthly statements are not the authoritative absolute plan baseline."
+}

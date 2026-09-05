@@ -1,0 +1,7 @@
+exception_id,issue,status,owner,notes
+OPEN-01,Gate A genuine forecast evidence,OPEN,FP&A / Data Owner,External pre-close and post-close actuals required
+OPEN-02,Page 6 OPEX bridge +496.1m,OPEN,Resource Planning,Reconciliation remains visible and not forced to zero
+OPEN-03,Evidence taxonomy, CLOSED,Finance Control,PROXY_DERIVED and CALCULATED_PUBLIC registered
+OPEN-04,Working-capital semantics, CLOSED,Treasury,DIO/DPO/CCC proxy conventions documented
+OPEN-05,10-page link QA, CLOSED,Release Engineering,Canonical routes use #cash and current dashboard
+OPEN-06,Release identity, CLOSED,Release Engineering,Refresh after final commit before freeze

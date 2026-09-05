@@ -1,28 +1,27 @@
 {
-  "generated_on": "2026-09-01",
+  "generated_on": "2026-09-05",
   "baseline": {
     "fiscal_year": "FY2025",
-    "revenue_vnd": 12571879421,
-    "gross_margin_pct": 47.44,
-    "cfo_vnd": -14360266459,
-    "cash_vnd": -30756981747,
-    "debt_vnd": 6200000000,
-    "dso_days": 176.59,
-    "dio_days": 180.43,
-    "dpo_days": 199.56,
-    "equity_vnd": -27437405539
+    "scenario": "BASE",
+    "revenue_vnd": 82.5138,
+    "gross_profit_vnd": 26.915,
+    "cogs_vnd": 55.5988,
+    "opex_vnd": 14.0194,
+    "ebitda_proxy_vnd": 12.8956,
+    "contribution_vnd": 24.2074,
+    "ccc_days": 54
   },
-  "plan": {
-    "periods": 60,
-    "monthly_periods": 36,
-    "quarterly_periods": 24,
-    "scenarios": [
-      "BASE",
-      "UPSIDE",
-      "DOWNSIDE"
-    ],
-    "initiative_count": 4,
-    "terminal_growth_used": false
+  "source_contract": "data/planning/operating_plan_input_contract.json",
+  "scenarios": [
+    "BASE",
+    "UPSIDE",
+    "DOWNSIDE"
+  ],
+  "periods": 9,
+  "liquidity": {
+    "status": "WITHHELD_PENDING_OPENING_STATE_RECONCILIATION",
+    "minimum_cash_guardrail_vnd": 8000000000,
+    "note": "Do not publish a long-range cash path until opening cash and debt are linked to the governed planning baseline."
   },
-  "evidence_boundary": "SIMULATED/DERIVED; FY2026 monthly bridge is a planning rehearsal, not approved company guidance."
+  "evidence_boundary": "SIMULATED/DERIVED; deterministic operating-plan rehearsal, not approved company guidance."
 }

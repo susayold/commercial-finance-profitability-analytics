@@ -1,0 +1,244 @@
+{
+  "currentLanding": {
+    "period": "FY2025",
+    "scenario": "BASE",
+    "name": "Base",
+    "revenue": 82.5138,
+    "grossProfit": 26.915,
+    "ebitda": 12.8956,
+    "margin": 15.6284,
+    "contribution": 24.2074,
+    "ccc": 54,
+    "evidenceClass": "PROXY_DERIVED"
+  },
+  "scenarioRange": [
+    {
+      "name": "Downside",
+      "revenue": 76.9061,
+      "grossProfit": 18.6342,
+      "ebitda": 3.4933,
+      "margin": 4.5423,
+      "contribution": 15.8724,
+      "ccc": 68,
+      "evidenceClass": "PROXY_DERIVED"
+    },
+    {
+      "name": "Base",
+      "revenue": 82.5138,
+      "grossProfit": 26.915,
+      "ebitda": 12.8956,
+      "margin": 15.6284,
+      "contribution": 24.2074,
+      "ccc": 54,
+      "evidenceClass": "PROXY_DERIVED"
+    },
+    {
+      "name": "Upside",
+      "revenue": 85.7182,
+      "grossProfit": 31.1886,
+      "ebitda": 17.4496,
+      "margin": 20.357,
+      "contribution": 28.481,
+      "ccc": 48,
+      "evidenceClass": "PROXY_DERIVED"
+    }
+  ],
+  "sensitivity": [
+    {
+      "label": "Revenue −10%",
+      "value": -9
+    },
+    {
+      "label": "Revenue +10%",
+      "value": 6.8
+    },
+    {
+      "label": "Gross Margin −1pp",
+      "value": -4.1
+    },
+    {
+      "label": "Gross Margin +1pp",
+      "value": 4.3
+    },
+    {
+      "label": "OPEX +10%",
+      "value": -3.6
+    },
+    {
+      "label": "OPEX −10%",
+      "value": 3.6
+    },
+    {
+      "label": "DIO +10 days",
+      "value": -0.8
+    },
+    {
+      "label": "DSO +10 days",
+      "value": -0.6
+    },
+    {
+      "label": "DPO +10 days",
+      "value": 0.4
+    }
+  ],
+  "forecastVersions": [
+    {
+      "id": "ACT-2024",
+      "type": "Actual",
+      "period": "2024",
+      "status": "Final",
+      "notes": "Historical actuals"
+    },
+    {
+      "id": "BUD-2025",
+      "type": "Budget",
+      "period": "2025",
+      "status": "Final",
+      "notes": "Synthetic planning baseline"
+    },
+    {
+      "id": "LE-2025-09",
+      "type": "Latest Est.",
+      "period": "2025",
+      "status": "Current",
+      "notes": "Updated Sep-25"
+    },
+    {
+      "id": "PLAN-3Y",
+      "type": "3Y Plan",
+      "period": "2026–2028",
+      "status": "Draft",
+      "notes": "Driver-based plan"
+    }
+  ],
+  "longRangeDrivers": [
+    {
+      "metric": "Revenue Growth",
+      "base": "6.0%",
+      "upside": "10.0%",
+      "downside": "−2.0%"
+    },
+    {
+      "metric": "Gross Margin Δ (pp/year)",
+      "base": "+0.5pp",
+      "upside": "+1.2pp",
+      "downside": "−1.0pp"
+    },
+    {
+      "metric": "OPEX Growth",
+      "base": "5.0%",
+      "upside": "4.5%",
+      "downside": "7.0%"
+    },
+    {
+      "metric": "DSO (days)",
+      "base": "38",
+      "upside": "32",
+      "downside": "52"
+    },
+    {
+      "metric": "DIO (days)",
+      "base": "45",
+      "upside": "38",
+      "downside": "60"
+    },
+    {
+      "metric": "DPO (days)",
+      "base": "35",
+      "upside": "40",
+      "downside": "28"
+    },
+    {
+      "metric": "Implied CCC (days)",
+      "base": "48",
+      "upside": "30",
+      "downside": "84"
+    }
+  ],
+  "longRangeOutlook": [
+    {
+      "year": "2026",
+      "scenario": "BASE",
+      "revenue": 87.464628,
+      "ebitda": 14.246853,
+      "cash": null,
+      "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
+    },
+    {
+      "year": "2027",
+      "scenario": "BASE",
+      "revenue": 92.712506,
+      "ebitda": 15.712431,
+      "cash": null,
+      "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
+    },
+    {
+      "year": "2028",
+      "scenario": "BASE",
+      "revenue": 98.275256,
+      "ebitda": 17.301117,
+      "cash": null,
+      "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
+    },
+    {
+      "year": "2026",
+      "scenario": "UPSIDE",
+      "revenue": 90.76518,
+      "ebitda": 16.045409,
+      "cash": null,
+      "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
+    },
+    {
+      "year": "2027",
+      "scenario": "UPSIDE",
+      "revenue": 99.841698,
+      "ebitda": 19.653815,
+      "cash": null,
+      "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
+    },
+    {
+      "year": "2028",
+      "scenario": "UPSIDE",
+      "revenue": 109.825868,
+      "ebitda": 23.779132,
+      "cash": null,
+      "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
+    },
+    {
+      "year": "2026",
+      "scenario": "DOWNSIDE",
+      "revenue": 80.863524,
+      "ebitda": 10.567307,
+      "cash": null,
+      "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
+    },
+    {
+      "year": "2027",
+      "scenario": "DOWNSIDE",
+      "revenue": 79.246254,
+      "ebitda": 8.21343,
+      "cash": null,
+      "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
+    },
+    {
+      "year": "2028",
+      "scenario": "DOWNSIDE",
+      "revenue": 77.661328,
+      "ebitda": 5.827975,
+      "cash": null,
+      "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
+    }
+  ],
+  "planReconciliation": "data/planning/operating_plan_reconciliation.csv",
+  "gateA": {
+    "status": "OPEN",
+    "label": "FORECAST ACCURACY REHEARSAL / DEMO",
+    "liveAccuracyClaimAllowed": false
+  },
+  "evidence": "SIMULATED/DERIVED",
+  "liquidity": {
+    "status": "WITHHELD_PENDING_OPENING_STATE_RECONCILIATION",
+    "guardrail": 8,
+    "note": "Long-range cash trajectory is withheld until opening cash and debt are linked to the governed planning baseline."
+  }
+}

@@ -6,3 +6,5 @@ ASSUMPTION,Planning assumption,Yes with assumption badge
 PROXY,Explicit proxy,Yes with proxy label
 SYNTHETIC_REHEARSAL,Strategic rehearsal,No price-target claim
 OPEN_GATE,Evidence not yet available,Never silently suppress
+PROXY_DERIVED,Calculated management metric based on an explicit proxy convention,Yes only with proxy label and lineage
+CALCULATED_PUBLIC,Calculated from observed public filing inputs,Yes in public-company subject area with formula lineage

@@ -1,0 +1,10 @@
+scope_id,page,subject,period,universe,canonical_additive,evidence_class,public_label,boundary_note,status
+CORE_CANONICAL,Pages 1/2/3/8/10,Core management P&L,FY2025,Canonical recruiter case,YES,SIMULATED/DERIVED,FY2025 Base,Single governed baseline,ACTIVE
+CUSTOMER_REHEARSAL,Page 4,Customer profitability,FY2025,24-customer standalone universe,NO,SYNTHETIC_REHEARSAL,Standalone customer rehearsal,Do not add to core revenue,ACTIVE
+COSTING_REHEARSAL,Page 5,Standard costing,FY2025,36-SKU costing universe,NO,SIMULATED/DERIVED,NOT_CORE_COGS,Standalone costing layer,ACTIVE
+RESOURCE_PLANNING,Page 6,Resource planning,FY2025,Planning layer,NO,SIMULATED/DERIVED,Planning layer,Open OPEX bridge remains visible,ACTIVE
+CORE_WC,Page 7,Working capital,Dec-2025,final_v1 core,YES,SIMULATED/DERIVED,CORE_WC,Core AR inventory AP,ACTIVE
+LIQUIDITY_STRESS,Page 7,Liquidity stress,FY2026,Stress rehearsal,NO,SYNTHETIC_REHEARSAL,FY2026_STRESS_REHEARSAL,Separate from long-range plan,ACTIVE
+LONG_RANGE_PLAN,Page 8,Operating plan,FY2026-FY2028,Scenario planning model,NO,SIMULATED/DERIVED,Long-range plan,Separate liquidity framework,ACTIVE
+PUBLIC_COMPANY,Appendix,Public-company evidence,Observed public,Observed public subject area,NO,CALCULATED_PUBLIC,Public company,Separate subject area,ACTIVE
+POWER_BI,Archive,Historical BI artifacts,Historical,Archived Power BI,NO,SYNTHETIC_REHEARSAL,OUT_OF_ACTIVE_SCOPE,Not active release dependency,ARCHIVED
