@@ -5,7 +5,7 @@
 
 /* 10-page visual ratio repair tokens — layout only, finance values unchanged. */
 :root {
-  --vn-report-max: 1440px;
+  --vn-report-max: 1420px;
   --vn-report-gutter: clamp(20px, 2.4vw, 36px);
   --vn-nav-h: 70px;
   --vn-hero-gap: clamp(28px, 3vw, 44px);
