@@ -1,12 +1,12 @@
 {
   "project": "VietNova Consumer JSC \u2014 non-Power-BI FP&A release",
-  "release_name": "VNFINANCE-FPA-2026-09-02-FINAL",
-  "release_tag": null,
-  "release_sha": null,
-  "release_status": "CLOSURE_CANDIDATE_INPUT_GATED",
+  "release_name": "VNFINANCE-FPA-v1.0",
+  "release_tag": "fpa-portfolio-v1.0",
+  "release_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_identity": "data/governance/release_identity_nonbi.json",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
-  "generated_on": "2026-09-01",
+  "generated_on": "2026-09-05",
   "active_scope": [
     "Excel financial model",
     "integrated three statements",
@@ -29,8 +29,8 @@
   "claims_policy": "Synthetic and derived finance outputs are labelled; no employer impact, live ERP experience or live forecast accuracy is claimed.",
   "release_gate": "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json",
   "generated_at_utc": "2026-09-02T17:34:56.817149+00:00",
-  "release_commit": "e3411d802cb7cc2e5443303d28b45e8831c9a6f9",
-  "release_commit_role": "gate_input_commit; final tag/SHA remains input-gated",
+  "release_commit": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "release_commit_role": "tested code-freeze source commit",
   "qa_totals": {
     "core": {
       "passed": 55,
@@ -41,8 +41,8 @@
       "total": 52
     },
     "recruiter_links": {
-      "passed": 42,
-      "total": 42
+      "passed": 11,
+      "total": 11
     }
   },
   "active_source_contract": {

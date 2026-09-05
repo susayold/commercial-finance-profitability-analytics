@@ -1,11 +1,11 @@
 {
-  "release_name": "VNFINANCE-FPA-2026-09-02-FINAL",
-  "release_tag": null,
-  "release_sha": null,
-  "release_status": "CLOSURE_CANDIDATE_INPUT_GATED",
-  "release_date": "2026-09-02",
-  "current_source_sha": "599132e6157e95c3fd976ba1faac01e28cd7eb70",
-  "current_source_sha_role": "current public-safe FP&A repository head; not promoted to final tag while required external inputs remain",
+  "release_name": "VNFINANCE-FPA-v1.0",
+  "release_tag": "fpa-portfolio-v1.0",
+  "release_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
+  "release_date": "2026-09-05",
+  "current_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "current_source_sha_role": "tested recruiter release source commit",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
   "github_repo_visibility": "public",
   "github_pages_url": "https://susayold.github.io/commercial-finance-profitability-analytics/",
@@ -14,8 +14,8 @@
     "path": "/docs"
   },
   "github_pages_mode": "static_vite_build_from_site_component",
-  "website_version": 27,
-  "website_source_sha": "e7a8472e0fd35305c68421ef4f66b3e9f0f1a3f6",
+  "website_version": 49,
+  "website_source_sha": "0b0e8ee7a17df443740e1016915f165012d0f2f4",
   "drive_project_folder_id": "1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR",
   "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
   "finalization_blockers": [
@@ -23,5 +23,5 @@
     "five-minute walkthrough recording and review",
     "approved internal pre-close forecast plus post-close actuals for Gate A if a live accuracy claim is desired"
   ],
-  "sha_policy_note": "The final tag and SHA will be written after the input-gated closure items are supplied. Until then, null release_tag/release_sha prevents a false final-release claim; current_source_sha identifies the closure baseline before this identity patch."
+  "sha_policy_note": "Release SHA identifies the tested code-freeze commit. Gate A remains open for genuine external forecast evidence; that gate does not block recruiter portfolio completion."
 }
