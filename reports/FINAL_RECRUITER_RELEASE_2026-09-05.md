@@ -2,7 +2,7 @@
 
 - Release source SHA: `fa2123fd0897bd2a8073d960ec094b36fd1434f7`
 - Release metadata commit: `8eb80861274be7677505265fbbfff514efa10472`
-- Current main SHA: `c2f967a72ffa3505c666ded7253848d38e79fd12`
+- Current main SHA: `3ff2825f19e9aead1c56521b0c9d98cc6e3e7f2d`
 - Release tag: `fpa-portfolio-v1.0`
 - GitHub Pages: https://susayold.github.io/commercial-finance-profitability-analytics/
 - Private site: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
