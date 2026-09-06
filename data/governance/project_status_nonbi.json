@@ -5,7 +5,7 @@
   "release_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
   "release_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
   "release_metadata_commit": "8eb80861274be7677505265fbbfff514efa10472",
-  "current_main_sha": "1ba545985b253ace4962e36feca492ea8b6bcd8e",
+  "current_main_sha": "a4439f70beb1bb8c376481f5d3cadb6fa7adeef3",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_identity": "data/governance/release_identity_nonbi.json",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
