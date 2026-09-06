@@ -9,7 +9,7 @@
     "ebitdaProxy": 12.8956,
     "ebitdaMargin": 15.6284,
     "contribution": 24.2074,
-    "ccc": 54
+    "ccc": 54.0
   },
   "scenarios": [
     {
@@ -17,7 +17,7 @@
       "revenue": 76.9061,
       "ebitda": 3.4933,
       "margin": 4.5423,
-      "ccc": 68,
+      "ccc": 68.0,
       "tag": "CONTINGENCY"
     },
     {
@@ -25,7 +25,7 @@
       "revenue": 82.5138,
       "ebitda": 12.8956,
       "margin": 15.6284,
-      "ccc": 54,
+      "ccc": 54.0,
       "tag": "OPERATING ANCHOR"
     },
     {
@@ -33,7 +33,7 @@
       "revenue": 85.7182,
       "ebitda": 17.4496,
       "margin": 20.357,
-      "ccc": 48,
+      "ccc": 48.0,
       "tag": "GATED"
     }
   ],
@@ -42,7 +42,7 @@
     "approve": 3,
     "reject": 5,
     "negative": 4,
-    "belowHurdle": 1,
+    "belowHurdle": 3,
     "hurdle": 25,
     "portfolioRoi": 30.108,
     "budget": 4.35,
@@ -72,37 +72,37 @@
   },
   "costResource": {
     "costVariance": 249.4,
-    "materialShare": 82,
+    "materialShare": 82.0,
     "opexQ4Q1": 26.3,
     "nonPayrollShare": 75.6,
     "opexBridge": 496.1,
     "capexProject": "P-006 Energy Retrofit",
     "capexStatus": "PENDING / REVIEW",
-    "capexEnvelope": 1.3,
+    "capexEnvelope": 6.55,
     "capexPayback": 22
   },
   "plan": [
     {
       "year": "2026",
       "scenario": "BASE",
-      "revenue": 87.4646,
-      "ebitda": 14.2469,
+      "revenue": 87.464628,
+      "ebitda": 14.246853,
       "cash": null,
       "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
     },
     {
       "year": "2027",
       "scenario": "BASE",
-      "revenue": 92.7125,
-      "ebitda": 15.7124,
+      "revenue": 92.712506,
+      "ebitda": 15.712431,
       "cash": null,
       "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
     },
     {
       "year": "2028",
       "scenario": "BASE",
-      "revenue": 98.2753,
-      "ebitda": 17.3011,
+      "revenue": 98.275256,
+      "ebitda": 17.301117,
       "cash": null,
       "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
     }
@@ -125,8 +125,8 @@
     },
     {
       "label": "Links",
-      "value": "42 / 42",
-      "status": "HISTORICAL"
+      "value": "PASS",
+      "status": "PASS"
     },
     {
       "label": "Gate A",
@@ -135,7 +135,7 @@
     },
     {
       "label": "Power BI",
-      "value": "OUT OF SCOPE",
+      "value": "OUT_OF_ACTIVE_SCOPE",
       "status": "OUT"
     }
   ],
@@ -187,6 +187,10 @@
     "actions": {
       "source_page": "Recommendation register",
       "source_file": "data/management_recommendation_register_2026-08-30.csv"
+    },
+    "linkQA": {
+      "source_page": "Release QA",
+      "source_file": "reports/RECRUITER_SITE_LINK_QA_FINAL.json"
     }
   },
   "cashRoute": "#cash",
@@ -194,46 +198,51 @@
     {
       "id": "REC-04",
       "priority": 1,
-      "decision": "Collect overdue accounts",
+      "decision": "collect overdue accounts",
       "owner": "AR lead",
       "guardrail": "DSO <= Base + 5d",
       "review": "Weekly cash call",
+      "evidence": "PROXY_DERIVED",
       "route": "#cash"
     },
     {
       "id": "REC-05",
       "priority": 2,
-      "decision": "Reduce slow-SKU inventory",
+      "decision": "reduce slow-SKU inventory",
       "owner": "Supply-chain finance",
-      "guardrail": "Service level >= 95%",
+      "guardrail": "service level >= 95%",
       "review": "Weekly S&OP",
+      "evidence": "PROXY_DERIVED",
       "route": "#cash"
     },
     {
       "id": "REC-01",
       "priority": 3,
-      "decision": "Reallocate promotion budget",
+      "decision": "reallocate promotion budget",
       "owner": "Commercial finance",
       "guardrail": "ROI >= 25%; CM% >= 25%",
       "review": "Next monthly close",
+      "evidence": "SIMULATED_DERIVED",
       "route": "#commercial"
     },
     {
       "id": "REC-06",
       "priority": 4,
-      "decision": "Gate Upside case",
+      "decision": "gate Upside case",
       "owner": "FP&A lead",
-      "guardrail": "Two closes above hurdle",
+      "guardrail": "two closes above hurdle",
       "review": "Forecast cycle",
+      "evidence": "SIMULATED_DERIVED",
       "route": "#forecast"
     },
     {
       "id": "REC-11",
       "priority": 5,
-      "decision": "Capture frozen forecast snapshot",
+      "decision": "capture frozen snapshot",
       "owner": "FP&A lead",
-      "guardrail": "Approver version dates present",
+      "guardrail": "approver version dates present",
       "review": "Before next close",
+      "evidence": "GOVERNANCE_CONTROL",
       "route": "#evidence"
     }
   ]

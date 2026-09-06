@@ -1,11 +1,13 @@
 {
   "release_name": "VNFINANCE-FPA-v1.0",
   "release_tag": "fpa-portfolio-v1.0",
-  "release_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "release_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "release_metadata_commit": "8eb80861274be7677505265fbbfff514efa10472",
+  "current_main_sha": "c2f967a72ffa3505c666ded7253848d38e79fd12",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_date": "2026-09-05",
   "current_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
-  "current_source_sha_role": "tested recruiter release source commit",
+  "current_source_sha_role": "tested recruiter release source commit (alias of release_source_sha)",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
   "github_repo_visibility": "public",
   "github_pages_url": "https://susayold.github.io/commercial-finance-profitability-analytics/",
@@ -23,5 +25,5 @@
     "five-minute walkthrough recording and review",
     "approved internal pre-close forecast plus post-close actuals for Gate A if a live accuracy claim is desired"
   ],
-  "sha_policy_note": "Release SHA identifies the tested code-freeze commit. Gate A remains open for genuine external forecast evidence; that gate does not block recruiter portfolio completion."
+  "sha_policy_note": "release_source_sha = tested finance/source freeze; release_metadata_commit = metadata recording commit; current_main_sha = repository head after metadata maintenance; release_tag = annotated v1.0 reference. Gate A remains open for genuine external forecast evidence."
 }

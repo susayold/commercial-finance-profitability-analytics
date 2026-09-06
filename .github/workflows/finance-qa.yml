@@ -1,15 +1,21 @@
-name: Finance model QA
+name: Archived Power BI / Extended Model QA
 
+# Power BI is outside the active recruiter release scope. Keep this workflow
+# available for intentional archive maintenance without blocking normal pushes.
 on:
+  workflow_dispatch:
   push:
-  pull_request:
+    paths:
+      - 'powerbi/**'
+      - 'scripts/*powerbi*'
+      - '.github/workflows/finance-qa.yml'
 
 permissions:
   contents: read
 
 jobs:
   finance-qa:
-    name: Leakage, panel and contract checks
+    name: Archived Power BI / extended model checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

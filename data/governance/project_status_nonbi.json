@@ -3,6 +3,9 @@
   "release_name": "VNFINANCE-FPA-v1.0",
   "release_tag": "fpa-portfolio-v1.0",
   "release_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "release_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "release_metadata_commit": "8eb80861274be7677505265fbbfff514efa10472",
+  "current_main_sha": "c2f967a72ffa3505c666ded7253848d38e79fd12",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_identity": "data/governance/release_identity_nonbi.json",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
@@ -30,7 +33,7 @@
   "release_gate": "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json",
   "generated_at_utc": "2026-09-02T17:34:56.817149+00:00",
   "release_commit": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
-  "release_commit_role": "tested code-freeze source commit",
+  "release_commit_role": "tested code-freeze source commit; see release_source_sha",
   "qa_totals": {
     "core": {
       "passed": 55,
