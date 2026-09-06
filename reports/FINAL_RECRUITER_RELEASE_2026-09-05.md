@@ -6,7 +6,7 @@
 - Release tag: `fpa-portfolio-v1.0`
 - GitHub Pages: https://susayold.github.io/commercial-finance-profitability-analytics/
 - Private site: https://vn-finance-fpa-case.sangkenny200.chatgpt.site
-- Private site version: 50
+- Private site version: 51 (source `cfe2ea0a3776b073bd1542d91ba73cde715b13df`)
 
 ## Controlled outputs
 
