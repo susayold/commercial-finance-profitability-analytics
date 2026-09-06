@@ -1,6 +1,6 @@
 # Recruiter Site Link QA
 
-- Generated: 2026-09-06T21:12:59.429Z
+- Generated: 2026-09-06T22:33:38.854Z
 - Overall: **PASS**
 - Internal routes: **11/11 PASS**
 - Built output checks: **4/4 PASS**
