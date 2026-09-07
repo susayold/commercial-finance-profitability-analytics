@@ -23,7 +23,7 @@
 
 - Final recruiter release QA: PASS; owner-page parity, taxonomy, WC semantics, scope and finance-literal checks all pass.
 - True link QA: PASS; 11/11 internal routes, 4/4 built-output checks and 3/3 public HTTP links.
-- Page 10 builder is deterministic and reads owner contracts only (repeat SHA-256: `5871217A14CFE177E6719DCB45B02F241712540D88DD87235DCECFD57E02C7A2`).
+- Page 10 builder is deterministic and reads owner contracts only (current contract SHA-256: `13277857C7A83288B785A59DBDC56746FA17C24F1704FBD7637AFBB083E09798`).
 - Build: PASS.
 - Finance core CI: PASS. Archived Power BI workflow is manual/path-filtered and inactive for normal website pushes.
 - Gate A: OPEN / PENDING_EXTERNAL_INPUT; live forecast accuracy claims remain blocked.
