@@ -8,6 +8,8 @@ const run = (cmd, args) => {
 
 run('node', ['scripts/validate_three_year_operating_plan.mjs']);
 run('node', ['scripts/validate_page2_semantics.mjs']);
+run('python', ['scripts/build_page6_resources_data.py']);
+run('node', ['scripts/validate_page6_resources.mjs']);
 run('node', ['scripts/build_page8_forecast_data.mjs']);
 run('node', ['scripts/validate_page8_forecast.mjs']);
 run('python', ['scripts/build_page10_dashboard_data.py']);
@@ -19,5 +21,6 @@ run('node', ['scripts/validate_site_finance_literals.mjs']);
 run('node', ['scripts/validate_scope_boundaries.mjs']);
 run('node', ['scripts/validate_evidence_taxonomy.mjs']);
 run('node', ['scripts/validate_working_capital_semantics.mjs']);
+run('node', ['scripts/validate_release_identity_nonbi.mjs']);
 run('node', ['scripts/validate_recruiter_site_finance.mjs']);
 console.log('PASS: final recruiter release QA');

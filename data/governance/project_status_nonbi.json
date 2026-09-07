@@ -5,7 +5,6 @@
   "release_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
   "release_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
   "release_metadata_commit": "8eb80861274be7677505265fbbfff514efa10472",
-  "current_main_sha": "a4439f70beb1bb8c376481f5d3cadb6fa7adeef3",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_identity": "data/governance/release_identity_nonbi.json",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
@@ -29,8 +28,8 @@
     "Gate A \u2014 approved internal pre-close forecast snapshot plus post-close actuals"
   ],
   "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
-  "private_site_version": 51,
-  "private_site_source_sha": "cfe2ea0a3776b073bd1542d91ba73cde715b13df",
+  "private_site_version": 52,
+  "private_site_source_sha": "ca9f4f88a5d87ee3e94ffca1d4395335f77095d3",
   "claims_policy": "Synthetic and derived finance outputs are labelled; no employer impact, live ERP experience or live forecast accuracy is claimed.",
   "release_gate": "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json",
   "generated_at_utc": "2026-09-02T17:34:56.817149+00:00",

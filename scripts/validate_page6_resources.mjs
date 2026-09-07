@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+import fs from 'node:fs';
+import path from 'node:path';
+const root = process.cwd();
+const d = JSON.parse(fs.readFileSync(path.join(root, 'site/data/generated/page6-resources.json'), 'utf8'));
+const fail = (m) => { console.error(`FAIL: ${m}`); process.exit(1); };
+const eq = (a, b, label, tolerance = 1e-4) => { if (Math.abs(Number(a) - Number(b)) > tolerance) fail(`${label}: ${a} != ${b}`); };
+const p = d.capexPortfolio;
+const f = d.focusCapexProject;
+if (!p || !f) fail('CAPEX portfolio/focus project layers are required');
+eq(p.envelopeBn, 6.55, 'P6-CAPEX-01 portfolio envelope');
+eq(p.projectCount, 6, 'P6-CAPEX-02 project count');
+if (f.id !== 'P-006') fail(`P6-CAPEX-03 focus project: ${f.id}`);
+eq(f.budgetBn, 1.3, 'P6-CAPEX-04 P-006 budget');
+if (f.status !== 'PENDING / REVIEW') fail(`P6-CAPEX-05 P-006 status: ${f.status}`);
+eq(f.paybackMonths, 22, 'P6-CAPEX-06 P-006 payback');
+if (d.projects?.length !== 6 || new Set(d.projects.map((x) => x.id)).size !== d.projects.length) fail('P6-CAPEX-07 monthly duplication in project list');
+eq(p.actualBn, 3.8475, 'P6-CAPEX-08 portfolio actual');
+eq(p.utilizationPct, 58.74, 'P6-CAPEX-09 portfolio utilization', 0.01);
+console.log('PASS: Page 6 CAPEX contract (9 checks)');

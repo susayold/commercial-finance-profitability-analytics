@@ -8,10 +8,9 @@
     "reports/NON_POWERBI_HANDOFF_INDEX_2026-09-01.md",
     "docs/VNFINANCE_FPA_ACTIVE_EXECUTION_PLAN_NO_POWERBI_2026-09-02.md"
   ],
-  "release_name": "VNFINANCE-FPA-2026-09-02-FINAL",
-  "release_status": "CLOSURE_CANDIDATE_INPUT_GATED",
-  "release_tag": null,
-  "release_sha": null,
+  "release_name": "VNFINANCE-FPA-v1.0",
+  "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
+  "release_tag": "fpa-portfolio-v1.0",
   "checks": [
     {
       "id": "RI-01",
@@ -23,19 +22,19 @@
       "id": "RI-02",
       "name": "Canonical release name",
       "status": "PASS",
-      "detail": "VNFINANCE-FPA-2026-09-02-FINAL"
+      "detail": "VNFINANCE-FPA-v1.0"
     },
     {
       "id": "RI-03",
       "name": "Status mirrors project status",
       "status": "PASS",
-      "detail": "CLOSURE_CANDIDATE_INPUT_GATED=CLOSURE_CANDIDATE_INPUT_GATED"
+      "detail": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES=RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES"
     },
     {
       "id": "RI-04",
-      "name": "Release tag/SHA are safely gated",
+      "name": "Release tag/SHA are stable and gated",
       "status": "PASS",
-      "detail": "tag=null; sha=null"
+      "detail": "tag=fpa-portfolio-v1.0; source=fa2123fd0897bd2a8073d960ec094b36fd1434f7"
     },
     {
       "id": "RI-05",
@@ -59,19 +58,25 @@
       "id": "RI-08",
       "name": "Manifest carries release identity",
       "status": "PASS",
-      "detail": "release name and gated tag present"
+      "detail": "release family and scope present"
     },
     {
       "id": "RI-09",
       "name": "Handoff carries release identity",
       "status": "PASS",
-      "detail": "release name and pending boundary present"
+      "detail": "release family and scope present"
     },
     {
       "id": "RI-10",
-      "name": "Finalization blockers are explicit",
+      "name": "External claim inputs are explicit",
       "status": "PASS",
-      "detail": "blockers=3"
+      "detail": "inputs=3"
+    },
+    {
+      "id": "RI-10B",
+      "name": "Self-referential main SHA is absent",
+      "status": "PASS",
+      "detail": "stable release identity fields only"
     },
     {
       "id": "RI-11",

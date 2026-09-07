@@ -26,6 +26,12 @@ for (const name of ['Downside', 'Base', 'Upside']) {
   eq(actual.ebitda, expected.EBITDA_PROXY.value, `scenario ${name} EBITDA`);
 }
 eq(d.commercial.cases, p3.promotions.length, 'P10-04 commercial cases');
+eq(d.commercial.approve, p3.promotions.filter((x) => x.decision.startsWith('APPROVE')).length, 'P10-COM-02 approve');
+eq(d.commercial.reject, p3.promotions.filter((x) => x.decision === 'REJECT').length, 'P10-COM-03 reject');
+eq(d.commercial.negativeContributionCases, p3.promotions.filter((x) => x.incrementalContribution < 0).length, 'P10-COM-04 negative contribution cases');
+eq(d.commercial.positivePromotionsBelowRoiHurdle, p3.promotions.filter((x) => x.incrementalContribution > 0 && x.roi > 0 && x.roi < p3.canonical.hurdle).length, 'P10-COM-05 positive promotions below ROI hurdle');
+eq(d.commercial.channelsBelowCmHurdle, p3.channels.filter((x) => x.cm < p3.canonical.hurdle).length, 'P10-COM-06 channels below CM hurdle');
+if (d.commercial.positivePromotionsBelowRoiHurdle !== 1 || !p3.promotions.some((x) => x.event === 'E07' && x.incrementalContribution > 0 && x.roi < p3.canonical.hurdle)) fail('P10-COM-07 E07 must be the positive ROI-below-hurdle case');
 eq(d.commercial.budget, p3.canonical.budgetEnvelope, 'P10-04 commercial budget');
 eq(d.commercial.incrementalContribution, p3.budget.reduce((s, x) => s + x.incrementalContribution, 0) * 1000, 'P10-04 contribution');
 eq(d.cash.operatingWc, p7.operatingWcBn, 'P10-05 cash operating WC');
@@ -34,7 +40,11 @@ eq(d.cash.slowInventory, p7.slowInventoryBn, 'P10-05 slow inventory');
 eq(d.costResource.costVariance, p5.costVarianceM, 'P10-06 cost variance');
 eq(d.costResource.materialShare, p5.materialPriceSharePct, 'P10-06 material share');
 eq(d.costResource.opexBridge, p6.opexBridgeM, 'P10-07 OPEX bridge');
-eq(d.costResource.capexEnvelope, p6.capexEnvelopeBn, 'P10-07 CAPEX envelope');
+if (d.costResource.focusCapexProject?.id !== p6.focusCapexProject?.id || d.costResource.focusCapexProject.id !== 'P-006') fail('P10-CAPEX-01 focus project ID');
+eq(d.costResource.focusCapexProject.budgetBn, p6.focusCapexProject.budgetBn, 'P10-CAPEX-02 project budget');
+eq(d.costResource.focusCapexProject.paybackMonths, p6.focusCapexProject.paybackMonths, 'P10-CAPEX-03 project payback');
+eq(d.costResource.capexPortfolio.envelopeBn, p6.capexPortfolio.envelopeBn, 'P10-CAPEX-04 portfolio envelope');
+if (Math.abs(d.costResource.focusCapexProject.budgetBn - d.costResource.capexPortfolio.envelopeBn) < 1e-4) fail('P10-CAPEX-05 project budget must differ from portfolio envelope');
 const expectedPlan = p8.longRangeOutlook.filter((x) => x.scenario === 'BASE');
 if (JSON.stringify(d.plan.map((x) => [x.year, x.revenue, x.ebitda])) !== JSON.stringify(expectedPlan.map((x) => [x.year, x.revenue, x.ebitda]))) fail('P10-08 plan parity');
 if (d.plan.some((x) => x.cash !== null) || d.planStatus.status !== 'WITHHELD_PENDING_OPENING_STATE_RECONCILIATION') fail('P10-09/P10-10 long-range cash must be withheld');

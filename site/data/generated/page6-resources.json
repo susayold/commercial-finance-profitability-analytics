@@ -1,1 +1,83 @@
-{"scope":"RESOURCE_PLANNING","evidence_class":"SIMULATED/DERIVED","opexBridgeM":496.1,"opexBridgeStatus":"OPEN","peopleCostBn":12.201,"nonPayrollBn":2.314,"capexEnvelopeBn":6.55}
+{
+  "scope": "RESOURCE_PLANNING",
+  "evidence_class": "SIMULATED/DERIVED",
+  "sourceFile": "data/finance_model/final_v1/fact_capex.csv",
+  "opexBridgeM": 496.1,
+  "opexBridgeStatus": "OPEN",
+  "peopleCostBn": 12.201,
+  "nonPayrollBn": 2.314,
+  "opexQ4Q1Pct": 26.3,
+  "nonPayrollSharePct": 15.9,
+  "capexEnvelopeBn": 6.55,
+  "capexPortfolio": {
+    "projectCount": 6,
+    "envelopeBn": 6.55,
+    "actualBn": 3.8475,
+    "utilizationPct": 58.74,
+    "approvedCount": 5,
+    "pendingCount": 1
+  },
+  "focusCapexProject": {
+    "id": "P-006",
+    "name": "Energy Retrofit",
+    "budgetBn": 1.3,
+    "status": "PENDING / REVIEW",
+    "paybackMonths": 22
+  },
+  "projects": [
+    {
+      "id": "P-001",
+      "name": "Warehouse automation",
+      "status": "APPROVED",
+      "budgetBn": 1.0,
+      "actualBn": 0.63,
+      "paybackMonths": 18,
+      "type": "Productivity"
+    },
+    {
+      "id": "P-002",
+      "name": "CRM upgrade",
+      "status": "APPROVED",
+      "budgetBn": 0.75,
+      "actualBn": 0.42749999999999994,
+      "paybackMonths": 14,
+      "type": "Growth"
+    },
+    {
+      "id": "P-003",
+      "name": "Line extension",
+      "status": "APPROVED",
+      "budgetBn": 2.0,
+      "actualBn": 1.14,
+      "paybackMonths": 24,
+      "type": "Productivity"
+    },
+    {
+      "id": "P-004",
+      "name": "Data platform",
+      "status": "APPROVED",
+      "budgetBn": 0.9,
+      "actualBn": 0.5670000000000001,
+      "paybackMonths": 20,
+      "type": "Growth"
+    },
+    {
+      "id": "P-005",
+      "name": "Fleet refresh",
+      "status": "APPROVED",
+      "budgetBn": 0.6,
+      "actualBn": 0.342,
+      "paybackMonths": 16,
+      "type": "Productivity"
+    },
+    {
+      "id": "P-006",
+      "name": "Energy retrofit",
+      "status": "PENDING",
+      "budgetBn": 1.3,
+      "actualBn": 0.7409999999999999,
+      "paybackMonths": 22,
+      "type": "Growth"
+    }
+  ]
+}

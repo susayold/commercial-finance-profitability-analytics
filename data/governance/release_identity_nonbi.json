@@ -3,7 +3,6 @@
   "release_tag": "fpa-portfolio-v1.0",
   "release_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
   "release_metadata_commit": "8eb80861274be7677505265fbbfff514efa10472",
-  "current_main_sha": "a4439f70beb1bb8c376481f5d3cadb6fa7adeef3",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_date": "2026-09-05",
   "current_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
@@ -16,14 +15,14 @@
     "path": "/docs"
   },
   "github_pages_mode": "static_vite_build_from_site_component",
-  "website_version": 51,
-  "website_source_sha": "cfe2ea0a3776b073bd1542d91ba73cde715b13df",
+  "website_version": 52,
+  "website_source_sha": "ca9f4f88a5d87ee3e94ffca1d4395335f77095d3",
   "drive_project_folder_id": "1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR",
   "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
-  "finalization_blockers": [
-    "verified candidate facts",
-    "five-minute walkthrough recording and review",
-    "approved internal pre-close forecast plus post-close actuals for Gate A if a live accuracy claim is desired"
+  "external_claim_inputs": [
+    "verified candidate facts for personal/employment claims",
+    "optional five-minute walkthrough recording",
+    "approved internal pre-close forecast plus post-close actuals if a live forecast-accuracy claim is desired"
   ],
-  "sha_policy_note": "release_source_sha = tested finance/source freeze; release_metadata_commit = metadata recording commit; current_main_sha = repository head after metadata maintenance; release_tag = annotated v1.0 reference. Gate A remains open for genuine external forecast evidence."
+  "sha_policy_note": "release_source_sha = tested finance/source freeze; release_metadata_commit = stable metadata recording commit; runtime QA resolves the live repository HEAD when needed; release_tag = annotated v1.0 reference. Gate A remains open for genuine external forecast evidence."
 }

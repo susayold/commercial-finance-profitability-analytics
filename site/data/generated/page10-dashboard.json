@@ -41,8 +41,9 @@
     "cases": 8,
     "approve": 3,
     "reject": 5,
-    "negative": 4,
-    "belowHurdle": 3,
+    "negativeContributionCases": 4,
+    "channelsBelowCmHurdle": 3,
+    "positivePromotionsBelowRoiHurdle": 1,
     "hurdle": 25,
     "portfolioRoi": 30.108,
     "budget": 4.35,
@@ -74,12 +75,23 @@
     "costVariance": 249.4,
     "materialShare": 82.0,
     "opexQ4Q1": 26.3,
-    "nonPayrollShare": 75.6,
+    "nonPayrollShare": 15.9,
     "opexBridge": 496.1,
-    "capexProject": "P-006 Energy Retrofit",
-    "capexStatus": "PENDING / REVIEW",
-    "capexEnvelope": 6.55,
-    "capexPayback": 22
+    "capexPortfolio": {
+      "projectCount": 6,
+      "envelopeBn": 6.55,
+      "actualBn": 3.8475,
+      "utilizationPct": 58.74,
+      "approvedCount": 5,
+      "pendingCount": 1
+    },
+    "focusCapexProject": {
+      "id": "P-006",
+      "name": "Energy Retrofit",
+      "budgetBn": 1.3,
+      "status": "PENDING / REVIEW",
+      "paybackMonths": 22
+    }
   },
   "plan": [
     {
