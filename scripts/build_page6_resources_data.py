@@ -9,7 +9,13 @@ import json
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
-source = root / "data/finance_model/final_v1/fact_capex.csv"
+# The closeout plan names the operating-input CAPEX file.  That compact file
+# predates the six-project planning layer and has no P-006 rows, so use it when
+# complete and otherwise fall back to the governed final_v1 monthly source.
+requested_source = root / "data/capex_fixed_asset_planning_synthetic.csv"
+source = requested_source
+if not requested_source.exists() or not any("P-006" in line for line in requested_source.read_text(encoding="utf-8").splitlines()[1:]):
+    source = root / "data/finance_model/final_v1/fact_capex.csv"
 rows = list(csv.DictReader(source.open(encoding="utf-8", newline="")))
 if not rows:
     raise SystemExit("CAPEX source is empty")
@@ -53,7 +59,7 @@ focus_project = {
 output = {
     "scope": "RESOURCE_PLANNING",
     "evidence_class": "SIMULATED/DERIVED",
-    "sourceFile": "data/finance_model/final_v1/fact_capex.csv",
+    "sourceFile": source.relative_to(root).as_posix(),
     "opexBridgeM": 496.1,
     "opexBridgeStatus": "OPEN",
     "peopleCostBn": 12.201,
