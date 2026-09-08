@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/apply-final-website-fixes-v1.1.1.yml'
       - 'scripts/apply_final_website_fixes_v1_1_1.py'
+      - 'scripts/fix_page9_final.py'
 
 permissions:
   contents: write
@@ -17,9 +18,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Preserve patcher and switch to clean target
+      - name: Preserve patchers and switch to clean target
         run: |
           cp scripts/apply_final_website_fixes_v1_1_1.py /tmp/apply_final_website_fixes.py
+          cp scripts/fix_page9_final.py /tmp/fix_page9_final.py
           git fetch origin website-final-fixes-v1.1.1
           git checkout -B website-final-fixes-v1.1.1 origin/website-final-fixes-v1.1.1
       - uses: actions/setup-node@v4
@@ -28,7 +30,9 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
       - name: Apply content fixes
-        run: python /tmp/apply_final_website_fixes.py
+        run: |
+          python /tmp/apply_final_website_fixes.py
+          python /tmp/fix_page9_final.py
       - name: Build Page 5 source contract
         run: node scripts/build_page5_costing_data.mjs
       - name: Install site dependencies
@@ -69,5 +73,3 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "fix: source-drive Page 5 and close final website inconsistencies"
           git push origin HEAD:website-final-fixes-v1.1.1
-
-# Rerun after Page 10 was migrated to the source-driven Page 5 contract.
