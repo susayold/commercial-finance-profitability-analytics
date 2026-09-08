@@ -1,0 +1,149 @@
+from pathlib import Path
+import re
+
+root = Path('.')
+
+def rep(rel, old, new):
+    p = root / rel
+    s = p.read_text(encoding='utf-8')
+    if old not in s:
+        raise SystemExit(f'MISSING replacement anchor in {rel}: {old[:120]}')
+    p.write_text(s.replace(old, new), encoding='utf-8')
+
+# Page 1
+rep('site/app/executive-page1.tsx', "[Coins, 'Evidence', 'Simulated / Derived'], [ShieldCheck, 'Currency', 'VND bn'], [Clock3, 'Forecast Gate', 'Gate A Open'],", "[Coins, 'Evidence', 'Simulated / Derived'], [ShieldCheck, 'Currency', 'VND bn'], [Clock3, 'Historical OOS', 'PASS'],")
+rep('site/app/executive-page1.tsx', "Live forecast accuracy remains Gate A / <b>PENDING_EXTERNAL_INPUT</b>.</p><span>SIMULATED</span><span>PROXY_DERIVED</span><span>GATE A OPEN</span>", "Historical rolling-origin forecast evidence is <b>SIMULATED_HISTORICAL_BACKTEST</b> and PASS; live forecast accuracy remains Gate A / <b>PENDING_EXTERNAL_INPUT</b>.</p><span>SIMULATED</span><span>PROXY_DERIVED</span><span>OOS BACKTEST PASS</span><span>GATE A OPEN</span>")
+
+# Page 2
+rep('site/app/performance-page2.tsx', "Actual values are simulated management-close observations. Comparator availability is controlled by the active public finance contract.", "Actual values are simulated management-close observations. Budget and forecast are synthetic ledger comparators; this comparator layer is separate from the canonical FY2025 Base scenario and is not live company forecast-accuracy evidence.")
+
+# Page 3
+rep('site/app/commercial-page3.tsx', "Channel contribution reconciles Net Revenue − COGS − Fee − Trade Spend − Variable Fulfilment within source tolerance.", "Channel rows reconcile Net Revenue − COGS − Fee − Trade Spend − Variable Fulfilment within the detailed operating-ledger lens. They are not expected to sum to the separate canonical FY2025 Base headline shown in the scorecard.")
+rep('site/app/commercial-page3.tsx', "General Trade is the largest revenue pool; Wholesale is below the 25% CM hurdle.", "General Trade is the largest revenue pool; Modern Trade, Marketplace and D2C are below the 25% CM hurdle, while Wholesale clears it.")
+
+# Page 5
+rep('site/app/costing-page5.tsx', "Standard cost built from BOM × standard price × standard labor + OH allocation.", "Synthetic standard-cost architecture uses modeled material, labor and overhead assumptions; no plant BOM, purchase-order or production-hour evidence is claimed.")
+rep('site/app/costing-page5.tsx', 'label="Slow-Moving SKUs" value="3" detail="Out of 36"', 'label="Modeled Slow-Moving SKUs" value="3" detail="Synthetic reserve policy"')
+rep('site/app/costing-page5.tsx', "SKU034 inventory concentration (91.8%) drives high DIO (5,913 days).", "In this synthetic rehearsal, SKU034 concentration drives an extreme DIO proxy; treat it as modeled inventory stress, not plant evidence.")
+
+# Page 6
+rep('site/app/resources-page6.tsx', '<a href="#forecast">View Forecast Report →</a>', '<a href="#cash">View Cash &amp; WC Report →</a>')
+rep('site/app/resources-page6.tsx', 'Non-payroll share <b>75.6%</b>', 'Non-payroll share of increase <b>75.6%</b>')
+
+# Page 7
+rep('site/app/cash-page7.tsx', 'Data Source <strong>Actuals / Modeled / Simulated</strong>', 'Data Source <strong>Simulated / Derived</strong>')
+rep('site/app/cash-page7.tsx', '<b>Evidence</b>Actuals / Modeled / Simulated', '<b>Evidence</b>Simulated / Derived + Stress Rehearsal')
+
+# Page 8
+p = root / 'site/app/forecast-page8.tsx'
+s = p.read_text(encoding='utf-8')
+old = "const accuracy = page8Data.accuracyRehearsal.map((r) => [r.id, String(r.eligible), r.forecast.toLocaleString('en-US'), r.actual.toLocaleString('en-US'), r.bias, `${r.wape}%`] as [string, string, string, string, string, string]);"
+new = "const historical = page8Data.historicalBacktest.results.map((r) => [`${r.horizonMonths}M`, String(r.eligibleForecasts), r.modelId, `${r.biasPct >= 0 ? '+' : ''}${r.biasPct.toFixed(4)}%`, `${r.wapePct.toFixed(4)}%`, (r.maeVnd / 1e6).toFixed(2)] as [string, string, string, string, string, string]);"
+if old not in s: raise SystemExit('Page8 accuracy const anchor missing')
+s = s.replace(old, new)
+s = s.replace('<span>Gate A <strong>OPEN</strong></span>', '<span>OOS Backtest <strong>PASS</strong></span><span>Live Gate A <strong>OPEN</strong></span>')
+pattern = r"function Accuracy\(\) \{.*?\nfunction DriverTable\(\)"
+replacement = '''function Accuracy() { return <div className="fc8-accuracy-grid"><div className="fc8-card"><div className="fc8-accuracy-chart">{historical.map((r) => <div key={r[0]}><span>{r[0]}</span><i style={{ height: `${Math.max(18, Number(r[4].replace('%', '')) * 70)}px` }} /><b>{r[4]}</b></div>)}</div><div className="fc8-chart-axis"><span>WAPE · rolling origin</span><span>Lower is better</span></div></div><div className="fc8-card fc8-table-wrap"><div className="fc8-badge">OOS / SIMULATED HISTORY</div><table className="fc8-table"><thead><tr><th>Horizon</th><th>Eligible</th><th>Primary model</th><th>Bias</th><th>WAPE</th><th>MAE (VND m)</th></tr></thead><tbody>{historical.map((r) => <tr key={r[0]}><td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td><td className={r[3].startsWith('+') ? 'positive' : 'negative'}>{r[3]}</td><td><strong>{r[4]}</strong></td><td>{r[5]}</td></tr>)}</tbody></table><p className="fc8-note">Evidence class: <b>SIMULATED_HISTORICAL_BACKTEST</b>. The transparent seasonal-naive benchmark beats the trend and ensemble challengers across 1M / 3M / 6M in this synthetic history; these figures are not live company accuracy.</p></div></div>; }
+function DriverTable()'''
+s2, n = re.subn(pattern, replacement, s, flags=re.S)
+if n != 1: raise SystemExit(f'Page8 Accuracy replacement count={n}')
+s = s2
+s = s.replace('<span><b>Forecast Control</b>Frozen Demo Vintages</span><span><b>Live Accuracy Gate</b>OPEN</span>', '<span><b>Forecast Control</b>Frozen Demo Vintages</span><span><b>Historical OOS</b>PASS</span><span><b>Live Accuracy Gate</b>OPEN</span>')
+s = s.replace('title="Forecast Accuracy Rehearsal" aside="Controlled process · no look-ahead"', 'title="Historical Out-of-Sample Forecast Backtest" aside="Rolling origin · simulated history"')
+s = s.replace('Gate A remains OPEN. This is a demo rehearsal, not a company forecast performance claim.', 'Gate A remains OPEN for live accuracy. The historical OOS result is valid only as simulated-history backtest evidence, not company or employer performance.')
+s = s.replace("'Maintain working-capital discipline (CCC ≤ 50 days).'", "'Use working-capital guardrails by scenario and investigate DSO / DIO / DPO breaches before promoting Upside.'")
+s = s.replace('VietNova is well-positioned to deliver sustainable growth with a clear driver-based plan.', 'Base remains the planning anchor; Upside must be earned and Downside triggers must stay explicit.')
+s = s.replace('Maintaining liquidity above 8.0bn is a key priority over the next 3 years.', 'The 8.0bn threshold is a planning guardrail; the long-range cash path remains withheld pending opening-state reconciliation.')
+s = s.replace('<span>SIMULATED / DERIVED</span><span>GATE A OPEN</span>', '<span>SIMULATED / DERIVED</span><span>SIMULATED_HISTORICAL_BACKTEST</span><span>GATE A OPEN</span>')
+s = s.replace('Evidence Boundary: VietNova forecast and planning data is SIMULATED / DERIVED. Forecast accuracy is a DEMO rehearsal; long-range plan is an operating plan, not valuation.', 'Evidence Boundary: planning data is SIMULATED / DERIVED; rolling-origin accuracy is SIMULATED_HISTORICAL_BACKTEST. Live forecast accuracy remains Gate A / PENDING_EXTERNAL_INPUT; the long-range plan is an operating plan, not valuation.')
+p.write_text(s, encoding='utf-8')
+
+# Page 9
+p = root / 'site/app/evidence-page9.tsx'
+s = p.read_text(encoding='utf-8')
+s = s.replace("['SIMULATED', 'Modeled based on assumptions', 'FY2025 forecast', 'Visible disclosure'],", "['SIMULATED', 'Modeled based on assumptions', 'FY2025 operating / planning data', 'Visible disclosure'],\n  ['SIMULATED HISTORICAL OOS', 'Rolling-origin out-of-sample evidence on simulated history', '1M / 3M / 6M revenue backtest', 'Allowed with synthetic-history boundary'],")
+s = s.replace("['CTRL-G01', 'Gate A Forecast Snapshot', 'Genuine internal forecast evidence', 'OPEN', 'Requires input'],", "['CTRL-F01', 'Historical OOS Backtest', 'Rolling-origin backtest uses information available at each origin', 'PASS', 'Simulated-history evidence only'],\n  ['CTRL-G01', 'Gate A Forecast Snapshot', 'Genuine internal forecast evidence', 'OPEN', 'Requires input'],")
+s = s.replace("  ['Production Power BI', 'ARCHIVED', 'Historical registry / Gate B', 'Out of active scope'],\n", '')
+s = s.replace("['OPEN-06', 'RELEASE_IDENTITY', 'v1.0 source freeze and metadata roles separated'", "['OPEN-06', 'RELEASE_IDENTITY', 'source freeze and metadata roles separated'")
+s = s.replace('<b><FileCheck2 size={17} /> LAST UPDATED</b><span>Sep 7, 2026</span><hr /><b><Database size={17} /> DATA COVERAGE</b><span>FY2022 – FY2028</span><hr /><b><ShieldCheck size={17} /> ENVIRONMENT</b><span>Simulated / Analytical</span><hr /><b><BarChart3 size={17} /> POWER BI</b><span>Out of Active Scope</span>', '<b><FileCheck2 size={17} /> LAST UPDATED</b><span>Sep 8, 2026</span><hr /><b><Database size={17} /> DATA COVERAGE</b><span>FY2022 – FY2028</span><hr /><b><ShieldCheck size={17} /> ENVIRONMENT</b><span>Simulated / Analytical</span><hr /><b><BarChart3 size={17} /> HISTORICAL OOS</b><span>PASS · 1M / 3M / 6M</span>')
+s = s.replace("['SOURCE CONTROLS', '5 PASS', '1 OPEN', 'warn']", "['SOURCE / FORECAST CONTROLS', '6 PASS', '1 OPEN', 'warn']")
+s = s.replace('Appendix / BI lane', 'Appendix / archived lane').replace('SYNTHETIC_REHEARSAL valuation appendices · Power BI historical archive only', 'SYNTHETIC_REHEARSAL valuation appendices remain outside the operating-finance truth set')
+s = s.replace('<span><b>Release</b>2026-09-02</span>', '<span><b>Release</b>VNFINANCE-FPA-v1.1.1</span>')
+s = s.replace('<span><b>Gate A</b>OPEN</span>', '<span><b>Historical OOS</b>PASS</span><span><b>Live Gate A</b>OPEN</span>')
+s = s.replace('<small>Power BI is archived and is not part of active recruiter acceptance.</small>', '<small>Historical OOS evidence is valid only on simulated history; live company accuracy remains blocked by Gate A.</small>')
+s = s.replace('title="Model Control & Reconciliation Matrix" aside="5 PASS + 1 OPEN"', 'title="Model Control & Reconciliation Matrix" aside="6 PASS + 1 OPEN"')
+p.write_text(s, encoding='utf-8')
+
+# Page 10
+p = root / 'site/app/dashboard-page10.tsx'
+s = p.read_text(encoding='utf-8')
+s = s.replace('<strong>Gate A <i className="red">OPEN</i></strong>', '<strong>Historical OOS <i className="teal">PASS</i></strong><strong>Live Gate A <i className="red">OPEN</i></strong>')
+s = s.replace('EBITDA Proxy Margin · monthly actual proxy trend', 'EBITDA Proxy Margin · simulated monthly actual-ledger proxy trend')
+s = s.replace('sub="Inherited governance status · Gate A remains visible"', 'sub="Current governance status · historical OOS PASS, live Gate A visible"')
+p.write_text(s, encoding='utf-8')
+
+# Page 10 builder
+p = root / 'scripts/build_page10_dashboard_data.py'
+s = p.read_text(encoding='utf-8')
+s = s.replace('    "plan": plan,\n    "controls": [', '    "plan": plan,\n    "forecastBacktest": page8["historicalBacktest"],\n    "controls": [')
+s = s.replace('        {"label": "Gate A", "value": page9["gateA"], "status": page9["gateA"]},\n        {"label": "Power BI", "value": page9["powerBi"], "status": "OUT"},', '        {"label": "Historical OOS", "value": "1M / 3M / 6M", "status": page8["historicalBacktest"]["status"]},\n        {"label": "Live Gate A", "value": page9["gateA"], "status": page9["gateA"]},')
+s = s.replace('        "plan": {"source_page": "Page 8", "source_file": "site/data/generated/page8-forecast.json", "evidence_class": "SIMULATED/DERIVED"},', '        "plan": {"source_page": "Page 8", "source_file": "site/data/generated/page8-forecast.json", "evidence_class": "SIMULATED/DERIVED"},\n        "forecastBacktest": {"source_page": "Page 8", "source_file": "data/forecast/rolling_origin_revenue_backtest_summary.json", "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"},')
+p.write_text(s, encoding='utf-8')
+
+# Page 10 validator
+p = root / 'scripts/validate_page10_dashboard.mjs'
+s = p.read_text(encoding='utf-8')
+s = s.replace("for (const key of ['base','performanceTrend','commercial','profitability','costing','resources','cash','plan','controls','actions','linkQA'])", "for (const key of ['base','performanceTrend','commercial','profitability','costing','resources','cash','plan','forecastBacktest','controls','actions','linkQA'])")
+s = s.replace("if (p9.gateA !== 'OPEN') fail('P10-17 Gate A must remain OPEN');\nif (p9.powerBi !== 'OUT_OF_ACTIVE_SCOPE') fail('P10-18 Power BI scope changed');\nconsole.log('PASS: Page 10 synthesis contract (18 checks)');", "if (p9.gateA !== 'OPEN' || d.controls.find((x) => x.label === 'Live Gate A')?.status !== 'OPEN') fail('P10-17 live Gate A must remain OPEN');\nif (d.forecastBacktest?.status !== 'PASS' || d.forecastBacktest?.evidenceClass !== 'SIMULATED_HISTORICAL_BACKTEST' || d.forecastBacktest?.liveAccuracyClaimAllowed !== false) fail('P10-18 historical OOS evidence boundary');\nif (d.controls.find((x) => x.label === 'Historical OOS')?.status !== 'PASS') fail('P10-19 historical OOS control must PASS');\nconsole.log('PASS: Page 10 synthesis contract (19 checks)');")
+p.write_text(s, encoding='utf-8')
+
+validator = root / 'scripts/validate_website_content_alignment.mjs'
+validator.write_text('''#!/usr/bin/env node
+import fs from 'node:fs';
+const root = process.cwd();
+const read = (p) => fs.readFileSync(`${root}/${p}`, 'utf8');
+const json = (p) => JSON.parse(read(p));
+const fail = [];
+const need = (cond, msg) => { if (!cond) fail.push(msg); };
+const p1 = read('site/app/executive-page1.tsx');
+const p2 = read('site/app/performance-page2.tsx');
+const p3 = read('site/app/commercial-page3.tsx');
+const p4 = read('site/app/profitability-page4.tsx');
+const p5 = read('site/app/costing-page5.tsx');
+const p6 = read('site/app/resources-page6.tsx');
+const p7 = read('site/app/cash-page7.tsx');
+const p8 = read('site/app/forecast-page8.tsx');
+const p9 = read('site/app/evidence-page9.tsx');
+const p10 = read('site/app/dashboard-page10.tsx');
+const d3 = json('site/data/generated/page3-commercial.json');
+const d8 = json('site/data/generated/page8-forecast.json');
+const d9 = json('site/data/generated/page9-evidence.json');
+const d10 = json('site/data/generated/page10-dashboard.json');
+need(/OOS BACKTEST PASS/.test(p1) && /GATE A OPEN/.test(p1), 'Page 1 must show OOS PASS and Gate A OPEN');
+need(/separate from the canonical FY2025 Base scenario/.test(p2), 'Page 2 comparator boundary missing');
+const below = d3.channels.filter((x) => x.cm < d3.canonical.hurdle).map((x) => x.channel).sort();
+need(JSON.stringify(below) === JSON.stringify(['D2C','Marketplace','Modern Trade']), 'Page 3 below-hurdle channel set mismatch');
+need(/Modern Trade, Marketplace and D2C are below/.test(p3) && !/Wholesale is below/.test(p3), 'Page 3 takeaway mismatch');
+need(/Standalone Economics Layer/.test(p4) && /SYNTHETIC REHEARSAL/.test(p4), 'Page 4 standalone boundary missing');
+need(/no plant BOM, purchase-order or production-hour evidence is claimed/.test(p5), 'Page 5 plant-evidence boundary missing');
+need(/Non-payroll share of increase/.test(p6) && /Non-payroll Share <b>15.9%/.test(p6), 'Page 6 OPEX share semantics mismatch');
+need(!/Actuals \/ Modeled \/ Simulated/.test(p7) && /Simulated \/ Derived \+ Stress Rehearsal/.test(p7), 'Page 7 evidence label mismatch');
+need(d8.historicalBacktest?.status === 'PASS' && d8.historicalBacktest?.evidenceClass === 'SIMULATED_HISTORICAL_BACKTEST', 'Page 8 historical backtest contract mismatch');
+need(/Historical Out-of-Sample Forecast Backtest/.test(p8) && /SIMULATED_HISTORICAL_BACKTEST/.test(p8) && /Live Accuracy Gate<\/b>OPEN/.test(p8), 'Page 8 display does not separate OOS and live Gate A');
+need(d9.historicalBacktest?.status === 'PASS' && d9.gateA === 'OPEN', 'Page 9 evidence contract mismatch');
+need(/VNFINANCE-FPA-v1.1.1/.test(p9) && /HISTORICAL OOS/.test(p9) && !/Production Power BI/.test(p9), 'Page 9 release/evidence content stale');
+need(d10.forecastBacktest?.status === 'PASS' && d10.controls.some((x) => x.label === 'Historical OOS' && x.status === 'PASS') && d10.controls.some((x) => x.label === 'Live Gate A' && x.status === 'OPEN'), 'Page 10 forecast controls mismatch');
+need(/Historical OOS/.test(p10) && /Live Gate A/.test(p10), 'Page 10 display does not surface OOS/Gate A split');
+if (fail.length) { console.error(fail.join('\n')); process.exit(1); }
+console.log('PASS: website Page 1-10 content alignment');
+''', encoding='utf-8')
+
+p = root / 'scripts/run_final_recruiter_release_qa.mjs'
+s = p.read_text(encoding='utf-8')
+anchor = "run('node', ['scripts/validate_page10_dashboard.mjs']);\n"
+if 'validate_website_content_alignment.mjs' not in s:
+    if anchor not in s: raise SystemExit('final QA anchor missing')
+    s = s.replace(anchor, anchor + "run('node', ['scripts/validate_website_content_alignment.mjs']);\n")
+p.write_text(s, encoding='utf-8')
+
+print('Applied website content audit patches')
