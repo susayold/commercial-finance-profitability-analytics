@@ -9,9 +9,16 @@
   },
   "evaluation": "rolling_origin_out_of_sample",
   "minimum_history_months": 12,
-  "horizons_months": [1, 3, 6],
+  "horizons_months": [
+    1,
+    3,
+    6
+  ],
   "primary_model": "SEASONAL_NAIVE_12",
-  "challenger_models": ["ENSEMBLE_50_50", "LINEAR_TREND_12"],
+  "challenger_models": [
+    "ENSEMBLE_50_50",
+    "LINEAR_TREND_12"
+  ],
   "origin_target_pairs": 65,
   "detail_rows": 195,
   "evidence_class": "SIMULATED_HISTORICAL_BACKTEST",
@@ -20,14 +27,113 @@
   "approved_claim": "Out-of-sample rolling-origin revenue backtest on simulated historical operating data.",
   "prohibited_claim": "Live company or employer forecast accuracy.",
   "results": [
-    {"horizon_months":1,"model_id":"SEASONAL_NAIVE_12","is_primary_model":true,"eligible_forecasts":24,"forecast_total_vnd":25252307416,"actual_total_vnd":25189093140,"bias_pct":0.251,"wape_pct":1.1734,"mae_vnd":12315033.42,"evidence_class":"SIMULATED_HISTORICAL_BACKTEST"},
-    {"horizon_months":1,"model_id":"ENSEMBLE_50_50","is_primary_model":false,"eligible_forecasts":24,"forecast_total_vnd":25215780331.1,"actual_total_vnd":25189093140,"bias_pct":0.1059,"wape_pct":3.0825,"mae_vnd":32352418.86,"evidence_class":"SIMULATED_HISTORICAL_BACKTEST"},
-    {"horizon_months":1,"model_id":"LINEAR_TREND_12","is_primary_model":false,"eligible_forecasts":24,"forecast_total_vnd":25179253246.22,"actual_total_vnd":25189093140,"bias_pct":-0.0391,"wape_pct":5.8437,"mae_vnd":61332472.73,"evidence_class":"SIMULATED_HISTORICAL_BACKTEST"},
-    {"horizon_months":3,"model_id":"SEASONAL_NAIVE_12","is_primary_model":true,"eligible_forecasts":22,"forecast_total_vnd":23191185298,"actual_total_vnd":23155111029,"bias_pct":0.1558,"wape_pct":1.1554,"mae_vnd":12160622.95,"evidence_class":"SIMULATED_HISTORICAL_BACKTEST"},
-    {"horizon_months":3,"model_id":"ENSEMBLE_50_50","is_primary_model":false,"eligible_forecasts":22,"forecast_total_vnd":23158900635.78,"actual_total_vnd":23155111029,"bias_pct":0.0164,"wape_pct":3.0924,"mae_vnd":32547251.52,"evidence_class":"SIMULATED_HISTORICAL_BACKTEST"},
-    {"horizon_months":3,"model_id":"LINEAR_TREND_12","is_primary_model":false,"eligible_forecasts":22,"forecast_total_vnd":23126615973.59,"actual_total_vnd":23155111029,"bias_pct":-0.1231,"wape_pct":5.9238,"mae_vnd":62348634,"evidence_class":"SIMULATED_HISTORICAL_BACKTEST"},
-    {"horizon_months":6,"model_id":"SEASONAL_NAIVE_12","is_primary_model":true,"eligible_forecasts":19,"forecast_total_vnd":20063351699,"actual_total_vnd":20040810253,"bias_pct":0.1125,"wape_pct":1.1782,"mae_vnd":12427231.68,"evidence_class":"SIMULATED_HISTORICAL_BACKTEST"},
-    {"horizon_months":6,"model_id":"ENSEMBLE_50_50","is_primary_model":false,"eligible_forecasts":19,"forecast_total_vnd":20097230391.96,"actual_total_vnd":20040810253,"bias_pct":0.2815,"wape_pct":3.3362,"mae_vnd":35189378.11,"evidence_class":"SIMULATED_HISTORICAL_BACKTEST"},
-    {"horizon_months":6,"model_id":"LINEAR_TREND_12","is_primary_model":false,"eligible_forecasts":19,"forecast_total_vnd":20131109084.95,"actual_total_vnd":20040810253,"bias_pct":0.4506,"wape_pct":6.8701,"mae_vnd":72464708.75,"evidence_class":"SIMULATED_HISTORICAL_BACKTEST"}
+    {
+      "horizon_months": 1,
+      "model_id": "SEASONAL_NAIVE_12",
+      "is_primary_model": true,
+      "eligible_forecasts": 24,
+      "forecast_total_vnd": 25252307416,
+      "actual_total_vnd": 25189093140,
+      "bias_pct": 0.251,
+      "wape_pct": 1.1734,
+      "mae_vnd": 12315033.42,
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
+    },
+    {
+      "horizon_months": 1,
+      "model_id": "ENSEMBLE_50_50",
+      "is_primary_model": false,
+      "eligible_forecasts": 24,
+      "forecast_total_vnd": 25215780331.1,
+      "actual_total_vnd": 25189093140,
+      "bias_pct": 0.1059,
+      "wape_pct": 3.0825,
+      "mae_vnd": 32352418.86,
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
+    },
+    {
+      "horizon_months": 1,
+      "model_id": "LINEAR_TREND_12",
+      "is_primary_model": false,
+      "eligible_forecasts": 24,
+      "forecast_total_vnd": 25179253246.22,
+      "actual_total_vnd": 25189093140,
+      "bias_pct": -0.0391,
+      "wape_pct": 5.8437,
+      "mae_vnd": 61332472.73,
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
+    },
+    {
+      "horizon_months": 3,
+      "model_id": "SEASONAL_NAIVE_12",
+      "is_primary_model": true,
+      "eligible_forecasts": 22,
+      "forecast_total_vnd": 23191185298,
+      "actual_total_vnd": 23155111029,
+      "bias_pct": 0.1558,
+      "wape_pct": 1.1554,
+      "mae_vnd": 12160622.95,
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
+    },
+    {
+      "horizon_months": 3,
+      "model_id": "ENSEMBLE_50_50",
+      "is_primary_model": false,
+      "eligible_forecasts": 22,
+      "forecast_total_vnd": 23158900635.78,
+      "actual_total_vnd": 23155111029,
+      "bias_pct": 0.0164,
+      "wape_pct": 3.0924,
+      "mae_vnd": 32547251.52,
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
+    },
+    {
+      "horizon_months": 3,
+      "model_id": "LINEAR_TREND_12",
+      "is_primary_model": false,
+      "eligible_forecasts": 22,
+      "forecast_total_vnd": 23126615973.59,
+      "actual_total_vnd": 23155111029,
+      "bias_pct": -0.1231,
+      "wape_pct": 5.9238,
+      "mae_vnd": 62348634,
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
+    },
+    {
+      "horizon_months": 6,
+      "model_id": "SEASONAL_NAIVE_12",
+      "is_primary_model": true,
+      "eligible_forecasts": 19,
+      "forecast_total_vnd": 20063351699,
+      "actual_total_vnd": 20040810253,
+      "bias_pct": 0.1125,
+      "wape_pct": 1.1782,
+      "mae_vnd": 12427231.68,
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
+    },
+    {
+      "horizon_months": 6,
+      "model_id": "ENSEMBLE_50_50",
+      "is_primary_model": false,
+      "eligible_forecasts": 19,
+      "forecast_total_vnd": 20097230391.96,
+      "actual_total_vnd": 20040810253,
+      "bias_pct": 0.2815,
+      "wape_pct": 3.3362,
+      "mae_vnd": 35189378.11,
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
+    },
+    {
+      "horizon_months": 6,
+      "model_id": "LINEAR_TREND_12",
+      "is_primary_model": false,
+      "eligible_forecasts": 19,
+      "forecast_total_vnd": 20131109084.95,
+      "actual_total_vnd": 20040810253,
+      "bias_pct": 0.4506,
+      "wape_pct": 6.8701,
+      "mae_vnd": 72464708.75,
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
+    }
   ]
 }

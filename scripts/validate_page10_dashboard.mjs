@@ -48,7 +48,7 @@ if (Math.abs(d.costResource.focusCapexProject.budgetBn - d.costResource.capexPor
 const expectedPlan = p8.longRangeOutlook.filter((x) => x.scenario === 'BASE');
 if (JSON.stringify(d.plan.map((x) => [x.year, x.revenue, x.ebitda])) !== JSON.stringify(expectedPlan.map((x) => [x.year, x.revenue, x.ebitda]))) fail('P10-08 plan parity');
 if (d.plan.some((x) => x.cash !== null) || d.planStatus.status !== 'WITHHELD_PENDING_OPENING_STATE_RECONCILIATION') fail('P10-09/P10-10 long-range cash must be withheld');
-for (const key of ['base','performanceTrend','commercial','profitability','costing','resources','cash','plan','controls','actions','linkQA']) if (!d.sources?.[key]) fail(`P10-11 source map missing ${key}`);
+for (const key of ['base','performanceTrend','commercial','profitability','costing','resources','cash','plan','forecastBacktest','controls','actions','linkQA']) if (!d.sources?.[key]) fail(`P10-11 source map missing ${key}`);
 const ids = ['REC-04','REC-05','REC-01','REC-06','REC-11'];
 if (JSON.stringify(d.actions.map((x) => x.id)) !== JSON.stringify(ids)) fail('P10-12 action IDs/order mismatch');
 const csv = fs.readFileSync(path.join(root, 'data/management_recommendation_register_2026-08-30.csv'), 'utf8');
@@ -58,6 +58,7 @@ for (const action of d.actions) {
 }
 if (qa.overall_status !== 'PASS' || d.controls.find((x) => x.label === 'Links')?.status === 'HISTORICAL') fail('P10-14/P10-15 link control is not fresh PASS');
 if (d.cashRoute !== '#cash') fail('P10-16 cashRoute');
-if (p9.gateA !== 'OPEN') fail('P10-17 Gate A must remain OPEN');
-if (p9.powerBi !== 'OUT_OF_ACTIVE_SCOPE') fail('P10-18 Power BI scope changed');
-console.log('PASS: Page 10 synthesis contract (18 checks)');
+if (p9.gateA !== 'OPEN' || d.controls.find((x) => x.label === 'Live Gate A')?.status !== 'OPEN') fail('P10-17 live Gate A must remain OPEN');
+if (d.forecastBacktest?.status !== 'PASS' || d.forecastBacktest?.evidenceClass !== 'SIMULATED_HISTORICAL_BACKTEST' || d.forecastBacktest?.liveAccuracyClaimAllowed !== false) fail('P10-18 historical OOS evidence boundary');
+if (d.controls.find((x) => x.label === 'Historical OOS')?.status !== 'PASS') fail('P10-19 historical OOS control must PASS');
+console.log('PASS: Page 10 synthesis contract (19 checks)');
