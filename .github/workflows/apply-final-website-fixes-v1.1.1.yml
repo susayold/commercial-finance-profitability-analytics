@@ -1,0 +1,71 @@
+name: Apply final website fixes v1.1.1
+
+on:
+  push:
+    branches: [website-final-fixes-helper-v1.1.1]
+    paths:
+      - '.github/workflows/apply-final-website-fixes-v1.1.1.yml'
+      - 'scripts/apply_final_website_fixes_v1_1_1.py'
+
+permissions:
+  contents: write
+
+jobs:
+  patch-validate-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Preserve patcher and switch to clean target
+        run: |
+          cp scripts/apply_final_website_fixes_v1_1_1.py /tmp/apply_final_website_fixes.py
+          git fetch origin website-final-fixes-v1.1.1
+          git checkout -B website-final-fixes-v1.1.1 origin/website-final-fixes-v1.1.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Apply content fixes
+        run: python /tmp/apply_final_website_fixes.py
+      - name: Build Page 5 source contract
+        run: node scripts/build_page5_costing_data.mjs
+      - name: Install site dependencies
+        run: npm install --prefix site --ignore-scripts --no-audit --no-fund
+      - name: Run final recruiter QA
+        run: node scripts/run_final_recruiter_release_qa.mjs
+      - name: Build production GitHub Pages artifact
+        run: npm run build:github-pages --prefix site
+      - name: Stage exact final-fix allowlist
+        run: |
+          git reset
+          git add -- \
+            site/app/executive-page1.tsx \
+            site/app/profitability-page4.tsx \
+            site/app/costing-page5.tsx \
+            site/app/forecast-page8.tsx \
+            site/app/evidence-page9.tsx \
+            site/app/dashboard-page10.tsx \
+            site/data/generated/page5-costing.json \
+            scripts/validate_website_content_alignment.mjs
+          git diff --cached --name-only
+          python - <<'PY'
+          import subprocess
+          allowed = {
+            'site/app/executive-page1.tsx','site/app/profitability-page4.tsx','site/app/costing-page5.tsx',
+            'site/app/forecast-page8.tsx','site/app/evidence-page9.tsx','site/app/dashboard-page10.tsx',
+            'site/data/generated/page5-costing.json','scripts/validate_website_content_alignment.mjs'
+          }
+          staged = set(subprocess.check_output(['git','diff','--cached','--name-only'], text=True).splitlines())
+          extra = staged - allowed
+          if extra: raise SystemExit('Unexpected staged files: ' + ', '.join(sorted(extra)))
+          if not staged: raise SystemExit('No final website fixes staged')
+          print(f'Allowlist PASS: {len(staged)} files')
+          PY
+      - name: Commit fixes to target branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "fix: source-drive Page 5 and close final website inconsistencies"
+          git push origin HEAD:website-final-fixes-v1.1.1
