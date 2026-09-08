@@ -73,3 +73,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "fix: source-drive Page 5 and close final website inconsistencies"
           git push origin HEAD:website-final-fixes-v1.1.1
+
+# Final rerun includes the explicit NOT_CORE_COGS scope marker in the source-driven Page 5 contract.
