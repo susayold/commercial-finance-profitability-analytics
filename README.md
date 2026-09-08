@@ -6,15 +6,14 @@ The project demonstrates how a Finance Analyst can move from controlled operatin
 
 ## Recruiter start
 
-- Current controlled release: **`VNFINANCE-FPA-v1.1.0`** · tag **`fpa-portfolio-v1.1.0`**
+- Current controlled release: **`VNFINANCE-FPA-v1.1.1`** · tag **`fpa-portfolio-v1.1.1`**
 - [Recruiter start-here guide](RECRUITER_START_HERE.md)
 - [GitHub Pages](https://susayold.github.io/commercial-finance-profitability-analytics/)
 - [Executive Dashboard](https://susayold.github.io/commercial-finance-profitability-analytics/dashboard/)
 - [Private recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/) — **version 52**
-- [One-page FP&A case summary PDF](output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf)
 - [Monthly Business Review / CFO operating pack](reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md)
 - [Rolling-origin forecast backtest](reports/ROLLING_ORIGIN_FORECAST_BACKTEST_2026-09-08.md)
-- [v1.1.0 final recruiter release](reports/FINAL_RECRUITER_RELEASE_V1.1.0_2026-09-08.md)
+- [v1.1.1 final recruiter release](reports/FINAL_RECRUITER_RELEASE_V1.1.1_2026-09-08.md)
 
 ## Business question
 
@@ -33,12 +32,13 @@ The case demonstrates three core finance decisions:
 | Finance truth | **DONE** | Core finance model and reconciliations are controlled |
 | Commercial / profitability | **DONE** | Channel, customer, SKU and promotion economics are decision-linked |
 | Three statements / close controls | **DONE** | P&L, balance sheet, cash flow, subledgers and roll-forwards reconcile |
+| Page 5 costing & inventory | **PASS** | Source-driven 36-SKU detailed rehearsal; isolated from core COGS |
 | Historical forecast backtest | **PASS** | Leakage-safe rolling-origin OOS evidence on simulated history |
+| Website Pages 1–10 | **PASS** | Cross-page finance/evidence contract is validated |
 | Finance core CI | **GREEN** | Automated recruiter-release QA passes |
-| 10-page recruiter site | **DONE** | Existing site semantics remain aligned |
+| GitHub Pages build | **GREEN** | Production site build passes on the tested source freeze |
 | Gate A — live forecast accuracy | **OPEN BY DESIGN** | Genuine pre-close frozen forecast + post-close actual still required |
-| Page 6 OPEX bridge | **OPEN BY DESIGN** | Open reconciliation is disclosed rather than hidden |
-| Power BI | **OUT OF ACTIVE SCOPE** | Historical BI artifacts are archived and not part of this release |
+| Page 6 OPEX bridge | **OPEN BY DESIGN** | +496.1m planning-vs-core bridge is disclosed rather than forced to zero |
 
 Canonical release identity: [data/governance/release_identity_nonbi.json](data/governance/release_identity_nonbi.json).  
 Canonical project status: [data/governance/project_status_nonbi.json](data/governance/project_status_nonbi.json).
@@ -58,11 +58,61 @@ The release contract records a **tested source freeze, stable metadata anchor an
 
 These are **PROXY_DERIVED** outputs from the controlled VietNova case, not reported results of a real company.
 
-## Forecast evidence — what is now proven
+## Website Page 1–10 contract
 
-The project now has a true **rolling-origin out-of-sample revenue backtest** over the 36-month simulated/derived history from 2023-01 to 2025-12. Each forecast is generated using only information available through its historical origin; target actuals are attached afterward for scoring.
+The website is not treated as a separate storytelling layer. Each page is checked against the finance module and evidence boundary it represents.
 
-The pre-specified primary model is a transparent 12-month seasonal-naive benchmark:
+- **Page 1 — Executive:** candidate-facing recommendation language; Historical OOS `PASS`; Live Gate A `OPEN`.
+- **Page 2 — Performance:** simulated actual-ledger comparators are separate from the canonical FY2025 Base scenario.
+- **Page 3 — Commercial:** Modern Trade, Marketplace and D2C are below the 25% contribution-margin hurdle; Wholesale clears it.
+- **Page 4 — Profitability:** 24-customer synthetic economics rehearsal is explicitly standalone and not additive to core P&L.
+- **Page 5 — Costing:** detailed 36-SKU source-driven rehearsal with `NOT_CORE_COGS` boundary.
+- **Page 6 — Resources:** 15.9% non-payroll OPEX mix is separate from 75.6% share of the Q4-vs-Q1 increase; +496.1m OPEX bridge remains open.
+- **Page 7 — Cash & WC:** Dec-2025 core working capital is separate from FY2026 liquidity stress.
+- **Page 8 — Forecast:** rolling-origin historical OOS is the historical accuracy evidence; live Gate A remains open; long-range cash stays withheld pending opening-state reconciliation.
+- **Page 9 — Evidence:** canonical `SIMULATED_HISTORICAL_BACKTEST` taxonomy and CLOSED alias control are visible; archived tooling is not surfaced as an active recruiter subject.
+- **Page 10 — Dashboard:** Revenue and Gross Margin use the same forecast-comparator basis; owner-page scope boundaries remain visible.
+
+Validator: [scripts/validate_website_content_alignment.mjs](scripts/validate_website_content_alignment.mjs).
+
+## Page 5 — source-driven costing & inventory
+
+Page 5 no longer relies on a stale hard-coded inventory table. It is rebuilt from governed costing outputs:
+
+- [standard-cost reconciliation](data/costing/standard_cost_reconciliation.csv)
+- [cost-variance detail](data/costing/cost_variance_monthly.csv)
+- [inventory reserve detail](data/costing/inventory_reserve_monthly.csv)
+
+FY2025 controlled costing remains approximately:
+
+- Standard COGS: **6.3582 VND bn**
+- Modeled Actual COGS: **6.6076 VND bn**
+- Unfavorable variance: **249.4 VND m**
+- Material-price share: **82.0%**
+- Monthly bridge: **12 / 12 PASS**
+
+Dec-2025 detailed inventory now comes directly from source:
+
+- Gross inventory: **3.266386 VND bn**
+- Reserve: **~0.489958 VND bn**
+- Net inventory: **~2.776428 VND bn**
+- Source-flagged slow-moving SKUs: **SKU018, SKU034, SKU035**
+- SKU034: approximately **91.8%** of gross detailed inventory
+
+This detailed costing universe is **SIMULATED / DERIVED** and explicitly **not the core Page 2 COGS universe**.
+
+Rebuild and validate:
+
+```bash
+node scripts/build_page5_costing_data.mjs
+node scripts/validate_page5_costing.mjs
+```
+
+## Forecast evidence
+
+The project includes a true **rolling-origin out-of-sample revenue backtest** over the 36-month simulated/derived history from 2023-01 to 2025-12. Each forecast is generated using only information available through its historical origin; target actuals are attached afterward for scoring.
+
+Primary model: transparent 12-month seasonal-naive benchmark.
 
 | Horizon | Eligible OOS forecasts | Bias | WAPE |
 |---:|---:|---:|---:|
@@ -70,11 +120,11 @@ The pre-specified primary model is a transparent 12-month seasonal-naive benchma
 | 3M | 22 | +0.1558% | **1.1554%** |
 | 6M | 19 | +0.1125% | **1.1782%** |
 
-It beats both a 12-month linear-trend challenger and a 50/50 ensemble on WAPE across all three horizons. The evidence class is **`SIMULATED_HISTORICAL_BACKTEST`**.
+It beats the linear-trend and 50/50 ensemble challengers on WAPE across all three governed horizons. Evidence class: **`SIMULATED_HISTORICAL_BACKTEST`**.
 
-This supports the recruiter-facing claim: **“Out-of-sample rolling-origin revenue backtest on simulated historical operating data.”** It does **not** support a claim of live company/employer forecast accuracy. The low WAPE reflects stable recurring seasonality in the synthetic history and should not be generalized to real-world FMCG performance.
+Approved recruiter-facing claim: **“Out-of-sample rolling-origin revenue backtest on simulated historical operating data.”** It is not evidence of live employer/company forecast accuracy.
 
-See [Forecast Accuracy Backtest methodology](docs/FORECAST_ACCURACY_BACKTEST.md) and the [full rolling-origin report](reports/ROLLING_ORIGIN_FORECAST_BACKTEST_2026-09-08.md).
+See [forecast methodology](docs/FORECAST_ACCURACY_BACKTEST.md) and the [full backtest report](reports/ROLLING_ORIGIN_FORECAST_BACKTEST_2026-09-08.md).
 
 ## Finance architecture
 
@@ -105,9 +155,7 @@ Architecture note: [docs/ARCHITECTURE_NON_POWERBI.md](docs/ARCHITECTURE_NON_POWE
 
 ### Management P&L and commercial profitability
 
-The operating ledger is translated into gross sales, discounts, returns, net revenue, COGS, gross profit, channel fees, trade spend, contribution profit, controllable OPEX and explicitly labelled EBITDA proxies. Profitability is reviewed by channel, customer, SKU and promotion; revenue growth is not treated as economically good when contribution, promo ROI, cost-to-serve or cash consequences fail the governed hurdles.
-
-GL bridge: [docs/GL_TO_MANAGEMENT_PNL_BRIDGE.md](docs/GL_TO_MANAGEMENT_PNL_BRIDGE.md).
+The operating ledger is translated into gross sales, discounts, returns, net revenue, COGS, gross profit, channel fees, trade spend, contribution profit, controllable OPEX and explicitly labelled EBITDA proxies. Profitability is reviewed by channel, customer, SKU and promotion; revenue growth is not treated as economically good when contribution, promo ROI, cost-to-serve or cash consequences fail governed hurdles.
 
 ### Integrated three statements and close controls
 
@@ -115,11 +163,11 @@ The case links the operating model into a management income statement, balance s
 
 Methodology: [docs/THREE_STATEMENT_FPA_MODEL_METHODOLOGY.md](docs/THREE_STATEMENT_FPA_MODEL_METHODOLOGY.md).
 
-### Price–Volume–Mix, working capital and standard costing
+### PVM, working capital and standard costing
 
 - PVM separates price, volume, mix and trade-spend effects and reconciles them to the headline movement.
-- DSO, DIO, DPO and CCC are translated into liquidity actions, cash-release equations and management triggers.
-- FMCG standard costing decomposes COGS variance into material-price, usage/yield and conversion effects while explicitly disclosing the absence of real plant BOM/PO/production-hour evidence.
+- DSO, DIO, DPO and CCC are translated into liquidity actions and management triggers.
+- Standard costing decomposes COGS variance into material-price, usage/yield and conversion effects while disclosing the absence of real plant BOM/PO/production-hour evidence.
 
 Costing methodology: [docs/FMCG_STANDARD_COSTING_AND_VARIANCE.md](docs/FMCG_STANDARD_COSTING_AND_VARIANCE.md).
 
@@ -131,12 +179,10 @@ See [reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md](reports/MONT
 
 ## Evidence boundary
 
-The repository separates evidence classes instead of blending them:
-
-- **SIMULATED / DERIVED** — VietNova operating ledger, management finance model and scenario outputs;
-- **SIMULATED_HISTORICAL_BACKTEST** — leakage-safe rolling-origin forecast performance on simulated history;
-- **OBSERVED / CALCULATED_PUBLIC** — public-company filing-based analysis kept separate from VietNova actuals;
-- **SYNTHETIC_REHEARSAL** — valuation, M&A and Monte Carlo appendices;
+- **SIMULATED / DERIVED** — VietNova operating ledger, management finance model, Page 5 detailed costing and scenario outputs.
+- **SIMULATED_HISTORICAL_BACKTEST** — leakage-safe rolling-origin forecast performance on simulated history.
+- **OBSERVED / CALCULATED_PUBLIC** — public-company filing-based analysis kept separate from VietNova operating facts.
+- **SYNTHETIC_REHEARSAL** — standalone customer economics, valuation and other strategic rehearsals.
 - **PENDING_EXTERNAL_INPUT** — claims requiring genuine external/internal evidence, especially live forecast accuracy.
 
 The project does **not** claim statutory close ownership, live ERP access, realized employer savings or live forecast performance.
@@ -145,21 +191,15 @@ The project does **not** claim statutory close ownership, live ERP access, reali
 
 Current controlled evidence includes:
 
-- [v1.1.0 final recruiter release](reports/FINAL_RECRUITER_RELEASE_V1.1.0_2026-09-08.md)
+- [v1.1.1 final recruiter release](reports/FINAL_RECRUITER_RELEASE_V1.1.1_2026-09-08.md)
+- [Page 5 costing validator](scripts/validate_page5_costing.mjs)
+- [Website Page 1–10 validator](scripts/validate_website_content_alignment.mjs)
 - [Rolling-origin forecast backtest](reports/ROLLING_ORIGIN_FORECAST_BACKTEST_2026-09-08.md)
-- [Rolling-origin summary JSON](data/forecast/rolling_origin_revenue_backtest_summary.json)
 - [True route / link QA](reports/RECRUITER_SITE_LINK_QA_FINAL.md)
 - [Three-statement reconciliation](reports/THREE_STATEMENT_RECONCILIATION_2026-09-01.md)
 - [FMCG standard-cost reconciliation](reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md)
 
-Rebuild forecast evidence:
-
-```bash
-node scripts/build_rolling_origin_revenue_backtest.mjs
-node scripts/validate_rolling_origin_revenue_backtest.mjs
-```
-
-Finance recruiter-release QA:
+Full recruiter-release QA:
 
 ```bash
 node scripts/run_final_recruiter_release_qa.mjs
@@ -167,18 +207,17 @@ node scripts/run_final_recruiter_release_qa.mjs
 
 ## Core technical entrypoints
 
-- Finance architecture: [docs/ARCHITECTURE_NON_POWERBI.md](docs/ARCHITECTURE_NON_POWERBI.md)
 - Three-statement methodology: [docs/THREE_STATEMENT_FPA_MODEL_METHODOLOGY.md](docs/THREE_STATEMENT_FPA_MODEL_METHODOLOGY.md)
 - Forecast methodology: [docs/FORECAST_ACCURACY_BACKTEST.md](docs/FORECAST_ACCURACY_BACKTEST.md)
-- Rolling-origin builder: [scripts/build_rolling_origin_revenue_backtest.mjs](scripts/build_rolling_origin_revenue_backtest.mjs)
-- Standard costing: [docs/FMCG_STANDARD_COSTING_AND_VARIANCE.md](docs/FMCG_STANDARD_COSTING_AND_VARIANCE.md)
-- UAT/change control: [docs/UAT_AND_MODEL_CHANGE_CONTROL.md](docs/UAT_AND_MODEL_CHANGE_CONTROL.md)
+- Page 5 builder: [scripts/build_page5_costing_data.mjs](scripts/build_page5_costing_data.mjs)
+- Page 5 validator: [scripts/validate_page5_costing.mjs](scripts/validate_page5_costing.mjs)
+- Website content validator: [scripts/validate_website_content_alignment.mjs](scripts/validate_website_content_alignment.mjs)
 - Metric registry: [data/governance/finance_metric_registry.csv](data/governance/finance_metric_registry.csv)
 - Unit contract: [schemas/unit_contract.csv](schemas/unit_contract.csv)
 - Claim registry: [data/governance/claim_registry.csv](data/governance/claim_registry.csv)
 
 ## Historical material
 
-Earlier build logs, immutable `fpa-portfolio-v1.0` / `fpa-portfolio-v1.0.1` releases, Power BI experiments and implementation notes remain versioned for traceability. They are historical artifacts, not the canonical current recruiter path.
+Earlier build logs and immutable `fpa-portfolio-v1.0`, `fpa-portfolio-v1.0.1` and `fpa-portfolio-v1.1.0` releases remain versioned for traceability. They are historical artifacts, not the canonical current recruiter path.
 
 For review, start with [RECRUITER_START_HERE.md](RECRUITER_START_HERE.md).
