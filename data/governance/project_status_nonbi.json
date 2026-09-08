@@ -1,10 +1,10 @@
 {
-  "project": "VietNova Consumer JSC — non-Power-BI FP&A release",
-  "release_name": "VNFINANCE-FPA-v1.1.0",
-  "release_tag": "fpa-portfolio-v1.1.0",
-  "release_sha": "79e2c9029c262a740a282a86fbcb53a01cb565dc",
-  "release_source_sha": "79e2c9029c262a740a282a86fbcb53a01cb565dc",
-  "release_metadata_commit": "e36cbcf03793f3a9fcdb4ed0c8d62a0ee75d2808",
+  "project": "VietNova Consumer JSC — FP&A / Commercial Finance recruiter release",
+  "release_name": "VNFINANCE-FPA-v1.1.1",
+  "release_tag": "fpa-portfolio-v1.1.1",
+  "release_sha": "3fe18579feb849788527051b2ccdcc303144787b",
+  "release_source_sha": "3fe18579feb849788527051b2ccdcc303144787b",
+  "release_metadata_commit": "b54b1ca7ab59c0281d130d2012ccac68027a3a03",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_identity": "data/governance/release_identity_nonbi.json",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
@@ -18,12 +18,26 @@
     "management reporting",
     "editable management pack",
     "controls",
-    "website",
+    "10-page recruiter website",
     "CV/recruiter package"
   ],
   "core_status": "PASS",
+  "website_content_alignment_status": "PASS",
+  "page5_costing_contract_status": "PASS",
   "appendix_status": "AVAILABLE_WITH_CAVEATS",
   "external_status": "PENDING_EXTERNAL_INPUT",
+  "page5_costing_contract": {
+    "scope": "DETAILED_36_SKU_COSTING_REHEARSAL",
+    "scope_marker": "NOT_CORE_COGS",
+    "evidence_class": "SIMULATED/DERIVED",
+    "gross_inventory_vnd": 3266385880,
+    "reserve_vnd": 489957882,
+    "net_inventory_vnd": 2776427998,
+    "dec_2025_non_zero_skus": 3,
+    "dec_2025_slow_moving_skus": ["SKU018", "SKU034", "SKU035"],
+    "builder": "scripts/build_page5_costing_data.mjs",
+    "validator": "scripts/validate_page5_costing.mjs"
+  },
   "forecast_historical_backtest": {
     "status": "PASS",
     "evidence_class": "SIMULATED_HISTORICAL_BACKTEST",
@@ -44,33 +58,49 @@
   "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
   "private_site_version": 52,
   "private_site_source_sha": "ca9f4f88a5d87ee3e94ffca1d4395335f77095d3",
-  "claims_policy": "Synthetic and derived finance outputs are labelled; rolling-origin results are simulated-history out-of-sample evidence only; no employer impact, live ERP experience or live forecast accuracy is claimed.",
+  "claims_policy": "Synthetic and derived finance outputs are labelled; Page 5 detailed costing is isolated from core COGS; rolling-origin results are simulated-history out-of-sample evidence only; no employer impact, live ERP experience or live forecast accuracy is claimed.",
   "release_gate": "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json",
-  "generated_at_utc": "2026-09-08T08:46:57Z",
-  "release_commit": "79e2c9029c262a740a282a86fbcb53a01cb565dc",
-  "release_commit_role": "tested code-freeze source commit; see release_source_sha",
+  "generated_at_utc": "2026-09-08T16:55:40Z",
+  "release_commit": "3fe18579feb849788527051b2ccdcc303144787b",
+  "release_commit_role": "tested finance and recruiter-website source freeze; see release_source_sha",
   "qa_totals": {
     "core": {
       "passed": 55,
       "total": 55
     },
+    "page5_costing": {
+      "status": "PASS"
+    },
     "rolling_origin_backtest": {
       "passed": 21,
       "total": 21
+    },
+    "website_content_alignment": {
+      "status": "PASS"
+    },
+    "page10_synthesis": {
+      "passed": 19,
+      "total": 19
     },
     "release_file_gate": {
       "passed": 52,
       "total": 52
     },
     "recruiter_links": {
-      "passed": 11,
-      "total": 11
+      "routes_passed": 11,
+      "routes_total": 11,
+      "build_passed": 4,
+      "build_total": 4,
+      "public_links_passed": 3,
+      "public_links_total": 3
     }
   },
   "active_source_contract": {
     "operating_inputs": "data/operating_inputs/",
     "finance_model": "data/finance_model/final_v1/",
+    "page5_costing": "site/data/generated/page5-costing.json",
     "forecast_historical_backtest": "data/forecast/rolling_origin_revenue_backtest_summary.json",
+    "website_content_alignment": "scripts/validate_website_content_alignment.mjs",
     "power_bi": "ARCHIVED / OUT_OF_ACTIVE_SCOPE"
   },
   "tested_artifact_hashes": {
