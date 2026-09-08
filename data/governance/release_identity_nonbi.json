@@ -1,12 +1,12 @@
 {
-  "release_name": "VNFINANCE-FPA-v1.1.0",
-  "release_tag": "fpa-portfolio-v1.1.0",
-  "release_source_sha": "79e2c9029c262a740a282a86fbcb53a01cb565dc",
-  "release_metadata_commit": "e36cbcf03793f3a9fcdb4ed0c8d62a0ee75d2808",
+  "release_name": "VNFINANCE-FPA-v1.1.1",
+  "release_tag": "fpa-portfolio-v1.1.1",
+  "release_source_sha": "3fe18579feb849788527051b2ccdcc303144787b",
+  "release_metadata_commit": "b54b1ca7ab59c0281d130d2012ccac68027a3a03",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_date": "2026-09-08",
-  "current_source_sha": "79e2c9029c262a740a282a86fbcb53a01cb565dc",
-  "current_source_sha_role": "tested recruiter release source commit (alias of release_source_sha)",
+  "current_source_sha": "3fe18579feb849788527051b2ccdcc303144787b",
+  "current_source_sha_role": "tested recruiter finance / website source freeze commit (alias of release_source_sha)",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
   "github_repo_visibility": "public",
   "github_pages_url": "https://susayold.github.io/commercial-finance-profitability-analytics/",
@@ -19,6 +19,22 @@
   "website_source_sha": "ca9f4f88a5d87ee3e94ffca1d4395335f77095d3",
   "drive_project_folder_id": "1ZPl-6UoV9hnuk_f_j3NQXI2R6__FR0DR",
   "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
+  "website_content_alignment": {
+    "status": "PASS",
+    "scope": "Pages 1-10",
+    "validator": "scripts/validate_website_content_alignment.mjs",
+    "release_report": "reports/FINAL_RECRUITER_RELEASE_V1.1.1_2026-09-08.md"
+  },
+  "page5_costing_contract": {
+    "status": "PASS",
+    "scope": "DETAILED_36_SKU_COSTING_REHEARSAL",
+    "scope_marker": "NOT_CORE_COGS",
+    "evidence_class": "SIMULATED/DERIVED",
+    "builder": "scripts/build_page5_costing_data.mjs",
+    "validator": "scripts/validate_page5_costing.mjs",
+    "source": "site/data/generated/page5-costing.json",
+    "dec_2025_slow_moving_skus": ["SKU018", "SKU034", "SKU035"]
+  },
   "forecast_historical_backtest": {
     "status": "AVAILABLE",
     "evidence_class": "SIMULATED_HISTORICAL_BACKTEST",
@@ -31,5 +47,5 @@
     "optional five-minute walkthrough recording",
     "approved internal pre-close forecast plus post-close actuals if a live forecast-accuracy claim is desired"
   ],
-  "sha_policy_note": "release_source_sha = tested finance/source freeze; release_metadata_commit = stable metadata-anchor commit; runtime QA resolves the live repository HEAD when needed; release_tag = immutable annotated v1.1.0 reference. Historical simulated rolling-origin evidence is available, while Gate A remains open for genuine live forecast evidence."
+  "sha_policy_note": "release_source_sha = tested finance / website source freeze; release_metadata_commit = stable metadata-anchor commit; runtime QA resolves the live repository HEAD when needed; release_tag = immutable annotated v1.1.1 reference. Page 5 is source-driven and explicitly isolated from core COGS. Historical simulated rolling-origin evidence is available, while Gate A remains open for genuine live forecast evidence."
 }
