@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/apply-website-audit-v1.1.1.yml'
       - 'scripts/apply_website_content_audit_v1_1_1.py'
+      - 'scripts/fix_generated_alignment_validator.py'
 
 permissions:
   contents: write
@@ -17,16 +18,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Preserve patcher and switch to target branch
+      - name: Preserve patch tools and switch to target branch
         run: |
           cp scripts/apply_website_content_audit_v1_1_1.py /tmp/apply_website_content_audit.py
+          cp scripts/fix_generated_alignment_validator.py /tmp/fix_generated_alignment_validator.py
           git fetch origin website-content-audit-v1.1.1
           git checkout -B website-content-audit-v1.1.1 origin/website-content-audit-v1.1.1
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - name: Apply deterministic content patches
-        run: python /tmp/apply_website_content_audit.py
+        run: |
+          python /tmp/apply_website_content_audit.py
+          python /tmp/fix_generated_alignment_validator.py
       - name: Build generated page contracts
         run: |
           node scripts/build_rolling_origin_revenue_backtest.mjs
