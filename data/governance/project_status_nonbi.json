@@ -1,10 +1,10 @@
 {
   "project": "VietNova Consumer JSC — non-Power-BI FP&A release",
-  "release_name": "VNFINANCE-FPA-v1.0.1",
-  "release_tag": "fpa-portfolio-v1.0.1",
-  "release_sha": "6d83dd44417d90bc3dc7818cc865da7d5a3e6c6d",
-  "release_source_sha": "6d83dd44417d90bc3dc7818cc865da7d5a3e6c6d",
-  "release_metadata_commit": "066136f4c51d32e158960bb828b196862d8d4614",
+  "release_name": "VNFINANCE-FPA-v1.1.0",
+  "release_tag": "fpa-portfolio-v1.1.0",
+  "release_sha": "79e2c9029c262a740a282a86fbcb53a01cb565dc",
+  "release_source_sha": "79e2c9029c262a740a282a86fbcb53a01cb565dc",
+  "release_metadata_commit": "e36cbcf03793f3a9fcdb4ed0c8d62a0ee75d2808",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_identity": "data/governance/release_identity_nonbi.json",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
@@ -14,7 +14,7 @@
     "integrated three statements",
     "standard costing",
     "three-year operating plan",
-    "forecast versioning/backtest",
+    "forecast versioning and leakage-safe rolling-origin historical backtest",
     "management reporting",
     "editable management pack",
     "controls",
@@ -24,21 +24,39 @@
   "core_status": "PASS",
   "appendix_status": "AVAILABLE_WITH_CAVEATS",
   "external_status": "PENDING_EXTERNAL_INPUT",
+  "forecast_historical_backtest": {
+    "status": "PASS",
+    "evidence_class": "SIMULATED_HISTORICAL_BACKTEST",
+    "history_window": "2023-01..2025-12",
+    "horizons_months": [1, 3, 6],
+    "primary_model": "SEASONAL_NAIVE_12",
+    "primary_wape_pct": {
+      "1M": 1.1734,
+      "3M": 1.1554,
+      "6M": 1.1782
+    },
+    "live_accuracy_claim_allowed": false,
+    "report": "reports/ROLLING_ORIGIN_FORECAST_BACKTEST_2026-09-08.md"
+  },
   "external_gates": [
     "Gate A — approved internal pre-close forecast snapshot plus post-close actuals"
   ],
   "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
   "private_site_version": 52,
   "private_site_source_sha": "ca9f4f88a5d87ee3e94ffca1d4395335f77095d3",
-  "claims_policy": "Synthetic and derived finance outputs are labelled; no employer impact, live ERP experience or live forecast accuracy is claimed.",
+  "claims_policy": "Synthetic and derived finance outputs are labelled; rolling-origin results are simulated-history out-of-sample evidence only; no employer impact, live ERP experience or live forecast accuracy is claimed.",
   "release_gate": "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json",
-  "generated_at_utc": "2026-09-08T02:48:16Z",
-  "release_commit": "6d83dd44417d90bc3dc7818cc865da7d5a3e6c6d",
+  "generated_at_utc": "2026-09-08T08:46:57Z",
+  "release_commit": "79e2c9029c262a740a282a86fbcb53a01cb565dc",
   "release_commit_role": "tested code-freeze source commit; see release_source_sha",
   "qa_totals": {
     "core": {
       "passed": 55,
       "total": 55
+    },
+    "rolling_origin_backtest": {
+      "passed": 21,
+      "total": 21
     },
     "release_file_gate": {
       "passed": 52,
@@ -52,6 +70,7 @@
   "active_source_contract": {
     "operating_inputs": "data/operating_inputs/",
     "finance_model": "data/finance_model/final_v1/",
+    "forecast_historical_backtest": "data/forecast/rolling_origin_revenue_backtest_summary.json",
     "power_bi": "ARCHIVED / OUT_OF_ACTIVE_SCOPE"
   },
   "tested_artifact_hashes": {
