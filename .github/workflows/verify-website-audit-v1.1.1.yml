@@ -1,0 +1,30 @@
+name: Verify website audit v1.1.1
+
+on:
+  push:
+    branches: [website-audit-helper-v1.1.1]
+    paths:
+      - '.github/workflows/verify-website-audit-v1.1.1.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: website-content-audit-v1.1.1
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install site dependencies
+        run: npm install --prefix site --ignore-scripts --no-audit --no-fund
+      - name: Run final recruiter QA
+        run: node scripts/run_final_recruiter_release_qa.mjs
+      - name: Build GitHub Pages artifact
+        run: npm run build:github-pages --prefix site
