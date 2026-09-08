@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+import fs from 'node:fs';
+const root = process.cwd();
+const read = (p) => fs.readFileSync(`${root}/${p}`, 'utf8');
+const json = (p) => JSON.parse(read(p));
+const fail = [];
+const need = (cond, msg) => { if (!cond) fail.push(msg); };
+const p1 = read('site/app/executive-page1.tsx');
+const p2 = read('site/app/performance-page2.tsx');
+const p3 = read('site/app/commercial-page3.tsx');
+const p4 = read('site/app/profitability-page4.tsx');
+const p5 = read('site/app/costing-page5.tsx');
+const p6 = read('site/app/resources-page6.tsx');
+const p7 = read('site/app/cash-page7.tsx');
+const p8 = read('site/app/forecast-page8.tsx');
+const p9 = read('site/app/evidence-page9.tsx');
+const p10 = read('site/app/dashboard-page10.tsx');
+const d3 = json('site/data/generated/page3-commercial.json');
+const d8 = json('site/data/generated/page8-forecast.json');
+const d9 = json('site/data/generated/page9-evidence.json');
+const d10 = json('site/data/generated/page10-dashboard.json');
+need(/OOS BACKTEST PASS/.test(p1) && /GATE A OPEN/.test(p1), 'Page 1 must show OOS PASS and Gate A OPEN');
+need(/separate from the canonical FY2025 Base scenario/.test(p2), 'Page 2 comparator boundary missing');
+const below = d3.channels.filter((x) => x.cm < d3.canonical.hurdle).map((x) => x.channel).sort();
+need(JSON.stringify(below) === JSON.stringify(['D2C','Marketplace','Modern Trade']), 'Page 3 below-hurdle channel set mismatch');
+need(/Modern Trade, Marketplace and D2C are below/.test(p3) && !/Wholesale is below/.test(p3), 'Page 3 takeaway mismatch');
+need(/Standalone Economics Layer/.test(p4) && /SYNTHETIC REHEARSAL/.test(p4), 'Page 4 standalone boundary missing');
+need(/no plant BOM, purchase-order or production-hour evidence is claimed/.test(p5), 'Page 5 plant-evidence boundary missing');
+need(/Non-payroll share of increase/.test(p6) && /Non-payroll Share <b>15.9%/.test(p6), 'Page 6 OPEX share semantics mismatch');
+need(!/Actuals \/ Modeled \/ Simulated/.test(p7) && /Simulated \/ Derived \+ Stress Rehearsal/.test(p7), 'Page 7 evidence label mismatch');
+need(d8.historicalBacktest?.status === 'PASS' && d8.historicalBacktest?.evidenceClass === 'SIMULATED_HISTORICAL_BACKTEST', 'Page 8 historical backtest contract mismatch');
+need(/Historical Out-of-Sample Forecast Backtest/.test(p8) && /SIMULATED_HISTORICAL_BACKTEST/.test(p8) && /Live Accuracy Gate<\/b>OPEN/.test(p8), 'Page 8 display does not separate OOS and live Gate A');
+need(d9.historicalBacktest?.status === 'PASS' && d9.gateA === 'OPEN', 'Page 9 evidence contract mismatch');
+need(/VNFINANCE-FPA-v1.1.1/.test(p9) && /HISTORICAL OOS/.test(p9) && !/Production Power BI/.test(p9), 'Page 9 release/evidence content stale');
+need(d10.forecastBacktest?.status === 'PASS' && d10.controls.some((x) => x.label === 'Historical OOS' && x.status === 'PASS') && d10.controls.some((x) => x.label === 'Live Gate A' && x.status === 'OPEN'), 'Page 10 forecast controls mismatch');
+need(/Historical OOS/.test(p10) && /Live Gate A/.test(p10), 'Page 10 display does not surface OOS/Gate A split');
+if (fail.length) { console.error(fail.join(String.fromCharCode(10))); process.exit(1); }
+console.log('PASS: website Page 1-10 content alignment');

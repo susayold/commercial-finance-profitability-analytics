@@ -19,6 +19,7 @@ run('python', ['scripts/build_page10_dashboard_data.py']);
 run('node', ['scripts/run_true_link_qa.mjs']);
 run('python', ['scripts/build_page10_dashboard_data.py']);
 run('node', ['scripts/validate_page10_dashboard.mjs']);
+run('node', ['scripts/validate_website_content_alignment.mjs']);
 run('node', ['scripts/validate_site_finance_literals.mjs']);
 run('node', ['scripts/validate_scope_boundaries.mjs']);
 run('node', ['scripts/validate_evidence_taxonomy.mjs']);

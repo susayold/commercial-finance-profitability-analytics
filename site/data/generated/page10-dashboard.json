@@ -119,6 +119,101 @@
       "cashStatus": "OPENING_STATE_RECONCILIATION_PENDING"
     }
   ],
+  "forecastBacktest": {
+    "status": "PASS",
+    "evaluation": "rolling_origin_out_of_sample",
+    "historyWindow": {
+      "start": "2023-01",
+      "end": "2025-12",
+      "months": 36
+    },
+    "primaryModel": "SEASONAL_NAIVE_12",
+    "challengerModels": [
+      "ENSEMBLE_50_50",
+      "LINEAR_TREND_12"
+    ],
+    "originTargetPairs": 65,
+    "evidenceClass": "SIMULATED_HISTORICAL_BACKTEST",
+    "approvedClaim": "Out-of-sample rolling-origin revenue backtest on simulated historical operating data.",
+    "prohibitedClaim": "Live company or employer forecast accuracy.",
+    "liveAccuracyClaimAllowed": false,
+    "results": [
+      {
+        "horizonMonths": 1,
+        "modelId": "SEASONAL_NAIVE_12",
+        "eligibleForecasts": 24,
+        "biasPct": 0.251,
+        "wapePct": 1.1734,
+        "maeVnd": 12315033.42
+      },
+      {
+        "horizonMonths": 3,
+        "modelId": "SEASONAL_NAIVE_12",
+        "eligibleForecasts": 22,
+        "biasPct": 0.1558,
+        "wapePct": 1.1554,
+        "maeVnd": 12160622.95
+      },
+      {
+        "horizonMonths": 6,
+        "modelId": "SEASONAL_NAIVE_12",
+        "eligibleForecasts": 19,
+        "biasPct": 0.1125,
+        "wapePct": 1.1782,
+        "maeVnd": 12427231.68
+      }
+    ],
+    "challengers": [
+      {
+        "horizonMonths": 1,
+        "modelId": "ENSEMBLE_50_50",
+        "eligibleForecasts": 24,
+        "biasPct": 0.1059,
+        "wapePct": 3.0825,
+        "maeVnd": 32352418.86
+      },
+      {
+        "horizonMonths": 1,
+        "modelId": "LINEAR_TREND_12",
+        "eligibleForecasts": 24,
+        "biasPct": -0.0391,
+        "wapePct": 5.8437,
+        "maeVnd": 61332472.73
+      },
+      {
+        "horizonMonths": 3,
+        "modelId": "ENSEMBLE_50_50",
+        "eligibleForecasts": 22,
+        "biasPct": 0.0164,
+        "wapePct": 3.0924,
+        "maeVnd": 32547251.52
+      },
+      {
+        "horizonMonths": 3,
+        "modelId": "LINEAR_TREND_12",
+        "eligibleForecasts": 22,
+        "biasPct": -0.1231,
+        "wapePct": 5.9238,
+        "maeVnd": 62348634
+      },
+      {
+        "horizonMonths": 6,
+        "modelId": "ENSEMBLE_50_50",
+        "eligibleForecasts": 19,
+        "biasPct": 0.2815,
+        "wapePct": 3.3362,
+        "maeVnd": 35189378.11
+      },
+      {
+        "horizonMonths": 6,
+        "modelId": "LINEAR_TREND_12",
+        "eligibleForecasts": 19,
+        "biasPct": 0.4506,
+        "wapePct": 6.8701,
+        "maeVnd": 72464708.75
+      }
+    ]
+  },
   "controls": [
     {
       "label": "Core QA",
@@ -141,14 +236,14 @@
       "status": "PASS"
     },
     {
-      "label": "Gate A",
-      "value": "OPEN",
-      "status": "OPEN"
+      "label": "Historical OOS",
+      "value": "1M / 3M / 6M",
+      "status": "PASS"
     },
     {
-      "label": "Power BI",
-      "value": "OUT_OF_ACTIVE_SCOPE",
-      "status": "OUT"
+      "label": "Live Gate A",
+      "value": "OPEN",
+      "status": "OPEN"
     }
   ],
   "planStatus": {
@@ -191,6 +286,11 @@
       "source_page": "Page 8",
       "source_file": "site/data/generated/page8-forecast.json",
       "evidence_class": "SIMULATED/DERIVED"
+    },
+    "forecastBacktest": {
+      "source_page": "Page 8",
+      "source_file": "data/forecast/rolling_origin_revenue_backtest_summary.json",
+      "evidence_class": "SIMULATED_HISTORICAL_BACKTEST"
     },
     "controls": {
       "source_page": "Page 9",

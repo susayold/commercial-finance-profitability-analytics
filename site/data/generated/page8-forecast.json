@@ -84,10 +84,10 @@
   "forecastVersions": [
     {
       "id": "ACT-2024",
-      "type": "Actual",
+      "type": "Historical ledger",
       "period": "2024",
       "status": "Final",
-      "notes": "Historical actuals"
+      "notes": "Synthetic historical operating ledger"
     },
     {
       "id": "BUD-2025",
@@ -101,14 +101,14 @@
       "type": "Latest Est.",
       "period": "2025",
       "status": "Current",
-      "notes": "Updated Sep-25"
+      "notes": "Synthetic current-landing rehearsal"
     },
     {
       "id": "PLAN-3Y",
       "type": "3Y Plan",
       "period": "2026–2028",
       "status": "Draft",
-      "notes": "Driver-based plan"
+      "notes": "Driver-based planning rehearsal"
     }
   ],
   "accuracyRehearsal": [
@@ -137,6 +137,101 @@
       "wape": 10
     }
   ],
+  "historicalBacktest": {
+    "status": "PASS",
+    "evaluation": "rolling_origin_out_of_sample",
+    "historyWindow": {
+      "start": "2023-01",
+      "end": "2025-12",
+      "months": 36
+    },
+    "primaryModel": "SEASONAL_NAIVE_12",
+    "challengerModels": [
+      "ENSEMBLE_50_50",
+      "LINEAR_TREND_12"
+    ],
+    "originTargetPairs": 65,
+    "evidenceClass": "SIMULATED_HISTORICAL_BACKTEST",
+    "approvedClaim": "Out-of-sample rolling-origin revenue backtest on simulated historical operating data.",
+    "prohibitedClaim": "Live company or employer forecast accuracy.",
+    "liveAccuracyClaimAllowed": false,
+    "results": [
+      {
+        "horizonMonths": 1,
+        "modelId": "SEASONAL_NAIVE_12",
+        "eligibleForecasts": 24,
+        "biasPct": 0.251,
+        "wapePct": 1.1734,
+        "maeVnd": 12315033.42
+      },
+      {
+        "horizonMonths": 3,
+        "modelId": "SEASONAL_NAIVE_12",
+        "eligibleForecasts": 22,
+        "biasPct": 0.1558,
+        "wapePct": 1.1554,
+        "maeVnd": 12160622.95
+      },
+      {
+        "horizonMonths": 6,
+        "modelId": "SEASONAL_NAIVE_12",
+        "eligibleForecasts": 19,
+        "biasPct": 0.1125,
+        "wapePct": 1.1782,
+        "maeVnd": 12427231.68
+      }
+    ],
+    "challengers": [
+      {
+        "horizonMonths": 1,
+        "modelId": "ENSEMBLE_50_50",
+        "eligibleForecasts": 24,
+        "biasPct": 0.1059,
+        "wapePct": 3.0825,
+        "maeVnd": 32352418.86
+      },
+      {
+        "horizonMonths": 1,
+        "modelId": "LINEAR_TREND_12",
+        "eligibleForecasts": 24,
+        "biasPct": -0.0391,
+        "wapePct": 5.8437,
+        "maeVnd": 61332472.73
+      },
+      {
+        "horizonMonths": 3,
+        "modelId": "ENSEMBLE_50_50",
+        "eligibleForecasts": 22,
+        "biasPct": 0.0164,
+        "wapePct": 3.0924,
+        "maeVnd": 32547251.52
+      },
+      {
+        "horizonMonths": 3,
+        "modelId": "LINEAR_TREND_12",
+        "eligibleForecasts": 22,
+        "biasPct": -0.1231,
+        "wapePct": 5.9238,
+        "maeVnd": 62348634
+      },
+      {
+        "horizonMonths": 6,
+        "modelId": "ENSEMBLE_50_50",
+        "eligibleForecasts": 19,
+        "biasPct": 0.2815,
+        "wapePct": 3.3362,
+        "maeVnd": 35189378.11
+      },
+      {
+        "horizonMonths": 6,
+        "modelId": "LINEAR_TREND_12",
+        "eligibleForecasts": 19,
+        "biasPct": 0.4506,
+        "wapePct": 6.8701,
+        "maeVnd": 72464708.75
+      }
+    ]
+  },
   "longRangeDrivers": [
     {
       "metric": "Revenue Growth",
@@ -309,10 +404,10 @@
   "planReconciliation": "data/planning/operating_plan_reconciliation.csv",
   "gateA": {
     "status": "OPEN",
-    "label": "FORECAST ACCURACY REHEARSAL / DEMO",
+    "label": "LIVE FORECAST ACCURACY / EXTERNAL EVIDENCE",
     "liveAccuracyClaimAllowed": false
   },
-  "evidence": "SIMULATED/DERIVED",
+  "evidence": "SIMULATED/DERIVED + SIMULATED_HISTORICAL_BACKTEST",
   "liquidity": {
     "status": "WITHHELD_PENDING_OPENING_STATE_RECONCILIATION",
     "guardrail": 8,
