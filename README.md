@@ -6,12 +6,14 @@ The project demonstrates how a Finance Analyst can move from controlled operatin
 
 ## Recruiter start
 
+- Current controlled release: **`VNFINANCE-FPA-v1.0.1`** · tag **`fpa-portfolio-v1.0.1`**
 - [GitHub Pages](https://susayold.github.io/commercial-finance-profitability-analytics/)
 - [Executive Dashboard](https://susayold.github.io/commercial-finance-profitability-analytics/dashboard/)
 - [Private recruiter portfolio](https://vn-finance-fpa-case.sangkenny200.chatgpt.site/) — **version 52**
 - [Recruiter start-here guide](RECRUITER_START_HERE.md)
 - [One-page FP&A case summary PDF](output/pdf/VNFINANCE_FPA_CASE_SUMMARY_ONE_PAGE.pdf)
 - [Monthly Business Review / CFO operating pack](reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md)
+- [v1.0.1 final recruiter release](reports/FINAL_RECRUITER_RELEASE_V1.0.1_2026-09-08.md)
 
 ## Business question
 
@@ -165,9 +167,9 @@ The project does **not** claim statutory close ownership, live ERP access, reali
 
 Controlled release evidence includes:
 
-- [Final recruiter release report](reports/FINAL_RECRUITER_RELEASE_2026-09-05.md)
+- [v1.0.1 final recruiter release](reports/FINAL_RECRUITER_RELEASE_V1.0.1_2026-09-08.md)
 - [True route / link QA](reports/RECRUITER_SITE_LINK_QA_FINAL.md)
-- [Release identity QA](reports/RELEASE_IDENTITY_NONBI_QA_2026-09-03.json)
+- [v1.0.1 release identity QA](reports/RELEASE_IDENTITY_NONBI_QA_V1.0.1_2026-09-08.json)
 - [Non-Power-BI final QA](reports/NON_POWERBI_FINAL_QA_2026-09-01.md)
 - [Three-statement reconciliation](reports/THREE_STATEMENT_RECONCILIATION_2026-09-01.md)
 - [FMCG standard-cost reconciliation](reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md)
@@ -198,6 +200,6 @@ node scripts/run_finance_qa.mjs --nonbi
 
 ## Historical material
 
-Earlier build logs, Power BI experiments, site-version records and implementation notes remain versioned under `reports/`, `docs/` and Git history for traceability. They are **historical artifacts**, not the canonical current-state recruiter path.
+Earlier build logs, the immutable `fpa-portfolio-v1.0` release, Power BI experiments, site-version records and implementation notes remain versioned under `reports/`, `docs/` and Git history for traceability. They are **historical artifacts**, not the canonical current-state recruiter path.
 
 For review, start with [RECRUITER_START_HERE.md](RECRUITER_START_HERE.md) and the current website rather than historical progress logs.
