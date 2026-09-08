@@ -18,6 +18,7 @@
     "source": "data/forecast/rolling_origin_revenue_backtest_summary.json"
   },
   "gateA": "OPEN",
+  "powerBi": "OUT_OF_ACTIVE_SCOPE",
   "activeScope": "NON_POWERBI_FPA",
   "scopeRegister": "data/governance/page_scope_boundary_register.csv"
 }
