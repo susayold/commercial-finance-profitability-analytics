@@ -10,6 +10,8 @@ run('node', ['scripts/validate_three_year_operating_plan.mjs']);
 run('node', ['scripts/validate_page2_semantics.mjs']);
 run('python', ['scripts/build_page6_resources_data.py']);
 run('node', ['scripts/validate_page6_resources.mjs']);
+run('node', ['scripts/build_rolling_origin_revenue_backtest.mjs']);
+run('node', ['scripts/validate_rolling_origin_revenue_backtest.mjs']);
 run('node', ['scripts/build_page8_forecast_data.mjs']);
 run('node', ['scripts/validate_page8_forecast.mjs']);
 run('python', ['scripts/build_page10_dashboard_data.py']);
