@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "scope": "non_powerbi_release_identity",
+  "release_name": "VNFINANCE-FPA-v1.1.1",
+  "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
+  "release_tag": "fpa-portfolio-v1.1.1",
+  "release_source_sha": "3fe18579feb849788527051b2ccdcc303144787b",
+  "release_metadata_commit": "b54b1ca7ab59c0281d130d2012ccac68027a3a03",
+  "website_version": 52,
+  "checks_total": 17,
+  "checks_passed": 17,
+  "checks": [
+    {"id":"RI-01","name":"Identity file parses","status":"PASS"},
+    {"id":"RI-02","name":"Canonical release name","status":"PASS"},
+    {"id":"RI-03","name":"Identity and project status release metadata agree","status":"PASS"},
+    {"id":"RI-04","name":"Release tag/SHA are stable and gated","status":"PASS"},
+    {"id":"RI-05","name":"Project status points to identity","status":"PASS"},
+    {"id":"RI-06","name":"GitHub visibility policy is consistent","status":"PASS"},
+    {"id":"RI-07","name":"Power BI remains backend-only and out of active scope","status":"PASS"},
+    {"id":"RI-08","name":"Historical manifest/handoff preserve archived scope traceability","status":"PASS"},
+    {"id":"RI-09","name":"External claim inputs are explicit","status":"PASS"},
+    {"id":"RI-10","name":"Self-referential main SHA is absent","status":"PASS"},
+    {"id":"RI-11","name":"Repository is explicitly public","status":"PASS"},
+    {"id":"RI-12","name":"GitHub Pages source is declared","status":"PASS"},
+    {"id":"RI-13","name":"GitHub Pages build mode is declared","status":"PASS"},
+    {"id":"RI-14","name":"Historical forecast evidence is available but does not close live Gate A","status":"PASS"},
+    {"id":"RI-15","name":"Website Pages 1-10 content alignment is governed","status":"PASS"},
+    {"id":"RI-16","name":"Page 5 costing contract is source-driven and isolated from core COGS","status":"PASS"},
+    {"id":"RI-17","name":"Visible Page 9 governance matches closed taxonomy status","status":"PASS"}
+  ],
+  "workflow_evidence": {
+    "finance_core_run_id": 34254400607,
+    "final_recruiter_release_qa": "PASS",
+    "page5_costing": "PASS",
+    "rolling_origin_backtest": "21/21 PASS",
+    "page10_synthesis": "19 checks PASS",
+    "website_page_1_10_alignment": "PASS",
+    "scope_boundaries": "PASS",
+    "evidence_taxonomy": "PASS",
+    "working_capital_semantics": "PASS"
+  }
+}
