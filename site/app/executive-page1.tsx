@@ -17,7 +17,7 @@ function ContextStrip() {
 }
 
 function Hero() {
-  return <section className="exec1-hero"><div className="exec1-hero-copy"><span className="exec1-eyebrow">EXECUTIVE MANAGEMENT REPORT</span><h1>Growth is investable only<br />when contribution converts<br />into cash.</h1><p>FY2025 planning snapshot for CFO / Business Finance review — connecting earnings quality, cash conversion and scenario discipline.</p></div><aside className="exec1-decision"><span><ShieldCheck size={20} /> DECISION</span><h2>Approve the Base plan<br />with cash gates.</h2><p>{page1Data.decision.body}</p></aside></section>;
+  return <section className="exec1-hero"><div className="exec1-hero-copy"><span className="exec1-eyebrow">EXECUTIVE MANAGEMENT REPORT</span><h1>Growth is investable only<br />when contribution converts<br />into cash.</h1><p>FY2025 planning snapshot for CFO / Business Finance review — connecting earnings quality, cash conversion and scenario discipline.</p></div><aside className="exec1-decision"><span><ShieldCheck size={20} /> RECOMMENDATION</span><h2>Recommend the Base plan<br />with cash gates.</h2><p>{page1Data.decision.body}</p></aside></section>;
 }
 
 const kpis = [

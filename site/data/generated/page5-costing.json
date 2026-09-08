@@ -1,1 +1,313 @@
-{"scope":"COSTING_REHEARSAL","universe":"36 SKUs","evidence_class":"SIMULATED/DERIVED","costVarianceM":249.4,"materialPriceSharePct":82.0,"scopeMarker":"NOT_CORE_COGS"}
+{
+  "scope": "DETAILED_36_SKU_COSTING_REHEARSAL",
+  "scopeMarker": "NOT_CORE_COGS",
+  "evidenceClass": "SIMULATED/DERIVED",
+  "fy2025": {
+    "standardCogsVnd": 6358186533,
+    "actualCogsVnd": 6607556574,
+    "materialPriceVarianceVnd": 204483433.62,
+    "usageYieldVarianceVnd": 28001915.52,
+    "conversionVarianceVnd": 16884691.86,
+    "totalVarianceVnd": 249370041,
+    "variancePct": 3.9220309078025597,
+    "materialSharePct": 82,
+    "usageSharePct": 11.229061601670105,
+    "conversionSharePct": 6.770938398329894,
+    "monthlyBridgePass": 12,
+    "h2VsH1VariancePct": 58.688789864164704
+  },
+  "monthly": [
+    {
+      "period": "2025-01",
+      "standardCogsVnd": 505847982,
+      "actualCogsVnd": 521736684,
+      "totalVarianceVnd": 15888702,
+      "totalVarianceMn": 15.8887
+    },
+    {
+      "period": "2025-02",
+      "standardCogsVnd": 518566881,
+      "actualCogsVnd": 534222503,
+      "totalVarianceVnd": 15655622,
+      "totalVarianceMn": 15.6556
+    },
+    {
+      "period": "2025-03",
+      "standardCogsVnd": 538854434,
+      "actualCogsVnd": 555653678,
+      "totalVarianceVnd": 16799244,
+      "totalVarianceMn": 16.7992
+    },
+    {
+      "period": "2025-04",
+      "standardCogsVnd": 523197580,
+      "actualCogsVnd": 539585148,
+      "totalVarianceVnd": 16387568,
+      "totalVarianceMn": 16.3876
+    },
+    {
+      "period": "2025-05",
+      "standardCogsVnd": 498265623,
+      "actualCogsVnd": 513544788,
+      "totalVarianceVnd": 15279165,
+      "totalVarianceMn": 15.2792
+    },
+    {
+      "period": "2025-06",
+      "standardCogsVnd": 514580857,
+      "actualCogsVnd": 530968255,
+      "totalVarianceVnd": 16387398,
+      "totalVarianceMn": 16.3874
+    },
+    {
+      "period": "2025-07",
+      "standardCogsVnd": 518397762,
+      "actualCogsVnd": 534525612,
+      "totalVarianceVnd": 16127850,
+      "totalVarianceMn": 16.1278
+    },
+    {
+      "period": "2025-08",
+      "standardCogsVnd": 534165439,
+      "actualCogsVnd": 560789736,
+      "totalVarianceVnd": 26624297,
+      "totalVarianceMn": 26.6243
+    },
+    {
+      "period": "2025-09",
+      "standardCogsVnd": 559113398,
+      "actualCogsVnd": 587170742,
+      "totalVarianceVnd": 28057344,
+      "totalVarianceMn": 28.0573
+    },
+    {
+      "period": "2025-10",
+      "standardCogsVnd": 499914659,
+      "actualCogsVnd": 524856594,
+      "totalVarianceVnd": 24941935,
+      "totalVarianceMn": 24.9419
+    },
+    {
+      "period": "2025-11",
+      "standardCogsVnd": 572371343,
+      "actualCogsVnd": 600982503,
+      "totalVarianceVnd": 28611160,
+      "totalVarianceMn": 28.6112
+    },
+    {
+      "period": "2025-12",
+      "standardCogsVnd": 574910575,
+      "actualCogsVnd": 603520331,
+      "totalVarianceVnd": 28609756,
+      "totalVarianceMn": 28.6098
+    }
+  ],
+  "decVarianceTop8": [
+    {
+      "sku": "SKU009",
+      "category": "Dairy",
+      "standardCogsVnd": 24066280,
+      "actualCogsVnd": 26954233,
+      "varianceVnd": 2887953,
+      "variancePct": 11.999997506885151,
+      "primaryDriver": "Material Price"
+    },
+    {
+      "sku": "SKU025",
+      "category": "Dairy",
+      "standardCogsVnd": 23853180,
+      "actualCogsVnd": 26715562,
+      "varianceVnd": 2862382,
+      "variancePct": 12.000001676925256,
+      "primaryDriver": "Material Price"
+    },
+    {
+      "sku": "SKU033",
+      "category": "Dairy",
+      "standardCogsVnd": 23072160,
+      "actualCogsVnd": 25840820,
+      "varianceVnd": 2768660,
+      "variancePct": 12.000003467382335,
+      "primaryDriver": "Material Price"
+    },
+    {
+      "sku": "SKU013",
+      "category": "Dairy",
+      "standardCogsVnd": 17017920,
+      "actualCogsVnd": 19060071,
+      "varianceVnd": 2042151,
+      "variancePct": 12.000003525695266,
+      "primaryDriver": "Material Price"
+    },
+    {
+      "sku": "SKU005",
+      "category": "Dairy",
+      "standardCogsVnd": 14975680,
+      "actualCogsVnd": 16772761,
+      "varianceVnd": 1797081,
+      "variancePct": 11.999995993504136,
+      "primaryDriver": "Material Price"
+    },
+    {
+      "sku": "SKU014",
+      "category": "Beverages",
+      "standardCogsVnd": 21929120,
+      "actualCogsVnd": 23683450,
+      "varianceVnd": 1754330,
+      "variancePct": 8.000001824058604,
+      "primaryDriver": "Material Price"
+    },
+    {
+      "sku": "SKU029",
+      "category": "Dairy",
+      "standardCogsVnd": 13822234,
+      "actualCogsVnd": 15480902,
+      "varianceVnd": 1658668,
+      "variancePct": 11.999999421222359,
+      "primaryDriver": "Material Price"
+    },
+    {
+      "sku": "SKU017",
+      "category": "Dairy",
+      "standardCogsVnd": 13787994,
+      "actualCogsVnd": 15442553,
+      "varianceVnd": 1654559,
+      "variancePct": 11.999997969247739,
+      "primaryDriver": "Material Price"
+    }
+  ],
+  "inventory": {
+    "period": "2025-12",
+    "grossInventoryVnd": 3266385880,
+    "reserveVnd": 489957882,
+    "netInventoryVnd": 2776427998,
+    "reservePct": 15,
+    "nonZeroSkuCount": 3,
+    "slowMovingCount": 3,
+    "slowMovingInventoryVnd": 3266385880,
+    "slowMovingSharePct": 100,
+    "largestSku": {
+      "sku": "SKU034",
+      "category": "Beverages",
+      "grossInventoryVnd": 2997185100,
+      "reserveVnd": 449577765,
+      "netInventoryVnd": 2547607335,
+      "sharePct": 91.75845139276686,
+      "dioProxyDays": 5913.7,
+      "slowMoving": true,
+      "reserveRate": 0.15,
+      "policy": "slow_moving_15pct"
+    },
+    "nonZeroRows": [
+      {
+        "sku": "SKU034",
+        "category": "Beverages",
+        "grossInventoryVnd": 2997185100,
+        "reserveVnd": 449577765,
+        "netInventoryVnd": 2547607335,
+        "sharePct": 91.75845139276686,
+        "dioProxyDays": 5913.7,
+        "slowMoving": true,
+        "reserveRate": 0.15,
+        "policy": "slow_moving_15pct"
+      },
+      {
+        "sku": "SKU035",
+        "category": "Condiments",
+        "grossInventoryVnd": 149836300,
+        "reserveVnd": 22475445,
+        "netInventoryVnd": 127360855,
+        "sharePct": 4.587219805150517,
+        "dioProxyDays": 248.85,
+        "slowMoving": true,
+        "reserveRate": 0.15,
+        "policy": "slow_moving_15pct"
+      },
+      {
+        "sku": "SKU018",
+        "category": "Beverages",
+        "grossInventoryVnd": 119364480,
+        "reserveVnd": 17904672,
+        "netInventoryVnd": 101459808,
+        "sharePct": 3.6543288020826252,
+        "dioProxyDays": 213.95,
+        "slowMoving": true,
+        "reserveRate": 0.15,
+        "policy": "slow_moving_15pct"
+      }
+    ],
+    "slowMovingRows": [
+      {
+        "sku": "SKU034",
+        "category": "Beverages",
+        "grossInventoryVnd": 2997185100,
+        "reserveVnd": 449577765,
+        "netInventoryVnd": 2547607335,
+        "sharePct": 91.75845139276686,
+        "dioProxyDays": 5913.7,
+        "slowMoving": true,
+        "reserveRate": 0.15,
+        "policy": "slow_moving_15pct"
+      },
+      {
+        "sku": "SKU035",
+        "category": "Condiments",
+        "grossInventoryVnd": 149836300,
+        "reserveVnd": 22475445,
+        "netInventoryVnd": 127360855,
+        "sharePct": 4.587219805150517,
+        "dioProxyDays": 248.85,
+        "slowMoving": true,
+        "reserveRate": 0.15,
+        "policy": "slow_moving_15pct"
+      },
+      {
+        "sku": "SKU018",
+        "category": "Beverages",
+        "grossInventoryVnd": 119364480,
+        "reserveVnd": 17904672,
+        "netInventoryVnd": 101459808,
+        "sharePct": 3.6543288020826252,
+        "dioProxyDays": 213.95,
+        "slowMoving": true,
+        "reserveRate": 0.15,
+        "policy": "slow_moving_15pct"
+      }
+    ],
+    "trend": [
+      {
+        "period": "2025-09",
+        "grossInventoryVnd": 1824830700,
+        "reserveVnd": 273724605,
+        "netInventoryVnd": 1551106095,
+        "slowMovingCount": 3
+      },
+      {
+        "period": "2025-10",
+        "grossInventoryVnd": 2200849405,
+        "reserveVnd": 330127410.75,
+        "netInventoryVnd": 1870721994.25,
+        "slowMovingCount": 3
+      },
+      {
+        "period": "2025-11",
+        "grossInventoryVnd": 2677888060,
+        "reserveVnd": 401683209,
+        "netInventoryVnd": 2276204851,
+        "slowMovingCount": 3
+      },
+      {
+        "period": "2025-12",
+        "grossInventoryVnd": 3266385880,
+        "reserveVnd": 489957882,
+        "netInventoryVnd": 2776427998,
+        "slowMovingCount": 3
+      }
+    ]
+  },
+  "sources": [
+    "data/costing/standard_cost_reconciliation.csv",
+    "data/costing/cost_variance_monthly.csv",
+    "data/costing/inventory_reserve_monthly.csv"
+  ]
+}
