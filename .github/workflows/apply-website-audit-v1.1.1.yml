@@ -57,3 +57,5 @@ jobs:
           git add site scripts reports data
           git commit -m "fix: align website Pages 1-10 with governed finance content"
           git push origin HEAD:website-content-audit-v1.1.1
+
+# v1.1.1 audit rerun after restoring hidden OUT_OF_ACTIVE_SCOPE marker for scope QA.
