@@ -120,6 +120,7 @@ const inventoryTrend = ['2025-09', '2025-10', '2025-11', '2025-12'].map((period)
 
 const out = {
   scope: 'DETAILED_36_SKU_COSTING_REHEARSAL',
+  scopeMarker: 'NOT_CORE_COGS',
   evidenceClass: 'SIMULATED/DERIVED',
   fy2025: {
     standardCogsVnd: standardCogs,
@@ -164,6 +165,7 @@ fs.writeFileSync(OUT, `${JSON.stringify(out, null, 2)}\n`, 'utf8');
 console.log(JSON.stringify({
   status: 'BUILT',
   output: path.relative(ROOT, OUT),
+  scopeMarker: out.scopeMarker,
   grossInventoryBn: round(grossInventory / 1e9, 6),
   slowMovingSkus: slowMovingRows.map((r) => r.sku),
   topVarianceSkus: decVarianceTop8.map((r) => r.sku),
