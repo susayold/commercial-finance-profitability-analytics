@@ -44,10 +44,35 @@ jobs:
             site/data/generated/page10-dashboard.json \
             site/data/generated/page8-forecast.json \
             site/data/generated/page9-evidence.json
-      - name: Confirm diff allowlist only
+      - name: Install and validate clean source
         run: |
-          git diff --name-only b34cdbd654302eb176383aa2e104ba77cfcce008 > /tmp/changed.txt
-          cat /tmp/changed.txt
+          npm install --prefix site --ignore-scripts --no-audit --no-fund
+          node scripts/run_final_recruiter_release_qa.mjs
+          npm run build:github-pages --prefix site
+      - name: Stage exact website audit allowlist
+        run: |
+          git reset
+          git add -- \
+            scripts/build_page10_dashboard_data.py \
+            scripts/build_page8_forecast_data.mjs \
+            scripts/run_final_recruiter_release_qa.mjs \
+            scripts/validate_page10_dashboard.mjs \
+            scripts/validate_page8_forecast.mjs \
+            scripts/validate_website_content_alignment.mjs \
+            site/app/cash-page7.tsx \
+            site/app/commercial-page3.tsx \
+            site/app/costing-page5.tsx \
+            site/app/dashboard-page10.tsx \
+            site/app/evidence-page9.tsx \
+            site/app/executive-page1.tsx \
+            site/app/forecast-page8.tsx \
+            site/app/performance-page2.tsx \
+            site/app/resources-page6.tsx \
+            site/data/generated/page10-dashboard.json \
+            site/data/generated/page8-forecast.json \
+            site/data/generated/page9-evidence.json
+          git diff --cached --name-only > /tmp/staged.txt
+          cat /tmp/staged.txt
           python - <<'PY'
           from pathlib import Path
           allowed = {
@@ -60,21 +85,17 @@ jobs:
             'site/data/generated/page10-dashboard.json','site/data/generated/page8-forecast.json',
             'site/data/generated/page9-evidence.json'
           }
-          changed = {x.strip() for x in Path('/tmp/changed.txt').read_text().splitlines() if x.strip()}
-          extra = sorted(changed - allowed)
+          staged = {x.strip() for x in Path('/tmp/staged.txt').read_text().splitlines() if x.strip()}
+          extra = sorted(staged - allowed)
           if extra:
-              raise SystemExit('Unexpected files in clean source: ' + ', '.join(extra))
-          print(f'Allowlist PASS: {len(changed)} files')
+              raise SystemExit('Unexpected staged files: ' + ', '.join(extra))
+          if not staged:
+              raise SystemExit('No website audit files staged')
+          print(f'Staged allowlist PASS: {len(staged)} files')
           PY
-      - name: Install and validate clean source
-        run: |
-          npm install --prefix site --ignore-scripts --no-audit --no-fund
-          node scripts/run_final_recruiter_release_qa.mjs
-          npm run build:github-pages --prefix site
       - name: Commit clean source snapshot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts site
           git commit -m "fix: cleanly align website Pages 1-10 with finance contracts"
           git push origin HEAD:website-content-audit-clean-v1.1.1
