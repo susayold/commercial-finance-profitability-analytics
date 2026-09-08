@@ -1,11 +1,11 @@
 {
-  "release_name": "VNFINANCE-FPA-v1.0",
-  "release_tag": "fpa-portfolio-v1.0",
-  "release_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
-  "release_metadata_commit": "8eb80861274be7677505265fbbfff514efa10472",
+  "release_name": "VNFINANCE-FPA-v1.0.1",
+  "release_tag": "fpa-portfolio-v1.0.1",
+  "release_source_sha": "6d83dd44417d90bc3dc7818cc865da7d5a3e6c6d",
+  "release_metadata_commit": "066136f4c51d32e158960bb828b196862d8d4614",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
-  "release_date": "2026-09-05",
-  "current_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "release_date": "2026-09-08",
+  "current_source_sha": "6d83dd44417d90bc3dc7818cc865da7d5a3e6c6d",
   "current_source_sha_role": "tested recruiter release source commit (alias of release_source_sha)",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
   "github_repo_visibility": "public",
@@ -24,5 +24,5 @@
     "optional five-minute walkthrough recording",
     "approved internal pre-close forecast plus post-close actuals if a live forecast-accuracy claim is desired"
   ],
-  "sha_policy_note": "release_source_sha = tested finance/source freeze; release_metadata_commit = stable metadata recording commit; runtime QA resolves the live repository HEAD when needed; release_tag = annotated v1.0 reference. Gate A remains open for genuine external forecast evidence."
+  "sha_policy_note": "release_source_sha = tested finance/source freeze; release_metadata_commit = stable metadata-anchor commit; runtime QA resolves the live repository HEAD when needed; release_tag = immutable annotated v1.0.1 reference. Gate A remains open for genuine external forecast evidence."
 }
