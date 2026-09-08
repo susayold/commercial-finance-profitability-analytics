@@ -8,6 +8,8 @@ const run = (cmd, args) => {
 
 run('node', ['scripts/validate_three_year_operating_plan.mjs']);
 run('node', ['scripts/validate_page2_semantics.mjs']);
+run('node', ['scripts/build_page5_costing_data.mjs']);
+run('node', ['scripts/validate_page5_costing.mjs']);
 run('python', ['scripts/build_page6_resources_data.py']);
 run('node', ['scripts/validate_page6_resources.mjs']);
 run('node', ['scripts/build_rolling_origin_revenue_backtest.mjs']);
