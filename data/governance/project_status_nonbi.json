@@ -1,14 +1,14 @@
 {
-  "project": "VietNova Consumer JSC \u2014 non-Power-BI FP&A release",
-  "release_name": "VNFINANCE-FPA-v1.0",
-  "release_tag": "fpa-portfolio-v1.0",
-  "release_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
-  "release_source_sha": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
-  "release_metadata_commit": "8eb80861274be7677505265fbbfff514efa10472",
+  "project": "VietNova Consumer JSC — non-Power-BI FP&A release",
+  "release_name": "VNFINANCE-FPA-v1.0.1",
+  "release_tag": "fpa-portfolio-v1.0.1",
+  "release_sha": "6d83dd44417d90bc3dc7818cc865da7d5a3e6c6d",
+  "release_source_sha": "6d83dd44417d90bc3dc7818cc865da7d5a3e6c6d",
+  "release_metadata_commit": "066136f4c51d32e158960bb828b196862d8d4614",
   "release_status": "RECRUITER_READY_WITH_OPEN_EXTERNAL_CLAIM_GATES",
   "release_identity": "data/governance/release_identity_nonbi.json",
   "github_visibility_policy": "PUBLIC_SAFE_PORTFOLIO_REPOSITORY",
-  "generated_on": "2026-09-05",
+  "generated_on": "2026-09-08",
   "active_scope": [
     "Excel financial model",
     "integrated three statements",
@@ -25,15 +25,15 @@
   "appendix_status": "AVAILABLE_WITH_CAVEATS",
   "external_status": "PENDING_EXTERNAL_INPUT",
   "external_gates": [
-    "Gate A \u2014 approved internal pre-close forecast snapshot plus post-close actuals"
+    "Gate A — approved internal pre-close forecast snapshot plus post-close actuals"
   ],
   "power_bi_status": "OUT_OF_ACTIVE_SCOPE",
   "private_site_version": 52,
   "private_site_source_sha": "ca9f4f88a5d87ee3e94ffca1d4395335f77095d3",
   "claims_policy": "Synthetic and derived finance outputs are labelled; no employer impact, live ERP experience or live forecast accuracy is claimed.",
   "release_gate": "reports/NON_POWERBI_RELEASE_GATE_2026-09-01.json",
-  "generated_at_utc": "2026-09-02T17:34:56.817149+00:00",
-  "release_commit": "fa2123fd0897bd2a8073d960ec094b36fd1434f7",
+  "generated_at_utc": "2026-09-08T02:48:16Z",
+  "release_commit": "6d83dd44417d90bc3dc7818cc865da7d5a3e6c6d",
   "release_commit_role": "tested code-freeze source commit; see release_source_sha",
   "qa_totals": {
     "core": {
