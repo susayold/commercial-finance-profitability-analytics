@@ -1,0 +1,70 @@
+name: Finalize Excel recruiter showcase
+
+on:
+  push:
+    branches: [excel-showcase-v1.2.0]
+    paths:
+      - '.github/workflows/finalize-excel-showcase.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Reconstruct verified workbook
+        shell: bash
+        run: |
+          set -euo pipefail
+          out='site/public/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx'
+          mkdir -p "$(dirname "$out")"
+          {
+            cat site/excel-payload/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.part01.b64
+            for i in $(seq -w 1 14); do cat "site/excel-payload/safe${i}.b64"; done
+          } > /tmp/workbook.b64
+          test "$(wc -c < /tmp/workbook.b64)" -eq 75740
+          base64 --decode /tmp/workbook.b64 > "$out"
+          test "$(wc -c < "$out")" -eq 56805
+          echo 'f37f38bc42500868e0af90e36d71312e29c85502cb0e62d453b4d05a906f8474  '"$out" | sha256sum -c -
+      - name: Validate XLSX package and 12-sheet architecture
+        run: |
+          python - <<'PY'
+          import zipfile, xml.etree.ElementTree as ET
+          p='site/public/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx'
+          expected=['00_Cover','01_Assumptions','02_Actuals','03_PnL_Variance','04_Commercial','05_Working_Capital','06_Scenario','07_Forecast_Accuracy','08_Costing','09_Controls','10_Skills','11_Change_Log']
+          with zipfile.ZipFile(p) as z:
+              names=z.namelist()
+              assert '[Content_Types].xml' in names
+              root=ET.fromstring(z.read('xl/workbook.xml'))
+              ns={'m':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
+              sheets=[x.attrib['name'] for x in root.findall('.//m:sheets/m:sheet',ns)]
+              assert sheets==expected,(sheets,expected)
+              print('PASS: valid XLSX package with 12 expected sheets')
+          PY
+      - name: Install site dependencies
+        run: npm install --prefix site --ignore-scripts --no-audit --no-fund
+      - name: Run final recruiter QA
+        run: node scripts/run_final_recruiter_release_qa.mjs
+      - name: Build production GitHub Pages site
+        run: |
+          npm run build:github-pages --prefix site
+          test -f docs/excel/index.html
+          test -f docs/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx
+      - name: Remove staging-only payload and helper workflow
+        run: |
+          rm -rf site/excel-payload
+          rm -f .github/workflows/finalize-excel-showcase.yml
+      - name: Commit finalized workbook and cleanup
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A site/public/downloads site/excel-payload .github/workflows/finalize-excel-showcase.yml
+          git commit -m 'fix: finalize verified recruiter Excel workbook'
+          git push origin HEAD:excel-showcase-v1.2.0
