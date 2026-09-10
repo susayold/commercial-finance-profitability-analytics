@@ -8,7 +8,7 @@
 2. Rank channel/customer economics after fees, trade spend and cash cost.
 3. Convert DSO/DIO/DPO, forecast and scenario stress into owners, guardrails and review dates.
 
-**Current release.** `VNFINANCE-FPA-v1.1.1` · immutable tag `fpa-portfolio-v1.1.1` after release closure. The Excel workbook `v1.2.0` is an additive recruiter capability artifact and does not change the controlled FY2025 finance truth.
+**Current release.** `VNFINANCE-FPA-v1.1.1` · immutable tag `fpa-portfolio-v1.1.1`. The Excel workbook `v1.2.0` is an additive recruiter capability artifact and does not change the controlled FY2025 finance truth.
 
 **Core deliverables.**
 
@@ -25,7 +25,9 @@
 
 **Excel proof of skill.** The public workbook contains **12 sheets** covering assumptions, monthly operating data, P&L variance, commercial economics, working capital, scenarios, forecast accuracy, costing, controls, recruiter skill communication and version/change history. Recruiters can download the real `.xlsx`, inspect formulas, use scenario/channel selectors and review the control/change-log sheets. It demonstrates `SUM`, `IF`, `IFERROR`, `SUMIFS`, `INDEX` / `MATCH`, cross-sheet links, data validation, conditional formatting, charts and explicit PASS / OPEN controls.
 
-**Website contract.** Pages 1–10 are validated against the same finance and evidence contracts used by the repository. Page 4 and Page 5 remain intentionally standalone rehearsals rather than being forced into false reconciliation with the core P&L. Page 5 is now source-driven from governed costing and inventory files; Dec-2025 slow-moving SKUs are `SKU018`, `SKU034`, and `SKU035`. The separate Excel route is a capability/evidence surface, not a new finance truth set.
+**Suggested recruiter review path.** Open `/excel/`, scan the four workbook snapshots, download the `.xlsx`, then inspect `01_Assumptions`, `03_PnL_Variance`, `04_Commercial`, `06_Scenario`, `07_Forecast_Accuracy` and `09_Controls`. Those sheets most directly demonstrate Excel modelling, variance investigation, commercial analysis, scenario logic, forecast governance and review controls.
+
+**Website contract.** Pages 1–10 are validated against the same finance and evidence contracts used by the repository. Page 4 and Page 5 remain intentionally standalone rehearsals rather than being forced into false reconciliation with the core P&L. Page 5 is source-driven from governed costing and inventory files; Dec-2025 slow-moving SKUs are `SKU018`, `SKU034`, and `SKU035`. The separate Excel route is a capability/evidence surface, not a new finance truth set.
 
 **Forecast evidence.** The project includes a true rolling-origin out-of-sample revenue backtest over the 36-month simulated operating history. The pre-specified 12-month seasonal-naive benchmark records WAPE of **1.1734% / 1.1554% / 1.1782%** at 1M / 3M / 6M horizons and beats the trend and ensemble challengers. These are **SIMULATED_HISTORICAL_BACKTEST** results, not live company performance. Forecast Gate A therefore remains open until a genuine pre-close frozen forecast and post-close actual are supplied.
 
