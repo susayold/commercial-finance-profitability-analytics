@@ -36,10 +36,12 @@ const formulas = [
 ];
 
 const pnlPreview = [
-  ['Revenue', '84.559', '81.645', '+2.914', '+3.57%', '84.680', '(0.122)'],
-  ['Gross Profit', '28.145', '26.129', '+2.016', '+7.72%', '27.104', '+1.041'],
-  ['Gross Margin', '33.28%', '32.00%', '+1.28pp', '+1.28pp', '32.01%', '+1.28pp'],
-  ['EBITDA Proxy', '15.052', '14.771', '+0.281', '+1.90%', '15.073', '(0.021)'],
+  ['Net Revenue', '82.514', '85.718', '76.906'],
+  ['Gross Profit', '26.915', '31.189', '18.634'],
+  ['EBITDA Proxy', '12.896', '17.450', '3.493'],
+  ['EBITDA Proxy Margin', '15.63%', '20.36%', '4.54%'],
+  ['Contribution', '24.207', '28.481', '15.872'],
+  ['CCC', '54 days', '48 days', '68 days'],
 ];
 
 const commercialPreview = [
@@ -57,7 +59,7 @@ const forecastPreview = [
 ];
 
 const controlPreview = [
-  ['XL-01', 'FY2025 actual revenue total', 'PASS'],
+  ['XL-01', 'FY2025 scenario / model tie', 'PASS'],
   ['XL-03', 'Operating WC identity', 'PASS'],
   ['XL-05', 'Scenario selector / INDEX+MATCH', 'PASS'],
   ['XL-07', 'Historical rolling-origin OOS', 'PASS'],
@@ -126,7 +128,7 @@ export default function ExcelShowcasePage() {
 
       <section><SectionTitle n="01" title="Workbook snapshots" note="Representative outputs from the downloadable workbook. The .xlsx remains the source recruiters can inspect directly." />
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(520px,1fr))',gap:18}}>
-          <MiniTable title="03_PnL_Variance · VND bn unless stated" headers={['Metric','Actual','Budget','Variance','Var %','Forecast','Var vs Fcst']} rows={pnlPreview} />
+          <MiniTable title="06_Scenario · controlled FY2025 scenario truth" headers={['Metric','Base','Upside','Downside']} rows={pnlPreview} />
           <MiniTable title="04_Commercial · channel economics" headers={['Channel','Revenue','Contribution','CM %','Decision']} rows={commercialPreview} />
           <MiniTable title="07_Forecast_Accuracy · simulated historical OOS" headers={['Horizon','Model','Eligible','Bias','WAPE','Decision']} rows={forecastPreview} />
           <MiniTable title="09_Controls · live checks" headers={['ID','Control','Status']} rows={controlPreview} />
