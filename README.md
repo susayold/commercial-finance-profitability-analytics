@@ -30,7 +30,7 @@ The case demonstrates three core finance decisions:
 
 ## Excel proof of skill
 
-The public recruiter site now includes a dedicated **Excel Model** page and downloadable workbook. The workbook is intentionally structured like a reviewable finance deliverable rather than a one-tab exercise: **12 sheets** separating assumptions, actuals, P&L variance, commercial analysis, working capital, scenarios, forecast accuracy, costing, controls, recruiter skills summary and change history.
+The public recruiter site includes a dedicated **Excel Model** page and downloadable workbook. The workbook is intentionally structured like a reviewable finance deliverable rather than a one-tab exercise: **12 sheets** separating assumptions, actuals, P&L variance, commercial analysis, working capital, scenarios, forecast accuracy, costing, controls, recruiter skills summary and change history.
 
 It demonstrates formula-driven analysis and spreadsheet controls including `SUM`, `IF`, `IFERROR`, `SUMIFS`, `INDEX/MATCH`, cross-sheet links, data validation, conditional formatting, charts, finance-style input/formula conventions, reconciliation checks and explicit model versioning.
 
