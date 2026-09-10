@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const root = process.cwd();
 const pagePath = path.join(root, 'site/app/excel/page.tsx');
@@ -11,6 +12,7 @@ const readmePath = path.join(root, 'README.md');
 const recruiterPath = path.join(root, 'RECRUITER_START_HERE.md');
 const workbookRel = 'site/public/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx';
 const workbookPath = path.join(root, workbookRel);
+const expectedWorkbookSha256 = 'f37f38bc42500868e0af90e36d71312e29c85502cb0e62d453b4d05a906f8474';
 
 const failures = [];
 const need = (cond, msg) => { if (!cond) failures.push(msg); };
@@ -21,10 +23,17 @@ for (const p of [pagePath, mainPath, copyPath, homePath, readmePath, recruiterPa
 }
 need(fs.existsSync(workbookPath), `Missing workbook: ${workbookRel}`);
 if (fs.existsSync(workbookPath)) {
+  const buf = fs.readFileSync(workbookPath);
   const stat = fs.statSync(workbookPath);
-  need(stat.size > 20000, `Workbook is unexpectedly small: ${stat.size} bytes`);
-  const sig = fs.readFileSync(workbookPath).subarray(0, 4).toString('hex');
+  need(stat.size === 56805, `Workbook size mismatch: ${stat.size} bytes`);
+  const sig = buf.subarray(0, 4).toString('hex');
   need(sig === '504b0304', `Workbook is not a valid ZIP/XLSX container signature: ${sig}`);
+  const hash = crypto.createHash('sha256').update(buf).digest('hex');
+  need(hash === expectedWorkbookSha256, `Workbook SHA-256 mismatch: ${hash}`);
+  const ascii = buf.toString('latin1');
+  for (const sheet of ['00_Cover','01_Assumptions','02_Actuals','03_PnL_Variance','04_Commercial','05_Working_Capital','06_Scenario','07_Forecast_Accuracy','08_Costing','09_Controls','10_Skills','11_Change_Log']) {
+    need(ascii.includes(sheet), `Workbook sheet marker missing: ${sheet}`);
+  }
 }
 
 const page = read(pagePath);
@@ -52,4 +61,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('PASS: recruiter Excel showcase route, workbook, content and evidence boundary');
+console.log('PASS: recruiter Excel showcase route, workbook binary, structure, content and evidence boundary');
