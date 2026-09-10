@@ -9,15 +9,6 @@ const workbookUrl = `${BASE}/downloads/${fileName}`;
 const publicWorkbookUrl = `https://susayold.github.io${workbookUrl}`;
 const officeViewerUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(publicWorkbookUrl)}`;
 
-const previews = [
-  { src: `${BASE}/excel-preview/cover.webp`, title: '00_Cover', note: 'Workbook map, version metadata, modelling conventions and recruiter review path.' },
-  { src: `${BASE}/excel-preview/pnl.webp`, title: '03_PnL_Variance', note: 'Formula-driven Actual vs Budget vs Forecast with variance flags and chart.' },
-  { src: `${BASE}/excel-preview/commercial.webp`, title: '04_Commercial', note: 'Channel contribution, 25% hurdle and interactive SUMIFS selector.' },
-  { src: `${BASE}/excel-preview/forecast.webp`, title: '07_Forecast_Accuracy', note: 'Rolling-origin out-of-sample Bias / WAPE benchmark and model-governance decision.' },
-  { src: `${BASE}/excel-preview/skills.webp`, title: '10_Skills', note: 'What I built, learned and can contribute to an FP&A / Commercial Finance team.' },
-  { src: `${BASE}/excel-preview/changelog.webp`, title: '11_Change_Log', note: 'Version history, validation evidence and model handover checklist.' },
-];
-
 const workbookMap = [
   ['00_Cover', 'Model map, release metadata & review guide', 'Documentation / auditability'],
   ['01_Assumptions', 'Base / Upside / Downside drivers', 'Controlled hardcodes + input convention'],
@@ -44,6 +35,36 @@ const formulas = [
   ['WAPE', 'Σ|Forecast − Actual| / ΣActual', 'Compare forecast accuracy'],
 ];
 
+const pnlPreview = [
+  ['Revenue', '84.559', '81.645', '+2.914', '+3.57%', '84.680', '(0.122)'],
+  ['Gross Profit', '28.145', '26.129', '+2.016', '+7.72%', '27.104', '+1.041'],
+  ['Gross Margin', '33.28%', '32.00%', '+1.28pp', '+1.28pp', '32.01%', '+1.28pp'],
+  ['EBITDA Proxy', '15.052', '14.771', '+0.281', '+1.90%', '15.073', '(0.021)'],
+];
+
+const commercialPreview = [
+  ['General Trade', '30.649', '8.231', '26.86%', 'SCALE / PROTECT'],
+  ['Modern Trade', '20.717', '5.041', '24.33%', 'REVIEW TERMS'],
+  ['Marketplace', '14.308', '3.399', '23.75%', 'REVIEW TERMS'],
+  ['D2C', '9.377', '2.040', '21.76%', 'REVIEW TERMS'],
+  ['Wholesale', '9.507', '2.409', '25.34%', 'SCALE / PROTECT'],
+];
+
+const forecastPreview = [
+  ['1M', 'SEASONAL_NAIVE_12', '24', '+0.2510%', '1.1734%', 'PRIMARY / KEEP SIMPLE'],
+  ['3M', 'SEASONAL_NAIVE_12', '22', '+0.1558%', '1.1554%', 'PRIMARY / KEEP SIMPLE'],
+  ['6M', 'SEASONAL_NAIVE_12', '19', '+0.1125%', '1.1782%', 'PRIMARY / KEEP SIMPLE'],
+];
+
+const controlPreview = [
+  ['XL-01', 'FY2025 actual revenue total', 'PASS'],
+  ['XL-03', 'Operating WC identity', 'PASS'],
+  ['XL-05', 'Scenario selector / INDEX+MATCH', 'PASS'],
+  ['XL-07', 'Historical rolling-origin OOS', 'PASS'],
+  ['XL-08', 'Live forecast accuracy', 'OPEN'],
+  ['XL-09', 'Page 6 OPEX bridge', 'OPEN'],
+];
+
 const features = [
   ['Model architecture', 'Separated assumptions, workings, outputs and controls instead of mixing inputs and calculations in one tab.', Layers3],
   ['Formula discipline', 'Hardcoded inputs are visually separated from formulas and cross-sheet links using finance-model conventions.', Calculator],
@@ -61,6 +82,14 @@ const learned = [
 
 function SectionTitle({ n, title, note }: { n: string; title: string; note?: string }) {
   return <div className="xl11-section-title"><span>{n}</span><div><h2>{title}</h2>{note && <p>{note}</p>}</div></div>;
+}
+
+function MiniTable({ title, headers, rows }: { title: string; headers: string[]; rows: string[][] }) {
+  return <article className="xl11-map" style={{overflow:'auto'}}>
+    <div className="xl11-map-head" style={{gridTemplateColumns:'1fr'}}><span>{title}</span></div>
+    <div style={{gridTemplateColumns:`repeat(${headers.length}, minmax(120px,1fr))`,minWidth:headers.length*125}}>{headers.map(h => <b key={h} style={{fontFamily:'inherit',color:'#0b2f4f'}}>{h}</b>)}</div>
+    {rows.map((r,i) => <div key={`${title}-${i}`} style={{gridTemplateColumns:`repeat(${headers.length}, minmax(120px,1fr))`,minWidth:headers.length*125}}>{r.map((v,j) => <span key={`${i}-${j}`} style={{fontWeight:j===0?800:500,color:v==='OPEN'?'#b45309':v==='PASS'?'#047857':undefined}}>{v}</span>)}</div>)}
+  </article>;
 }
 
 export default function ExcelShowcasePage() {
@@ -90,13 +119,18 @@ export default function ExcelShowcasePage() {
       <div className="xl11-context">
         <span><b>Role Lens</b>FP&amp;A / Commercial Finance</span>
         <span><b>Workbook</b>12 sheets · v1.2.0</span>
-        <span><b>Formula QA</b>0 Excel errors</span>
+        <span><b>Formula QA</b>0 formula errors</span>
         <span><b>Historical OOS</b>PASS</span>
         <span><b>Live Gate A</b>OPEN by design</span>
       </div>
 
-      <section><SectionTitle n="01" title="See the Excel model" note="Rendered from the actual .xlsx workbook — not mock dashboard screenshots." />
-        <div className="xl11-preview-grid">{previews.map((p, i) => <figure key={p.title} className={i === 1 ? 'wide' : ''}><a href={p.src} target="_blank" rel="noreferrer"><img src={p.src} alt={`${p.title} Excel worksheet preview`} loading="lazy" /></a><figcaption><b>{p.title}</b><span>{p.note}</span><a href={p.src} target="_blank" rel="noreferrer">Open full preview <ExternalLink size={13} /></a></figcaption></figure>)}</div>
+      <section><SectionTitle n="01" title="Workbook snapshots" note="Representative outputs from the downloadable workbook. The .xlsx remains the source recruiters can inspect directly." />
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(520px,1fr))',gap:18}}>
+          <MiniTable title="03_PnL_Variance · VND bn unless stated" headers={['Metric','Actual','Budget','Variance','Var %','Forecast','Var vs Fcst']} rows={pnlPreview} />
+          <MiniTable title="04_Commercial · channel economics" headers={['Channel','Revenue','Contribution','CM %','Decision']} rows={commercialPreview} />
+          <MiniTable title="07_Forecast_Accuracy · simulated historical OOS" headers={['Horizon','Model','Eligible','Bias','WAPE','Decision']} rows={forecastPreview} />
+          <MiniTable title="09_Controls · live checks" headers={['ID','Control','Status']} rows={controlPreview} />
+        </div>
       </section>
 
       <section><SectionTitle n="02" title="Professional workbook architecture" note="Designed around a clear flow of inputs → workings → outputs → controls, with version history for handover." />
@@ -126,7 +160,7 @@ export default function ExcelShowcasePage() {
         </div>
       </section>
 
-      <section><SectionTitle n="07" title="Modelling standards used" note="The workbook structure follows widely used spreadsheet-control and financial-model documentation principles." />
+      <section><SectionTitle n="07" title="Modelling standards used" note="The workbook structure follows established spreadsheet-control and financial-model documentation principles." />
         <div className="xl11-employer-grid">
           <article><Layers3 /><b>ICAEW spreadsheet principles</b><span>Clear purpose, audience, inputs / processes / outputs, consistency, built-in controls and version management.</span><a href="https://www.icaew.com/technical/technology/excel-community/20-principles-for-good-spreadsheet-practice-2024-edition" target="_blank" rel="noreferrer">Reference <ExternalLink size={12}/></a></article>
           <article><FileSpreadsheet /><b>CFI model documentation</b><span>Meaningful worksheet titles, labelled units, documented structure, validation, conditional formatting and protection-oriented design.</span><a href="https://corporatefinanceinstitute.com/resources/excel/documenting-excel-models-best-practices/" target="_blank" rel="noreferrer">Reference <ExternalLink size={12}/></a></article>
