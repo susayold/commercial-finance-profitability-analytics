@@ -27,7 +27,7 @@ jobs:
           mkdir -p "$(dirname "$out")"
           {
             cat site/excel-payload/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.part01.b64
-            for i in $(seq -w 1 8); do cat "site/excel-payload/safe${i}.b64"; done
+            for i in $(seq 1 8); do printf -v n '%02d' "$i"; cat "site/excel-payload/safe${n}.b64"; done
             cat site/excel-payload/fix11a.b64 site/excel-payload/fix11b.b64
             cat site/excel-payload/fix12a.b64 site/excel-payload/fix12b.b64
             for i in 11 12 13 14; do cat "site/excel-payload/safe${i}.b64"; done
@@ -71,5 +71,3 @@ jobs:
           git add -A site/public/downloads site/excel-payload .github/workflows/finalize-excel-showcase.yml
           git commit -m 'fix: finalize verified recruiter Excel workbook'
           git push origin HEAD:excel-showcase-v1.2.0
-
-# trigger finalizer after verified half-chunk repair
