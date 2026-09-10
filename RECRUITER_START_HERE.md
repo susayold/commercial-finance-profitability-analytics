@@ -1,71 +1,34 @@
-# Recruiter Start Here — Commercial Finance & FP&A
+# VNFinance — recruiter start here
 
-## 60-second review path
+**Business question.** Which growth, margin and working-capital drivers should management act on next month?
 
-1. Open the [GitHub Pages recruiter site](https://susayold.github.io/commercial-finance-profitability-analytics/) for the executive finance story.
-2. Open the [Executive Dashboard](https://susayold.github.io/commercial-finance-profitability-analytics/dashboard/) for the synthesized KPI / action view.
-3. Open the [Excel FP&A Model Showcase](https://susayold.github.io/commercial-finance-profitability-analytics/excel/) to inspect the spreadsheet capability layer and download the workbook.
-4. Review the [Monthly Business Review / CFO operating pack](reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md) for decisions, owners, guardrails and review cadence.
-5. Review the [Rolling-origin forecast backtest](reports/ROLLING_ORIGIN_FORECAST_BACKTEST_2026-09-08.md) for forecast-governance methodology and historical OOS evidence.
+**Three decisions demonstrated.**
 
-## Excel proof of skill
+1. Reconcile invoice-level sales to a management P&L and explain plan variance.
+2. Rank channel/customer economics after fees, trade spend and cash cost.
+3. Convert DSO/DIO/DPO, forecast and scenario stress into owners, guardrails and review dates.
 
-The recruiter workbook is available at:
+**Current release.** `VNFINANCE-FPA-v1.1.1` · immutable tag `fpa-portfolio-v1.1.1` after release closure. The Excel workbook `v1.2.0` is an additive recruiter capability artifact and does not change the controlled FY2025 finance truth.
 
-- [Download `VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx`](site/public/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx)
-- Website route: `/excel/`
+**Core deliverables.**
 
-The workbook has **12 sheets** and demonstrates controlled assumptions, formula-driven outputs, cross-sheet references, Actual / Budget / Forecast variance analysis, `SUMIFS`, `INDEX` / `MATCH`, data validation, conditional formatting, working-capital formulas, forecast Bias / WAPE review, model checks and version/change history.
+- [10-page recruiter website](https://susayold.github.io/commercial-finance-profitability-analytics/)
+- [Executive dashboard](https://susayold.github.io/commercial-finance-profitability-analytics/dashboard/)
+- [Excel FP&A Model Showcase](https://susayold.github.io/commercial-finance-profitability-analytics/excel/)
+- [Download Excel workbook](site/public/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx)
+- [MBR finance analyst pack](reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md)
+- [Leakage-safe rolling-origin revenue backtest](reports/ROLLING_ORIGIN_FORECAST_BACKTEST_2026-09-08.md)
+- [Page 5 source-driven costing contract](site/data/generated/page5-costing.json)
+- [Integrated three-statement reconciliation](reports/THREE_STATEMENT_RECONCILIATION_2026-09-01.md)
+- [FMCG standard-cost reconciliation](reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md)
+- [Final v1.1.1 release record](reports/FINAL_RECRUITER_RELEASE_V1.1.1_2026-09-08.md)
 
-It is deliberately recruiter-readable: another reviewer can see which cells are inputs, which are formulas, where outputs come from, what remains OPEN, and how changes are documented.
+**Excel proof of skill.** The public workbook contains **12 sheets** covering assumptions, monthly operating data, P&L variance, commercial economics, working capital, scenarios, forecast accuracy, costing, controls, recruiter skill communication and version/change history. Recruiters can download the real `.xlsx`, inspect formulas, use scenario/channel selectors and review the control/change-log sheets. It demonstrates `SUM`, `IF`, `IFERROR`, `SUMIFS`, `INDEX` / `MATCH`, cross-sheet links, data validation, conditional formatting, charts and explicit PASS / OPEN controls.
 
-## Core finance story
+**Website contract.** Pages 1–10 are validated against the same finance and evidence contracts used by the repository. Page 4 and Page 5 remain intentionally standalone rehearsals rather than being forced into false reconciliation with the core P&L. Page 5 is now source-driven from governed costing and inventory files; Dec-2025 slow-moving SKUs are `SKU018`, `SKU034`, and `SKU035`. The separate Excel route is a capability/evidence surface, not a new finance truth set.
 
-The main business question is:
+**Forecast evidence.** The project includes a true rolling-origin out-of-sample revenue backtest over the 36-month simulated operating history. The pre-specified 12-month seasonal-naive benchmark records WAPE of **1.1734% / 1.1554% / 1.1782%** at 1M / 3M / 6M horizons and beats the trend and ensemble challengers. These are **SIMULATED_HISTORICAL_BACKTEST** results, not live company performance. Forecast Gate A therefore remains open until a genuine pre-close frozen forecast and post-close actual are supplied.
 
-> Which growth, margin and working-capital drivers should management act on next month?
+**Evidence boundary.** The operating ledger, detailed costing and Excel workbook are simulated/derived portfolio evidence; public-company metrics are filing-based and basis-controlled; standalone customer economics and strategic appendices are rehearsals; EBITDA remains an explicitly labelled proxy; live forecast accuracy is input-gated. The Excel artifact does not imply live ERP access, statutory-close ownership or employer impact.
 
-The project demonstrates the ability to:
-
-- reconcile transaction-level operating data into a management P&L and integrated finance model;
-- explain performance through profitability, Price–Volume–Mix, costing and working-capital drivers;
-- test Base / Upside / Downside scenarios and evaluate historical forecast performance without data leakage;
-- translate findings into management actions with owners, value equations, guardrails and review dates;
-- keep evidence classes and unsupported claims explicit instead of forcing every status to green.
-
-## Strong recruiter talking points
-
-### 1. Finance modelling
-
-The model connects operating data to management P&L, balance sheet, cash flow, subledgers, debt and PP&E roll-forwards with automated reconciliation checks.
-
-### 2. Commercial Finance
-
-The project evaluates channel, customer, SKU and promotion economics after COGS, fees and trade spend. The decision logic does not assume that revenue growth or average promotion ROI is automatically good.
-
-### 3. Working capital
-
-DSO, DIO, DPO and CCC are used as diagnostic metrics, then converted into collections, inventory, supplier-term and liquidity actions.
-
-### 4. Forecast governance
-
-The historical rolling-origin revenue backtest uses only information available at each forecast origin. The primary seasonal-naive model achieves approximately **1.2% WAPE** at the governed 1M / 3M / 6M horizons on simulated historical data. This is labelled `SIMULATED_HISTORICAL_BACKTEST`; it is not claimed as live employer/company forecasting performance.
-
-### 5. Excel capability
-
-The Excel workbook is not a screenshot-only artifact. Recruiters can download the `.xlsx`, inspect formulas, use scenario/channel selectors and review control / change-log sheets. The spreadsheet layer is designed to show practical FP&A execution: monthly reporting, variance analysis, profitability review, working-capital monitoring, scenario planning and model handover.
-
-## Evidence boundary
-
-Operating data and model outputs are **SIMULATED / DERIVED** portfolio evidence. Historical forecast performance is **SIMULATED_HISTORICAL_BACKTEST**. Genuine live forecast accuracy remains **Gate A — OPEN**, because it requires a real forecast frozen before close and actuals observed after close.
-
-The Excel workbook does not imply live ERP access, statutory-close ownership, employer impact or live forecast accuracy.
-
-## Current controlled finance release
-
-- Release: `VNFINANCE-FPA-v1.1.1`
-- Immutable tag: `fpa-portfolio-v1.1.1`
-- Excel recruiter workbook: `v1.2.0` additive capability artifact
-- Power BI: out of active scope
-
-The Excel artifact adds recruiter evidence of spreadsheet capability but does not change the controlled FY2025 finance truth.
+**Technical appendix.** [Metric registry](data/governance/finance_metric_registry.csv), [unit contract](schemas/unit_contract.csv), [scenario source](data/scenarios/scenario_summary.csv), [Page 5 builder](scripts/build_page5_costing_data.mjs), [Page 5 validator](scripts/validate_page5_costing.mjs), [forecast backtest summary](data/forecast/rolling_origin_revenue_backtest_summary.json), [website validator](scripts/validate_website_content_alignment.mjs), [Excel showcase validator](scripts/validate_excel_recruiter_showcase.mjs), and [architecture](docs/ARCHITECTURE_NON_POWERBI.md).
