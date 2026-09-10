@@ -71,3 +71,5 @@ jobs:
           git add -A site/public/downloads site/excel-payload .github/workflows/finalize-excel-showcase.yml
           git commit -m 'fix: finalize verified recruiter Excel workbook'
           git push origin HEAD:excel-showcase-v1.2.0
+
+# trigger finalizer after verified half-chunk repair
