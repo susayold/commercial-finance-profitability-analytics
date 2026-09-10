@@ -28,4 +28,5 @@ run('node', ['scripts/validate_evidence_taxonomy.mjs']);
 run('node', ['scripts/validate_working_capital_semantics.mjs']);
 run('node', ['scripts/validate_release_identity_nonbi.mjs']);
 run('node', ['scripts/validate_recruiter_site_finance.mjs']);
+run('node', ['scripts/validate_excel_recruiter_showcase.mjs']);
 console.log('PASS: final recruiter release QA');
