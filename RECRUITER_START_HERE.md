@@ -14,7 +14,7 @@
 
 - [10-page recruiter website](https://susayold.github.io/commercial-finance-profitability-analytics/)
 - [Executive dashboard](https://susayold.github.io/commercial-finance-profitability-analytics/dashboard/)
-- [Excel FP&A Model Showcase](https://susayold.github.io/commercial-finance-profitability-analytics/excel/)
+- [Excel FP&A Workbook Viewer](https://susayold.github.io/commercial-finance-profitability-analytics/excel/)
 - [Download Excel workbook](site/public/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx)
 - [Recruiter interview pack — CV bullets + 60s / 3m / 10m walkthrough + Q&A](reports/RECRUITER_INTERVIEW_PACK_V1.2.0_2026-09-10.md)
 - [MBR finance analyst pack](reports/MONTHLY_BUSINESS_REVIEW_FINANCE_ANALYST_2026-08-30.md)
@@ -24,13 +24,13 @@
 - [FMCG standard-cost reconciliation](reports/FMCG_STANDARD_COSTING_RECONCILIATION_2026-09-01.md)
 - [Final v1.1.1 release record](reports/FINAL_RECRUITER_RELEASE_V1.1.1_2026-09-08.md)
 
-**Excel proof of skill.** The public workbook contains **12 sheets** covering assumptions, monthly operating data, P&L variance, commercial economics, working capital, scenarios, forecast accuracy, costing, controls, recruiter skill communication and version/change history. Recruiters can download the real `.xlsx`, inspect formulas, use scenario/channel selectors and review the control/change-log sheets. It demonstrates `SUM`, `IF`, `IFERROR`, `SUMIFS`, `INDEX` / `MATCH`, cross-sheet links, data validation, conditional formatting, charts and explicit PASS / OPEN controls.
+**Excel proof of skill.** The public workbook contains **12 sheets** covering assumptions, monthly operating data, P&L variance, commercial economics, working capital, scenarios, forecast accuracy, costing, controls, recruiter skill communication and version/change history. Recruiters can inspect the real workbook directly inside the `/excel/` page through the embedded Office viewer or download the `.xlsx` to inspect formulas, scenario/channel selectors and control/change-log sheets. It demonstrates `SUM`, `IF`, `IFERROR`, `SUMIFS`, `INDEX` / `MATCH`, cross-sheet links, data validation, conditional formatting, charts and explicit PASS / OPEN controls.
 
-**Suggested recruiter review path.** Open `/excel/`, scan the four workbook snapshots, download the `.xlsx`, then inspect `01_Assumptions`, `03_PnL_Variance`, `04_Commercial`, `06_Scenario`, `07_Forecast_Accuracy` and `09_Controls`. Those sheets most directly demonstrate Excel modelling, variance investigation, commercial analysis, scenario logic, forecast governance and review controls.
+**Suggested recruiter review path.** Click the **Excel** tab in the primary website navigation, inspect the workbook directly in-browser, then open `01_Assumptions`, `03_PnL_Variance`, `04_Commercial`, `06_Scenario`, `07_Forecast_Accuracy` and `09_Controls`. Download the `.xlsx` only when deeper formula tracing is needed. Those sheets most directly demonstrate Excel modelling, variance investigation, commercial analysis, scenario logic, forecast governance and review controls.
 
 **Suggested interview path.** Use the [Recruiter Interview Pack](reports/RECRUITER_INTERVIEW_PACK_V1.2.0_2026-09-10.md) as the controlled speaking script. Start with the 60-second pitch for screening calls, use the 3-minute management walkthrough for hiring-manager discussions, and use the 10-minute technical / financial walkthrough when the interviewer asks to inspect the model. The same pack contains the recommended 3–4 CV bullets, common interview Q&A and claim-safe wording.
 
-**Website contract.** Pages 1–10 are validated against the same finance and evidence contracts used by the repository. Page 4 and Page 5 remain intentionally standalone rehearsals rather than being forced into false reconciliation with the core P&L. Page 5 is source-driven from governed costing and inventory files; Dec-2025 slow-moving SKUs are `SKU018`, `SKU034`, and `SKU035`. The separate Excel route is a capability/evidence surface, not a new finance truth set.
+**Website contract.** Pages 1–10 are validated against the same finance and evidence contracts used by the repository. Page 4 and Page 5 remain intentionally standalone rehearsals rather than being forced into false reconciliation with the core P&L. Page 5 is source-driven from governed costing and inventory files; Dec-2025 slow-moving SKUs are `SKU018`, `SKU034`, and `SKU035`. The Excel route is a primary-navigation workbook viewer and capability/evidence surface, not a new finance truth set.
 
 **Forecast evidence.** The project includes a true rolling-origin out-of-sample revenue backtest over the 36-month simulated operating history. The pre-specified 12-month seasonal-naive benchmark records WAPE of **1.1734% / 1.1554% / 1.1782%** at 1M / 3M / 6M horizons and beats the trend and ensemble challengers. These are **SIMULATED_HISTORICAL_BACKTEST** results, not live company performance. Forecast Gate A therefore remains open until a genuine pre-close frozen forecast and post-close actual are supplied.
 
