@@ -1,0 +1,54 @@
+name: Rebuild committed GitHub Pages output
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'scripts/patch_excel_nav_integration.py'
+      - 'scripts/validate_excel_recruiter_showcase.mjs'
+      - '.github/workflows/rebuild-committed-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install site dependencies
+        run: npm install --prefix site --ignore-scripts --no-audit --no-fund
+      - name: Ensure Excel is integrated in primary navigation
+        run: python scripts/patch_excel_nav_integration.py
+      - name: Run recruiter QA
+        run: node scripts/run_final_recruiter_release_qa.mjs
+      - name: Build committed Pages output
+        run: npm run build:github-pages --prefix site
+      - name: Verify Excel viewer route and workbook are in docs
+        run: |
+          test -f docs/excel/index.html
+          test -f docs/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx
+          grep -q '/commercial-finance-profitability-analytics/assets/' docs/excel/index.html
+          grep -q 'Excel' site/app/report-page.tsx
+          grep -q 'Excel' site/app/dashboard-page10.tsx
+      - name: Commit source navigation and generated Pages output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site/app/report-page.tsx site/app/dashboard-page10.tsx docs
+          git add -f docs/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+          else
+            git commit -m 'ui: integrate Excel viewer into primary portfolio navigation'
+            git push origin HEAD:main
+          fi
