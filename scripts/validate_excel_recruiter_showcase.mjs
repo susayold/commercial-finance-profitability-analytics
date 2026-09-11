@@ -6,6 +6,8 @@ import { spawnSync } from 'node:child_process';
 
 const root = process.cwd();
 const pagePath = path.join(root, 'site/app/excel/page.tsx');
+const reportPath = path.join(root, 'site/app/report-page.tsx');
+const dashboardPath = path.join(root, 'site/app/dashboard-page10.tsx');
 const mainPath = path.join(root, 'site/github-pages.main.tsx');
 const copyPath = path.join(root, 'site/copy-dashboard-entry.mjs');
 const homePath = path.join(root, 'site/app/page.tsx');
@@ -20,7 +22,7 @@ const failures = [];
 const need = (cond, msg) => { if (!cond) failures.push(msg); };
 const read = (p) => fs.readFileSync(p, 'utf8');
 
-for (const p of [pagePath, mainPath, copyPath, homePath, readmePath, recruiterPath]) {
+for (const p of [pagePath, reportPath, dashboardPath, mainPath, copyPath, homePath, readmePath, recruiterPath]) {
   need(fs.existsSync(p), `Missing required file: ${path.relative(root, p)}`);
 }
 need(fs.existsSync(workbookPath), `Missing workbook: ${workbookRel}`);
@@ -43,6 +45,8 @@ if (fs.existsSync(workbookPath)) {
 }
 
 const page = read(pagePath);
+const report = read(reportPath);
+const dashboard = read(dashboardPath);
 const main = read(mainPath);
 const copy = read(copyPath);
 const home = read(homePath);
@@ -50,15 +54,15 @@ const readme = read(readmePath);
 const recruiter = read(recruiterPath);
 
 need(page.includes('VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx'), 'Excel page workbook filename mismatch');
-need(page.includes('12 sheets'), 'Excel page must disclose 12-sheet architecture');
-need(page.includes('SUMIFS') && page.includes('INDEX + MATCH'), 'Excel page must surface core Excel functions');
-need(page.includes('SIMULATED_HISTORICAL_BACKTEST') && page.includes('OPEN by design'), 'Excel page evidence boundary is incomplete');
-need(page.includes('ICAEW spreadsheet principles') && page.includes('CFI model documentation'), 'Excel modelling standards references missing');
-need(page.includes('82.514') && page.includes('12.896') && page.includes('54 days'), 'Excel page controlled Base scenario snapshot missing');
-need(page.includes('1.1734%') && page.includes('1.1554%') && page.includes('1.1782%'), 'Excel page historical OOS metrics mismatch');
+need(page.includes('op/embed.aspx') && page.includes('<iframe'), 'Excel page must embed the live workbook using Office Viewer');
+need(page.includes('Download .xlsx') && page.includes('Open full screen'), 'Excel page must retain workbook open/download controls');
+need(page.includes("aria-current=\"page\"") && page.includes('>Excel</a>'), 'Excel page must show Excel as the active primary-nav tab');
+need(!page.includes('workbookMap') && !page.includes('ICAEW spreadsheet principles'), 'Excel route should be workbook-first, not a long recruiter marketing page');
+need(report.includes('/commercial-finance-profitability-analytics/excel/') && report.includes('>Excel</a>'), 'Main report navigation does not include Excel');
+need(dashboard.includes('../excel/') && dashboard.includes('>Excel</a>'), 'Dashboard navigation does not include Excel');
+need(!home.includes('position: \'fixed\'') && !home.includes('FileSpreadsheet'), 'Floating Excel shortcut should be removed once Excel is in primary navigation');
 need(main.includes("path.includes('/excel')") && main.includes('<ExcelShowcasePage />'), 'GitHub Pages router does not serve /excel');
 need(copy.includes("['dashboard', 'excel']") && copy.includes("path.join(routeDir, 'index.html')"), 'Static build route loop does not create /excel/index.html');
-need(home.includes('/excel/') && home.includes('Excel Model'), 'Main recruiter page has no Excel showcase entrypoint');
 need(readme.includes('Excel FP&A Model Showcase') && readme.includes(workbookRel), 'README Excel recruiter entrypoint missing');
 need(recruiter.includes('Excel proof of skill') && recruiter.includes('12 sheets'), 'Recruiter Start Here Excel guidance missing');
 
@@ -67,4 +71,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('PASS: recruiter Excel showcase route, workbook binary, 12-sheet structure, content and evidence boundary');
+console.log('PASS: Excel is a primary-nav workbook viewer; workbook binary and 12-sheet structure remain controlled');
