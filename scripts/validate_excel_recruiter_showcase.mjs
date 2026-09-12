@@ -20,9 +20,9 @@ const workbookPath = path.join(root, workbookRel);
 const expectedWorkbookSha256 = 'f37f38bc42500868e0af90e36d71312e29c85502cb0e62d453b4d05a906f8474';
 const expectedSheets = ['00_Cover','01_Assumptions','02_Actuals','03_PnL_Variance','04_Commercial','05_Working_Capital','06_Scenario','07_Forecast_Accuracy','08_Costing','09_Controls','10_Skills','11_Change_Log'];
 
-// The live Excel route now surfaces the latest approved MBR release from Drive.
-const liveWorkbookName = '02_Management_Reporting_MBR_Aberdeen_Style_v4_Legibility_Fixed.xlsx';
-const liveWorkbookDriveId = '1Zf7mxpJovjWKLBYBkbwryXuqPYDRmoHe';
+// The live Excel route surfaces the latest approved MBR release from Drive.
+const liveWorkbookName = '02_Management_Reporting_MBR_Aberdeen_Style_v5_Charts_Fixed.xlsx';
+const liveWorkbookDriveId = '1MECC6kxUpYgiDz0bcpnirqFsxbWouNGE';
 
 const failures = [];
 const need = (cond, msg) => { if (!cond) failures.push(msg); };
@@ -78,4 +78,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('PASS: Excel route surfaces latest MBR v4; governed 12-sheet baseline remains controlled');
+console.log('PASS: Excel route surfaces latest MBR v5 chart-fixed workbook; governed 12-sheet baseline remains controlled');
