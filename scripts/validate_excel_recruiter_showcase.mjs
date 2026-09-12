@@ -13,10 +13,16 @@ const copyPath = path.join(root, 'site/copy-dashboard-entry.mjs');
 const homePath = path.join(root, 'site/app/page.tsx');
 const readmePath = path.join(root, 'README.md');
 const recruiterPath = path.join(root, 'RECRUITER_START_HERE.md');
+
+// Keep the original governed 12-sheet workbook as a controlled repository baseline.
 const workbookRel = 'site/public/downloads/VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx';
 const workbookPath = path.join(root, workbookRel);
 const expectedWorkbookSha256 = 'f37f38bc42500868e0af90e36d71312e29c85502cb0e62d453b4d05a906f8474';
 const expectedSheets = ['00_Cover','01_Assumptions','02_Actuals','03_PnL_Variance','04_Commercial','05_Working_Capital','06_Scenario','07_Forecast_Accuracy','08_Costing','09_Controls','10_Skills','11_Change_Log'];
+
+// The live Excel route now surfaces the latest approved MBR release from Drive.
+const liveWorkbookName = '02_Management_Reporting_MBR_Aberdeen_Style_v4_Legibility_Fixed.xlsx';
+const liveWorkbookDriveId = '1Zf7mxpJovjWKLBYBkbwryXuqPYDRmoHe';
 
 const failures = [];
 const need = (cond, msg) => { if (!cond) failures.push(msg); };
@@ -53,8 +59,9 @@ const home = read(homePath);
 const readme = read(readmePath);
 const recruiter = read(recruiterPath);
 
-need(page.includes('VietNova_FPA_Commercial_Finance_Excel_Model_v1.2.0.xlsx'), 'Excel page workbook filename mismatch');
-need(page.includes('op/embed.aspx') && page.includes('<iframe'), 'Excel page must embed the live workbook using Office Viewer');
+need(page.includes(liveWorkbookName), 'Excel page latest MBR workbook filename mismatch');
+need(page.includes(liveWorkbookDriveId), 'Excel page latest MBR Drive file ID mismatch');
+need(page.includes('drive.google.com/file') && page.includes('<iframe'), 'Excel page must embed the latest MBR workbook preview');
 need(page.includes('Download .xlsx') && page.includes('Open full screen'), 'Excel page must retain workbook open/download controls');
 need(page.includes("aria-current=\"page\"") && page.includes('>Excel</a>'), 'Excel page must show Excel as the active primary-nav tab');
 need(!page.includes('workbookMap') && !page.includes('ICAEW spreadsheet principles'), 'Excel route should be workbook-first, not a long recruiter marketing page');
@@ -71,4 +78,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('PASS: Excel is a primary-nav workbook viewer; workbook binary and 12-sheet structure remain controlled');
+console.log('PASS: Excel route surfaces latest MBR v4; governed 12-sheet baseline remains controlled');
