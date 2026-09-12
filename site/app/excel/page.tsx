@@ -4,12 +4,12 @@ import { BarChart3, Download, ExternalLink, FileSpreadsheet } from 'lucide-react
 import '../excel-page11.css';
 
 const BASE = '/commercial-finance-profitability-analytics';
-const fileName = '02_Management_Reporting_MBR_Aberdeen_Style_v4_Legibility_Fixed.xlsx';
-const DRIVE_FILE_ID = '1Zf7mxpJovjWKLBYBkbwryXuqPYDRmoHe';
+const fileName = '02_Management_Reporting_MBR_Aberdeen_Style_v5_Charts_Fixed.xlsx';
+const DRIVE_FILE_ID = '1MECC6kxUpYgiDz0bcpnirqFsxbWouNGE';
 const driveUrl = `https://docs.google.com/spreadsheets/d/${DRIVE_FILE_ID}/edit`;
 const drivePreviewUrl = `https://drive.google.com/file/d/${DRIVE_FILE_ID}/preview`;
 const driveDownloadUrl = `https://drive.google.com/uc?export=download&id=${DRIVE_FILE_ID}`;
-const sha256 = 'e3cc9f726fe1213c31706c1b445e7b4eaa03b34148b91782d75d1bb782042956';
+const sha256 = 'd6a31f6fcf203f9a1cbc0082170fd54892f14bde3c581480884a0fadc5862889';
 
 const reportPages = [
   ['Executive', 'executive'],
@@ -46,8 +46,8 @@ export default function ExcelShowcasePage() {
         <div className="excel-live-file">
           <FileSpreadsheet size={22} />
           <span>
-            <strong>Management Reporting &amp; MBR — Aberdeen Style v4</strong>
-            <small>{fileName} · 17 sheets · 15 charts · final legibility pass</small>
+            <strong>Management Reporting &amp; MBR — Aberdeen Style v5</strong>
+            <small>{fileName} · 17 sheets · 15 charts · chart QA &amp; legibility fixed</small>
           </span>
         </div>
         <div className="excel-live-actions">
@@ -59,14 +59,14 @@ export default function ExcelShowcasePage() {
       <section className="excel-live-viewer" aria-label="Live Excel workbook">
         <iframe
           src={drivePreviewUrl}
-          title="Management Reporting MBR Aberdeen Style v4"
+          title="Management Reporting MBR Aberdeen Style v5 — Charts Fixed"
           loading="eager"
           allowFullScreen
         />
       </section>
 
       <div className="excel-viewer-fallback">
-        Latest approved workbook · 17 sheets · 15 charts · Aberdeen-style financial-model formatting · final legibility pass · SHA-256 <code>{sha256}</code>. If the embedded Drive preview is restricted by your browser, <a href={driveUrl} target="_blank" rel="noreferrer">open the latest workbook directly on Drive</a>.
+        Latest approved workbook · 17 sheets · 15 charts · Aberdeen-style financial-model formatting · chart QA and legibility fixed · SHA-256 <code>{sha256}</code>. If the embedded Drive preview is restricted by your browser, <a href={driveUrl} target="_blank" rel="noreferrer">open the latest workbook directly on Drive</a>.
       </div>
     </main>
   );
