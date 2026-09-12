@@ -20,10 +20,14 @@ const workbookPath = path.join(root, workbookRel);
 const expectedWorkbookSha256 = 'f37f38bc42500868e0af90e36d71312e29c85502cb0e62d453b4d05a906f8474';
 const expectedSheets = ['00_Cover','01_Assumptions','02_Actuals','03_PnL_Variance','04_Commercial','05_Working_Capital','06_Scenario','07_Forecast_Accuracy','08_Costing','09_Controls','10_Skills','11_Change_Log'];
 
-// Live recruiter route: stable project title, source XLSX on Drive, chart-preserving web preview in Google Sheets.
-const projectName = 'Management Reporting & MBR';
-const liveWorkbookDriveId = '1MECC6kxUpYgiDz0bcpnirqFsxbWouNGE';
-const livePreviewSheetId = '1M3pRiCbc3CNJdjpuzcfiL4kPDVkQA3RsPWIyXNEmF2U';
+const liveModels = [
+  ['Full FP&A Model','19xc_sxYIWHFniwnE5GSiWyQIxby0dOvJ','15oK-aqYic44JOpden_efIYBD2eygn2SjsPCOD23Jymc'],
+  ['Management Reporting & MBR','1BAmzlMw2X-1HSqSurrML9iUZr9UcU_sv','14xSRpm4cL6E6ghJTgA0irKjy269PZswUn34knVa6iS8'],
+  ['Commercial Profitability','1-PAT64gK5zaY7vkaypv4pV6gIi38FEL3','15wnlIXBMsuYocSjMmlOFAQfx6f-HSKsdLwQnUHVkRsE'],
+  ['Working Capital & Liquidity','1zN8m9S3NS__qCU506hWm3BbtTRd1Jo2F','1J1uLgeFY0R-lKOFrGInLTx2I_IZH7rgUywG7cMGas7Y'],
+  ['Costing & Variance','1RVZL2LIfEXNQhdHjNRPGSe8fJ0dKEqSa','1mBW_M1QpPhKHvQd_UjwOtLRjTV2TZPlz4a9iIk7_6tY'],
+  ['Forecast & Scenario Planning','1J6PQa2jB6PrWLOjlT0t9-5QLV2IZyjRr','1hF2oSLkJD6puiFTy_PDIBfrUuypWZMbUhOOXdYxRYQA'],
+];
 
 const failures = [];
 const need = (cond, msg) => { if (!cond) failures.push(msg); };
@@ -60,26 +64,32 @@ const home = read(homePath);
 const readme = read(readmePath);
 const recruiter = read(recruiterPath);
 
-need(page.includes(projectName), 'Excel page project title mismatch');
-need(page.includes(liveWorkbookDriveId), 'Excel page source XLSX Drive file ID mismatch');
-need(page.includes(livePreviewSheetId), 'Excel page chart-preserving preview Sheet ID mismatch');
-need(page.includes('docs.google.com/spreadsheets') && page.includes('/preview') && page.includes('<iframe'), 'Excel page must embed the chart-preserving Google Sheets preview');
-need(page.includes('Download .xlsx') && page.includes('Open full screen'), 'Excel page must retain workbook open/download controls');
-need(page.includes('17 sheets · 15 charts'), 'Excel page workbook summary mismatch');
-need(!page.includes('Aberdeen Style v5') && !page.includes('Charts_Fixed') && !page.includes('chart QA &'), 'Excel page title/filebar must not expose implementation/version labels');
+for (const [name, driveId, previewId] of liveModels) {
+  need(page.includes(name), `Excel library missing model: ${name}`);
+  need(page.includes(driveId), `Excel library missing source XLSX Drive ID for: ${name}`);
+  need(page.includes(previewId), `Excel library missing chart-preserving preview ID for: ${name}`);
+}
+need(page.includes('EXCEL FINANCIAL MODEL LIBRARY'), 'Excel page must expose the model-library hierarchy');
+need(page.includes('Six controlled workbooks. One integrated finance story.'), 'Excel page library headline mismatch');
+need(page.includes('<strong>6</strong>') && page.includes('<strong>99</strong>') && page.includes('<strong>55</strong>'), 'Excel library summary statistics mismatch');
+need(page.includes("useState") && page.includes('aria-pressed') && page.includes('setActiveId'), 'Excel page must provide an interactive workbook selector');
+need(page.includes('docs.google.com/spreadsheets') && page.includes('/preview') && page.includes('<iframe'), 'Excel page must embed chart-preserving Google Sheets previews');
+need(page.includes('Download .xlsx') && page.includes('Open preview') && page.includes('Open source'), 'Excel page must retain preview/source/download controls');
+need(page.includes('FLAGSHIP') && page.includes('DEEP DIVE'), 'Excel page must distinguish flagship and specialist models');
+need(!page.includes('Aberdeen Style v5') && !page.includes('Charts_Fixed') && !page.includes('chart QA &'), 'Excel page must not expose implementation/version labels');
 need(page.includes("aria-current=\"page\"") && page.includes('>Excel</a>'), 'Excel page must show Excel as the active primary-nav tab');
-need(!page.includes('workbookMap') && !page.includes('ICAEW spreadsheet principles'), 'Excel route should be workbook-first, not a long recruiter marketing page');
+need(!page.includes('ICAEW spreadsheet principles'), 'Excel route should stay recruiter-first, not a long methodology page');
 need(report.includes('/commercial-finance-profitability-analytics/excel/') && report.includes('>Excel</a>'), 'Main report navigation does not include Excel');
 need(dashboard.includes('../excel/') && dashboard.includes('>Excel</a>'), 'Dashboard navigation does not include Excel');
-need(!home.includes('position: \'fixed\'') && !home.includes('FileSpreadsheet'), 'Floating Excel shortcut should be removed once Excel is in primary navigation');
+need(!home.includes('position: \'fixed\'') && !home.includes('FileSpreadsheet'), 'Floating Excel shortcut should remain removed once Excel is in primary navigation');
 need(main.includes("path.includes('/excel')") && main.includes('<ExcelShowcasePage />'), 'GitHub Pages router does not serve /excel');
 need(copy.includes("['dashboard', 'excel']") && copy.includes("path.join(routeDir, 'index.html')"), 'Static build route loop does not create /excel/index.html');
 need(readme.includes('Excel FP&A Model Showcase') && readme.includes(workbookRel), 'README Excel recruiter entrypoint missing');
-need(recruiter.includes('Excel proof of skill') && recruiter.includes('12 sheets'), 'Recruiter Start Here Excel guidance missing');
+need(recruiter.includes('Excel proof of skill') && recruiter.includes('12 sheets'), 'Recruiter Start Here baseline guidance missing');
 
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
 
-console.log('PASS: Excel route uses stable project naming and chart-preserving web preview; governed 12-sheet baseline remains controlled');
+console.log('PASS: Excel route publishes a six-workbook recruiter model library with interactive chart-preserving previews; governed baseline remains controlled');
