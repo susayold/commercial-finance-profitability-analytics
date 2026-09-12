@@ -20,9 +20,10 @@ const workbookPath = path.join(root, workbookRel);
 const expectedWorkbookSha256 = 'f37f38bc42500868e0af90e36d71312e29c85502cb0e62d453b4d05a906f8474';
 const expectedSheets = ['00_Cover','01_Assumptions','02_Actuals','03_PnL_Variance','04_Commercial','05_Working_Capital','06_Scenario','07_Forecast_Accuracy','08_Costing','09_Controls','10_Skills','11_Change_Log'];
 
-// The live Excel route surfaces the latest approved MBR release from Drive.
-const liveWorkbookName = '02_Management_Reporting_MBR_Aberdeen_Style_v5_Charts_Fixed.xlsx';
+// Live recruiter route: stable project title, source XLSX on Drive, chart-preserving web preview in Google Sheets.
+const projectName = 'Management Reporting & MBR';
 const liveWorkbookDriveId = '1MECC6kxUpYgiDz0bcpnirqFsxbWouNGE';
+const livePreviewSheetId = '1M3pRiCbc3CNJdjpuzcfiL4kPDVkQA3RsPWIyXNEmF2U';
 
 const failures = [];
 const need = (cond, msg) => { if (!cond) failures.push(msg); };
@@ -59,10 +60,13 @@ const home = read(homePath);
 const readme = read(readmePath);
 const recruiter = read(recruiterPath);
 
-need(page.includes(liveWorkbookName), 'Excel page latest MBR workbook filename mismatch');
-need(page.includes(liveWorkbookDriveId), 'Excel page latest MBR Drive file ID mismatch');
-need(page.includes('drive.google.com/file') && page.includes('<iframe'), 'Excel page must embed the latest MBR workbook preview');
+need(page.includes(projectName), 'Excel page project title mismatch');
+need(page.includes(liveWorkbookDriveId), 'Excel page source XLSX Drive file ID mismatch');
+need(page.includes(livePreviewSheetId), 'Excel page chart-preserving preview Sheet ID mismatch');
+need(page.includes('docs.google.com/spreadsheets') && page.includes('/preview') && page.includes('<iframe'), 'Excel page must embed the chart-preserving Google Sheets preview');
 need(page.includes('Download .xlsx') && page.includes('Open full screen'), 'Excel page must retain workbook open/download controls');
+need(page.includes('17 sheets · 15 charts'), 'Excel page workbook summary mismatch');
+need(!page.includes('Aberdeen Style v5') && !page.includes('Charts_Fixed') && !page.includes('chart QA &'), 'Excel page title/filebar must not expose implementation/version labels');
 need(page.includes("aria-current=\"page\"") && page.includes('>Excel</a>'), 'Excel page must show Excel as the active primary-nav tab');
 need(!page.includes('workbookMap') && !page.includes('ICAEW spreadsheet principles'), 'Excel route should be workbook-first, not a long recruiter marketing page');
 need(report.includes('/commercial-finance-profitability-analytics/excel/') && report.includes('>Excel</a>'), 'Main report navigation does not include Excel');
@@ -78,4 +82,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('PASS: Excel route surfaces latest MBR v5 chart-fixed workbook; governed 12-sheet baseline remains controlled');
+console.log('PASS: Excel route uses stable project naming and chart-preserving web preview; governed 12-sheet baseline remains controlled');
